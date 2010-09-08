@@ -1,0 +1,2 @@
+module CountryipsHelper
+end

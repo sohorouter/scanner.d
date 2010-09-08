@@ -1,0 +1,2 @@
+class CountryipsController < ApplicationController
+end
