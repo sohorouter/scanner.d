@@ -1,4 +1,4 @@
-class SampleTool 
+class SampleTool < ActiveResource::Base
   include CouchPotato::Persistence
 
   property :a
@@ -6,6 +6,7 @@ class SampleTool
   property :c
   property :d
   property :e
+  property :f
 
   view :all, :key => :c
   view :show_my_range, :map => "function(doc) { if(doc.b){ c=doc.b.countryip; emit(c.id, {range:[c.start_long,c.end_long]});} }", :include_docs => true, :type => :custom
@@ -24,4 +25,8 @@ class SampleTool
       send(']}');
     }
   JS
+
+  def self.db
+    CouchPotato.database
+  end
 end
