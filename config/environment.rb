@@ -9,4 +9,5 @@ Eins::Application.initialize!
 #CouchFoo::Base.logger = Rails.logger
 
 CouchPotato::Config.database_name='http://192.168.0.195:5984/eins'
+require 'fileutils'
 require 'ipaddr'
