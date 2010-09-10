@@ -30,12 +30,24 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   def db
     return SampleTool.db
   end
-
   def self.r_first
     self.db.view(SampleTool.all).first
   end
+  def produce_start_end_count_to_d
+    s=b['countryip']['start_long']
+    e=b['countryip']['end_long']
+    a_s=IPAddr.new(s,Socket::AF_INET).to_s
+    a_e=IPAddr.new(e,Socket::AF_INET).to_s
+    a_c=e-s
+    self.d=[a_s,a_e,a_c]
+    db.save(self)
+  end
+  def scanner_d
+    self.proj_d ||= SampleTool.proj_d_default
+    dir=File.join(self.proj_d,'scanning.d',rdir+'.'+self.c.to_s+'.d').to_s
+  end
 
-  def prepare_hostips_from_a
+  def produce_hostips_from_a
     s=b['countryip']['start_long']
     e=b['countryip']['end_long']
     self.a=[]
@@ -43,13 +55,11 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     self.a.shuffle!
     db.save(self)
   end
-
   def produce_hl_norm_lst(filename='hl.norm.lst')
     f=open(filename,'w')
     f.write(self.a.join("\n"))
     f.close
   end
-
   def produce_scanner_d
     Dir.mkdir(scanner_d) if !File.exist?(scanner_d)
   end
@@ -67,7 +77,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   end
 
   def prepare_scanning_d
-    prepare_hostips_from_a
+    produce_hostips_from_a
     produce_hl_norm_lst
     produce_scanner_d
     copy_hl_norm_lst_to_scanner_d
@@ -80,9 +90,5 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     rdir+=("%04d"%Date.today.year)
     rdir+=("%02d"%Date.today.month)
     rdir+=("%02d"%Date.today.day)
-  end
-  def scanner_d
-    self.proj_d ||= SampleTool.proj_d_default
-    dir=File.join(self.proj_d,'scanning.d',rdir+'.'+self.c.to_s+'.d').to_s
   end
 end
