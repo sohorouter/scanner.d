@@ -3,9 +3,9 @@ class SampleTool
   include FileUtils
 
   def initialize
-    self.cnyper_d ||= SampleTool.cnyper_d_default
+    self.proj_d ||= SampleTool.proj_d_default
   end
-  def self.cnyper_d_default
+  def self.proj_d_default
     File.expand_path('../')
   end
 
@@ -14,7 +14,7 @@ class SampleTool
   property :c
   property :d
   property :e
-  property :cnyper_d
+  property :proj_d
 
   view :all, :key => :c
   view :show_my_range, :map => "function(doc) { if(doc.b){ c=doc.b.countryip; emit(c.id, {range:[c.start_long,c.end_long]});} }", :include_docs => true, :type => :custom
@@ -54,15 +54,15 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     Dir.mkdir(scanner_d) if !File.exist?(scanner_d)
   end
   def copy_scanning_bins_to_scanner_d
-    self.cnyper_d ||= SampleTool.cnyper_d_default
-    bin_d=File.join(self.cnyper_d,'scanning.d','bin').to_s
+    self.proj_d ||= SampleTool.proj_d_default
+    bin_d=File.join(self.proj_d,'scanning.d','bin').to_s
     Dir.entries(bin_d).each{|e|
       if(e[0]!='.');cp(File.join(bin_d,e).to_s,scanner_d)
       end
     }
   end
   def copy_hl_norm_lst_to_scanner_d(filename='hl.norm.lst')
-    self.cnyper_d ||= SampleTool.cnyper_d_default
+    self.proj_d ||= SampleTool.proj_d_default
     cp(File.expand_path('.',filename),scanner_d)
   end
 
@@ -82,7 +82,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     rdir+=("%02d"%Date.today.day)
   end
   def scanner_d
-    self.cnyper_d ||= SampleTool.cnyper_d_default
-    dir=File.join(self.cnyper_d,'scanning.d',rdir+'.'+self.c.to_s+'.d').to_s
+    self.proj_d ||= SampleTool.proj_d_default
+    dir=File.join(self.proj_d,'scanning.d',rdir+'.'+self.c.to_s+'.d').to_s
   end
 end
