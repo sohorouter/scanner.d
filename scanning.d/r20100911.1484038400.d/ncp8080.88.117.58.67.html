@@ -1,0 +1,318 @@
+HTTP/1.1 200 OK
+Date: Sat, 11 Sep 2010 20:42:37 GMT
+Server: Apache/2.2.13 (Unix) mod_ssl/2.2.13 OpenSSL/0.9.8k
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Synology DiskStation - JANA_Netzwerk</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 145px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-attachment: scroll;
+	background-image: url(webman/images/login_bg.jpg);
+	background-repeat: repeat-x;
+}
+
+
+img {
+	behavior:	   url("/scripts/iepngfix.htc")
+}
+
+
+
+.login_message_div {
+	height: 220px;
+	width:320px;
+	float: right;
+	position: relative;
+}
+
+.login_server_name {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #2F64BB;
+}
+
+.login_message_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: ffffff;
+	font-weight: bold;
+}
+
+.login_message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: ffffff;
+}
+
+.login_text_field {
+	font-family: "Arial","Tahoma","Helvetica",sans-serif;
+	font-size: 12px;
+	border:1px solid #B5B8C8;
+	padding:1px 3px;
+	height:20px;
+	color: #555555;
+}
+
+.login_button {
+	color : #333333;
+	font-size : 12px;
+	padding: 1px;
+
+}
+#dsmlogo {
+    margin-left: 20px;
+}
+input {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+-->
+</style>
+<script src="/scripts/ajax.js" type="text/javascript" language="javascript"></script>
+<script src="/scripts/mask.js" type="text/javascript" language="javascript"></script>
+<script language="JavaScript">
+var g_direct_management = '';
+var EnabledService = new Array('webman', 'webfm', 'download');
+
+
+if (typeof ERROR_ERPORT != "undefined") {
+
+	/* Redirect from webfm or AudionStation */
+	switch (ERROR_ERPORT) {
+	case 'error_timeout':
+		setTimeout("alert('Connection expired. Please login again.')", 500);
+		break;
+	case 'error_interrupt':
+		setTimeout("alert('You have signed in on another computer. Please log in again.')", 500);
+		break;
+	default:
+		break;
+	}
+}
+
+
+
+function LoginHandler(req)
+{
+	if (req.readyState == 4) {
+		if (req.status == 200 || !req.status) {
+
+			DocumentUnMask();
+
+			if (!req || !req.responseText) {
+				return;
+			}
+
+			var login = eval('(' + req.responseText + ')');
+
+			if (!login) {
+				return;
+			}
+			if ("error" == login.result) {
+				switch (login.reason) {
+				case 'error_guest':
+					alert('Cannot login as guest. Please use another account to login.');
+					break;
+				case 'error_cantlogin':
+					alert('The account or password is invalid. Please try again.');
+					break;
+				case 'error_nologin_nopasswd':
+					alert('error_nologin_nopasswd');
+					break;
+				case 'error_expired':
+					alert('Your account has been disabled. Please contact the administrator.');
+					break;
+				case 'error_noprivilege':
+					alert('You are not authorized to use this service.');
+					break;
+				case 'error_systemfull':
+					alert('You cannot login to the system because the disk space is full currently. Please restart the system and try again.');
+					break;
+				}
+				return;
+			}
+
+			/* url address will have '?reqerror=1' parameter 
+			 * if this login page is triggered by server error (ex. time out)
+			 */
+			if(location.search == '?reqerror=1') {
+				var strDSAppURL = ValidateReferrer(document.referrer);
+				if(strDSAppURL != 'NotDSAppURL') {
+					window.location = strDSAppURL; // redirect to previous DS App page
+					return;
+				}
+			}
+			if(typeof(g_direct_management) == 'string' && g_direct_management.length && document.login_form.login_type[0].checked) {
+				var oStationMap = {
+					'webman': 'webman/index.cgi',
+					'webfm': 'webfm/index.cgi',
+					'download': 'download/index.cgi',
+					'surveillance': 'surveillance/cgi/index.cgi',
+					'audio': 'audio/index.cgi'
+				};
+				if(g_direct_management in oStationMap) {
+					var target = '/index.cgi?desktop=1';
+					for(var j=0;j<EnabledService.length;j++) {
+						if(EnabledService[j] == g_direct_management) {
+							target = oStationMap[g_direct_management];
+							break;
+						}
+					}
+					window.location = target;
+					
+				}
+				else {
+					window.location = 'webman/index.cgi';
+				}
+			}
+			else {
+				window.location = '/index.cgi?desktop=1';
+			}
+
+		}
+	}
+}
+
+function SendLogin()
+{
+	var login_type = document.login_form.login_type;
+	var username = document.login_form.username.value;
+	var passwd = document.login_form.password.value;
+	var params;
+
+	DocumentMask('Loading...');
+
+	if (login_type[0].checked) {
+		username = 'admin';
+	}
+
+	params = "username="+encodeURIComponent(username)+"&passwd="+encodeURIComponent(passwd);
+	AjaxSendRequest("/webman/modules/login.cgi", params, LoginHandler);
+
+	return false;
+} 
+function onClickUserName()
+{
+	document.login_form.login_type[1].checked = true;
+} 
+
+function loginSetFocus(val) 
+{
+	if(val == 'admin') {
+		document.login_form.password.focus();
+	}
+	else {
+		document.login_form.username.focus();
+	}
+}
+
+function onPageLoaded() 
+{
+	document.login_form.password.focus();
+}
+
+// check if the referrer belongs to DS websites
+function ValidateReferrer(strDocumentReferrer)
+{
+	var arrDSAppURL = new Array('/webman/index.cgi', '/surveillance/cgi/index.cgi', 
+								'/webfm/index.cgi', '/download/index.cgi', '/audio/index.cgi');
+	for (var i = 0; i < arrDSAppURL.length; i++) {
+		if (strDocumentReferrer.search(arrDSAppURL[i]) >= 0) {
+			return arrDSAppURL[i]; // return the matched DS Application URL
+		}
+	}
+	return 'NotDSAppURL';
+}
+
+
+</script>
+</head>
+
+<body onload="onPageLoaded()">
+
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td align="right" valign="top" class="left_bg"><img src="webman/images/login_left_bg.jpg" width="120" height="465"></td>
+		<td width="615">
+			<table width="615" height="335" border="0" cellpadding="0" cellspacing="0" background="webman/images/login_box_bg.jpg">
+			<tr>
+				<td width="100%" height="103" align="left">
+					<br><br>
+					<img id="dsmlogo" src="webman/images/login_dsmlogo.png?v=1167" width="404" height="56" border="0" />
+				</td>
+			</tr>
+			<tr>
+				<td height="232" align="right">
+					<div style="height: 220px;width: 250px;float: left;position: relative;">
+						<table border="0" width="100%" height="157">
+							<tr>
+								<td align="center" valign="bottom">
+									<span class="login_server_name">JANA_Netzwerk</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="div_tab_login" class="login_message_div">
+						<form name="login_form" method="post" action="" onsubmit="return SendLogin();">
+						<table width="320" border="0" cellpadding="4" align="center">
+							<tr>
+								<td>
+									<span class="login_message_title">Choose login account:</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="radio" onClick="loginSetFocus(this.value)" name="login_type" value="admin" checked>
+									<span class="login_message">System administrator (admin)</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="radio" onClick="loginSetFocus(this.value)" name="login_type" value="user" maxlength="256">
+									<span class="login_message">Other account</span>
+									&nbsp;
+									<input name="username" type="text" value="" onfocus="onClickUserName();" size="16"  class="login_text_field" maxlength="256">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="login_message_title">Enter password:</span>
+								</td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<input name="password" type="password" size="20" class="login_text_field" maxlength="256">
+									&nbsp;<input type="submit" value="Login" class="login_button">
+								</td>
+							</tr>
+						</table>
+						</form>
+					</div>
+
+
+
+				</td>
+			</tr>
+			</table>
+            <img src="webman/images/login_box_down.jpg" width="615" height="130" />
+		</td>
+		<td align="left" valign="top" class="right_bg"><img src="webman/images/login_right_bg.jpg" width="120" height="465"></td>
+	</tr>
+</table>
+
+
+</body>
+</html>

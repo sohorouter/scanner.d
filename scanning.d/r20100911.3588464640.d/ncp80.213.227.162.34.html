@@ -1,0 +1,99 @@
+HTTP/1.1 200 OK
+Date: Sat, 11 Sep 2010 19:20:42 GMT
+Server: Mongrel 1.1.5
+Status: 200 OK
+Cache-Control: no-cache
+Content-Type: text/html; charset=utf-8
+Content-Length: 3456
+Set-Cookie: _ams_session_id=b729333ed5d6bf90331bd3fc54f673d2; path=/
+Via: 1.0 ams.kps.or.at
+Connection: close
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/stylesheets/style.css?1236182164" media="screen" rel="Stylesheet" type="text/css" />
+<script src="/javascripts/jquery-1.2.6.min.js?1220604122" type="text/javascript"></script>
+<!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/ico" />
+<link rel="icon" href="/images/favicon.ico" type="image/ico" />
+<script language="Javascript">
+function resizeBar ()
+{
+    var footer = $("#footer").offset().top;
+    var logo_u = $("#logo_u").offset().top;
+    var x = footer - logo_u
+    $("#logo_u").height(x);
+}
+</script>
+
+<title>Kompetenzprüfungssystem</title>
+</head>
+<body onResize="resizeBar();" onload="resizeBar();" onScroll="rezieBar();">
+	<div id="logo"><img alt="Logo" src="/images/logo.png?1223625857" /></div>
+	<div id="logo_o"></div>
+	<div id="logo_u"></div>
+	<div id="systeme">
+	  <table>
+	  	<tr>
+			<td><img alt="Punkt" src="/images/punkt.jpg?1217868218" /></td>
+			<td></td>
+			<td>Buchhaltung</td>
+		</tr>
+		<tr height="13">
+		<td></td>
+		<td></td>
+		</tr>
+		<!-- <tr>
+            <td><img alt="Punkt" src="/images/punkt.jpg?1217868218" /></td>
+			<td></td>
+			<td>Lagerlogistik</td>
+		</tr> -->
+	  </table>
+	</div>
+	<div id="logo_ams"><img alt="Logo_ams" src="/images/logo_ams.jpg?1228995415" /></div>
+	<div id="login_div"><img alt="Anmeldung" src="/images/anmeldung.jpg?1217868210" />
+          <form action="/login/login" method="post">
+	  <table width="100%">
+	  	<tr height="10" colspann="2">
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+                  <td><label for="login">&nbsp;Benutzername:</label></td>
+		  <td align="right"><input id="login" name="login" size="12" type="text" />&nbsp;</td>
+		</tr>
+		<tr height="10" colspann="2">
+                  <td>&nbsp;</td>
+		</tr>
+		<tr>
+                  <td><label for="pwd">&nbsp;Passwort:</label></td>
+		  <td align="right"><input id="pwd" name="pwd" size="12" type="password" />&nbsp;</td>
+		</tr>
+                                <tr height="10" colspan="2">
+                  <td>&nbsp;</td>
+                </tr>
+		<tr>
+                                  <td colspan="2" align="center"><input id="buttontemp" name="commit" type="submit" value="Login" /></td>
+		</tr>
+	  </table>
+          </form>
+        </div>
+        <div id="message">
+         <!-- <p>Am 30.01.2009 steht Ihnen von 17.00 bis ca. 22.00 Uhr das Kompetenz-Prüfungssystem aufgrund von technischen Updates nicht zur Verfügung. Wir bitten um Ihr Verständnis.</p> -->
+        </div>
+	<div id="partner"><img alt="Partner" src="/images/partner.jpg?1217868216" />
+	</div>
+         <div id="footer">
+         <table cellspacing="5" width="100%">
+            <tr>
+            <td><a href="/impressum" id="Impressum">Impressum</a>&nbsp;|&nbsp;<a href="/faq" id="faq">FAQs</a></td>
+            <td align="right" width="200"><a href="http://www.create.at" target="_blank">System von create.at</a></td>
+            <td align="right" width="14"><a href="http://www.create.at" target="_blank"><img alt="Create" src="/images/create.png?1223625805" /></a></td>
+            </tr>
+            </table>
+         </div>
+ </body>
+</html>

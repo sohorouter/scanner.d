@@ -1,0 +1,40 @@
+HTTP/1.0 200 OK
+Connection: close
+Date: Sat, 11 Sep 2010 13:59:52 GMT
+Server: Cherokee/0.99.11b (UNIX)
+Last-Modified: Tue, 13 Oct 2009 00:13:28 GMT
+Content-Type: text/html
+Content-Length: 719
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Media Hub</title>
+
+<script type="text/javascript">
+function delayer(){
+
+	 var agt=navigator.userAgent.toLowerCase();
+	 var is_nokia = (agt.indexOf("nokia"));
+
+	//if (is_nokia!=-1) {
+	//   window.location = "linksys-mobile/login.html";
+	//} else {
+	//	window.location = "linksys-web/Login/login.php";
+	//}
+
+	//window.location = "Login/";
+	window.location = "MediaHubApp/MediaHubApp.html";
+
+}
+</script>
+
+</head>
+<body onload="setTimeout('delayer()', 10)">
+</body>
+
+</html>

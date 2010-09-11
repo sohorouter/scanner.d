@@ -1,0 +1,28 @@
+HTTP/1.1 403 Forbidden
+Date: Sat, 11 Sep 2010 20:55:43 GMT
+Server: Apache/2.2.3 (Linux/SUSE)
+Last-Modified: Tue, 18 Sep 2007 17:35:28 GMT
+ETag: "7b7b6-24e-58d3d800"
+Accept-Ranges: bytes
+Content-Length: 590
+Connection: close
+Content-Type: text/html
+X-Pad: avoid browser bug
+
+<html>
+<head>
+<script Language="JavaScript" >
+    // This is a redirect page to /welcome/index.html.  This page is used
+    // because when Apache's error document is set to /welcome/ it is 
+    // returning a 403 error which tells QuickFinder to not look in the welcome
+    // directory. This redirect makes it so a return status of 200 is used, and
+    // QuickFinder will look in this welcome directory.
+    window.location="/welcome/index.html"
+</script>
+
+<!-- In case JavaScript is not supported. -->
+<meta http-equiv="Refresh" content="0; URL=/welcome/index.html" >
+
+</head>
+</html>
+

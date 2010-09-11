@@ -1,0 +1,117 @@
+HTTP/1.0 200 OK
+Server: ICONAG web server (Ver.: 1.1)
+Date: Sat, 11 Sep 2010 20:59:28 GMT
+Accept-Ranges: none
+Cache-Control: no-cache
+Expires: Tue, 11 Jan 1980 01:00:00 GMT
+Connection: close
+Content-Type: text/html
+
+<HTML>
+<HEAD>
+<TITLE>Internet Controller Direktzugang</TITLE>
+<META name="ic1PageName" content="index.html">
+<META http-equiv="expires" content="0">
+<SCRIPT language="JavaScript1.2" src="script/kdlib.js?contentID=ic1&dxi=32145106"></SCRIPT>
+<SCRIPT language="JavaScript1.2" src="script/kdinfo.js?contentID=ic1&dxi=32145106"></SCRIPT>
+<SCRIPT language="JavaScript1.2" src="script/kdrsa.js?contentID=ic1&dxi=32145106"></SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="styles/kd.css?contentID=ic1&dxi=32145106">
+<SCRIPT language="JavaScript1.2">
+if (parent.BrowserAlert) {
+var strAlert = "Die Bedienoberfläche des Internet Controllers wurde für folgende Clientsoftware entwickelt und getestet:\n\n";
+strAlert += "- Microsoft Internet Explorer 5.5 oder neuer\n";
+strAlert += "- Netscape Navigator 7.x\n\n";
+strAlert += "ACHTUNG: Sie verwenden einen anderen Browser, daher kann die korrekte Bedienung nicht gewährleistet werden. ";
+strAlert += "Um eine Fehlbedienung/-konfiguration des Gerätes zu vermeiden, sollten sie unbedingt einen der genannten Internet Browser verwenden!";
+alert(strAlert);}
+var e = 0;
+var m = 0;
+function doLogin(LoginTarget) {
+with (document) {
+var arrRSA = frmLogin.RSAData.value.split("|");
+if (LoginTarget == "guest") {
+frmLogin.action = "guest?contentID=ic1";
+} else {
+e = parseInt("0" + arrRSA[0], 10);
+m = parseInt("0" + arrRSA[1], 10);
+frmLogin.LoginData.value = RSA_encode(frmLoginGUI.User.value + "|" +
+frmLoginGUI.ipw.value + "|" + arrRSA[2] + "|");}
+frmLogin.RSAData.value = arrRSA[3];
+if (ActiveLang == "") {
+frmLogin.ACTIVELANG.value =
+frmLoginGUI.ACTIVELANG.options[frmLoginGUI.ACTIVELANG.selectedIndex].value;}
+frmLoginGUI.cmdLogin.disabled = true;
+
+frmLogin.submit();
+}}
+var strFontOS = (navigator.platform.indexOf("Win") != -1) ? "fontwin.css" : "fontgen.css";
+if (navigator.platform == "WinCE") document.write("<LINK rel=\"stylesheet\" type=\"text/css\" href=\"styles/fontce.css?contentID=ic1&dxi=32145106\">");
+document.write("<LINK rel=\"stylesheet\" type=\"text/css\" href=\"styles/" + strFontOS + "?contentID=ic1&dxi=32145106\">");
+</SCRIPT>
+</HEAD>
+<BODY background="images/bgtop.gif?contentID=ic1&dxi=32145106" bgcolor="#FFFFFF" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+<SCRIPT language="JavaScript1.2">
+var ActiveLang = "de";
+document.write("<MAP name=\"DPmap\"><AREA shape=\"RECT\" coords=\"282,5,366,50\" title=\"Domoport Portalseite\" href=\"");
+document.write(kdDynaURL("toService", ActiveLang));
+document.writeln("\" target=\"_blank\"></MAP>");
+</SCRIPT>
+<TABLE width="100%" border="0" cellpadding="0" cellspacing="0">
+<FORM name="frmLoginGUI" onsubmit="return false;">
+<TR><TD width="180" valign="top">
+<P><SCRIPT language="JavaScript1.2">
+
+document.write("<A href=\"" + kdDynaURL("toOEM", ActiveLang) + "\" target=\"_blank\"><IMG src=\"images/topleft.gif?contentID=ic1&dxi=32145106\" width=\"180\" height=\"77\" border=\"0\" title=\"Zur Portalseite\"></A>");
+
+</SCRIPT></P></TD>
+<TD width="10">
+<IMG src="images/pix.gif?contentID=ic1" width="10" height="10" border="0"></TD>
+<TD><P class="TOPINFO">Gerät Direktzugang<BR><B>Internet-Controller</B></P></TD>
+<TD width="373" align="right" valign="top">
+<P><SCRIPT language="JavaScript1.2">
+document.write("<IMG src=\"images/topright.gif?contentID=ic1&dxi=32145106\" usemap=\"#DPmap\" width=\"373\" height=\"77\" border=\"0\">");
+</SCRIPT></P></TD></TR>
+<TR><TD colspan="4"><IMG src="images/pix.gif?contentID=ic1" width="1" height="20" border="0"></TD></TR>
+<SCRIPT language="JavaScript1.2">
+var strAllLanguages = "de|en|es|fr|it|nl|no|sv|da|fi|";
+if (ActiveLang == "") {
+var arrLangs = strAllLanguages.split("|").sort();
+var strSel = "";
+document.write("<TR><TD>&nbsp;</TD><TD class=\"FORMFIELD\" colspan=\"3\">Erstzugriff mit Sprachauswahl<BR><HR></TD></TR>");
+document.write("<TR><TD>&nbsp;</TD><TD colspan=\"3\">Bitte wählen Sie die Sprache aus, mit der das Gerät<BR>bedient werden soll.<BR>");
+document.writeln("Diese Auswahlbox erscheint nur beim ersten Zugriff<BR>auf das Gerät, die Sprache der Bedienoberfläche ist<BR>jedoch auch später noch jederzeit in den<BR>Grundeinstellungen änderbar!</TD></TR>");
+document.write("<TR><TD colspan=\"4\">&nbsp;</TD></TR>");
+document.writeln("<TR><TD>&nbsp;</TD><TD colspan=\"3\"><SELECT name=\"ACTIVELANG\">");
+for (var i = 0; i < arrLangs.length; i++) {
+if (arrLangs[i].length == 2) {
+strSel = (arrLangs[i] == "en") ? " selected" : "";
+document.writeln("<OPTION value=\"" + arrLangs[i] + "\"" + strSel + ">" + arrLanguages[arrLangs[i]]);
+}}
+document.writeln("</SELECT></TD></TR>");
+document.writeln("<TR><TD colspan=\"4\"><IMG src=\"images/pix.gif?contentID=ic1\" width=\"1\" height=\"20\" border=\"0\"></TD></TR>");}
+</SCRIPT>
+<TR><TD><IMG src="images/pix.gif?contentID=ic1" width="1" height="10" border="0"></TD>
+<TD class="FORMFIELD" colspan="3">Benutzerdaten angeben<HR></TD></TR>
+<TR><TD><IMG src="images/pix.gif?contentID=ic1" width="1" height="1" border="0"></TD>
+<TD colspan="3">Name<BR>
+<INPUT type="Text" name="User"></TD></TR>
+<TR><TD><IMG src="images/pix.gif?contentID=ic1" width="1" height="1" border="0"></TD>
+<TD colspan="3">Passwort<BR>
+<INPUT type="Password" name="ipw"></TD></TR>
+<TR><TD colspan="4"><IMG src="images/pix.gif?contentID=ic1" width="1" height="5" border="0"></TD></TR>
+<TR><TD><IMG src="images/pix.gif?contentID=ic1" width="1" height="1" border="0"></TD>
+<TD colspan="3">
+<SCRIPT language="JavaScript1.2">
+document.write(kdDynaButton("Login", "doLogin();", "#SAVE#", 120, 26, "Login", ""));
+</SCRIPT></TD></TR>
+
+</FORM>
+<FORM name="frmLogin" action="home?contentID=ic1" method="post">
+<INPUT type="Hidden" name="RSAData" value="64050197|65713793|851439966009|0|">
+<INPUT type="Hidden" name="LoginData" value="">
+<INPUT type="Hidden" name="ACTIVELANG" value="">
+</FORM>
+</TABLE>
+</BODY>
+</HTML>
+

@@ -1,0 +1,45 @@
+HTTP/1.0 200 OK
+Cache-Control: no-cache,no-store
+Server: thttpd/2.25b 29dec2003
+Content-Type: text/html; charset=iso-8859-1
+Date: Sat, 11 Sep 2010 20:55:13 GMT
+Last-Modified: Wed, 04 Jun 2008 04:13:56 GMT
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1150
+
+<html>
+<head>
+<script language="javascript">
+if(top != self) {
+  top.location.href = "/L3gpp.htm";
+}
+
+function OnbeforeSubmit(f)
+{
+  var u,p;
+    if((f.username.value == "") || (f.password.value == "")) {
+        alert("Please Login.");
+        return false;
+    }
+  u=f.username.value;
+  f.username.value=u.toLowerCase();
+  p=f.password.value;
+  f.password.value=p.toLowerCase();
+    return true;
+}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">  
+      <form method="post" action="Login.cgi">          
+          <table border="0" cellspacing="1" cellpadding="1" bgcolor="#336699">
+                <tr><td align=center bgcolor="#7bb2e7"><b>Account</b></td></tr>
+                <tr><td align=center bgcolor="#ffffff"><INPUT name=username type=text value=""></td></tr>
+                <tr><td align=center bgcolor="#7bb2e7"><b>Password</b></td></tr>
+                <tr><td align=center bgcolor="#ffffff"><INPUT name=password type=password value=""></td></tr>
+          </table>
+          <input type="submit" value="Apply" onclick="return OnbeforeSubmit(this.form)">      
+      </form>
+</body>
+</html>

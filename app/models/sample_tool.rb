@@ -30,8 +30,11 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   def db
     return SampleTool.db
   end
-  def self.r_first
+  def self.r_special_first
     self.db.view(SampleTool.all).first
+  end
+  def self.r_find(c)
+    db.view(self.all(:key=>c.to_s)).first
   end
   def produce_start_end_count_to_d
     s=b['countryip']['start_long']
