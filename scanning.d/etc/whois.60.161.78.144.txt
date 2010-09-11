@@ -1,0 +1,49 @@
+% [whois.apnic.net node-1]
+% Whois data copyright terms    http://www.apnic.net/db/dbcopyright.html
+
+inetnum:      60.160.0.0 - 60.161.255.255
+netname:      CHINANET-YN
+descr:        CHINANET yunnan province network
+descr:        China Telecom
+descr:        A12,Xin-Jie-Kou-Wai Street
+descr:        Beijing 100088
+country:      CN
+admin-c:      CH93-AP
+tech-c:       ZL48-AP
+mnt-by:       APNIC-HM
+mnt-lower:    MAINT-CHINANET-YN
+mnt-routes:   MAINT-CHINANET-YN
+status:       ALLOCATED PORTABLE
+remarks:      -+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+remarks:      This object can only be updated by APNIC hostmasters.
+remarks:      To update this object, please contact APNIC
+remarks:      hostmasters and include your organisation's account
+remarks:      name in the subject line.
+remarks:      -+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+changed:      hm-changed@apnic.net 20040621
+source:       APNIC
+
+person:       Chinanet Hostmaster
+nic-hdl:      CH93-AP
+e-mail:       anti-spam@ns.chinanet.cn.net
+address:      No.31 ,jingrong street,beijing
+address:      100032
+phone:        +86-10-58501724
+fax-no:       +86-10-58501724
+country:      CN
+changed:      dingsy@cndata.com 20070416
+mnt-by:       MAINT-CHINANET
+source:       APNIC
+
+person:       zhiyong liu
+nic-hdl:      ZL48-AP
+e-mail:       ynipm@126.com
+address:      136 beijin roadkunmingchina
+phone:        +86-871-8223073
+fax-no:       +86-871-8221536
+country:      CN
+changed:      ynipm@126.com 20070813
+mnt-by:       MAINT-CHINANET-YN
+source:       APNIC
+
+

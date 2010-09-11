@@ -1,0 +1,356 @@
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: text/html
+Content-Length: 11778
+Cache-control: no-store
+Server: myDatanet http server (c) www.microtronics.at
+
+<!-- begin of page - special version for all pages available without login - no access to any db-data is possible!!! -->
+
+<html>
+
+<head>
+  <title>myDatanet</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script language="JavaScript">document.write('<link rel="shortcut icon" href="http://'+document.location.host+'/favicon.ico">'); </script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/styles_master.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  
+  <!--[if IE]>
+	  <link rel="stylesheet" type="text/css" href="/css/styles_masterIE.css">
+	  <link rel="stylesheet" type="text/css" href="/css/stylesIE.css">
+  <![endif]-->
+  <!--[if IE 6]>
+	  <link rel="stylesheet" type="text/css" href="/css/styles_masterIE6.css">
+	  <link rel="stylesheet" type="text/css" href="/css/stylesIE6.css">
+  <![endif]-->
+  <!--[if IE 7]>
+	  <link rel="stylesheet" type="text/css" href="/css/styles_masterIE7.css">
+	  <link rel="stylesheet" type="text/css" href="/css/stylesIE7.css">
+  <![endif]-->
+</head>
+
+
+<body class=body onLoad="if (document.forms[0]) if (document.forms[0].elements[0]) document.forms[0].elements[0].focus();">
+
+<SCRIPT LANGUAGE="JavaScript"> <!--
+
+  var menu_used = 0;
+  var sTableTitle = "";
+  var ll=1;
+
+  function PopupHelp(url)
+  {
+    fenster=window.open(url, "Popupfenster", "width=400,height=300,resizable=yes,scrollbars=yes");
+    fenster.focus();
+    return false;
+  }
+
+  function WriteMenuBegin()
+  {
+    menu_used = 1;
+    document.write('<table bgcolor="#fefefe" border="0" cellpadding="1" cellspacing="0" width="100%" bordercolor="#fefefe">');
+    document.write('  <tr align="center">');
+  }
+
+  function WriteMenuSpacer()
+  {
+    document.write('<td width=90%>&nbsp;</TD>');
+  }
+
+  function WriteMenuEnd()
+  {
+    if (menu_used != 0)
+    {
+      document.write('</tr><tr><td colspan="20" class=lines height="0"><img border="0" src="leer.gif" width="1" height="1"></td></tr>');
+      document.write('</table>');
+    }
+  }
+
+  function WriteMenuEnd2()
+  {
+    if (menu_used != 0) document.write('</td></tr></TABLE>');
+  }
+
+  function WriteTab( sDocName, sTitle, sLink)
+  {
+    if ((sDocName != "") && (location.pathname != sDocName))
+    {
+      document.write('<td bordercolor="#306091" width="5%"><font face="Verdana,Arial" size="2">');
+      if(ll!=1) document.write('<b><font color="#306091">|</font></b>'); ll=0;
+      document.write('&nbsp;<a href="' + sLink + '"><b>' + sTitle + '</b></a>&nbsp;</font></td>');
+    }
+    else
+    {
+      document.write('<td bgcolor="#FFFFFF" width="5%" bordercolor="#306091"><font face="Verdana,Arial" size="2" color="#615d5c">');
+      if(ll!=1) document.write('<b><font color="#306091">|</font></b>'); ll=0;
+      document.write('&nbsp;<b>' + sTitle + '</b>&nbsp;</font></td>');
+    }
+  }
+
+  function WriteNonTab( sTitle, sLink)
+  {
+    document.write('<td align="right"><font face="Arial" size="2">');
+    document.write('&nbsp;<a href="' + sLink + '">' + sTitle + '</a>&nbsp;');
+    document.write('</font></td>');
+  }
+
+  function WriteNonTabHelp( sDocName, sTitle, sLink)
+  {
+
+    if ((sDocName != "") && (location.pathname != sDocName)){}
+    else
+  {
+    document.write('<td align="right"><font face="Arial" size="2">');
+      document.write('  &nbsp;<a href="' + sLink + '" onclick="return PopupHelp(this.href);">' + sTitle + '</a>&nbsp;');
+    document.write('</font></td>');
+  }
+  }
+
+  function WriteTableHeader( sTitle, sAddLink)
+  {
+    document.write('<tr bgcolor="#e0e0e0">');
+    document.write('  <td align="center" valign="middle" width="1%">');
+    document.write('    <IMG border="0" src="leer.gif" height=0 width=50><br>');
+    if ((sAddLink != "") && ("" == "yes"))
+      document.write('<a href="'+sAddLink+'"><IMG border="0" src="plus.gif" title="add"></a>');
+    else
+      document.write('&nbsp;');
+
+    document.write('  </td>');
+    document.write('  <td colspan=20 align="left">');
+    document.write('    <font face="Verdana, Arial" color="#306091" size="4"><b>' + sTitle + '</b></font>');
+    document.write('  </td>');
+    document.write('</tr>');
+  }
+
+String.prototype.trim = function() 
+	{
+	return this.replace(/^\s+|\s+$/g,"");
+	}
+	
+String.prototype.ltrim = function() 
+	{
+	return this.replace(/^\s+/,"");
+	}
+	
+String.prototype.rtrim = function() 
+	{
+	return this.replace(/\s+$/,"");
+	}
+
+
+//--> </SCRIPT>
+
+<font face="Arial" size="2">
+<table cellspacing=0 cellpadding=0 width=100%><tr>
+	<td class="banner_left" valign=top align=right>
+	<a href="http://www.mydatanet.at/de/produkte/index.html" target="_blank">
+		<img src="banner_left.gif" border=0>
+	</a>
+</td>
+	<td>
+		<center>
+		  <table width=750 cellspacing=0 cellpadding=0 class=outer_frame>
+		    <tr><td>
+
+<!-- END begin of page - special version for all pages available without login - no access to any db-data is possible!!! -->
+<!--
+  fefefe default background color for total document
+  101010 default text color
+  4986C2 default link color 73,134,194
+
+  414141 page title, text color
+  424242 page title, frame color
+  434343 page title, background color for logoff/close buttons in deactivated state
+
+  494949 erlätuerungstext, erklärungen zum system, hilfe
+
+  404040 register tab currently selected, background color
+  e8e8e8 register tab currently selected, text color
+  e0e0e0 register sheet with current content, background color
+-->
+ 
+<!-- gibt infos zum dereit eingeloggten user + betreibe + kunde aus -->
+<div style="position:relative;">
+	<table border="0" width="100%" cellspacing="0" cellpadding=0>
+		<tr><td><img src="GPRSdatanet.gif"></td></tr>
+	</table>
+
+	<div style="position:relative;">
+		<div style="position:absolute; top:-32;">
+			<table border="0" cellpadding="3" width="100%" cellspacing="0" bordercolor="#424242">
+				<tr>
+					<td align="right" valign="bottom" width="12%"></td>
+					<td valign="bottom" width="78%" nowrap>
+						<font class=logininfo>84.113.229.194 | not&nbsp;logged&nbsp;in</font>
+					</td>
+					<td align="right" valign="bottom" width="10%"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- dummy table um die Breite zu messen, falls mit style sheets ein rahmen definiert wurde -->
+<table cellspacing=0 cellpadding=0 class="mainframe" width=759>
+	<tr><td width=100% id=td_mainframe></td></tr>
+</table>
+
+<table cellspacing=0 cellpadding=0 class="mainframe">
+	<tr><td valign=top><div id=div_mainframe style="width:755; overflow:hidden; position:relative;">
+
+<SCRIPT LANGUAGE="JavaScript"> <!--
+	var sLanguages='de,en';
+	var sLanguage='en';
+	var tLanguages=sLanguages.split(',');
+	
+	WriteMenuBegin();
+	
+	for(var i=0; i<tLanguages.length; i++)
+		{
+		if(tLanguages[i]==sLanguage)
+			WriteTab( "/index.htm", tLanguages[i], "index.htm?language="+tLanguages[i]);
+		else
+			WriteTab( "/activated", tLanguages[i], "index.htm?language="+tLanguages[i]);
+		}
+			
+    WriteMenuSpacer();
+  WriteMenuEnd();
+//--> </SCRIPT>
+
+<form method="post" name="myform" action="login.htm?language=en">
+  <table cellspacing=0 cellpadding=0 width=100% class="lists" id="js_disabled1" style="display:none;">
+  	 <tr height=20><td colspan=2></td></tr>
+    <tr><td valign=top>
+    	<table cellspacing=0 cellpadding=0 width=350>
+    		<tr valign="top">
+      		<td width=20>&nbsp;</td>
+      		<td>&nbsp;</td>
+      		<td width=240><font size=2><B>Log in with your user name and password:</B></font></td>
+    		</tr>
+    		<tr><td height=20> </td></tr>
+    		<tr>
+      		<td>&nbsp;</td>
+      		<td align="right"><font size=2>user&nbsp;name</font></td>
+      		<td><font size=2>&nbsp;<input name="username" type="text" size="20" class="login_name"></font></td>
+    		</tr>
+    		<tr><td height=5> </td></tr>
+    		<tr>
+      		<td>&nbsp;</td>
+      		<td align="right"><font size=2>password</font></td>
+      		<td><font size=2>&nbsp;<input name="password" type="password" size="20" class="login_password"></font></td>
+			</tr>
+    		<tr><td height=10> </td></tr>
+    		<tr>
+      		<td>&nbsp;</td>
+      		<td>&nbsp;</td>
+      		<td><font size=2><input name="submit" type="submit" value="Log&nbsp;in"></font></td>
+    		</tr>
+    	</table>
+    </td>
+    <td valign=top>
+    	<table cellspacing=0 cellpassing=0>
+    		<tr>	
+    			<td width=20></td>
+    			<td valign=top><font class=small><b>my<i>Datanet</i></B> is a wireless data collection system using the internet. The data collection is fully automatic, all data (graphics or excel compatible data files) are available via any PC connected to the internet without the need of special software. <BR><br><a href="mailto:office@mydatanet.at?subject=mydatanet">Ask for your momentary user name and password</a> in order to test this unique new data acquisition system.</font></td>
+    			<td width=20></td>
+    			<td><img src=background-index.gif></td>
+    			<td width=5></td>
+    		</tr>
+    	</table>
+    </td>
+   
+    </tr>
+
+	<tr><td colspan=2></td></tr>
+
+	<SCRIPT LANGUAGE="JavaScript"> <!--
+	var bBrowserSupported=false;
+
+//	document.write(navigator.appName+" "+navigator.appVersion);
+			
+	if(navigator.appName=="Microsoft Internet Explorer")
+		{
+		if(parseInt(navigator.appVersion)>=4)
+			{
+			var asParam=navigator.appVersion.split('(');
+			
+			if(asParam.length>1)
+				{
+				asParam=asParam[1].split(')');
+				var asList=asParam[0].split(';');
+				
+				for(var i=0; i<asList.length; i++)
+					{
+					var asElement=asList[i].trim();
+					
+					if(asElement.substr(0, 4)=="MSIE" && asElement.substr(5, 3)>="5.5")
+						bBrowserSupported=true;
+					}
+				}
+			}
+		}
+						
+	if(navigator.appName=="Netscape")
+		{
+		if(parseInt(navigator.appVersion)>=5)
+			bBrowserSupported=true;
+		}
+
+	if(!bBrowserSupported)
+		{
+		document.write('<tr><td><br><br></td></tr>');
+		document.write('<tr><td colspan=2 bgcolor=#FFC0C0><center><font size=3 color=#FF2020><b>You are using an internet explorer which is not fully supported by this server! Please use Microsoft Internet Explorer version 5.5 or Netscape version 7 to view these pages without problems!</b></font></center></td></tr>');
+		}
+		
+	//--> </SCRIPT>
+	</table>
+	
+	<table cellspacing=0 cellpadding=10 width=100% class="lists" id="js_disabled2">
+		<tr><td colspan=2 bgcolor=#FFC0C0><center><font size=3 color=#FF2020><b><br>Your browser`s JavaScript is not enabled, please enable JavaScript to view this page correctly!<br><br></b></font></center></td></tr>
+	</table>
+	
+	<script language="JavaScript">
+		document.getElementById("js_disabled1").style.display='';
+		document.getElementById("js_disabled2").style.display='none';
+	</script>
+</form>
+</table>
+<!-- end of page - special version for all pages available without login - no access to any db-data is possible!!! -->
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr><td colspan="20" class=lines><img border="0" src="footer.gif" ></td></tr>
+  <tr>
+    <td>
+      <font size=1>
+        <!-- show clients IP --->
+        you are connected from 84.113.229.194
+       <font size=1 color="#A0A0A0"> | powered by <a href="http://www.mydatanet.at" target="_top"><font size=1 color="#808080">myDatanet</font></a></font>
+       </font>
+     </font>
+    </td>
+  </tr>
+</table>
+
+    </td>
+    <td width="45%" align="center" valign="middle">
+    </td>
+  </tr>
+</table>
+</center>
+</td>
+<td class="banner_right" valign=top>
+	<a href="http://www.mydatanet.at/de/produkte/index.html" target="_blank">
+		<img src="banner_right.gif" border=0>
+	</a>
+</td>
+</tr></table>
+
+</font>
+
+<!-- space for counter scripts -->
+</body>
+</html>

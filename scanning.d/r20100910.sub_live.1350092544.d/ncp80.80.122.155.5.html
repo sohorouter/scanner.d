@@ -1,0 +1,30 @@
+HTTP/1.1 403 Forbidden
+Content-Length: 336
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: Vossen Network Operations Center
+X-Powered-By: ASP.NET
+Date: Fri, 10 Sep 2010 15:00:43 GMT
+Connection: close
+
+<!-- beginning of HttpRedirect.htm file -->
+
+<script type="text/javascript">
+
+function redirectToHttps()
+
+{
+
+var httpURL = window.location.hostname+window.location.pathname;
+
+var httpsURL = "https://" + httpURL ;
+
+window.location = httpsURL ;
+
+}
+
+redirectToHttps();
+
+</script>
+
+<!-- end of HttpRedirect.htm file --> 

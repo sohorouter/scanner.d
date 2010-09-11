@@ -1,0 +1,16 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:23 CEST
+Interesting ports on 83-64-251-59.sh-wien.inode.at (83.64.251.59):
+PORT     STATE    SERVICE
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+80/tcp   open     http
+443/tcp  open     https
+3389/tcp filtered ms-term-serv
+8080/tcp filtered http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 2.6.24 (95%), Linux 2.6.9 - 2.6.26 (95%), Linux 2.6.22 - 2.6.23 (93%), Linksys WRV54G wireless broadband router (91%), Linux 2.6.13 - 2.6.24 (89%), Linux 2.6.17 - 2.6.22 (89%), Linux 2.6.17 - 2.6.25 (89%), Linux 2.6.23 (89%), Linux 2.6.9 - 2.6.20 (89%), MicroTik RouterOS 2.9.46 (88%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 5.44 seconds

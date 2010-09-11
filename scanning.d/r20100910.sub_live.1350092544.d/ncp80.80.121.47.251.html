@@ -1,0 +1,120 @@
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.1
+Date: Fri, 10 Sep 2010 15:41:40 GMT
+Pragma: no-cache
+Connection: Keep-Alive
+Content-Length: 3366
+Content-Type: text/html
+Expires: Fri, 10 Sep 2010 15:40:40 GMT
+Set-Cookie: ASPSESSIONIDQGGQGNCY=BBDHPJJBFLCGOIFPLLEIAPEO; path=/
+Cache-control: no-cache
+
+
+
+<!-- Funktionsbibliothek includieren -->
+
+
+
+<!-- Stringdefinitonen includieren -->
+
+
+<SCRIPT LANGUAGE="Javascript">
+<!-- Beginning of JavaScript -
+
+///////////////////////////////////////////////////////////////////////////////
+// OpenWin
+//
+// Öffnet url im aktuellen Browser Fenster.
+//
+function OpenWin(url) {
+	window.open(url, target="_self");
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// GotoAnmeldung
+//
+// Öffnet url in einem neuen Browser Fenster.
+//
+function OpenNewWin(url) {
+	window.open(url, target="_blank", "height=700,width=800,top=5,left=200,status=no,toolbar=no,menubar=no,location=no,resizable=yes,scrollbars=yes");
+}
+
+// - End of JavaScript - -->
+</SCRIPT>
+
+
+
+<html>
+
+<SCRIPT LANGUAGE="Javascript">
+<!-- Beginning of JavaScript -
+///////////////////////////////////////////////////////////////////////////////
+// Load
+//
+// Eventhandler for onload
+// Sets the input focus for the username input field
+//
+function Load() {
+	document.getElementById("benutzer").focus();
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Validate
+//
+// Eventhandler for onsubmit
+// Performs client side validation of user input
+//
+// Returns:	false if validation failes
+//			true otherwise
+//
+function Validate() {
+	var value;
+
+	// Feld Benutzername darf nicht leer sein
+	value = document.getElementById("benutzer").value;
+	if (value.length == 0) {
+		alert("Das Feld Benutzername darf nicht leer sein!\nBitte geben Sie einen gültigen Benutzernamen ein.");
+		return false;
+	}
+
+	return true;
+}
+
+// - End of JavaScript - -->
+</SCRIPT>
+
+<HEAD>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<title>DiBos - Anmeldung</title>
+
+<link rel="STYLESHEET" type="text/css" href="style/bovisnt.css"></link>
+
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="Load()">
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td valign=top><img src=images/logo.gif border=0>&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign=top nowrap><h2>DiBos - Anmeldung - <font color=blue>10.0.0.1</font></h2></td></tr></table><table width=100% border=0 cellpadding=0 cellspacing=0><tr bgcolor=silver><td><img width=1 height=3 src=images/space.gif></td></tr><tr><td>&nbsp;</td></tr></table>
+<!-- Page start -->
+<table border="0">
+
+	<tr><td>
+		<form action="welcome.asp" method="POST" onSubmit="return(Validate())">
+			<p class="defStyle">Benutzername:<br>
+			<input type="text" size="20" id="benutzer" name="benutzer"
+			
+			class="ControlEl"></p>
+			<p class="defStyle">Passwort:<br>
+			<input type="password" size="20" id="passwort" name="passwort" class="ControlEl"></p>
+			<p><input type="submit" name="Connect" value="Verbinden" class="defStyle"></p>
+		</form>
+	</td></tr>
+	<tr><td>&nbsp;</td></tr>
+</table>
+
+<!-- Footer -->
+<table width=100% border=0 cellpadding=0 cellspacing=0><tr bgcolor=silver><td colspan=2><img width=1 height=3 src=images/space.gif></td></tr><tr><td nowrap><span class=defStyle>&#169; BOSCH Sicherheitssysteme GmbH&nbsp;</span></td><td align=right><span class='HyperLook' onClick="javascript:OpenNewWin('AnmeldungHilfe.html')" onMouseOver=this.className='HyperOver'  onMouseOut=this.className='HyperLook' >Hilfe</span></td></table>
+</body>
+</html>

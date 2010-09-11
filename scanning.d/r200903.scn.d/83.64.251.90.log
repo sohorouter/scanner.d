@@ -1,0 +1,16 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:23 CEST
+Interesting ports on ns1.partnerhost.com (83.64.251.90):
+PORT     STATE  SERVICE
+22/tcp   closed ssh
+23/tcp   closed telnet
+80/tcp   closed http
+443/tcp  closed https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Intel Express 510T switch (98%), Thomson TCW710 wireless cable modem (98%), Airaya AI108-4958-O-300 wireless Ethernet bridge (98%), Apple AirPort Express WAP v6.3 (98%), Check Point VPN-1 running IPSO 4.1 (98%), EtherWerX PT-1000 PPPoE terminator (98%), FreeBSD 5.4-RELEASE (98%), HP Color LaserJet 3600 (J7973E) (98%), HP LaserJet 4250 printer (98%), HP Photosmart 8400 printer (98%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.60 seconds

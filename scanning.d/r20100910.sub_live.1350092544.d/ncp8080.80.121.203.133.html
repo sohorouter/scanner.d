@@ -1,0 +1,244 @@
+HTTP/1.0 200 OK
+Server: 
+Content-Type: text/html; charset=iso-8859-1
+Date: Sat, 21 Sep 2002 17:53:17 GMT
+Last-Modified: Tue, 04 Jul 2006 04:10:50 GMT
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 14498
+Cache-Control: no-cache
+
+
+<html>
+<head>
+<title>Log In Page</title>
+<META http-equiv=expires content=0>
+<META http-equiv=cache-control content=no-cache>
+<META http-equiv=pragma content=no-cache>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<LINK href="../html/defs/style5/cybertan.css" type=text/css rel=stylesheet>
+<STYLE fprolloverstyle>
+A:hover{
+	COLOR: #00ffff
+}
+.small A:hover{
+	COLOR: #00ffff
+}
+</STYLE>
+<script language="JavaScript">
+function uiDoOnLoad(){
+
+  	document.getElementById("uiViewUserName").value=document.getElementById("uiPostUserName").value;
+  	document.getElementById("uiViewUserName").focus()
+  	if(document.getElementById("uiPostErrorState").value=="1")
+   	document.getElementById("uiViewErrorMessage").style.color="#CC3366";
+}
+function uiDoSave(){
+
+	if(document.getElementById("uiViewUserName").value == ""){
+		alert("You must input a username before login.");
+		return;
+	}
+  	document.getElementById("uiPostUserName").value=document.getElementById("uiViewUserName").value;
+  	document.getElementById("uiPostPassword").value=document.getElementById("uiViewPassword").value;
+	if(("<? echo $var:requestfrom ?>".search(/echo/i)) == -1)
+		document.getElementById("uiPostReqFrom").value="<? echo $var:requestfrom ?>";
+  	document.getElementById("uiPostForm").submit();
+}
+</script>
+</head>
+<body onload="uiDoOnLoad()" bgcolor="#FFFFFF" >
+<form method="POST" action="../cgi-bin/webcm" id="uiPostForm" >
+<input type="hidden" name="security:command/logout" value="" id="uiPostLogout">
+<input type="hidden" name="getpage"   value="/usr/www_safe/html/home.html" id="uiPostGetPage">
+<input type="hidden" name="errorpage" value="/usr/www_safe/index.html" id="uiPostErrPage">
+<input type="hidden" name="var:pagename" value="home" id="uiPostPageName">
+<input type="hidden" name="" value="<? error found ?>" id="uiPostErrorState" disabled>
+<input type="hidden" name="login:command/username_ja" value="" id="uiPostUserName"> 
+<input type="hidden" name="login:command/password_ja" value="" id="uiPostPassword">
+<input type="hidden" name="var:requestfrom" value="" id="uiPostReqFrom">
+</form>
+<DIV align=center>
+<TABLE cellSpacing=0 cellPadding=0 width=809 border=0>
+  <TBODY>
+  <TR>
+	<TD width=95><IMG height=57 src="../html/defs/style5/images/UI_Linksys.gif" width=165 border=0></TD>
+<!-- Firmware Version -->
+    	<TD vAlign=bottom align=right width=714 bgColor=#6666cc><FONT style="FONT-SIZE: 7pt" color=#ffffff><FONT face=Arial>
+    	Firmware Version:&nbsp;3.1.17&nbsp;&nbsp;&nbsp;</FONT></FONT></TD></TR>
+  <TR>
+    	<TD width=808 bgColor=#6666cc colSpan=2><IMG height=11 src="../html/defs/style5/images/UI_10.gif" width=809 border=0></TD></TR></TBODY></TABLE>
+<TABLE height=69 cellSpacing=0 cellPadding=0 width=809 bgColor=black border=0>
+  <TBODY>
+  <TR>
+    	<TD style="FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal" 
+    	borderColor=#000000 align=middle width=163 height=69>
+      	<H3 style="MARGIN-TOP: 1px; MARGIN-BOTTOM: 1px"><FONT 
+      	style="FONT-SIZE: 15pt" face=Arial color=#ffffff>Login</FONT></H3></TD>
+    	<TD 
+    	style="FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal" 
+    	vAlign=center borderColor=#000000 width=646 bgColor=#000000 height=69>
+      	<TABLE style="FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-COLLAPSE: collapse; FONT-VARIANT: normal" 
+             height=33 cellSpacing=0 cellPadding=0 bgColor=#6666cc border=0>
+        <TBODY>
+          <TR>
+<!-- Router Description -->
+            <TD style="FONT-WEIGHT: bolder; FONT-SIZE: 10pt" align=right bgColor=#6666cc height=33><FONT color=#ffffff><FONT color=#ffffff><!--Broadband Router with 2 Phone Ports-->Broadband Router with 2 Phone Ports&nbsp;&nbsp;</FONT></TD>
+            <TD borderColor=#000000 borderColorLight=#000000 align=middle width=109 bgColor=#000000 borderColorDark=#000000 height=12 rowSpan=2><FONT color=#ffffff><SPAN style="FONT-SIZE: 8pt">
+<!-- Model Name -->
+            <B><FONT color=#ffffff>	RTP300<!--RTP300--></FONT></B></SPAN></FONT></TD></TR>
+          <TR>
+            <TD style="FONT-WEIGHT: normal; FONT-SIZE: 1pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal" width=537 bgColor=#000000 height=1></TD></TR>
+          <TR>
+            <TD width=646 bgColor=#000000 colSpan=2 height=32>
+              <TABLE id=AutoNumber1 style="FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-COLLAPSE: collapse; FONT-VARIANT: normal" 
+                     height=6 cellSpacing=0 cellPadding=0 width=646 border=0>
+                <TBODY>
+                  <TR style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-WEIGHT: normal; FONT-SIZE: 1pt; BORDER-LEFT: medium none; COLOR: black; BORDER-BOTTOM: medium none; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal" 
+                      align=middle bgColor=#6666cc>
+                    <TD width=70  height=1><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=70 border=0></TD>
+                    <TD width=70  height=1><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=70 border=0></TD>
+                    <TD width=70  height=1><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=70 border=0></TD>
+                    <TD width=96  height=1><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=96 border=0></TD>
+                    <TD width=93  height=1><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=93 border=0></TD>
+                    <TD width=107 height=1><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=107 border=0></TD>
+                    <TD height=1 colspan="2"><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=70 border=0><IMG height=10 src="../html/defs/style5/images/UI_06.gif" width=70 border=0></TD>
+                  <TR>
+                    <TD align="center" bgColor=#000000 height=20 width=70>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 height=20 width=70>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 height=20 width=70>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 height=20 width=96>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 height=20 width=93>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 height=20 width=107>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 width=70>&nbsp;</TD>
+                    <TD align="center" bgColor=#000000 width=70>&nbsp;</TD>
+                  </TR>
+                </TBODY>
+		      </TABLE>
+			</TD>
+	      </TR>
+		</TBODY>
+      	</TABLE>
+	</TD></TR>
+  </TBODY></TABLE>
+<TABLE height=5 cellSpacing=0 cellPadding=0 width=806 bgColor=black border=0>
+<form onsubmit="return false;">
+  <TBODY>
+  <TR bgColor=black>
+    <TD style="FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal" 
+    	borderColor=#e7e7e7 width=163 bgColor=#e7e7e7 height=1><IMG height=15 src="../html/defs/style5/images/UI_03.gif" width=164 border=0></TD>
+    <TD style="FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal" 
+    	width=646 bgColor=#ffffff height=1><IMG height=15 src="../html/defs/style5/images/UI_02.gif" width=645 border=0></TD></TR></TBODY></TABLE>
+<TABLE id=AutoNumber9 style="BORDER-COLLAPSE: collapse" borderColor=#111111 height=23 cellSpacing=0 cellPadding=0 width=809 border=0>
+  <TBODY>
+  <TR>
+    <TD width=633>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+         <TR>
+          <TD bgColor=#000000 colSpan=3 height=25>
+            <P align=right><font color="#FFFFFF">
+		<span style="font-size: 9pt; font-weight: 700">Username&Password</span></font></P></TD>
+          <TD width=8 bgColor=#000000 height=25>&nbsp;</TD>
+          <TD width=14 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=17 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=13 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD height=25 colspan="2" align="right"></TD>
+          <TD width=241 height=25>
+		</TD>
+          <TD width=13 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=15 bgColor=#ffffff height=25>
+            <IMG height=25 src="../html/defs/style5/images/UI_05.gif" width=15 border=0></TD></TR>
+      <TR>
+          <TD bgColor=#e7e7e7 colSpan=3 height=25>&nbsp;</TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif >&nbsp;</TD>
+          <TD colSpan=3 height=25>&nbsp;</TD>
+          <TD height=25 colspan="2">&nbsp;</TD>
+          <TD width=241 height=25>&nbsp;</TD>
+          <TD width=13 height=25>&nbsp;</TD>
+          <TD width=15 background=../html/defs/style5/images/UI_05.gif >&nbsp;</TD></TR>
+		<TR>
+          <TD bgColor=#e7e7e7 colSpan=3 height=25>&nbsp;</TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif >&nbsp;</TD>
+          <TD colSpan=3 height=25>&nbsp;</TD>
+          <TD width=82 align="right" height=25></TD>
+          <TD width=74 align="left"><b>Username:&nbsp;</b></TD>
+          <TD width=241 height=25><input type="text" name="uiViewUserName" id="uiViewUserName" size="16" maxlength="64" value="">
+		</TD>
+          <TD width=13 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=15 bgColor=#ffffff height=25>
+            <IMG height=25 src="../html/defs/style5/images/UI_05.gif" width=15 border=0></TD></TR>
+		<TR>
+          <TD bgColor=#e7e7e7 colSpan=3 height=25>&nbsp;</TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif >&nbsp;</TD>
+          <TD colSpan=3 height=25>&nbsp;</TD>
+          <TD width=82 height=25 align="right">&nbsp;</TD>
+          <TD width=74 height=25 align="left"><b>Password:&nbsp;</b></TD>
+          <TD width=241 height=25><input type="password" name="uiViewPassword" id="uiViewPassword" size="16" maxlength="64" value="">&nbsp;</TD>
+          <TD width=13 height=25>&nbsp;</TD>
+          <TD width=15 background=../html/defs/style5/images/UI_05.gif >&nbsp;</TD></TR>
+		 <TR>
+          <TD bgColor=#e7e7e7 colSpan=3 height=25>&nbsp;</TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif >&nbsp;</TD>
+          <TD colSpan=3 height=25>&nbsp;</TD>
+          <TD height=25 colspan="2">&nbsp;</TD>
+          <TD width=241 height=25>&nbsp;</TD>
+          <TD width=13 height=25>&nbsp;</TD>
+          <TD width=15 background=../html/defs/style5/images/UI_05.gif >&nbsp;</TD></TR>
+        <TR>
+          <TD bgColor=#e7e7e7 colSpan=3 height=25>&nbsp;</TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif >&nbsp;</TD>
+          <TD colSpan=3 height=25>&nbsp;</TD>
+          <TD height=25 colspan="2">&nbsp;</TD>
+          <TD width=241 height=25>&nbsp;</TD>
+          <TD width=13 height=25>&nbsp;</TD>
+          <TD width=15 background=../html/defs/style5/images/UI_05.gif >&nbsp;</TD></TR>
+        <TR>
+          <TD width=44 bgColor=#e7e7e7 height=25></TD>
+          <TD width=65 bgColor=#e7e7e7 height=25></TD>
+          <TD width=47 bgColor=#e7e7e7 height=25></TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif></TD>
+          <TD width=14 bgColor=#ffffff height=25></TD>
+          <TD width=17 bgColor=#ffffff height=25></TD>
+          <TD width=13 bgColor=#ffffff height=25></TD>
+          <TD colSpan=3 bgColor=#ffffff height=25 id="uiViewErrorMessage" style="color:#ffffff;"><b>Error:&nbsp;<? error message ?>&nbsp;</b></TD>
+          <TD width=13 bgColor=#ffffff height=25></TD>
+          <TD width=15 bgColor=#ffffff height=25><IMG height=25 src="../html/defs/style5/images/UI_05.gif" width=15 border=0></TD></TR>
+          </TBODY></TABLE></TD>
+    <TD vAlign=top width=176 bgColor=#6666cc>
+      <TABLE cellSpacing=0 cellPadding=0 width=176 border=0>
+        <TBODY>
+        <TR>
+          <TD width=11 bgColor=#6666cc height=25>&nbsp;</TD>
+          <TD width=9 bgColor=#6666cc height=25>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+  
+  <TR>
+    <TD width=809 colSpan=2>    
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD width=156 bgColor=#e7e7e7 height=25>&nbsp;</TD>
+          <TD width=8 background=../html/defs/style5/images/UI_04.gif></TD>
+          <TD width=16 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=12 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=411 bgColor=#ffffff height=25>&nbsp;</TD>
+          <TD width=15 bgColor=#ffffff height=25>
+          <TD width=15 bgColor=#ffffff height=25><FONT face=Arial><IMG height=30 src="../html/defs/style5/images/UI_05.gif" width=15 border=0></FONT></TD>
+          <TD width=176 bgColor=#6666cc height=58 rowSpan=2><IMG height=64 src="../html/defs/style5/images/UI_Cisco.gif" width=176 border=0></TD></TR>
+        <TR>
+          <TD width=156 bgColor=#000000 height=33>&nbsp;</TD>
+          <TD width=8 bgColor=#000000 height=33>&nbsp;</TD>
+          <TD width=16 bgColor=#6666cc height=33>&nbsp;</TD>
+          <TD width=12 bgColor=#6666cc height=33>&nbsp;</TD>
+          <TD width=411 bgColor=#6666cc height=33>
+          <TABLE height=19 cellSpacing=0 cellPadding=0 align=right border=0 width=220>
+            <TBODY>
+              <TR>
+                <td width="104" align=right><input type="submit" class="applyButton" value="Log In" onclick="uiDoSave()" ></td>
+                <TD align=middle width=40 bgColor=#6666cc>&nbsp;</TD>
+                <td width="72" align=right><input type="button" class="applyButton" value="Cancel" onclick="javascript:window.location='../cgi-bin/webcm?getpage=..%2Findex.html'" ></td>
+                <TD align=middle width=4 bgColor=#6666cc>&nbsp;</TD></TR></TBODY></TABLE>
+          </TD>
+          <TD width=15 bgColor=#6666cc height=33>&nbsp;</TD>
+          <TD width=15 bgColor=#000000 height=33>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+</DIV></BODY></HTML>

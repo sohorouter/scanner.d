@@ -1,0 +1,105 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 14:56:39 GMT
+Server: mozambiq
+Set-Cookie: roundcube_sessid=k8rjja9ro6hvvrkrne6vs0bvt0fh1g6l; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 2784
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Webmail :: Willkommen bei Webmail</title>
+<meta name="Robots" content="noindex,nofollow" />
+<link rel="index" href="./?_task=mail" />
+<link rel="shortcut icon" href="skins/default/images/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="skins/default/common.css" />
+<style type="text/css">
+
+#login-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 380px;
+  border: 1px solid #999;
+}
+
+#login-form table td.title
+{
+  color: #666;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.boxcontent {
+  padding: 20px 20px 10px 20px;
+}
+
+</style>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="program/js/common.js"></script>
+<script type="text/javascript" src="program/js/app.js"></script>
+<script type="text/javascript">
+<!--
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({task:'login',flag_for_deletion:1,read_when_deleted:1,action:'',comm_path:'./?_task=mail'});
+rcmail.add_label('loading','Lade...');
+rcmail.gui_object('message', 'message');
+rcmail.gui_object('loginform', 'form');
+
+//-->
+</script>
+
+</head>
+<body>
+<div id="taskbar">
+<a class="button-mail" id="rcmbtn100" href="/">Webmail</a>
+<a class="button-ldap" id="rcmbtn102" href="setup/">Setup</a>
+<!-- a class="button-xmpp" id="rcmbtn103" href="javascript:;" onclick="window.open('/jabber/','Jabber','width=180,height=390,resizable=yes');">Jabber</a -->
+
+</div>
+
+<img src="skins/default/images/roundcube_logo.png" border="0" alt="Webmail" style="margin:2px 12px" />
+
+<div id="message"></div>
+
+<div id="login-form">
+<div class="boxtitle">Willkommen bei Webmail</div>
+<div class="boxcontent">
+
+<form name="form" action="./" method="post">
+<input type="hidden" name="_action" value="login" /><input type="hidden" name="_timezone" id="rcmlogintz" value="_default_" /><table summary="" border="0"><tbody><tr><td class="title"><label for="rcmloginuser">Benutzername</label>
+</td>
+<td><input name="_user" id="rcmloginuser" size="30" autocomplete="off" value="" type="text" /></td>
+</tr>
+<tr><td class="title"><label for="rcmloginpwd">Passwort</label>
+</td>
+<td><input name="_pass" id="rcmloginpwd" size="30" autocomplete="off" type="password" /></td>
+</tr>
+</tbody>
+</table>
+
+
+<p style="text-align:center;"><input type="submit" class="button mainaction" value="Anmelden" /></p>
+
+</form>
+<p style="text-align:center;"><br /><a href="https:///" title="Verwende SSL gesicherte Verbindung">Verwende SSL gesicherte Verbindung</a></p>
+
+</div>
+</div>
+
+<script type="text/javascript">
+<!--
+
+if (window.call_init)
+ call_init('rcmail');
+
+//-->
+</script>
+
+</body>
+</html>

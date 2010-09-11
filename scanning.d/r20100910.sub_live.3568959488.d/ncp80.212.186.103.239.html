@@ -1,0 +1,59 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 2089
+
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<title>WebViewer</title>
+</head>
+<body link="#505050" bgcolor="#505050" vlink="#505050" alink="#505050" topmargin="3">
+<SCRIPT language="javascript">
+      document.writeln("<div id='Layer1' style='position:absolute;left:")
+      document.writeln(115*screen.width/1024.0+829*(screen.width/1024.0-screen.height/768.0)/2)
+      document.writeln(";top:25px;width:575px; height:400px ;z-index:1;'>")
+
+if( navigator.platform.indexOf("Win64") <0)
+{
+	document.writeln("<font face='Arial, Helvetica, sans-serif' color='#FF3333'>");
+	document.writeln("Depending on the Internet bandwidth, it might take a few minutes to download the software.<br></font>");
+}
+else
+{
+	document.writeln("<font face='Arial, Helvetica, sans-serif' color='#FF2222'>");
+	document.writeln("WebViewer cannot be executed under Internet Explorer 64-bit! <br><br>Please use Internet Explorer 32-bit to launch WebViewer, where you can find it in<br>");
+	document.writeln("</font><font color='#ff9900' size='4'>");
+	document.writeln("\>Start -\> All files -\> Internet Explorer (32-bit)<br></font>");
+}
+
+	document.writeln("</div>");
+
+</SCRIPT>
+<div id="Layer2" style="position:center">
+<center>
+<table border="0" width="829" height="550">
+<tr>
+<td width="829">
+<SCRIPT language="javascript">
+if( navigator.platform.indexOf("Win64")<0)
+{
+      document.writeln("<object classid='clsid:0C036302-8A4E-43f6-8076-DFAB58D37531' id='WebCamX' CODEBASE='WebCamX.cab#version = 7,1,0,125' width=")
+      document.writeln(829*screen.height/768.0)
+      document.writeln(" height=")
+      document.writeln(550*screen.height/768.0)
+      document.writeln(">")
+      document.writeln("<param name='ServerIP' value=")
+      document.writeln(document.location.hostname)
+      document.writeln(">")
+      document.writeln("<param name='ServerPort' value=")
+      document.writeln(document.location.port)
+      document.writeln(">")
+      document.writeln("</object>")
+}
+</SCRIPT>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

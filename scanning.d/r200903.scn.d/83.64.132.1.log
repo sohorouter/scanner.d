@@ -1,0 +1,18 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-30 03:51 CEST
+Interesting ports on 83-64-132-1.oberwart.xdsl-line.inode.at (83.64.132.1):
+PORT     STATE  SERVICE
+22/tcp   closed ssh
+23/tcp   open   telnet
+80/tcp   closed http
+443/tcp  closed https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Device type: broadband router|switch|storage-misc|WAP|router|firewall
+Running (JUST GUESSING) : Huawei embedded (96%), ZyXEL ZyNOS 3.X|2.X (96%), NexStor embedded (96%), MicroNet embedded (95%), Netgear embedded (94%), Sitecom embedded (94%)
+Aggressive OS guesses: Huawei SmartAX MT800u-T ADSL router, ZyXEL ES-4024A switch, or ZyXEL Prestige 650HW ADSL router (96%), NexStor Nexsan ATABoy2x NAS device (96%), MicroNet SP2267 wireless ADSL router (95%), Netgear RT311 broadband router (94%), Sitecom WL-174 wireless ADSL router (94%), ZyXEL Prestige 202 ISDN router (ZyNOS 2.41) (94%), ZyXEL Prestige 600-series ADSL router (94%), ZyXEL ZyWALL 2 Plus firewall (94%), Slingmedia Slingbox AV TV over IP gateway (89%), Sony Ericsson P1i mobile phone (Symbian OS 9.1) (89%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 9 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 4.21 seconds

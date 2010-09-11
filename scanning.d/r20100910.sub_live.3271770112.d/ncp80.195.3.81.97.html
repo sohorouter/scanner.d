@@ -1,0 +1,1472 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 10:17:26 GMT
+Server: Apache/1.3.36 (Unix) PHP/4.4.2 mod_ssl/2.8.27 OpenSSL/0.9.7a
+X-Powered-By: PHP/4.4.2
+Connection: close
+Content-Type: text/html
+
+
+
+<script type="text/javascript">
+<!--
+
+var splitchar = "#";
+
+function error_and_back(str)
+{
+	if (str != "")
+		alert(str);
+	history.back();
+}
+
+//
+// Set a Cookie with Javascript
+//
+function SetCookie(Bezeichner, Wert, Verfall)
+  {
+   	var jetzt = new Date();
+   	if (Verfall > 0) {
+
+   		var Auszeit = new Date(jetzt.getTime() + Verfall);
+   		document.cookie = Bezeichner+"="+Wert+"; expires="+Auszeit.toGMTString()+"; path=\/";
+   	} else {
+
+   		document.cookie = Bezeichner+"="+Wert+"; path=\/";
+   	}
+  }
+
+
+//
+// Map input field special character
+//
+/*function mapchars(str) {
+	str = str.replace(/\+/g," ");
+	str = str.replace(/%DF/g,"ß");
+	str = str.replace(/%2B/g,"+");
+	str = str.replace(/%2C/g,",");
+	str = str.replace(/%3B/g,";");
+	str = str.replace(/%26/g,"&");
+	str = str.replace(/%28/g,"(");
+	str = str.replace(/%29/g,")");
+	str = str.replace(/%3D/g,"=");
+	str = str.replace(/%21/g,"!");
+	str = str.replace(/%22/g,"\"");
+	str = str.replace(/%A7/g,"§");
+	str = str.replace(/%24/g,"$");
+	str = str.replace(/%25/g,"%");
+	str = str.replace(/%2F/g,"/");
+	str = str.replace(/%23/g,"#");
+	str = str.replace(/%27/g,"'");
+	str = str.replace(/%3A/g,":");
+	str = str.replace(/%5B/g,"[");
+	str = str.replace(/%5D/g,"]");
+	str = str.replace(/%7B/g,"{");
+	str = str.replace(/%7D/g,"}");
+	str = str.replace(/%5C/g,"\\");
+	str = str.replace(/%B4/g,"´");
+	str = str.replace(/%60/g,"`");
+	str = str.replace(/%7E/g,"\~");
+	str = str.replace(/%3F/g,"?");
+	str = str.replace(/%F6/g,"ö");
+	str = str.replace(/%E4/g,"ä");
+	str = str.replace(/%FC/g,"ü");
+	str = str.replace(/%D6/g,"Ö");
+	str = str.replace(/%C4/g,"Ä");
+	str = str.replace(/%DC/g,"Ü");
+	return (str);
+}*/
+
+//
+// Remove all blanks from input field
+//
+function remove_blanks(vfield)
+{
+	//alert(vfield.value);
+	vfield.value = vfield.value.replace(/ /g,"");
+	//alert(vfield.value);
+}
+
+//
+// Replace all illegal character from input field
+//
+function check_chars(vfield)
+{
+	vfield.value = vfield.value.replace(/'/g,"`");
+}
+
+//
+// Check valid date
+//
+function chkValidDate(vyear, vmonth, vday)
+{
+
+	if (vmonth < 1 || vmonth > 12)
+		return false;
+
+	if (vday < 1)
+		return false;
+
+	if (vmonth == 1 || vmonth == 3 || vmonth == 5 || vmonth == 7 || vmonth == 8 || vmonth == 10 || vmonth == 12) {
+		if (vday > 31)
+			return false;
+	}
+
+	if (vmonth == 4 || vmonth == 6 || vmonth == 9 || vmonth == 11) {
+		if (vday > 30)
+			return false;
+	}
+
+	if (vmonth == 2) {
+		var vleapyear = 0; // is it a leap year //
+		if (vyear == (Math.round(vyear/4))*4)
+			vleapyear = 1; // yes it is
+		if (vyear == (Math.round(vyear/100))*100)
+			vleapyear = 0; // no it isn't
+		if (vyear == (Math.round(vyear/1000))*1000)
+			vleapyear = 1; // yes it is
+		if (vday > 28 + vleapyear)
+			return false;
+	}
+
+	return true;
+}
+
+//
+// Check valid date
+//
+function chkValidTime(vhour, vmin, vsec)
+{
+	if (vhour < 0 || vhour > 23)
+		return false;
+
+	if (vmin < 0 || vmin > 59)
+		return false;
+
+	if (vsec < 0 || vsec > 59)
+		return false;
+
+	return true;
+}
+
+//
+// Check input fields if empty
+//
+function chkEmpty(vfield, vtext)
+{
+	vtext1 = "" + vtext;
+	if(typeof(vfield.value) == "undefined" ||
+	   vfield.value == "")
+   {
+		if (vtext1.length > 0)
+  		alert("Kein Eintrag für " + vtext1);
+  	if (typeof(vfield.value) != "undefined")
+  	    vfield.focus();
+  	return false;
+	}
+	else
+	  return true;
+}
+
+//
+// Check selection fields if empty
+//
+function chkSelectEmpty(list, vtext)
+{
+   	var tmpstr = get_selected_value(list);
+
+  	if(tmpstr == "")
+   {
+     	alert("Kein Eintrag für " + vtext);
+     	list.focus();
+     	return false;
+	}
+}
+
+//
+// Check numeric input field
+//
+function chkNumber(vfield, vtext)
+{
+   var chkZ = 1;
+   for(i=0;i<vfield.value.length;++i)
+     if(vfield.value.charAt(i) < "0"
+     || vfield.value.charAt(i) > "9")
+       chkZ = -1;
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine Zahl!");
+     vfield.focus();
+     vfield.select();
+     return false;
+   }
+   return true;
+}
+
+//
+// Check signed numeric input field
+//
+function chkSNumber(vfield, vtext)
+{
+	var chkZ = 1;
+   for(i=0;i<vfield.value.length;++i) {
+     	if(vfield.value.charAt(i) < "0"
+     	|| vfield.value.charAt(i) > "9") {
+     		if (i == 0) {
+     			if (vfield.value.charAt(i) != "+" && vfield.value.charAt(i) != "-")
+       			chkZ = -1;
+   	  		} else {
+       		chkZ = -1;
+       	}
+   	  	}
+	}
+
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine Zahl!");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+//
+// Check signed numeric input field
+//
+function chkSFloat(vfield, vtext)
+{
+	//Math.round
+
+	var chkZ = 1;
+	var numcomma = 0;
+   for(i=0;i<vfield.value.length;++i) {
+     	if((vfield.value.charAt(i) < "0"
+     	|| vfield.value.charAt(i) > "9")
+     	&& vfield.value.charAt(i) != ".") {
+     		if (i == 0) {
+     			if (vfield.value.charAt(i) != "+" && vfield.value.charAt(i) != "-")
+       			chkZ = -1;
+   	  		} else {
+      			chkZ = -1;
+      		}
+   	  	}
+     	if (vfield.value.charAt(i) == ".") numcomma += 1;
+	}
+
+   //alert("numcomma: "+numcomma);
+   if (numcomma > 1) chkZ = -1;
+
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine Zahl!");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+//
+// Check numeric input field
+//
+function chkEmail_alias(vfield, vtext)
+{
+   var chkZ = 1;
+
+   if(own_domain == 1 && vfield.value.length == 1 && vfield.value.charAt(0) == "*"){
+      dummy = 0;
+   }else{
+      for(i=0;i<vfield.value.length;++i) {
+        if(vfield.value.charAt(i) >= "0" && vfield.value.charAt(i) <= "9") continue;
+        if(vfield.value.charAt(i) >= "a" && vfield.value.charAt(i) <= "z") continue;
+        if(vfield.value.charAt(i) >= "a" && vfield.value.charAt(i) <= "z") continue;
+        if(vfield.value.charAt(i) == "." || vfield.value.charAt(i) == "-" || vfield.value.charAt(i) == "_")
+        	continue;
+        chkZ = -1;
+      }
+   }
+
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine gültige E-Mail-Adresse!");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+// AS: Workaround for typing error. Remove if all callers are updated.
+// AS: Be careful to avoid conflicts with delivered and running files.
+function chkEmail_alaises(vfield, vtext)
+{
+	return chkEmail_alias(vfield, vtext);
+}
+
+//
+// Check E-Mail forward Address
+//
+function chkEmail_forward_address(vfield, vtext)
+{
+	//alert(vfield.value);
+   	var chkZ = 1;
+   	for(i=0;i<vfield.value.length;++i) {
+     if(vfield.value.charAt(i) >= "0" && vfield.value.charAt(i) <= "9")
+     	continue;
+     if(vfield.value.charAt(i) >= "A" && vfield.value.charAt(i) <= "Z")
+     	continue;
+     if(vfield.value.charAt(i) >= "a" && vfield.value.charAt(i) <= "z")
+     	continue;
+     if(vfield.value.charAt(i) == "." && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "-" && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "_" && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == ";" && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "," && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "@" && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == " " && i > 0)
+     	continue;
+     //if(vfield.value.charAt(i) == "+" && i > 0)
+     if(vfield.value.charAt(i) == "+")
+     	continue;
+     chkZ = -1;
+   }
+
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine gültige E-Mail-Forward-Adresse!");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+//
+// Check E-Mail Characters in
+//
+function chkEmail_address(vfield, vtext)
+{
+    var address = vfield.value;
+    var parts, local_part, domain_part;
+    var ok = true;
+
+    parts = address.split('@');
+    ok = ok && parts.length == 2; // Exactly one @ symbol?
+
+    if(ok)
+    {
+        local_part  = parts[0];
+        if(local_part.search(/^"(.+)"$/) > -1) // Local part is quoted string.
+        {
+            local_part = local_part.substr(1, local_part.length-2); // Strip quotation marks
+            ok = ok && local_part.search(/["\\]/) == -1; // Illegal characters?
+        }
+        else // Local part is dot-atom.
+        {
+            ok = ok && local_part.search(/[^\w!#$%&'*+-/=?^_`{|}~]/) == -1; // Illegal characters?
+            ok = ok && local_part.search(/^[^.]+(\.[^.]+)*$/) == 0; // Dots set correctly?
+        }
+
+        domain_part = parts[1];
+        ok = ok && domain_part.search(/[^\w!#$%&'*+-/=?^_`{|}~]/) == -1; // Illegal characters?
+        ok = ok && domain_part.search(/^[^.]+(\.[^.]+)*$/) == 0; // Dots set correctly?
+    }
+
+    if(!ok)
+    {
+        alert(vtext + " ist keine gültige E-Mail-Adresse!");
+        vfield.focus();
+        vfield.select();
+    }
+    return ok;
+}
+
+//
+// Check E-Mail Characters in
+//
+function chkASCII(vfield, vtext)
+{
+   var chkZ = 1;
+   for(i=0;i<vfield.value.length;++i) {
+     if(vfield.value.charAt(i) >= "0" && vfield.value.charAt(i) <= "9") continue;
+     if(vfield.value.charAt(i) >= "A" && vfield.value.charAt(i) <= "Z") continue;
+     if(vfield.value.charAt(i) >= "a" && vfield.value.charAt(i) <= "z") continue;
+     if(vfield.value.charAt(i) == "." && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "-" && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "_" && i > 0)
+     	continue;
+     if(vfield.value.charAt(i) == "@" && i > 0)
+     	continue;
+     chkZ = -1;
+   }
+
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine gültige Eingabe");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+function chkDomainName(vfield, vtext)
+{
+    var dom_nam = vfield.value;
+    var ok = true;
+
+    ok = ok && dom_nam.search(/[^a-z0-9.-]/) == -1; // Illegal characters?
+    ok = ok && dom_nam.search(/(^\.|\.\.|\.$)/) == -1; // Incorrect interpunctuation?
+
+    if(!ok)
+    {
+        alert(vtext + " ist kein gültiger Domain Name");
+        vfield.focus();
+        vfield.select();
+    }
+    return ok;
+
+}
+
+//
+// Check numeric input field for SQL-Querys (% and numbers allowed)
+//
+function chkQueryNumber(vfield, vtext)
+{
+   var chkZ = 1;
+   for(i=0;i<vfield.value.length;++i)
+     if((vfield.value.charAt(i) < "0"
+     || vfield.value.charAt(i) > "9")
+     && vfield.value.charAt(i) != "%"
+     && vfield.value.charAt(i) != "_")
+       chkZ = -1;
+   if(chkZ == -1)
+   {
+     alert(vtext + " ist keine Zahl!");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+//
+// Check Operator Password ('a..z' and 'A..Z' and numbers allowed)
+//
+function chkoppasswd(vfield, vtext)
+{
+   var chkZ = 1;
+   if (vfield.value.length < 4 || vfield.value.length > 20) {
+		chkZ = -1;
+	} else {
+	   for(i=0;i<vfield.value.length;++i)
+   		  	if(
+     		(vfield.value.charAt(i) < "0" || vfield.value.charAt(i) > "9")
+     		&&
+     		(vfield.value.charAt(i) < "a" || vfield.value.charAt(i) > "z")
+     		&&
+     		(vfield.value.charAt(i) < "A" || vfield.value.charAt(i) > "Z")
+			)
+       		chkZ = -1;
+	}
+
+   if(chkZ == -1)
+   {
+     alert("ist kein gültiges Passwort!");
+     vfield.focus();
+     vfield.select();
+     return false;
+    }
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// check user homepage url ('a..z' and 'A..Z' and numbers allowed and '.'and '-' and '_' )
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+function chk_user_homepage_url(vfield, vtext)
+{
+   var chkZ = 1;
+   if (vfield.value.length < 4 || vfield.value.length > 30) {
+		chkZ = -1;
+	} else {
+	   for(i=0;i<vfield.value.length;++i)
+   		  	if(
+     		(vfield.value.charAt(i) < "0" || vfield.value.charAt(i) > "9")
+     		&&
+     		(vfield.value.charAt(i) < "a" || vfield.value.charAt(i) > "z")
+
+     		&& (vfield.value.charAt(i) != ".") && (vfield.value.charAt(i) != "-")  && (vfield.value.charAt(i) != "_")
+
+			)
+       		chkZ = -1;
+	}
+
+   if(chkZ == -1)
+   {
+         alert(vtext + " ist keine gültige URL");
+      vfield.focus();
+      vfield.select();
+      return false;
+   }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+//
+// Check input fields if empty
+//
+function chkIPAddress(vfield, vtext)
+{
+    var ok;
+    var ip = vfield.value;
+    var bytes_arr = ip.split('.');            // Split up string.
+
+    ok = (ip.search(/[^0-9.]/) < 0) &&        // Check for unwanted characters.
+         (bytes_arr.length == 4);
+
+    for(b=0; ok && b<bytes_arr.length; b++) { // Check individual values.
+        bytes_arr[b] = parseInt(bytes_arr[b]);
+        ok = (!isNaN(bytes_arr[b]) &&
+              bytes_arr[b] >= 0 && bytes_arr[b] <= 255 );
+    }
+
+   	if(!ok) {
+     	alert(vtext + " ist keine gültige IP Adresse!");
+     	vfield.focus();
+     	vfield.select();
+    }
+    return ok;
+}
+
+
+function chkHiddenIPAddress(vfield, vtext)
+{
+    var ok;
+    var ip = vfield.value;
+    var bytes_arr = ip.split('.');            // Split up string.
+
+    ok = (ip.search(/[^0-9.]/) < 0) &&        // Check for unwanted characters.
+         (bytes_arr.length == 4);
+
+    for(b=0; ok && b<bytes_arr.length; b++) { // Check individual values.
+        bytes_arr[b] = parseInt(bytes_arr[b]);
+        ok = (!isNaN(bytes_arr[b]) &&
+              bytes_arr[b] >= 0 && bytes_arr[b] <= 255 );
+    }
+
+    if(!ok) {
+     	 alert(vtext + " ist keine gültige IP Adresse!");
+    }
+    return ok;
+}
+
+
+function chkIPSubnetMask(vfield, vtext)
+{
+    var ok;
+    var ip = vfield.value;
+    var bytes_arr = ip.split('.');            // Split up string.
+    var inv_bin_ip = '';                      // Inverse binary mask repr.
+
+    ok = (ip.search(/[^0-9.]/) < 0) &&        // Check for unwanted characters.
+         (bytes_arr.length == 4);
+
+    for(b=0; ok && b<bytes_arr.length; b++) { // Check individual values.
+        bytes_arr[b] = parseInt(bytes_arr[b]);
+        ok = (!isNaN(bytes_arr[b]) &&
+              bytes_arr[b] >= 0 && bytes_arr[b] <= 255 );
+        inv_bin_ip += (bytes_arr[b] ^ 255).toString(2);
+    }
+
+    ok = ok && (inv_bin_ip.search(/^0*1*$/) == 0);  // Check mask.
+
+   	if(!ok) {
+     	alert(vtext + " ist keine gültige IP-Subnetz Maske!");
+     	vfield.focus();
+     	vfield.select();
+    }
+    return ok;
+}
+
+
+//
+// Check date input field (Format: TT.MM.JJJJ)
+//
+// Parameter:
+// vfield			: Form-Field
+// vtext			: Text for Error Message
+// birthdayflag	: if true  -> input 310145 result 31.01.1945
+// 					  if false -> input 310145 result 31.01.2045
+function chkDate(vfield, vtext, birthdayflag)
+{
+	var err = true;
+	var vdot = 0;
+	var vdot1pos = 0;
+	var vdot2pos = 0;
+	var vday = "";
+	var vmonth = "";
+	var vyear = "";
+
+	if (vfield.value.length 	< 5 	||
+		vfield.value.length 	> 10)
+		err = false;
+
+	if (err) {
+  		for(i=0;i<vfield.value.length;++i) {
+   	  		if((vfield.value.charAt(i) < "0"
+	  		|| vfield.value.charAt(i) > "9")
+	  		&& vfield.value.charAt(i) != ".")
+      			err = false;
+      		if (vfield.value.charAt(i) == ".") {
+      			vdot += 1;
+      			if (vdot == 1) vdot1pos = i;
+      			if (vdot == 2) vdot2pos = i;
+      		}
+		}
+	}
+
+	if (vdot != 0 && vdot != 2)
+		err = false;
+
+	// no dots in input
+	if (err && vfield.value.length == 6 && vdot == 0) {
+		vday = vfield.value.substr(0,2);
+		vmonth = vfield.value.substr(2,2);
+		vyear = vfield.value.substr(4,2);
+	}
+
+	// dots in input
+	if (err && vdot == 2) {
+		vday = vfield.value.substr(0,vdot1pos);
+		vmonth = vfield.value.substr(vdot1pos + 1,vdot2pos - vdot1pos - 1);
+		vyear = vfield.value.substr(vdot2pos + 1,vfield.value.length);
+	}
+
+	//alert("vday:"+vday);
+	//alert("vmonth:"+vmonth);
+	//alert("vyear:"+vyear);
+	if (err ) {
+		if (vday.length == 1)
+			vday = "0" + vday;
+		if (vmonth.length == 1)
+			vmonth = "0" + vmonth;
+		if (vyear.length == 1)
+			vyear = "0" + vyear;
+
+		if (vyear.length == 2) {
+			var vyearnow = "";
+			var vnow = new Date();
+			var vyearnow = vnow.getYear();
+			if (vyearnow.length == 4) {
+				if (vyearnow >= 2000) {
+					vyearnow -= 2000;
+					if (vyear > vyearnow)
+						vyear = "19" + vyear;
+					else
+						vyear = "20" + vyear;
+				} else {
+					vyear = "20" + vyear;
+				}
+			} else {
+				vyear = "20" + vyear;
+				if (vyear > vyearnow && birthdayflag == true)
+					vyear = vyear - 100;
+			}
+    	}
+		err = chkValidDate(vyear,vmonth,vday);
+   }
+
+	//alert("Err: " + err + " " + vyear + "-" + vmonth + "-" + vday);
+	if (err) {
+		vfield.value = vday + "." + vmonth + "." + vyear;
+	} else {
+     	alert(vtext + " ist kein gültiges Datum!");
+     	vfield.focus();
+     	vfield.select();
+     	return false;
+   }
+}
+
+//
+// Check time input field (Format: HH24:MI:SS)
+//
+function chkTime(vfield, vtext)
+{
+
+	var err = true;
+	var vdot = 0;
+	var vdot1pos = 0;
+	var vdot2pos = 0;
+	var vhour = "";
+	var vmin = "";
+	var vsec = "";
+
+	//alert(vfield.value + "-" + vfield.value.length);
+
+	if (vfield.value.length == 5) {
+		vfield.value += ":00";
+	}
+
+	if (vfield.value.length 	< 6 	||
+		vfield.value.length 	> 8)
+		err = false;
+
+	if (err) {
+  		for(i=0;i<vfield.value.length;++i) {
+   	  		if((vfield.value.charAt(i) < "0"
+	  		|| vfield.value.charAt(i) > "9")
+	  		&& vfield.value.charAt(i) != ":")
+      			err = false;
+      		if (vfield.value.charAt(i) == ":") {
+      			vdot += 1;
+      			if (vdot == 1) vdot1pos = i;
+      			if (vdot == 2) vdot2pos = i;
+      		}
+		}
+	}
+
+	if ((vdot1pos + 1) == vdot2pos)
+		err = false;
+
+	if (vdot != 0 && vdot != 2)
+		err = false;
+
+	// no dots in input
+	if (err && vfield.value.length == 6 && vdot == 0) {
+		vhour = vfield.value.substr(0,2);
+		vmin = vfield.value.substr(2,2);
+		vsec = vfield.value.substr(4,2);
+	}
+
+	// dots in input
+	if (err && vdot == 2) {
+		vhour = vfield.value.substr(0,vdot1pos);
+		vmin = vfield.value.substr(vdot1pos + 1,vdot2pos - vdot1pos - 1);
+		vsec = vfield.value.substr(vdot2pos + 1,vfield.value.length);
+	}
+
+	if (err ) {
+		if (vhour.length == 1)
+			vhour = "0" + vhour;
+		if (vmin.length == 1)
+			vmin = "0" + vmin;
+		if (vsec.length == 1)
+			vsec = "0" + vsec;
+
+		err = chkValidTime(vhour,vmin,vsec);
+   }
+
+	//alert("Err: " + err + " " + vhour + "-" + vmin + "-" + vsec);
+	if (err) {
+		vfield.value = vhour + ":" + vmin + ":" + vsec;
+	} else {
+     	alert(vtext + " ist keine gültige Uhrzeit!");
+     	vfield.focus();
+     	vfield.select();
+     	return false;
+   }
+}
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// check date_time input field (format: TT.MM.JJJJ HH24:MI:SS ) check datum auf gültigkeit
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+function chkDateTime(vfield, vtext)
+{
+
+//alert("chkDateTime");
+
+	vdate_tmp = vfield.value;
+
+	if (vfield.value.substr(10, 1) != " ") {
+		//alert(vfield.value.substr(10, 1));
+     	alert(vtext + " ist kein gültiges Datum mit Uhrzeit!");
+		vfield.focus();
+		vfield.select();
+		return false;
+	}
+
+	vfield.value = vfield.value.substr(0, 10);
+	//alert(vfield.value);
+	if (chkDate(vfield, vtext, false) == false) {
+		//alert("date");
+		vfield.value = vdate_tmp;
+		vfield.focus();
+		vfield.select();
+		return false;
+	}
+
+	vfield.value = vdate_tmp;
+	vfield.value = vfield.value.substr(11, 8);
+	//alert(vfield.value);
+	if (chkTime(vfield, vtext) == false) {
+		//alert("time");
+		vfield.value = vdate_tmp;
+		vfield.focus();
+		vfield.select();
+		return false;
+	}
+
+	vfield.value = vdate_tmp;
+	return true;
+
+}
+
+function lb_get_value(id_val) {
+	pos = id_val.indexOf(splitchar);
+	if (pos > -1)
+		pos += 1;
+	str = id_val.substr(pos,99);
+	//alert(id_val + " - lb_get_value: " + pos + "return: " + str);
+	return (str);
+}
+
+function lb_get_id(id_val) {
+	pos = id_val.indexOf(splitchar);
+	str = id_val.substr(0,pos);
+	//alert(id_val + " - lb_get_id: " + pos + "return: " + str);
+	return (str);
+}
+
+
+function get_selected_value(list)
+{
+ 	return list.options[list.selectedIndex].value;
+}
+function set_selected_value(list, new_value)
+{
+	for (o = 0; o < list.options.length; o++) {
+		if (list.options[o].value == new_value) {
+			list.selectedIndex = o;
+			break;
+		}
+	}
+}
+
+function check_tolowdate(vdate,vtime) {
+
+	var vday = "";
+	var vmonth = "";
+	var vyear = "";
+	var vhour = "";
+	var vmin = "";
+	var vsec = "";
+
+  	var Jetzt = new Date();
+	var Tag = Jetzt.getDate();
+	var Monat = Jetzt.getMonth() + 1;
+	var Jahr = Jetzt.getYear();
+	var Stunden = Jetzt.getHours();
+	var Minuten = Jetzt.getMinutes();
+	var Sekunden = Jetzt.getSeconds();
+
+
+	if (Tag.length == 1)
+		Tag = "0" + Tag;
+	if (Monat.length == 1)
+		Monat = "0" + Monat;
+	if (Stunden.length == 1)
+		Stunden = "0" + Stunden;
+	if (Minuten.length == 1)
+		Minuten = "0" + Minuten;
+	if (Sekunden.length == 1)
+		Sekunden = "0" + Sekunden;
+
+  	vday = vdate.substr(0,2);
+	vmonth = vdate.substr(3,2);
+	vyear = vdate.substr(6,4);
+
+	vhour = vtime.substr(0,2);
+	vmin = vtime.substr(3,2);
+	vsec = vtime.substr(6,2);
+
+  	date1 = Jahr+".";
+  	if (Monat < 10)
+  		date1 +="0"+Monat+".";
+  	else
+  		date1 +=Monat+".";
+
+  	if (Tag < 10)
+  		date1 +="0"+Tag+" ";
+  	else
+  		date1 +=Tag+" ";
+
+  	if (Stunden < 10)
+  		date1 +="0"+Stunden+":";
+  	else
+  		date1 +=Stunden+":";
+
+  	if (Minuten < 10)
+  		date1 +="0"+Minuten+":";
+  	else
+  		date1 +=Minuten+":";
+
+  	if (Sekunden < 10)
+  		date1 +="0"+Sekunden;
+  	else
+  		date1 +=Sekunden;
+
+   	date2 = vyear+"."+vmonth+"."+vday+" "+vhour+":"+vmin+":"+vsec;
+
+  	if (date2 < date1) {
+
+  		return false;
+  	}
+
+}
+
+function chkMAC_address(vfield, vtext) {
+
+	var chkZ = 1;
+	var upfield = vfield.value.toUpperCase();
+
+	if (upfield.length != 17) {
+		chkZ = -1;
+
+	} else {
+
+		for (i=0;i<upfield.length;++i) {
+
+			if ((i == 2 || i == 5 || i == 8 || i == 11 || i == 14) && upfield.charAt(i) != ":") {
+     	     			chkZ = -1;
+     	     		} else {
+     	     			if ((i == 2 || i == 5 || i == 8 || i == 11 || i == 14) && upfield.charAt(i) == ":")
+     	     				continue;
+     	     		}
+
+      	     		if(upfield.charAt(i) >= "0" && upfield.charAt(i) <= "9")
+     				continue;
+
+     			if(upfield.charAt(i) >= "A" && upfield.charAt(i) <= "F")
+     				continue;
+
+     			chkZ = -1;
+   		}
+	}
+
+
+   	if(chkZ == -1) {
+
+     		alert(vtext + " ist keine gültige MAC-Adresse!");
+     		vfield.focus();
+     		vfield.select();
+     		return false;
+
+    	}
+}
+
+
+function chkHiddenMACAddress(vfield, vtext) {
+
+	var chkZ = 1;
+	var upfield = vfield.value.toUpperCase();
+
+	if (upfield.length != 17) {
+		chkZ = -1;
+
+	} else {
+
+		for (i=0;i<upfield.length;++i) {
+
+			if ((i == 2 || i == 5 || i == 8 || i == 11 || i == 14) && upfield.charAt(i) != ":") {
+     	     			chkZ = -1;
+     	     		} else {
+     	     			if ((i == 2 || i == 5 || i == 8 || i == 11 || i == 14) && upfield.charAt(i) == ":")
+     	     				continue;
+     	     		}
+
+      	     		if(upfield.charAt(i) >= "0" && upfield.charAt(i) <= "9")
+     				continue;
+
+     			if(upfield.charAt(i) >= "A" && upfield.charAt(i) <= "F")
+     				continue;
+
+     			chkZ = -1;
+   		}
+	}
+
+
+   	if(chkZ == -1) {
+
+     		alert(vtext + " ist keine gültige MAC-Adresse!");
+     		return false;
+
+    	}
+}
+
+
+//* ************************************************************************************
+//* ** Functions for input control.
+//* ************************************************************************************
+
+function keyPressFilter(reg) {
+    var c = String.fromCharCode(window.event.keyCode);
+    return c=="\n" ||
+           c=="\r" ||
+           c.search(reg) > -1;
+}
+
+function chkCharacters(vfield, reg, vtext) {
+    var entire_text_reg = new RegExp("^"+reg+"*$");
+    var ok = vfield.value.search(entire_text_reg) > -1;
+    if(!ok) {
+        alert(vtext+" enthält unerlaubte Zeichen.\nDiese Zeichen sind erlaubt: "+reg);
+        vfield.focus();
+        vfield.select();
+    }
+    return ok;
+}
+
+
+//* ************************************************************************************
+//* ** Functions for random chars and numbers
+//* ************************************************************************************
+
+//* ** return one random number
+function random_number() {
+	retval = Math.round(Math.random()*9);
+	return retval;
+}
+
+//* ** return one random number or char
+function random_char_number() {
+	allchars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	r = Math.round(Math.random()*61);
+	retval = allchars.charAt(r);
+	return retval;
+}
+
+//* ** return one random char
+function random_char() {
+	allchars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	r = Math.round(Math.random()*51);
+	retval = allchars.charAt(r);
+	return retval;
+}
+
+//* ** return one random lower case char
+function random_char_lower() {
+	v1 = random_char();
+	return v1.toLowerCase();
+}
+
+//* ** return one random upper case char
+function random_char_upper() {
+	v1 = random_char();
+	return v1.toUpperCase();
+}
+
+//* ** return one random lower case char or number
+function random_char_number_lower() {
+	v1 = random_char_number();
+	return v1.toLowerCase();
+}
+
+//* ** return one random upper case char or number
+function random_char_number_upper() {
+	v1 = random_char_number();
+	return v1.toUpperCase();
+}
+
+function random_parameter_value(vfield, vformat) {
+	//alert("random_parameter_value:"+vfield.value+", format:"+vformat.value);
+
+	if (vformat.value.charAt(0) != ";" && vformat.value.charAt(1) != "p") {
+		alert("falsches Format: "+vformat.value);
+		return;
+	}
+
+	v1 = "";
+	if (vformat.value.charAt(2) == "*") {
+		vcount = Math.round(Math.random()*8)+3;
+		for (i=0;i<=vcount;i++) {
+			v1 = v1 + random_char_number();
+		}
+		vfield.value = v1;
+		return;
+	}
+
+  	for(i=0;i<vformat.value.length;++i) {
+  		if (vformat.value.charAt(i) == "!") {
+			v1 = v1 + random_char_number_upper();
+   	}
+  		if (vformat.value.charAt(i) == "@") {
+			v1 = v1 + random_char_number();
+   	}
+  		if (vformat.value.charAt(i) == "~") {
+			v1 = v1 + random_char_lower();
+   	}
+  		if (vformat.value.charAt(i) == "&") {
+			v1 = v1 + random_char_upper();
+   	}
+  		if (vformat.value.charAt(i) == "?" ) {
+			v1 = v1 + random_char();
+   	}
+  		if (vformat.value.charAt(i) == "#") {
+			v1 = v1 + random_number();
+   	}
+  	}
+
+	vfield.value = v1;
+}
+
+function random_password(min, max) {
+
+	if (min <= 0) min = 3;
+	if (max <= 0) max = 10;
+	if (max < min) max = min;
+
+	v1 = "";
+	vcount = Math.round(Math.random()*(max-min))+min;
+	//alert("random_password:"+vfield.value+", min:"+min+", max:"+max+", vcount:"+vcount);
+
+	for (i=0;i<=vcount;i++) {
+		v1 = v1 + random_char_number_lower();
+	}
+	return v1;
+}
+
+// removes blanks at beginning and end of a given string
+
+function remove_lr_blanks(vfield) {
+
+	vfield.value = vfield.value.replace(/^ */, "").replace(/ *$/, "");
+}
+
+<!-- Neotel SSO -->
+
+var req = null;
+var error = false;
+		
+function redirectToNeotel(what, vkey, sipuri, phnum)
+{
+	try { req = new XMLHttpRequest(); }
+	catch (e) { 
+		  try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+	catch (e) {
+		  try { req = new ActiveXObject("Microsoft.XMLHTTP"); }
+	catch (failed) { req = null; }
+			  }}
+		
+	if (req == null)
+		error = true;
+		
+	var uu = 'getData4NeotelCSC.php?ts=' + new Date().getTime();
+	req.open('get', uu ,true);                
+	req.onreadystatechange = function(){
+				
+	switch(req.readyState) 
+	{
+		case 4:
+			if(req.status!=200) { errorMsg = "Fehler: "+req.status; }
+			else
+			{
+				if (req.responseText != "")
+				{
+					if (req.responseText.match('[\|]'))
+					{
+						var parts = req.responseText.split('|');
+						
+						if (what=='sip')
+						{
+							var str1 = 'https://www.neotel.at/neotel_test/iCC/login.php?login=sbg.webac&key='+parts[0]+'&ts='+parts[1];
+							str1 += '&sipuri='+sipuri+'&num='+phnum+'&vkey='+vkey;
+						}
+						else
+			    		{
+							var str1 = 'https://www.neotel.at/neotel_test/iCC/login.php?login=sbg.webac&key='+parts[0]+'&ts='+parts[1]+'&vkey='+vkey;
+						}
+			    		
+			    		WindowList = open(str1, "NeotelCSC", "");
+			    	}
+			    	else
+			    		error = true;
+			  	}
+				else 
+					error = true;
+		  	}
+		          
+		    if (error != "") 
+		    { 
+		    	alert("Es ist ein Fehler beim Weiterleiten zu Neotel-CSC aufgetreten, bitte versuchen Sie es später noch einmal!"); 
+		    }
+			        
+			break;
+						
+		default:
+			return false;                    
+			break;                     
+	}};
+	req.send(null);
+}
+	
+<!-- Neotell SSP -->
+
+// -->
+</script><html>
+<head>
+   <META HTTP-EQUIV="Refresh" CONTENT="1;URL=https://sagcsc3tst/salzag/sites/digibox/bestellung.php">
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <link href="../../styles/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function hiliMenue(menuName){
+
+document.getElementById('bullet' + menuName).src='../../images/bullet_blue.gif';
+//document.getElementById(menuName).href='#';
+document.getElementById(menuName).style.color='#0099d6';
+document.getElementById(menuName).onmouseout=function(){;};
+
+
+}
+
+</script>
+</head>
+<body>
+<!-- start display site menu -->
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" class="header_cl">
+  <tr>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td height="70" class="servicecenter"><img src="/salzag/images/1.gif" width="114" height="15"><br>
+		  </td>
+        </tr>
+      </table>
+    </td>
+    <td width="770" height="70" align="right" valign="middle">
+      <table width="770" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" valign="middle">
+		  	<div id="layer_date">
+		  	<a href="http://www.cablelink.at"><img src="/salzag/images/header_bg.jpg" alt="cablelink" border="0"></a>
+            <span class="servicecenter_date">
+Freitag, 10. September 2010	    </span></div>
+		  </td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+          <td height="70" align="center" valign="middle"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="header_cl_verlauf2"><img src="../../images/1.gif" width="1" height="12"></td>
+    <td class="header_cl_verlauf2"><img src="../../images/1.gif" width="1" height="12"></td>
+    <td class="header_cl_verlauf2"><img src="../../images/1.gif" width="1" height="12"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="48%">
+      <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="74">&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="20">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+          <td height="40" class="bg_lines">&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+          <td height="10">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+    <td width="770" valign="top">
+      <table width="770" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <td class="header_dist"><img src="../../images/1.gif" width="1" height="1"></td>
+          <td width="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td width="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+          <td valign="top">
+          </td>
+          <td width="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+          <td colspan="2" align="center" valign="top">
+            <!-- start display page content -->
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+		<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <link href="/salzag/styles/style.css" rel="stylesheet" type="text/css">
+      <title>Digibox Bestellung - Seite 1/5</title>
+      <script type="text/javascript">
+         function changePrice(digibox_id, price, rtr_price, digibox_name, count)
+         {
+             document.order_digibox.fullPrice.value = price;
+
+          	if (rtr_price != "" && document.getElementsByName("foerderung")[count].checked == true)
+          	{
+				document.order_digibox.price.value = rtr_price;
+          	}
+	        else
+	        {
+          		document.order_digibox.price.value = price;
+	        }
+
+            document.order_digibox.digibox_nr.value = digibox_id;
+            document.order_digibox.digibox_name.value = digibox_name;
+
+            counter=0;
+            while(counter<document.getElementsByName('foerderung').length)
+            {
+            	counter++;
+				document.getElementsByName('foerderung')[counter-1].disabled = true;
+            }
+
+            document.getElementsByName('foerderung')[count].disabled = false;
+         }
+      </script>
+      <head>
+      <body>
+                  <form method="post" name="order_digibox" action="/salzag/sites/digibox/bestellung.php">
+      <input type="hidden" name="previous_page" value="1">
+      <input type="hidden" name="next_page" value="2">
+      <input type="hidden" name="co_id" value="">
+      <input type="hidden" name="price" value="">
+      <input type="hidden" name="fullPrice" value="">
+      <input type="hidden" name="gisnr" value="">
+      <input type="hidden" name="mail_sent" value="">
+      <input type="hidden" name="digibox_nr" value="">
+      <input type="hidden" name="digibox_name" value="">
+
+      <div class="order_tab_full"> <div class="order_tab"> Schritt 1/5 </div></div>
+      <div class="order_box">
+         <div class="title">Herzlich willkommen!</div>
+         <p>Ein neuer Service f&uuml;r Sie: </p>
+
+  	       <p>
+hallo ein test  	       </p>
+        <div class="order_box_group" style="background-image:url(/salzag/sites/digibox/upload_files/BPI_MDCC_UAT_SP_V0.1_Primacom_Automatisierung_test.docm);background-repeat:no-repeat;background-position: right top">
+          <div class="inner_title"><input type="radio" name="digibox" value="2" onclick="changePrice(2,'107,5','','Technisat MF4-K Digibox (SD-Box)',0)"  checked>Technisat MF4-K Digibox (SD-Box)</div>
+          <div class="inner_text">fdgdfgf</div>
+
+          <p class="inner_text"><a href="/salzag/sites/digibox/upload_files/BPI_MDCC_UAT_SP_V0.1_Primacom_Automatisierung_test.docm" target="_blank">Produktbeschreibung</a><br>
+                                <a href="/salzag/sites/digibox/upload_files/BPI_MDCC_UAT_SP_V0.1_Primacom_Automatisierung_test.docm" target="_blank">Bedienungsanleitung</a></p>
+			<input type="hidden" name="foerderung" value="0">
+        </div>
+
+        <br>
+	<p>
+schluss is jetzt	</p>
+
+        <br>
+        <input type="submit" name="submitted" value="Weiter">
+        <br><br>
+      </div>
+      </form>
+      <script type="text/javascript">
+      	changePrice(2,'107,5','','Technisat MF4-K Digibox (SD-Box)',0);
+	  </script>
+      </body>
+      </html>
+					<!-- end display page content -->
+
+					</td>
+          			<td width="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        		</tr>
+        		<tr>
+          			<td height="1" colspan="5" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        		</tr>
+        		<tr>
+          			<td height="20" align="center" class="bg_lines">
+						<span class="text_small">&copy; Salzburg AG</span>
+					</td>
+          			<td width="1"><img src="../../images/bg_lines.gif" width="1" height="1"></td>
+          			<td colspan="2" align="right" class="bg_lines"><span class="agb_dist">
+              			<a href="#" class="agb" onClick="javascript:window.open('http://www.salzburg-ag.at/content/default.asp?Mainid=8&kapitel=87&l3menu=405','AGB')">AGB</a> |
+<!--              		<a href="#" class="agb">Produkte</a> | -->
+
+<!--              			<a href="#" onmouseover="
+						if(document.all){
+				        x = event.x+document.body.scrollLeft;
+				        y = event.y+document.body.scrollTop;
+						}else{
+				        x = event.pageX;
+				        y = event.pageY;}
+						document.getElementById('kontakt').style.left=x -100;
+						document.getElementById('kontakt').style.top=y -30;
+						document.getElementById('kontakt').style.visibility='visible';"
+						onclick="return false" class="agb">Kontakt</a>-->
+				<a href="mailto:support@cablelink.at" class="agb">Kontakt</a>
+				</span>
+          			</td>
+					<td width="1"><img src="../../images/bg_lines.gif" width="1" height="1"></td>
+				</tr>
+
+				<div  id="kontakt" style="visibility:hidden;position:absolute;width:120px;height:20px;background-color:eeeeee;border-style:solid;
+					border-width:1px;border-color:#999999;padding:4px;font-size: 9px;color: #333333;text-align:center;z-index:100;"
+					onclick="document.getElementById('kontakt').style.visibility='hidden';">
+						<a class="agb" href="mailto:support@cablelink.at">support@cablelink.at</a>
+				</div>
+
+				<tr>
+          			<td height="1" colspan="5" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        		</tr>
+        		<tr>
+          			<td height="10">&nbsp;</td>
+          			<td width="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+          			<td>&nbsp;</td>
+          			<td>&nbsp;</td>
+          			<td width="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        		</tr>
+      		</table>
+    	</td>
+    	<td valign="top" width="48%">
+      		<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        		<tr>
+          			<td height="74">&nbsp;</td>
+        		</tr>
+        		<tr>
+          			<td height="20" >&nbsp;</td>
+        		</tr>
+        		<tr>
+          			<td>&nbsp;</td>
+        		</tr>
+        		<tr>
+          			<td height="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        		</tr>
+        		<tr>
+          			<td height="20" class="bg_lines">&nbsp;</td>
+        		</tr>
+        		<tr>
+          			<td height="1" class="bg_grey"><img src="../../images/1.gif" width="1" height="1"></td>
+        		</tr>
+        		<tr>
+          			<td height="10">&nbsp;</td>
+        		</tr>
+      		</table>
+    	</td>
+  	</tr>
+</table>
+
+<div id="help"
+style="position:absolute;visibility:hidden;";
+#onMousedown="MM_dragLayer('help','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')">
+</div>
+
+<!-- end display site menu -->
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,113 @@
+HTTP/1.1 302 Found
+Date: Fri, 10 Sep 2010 14:33:58 GMT
+Server: Apache
+X-Powered-By: PHP/5.2.6-1+lenny4
+Set-Cookie: ilClientId=00004; path=/
+Set-Cookie: PHPSESSID=80505a19043290f06b68f15485548383; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: PHPSESSID=4b41007aa77567a00216d9a6465545d9; path=/
+Set-Cookie: iltest=cookie; path=/
+Location: login.php?target=&soap_pw=&ext_uid=&cookies=nocookies&client_id=00004&lang=de
+P3P: CP="CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa OUR BUS IND UNI COM NAV INT CNT STA PRE"
+Vary: Accept-Encoding
+Content-Length: 3103
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title> bernfixx-World-Anmeldeseite</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	
+	<link rel="stylesheet" type="text/css" href="./Customizing/global/skin/bernfixx/bernfixx.css?vers=4-0-9-2010-07-15" />
+	<!-- <link rel="P3Pv1" href="" /> -->
+	
+	
+	
+	
+	
+	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	
+	
+	
+
+
+</head>
+<body class="std"  >
+
+<div class="ilFrame" style="margin-top:5px; width:700px; margin-left:auto; margin-right:auto;"><div class="ilFrameH"><div class="ilFrameTL"><div class="ilFrameTR" style="padding-top: 100px;">
+<div class="ilFrameBL" style="width:700px; height:492px; background-image: url(templates/default/images/berndorfband/loginpage_hintergrund.jpg);"><div class="" style="min-height: 450px; padding:0 10px 10px;">
+<div style="padding:0px 10px;">
+<!-- <p class="small">4.0.9 2010-07-15</p> -->
+
+
+
+<div align="center" style="padding-top: 113px">
+
+<form method="post" action="login.php?lang=de&cmd=post&cmdClass=ilstartupgui&cmdNode=5k&baseClass=ilStartUpGUI&rtoken=" name="formlogin">
+<input type="hidden" name="sendLogin" value="1" />
+
+
+
+
+<table class="" width="400" datatable="0">
+  <tr class="tblheader">
+  </tr>
+		  
+  <tr>
+	<td class="">Benutzername</td>
+	<td class=""><input type="text" name="username" value=""/></td>
+  </tr>
+  <tr>
+	<td class="">Passwort</td>
+	<td class=""><input type="password" name="password" value=""/></td>
+	<td class="" align="left"><input class="submit" type="submit" name="butSubmit" value="Login"/></td>
+  </tr>
+</table>
+
+</form>
+<p style="padding-top: 20px;">
+
+<a class="il_ContainerItemCommand" href="ilias.php?lang=de&cmdClass=ilaccountregistrationgui&cmdNode=5k:55&baseClass=ilStartUpGUI" style="visibility:hidden;">Neues Benutzerkonto registrieren</a>
+
+
+
+
+
+</p>
+<p><form name="languageselection" action="login.php?lang=de&cmd=post&cmdClass=ilstartupgui&cmdNode=5k&baseClass=ilStartUpGUI&rtoken=" method="post" style="visibility:hidden";>
+<input type="hidden" name="cmd[showLogin]" value="1" />
+<select name="change_lang_to" onChange="this.form.submit()">
+<option value="">Bitte wählen Sie Ihre Sprache!</option>
+
+<option value="de" >Deutsch</option>
+
+<option value="en" >English</option>
+
+</select>
+<input class="submit" type="submit" value="OK"/>
+</form>
+</p>
+<p><a class="il_ContainerItemCommand" href="ilias.php?lang=de&cmd=showUserAgreement&cmdClass=ilstartupgui&cmdNode=5k&baseClass=ilStartUpGUI" style="visibility:hidden;">Nutzungsvereinbarung</a></p>
+</div></div>
+</div>
+</div></div></div></div>
+<script language="JavaScript">
+<!--
+if (document.formlogin.username && document.formlogin.password)
+{
+	if(document.formlogin.username.value!="") document.formlogin.password.focus();
+	else document.formlogin.username.focus();
+}
+//-->
+</script>
+
+</body>
+</html>

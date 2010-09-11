@@ -1,0 +1,230 @@
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: text/html
+Content-Length: 11077
+Cache-Control: no-cache
+Server: Indy/9.0.18
+
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<title>CP-Web Benutzeranmeldung
+				</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/main.css"><script language="JavaScript" src="/scripts/md5.js"></script><script language="JavaScript" src="/scripts/prototype.js"></script><script language="JavaScript" src="/scripts/scriptaculous.js"></script><script language="JavaScript" src="/scripts/cpFunctions.js"></script><script language="JavaScript">
+				
+					function loaded()
+					{
+						
+								document.getElementById("userin").focus();
+								document.getElementById("userin").select();
+							
+					}
+		
+		
+					function CryptPassword()
+					{							
+							// form0.userin nach form.user kopieren
+							document.form.user.value = document.getElementById("userin").value;
+							// Passwort aus form0.passwordin verschlüsseln und nach form.password kopieren
+							lowPassword =  ("cp" + document.getElementById("passwordin").value).toLowerCase();
+							document.form.password.value = calcMD5( lowPassword );
+					}
+			
+			
+					// Prüft ob in den Eingabefeldern die ENTER-Taste gedrückt wurde und ruft den LOGIN-Button auf					
+					function checkEnterKey(e)
+					{
+						if(e)
+						{
+							if(e.keyCode == '13' || e.which == '13')
+								document.form.LoginButton.click();
+						}						
+					}
+			
+					
+					function setStatusText(text)
+					{
+						window.status = text;
+					}
+					
+					function checkBrowser()
+					{
+					 	if (navigator.appName == 'Microsoft Internet Explorer' && navigator.appVersion.substr(navigator.appVersion.indexOf('MSIE'),6) == 'MSIE 4' || navigator.appVersion.substr(navigator.appVersion.indexOf('MSIE'),8) == 'MSIE 5.0')
+						{
+							document.getElementById('userin').disabled = 'disabled';
+							document.getElementById('passwordin').disabled = 'disabled';
+							document.getElementById('LoginButton').disabled = 'disabled';
+							document.getElementById('browsercheck').value = '0';
+							alert('Bitte installieren Sie Microsoft Internet Explorer ab Version 5.5');
+						}
+													
+					//	if (navigator.appName == 'Netscape' && navigator.userAgent.substr(navigator.userAgent.indexOf('Firefox/')+8,1) < '2')
+					//	{
+					//		document.getElementById('userin').disabled = 'disabled';
+					//		document.getElementById('passwordin').disabled = 'disabled';
+					//		document.getElementById('LoginButton').disabled = 'disabled';
+					//		document.getElementById('browsercheck').value = '0';
+					//		alert('Bitte installieren Sie Mozilla Firefox ab Version 2.0');
+					//	}						
+					}
+					
+					
+					// DIV Layer für die Anzeige eines modalen Fensters
+					function pluginCheck()
+					{
+						if (document.getElementById('browsercheck').value == '1')
+						{
+					  	url = '/system/sys?style=browsercheck';
+              
+              isDragable   = true;
+              isResizeable = true;
+              OpenDiv(url,480,360,'dialogDIV','dialog_iframe',false,isDragable,isResizeable,'Browser-Test');						
+					  }
+					}
+					
+					// Schliessen des DIV Layers des modalen Fensters
+					function closeDialog()
+					{
+						document.getElementById('transparentbg').style.visibility = 'hidden';
+						document.getElementById('dialogDIV').style.visibility = 'hidden';
+						// Focus wieder auf Login setzen
+						document.getElementById("userin").focus();
+						document.getElementById("userin").select();
+					}
+					
+					
+					// Ueberprüfung auf CP-Server Lizenz
+					function cpServerlicence()
+					{
+						if('' == 'licencenotfound')
+						{
+							// Anfangsposition des Dialogfensters
+							xpos = document.getElementById('body').offsetWidth / 2 - 250;
+							ypos = document.getElementById('body').offsetHeight / 2 - 95;
+						
+						
+							document.getElementById('transparentbg').style.visibility = 'visible';
+							document.getElementById('transparentbg').style.zIndex = 99;
+							document.getElementById('transparentbg').style.top = '0px';
+							document.getElementById('transparentbg').style.left = '0px';
+							document.getElementById('transparentbg').style.height = '100%';
+							document.getElementById('transparentbg').style.width = '100%';
+						
+							document.getElementById('cpservererror').style.visibility = 'visible';
+							document.getElementById('cpservererror').style.zIndex = 100;
+							document.getElementById('cpservererror').style.left = xpos + 'px';
+							document.getElementById('cpservererror').style.top = ypos + 'px';
+							document.getElementById('cpservererror').style.height = '190px';
+							document.getElementById('cpservererror').style.width = '500px';
+						}
+						else
+						{
+							loaded();
+							checkBrowser(); 
+						}
+					}					
+				</script></head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="overflow:auto;" onload="cpServerlicence()" id="body" bgcolor="#EEEEEE">
+<div style="position:absolute; visibility:hidden; background-image:url(/images/transparentdiv.gif)" id="transparentbg"></div>
+<div id="dialogDIV" style="position:absolute; visibility:hidden; border: 2px solid black;">
+<table align="center" width="100%" bgcolor="#FFFFFF" height="100%" cellpadding="2" cellspacing="2">
+<tr>
+<td valign="middle" align="center" class="font1">
+<iframe height="100%" width="100%" frameborder="0" scrolling="no" id="dialog_iframe" src=""></iframe>
+</td>
+</tr>
+</table>
+</div>
+<div id="cpservererror" style="position:absolute; visibility:hidden">
+<table width="100%" height="100%" border="0" cellpadding="3" cellspacing="0" style="border:#0F3663 solid 2px; background-color:#E6EDF7">
+<tr>
+<td valign="top">
+<table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr class="font1" style="color:#FFFFFF; background-color:#8DAED9">
+<td width="5%" valign="top" align="center"><img src="/images/warn_reportsetting.png"></td>
+<td width="95%" valign="top" align="left">Es wurde keine gültige Lizenz gefunden. Bitte überprüfen Sie die folgenden Punkte:</td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="2" cellspacing="2" height="100%">
+<tr class="font7" style="color:#333333">
+<td valign="top" align="right" colspan="2" height="10px">&nbsp;</td>
+</tr>
+<tr class="font7" style="display:none">
+<td width="10%" valign="top" align="right"><img src="/images/list_grey.png"></td>
+<td width="90%" valign="top">ist CP-Server gestartet?</td>
+</tr>
+<tr class="font7" style="display:none">
+<td width="10%" valign="top" align="right"><img src="/images/list_grey.png"></td>
+<td width="90%" valign="top">existiert eine gültige Lizenz im CP-LICENCE MANAGER?</td>
+</tr>
+<tr class="font7" style="display:none">
+<td width="10%" valign="top" align="right"><img src="/images/list_grey.png"></td>
+<td width="90%" valign="top">ist der Systembenutzer ’CP-Web’ im USER MANAGER angelegt?</td>
+</tr>
+<tr class="font7" style="display:none">
+<td width="10%" valign="top" align="right"><img src="/images/list_grey.png"></td>
+<td width="90%" valign="top">überprüfen Sie die Konfiguration des CP-Server Ports (/xml/cpWEBServer.xml)
+											</td>
+</tr>
+<tr class="font7" style="display:none">
+<td width="10%" valign="top" align="right"><img src="/images/list_grey.png"></td>
+<td width="90%" valign="top">Der Systembenutzer ’CP-Web’ ist bereits im CP-SERVER angemeldet</td>
+</tr>
+<tr class="font7" style="color:#333333">
+<td valign="middle" align="right" colspan="2" style="padding-right:20px; padding-top:20px" height="100%"><input type="button" onclick="window.location.reload()" class="font1" value="Aktualisieren" style="background-image:url(/images/bg_button_Blue.gif); background-repeat:repeat; border: 1px #8DAED9 solid; Width: 100; Height:27; cursor:pointer; color: #FFFFFF"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="99%">
+<tr>
+<td align="center" valign="middle">
+<table border="0" width="540" cellpadding="0" cellspacing="0" style="border: 1px solid #0F3663">
+<tr>
+<td valign="middle" colspan="2" nowrap bgcolor="#FFFFFF">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="25%"><a target="_blank" href="http://www.mueller-guttenbrunn.at"><img vspace="2" hspace="2" border="0" src="/images/mg.jpg"></a></td>
+<td class="font6eng" valign="top" align="right" style="color: #333333; font-size:14pt ; padding-left:20px; padding-top:10px; padding-bottom:10px; padding-right:15px">Benutzer anmelden</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="background-image:url(/images/bg_login_Blue.gif); background-repeat:repeat">
+<td colspan="2" class="font5" valign="top" height="300px" style="color: #FFFFFF; padding-left: 30px; padding-right: 30px; padding-top: 70px; padding-bottom: 20px">
+<table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td width="20%" class="font1" colspan="2" style="color: #FFFFFF; padding:6px; letter-spacing: 1px; font-size:10pt">CP-Web</td>
+</tr>
+<tr>
+<td width="20%" class="font5" colspan="2" style="color: #FFFFFF; padding:6px">Bitte geben Sie Ihren Namen und Ihr persönliches Kennwort ein.</td>
+</tr>
+<tr>
+<td colspan="2"><img height="5" src="/images/transparent.gif"></td>
+</tr>
+<tr>
+<td width="20%" class="font5" style="color: #FFFFFF; padding:6px">Benutzer:
+														</td>
+<td class="font5" style="color: #FFFFFF; padding:6px"><input type="text" id="userin" size="30" class="font1big" onkeypress="checkEnterKey(event)" style="color:#333333"></td>
+</tr>
+<tr>
+<td width="20%" class="font5" style="color: #FFFFFF; padding:6px">Kennwort:
+														</td>
+<td class="font5" style="color: #FFFFFF; padding:6px"><input type="password" id="passwordin" size="30" class="font1big" onkeypress="checkEnterKey(event)" style="color:#333333"></td>
+</tr>
+</table><img src="/images/transparent.gif" height="54px"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+<form name="form" action="" method="post" onSubmit="return CryptPassword()"><input type="hidden" name="path" value="/"><input type="hidden" name="action" value="login"><tr>
+<td width="25%" style="padding-left:10px"><input type="button" onclick="pluginCheck();" id="AQ_browsertest" class="font1" style="background-image:url(/images/bg_button_Blue.gif); background-repeat:repeat; border: 1px #8DAED9 solid; Height:27; cursor:pointer; color: #FFFFFF" value="Browser-Test"></td>
+<td style="padding-right:10px" align="right"><input type="submit" id="LoginButton" class="font1" style="background-image:url(/images/bg_button_Blue.gif); background-repeat:repeat; border: 1px #8DAED9 solid; Width: 80; Height:27; cursor:pointer; color: #FFFFFF" value="LOGIN"></td>
+</tr><input type="hidden" name="password"><input type="hidden" name="user"></form>
+</table>
+</td>
+</tr>
+</table><input type="hidden" id="browsercheck" name="browsercheck" value="1"></td>
+</tr>
+</table>
+</body>
+</html>

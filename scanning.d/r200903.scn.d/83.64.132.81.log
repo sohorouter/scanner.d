@@ -1,0 +1,16 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-30 03:52 CEST
+Interesting ports on 83-64-132-81.oberwart.xdsl-line.inode.at (83.64.132.81):
+PORT     STATE    SERVICE
+22/tcp   closed   ssh
+23/tcp   open     telnet
+80/tcp   closed   http
+443/tcp  closed   https
+3389/tcp closed   ms-term-serv
+8080/tcp filtered http-proxy
+Aggressive OS guesses: Huawei MT800u-T, or ZyXEL Prestige 623ME-T1 or 2602R-61 ADSL router (93%), Allied Telesyn AT-9006SX/SC switch (88%), Cabletron Systems ELS100-24TXM Switch (88%), Netgear RT311 broadband router (88%), ZyXEL Prestige 600-series ADSL router (88%), Cisco Catalyst 1900 switch or RAD IPMUX-1 TDM-over-IP multiplexer (87%), Netopia 3387WG-ENT broadband router (86%), Bay Networks BayStack 450 switch (software version 3.1.0.22) (86%), Bay Networks BayStack 450 switch (software version 4.2.0.16) (86%), Cisco Catalyst 1912 switch (86%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 10 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 5.12 seconds

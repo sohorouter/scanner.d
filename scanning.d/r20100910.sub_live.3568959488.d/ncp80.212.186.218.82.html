@@ -1,0 +1,326 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Last-Modified: Fri, 16 Jul 2010 06:30:08 GMT
+Accept-Ranges: bytes
+ETag: "d5d33756b024cb1:0"
+Server: Microsoft-IIS/7.0
+X-Powered-By: ASP.NET
+MicrosoftOfficeWebServer: 5.0_Pub
+MS-Author-Via: MS-FP/4.0
+Date: Fri, 10 Sep 2010 11:39:01 GMT
+Connection: close
+Content-Length: 14690
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+    <script type="text/javascript" language="javascript">
+
+        function ChangeLoeffelImg(value) {
+            var img = document.getElementById("imgLoeffel");
+            var lnk = document.getElementById("lnkProgram");
+            if (value == 1) {
+                img.setAttribute("src", "RetailMasterSL/loeffel.active.png");
+                lnk.className = "ssLinkInImgBlack";
+            }
+            else {
+                img.setAttribute("src", "RetailMasterSL/loeffel.inactive.png");
+                lnk.className = "ssLinkInImgWhite";
+            }
+        }
+
+        function ChangeGabelImg(value) {
+            var img = document.getElementById("imgGabel");
+            var lnk = document.getElementById("lnkPDF");
+            if (value == 1) {
+                img.setAttribute("src", "RetailMasterSL/gabel.active.png");
+                lnk.className = "ssLinkInImgBlack";
+            }
+            else {
+                img.setAttribute("src", "RetailMasterSL/gabel.inactive.png");
+                lnk.className = "ssLinkInImgWhite";
+            }
+        }
+
+        function ChangeMesserImg(value) {
+            var img = document.getElementById("imgMesser");
+            var lnk = document.getElementById("lnkITFits");
+            if (value == 1) {
+                img.setAttribute("src", "RetailMasterSL/messer.active.png");
+                lnk.className = "ssLinkInImgBlack";
+            }
+            else {
+                img.setAttribute("src", "RetailMasterSL/messer.inactive.png");
+                lnk.className = "ssLinkInImgWhite";
+            }
+        }
+
+    </script>
+
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        html, body, form
+        {
+            height: 100%;
+        }
+        body
+        {
+            text-align: center; /* horizontal centering for IE Win quirks */
+        }
+        #distance
+        {
+            width: 1px;
+            height: 50%;
+            margin-bottom: -384px; /* half of container's height */
+            float: left;
+        }
+        #container
+        {
+            margin: 0 auto;
+            position: relative; /* puts container in front of distance */
+            text-align: left;
+            height: 768px;
+            width: 1024px;
+            border: solid 1px black;
+            clear: left; /* background-image: url(WpfRetailMaster/Images/background.jpg);-->*/
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .ssAHrefStylingCert, .ssAHrefStyling
+        {
+            text-decoration: underline;
+            font-size: 11px;
+            font-family: Verdana;
+            font-weight: bold;
+            color: #666666;
+        }
+        .ssAHrefStyling
+        {
+            font-size: 15px;
+            font-weight: normal;
+        }
+        .ssDescription
+        {
+            font-size: 10px;
+            font-family: Verdana;
+        }
+        .ssHeadImage
+        {
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .ssHeadText
+        {
+            font-size: 8pt;
+            color: Black;
+            font-family: Verdana;
+            margin-right: 10px;
+        }
+        .ssOrangeText
+        {
+            cursor: default;
+            font-family: "Segoe Print" , Comic Sans MS, Verdana;
+            font-size: 11pt;
+            font-weight: bold;
+            text-align: left;
+            color: #FF3333;
+            margin-bottom: 10px;
+        }
+        .ssText
+        {
+            cursor: default;
+            width: 100%;
+            font-family: Verdana;
+            font-size: 12px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .ssLinkInImgBlack, .ssLinkInImgWhite
+        {
+            font-family: "Segoe Print" , Comic Sans MS, Verdana;
+            font-size: 10pt;
+            text-decoration: none;
+        }
+        .ssLinkInImgBlack
+        {
+            color: Black;
+        }
+        .ssLinkInImgWhite
+        {
+            color: White;
+        }
+    </style>
+    <style type="text/css" media="screen, print">
+        @font-face
+        {
+            src: url("http://emenu.itfits.at/RetailMasterSL/SEGOEPR"); /* IE */
+            src: local("Segoe Print"), url("http://emenu.itfits.at/RetailMasterSL/SEGOEPR") format("truetype"); /* non-IE */
+            font-family: "Segoe Print";
+        }
+    </style>
+    <title>Willkommen bei MYTOS!</title>
+</head>
+<body>
+    <div id="distance">
+    </div>
+    <div runat="server" id="container">
+        <div style="margin: 0 auto; text-align: center;">
+            <p class="ssHeadImage">
+                <img alt="" src="RetailMasterSL/logo.mytos.header.png" />
+            </p>
+            <p class="ssHeadText">
+                My Touch Order System
+            </p>
+            <br />
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="25%" rowspan="2" align="right" valign="top">
+                        <div style="height: 611px; display: inline;">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <div style="height: 70px; display: block;">
+                                            <img id="imgLoeffel" alt="" src="RetailMasterSL/loeffel.inactive.png" onmouseover="ChangeLoeffelImg(1)"
+                                                onmouseout="ChangeLoeffelImg(0)" style="position: relative;" />
+                                            <div style="position: absolute; left: 100px; top: 183px; width: 150px;">
+                                                <a id="lnkProgram" class="ssLinkInImgWhite" href="../RetailMasterSL4/Default.aspx"
+                                                    onmouseover="ChangeLoeffelImg(1)" onmouseout="ChangeLoeffelImg(0)">Run the Program</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <div style="height: 70px; display: block;">
+                                            <img id="imgMesser" alt="" src="RetailMasterSL/messer.inactive.png" onmouseover="ChangeMesserImg(1)"
+                                                onmouseout="ChangeMesserImg(0)" />
+                                            <div style="position: absolute; left: 100px; top: 253px; width: 150px;">
+                                                <a id="lnkITFits" class="ssLinkInImgWhite" href="http://www.it-fits.at" onmouseover="ChangeMesserImg(1)"
+                                                    onmouseout="ChangeMesserImg(0)">Welcome to IT-Fits</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <div style="height: 70px; display: block;">
+                                            <img id="imgGabel" alt="" src="RetailMasterSL/gabel.inactive.png" onmouseover="ChangeGabelImg(1)"
+                                                onmouseout="ChangeGabelImg(0)" />
+                                            <div style="position: absolute; left: 100px; top: 323px; width: 150px;">
+                                                <a id="lnkPDF" class="ssLinkInImgWhite" href="../KitchenSL4/Default.aspx" onmouseover="ChangeGabelImg(1)"
+                                                    onmouseout="ChangeGabelImg(0)">Run the Kitchen</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center">
+                        <div style="background-image: url('RetailMasterSL/mytos-site-background.png'); background-repeat: no-repeat;
+                            padding-top: 320px; padding-right: 20px; padding-bottom: 10px; margin-bottom: 2px;">
+                            <table width="100%">
+                                <tr>
+                                    <td width="45%">
+                                    </td>
+                                    <td>
+                                        <img alt="" src="RetailMasterSL/pfeile.links.png" class="ssArrow" />
+                                    </td>
+                                    <td>
+                                        <img alt="" src="RetailMasterSL/stop.png" />
+                                    </td>
+                                    <td>
+                                        <img alt="" src="RetailMasterSL/pfeile.rechts.png" />
+                                    </td>
+                                    <td width="45%">
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="overflow: auto; text-align: left; max-height: 275px; height: 275px; padding-left: 40px;
+                                padding-right: 20px; scrollbar-face-color: #FFCC33; scrollbar-highlight-color: #FF3333;
+                                scrollbar-3dlight-color: #FFCC33; scrollbar-darkshadow-color: #FFCC33; scrollbar-shadow-color: #FFCC33;
+                                scrollbar-arrow-color: #FF3333; scrollbar-track-color: Transparent;">
+                                <p class="ssOrangeText">
+                                    Product</p>
+                                <p class="ssText">
+                                    MYTOS: elektronische mehrsprachige Speisekarte</p>
+                                <p class="ssOrangeText">
+                                    Innovation</p>
+                                <p class="ssText">
+                                    Nutzung der Touchscreen-Technologie im traditionell konservativen Bereich der Gastronomie
+                                    und Hotellerie</p>
+                                <p class="ssOrangeText">
+                                    Ziele</p>
+                                <p class="ssText">
+                                    Ausstattung touristischer Bereiche mit MYTOS<br />
+                                    Komfort für (ausländische) Gäste<br />
+                                    Anregung zur Bestellung<br />
+                                    Einfache Bestellung<br />
+                                    Gezielter Einsatz des Fachpersonals
+                                </p>
+                                <p class="ssOrangeText">
+                                    Zielgruppen</p>
+                                <p class="ssText">
+                                    Exklusive Gastronomie<br />
+                                    Exklusive Hotellerie<br />
+                                    Rehabilitationszentren<br />
+                                    Kurheime<br />
+                                    Exklusive Kliniken<br />
+                                    Fluglinien<br />
+                                    Kreuzfahrtsschiffe<br />
+                                    Bahn/Zug – Erste Klasse Gäste<br />
+                                    Systemgastronomie<br />
+                                    Ausflugsgastronomie<br />
+                                    Kongress- und Seminartourismus<br />
+                                    Bars und In-Lokale<br />
+                                    Innovative Gastronomie
+                                </p>
+                                <p class="ssOrangeText">
+                                    Vorteile der Anwendung</p>
+                                <p class="ssText">
+                                    Mehrsprachigkeit<br />
+                                    Aktualisierung des Speisen- und Getränkeangebotes Kundenbindungsprogramm<br />
+                                    Gezielte Werbemöglichkeit<br />
+                                    Keine Wartezeiten auf das Fachpersonal<br />
+                                    Bedienung in der Muttersprache<br />
+                                    Direkte und schnelle Bestellung<br />
+                                    Zusatzinformationen zu den Produkten<br />
+                                    Interaktion zwischen Gast und Fachpersonal<br />
+                                    Infotainment (Information und Unterhaltung)<br />
+                                    Unterstützung für Smartphone möglich
+                                </p>
+                                <p class="ssOrangeText">
+                                    Informationen anfordern</p>
+                                <p class="ssText">
+                                    Sollten Sie Interesse haben, Ihre (ausländischen) Gäste innovativ, rasch und effektiv
+                                    zu betreuen, zögern Sie nicht uns zu kontaktieren.<br />
+                                    Wir werden uns umgehend mit Ihnen in Verbindung setzen und Sie umfassend über MYTOS
+                                    informieren.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="ssLinkInImgBlack" href="http://www.it-fits.net/htm/de/impressum/impressum.htm">
+                            Impressum</a>
+                    </td>
+                    <td width="25%">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+HTTP/1.0 200 OK
+Date: Fri, 10 Sep 2010 17:24:10 GMT
+Server: Web-Server/3.0
+Content-Type: text/html; charset=UTF-8
+Content-Length: 290
+Pragma: no-cache
+Cache-Control: no-cache
+Set-Cookie: cookieOnOffChecker=on; path=/
+Connection: close
+
+
+<html>
+<head>
+<title>Web Image Monitor</title>
+<script language="javascript">
+<!--
+function jumpPage(){
+	self.document.cookie="cookieOnOffChecker=on; path=/";
+	location.href="/web/user/de/websys/webArch/mainFrame.cgi";
+}
+// -->
+</script>
+</head>
+<body onLoad="jumpPage()">
+</body>
+</html>

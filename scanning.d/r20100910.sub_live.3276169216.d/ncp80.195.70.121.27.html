@@ -1,0 +1,180 @@
+HTTP/1.0 200 OK
+Server: s_httpd (OS-9/68K)
+Expires: Sun, 10 Oct 2010 06:43:10 GMT
+Content-type: text/html
+Content-length: 11947
+Date: Fri, 10 Sep 2010 08:43:10 GMT
+Last Modified: Wed, 19 May 2010 05:30:00 GMT
+
+<html>
+<head>
+<iframe src="leer.html" name="cmd" height="0" scrolling="NO" noresize ></iframe>
+<iframe src="leer.html" name="result" height="0" scrolling="NO" noresize ></iframe>
+<iframe src="leer.html" name="res_ext" height="0" scrolling="NO" noresize ></iframe>
+<title>Graphik www-controller Ver 06_10 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<script src="anz.js" type="text/javascript"></script>
+ <script src="streamconfig.js" type="text/javascript"></script> <script>
+var time=1000;
+var dom=false;
+if(document.getElementById)
+{ if(document.getElementsByTagName("head")[0].childNodes){ dom=true;}}
+var ie=document.all&&!window.opera&&!dom;var op=window.opera&&!dom;var BrowserName = navigator.appName ;var ns=document.layers&&!dom;var netscape="" ; //netscapebrowser (BrowserName.indexOf("Netscape")>=0)? netscape=true: netscape=false; 
+cHand=document.all?"hand":"pointer";
+var jetzt = new Date(); 
+function initsettime(t){ time=eval(t*1000); return;} 
+function initbacground(bild){ if(dom||op){ var obj=document.getElementsByTagName("BODY");obj[0].setAttribute("background",bild);return;}} 
+function initbacground(bild){ if(dom||op){ var obj=document.getElementsByTagName("BODY");obj[0].setAttribute("background",bild);return;}} 
+var requestString;
+function buildRequest(){ requestString="rdsps -n";for(i=0;i<ebenenIds.length;i++) {if ((varNames[i]!="")&&(varNames[i]!=="Extern")) requestString+=" "+ varNames[i]; if (var2Names[i]!="") requestString+=" "+ var2Names[i]; if (var3Names[i]!="") requestString+=" "+ var3Names[i]; } doGetValues();} 
+var waitCount=0;
+function doGetValues(){parent.bWaitResult = true;waitCount=0; if (requestString=="rdsps -n") requestString="rdsps AIN0 -n" ; parent.result.location.href="sps_result1.shtml?cmdurl="+escape(requestString);window.setTimeout("doGetValuesWait1()",500);}
+var zaehl_ext=0;
+function reqip(){ 
+var i = zaehl_ext; 
+if (varNames[i]=="Extern") { 
+var text=aValue4[i]+aAktion[i];var myip="";var myvar="";myip=text.substring(text.indexOf("(")+1,text.indexOf(",")) ;
+myvar=text.substring(text.indexOf(",")+1,text.indexOf(")")) ; 
+if (myip.length >=7) {parent.res_ext.location.href="sps_result1.shtml?cmdurl="+escape('http_req.cgi '+myip+' rdsps?'+myvar+'+-n');}} 
+var time_ex=eval(time);window.setTimeout("do_reqipWait1()",time_ex);} 
+function pageStart() 
+{ if(ns) { ladeZustand=1;addEl();}} 
+var ladeZustand=ns?0:1; 
+function addEl() {
+ if(ladeZustand==1){
+var m_o="http://localhost/pics/";
+initsettime("5");
+initbacground("mkc_bkgnd2.gif");
+zahl("L491",4910,"AIN2",201,375,"#000000","#ffffff",12,5,1,"°C","anz(+");
+text("L837",8370,"","",806,394,"#000000","",16,"Fernwärme","");
+bild("L545",5450,"DOT8","",68,403,"Pumpe_o_aus.gif","Pumpe_o_betr.gif","","","DIN4","Pumpe_o_str.gif","","","26","26");
+text("L269",2690,"","",504,412,"#808080","",16,"Puffer","");
+zahl("L273",2730,"M3",718,367,"#000000","#ffffff",12,5,1,"°C","");
+text("L384",3840,"","",94,159,"#808080","",16,"Solar -","");
+bild("L499",4990,"DOT6","",905,388,"Anforderung.gif","","","","","","","","","");
+bild("L599",5990,"","",906,417,"","","","","DIN3","Stoerung_anim_2.gif","","","","");
+bild("L593",5930,"DOT6","",855,450,"h_flamme_snkr_anim.gif","","","","","","","","","");
+bild("L488",4880,"","",60,75,"h_Solar_Panel_lu_ro1.gif","","","","","","","","","");
+bild("L830",8300,"","",83,488,"h_Rohr_RL_w.gif","","","","","","","","180","7");
+bild("L519",5190,"","",283,441,"h_Rohr_VL_w.gif","","","","","","","","70","7");
+bild("L521",5210,"","",189,98,"h_Rohr_VL_s.gif","","","","","","","","7","347");
+bild("L768",7680,"","",551,133,"h_Rohr_VL_w.gif","","","","","","","","36","7");
+bild("L532",5320,"","",686,384,"h_Rohr_VL_w.gif","","","","","","","","190","7");
+bild("L533",5330,"","",347,188,"h_Rohr_VL_s.gif","","","","","","","","7","260");
+bild("L-1",-10,"","",189,440,"h_Rohr_VL_w.gif","","","","","","","","80","7");
+bild("L541",5410,"","",685,134,"h_Rohr_VL_s.gif","","","","","","","","7","256");
+bild("L544",5440,"","",78,155,"h_Rohr_RL_s.gif","","","","","","","","7","355");
+zahl("L549",5490,"AIN1",211,80,"#000000","#ffffff",12,5,1,"°C","");
+zahl("L553",5530,"AIN4",292,424,"#000000","#ffffff",12,5,1,"°C","");
+zahl("L554",5540,"AIN5",293,472,"#000000","#ffffff",12,5,1,"°C","");
+text("L560",5600,"","",95,176,"#808080","",16,"kollektoren","");
+text("L561",5610,"","",96,194,"#808080","",16,"35 m2","");
+bild("L591",5910,"","",800,342,"Kessel_kl_r.gif","Kessel_kl_r.gif","","","","","","","","");
+zahl("L574",5740,"AIN3",94,469,"#000000","#ffffff",12,5,1,"°C","");
+bild("L766",7660,"","",752,100,"h_Pfeilgr_RL_wl.gif","","","","","","","","","");
+text("L676",6760,"","",726,86,"#000000","",9,"","");
+bild("L703",7030,"","",281,489,"h_Rohr_RL_w.gif","","","","","","","","215","7");
+text("L707",7070,"DIN16","open(fd3.hist_show.shtml,width=850 height=550 top=100 left=50) ",787,131,"#000000","#ffff00",13,"zur Datenaufzeichnung","zur Datenaufzeichnung");
+text("L709",7090,"","",66,0,"#808080","",20,"Wohnhausanlage Kirchboden II / Wagrain    -      Hydraulikschema Solar/Puffer/Fernwärme","");
+bild("L763",7630,"","",387,223,"Vent3w_Al_ABu.gif","","","","","","","","","");
+bild("L761",7610,"","",489,395,"h_Rohr_RL_s.gif","","","","","","","","7","98");
+text("L838",8380,"","",825,412,"#000000","",16,"50 kW","");
+bild("L760",7600,"","",552,358,"h_Rohr_RL_w.gif","","","","","","","","40","7");
+bild("L757",7570,"","",411,343,"h_Rohr_VL_w.gif","","","","","","","","52","7");
+bild("L733",7330,"","",408,188,"h_Rohr_VL_s.gif","","","","","","","","7","35");
+bild("L734",7340,"","",507,71,"h_Rohr_VL_w.gif","","","","","","","","250","7");
+bild("L736",7360,"","",755,65,"h_Pfeilgr_VL_wr.gif","","","","","","","","18","19");
+text("L737",7370,"","",782,64,"#808080","",16,"Energieversorgung","");
+bild("L738",7380,"","",590,83,"h_Rohr_RL_s.gif","","","","","","","","7","282");
+bild("L739",7390,"","",595,106,"h_Rohr_RL_w.gif","","","","","","","","167","7");
+bild("L764",7640,"","",507,72,"h_Rohr_VL_s.gif","","","","","","","","7","40");
+bild("L770",7700,"","",551,231,"h_Rohr_RL_w.gif","","","","","","","","36","7");
+zahl("L747",7470,"M7",701,89,"#000000","#ffffff",12,5,1,"°C","");
+zahl("L748",7480,"M6",701,54,"#000000","#ffffff",12,5,1,"°C","");
+text("L750",7500,"DOT4","",380,258,"#000000","#ffff00",10,"zu","offen");
+bild("L0",00,"","",453,104,"puffer2.gif","","","","","","","","110","300");
+bild("L753",7530,"DOT2","",440,479,"g_Pumpe_l_aus.gif","g_Pumpe_l_betr.gif","","","DIN5","g_Pumpe_l_str.gif","","","26","26");
+bild("L831",8310,"","",256,432,"puffer2.gif","","","","","","","","30","70");
+bild("L762",7620,"","",423,233,"h_Rohr_VL_w.gif","","","","","","","","40","7");
+text("L767",7670,"","",783,82,"#808080","",16,"zu den 10","");
+bild("L769",7690,"","",601,133,"h_Rohr_VL_w.gif","","","","","","","","90","7");
+bild("L771",7710,"","",600,231,"h_Rohr_RL_w.gif","","","","","","","","36","7");
+bild("L772",7720,"","",631,231,"h_Rohr_RL_s.gif","","","","","","","","7","260");
+bild("L773",7730,"","",636,490,"h_Rohr_RL_w.gif","","","","","","","","170","7");
+zahl("L776",7760,"M4",718,472,"#000000","#ffffff",12,5,1,"°C","");
+bild("L777",7770,"","",580,67,"VENT_THERM3.gif","","","","","","","","26","21");
+bild("L778",7780,"DOT7","",635,61,"Pumpe_r_aus.gif","Pumpe_r_betr.gif","","","","Pumpe_r_str.gif","","","26","26");
+text("L779",7790,"","",211,61,"#000000","",16,"F1","");
+text("L780",7800,"","",201,356,"#000000","",16,"F2","");
+text("L781",7810,"","",94,450,"#000000","",16,"F3","");
+text("L782",7820,"","",290,405,"#000000","",16,"F4","");
+text("L783",7830,"","",293,454,"#000000","",16,"F5","");
+text("L784",7840,"","",430,138,"#000000","",16,"F6","");
+zahl("L785",7850,"AIN6",483,140,"#000000","#ffffff",12,5,1,"°C","");
+zahl("L786",7860,"M5",483,213,"#000000","#ffffff",12,5,1,"°C","");
+text("L789",7890,"","",431,212,"#000000","",16,"F8","");
+zahl("L790",7900,"M1",484,288,"#000000","#ffffff",12,5,1,"°C","");
+text("L791",7910,"","",432,288,"#000000","",16,"F9","");
+text("L792",7920,"","",424,359,"#000000","",16,"F10","");
+zahl("L793",7930,"M2",483,359,"#000000","#ffffff",12,5,1,"°C","");
+text("L794",7940,"","",717,349,"#000000","",16,"F11","");
+text("L795",7950,"","",718,454,"#000000","",16,"F12","");
+text("L796",7960,"","",667,53,"#000000","",16,"F14","");
+text("L797",7970,"","",669,88,"#000000","",16,"F15","");
+text("L801",8010,"","",42,407,"#000000","",16,"P1","");
+text("L802",8020,"","",443,461,"#000000","",16,"P2","");
+text("L803",8030,"","",636,41,"#000000","",16,"P3","");
+text("L805",8050,"","",557,412,"#808080","",16,"3.500l","");
+bild("L806",8060,"","",376,479,"kwh2.gif","","","","","","","","","");
+bild("L807",8070,"","",434,543,"logoinsta.gif","","","","","","","","224","100");
+bild("L812",8120,"","",74,508,"knob.gif","","","","","","","","15","25");
+text("L813",8130,"","",49,512,"#000000","",16,"D1","");
+bild("L814",8140,"","",96,513,"","","","","M31","Stoerung_anim_2.gif","","","66","16");
+bild("L818",8180,"","",584,486,"knob.gif","","","","","","","","25","15");
+text("L816",8160,"","",556,484,"#000000","",16,"D2","");
+bild("L817",8170,"","",601,490,"h_Rohr_RL_w.gif","","","","","","","","40","7");
+bild("L819",8190,"","",556,465,"","","","","M32","Stoerung_anim_2.gif","","","66","16");
+text("L821",8210,"","",384,461,"#000000","",16,"Z1","");
+bild("L823",8230,"","",18,518,"eigenheim3.gif","","","","","","","","380","132");
+text("L824",8240,"","",435,596,"#808080","",10,"Ing. Hans Steurer","");
+text("L825",8250,"","goto(schema2.html)",527,596,"#808080","",10,"Ingenieurbüro","");
+text("L827",8270,"","",783,101,"#808080","",16,"Wohnungsstationen","");
+zahl("L828",8280,"AOT2",466,498,"#000000","#c9dbcf",12,3,0,"%","anz(*10)");
+zahl("L832",8320,"M20",378,510,"#000000","#ffffff",12,3,0," kWh","");
+text("L835",8350,"","",444,510,"#000000","",12,"Tagesertrag Solar","");
+bild("L839",8390,"","",349,188,"h_Rohr_VL_w.gif","","","","","","","","66","7");
+bild("L-1",-10,"","",408,249,"h_Rohr_VL_s.gif","","","","","","","","7","100");
+bild("L840",8400,"","",712,539,"tbschrempf3.gif","","","","","","","","150","110");
+zahl("L852",8520,"M28",360,529,"#000000","#ffffff",12,6,0," kWh","");
+text("L853",8530,"","",444,529,"#000000","",12,"Gesamtertrag Solar seit 07.12.2009","");
+text("L855",8550,"","",86,237,"#808080","",14,"spez. jährl.","");
+text("L856",8560,"","",85,257,"#808080","",14,"Solarertrag:","");
+text("L857",8570,"","",133,280,"#808080","",14,"kWh/m2","");
+zahl("L858",8580,"M28",88,278,"#ffffff","#ff0000",14,5,1,"","anz(/35)");
+text("L862",8620,"DIN1","toggle()",507,434,"#000000","#ffffff",12,"Winterbetrieb","Sommerbetrieb");
+bild("L864",8640,"","",207,418,"Vent3w_Ao_ABl.gif","","","","","","","","26","38");
+bild("L865",8650,"","",217,455,"h_Rohr_RL_s.gif","","","","","","","","7","35");
+text("L866",8660,"","",212,397,"#000000","",16,"V1","");
+zahl("L867",8670,"AOT1",100,410,"#000000","#c9dbcf",12,3,0,"%","anz(*10)");
+zahl("L868",8680,"AIN7",49,537,"#000000","#ffffff",12,3,1," bar","anz(*0.5)");
+zahl("L869",8690,"AIN8",576,504,"#000000","#ffffff",12,3,1," bar","anz(*0.5)");
+text("L870",8700,"DOT3","",188,462,"#000000","#ffff00",10,"zu","offen");
+bild("L871",8710,"DOT1","",663,480,"Pumpe_r_aus.gif","Pumpe_r_betr.gif","","","","Pumpe_r_str.gif","","","26","26");
+text("L872",8720,"","",665,461,"#000000","",16,"P4","");
+
+
+if(ns){ document.inner.document.close();}
+ladeZustand++};
+buildRequest();
+reqip() ;}
+</script>
+</head>
+ <style type="text/css">
+<!-- 
+.props {font-family: Arial, Helvetica,sans-serif;font-size: 10pt;font-weight:bold;border-spacing:0px; padding:1px }
+-->
+</style> 
+<body id="bdy" bgcolor="#FFFFFF" onLoad="pageStart();" onKeyDown="Cursortasten(event);">
+<div name="inner" id="inner" style="position:absolute; top:0px; left:0px;"></div>
+<script> addEl();</script>
+</body></html>

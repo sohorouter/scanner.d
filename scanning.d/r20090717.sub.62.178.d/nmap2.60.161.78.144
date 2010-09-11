@@ -1,0 +1,92 @@
+
+Starting Nmap 4.85BETA5 ( http://nmap.org ) at 2009-06-19 10:47 CEST
+Initiating Ping Scan at 10:47
+Scanning 60.161.78.144 [2 ports]
+Completed Ping Scan at 10:47, 0.38s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 10:47
+Completed Parallel DNS resolution of 1 host. at 10:47, 0.04s elapsed
+Initiating SYN Stealth Scan at 10:47
+Scanning 60.161.78.144 [1000 ports]
+Discovered open port 25/tcp on 60.161.78.144
+Discovered open port 80/tcp on 60.161.78.144
+Discovered open port 21/tcp on 60.161.78.144
+Discovered open port 7778/tcp on 60.161.78.144
+Increasing send delay for 60.161.78.144 from 0 to 5 due to 22 out of 73 dropped probes since last increase.
+Discovered open port 1029/tcp on 60.161.78.144
+SYN Stealth Scan Timing: About 24.54% done; ETC: 10:49 (0:01:35 remaining)
+Discovered open port 563/tcp on 60.161.78.144
+SYN Stealth Scan Timing: About 46.42% done; ETC: 10:49 (0:01:10 remaining)
+Discovered open port 6666/tcp on 60.161.78.144
+Increasing send delay for 60.161.78.144 from 5 to 10 due to max_successful_tryno increase to 4
+SYN Stealth Scan Timing: About 67.23% done; ETC: 10:50 (0:00:44 remaining)
+Discovered open port 1755/tcp on 60.161.78.144
+Discovered open port 6059/tcp on 60.161.78.144
+Discovered open port 119/tcp on 60.161.78.144
+Discovered open port 1433/tcp on 60.161.78.144
+Discovered open port 1030/tcp on 60.161.78.144
+Discovered open port 7007/tcp on 60.161.78.144
+Completed SYN Stealth Scan at 10:49, 127.01s elapsed (1000 total ports)
+Initiating OS detection (try #1) against 60.161.78.144
+Retrying OS detection (try #2) against 60.161.78.144
+Host 60.161.78.144 appears to be up ... good.
+Scanned at 2009-06-19 10:47:46 CEST for 134s
+Interesting ports on 60.161.78.144:
+Not shown: 973 closed ports
+PORT     STATE    SERVICE
+21/tcp   open     ftp
+25/tcp   open     smtp
+80/tcp   open     http
+111/tcp  filtered rpcbind
+119/tcp  open     nntp
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+445/tcp  filtered microsoft-ds
+563/tcp  open     snews
+593/tcp  filtered http-rpc-epmap
+1022/tcp filtered unknown
+1023/tcp filtered netvenuechat
+1025/tcp filtered NFS-or-IIS
+1029/tcp open     ms-lsa
+1030/tcp open     iad1
+1068/tcp filtered instl_bootc
+1433/tcp open     ms-sql-s
+1755/tcp open     wms
+5800/tcp filtered vnc-http
+5900/tcp filtered vnc
+6059/tcp open     X11:59
+6129/tcp filtered unknown
+6666/tcp open     irc
+6667/tcp filtered irc
+6881/tcp filtered bittorrent-tracker
+7007/tcp open     afs3-bos
+7778/tcp open     unknown
+Device type: general purpose|PDA|security-misc|WAP|media device
+Running (JUST GUESSING) : Microsoft Windows 2000|Me|XP|2003|PocketPC/CE|NT (92%), Juniper Windows 2000 (87%), Microsoft embedded (87%)
+OS fingerprint not ideal because: Host distance (18 network hops) is greater than five
+Aggressive OS guesses: Microsoft Windows 2000 SP0/SP2/SP4 or Windows XP SP0/SP1 (92%), Microsoft Windows 2000 SP1 (92%), Microsoft Windows 2000 SP2 (92%), Microsoft Windows 2000 SP4 (92%), Microsoft Windows Millennium Edition (Me) (92%), Microsoft Windows 2000 SP2 - SP4, Windows XP SP2 - SP3, or Windows Server 2003 SP0 - SP2 (90%), Microsoft Windows 2000 SP3/SP4 or Windows XP SP1/SP2 (90%), Microsoft Windows 2000 Server SP4 (89%), Microsoft Windows XP Professional SP2 (89%), Microsoft Windows 2000 SP0/SP1/SP2 or Windows XP SP0/SP1 (88%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=4.85BETA5%D=6/19%OT=21%CT=1%CU=34179%PV=N%DS=18%G=N%TM=4A3B5138%P=x86_64-unknown-linux-gnu)
+SEQ(SP=F3%GCD=1%ISR=110%TI=RI%TS=0)
+OPS(O1=M5B4NW0NNT00NNS%O2=M5B4NW0NNT00NNS%O3=M5B4NW0NNT00%O4=M5B4NW0NNT00NNS%O5=M5B4NW0NNT00NNS%O6=M5B4NNT00NNS)
+WIN(W1=4470%W2=41A0%W3=4100%W4=40E8%W5=40E8%W6=402E)
+ECN(R=Y%DF=Y%T=7F%W=4470%O=M5B4NW0NNS%CC=N%Q=)
+T1(R=Y%DF=Y%T=7F%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=Y%DF=N%T=7F%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)
+T3(R=Y%DF=Y%T=7F%W=402E%S=O%A=S+%F=AS%O=M5B4NW0NNT00NNS%RD=0%Q=)
+T3(R=N)
+T4(R=Y%DF=N%T=7F%W=0%S=A%A=O%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%T=7F%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%T=7F%W=0%S=A%A=O%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%T=7F%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=Y%DF=N%T=7F%IPL=38%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=F17A%RUD=G)
+IE(R=N)
+
+Network Distance: 18 hops
+TCP Sequence Prediction: Difficulty=243 (Good luck!)
+IP ID Sequence Generation: Random positive increments
+
+Read data files from: /usr/local/share/nmap
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 134.07 seconds
+           Raw packets sent: 1349 (61.476KB) | Rcvd: 1033 (42.028KB)

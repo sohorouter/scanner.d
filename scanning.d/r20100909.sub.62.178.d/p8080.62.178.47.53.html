@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><!-- InstanceBegin template="/Templates/Master_No_Nav.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" rev="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" rev="stylesheet" href="/substyle.css" type="text/css" />
+
+
+<!-- InstanceBeginEditable name="Page Title" -->
+<title>D-LINK SYSTEMS, INC. | WIRELESS ROUTER :
+Anmeldung
+</title>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Local Styles" -->
+<style type="text/css">
+
+fieldset label.duple {
+width: 300px;
+}
+</style>
+<!-- InstanceEndEditable -->
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/utils.js"></script>
+<script type="text/javascript" src="/ajax.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+
+var local_debug = ("" == "") ? false : true;
+
+
+var is_admin = "false" == "true";
+
+
+var radio_count = 1;
+var radio_name = ["Radio 1", "Radio 2"];
+
+
+var no_reboot_alt_location = "";
+
+
+function do_reboot()
+{
+top.location = "/reboot.cgi?reset=false";
+}
+
+
+function no_reboot()
+{
+if (no_reboot_alt_location) {
+top.location = no_reboot_alt_location;
+return;
+}
+document.getElementById("maincontent").style.display = "block";
+document.getElementById("rebootcontent").style.display = "none";
+}
+
+
+// 
+
+var lang_form;
+
+var i18n_xslt_processor;
+var i18n_xml_data_fetcher;
+var i18n_is_data_ready = false;
+var i18n_is_xslt_ready = false;
+var i18n_xml_data; // This will be an XMLDocument
+
+function i18n_xslt_is_ready(xmlDoc)
+{
+i18n_is_xslt_ready = true;
+i18n_refresh_list();
+}
+
+function i18n_data_is_ready(xmlDoc)
+{
+i18n_xml_data = xmlDoc;
+i18n_is_data_ready = true;
+i18n_refresh_list();
+}
+
+function i18n_refresh_list()
+{
+if (!(i18n_is_xslt_ready && i18n_is_data_ready)) {
+return;
+}
+
+var parent = document.getElementById("i18n_language_selection");
+parent.innerHTML = "";
+i18n_xslt_processor.transform(i18n_xml_data, window.document, parent);
+i18n_language_selector(lang_form.i18n_language.value);
+}
+
+function i18n_language_selector(lang)
+{
+//lang_form.i18n_language_select.options[lang].selected = true;
+var langs = lang_form.i18n_language_select;
+langs.value = lang;
+}
+
+function i18n_change_language(lang)
+{
+lang_form.i18n_language.value = lang;
+lang_form.submit();
+}
+// 
+
+function template_load()
+{
+// 
+lang_form = document.forms.lang_form;
+if ("" === "") {
+i18n_xslt_processor = new ajax_xslproc("/i18n_language_codes.xsl", i18n_xslt_is_ready);
+i18n_xml_data_fetcher = new ajax_xmlhttp("/languages.xml", i18n_data_is_ready, null, null);
+i18n_xslt_processor.retrieve_xsl();
+i18n_xml_data_fetcher.retrieve_xml();
+}
+// 
+
+
+global_fw_minor_version = "33";
+if (global_fw_minor_version < 10) {
+global_fw_minor_version = "0" + global_fw_minor_version;
+}
+
+//
+var fw_extend_ver = "EU";
+//
+
+var fw_minor;
+
+fw_minor = global_fw_minor_version + fw_extend_ver;
+document.getElementById("fw_minor_head").innerHTML = fw_minor;
+global_fw_minor_version = fw_minor; // save to for device info use
+
+page_load();
+
+document.getElementById("loader_container").style.display = "none";
+}
+//]]>
+</script>
+
+<!-- InstanceBeginEditable name="Scripts" -->
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+var graphic_auth = "false";
+
+
+function page_load()
+{
+
+if (!AJAX_BROWSER_HAS_XMLHTTP) {
+alert ("Ihr Webbrowser ist nicht aktuell genug, um diese Website zu verwenden. Aktualisieren Sie Ihren Browser.");
+return;
+}
+
+
+if (!AJAX_BROWSER_HAS_XSLT) {
+alert ("Ihr Webbrowser ist nicht aktuell genug, um diese Website zu verwenden. Aktualisieren Sie Ihren Browser.");
+}
+
+if (local_debug) {
+hide_all_ssi_tr();
+}
+
+
+graphic_auth = "false";
+
+
+if (graphic_auth == "false") {
+document.getElementById("old_ui").style.display = "block";
+document.forms.myform.old_password.focus();
+}
+else {
+document.getElementById("new_ui").style.display = "block";
+document.forms.myform.new_password.focus();
+}
+}
+
+
+function xml_ready(xml_doc)
+{
+var status = xml_doc.get_element_data("login");
+if (status) {
+if (status == "timeout") {
+alert("Sitzungszeitüberschreitung, bitte versuchen Sie es erneut.");
+location.replace ('/');
+}
+else if (status == "error") {
+alert("Kennwort ungültig, bitte versuchen Sie es erneut.");
+location.replace ('/');
+}
+
+
+else if (status == "auth_error") {
+alert("Geben Sie bitte den grafischen Authentifizierungskode ein.");
+location.replace ('/');
+}
+
+else {
+location.replace ('/' + status);
+return;
+}
+}
+
+
+location.reload(true);
+
+}
+
+
+function xml_timeout()
+{
+
+alert ("Die Netzwerkverbindung ist offenbar ausgefallen. Klicken Sie auf 'Ok' und versuchen Sie es erneut.");
+location.reload(true);
+}
+
+
+function send_login()
+{
+
+var salt = "36a79083";
+
+var password = "";
+
+if (graphic_auth == "false") {
+password = document.forms.myform.old_password.value.substr(0,16);
+document.forms.myform.old_password.value = ""; // Make sure password never gets sent as clear text
+}
+else {
+password = document.forms.myform.new_password.value.substr(0,16);
+document.forms.myform.new_password.value = ""; // Make sure password never gets sent as clear text
+}
+
+
+for (var i = password.length; i < 16; i++) {
+password += String.fromCharCode(1);
+}
+
+
+var input = salt + password;
+for (var i = input.length; i < 63; i++) {
+input += String.fromCharCode(1);
+}
+
+
+if (graphic_auth == "false") {
+input += (document.forms.myform.old_username.value == 'user') ? 'U' : String.fromCharCode(1);
+}
+else {
+input += (document.forms.myform.new_username.value == 'user') ? 'U' : String.fromCharCode(1);
+} 
+
+
+var hash = hex_md5(input);
+
+
+var login_hash = salt.concat(hash);
+
+
+var auth_url = "";
+
+
+auth_url = "&auth_code=" + document.forms.myform.auth_code.value + "&auth_id=AE8A1";
+
+
+
+var xml_loader = new ajax_xmlhttp("/post_login.xml?hash=" + login_hash + auth_url, xml_ready, xml_timeout);
+if (!xml_loader) {
+
+alert ("Ihr Webbrowser ist nicht aktuell genug, um diese Website zu verwenden. Aktualisieren Sie Ihren Browser.");
+return;
+}
+xml_loader.retrieve_xml();
+}
+
+
+function send_key(e)
+{
+// IE or Firefox
+if ((e.keyCode == 13) || (e.which == 13)) {
+send_login();
+}
+}
+//]]>
+</script>
+<!-- InstanceEndEditable -->
+</head>
+
+<body onload="template_load();">
+<div id="loader_container" onclick="return false;">&nbsp;</div>
+<div id="outside_1col">
+<table id="table_shell" cellspacing="0" summary=""><col span="1"/>
+<tbody>
+<tr>
+<td>
+<div id="header_container">
+<div id="info_bar">
+<div class="fwv">Firmwareversion:
+2.<span id="fw_minor_head">33</span>
+</div>
+<div class="hwv">Hardware-Version:
+B1
+</div>
+<div class="pp">Produktseite: <a href="http://support.dlink.com.tw/" onclick="return jump_if();">DIR-635</a></div>
+</div>
+</div>
+<table id="masthead_container" border="0" cellspacing="0" summary="">
+<tr>
+<td><div id="masthead_image"></div></td>
+</tr>
+</table>
+<table id="content_container" border="0" cellspacing="0" summary="">
+<tr>
+<td id="sidenav_container">&nbsp;</td>
+<td id="maincontent_container">
+<div id="rebootcontent_1col" style="display: none">
+<div class="section">
+<div class="section_head">
+<h2>Neustart notwendig</h2>
+<p>
+Ihre Änderungen wurden gespeichert. Der Router muss neu gestartet werden, damit die Änderungen wirksam werden. Sie können entweder jetzt neu starten oder weitere Änderungen durchführen und später neu starten.
+</p>
+<input class="button_submit" type="button" value="Jetzt neu starten" onclick="do_reboot()" />
+<input class="button_submit" type="button" value="Später neu starten" onclick="no_reboot()" />
+</div>
+</div> <!-- reboot_warning -->
+</div>
+<div id="maincontent_1col" style="display: block">
+
+<!-- InstanceBeginEditable name="Main_Content" -->
+<div class="section">
+<div class="section_head">
+<h2>Anmeldung</h2>
+<noscript>
+<p class="warning">WARNUNG: JavaScript steht für diesen Browser nicht zur Verfügung!</p>
+</noscript>
+<p>Am Router anmelden:</p>
+<form id="myform" action="/" onsubmit="send_login(); return false;">
+<!-- 2008/12/15, Yufa, Graphical Authentication -->
+<div id="old_ui" style="display:none">
+<fieldset>
+<p>
+<label class="duple" for="old_username">Benutzername&nbsp;:</label>
+<select id="old_username" name="old_username">
+<option value="admin">Administrator</option>
+<option value="user">Benutzer</option>
+</select>
+</p>
+<p>
+<label class="duple" for="old_password">Kennwort&nbsp;:</label>
+<input type="password" id="old_password" maxlength="15" name="old_password" onkeypress="send_key(event);" value="" tabindex="100" />
+<input class="button_submit_padleft" type="button" name="Login" value="Anmelden" onclick="send_login();" />
+</p>
+</fieldset>
+</div>
+
+<div id="new_ui" style="display:none">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr height="24">
+<td width="30%"></td>
+<td colspan="2" width="160"><b>Benutzername :&nbsp;</b>
+<select id="new_username" name="new_username">
+<option value="admin">Administrator</option>
+<option value="user">Benutzer</option>
+</select></td>
+</tr>
+<tr height="24">
+<td width="30%"></td>
+<td colspan="2"><b>Kennwort&nbsp; : &nbsp;</b>
+<input type="password" id="new_password" name="new_password" onkeypress="send_key(event);" value="" tabindex="100" /></td>
+</tr>
+<tr height="54">
+<td width="30%"></td>
+<td colspan="2" width="250"><b>Geben Sie oben das korrekte Kennwort ein und geben Sie dann die Zeichen, die Sie im Bild unten sehen, ein.&nbsp;</b>
+<input type="text" id="auth_code" name="auth_code" onkeypress="send_key(event);" value="" maxlength="5" /></td>
+</tr>
+<tr>
+<td width="30%"></td>
+<td width="90" height="40"><img src="/auth.bmp"></td>
+<td><input class="button_submit_padleft" type="button" name="Refresh" value="Erneut erstellen" onClick="window.location.reload(true);"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="25%"></td>
+<td width="90"></td>
+<td><br><input class="button_submit_padleft" type="button" name="Login" value="&nbsp; &nbsp; &nbsp; Anmelden &nbsp; &nbsp; &nbsp;" onclick="send_login();" /></td>
+</tr>
+</table>
+</div>
+</form>
+</div>
+</div> <!-- section -->
+<!-- InstanceEndEditable -->
+
+</div>
+
+<!-- language selection functions -->
+<form id="lang_form" action="#" onsubmit="doSave(); return false;">
+<div id="lang_container">
+<span id="i18n_language_selection">
+<select>
+<option value="DE">Deutsch</option>
+<option value="EN" selected="selected">English</option>
+<option value="ES">Espa&#241;ol</option>
+<option value="FR">Fran&#231;ais</option>
+<option value="IT">Italiano</option>
+<option value="JA">&#26085;&#26412;&#35486;</option>
+<option value="KO">&#54620;&#44397;&#50612;</option>
+<option value="PT">Portugu&#234;s</option>
+<option value="ZH">&#32321;&#39636;&#20013;&#25991;</option>
+<option value="CN">&#31616;&#20307;&#20013;&#25991;</option>
+</select>
+</span>
+<input type="hidden" id="i18n_language" name="config.i18n_language" value="DE" />
+</div>
+</form>
+
+
+</td>
+<td id="sidehelp_container">&nbsp;</td>
+</tr>
+</table>
+<table id="footer_container" border="0" cellspacing="0" summary="">
+<tr>
+<td><img src="../Images/img_wireless_bottom.gif" width="114" height="35" alt="" /></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<div id="copyright">Copyright &copy; 2004-2008 D-Link Systems, Inc.</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>

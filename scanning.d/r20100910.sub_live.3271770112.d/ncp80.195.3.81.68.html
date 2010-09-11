@@ -1,0 +1,180 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 10:35:33 GMT
+Server: Apache/2.2.3 (CentOS)
+X-Powered-By: OTRS cpanel - Open Ticket Request System (http://otrs.org)
+X-Wanted: I think you are smart. I'm looking for smart people!
+Connection: close
+Content-Type: text/html; charset=utf-8;
+
+
+
+<!-- OTRS: Copyright 2001-2003, OTRS Project. This Software is under the GPL. -->
+<!--          Web: http://otrs.org/ - Lists: http://lists.otrs.org/           -->
+<!--         GNU Public License: http://www.gnu.org/licenses/gpl.txt          -->
+
+
+
+
+<!--                                                                          -->
+<!-- OTRS: Copyright 2001-2006, OTRS Project. This Software is under the GPL. -->
+<!--          Web: http://otrs.org/ - Lists: http://lists.otrs.org/           -->
+<!--         GNU Public License: http://www.gnu.org/licenses/gpl.txt          -->
+<!--                                                                          -->
+
+<html>
+<head>
+	
+  <title>OTRS  :: Login</title>
+
+  <style type="text/css"> @import "/otrs-web/images/Standard/gif/BearingPoint.css"; </style>
+</head>
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+<!-- start CI layout -->
+<table class="hgHeader" cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
+  <tr>
+  	<td><a href="http://www.bearingpointconsulting.com"><img src="/otrs-web/images/Standard/gif/BEred.gif" width="167" height="82" border="0"></a></td>
+  	<td width="16">&nbsp;</td>
+  	<td align="left" class="tdHeader">BearingPoint Servicedesk &minus; Self Service Portal</td>
+	</tr>
+</table>
+
+<!-- end CI layout -->
+<!-- end header -->
+
+<!-- start login -->
+<script language="JavaScript" type="text/javascript">
+<!--
+function submit_form() {
+
+    now = new Date();
+    Diff = now.getTimezoneOffset();
+    document.login.TimeOffset.value = Diff;
+
+    return true;
+}
+//-->
+</script>
+<table cellspacing="0" cellpadding="0" style="background-image:url(/otrs-web/images/Standard/gif/otrs_neu01.jpg); background-repeat:no-repeat" width="1004" height="501" border="0">
+	<tr>
+		<td width="240">&nbsp;</td>
+    <td>
+      <table class="hgPosition_custView" width="630" height="481" border="0" cellpadding="7">
+        <tr>
+          <td align="left">
+          	<font color="red"></font>
+			
+			<table border="0" cellspacing="0" cellpadding="3" width="570">
+				<tr>
+					<td align="left" class="pageLoginInfo"><br><b>The Self Service Portal (SSP) provides general information regarding our service and up-to-date information on topics such as business service outages, scheduled maintenance for applications and any other current issues.</b></td>
+				</tr>
+				<tr>
+					<td align="left"><br></td>
+				</tr>
+				<tr>
+					<td align="left"><u>Login to the SSP provides you with</u>
+						<ul>
+							<li>Servicedesk contact information</li>
+							<li>Tool like FAQ's, HowTo's, manuals and downloads</li>
+							<li>Current information</li>
+							<li>Your personal ticket system</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<table border="0" cellspacing="0" cellpadding="0" height="40"><!-- spacer -->
+				<tr>
+					<td ><br></td>
+				</tr>
+			</table>
+			<!-- login -->
+			<table border="1" bordercolor="white"  cellspacing="0" cellpadding="5" width="600" style="background-color:lightgrey;">
+				<tr>
+					<td>
+			<table border="0" cellspacing="0" cellpadding="0" width="600">
+				<tr>
+					<td align="left" class="pageHeadline">Login</td>
+					<td rowspan="2">
+						<table cellspacing="8" cellpadding="3" border="0">
+								<tr>
+									<td>Please log on with the <span style="font-style:italic;" title="local-part of the eMail Address">left-part</span> of your eMail Address (e.g. <b>firstname.lastname</b>).<br>
+			
+										As password use your <b>personnel number</b> (Peoplesoft ID).<br>
+										If you don't know your personnel number please contact your LocalHR.
+									</td>
+								</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" width="50%">
+						<form action="/customer.pl" method="post" enctype="application/x-www-form-urlencoded" name="login">
+							<input type="hidden" name="Action" value="Login">
+							<input type="hidden" name="RequestedURL" value="">
+							<input type="hidden" name="Lang" value="en">
+							<input type="hidden" name="TimeOffset" value="">
+							<table cellspacing="8" cellpadding="0" border="0">
+								<tr>
+									<td width="30%"><b>Username:</b></td>
+									<td><input type="text" name="User" value="" size="24"></td>
+								</tr>
+								
+								<tr>
+									<td><b>Password:</b></td>
+									<td><input type="password" name="Password" size="24"></td>
+								</tr>
+								<tr><td><input  type="submit" value="Login"></td></tr>
+							</table>
+							
+						</form>
+  					</td>
+					
+				</tr>
+			</table>
+					</td>
+				</tr>
+			</table>
+			<!-- login -->
+			<div style="position:absolute;top:530px;">
+			<table cellpadding="3">
+				<tr>
+					<td align="left">
+						Problems to login? Send us an email to <a href="mailto:servicedesk@infonova.at">servicedesk@infonova.at</a>.
+					</td>
+					
+				</tr>
+			</table>
+			</div>
+			
+					
+  					
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+
+
+<!-- start new fusszeile -->
+<table cellspacing="0" width="100%" height="20" bgcolor="#FFFFFF" border="0">
+  <tr>
+	<td><a class="footer" href="http://www.bearingpointconsulting.com" TARGET="_blank">www.bearingpointconsulting.com</a></td>
+  </tr>
+</table>
+<!-- ende new fusszeile -->
+
+<!-- google analytics script -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10358542-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

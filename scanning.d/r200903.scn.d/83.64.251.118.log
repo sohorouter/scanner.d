@@ -1,0 +1,19 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:24 CEST
+Interesting ports on 83-64-251-118.sh-wien.inode.at (83.64.251.118):
+PORT     STATE  SERVICE
+22/tcp   closed ssh
+23/tcp   closed telnet
+80/tcp   closed http
+443/tcp  closed https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: router|general purpose|firewall|specialized|VoIP gateway|storage-misc
+Running (JUST GUESSING) : Enterasys embedded (90%), MikroTik RouterOS 3.X (90%), Linux 2.4.X|2.6.X (90%), Secure Computing Linux 2.4.X (90%), Microsoft Windows Vista (89%), VMware ESX Server 3.0.X (88%), Occam embedded (87%), Adaptec embedded (87%)
+Aggressive OS guesses: Enterasys Matrix X router (90%), MikroTik RouterOS software router 3.0beta5 (90%), Linux 2.4.22 (Fedora Core 1, x86) (90%), Linux 2.4.31 (Slackware 10.2) (90%), Secure Computing SnapGear SG560 firewall (Linux 2.4.31-uc0) (90%), Microsoft Windows Vista Enterprise (89%), Microsoft Windows Vista Home Premium (89%), Linux 2.6.18.8 (openSUSE 10.2) (88%), Linux 2.6.18.8 (openSUSE 10.2, SMP) (88%), Linux 2.6.20.6 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 9 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.60 seconds

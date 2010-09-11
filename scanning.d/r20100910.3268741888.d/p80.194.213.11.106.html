@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Super Encontro</title>
+<link href="css/superencontro-index.css" rel="stylesheet" type="text/css" />
+
+<!--[if IE 6]>
+    <script src="js/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('.png_bg'); // classe a ser utilizada nas tags com imagem png
+    </script>
+<![endif]-->
+
+<script src="js/jquery-1.4.1.js" language="javascript" type="text/javascript"> </script>
+<script src="js/jquery.effects.core.js" language="javascript" type="text/javascript"> </script>
+<script src="js/jquery.effects.pulsate.js" language="javascript" type="text/javascript"> </script>
+<script src="js/jquery.ui.core.js" language="javascript" type="text/javascript"> </script>
+<script src="js/jquery.ui.widget.js" language="javascript" type="text/javascript"> </script>
+<script src="js/jquery.ui.dialog.js" language="javascript" type="text/javascript"> </script>
+</head>
+
+<body class="b3">
+
+<!-- CORPO DO SITE -->
+ <div class="Content">
+ 	<div id="Box1" class="png_bg">
+		<form id="form1" name="form1" method="post" action="index.php?login">
+ 	    	<label><strong>Celular</strong><br />
+			<input type="text" name="msisdn1" size="2" maxlength="2" />&nbsp;<input type="text" name="msisdn2" size="8" maxlength="8" />
+    	  </label>
+ 	    	<label><strong>Senha</strong><br />
+				<input type="password" name="password" />
+    	  </label>
+			<input type="submit" name="Submit" value="" class="Submit" />
+
+			<a href="javascript:$('#sendPopup').dialog({modal: true, buttons: {'Enviar': function(){$('#sendForm').submit();}}});undefined">Esqueceu sua senha?</a><br />
+
+    	    <label>
+	    	    <input name="autologin" type="checkbox" value="checkbox" checked="checked" class="Checkbox" />
+    		    Entrar automaticamente
+    	    </label>
+		</form>
+    </div>
+ 	<div id="Box2" class="png_bg">
+		Ainda não é cadastrado?
+		<a href="cadastro.php"><img src="img/btn_criarperfil.gif" /></a>
+	</div>
+ </div>
+
+ <!-- RODAPÉ -->
+<div class="Footer">
+</div>
+
+<div id="sendPopup" title="Envio de senha">
+	<form id="sendForm" method="POST">
+	<input type="hidden" name="sendPassword" value="1" />
+	Para receber sua senha por SMS, por favor, digite seu celular cadastrado.<br/>
+	<input type="text" name="msisdn1" size="2" maxlength="2" />&nbsp;<input type="text" name="msisdn2" size="8" maxlength="8" />
+	</form>
+</div>
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-15599951-1");
+    pageTracker._setDomainName(".psuper.com.br");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+</body>
+</html>

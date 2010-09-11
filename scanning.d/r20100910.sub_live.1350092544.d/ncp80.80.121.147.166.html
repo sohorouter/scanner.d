@@ -1,0 +1,120 @@
+HTTP/1.1 200 OK
+Server: Lotus-Domino
+Date: Fri, 10 Sep 2010 13:57:47 GMT
+Connection: close
+Expires: Tue, 01 Jan 1980 06:00:00 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 5318
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>
+<head>
+<script language="javascript" src="/iwaredir.nsf/Login.js " ></script>
+<link rel='StyleSheet' type='text/css' href='/iwaredir.nsf/StylesheetLogin?ReadForm'/>
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+<title>Domino Web Access - Anmeldung</title>
+<script type='text/javascript'>
+var sslport = 443;
+var bEncryptPassword = 0;
+var webDbName = "iwaredir.nsf";
+var bPersonalOptions = ;
+var bLoginOptions = ;
+</script>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" class="s-dwa-body-background s-dwa-body-font"onload="setFormFocus()">
+
+<form method="post" action="/names.nsf?Login" name="_DWALoginForm">
+<input type="hidden" name="%%ModDate" value="15B665A80000001C"><table border="0" width="100%" height="100%"  cellpadding="0">
+    <tbody>
+    <tr>
+        <td width="30%">&nbsp;</td>
+        <td align="center" valign="middle">
+            <div class="s-dwa-login-background ">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+	    <td  valign="top" class="s-dwa-image-border"><img alt="Domino Web Access Screen" src="/iwaredir.nsf/dWMR-LoginBanner8short.gif?OpenImageResource"></td>
+	</tr>
+	<tr>
+	    <td valign="top">
+	        <table border="0" cellpadding="0" cellspacing="4" class="s-dwa-login-font">
+	            <tbody>
+	            <tr>
+		<td  align="left" colspan="3" class="s-dwa-error-text"></td>
+	            </tr>
+	            <tr>
+		<td colspan="3" style="padding: 0px 0px 5px 10px;">Geben Sie Ihren Benutzernamen und Ihr Kennwort ein und klicken Sie anschließend auf 'Anmelden'. </td>
+                            </tr>
+                            <tr>
+		<td style="padding-left:15px" valign="middle" width="15%">Benutzername:</td>
+		<td align="left" width="35%">
+<input name="username" value="" size=23 maxlength=80 autocomplete=off id='username' style="width:100%"></td>
+		<td></td>
+	            </tr>
+                            <tr>
+		<td style="padding-left:15px" valign="middle" width="15%">Kennwort:</td>
+		<td align="left" width="35%">
+<input name="password" value="" type="password" size=23 maxlength=80 autocomplete=off id='password'  style="width:100%"></td>
+		<td align="left" style="padding-left:10px"><input type="submit" value=" Anmelden " class="s-dwa-button s-dwa-button-font" onclick="encryptPassword();"></td>
+		
+                            </tr>
+                            <tr  id="DWAOptions" style="display:none">
+		<td colspan="3" style="padding-left:6px">
+	<fieldset class="s-options-container s-dwa-body-font">
+	<legend style="color:#000000;">Optionen</legend>
+			    
+	<table id="DWAModeTable" class="s-dwa-mode-font" width="100%" border="0">
+	<tbody>
+        <tr>
+        	<td id="e-mode-cell" style="padding-left: 6px;" width="40%">
+        	Wählen Sie den Modus</br>
+        	<input name="DWAMode" value="0" onclick="javascript:checkOption(this.value)" checked="checked" title="Mit dem Vollmodus haben Sie Zugriff auf alle Domino Web Access-Funktionen." 
+        	  type="radio">
+<span title="Mit dem Vollmodus haben Sie Zugriff auf alle Domino Web Access-Funktionen.">Vollmodus</span>
+        	<br>
+        	<input name="DWAMode" value="1" onclick="javascript:checkOption(this.value)" title="Im Lite-Modus können Sie die gängigsten Funktionen verwenden. Dieser Modus ist für langsame Verbindungen am besten."
+	  type="radio">
+<span title="Im Lite-Modus können Sie die gängigsten Funktionen verwenden. Dieser Modus ist für langsame Verbindungen am besten.">Lite-Modus</span>
+        	</td>
+        	<td id="e-divide-cell" valign="top" width="2%" class="s-dwa-leftborder">&nbsp;</td>
+        	<td id="e-shared-cell" valign="top" align="left">
+	<input id="DWAShared" onclick="javascript:checkShared(this.checked);" title="Mithilfe dieser Einstellung können Sie aus Sicherheitsgründen verhindern, dass Anhänge angezeigt werden."  type="checkbox">
+	<span id='DWASharedText' title="Mithilfe dieser Einstellung können Sie aus Sicherheitsgründen verhindern, dass Anhänge angezeigt werden.">Gemeinsam genutzter oder öffentlicher Computer<br/></span>
+
+        	</td>
+        </tr>
+        
+	</tbody>
+	</table>
+</fieldset>
+		</td>
+		<td>&nbsp;</td>
+	            </tr>
+	            <tr>
+	                <td class="s-dwa-copyright" colspan="3" style="padding-left:10px">
+		       	<div width="100%" style="border-top: 1px solid #7E7E7E;margin: 7px 0px 3px 0px;"></div>
+Lizenzmaterial - Eigentum von IBM. L-GHUS-7D2JJ2 &copy; Copyright IBM Corporation und ihre Lizenzgeber 1985, 2008. Alle Rechte vorbehalten. IBM, das IBM-Logo, Lotus und Notes sind Marken der IBM Corporation in den USA und/oder in anderen Ländern. Weitere Unternehmens-, Produkt- und Servicenamen können Marken anderer Hersteller sein.
+		</td>
+	            </tr>
+                            </tbody>
+	        </table>
+	    </td>
+                </tr>
+	</tbody>
+            </table>
+            </div>
+            </td>
+            <td width="30%">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+<!-- Dummy button to prevent Domino from generating an extra "submit" button 
+
+<input type="submit" value="Abschicken"> -->
+
+<p> <font size="2">
+<input name="RedirectTo" value="/iwaredir.nsf" type=hidden></font><br>
+</form>
+</body>
+</html>

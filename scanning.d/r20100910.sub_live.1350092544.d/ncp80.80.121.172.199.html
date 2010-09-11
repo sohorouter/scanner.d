@@ -1,0 +1,78 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 13:56:27 GMT
+Server: Apache/2.0.50 (Linux/SUSE)
+Last-Modified: Thu, 25 Aug 2005 14:50:38 GMT
+ETag: "2a94a-7a6-26fdab80"
+Accept-Ranges: bytes
+Content-Length: 1958
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<html>
+<head>
+<TITLE>Robert Wessely Installationen - Treffpunkt-Bad</TITLE>
+
+
+	<script language="JavaScript1.1" type="text/javascript">
+
+	//checks browser versions
+	var ie_4, ie_5, nn_4, nn_6,I_am_MACIE, style_Sheet='';
+    var I_am_MacIE;
+
+    if ((navigator.appVersion.indexOf("MAC")!=-1) && (navigator.appName.indexOf("Microsoft")!=-1)){
+		I_am_MacIE = true;
+	}
+	if(navigator.appVersion.indexOf("MSIE 5.")!=-1){
+		ie_5=true;
+	}
+	if(navigator.appVersion.indexOf("MSIE 4.")!=-1){
+		ie_4=true;
+	}
+	if((navigator.appName.indexOf("Netscape")!=-1)&&navigator.appVersion.indexOf("4.")!=-1){
+		nn_4=true;
+	}
+	if((navigator.appName.indexOf("Netscape")!=-1)&&navigator.appVersion.indexOf("5.")!=-1){
+		nn_6=true;
+	}
+
+
+	function begin() {
+		if(top.location != window.location) {
+			top.location = window.location;
+		}
+		var fr='';
+		
+		var temp = "one";
+
+		if (nn_4 ){
+			fr+='<frameset rows="*" cols="122,*" frameborder="NO" border="0" framespacing="0">';
+				fr+='<frame name="leftFrame" scrolling="NO" noresize src="instnav.htm" marginwidth="0">';
+				fr+='<frameset rows="63,1*" frameborder="NO" border="0" framespacing="0">';
+				fr+='<frame name="topFrame" noresize scrolling="NO" src="insttop.htm" margintop="0">';
+				fr+='<frame name="mainFrame" src="insthaupt.htm">';
+				fr+='</frameset>';
+			fr+='</frameset>';
+
+		}		
+		else{
+
+
+			fr+='<frameset rows="*" cols="120,1*" frameborder="NO" border="0" framespacing="0">';
+				fr+='<frame name="leftFrame" scrolling="NO" noresize src="instnav.htm">';
+				fr+='<frameset rows="50,1*" frameborder="NO" border="0" framespacing="0">';
+				fr+='<frame name="topFrame" noresize scrolling="NO" src="insttop.htm">';
+				fr+='<frame name="mainFrame" src="insthaupt.htm">';
+				fr+='</frameset>';
+			fr+='</frameset>';
+			
+		}
+
+		document.write(fr);
+	}
+	
+	onLoad=begin();
+</script>
+</head>
+<noframes><body bgcolor="#FFFFFF">
+</body></noframes>
+</html>

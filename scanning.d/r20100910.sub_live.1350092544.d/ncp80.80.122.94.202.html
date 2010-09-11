@@ -1,0 +1,130 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 15:35:54 GMT
+Server: Apache/2.2.8 (Linux/SUSE)
+X-Powered-By: PHP/5.2.11
+Set-Cookie: PHPSESSID=20nlur7km5ns4941mkf2ma4ua6; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 3861
+Connection: close
+Content-Type: text/html
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>WITO PlanManagementSystem</title>
+  <meta name="GENERATOR" content="Quanta Plus">
+<link rel="stylesheet" href="wito.css" type="text/css">
+
+  <script language="javascript" type="text/javascript">
+  // <!--
+
+function open_help() {
+
+    var options = 'scrollbars=yes,resizable=yes,status=no,toolbar=no,menubar=no,location=no';
+    options += ',width=650,height=' + (screen.availHeight-30);
+    options += ',screenX='+(screen.availWidth-650)+',screenY=0,top=0,left=0';
+
+	help = window.open('hilfe/index.php','',options);
+	help.focus();
+	pw.moveTo((screen.availWidth-650), 0);
+}
+
+
+function setfocus() {
+	document.forms["l"].elements["username"].focus();
+}
+  
+
+function browser() {
+	var ua = navigator.userAgent.toLowerCase();
+	var mozillabrowser = (ua.indexOf("gecko/") != -1);
+	var iebrowser = (ua.indexOf("msie") > -1 && ua.indexOf("opera") == -1);
+	var operabrowser = (ua.indexOf("opera") > -1);
+	var av = navigator.appVersion;
+	var version = av.substring(0, av.indexOf(" ")) *1;
+	var version2 = av.substring(0, av.indexOf(".")) *1;
+	if (mozillabrowser || operabrowser) {
+		var versionsnummer = version2;
+		if (mozillabrowser) { return "okay! ABER:<br>3D Modelle nur im<br>Internet Explorer möglich!"; }
+		if (operabrowser) { return "okay! ABER:<br>3D Modelle nur im<br>Internet Explorer möglich!"; }
+	} else if (iebrowser){
+		return "okay!";
+	} else {
+		return "unbekannter Browser!<br>3D Modelle nur im<br>Internet Explorer möglich!"; 
+	}
+	
+}
+
+  // -->
+  </script>
+  
+</head>
+
+
+
+		<body onload="setfocus()"><center><br><br><br><br>
+		<form name="l" method="post" action="index.php">
+		<table><tr><th colspan="2">WITO&nbsp;PlanManagementSystem&nbsp;V1.1		</th></tr>
+		<tr><td colspan="2">&nbsp;</td></tr><input type="hidden" name="active_project_id" value="">
+<input type="hidden" name="did" value="">
+<input type="hidden" name="subdir" value="">
+		<tr><td align="left">
+        <label>Benutzername:</label></td><td align="left"><input name="username" type="text" style="width:150px"></td></tr>
+        <tr><td align="left"><label>Passwort: </label></td><td align="left"><input name="userpass" type="password" id="userpass" style="width:150px"></td></tr>
+        <tr><td colspan="2" align="center"><br><input name="login" type="submit" id="login" value="Login" style="width:200px"><br>&nbsp;</td></tr>
+    <tr>
+      <td colspan="2"><b>Technische Voraussetzungen</b></td>
+    </tr>
+    <tr>
+      <td align="left">Javascript</td>
+      <td align="left"><div id="jav">FEHLER</div>
+<script language="javascript" type="text/javascript">
+  // <!--
+var tf = document.getElementById('jav');
+		
+		tf.innerHTML = "okay!";
+	
+  // -->
+  </script></td>
+    </tr>
+    <tr>
+      <td align="left">Browser</td>
+      <td align="left">  <script language="javascript" type="text/javascript">
+  // <!--
+document.write(browser());
+
+  // -->
+  </script>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</form><br><br><br><table>
+  <tbody>
+	<tr><th colspan="2" align="center">Schnellhilfe</th></tr>
+    <tr>
+      <td align="center"><A href="img/ep.png" target="_blank"><img src="img/eps.png" width="200" height="191" border="0"></A></td>
+      <td align="center"><A href="img/wp.png" target="_blank"><img src="img/wps.png" width="200" height="191" border="0"></A></td>
+    </tr>
+    <tr>
+      <td align="center">Eigenen Plan hochladen</td>
+      <td align="center">Werkplan herunterladen/freigeben</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><button type="button"
+      value="Hilfe" onclick="open_help();">
+        <img src="img/help.png" width="16" height="16">&nbsp;<b>Ausführliche Hilfe</b>
+    </button></td>
+    </tr>
+  </tbody>
+</table></center></body> 
+
+</html>

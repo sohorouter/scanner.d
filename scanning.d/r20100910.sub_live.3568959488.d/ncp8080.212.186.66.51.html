@@ -1,0 +1,56 @@
+HTTP/1.0 200 OK
+Server: Apache/0.6.5
+Pragma: no-cache
+Date: Sun, 01 Jan 2001 00:00:00 GMT
+Expires: Sun, 01 Jan 2001 00:00:00 GMT
+Cache-Control: max-age=0, must-revalidate
+Content-type: text/html
+Content-length: 1854
+
+<html>
+<head>
+<title>HTML-Konfiguration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<SCRIPT language="JavaScript">
+if (parent.location.href != window.location.href)
+parent.location.href = window.location.href;
+
+function webconf() {
+if (window.name == "154KOM_Konfiguration") {
+	top.location.href="/top_start_passwort.htm";
+	return;
+}
+Fenster = window.open("top_start_passwort.htm","154KOM_Konfiguration","toolbar=no,location=no,Directory=no,Status=no,menubar=no,scrollbars=yes,resizable=no,width=792,height=552");
+//Breite = screen.width;
+//Hoehe =	 screen.height;
+//Sprungpunkt_x = (Hoehe-540) /2 ;
+//Sprungpunkt_y = (Breite-792) /2 ;
+//Fenster.moveTo(Sprungpunkt_y,Sprungpunkt_x);
+}
+function leave() {
+close();
+}
+</SCRIPT>
+</head>
+<body bgcolor="#FFFFFF" onLoad="webconf()">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+  <tr>
+    <td valign="middle" align="center">
+      <table border="1" cellpadding="10" cellspacing="0" bordercolor="#FF0066">
+        <tr>
+          <td><font size="3" face="Arial"><b>Hinweis</b></font>
+            <p><font size="3" face="Arial">Um die Seiten der Konfiguration korrekt anzeigen zu k&ouml;nnen ben&ouml;tigen Sie:</font></p>
+            <p><font size="3" face="Arial">Internet Explorer ab Version 5.5, oder Netscape ab Version 7.0</font></p>
+            <p><font size="3" face="Arial">Die Konfiguration nutzt Javascript. Ihr Browser muss so eingestellt sein, dass er
+            Javascript ausf&uuml;hrt.</font></p>
+            <p><font size="3" face="Arial">
+            Außerdem d&uuml;rfen Popup-Fenster nicht blockiert sein. Die Konfiguration wird in einem Popup-Fenster ge&ouml;ffnet.
+            </font></p>
+		  </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

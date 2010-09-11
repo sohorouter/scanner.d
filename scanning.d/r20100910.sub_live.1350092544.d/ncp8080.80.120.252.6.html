@@ -1,0 +1,142 @@
+HTTP/1.0 200 OK
+Set-Cookie: WebAdmin=TZILYMYNYCJPPY
+Expires: -1
+Pragma: No-cache
+Expires: -1
+Content-type: text/html; charset=utf-8
+Content-length: 4062
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<title>WebAdmin</title>
+<link rel="stylesheet" href="stylesheets/normal.css"><script LANGUAGE="JavaScript" src="./javascript/global.js"></script><script type="text/javascript">
+	
+	function init()
+	{
+		try
+		{
+			
+			var cookieVal = new cookie('login').read();
+						
+			if ( cookieVal && cookieVal.length )
+			{
+				document.waForm.username.value = cookieVal.substring( 0, cookieVal.indexOf(",") );
+				
+				if (document.waForm.lang)
+				{
+					var list = document.waForm.lang;
+					var language = cookieVal.substring( cookieVal.indexOf(",")+1 );
+				
+					for( var i=0; i < list.length; i++ )
+					{
+						if( list[i].value == language )
+						{
+							list.selectedIndex = i;
+							break;
+						}
+					}
+				}
+			}
+			
+			
+			if (self.parent.frames.length != 0)
+			{
+				self.parent.location=document.location;
+			}
+			else if (document.forms[0].username.value.length > 0)
+			{
+				document.forms[0].passwd.focus();
+			}
+			else
+			{
+				document.forms[0].username.focus();
+			}
+		}
+		catch(exception)
+		{}
+	}
+	
+	function login()
+	{
+		var username = document.waForm.username.value;
+		var language = "";
+
+		if (document.waForm.lang)
+		{
+			language = document.waForm.lang.value;
+		}
+
+		
+		new cookie('login', username + "," + language, 365, '/').set();
+		
+	}
+	
+	function showFocus(obj)
+	{
+		if(!document.getElementById)
+			return;
+			
+		obj.style.border = "1px solid yellow";
+	}
+	
+	function showBlur(obj)
+	{
+		if(!document.getElementById)
+			return;
+			
+		obj.style.border = "1px solid Menu";
+	}
+	</script></head>
+<body class="loginBody" link="#000000" vlink="#000000" onload="init()">
+<form name="waForm" action="login.wdm" target="_top" method="post"><input type="Hidden" name="CheckForCookie" value="1"><input type="Hidden" name="RequestedPage" value=""><center>
+<div id="loginlogo" align="center"><img class="loginImg" src="images/banner.gif" alt="WebAdmin"></div>
+</center><br><table align="center" width="490" border="0" cellpadding="0" cellspacing="0" id="loginTable">
+<tr>
+<td align="center" style="padding-top:50px;padding-bottom:50px">
+<table border="0" cellpadding="0" cellspacing="8">
+<tr>
+<td class="loginText" style="padding-bottom:20px" align="center" colspan="2">
+<noscript>
+							It appears that your browser is not enabled to run JavaScript.<br>
+							Alt-N WebAdmin requires that JavaScript is enabled.
+						</noscript>
+</td>
+</tr>
+<tr>
+<td valign="top" class="loginText">Email Address:</td>
+<td valign="top"><input class="loginInput" type="text" autocomplete="off" name="username" value="" onfocus="showFocus(this)" onblur="showBlur(this)"></td>
+</tr>
+<tr>
+<td valign="top" class="loginText">
+						Password:
+					</td>
+<td valign="top"><input class="loginInput" type="password" autocomplete="off" name="passwd" onfocus="showFocus(this)" onblur="showBlur(this)"></td>
+</tr>
+<tr>
+<td valign="top" class="loginText" rowspan="2">Language:</td>
+<td valign="top"><select class="loginSelect" name="lang"><option value="de">Deutsch</option>
+<option value="en" selected="true">English</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="it">Italiano</option>
+<option value="nl">Nederlands</option>
+<option value="pt">Português</option>
+<option value="SV">Svenska</option>
+<option value="ru">Русский</option>
+<option value="zh">中文</option>
+<option value="ja">日本語</option></select></td>
+</tr>
+<tr>
+<td valign="top"><input class="loginButton" type="submit" name="logon" value="Sign In" onclick="login()"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form><br><center>
+<div align="center" style="width:490px"><strong><A href="http://www.altn.com/webadmin/" target="_blank">WebAdmin</A> v11.0.3 &copy;2001-2010
+			<A href="http://www.altn.com" target="_blank">Alt-N Technologies</A></strong></div>
+</center>
+</body>
+</html>

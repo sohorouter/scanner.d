@@ -1,0 +1,16 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:22 CEST
+Interesting ports on e-livery.at (83.64.251.10):
+PORT     STATE    SERVICE
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+80/tcp   open     http
+443/tcp  open     https
+3389/tcp closed   ms-term-serv
+8080/tcp filtered http-proxy
+Device type: general purpose
+Running: Microsoft Windows 2003
+OS details: Microsoft Windows Server 2003 SP1 or SP2, Microsoft Windows Server 2003 SP2
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 3.29 seconds

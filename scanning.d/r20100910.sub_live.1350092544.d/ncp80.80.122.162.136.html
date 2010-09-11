@@ -1,0 +1,157 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Last-Modified: Thu, 26 Nov 2009 09:31:22 GMT
+Accept-Ranges: bytes
+ETag: "01139377b6eca1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 10 Sep 2010 15:28:30 GMT
+Connection: close
+Content-Length: 3600
+
+<html>
+<head>
+<title>syngo.via Start Page</title>
+<style type="text/css">
+<!--
+
+body
+{
+    border-width: 0px;
+    border-spacing: 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-image: url(bgtexture_right.png);
+	font-family:Arial;
+    color: white;
+    font-size:14px
+}
+td.buttoncell
+{
+    background-image: url(Button_Up.png);
+    width: 194px;
+    height: 38px;
+    text-align: center;    
+}
+td.buttonspacer
+{
+    height: 30px;
+}
+a.button
+{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight:bold;
+    font-family:Arial;
+    padding: 10px 4px 4px 4px;
+    width: 194px;
+    height: 38px;
+}
+div.buttons
+{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    left:150px;
+    top:348px;
+    font-family:Arial;
+    color: black;
+    font-size:14px;
+    width: 220px;
+}
+
+div.textlabels
+{
+    position: absolute;
+    left:400px;
+    top:341px;
+    font-family:Arial;
+    color: white;
+    font-size:14px;
+    line-height: 15px;
+    width: 800px;
+    margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+div.clientlabel
+{
+    position: relative;
+    left:10px;
+    top:22px;
+}
+
+div.adminlabel
+{
+	position: relative;
+    left:10px;
+    top:82px;
+
+}
+div.servicelabel
+{
+	position: relative;
+    left:10px;
+    top:142px;
+}
+
+
+-->    
+
+</style>
+ <script language="javascript" type="text/javascript">
+
+
+        var buttontdstyle = "width: 194px;height: 38px;text-align: center;";
+        function mouseover(isOn, id) {
+            var button = document.getElementById(id);
+            if (isOn) {
+
+
+                button.style.cssText = buttontdstyle + "background-image: url(Button_Down.png);";
+            } else {
+                button.style.cssText = buttontdstyle + "background-image: url(Button_Up.png);";
+            }
+        }
+    </script>
+
+<body>
+	<img id="bgimg" class="backgr" src="syngo-Installation_1024x768.png" alt="" />
+	<div class="buttons" >
+    <table>
+        <tr>
+            <td class="buttoncell" id="btnPrereq_td" onmouseover="mouseover(true, 'btnPrereq_td' )" onmouseout="mouseover(false, 'btnPrereq_td' )" >
+                <a href="DeploymentServer/WelcomePage.aspx" ID="btnPrereq" class="button" >Client Installation Page</a>
+            </td>
+        </tr>
+        <tr><td class="buttonspacer"></td></tr>
+        <tr>
+        <td class="buttoncell" id="btnFullRTC_td" onmouseover="mouseover(true, 'btnFullRTC_td' )" onmouseout="mouseover(false, 'btnFullRTC_td' )" >
+                <a href="DeploymentServer/AdminWelcomePage.aspx" ID="btnFullRTC" class="button" >Admin Client Installation Page</a>
+            </td>
+        </tr>
+        <tr><td class="buttonspacer"></td></tr>
+        <tr>
+        <td class="buttoncell" id="AdobeReaderButton_td" onmouseover="mouseover(true, 'AdobeReaderButton_td' )" onmouseout="mouseover(false, 'AdobeReaderButton_td' )" >
+            <a href="Service/" ID="AdobeReaderButton" class="button" >Administration Portal</a>
+        </td>
+        </tr>
+     </table>
+  </div>
+  
+  <div class="textlabels">
+  	<div class="clientlabel">
+  		Use this button to go to the syngo.via client software installation page for users.
+  	</div>
+  	<div class="adminlabel">
+  		Use this button to go to the syngo.via client software installation page for administrators.
+  	</div>
+  	<div class="servicelabel">
+  		Use this button to go to the Administration Portal of syngo.via.
+  	</div>
+  </div>
+
+	
+</body>
+</html>

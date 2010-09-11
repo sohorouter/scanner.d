@@ -1,0 +1,16 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:22 CEST
+Interesting ports on 83-64-251-41.sh-wien.inode.at (83.64.251.41):
+PORT     STATE  SERVICE
+22/tcp   closed ssh
+23/tcp   closed telnet
+80/tcp   closed http
+443/tcp  closed https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Device type: switch|router|specialized|WAP
+Running: Cisco CatOS, Cisco IOS 11.X|12.2|12.X
+Too many fingerprints match this host to give specific OS details
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.97 seconds

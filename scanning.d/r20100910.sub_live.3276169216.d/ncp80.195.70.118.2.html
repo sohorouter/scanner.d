@@ -1,0 +1,259 @@
+HTTP/1.1 200 OK
+Server: COSMOweb Server
+Date: Fri, 10 Sep 2010 09:03:22 GMT
+Connection: keep-alive
+Content-length: 8130
+Last-Modified: Fri, 10 Sep 2010 09:03:22 GMT
+Expires: Sun, 10 Oct 2010 09:03:22 GMT
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+    <META HTTP-EQUIV="pragma" content="no-cache">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="shortcut icon" href="icons/cosmos.ico" type="image/x-icon" >
+<title>COSMOweb Anlagenauswahl</title>
+
+</head>
+<!-- 
+<body leftmargin="0" onLoad="start()" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#DADDEE">
+-->
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<script LANGUAGE="JavaScript1.3" src="/defWait.js"></script>
+<script LANGUAGE="JavaScript1.3">
+
+var isOnLoad = false;
+var javawsInstalled = 0;
+isIE = "false";
+
+function openHelp(fileName)
+{
+	
+	window.open(fileName);
+
+}
+
+function openWebStart()
+{
+          if(javawsInstalled)
+          { 
+	    str = "cosmowebplus.jnlp" + "&URL=" + window.location.host + "&";
+	    window.open(str,"AnlagenGenerator","menubar=0,status=0,toolbar=0,screenX=10,screeny=10,left=10,top=10,width=300,height=175");
+          }
+	  else
+	  {
+	    window.location = "WebStart.html";
+	  }
+}
+
+function openGraph()
+{
+	aktDate = new Date();
+	strFileName = "/COSMOWEB&TYP=REGLER&MSG=GET_TIMETREND&COMPUTERNR=THIS&REGLERSTRANG=0";
+        strFileName += "&REZEPT=&TIMESTAMP=" + aktDate.getTime();
+	//window.open(strFileName,"Graph","dependent=true menubar=0,status=0,toolbar=0,screenX=10,screeny=10,left=10,top=10,width=50,height=50");
+	window.open(strFileName,"Graph","status=no,resizable=yes,width=800,height=560,screenX=10,screeny=10,left=10,top=10");
+}
+
+function openStoermeldungen()
+{
+	var str;
+	aktDate = new Date();        
+	str = "/COSMOWEB&TYP=GET_STOERMELDUNGEN&COMPUTERNR=0000&REGLERSTRANG=0000&TIMESTAMP=" + aktDate.getTime();
+	window.open(str,"Ereignisse");
+	//window.location = str;
+	//openURL(str);
+}
+
+function openDoc(strComputerNr,strStrangNr)
+{
+	if (navigator.javaEnabled())// && document.Connect)
+  {
+  	var str;
+	  str = "/COSMOWEB&TYP=REGLER&MSG=GET_HTML_TREE&COMPUTERNR=" + strComputerNr + "&REGLERSTRANG=" + strStrangNr + "&REGLERNR=01&CODE&"
+    str += "&";//document.Connect.encode("&PASSWORT=%PASSWORT%&");;
+	  window.location = str;
+  }
+	else
+  {
+  	alert("Bedaure, bei Ihrem Browser ist Java deaktiviert!");
+  }
+  //openURL(str);
+}
+
+function openURL(str)
+{
+	var url;
+	if (isOnLoad)
+	{
+		createWaitWindow("Bitte warten, Daten werden geladen ...");
+		url = document.Connect.sendCosmosURL(str,"dummy");
+  		if (url.indexOf(".htm") >= 0)
+		{
+			closeWaitWindow();
+			window.location = url;
+		}
+		else
+		{
+			closeWaitWindow()
+			alert("Server zur Zeit nicht verfügbar!");
+		}
+	}
+	else
+	{
+           if(navigator.appName == "Netscape")
+          {
+            setTimeout(openURL(str),1000);
+          }
+          if (navigator.appVersion.indexOf("MSIE") != -1)
+          {
+            setTimeout("openURL(str)",1000);
+          }
+
+	}
+}
+
+
+function openHelp()
+{
+	window.open("/doku/css/doku.htm","","width=screen.width,height=screen.height,menubar=0,status=0,toolbar=0,screenX=0,screeny=0,left=0,top=0,resizable=true");
+}
+
+function start()
+{
+	isOnLoad = true;
+	closeWaitWindow();
+}
+
+  if(navigator.appName == "Netscape")
+  {
+  	if ((navigator.mimeTypes) && (navigator.mimeTypes['application/x-java-jnlp-file']))
+        {
+          javawsInstalled = 1;
+        }
+  }
+  else if (navigator.appVersion.indexOf("MSIE") != -1)
+  {
+        isIE = "true";
+  }
+
+
+</script>
+
+<script LANGUAGE="VBScript">
+	on error resume next
+	IF isIE = "true"  Then
+		IF Not(IsObject(CreateObject("JavaWebStart.IsInstalled"))) Then
+			javawsInstalled = 0
+		Else
+			javawsInstalled = 1
+		End If
+	End If
+
+</script>
+<!--
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td height="42"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="191"><img src="media_top/logo.gif" width="191" height="21"></td>
+          <td background="media_top/background.jpg">&nbsp;</td>
+          <td align="right" width="450" valign="top"> 
+            <table width="450" border="0" cellspacing="0" cellpadding="0">
+              <tr bgcolor="#08198F"> 
+                <td><a href='javascript:window.location.reload()' target="_top"><img src="media_top/button_home.gif" width="87" height="21" border="0"></a></td>
+                <td><a href='javascript:openGraph()' target='_top' language='JavaScript' ><img src="media_top/button_timetrend.gif" width="87" height="21" border="0"></a></td>
+                <td><a href='/COSMOWEB&TYP=GET_STOERMELDUNGEN&COMPUTERNR=0000&REGLERSTRANG=0000&'><img src="media_top/button_meldungen.gif" width="87" height="20" border="0"></a></td>
+                <td><a href='javascript:top.openWebStart()'><img border="0" src="media_top/button_tools.gif" width="87" height="21"></a></td>                
+                <td><a href="javascript:openHelp()"><img src="media_top/button_hilfe.gif" width="87" height="21" border="0"></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="22" background="media_top/blau_loop.gif"> 
+            <div align="center" class="blau"></div>
+          </td>
+          <td height="22" background="media_top/blau_loop.gif"> 
+            <div  id="clock1" align="center" class="meldung"></div>
+          </td>
+          <td height="22" background="media_top/blau_loop.gif"> 
+            <div id="ereignis1" align="center" class="blau"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+        <tr>
+          <td valign="bottom" width="191" background="media_left/background.gif"><img src="media_left/picture.gif" width="191" height="154"></td>
+          <td valign="top"> 
+            <table width="500" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480"><b><strong>Vorhandene Reglerzweige</strong></b> 
+                </td>
+              </tr>
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480"> 
+                  <ol>
+<li><A href='javascript:top.openDoc("0001","0019")' >Beispiele für virtuellen Reglerstrang</A>
+<li><A href='javascript:top.openDoc("0001","0001")' >Europastrasse</A>
+                  </ol>
+                </td>
+              </tr>
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480"> 
+                  <p></p>
+                  <p> 
+                    <script language="JavaScript1.3">
+</script><noscript>
+                    <a>Ihr Browser unterstützt kein JavaScript1.3 oder es ist 
+                    ausgeschaltet.</a> <a href='#'>Weiter Informationen erhalten 
+                    Sie hier.</a> 
+                  <p> </NOSCRIPT> 
+<!--
+<APPLET name="Connect"  codebase="/Applets/" code="socketapplet.CosmosSocket.class"
+      archive="SocketApplet.jar" width=2 height=2 MAYSCRIPT >
+<a>Ihr Browser unterstützt kein Java oder es ist ausgeschaltet.<a><a href='#'>Weiter Informationen erhalten Sie hier</a>
+</APPLET>
+-->
+                </td>
+              </tr>
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td width="480">&nbsp;</td>
+              </tr>
+            </table>
+            <p></p>
+</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

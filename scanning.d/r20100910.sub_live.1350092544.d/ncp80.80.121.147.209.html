@@ -1,0 +1,276 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 14:07:36 GMT
+Server: Apache
+Content-Location: index.html
+Vary: negotiate
+TCN: choice
+Set-Cookie: Wettpunkt-ID=84.113.229.194.1284127656667612; path=/; expires=Sat, 10-Sep-11 14:07:36 GMT
+Last-Modified: Fri, 16 Jun 2006 12:46:11 GMT
+ETag: "8ebc2-5d5d-41656cd1beac0"
+Accept-Ranges: bytes
+Content-Length: 23901
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<HTML>
+	<HEAD>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<TITLE>www.play4win.com</TITLE>
+		<LINK REL="stylesheet" TYPE="text/css" HREF="styles.css">
+		<script language="JavaScript">
+		<!--
+		
+			var detectSupported = false;
+			var browserSupported = false;
+			var shocwaveSupported = false;
+		
+			var ie  = (navigator.appName.toLowerCase().indexOf("microsoft") != -1);
+			var ns  = (navigator.appName.toLowerCase().indexOf("netscape") != -1);
+			var win = (navigator.platform.toLowerCase().indexOf("win") != -1);
+			var mac = (navigator.platform.toLowerCase().indexOf("mac") != -1);
+			
+			var browserVer = parseFloat(ie ? navigator.appVersion.substring(navigator.appVersion.toLowerCase().indexOf("msie") + 4) : navigator.appVersion);
+			
+			function isSupportedBrowser()
+			{
+				if (ie && win) return (browserVer >= 5.0)
+				if (ie && mac) return (browserVer >= 5.0)
+				
+				return false;
+			}
+		
+			function canDetectShockwave()
+			{
+				if (ie && win) return (browserVer >= 4.0)
+				if (ie && mac) return (browserVer >= 5.0)
+				if (ns && win) return (browserVer >= 3.0)
+				if (ns && mac) return (browserVer >= 3.0)
+				
+				return false;
+			}
+			
+			function shockwaveDetectAxVer(reqVer)
+			{
+				if (ie && win)
+				{
+					for (i=8;i>0;i--)
+					{
+						versionString = VBGetShockwaveVer(i);
+						
+						if (versionString != "0.0")
+						{
+							versionNum = (versionString == "1.0" ? 6.0 : parseFloat(versionString));
+							
+							return (reqVer ? versionNum >= reqVer : versionNum);
+						}
+					}
+				}
+				
+				return (reqVer ? false : 0.0);
+			}
+			
+			function shockwaveDetectNsVer(reqVer)
+			{
+				if (!navigator.plugins) return (reqVer ? false : 0.0);
+				
+				thearray = navigator.plugins;
+				arraylen = thearray.length;
+				
+				for (i=0; i < arraylen; i++)
+				{
+					theplugin = thearray[i]
+					thename   = theplugin.name
+					thedesc   = theplugin.description
+					
+					if (thename.indexOf("Shockwave") != -1 && thename.indexOf("Director") != -1)
+					{
+						versionString = thedesc.substring(thedesc.indexOf("version ") + 8);
+						
+						if (versionString.indexOf(".") > 0)
+						{
+							versionMajor = versionString.substring(0,versionString.indexOf("."));
+							versionMinor = versionString.substring(versionString.indexOf(".") + 1);
+							
+							if (versionMinor.indexOf(".") > 0)
+							{
+								versionMinor = versionMinor.substring(0,versionString.indexOf(".")) + versionMinor.substring(versionMinor.indexOf(".") + 1);
+							}
+							
+							versionString = parseInt(versionMajor) + "." + versionMinor;
+						}
+						
+						return (reqVer ? (parseFloat(versionString) >= reqVer) : parseFloat(versionString));
+					} 
+				}
+				
+				return (reqVer ? false : 0.0);
+			}
+
+		//-->
+		</script>
+		
+		<script language="VBScript">
+		<!--
+		
+			Function VBGetShockwaveVer(i)
+			
+				on error resume next
+				Dim swControl, swVersion
+				swVersion = "0.0"
+				
+				set swControl = CreateObject("SWCtl.SWCtl." + CStr(i))
+				
+				if (IsObject(swControl)) then
+				
+					swVersion = CStr(i) + ".0"
+					swVersion = CStr(swControl.ShockwaveVersion(""))
+					
+				end if
+				
+				VBGetShockwaveVer = swVersion
+				
+			End Function
+		
+		// -->
+		</script>
+		
+		<script language="JavaScript">
+		<!--
+		
+			browserSupported = isSupportedBrowser();
+			detectSupported = canDetectShockwave();
+			
+			if ((browserSupported) && (detectSupported))
+			{
+				//shocwaveSupported = shockwaveDetectAxVer(10.1);
+				shocwaveSupported = true;
+			}
+			else if (detectSupported)
+			{
+				//shocwaveSupported = shockwaveDetectNsVer(10.1);
+				shocwaveSupported = true;
+			}
+			
+		//-->		
+		</script>
+		
+		<script language="JavaScript">
+		
+			if ((browserSupported) && (shocwaveSupported)) document.write("<meta http-equiv=\"REFRESH\" content=\"0; URL=http://www.sport4quiz.com/wm2006/index.html\">");
+			
+		</script>
+		
+		<script language="JavaScript">
+		
+			function ChangeLanguage(language)
+			{
+				eval("message.innerHTML = message_" + language + ".innerHTML;");
+				eval("document.message.innerHTML = document.message_" + language + ".innerHTML;");
+			}
+		
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+	
+		<NOSCRIPT><FONT COLOR="#FF0000">You need to enable JavaScript or otherwise the application will not work !</FONT></NOSCRIPT>
+		
+		
+		<TABLE WIDTH="100%" HEIGHT="100%">
+			<TR>
+				<TD align="center">
+					<TABLE>
+						<TR>
+							<TD>
+								<script language="JavaScript">
+								
+									if ((!browserSupported) || (!shocwaveSupported))
+									{
+										document.write("<DIV ID=\"message\"><TABLE WIDTH=640 HEIGHT=480 BACKGROUND=\"images/alert_background.jpg\"><TR><TD ALIGN=\"center\"><TABLE WIDTH=\"500\">");
+										document.write("<TR><TD><FONT CLASS=\"fv12b\">This application requires Internet Explorer and Macromedia Shockwave Plugin.<BR><BR></FONT></TD></TR>");
+										document.write("<TR><TD><FONT CLASS=\"fv10\">If you are not sure if you use <A HREF=\"http://www.microsoft.com/downloads/\" TARGET=\"_blank\"><FONT COLOR=\"#DC0000\">Microsoft Internet Explorer</FONT></A> or Netscape, then please go all the way at the top of your screen where it says HELP and click, choose ABOUT. It should say if you are using Microsoft Internet Explorer.<BR><BR></FONT></TD></TR>");
+										document.write("<TR><TD><FONT CLASS=\"fv10\">Click here to download the <A HREF=\"http://sdc.shockwave.com/shockwave/download/download.cgi\" TARGET=\"_blank\"><FONT COLOR=\"#DC0000\">Shockwave Plugin</FONT></A>. Choose OPEN IT and press OK. Shockwave Installer will begin to download. This takes about 5 minutes. When it finishes downloading, it will automatically begin to Install. Once installed, please close the page and reopen from <A HREF=\"http://www.play4win.com\"><FONT COLOR=\"#DC0000\">www.play4win.com</FONT></A> link again.<BR><BR></FONT></TD></TR>");
+										document.write("<TR><TD><FONT CLASS=\"fv10\">You will not have to do this again, it is a one-time only procedure.<BR><BR></FONT></TD></TR>");
+										document.write("<TR><TD><FONT CLASS=\"fv10\">If for any reason you cannot install shockwave, then please <A HREF=\"mailto:office@play4win.com\"><FONT COLOR=\"#DC0000\">click here</FONT></A> to contact us for additional help. Please tell us in your e-mail what browser and operating system you are using and what went wrong.<BR><BR><BR></FONT></TD></TR>");
+										document.write("<TR><TD ALIGN=\"center\"><A HREF=\"#\" onClick=\"ChangeLanguage('de');\"><IMG ID=\"flag_de\" SRC=\"images/flag_ger.jpg\" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=\"\"></A><A HREF=\"#\" onClick=\"ChangeLanguage('fr');\"><IMG ID=\"flag_fr\" SRC=\"images/flag_fra.jpg\" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=\"\"></A><A HREF=\"#\" onClick=\"ChangeLanguage('es');\"><IMG ID=\"flag_es\" SRC=\"images/flag_esp.jpg\" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=\"\"></A><A HREF=\"#\" onClick=\"ChangeLanguage('it');\"><IMG ID=\"flag_it\" SRC=\"images/flag_ita.jpg\" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=\"\"></A><A HREF=\"#\" onClick=\"ChangeLanguage('cz');\"><IMG ID=\"flag_cz\" SRC=\"images/flag_cze.jpg\" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=\"\"></A></TD></TR>");
+										document.write("</TABLE></TD></TR></TABLE></DIV>");
+									}
+									
+								</script>
+								
+								<DIV ID="message_en" STYLE="display:none;">
+									<TABLE WIDTH=640 HEIGHT=480 BACKGROUND="images/alert_background.jpg"><TR><TD ALIGN="center"><TABLE WIDTH="500">
+										<TR><TD><FONT CLASS="fv12b">This application requires Internet Explorer and Macromedia Shockwave Plugin.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">If you are not sure if you use <A HREF="http://www.microsoft.com/downloads/" TARGET="_blank"><FONT COLOR="#DC0000">Microsoft Internet Explorer</FONT></A> or Netscape, then please go all the way at the top of your screen where it says HELP and click, choose ABOUT. It should say if you are using Microsoft Internet Explorer.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Click here to download the <A HREF="http://sdc.shockwave.com/shockwave/download/download.cgi" TARGET="_blank"><FONT COLOR="#DC0000">Shockwave Plugin</FONT></A>. Choose OPEN IT and press OK. Shockwave Installer will begin to download. This takes about 5 minutes. When it finishes downloading, it will automatically begin to Install. Once installed, please close the page and reopen from <A HREF="http://www.play4win.com"><FONT COLOR="#DC0000">www.play4win.com</FONT></A> link again.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">You will not have to do this again, it is a one-time only procedure.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">If for any reason you cannot install shockwave, then please <A HREF="mailto:office@play4win.com"><FONT COLOR="#DC0000">click here</FONT></A> to contact us for additional help. Please tell us in your e-mail what browser and operating system you are using and what went wrong.<BR><BR><BR></FONT></TD></TR>
+										<TR><TD ALIGN="center"><A HREF="#" onClick="ChangeLanguage('de');"><IMG ID="flag_de" SRC="images/flag_ger.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('fr');"><IMG ID="flag_fr" SRC="images/flag_fra.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('es');"><IMG ID="flag_es" SRC="images/flag_esp.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('it');"><IMG ID="flag_it" SRC="images/flag_ita.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('cz');"><IMG ID="flag_cz" SRC="images/flag_cze.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A></TD></TR>
+									</TABLE></TD></TR></TABLE>
+								</DIV>
+								<DIV ID="message_de" STYLE="display:none;">
+									<TABLE WIDTH=640 HEIGHT=480 BACKGROUND="images/alert_background.jpg"><TR><TD ALIGN="center"><TABLE WIDTH="500">
+										<TR><TD><FONT CLASS="fv12b">Um Play4Win OnlineCasino fehlerfrei verwenden zu können, benötigen Sie Internet Explorer und das Macromedia Shockwave Plug-In.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Wenn Sie sich nicht sicher sind welche Art von Browser Sie verwenden (<A HREF="http://www.microsoft.com/downloads/" TARGET="_blank"><FONT COLOR="#DC0000">Microsoft Internet Explorer</FONT></A> oder Netscape), dann klicken Sie bitte auf dem oberen Ende Ihres Bildschirmes auf den Punkt “Hilfe” und dort wählen Sie bitte “Info”. Dort befindet sich die korrekte Browserbezeichung und die entspechende Versionsnummer.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Klicken Sie hier, um das <A HREF="http://sdc.shockwave.com/shockwave/download/download.cgi" TARGET="_blank"><FONT COLOR="#DC0000">Shockwave Plug-In</FONT></A> downzuloaden!<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Wählen Sie Öffnen und drücken Sie “OK”. Der Installationsvorgang wird ca. 5 Minuten in Anspruch nehmen.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Wenn der Downloadvorgang beendet ist, wir der Installationsvorgang automatisch beginnen. Ist die Installation beendet, schließen Sie bitte das aktuelle Browserfenster und starten die <A HREF="http://www.play4win.com"><FONT COLOR="#DC0000">www.play4win.com</FONT></A> nochmals.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Sie werden diesen Vorgang nur ein einziges Mal durchführen müssen.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Sollten Sie aus welchen Gründen auch immer Shockwave nicht installieren können, klicken Sie bitte <A HREF="mailto:office@play4win.com"><FONT COLOR="#DC0000">hier</FONT></A>, damit wir Ihnen weiterführenden Support zukommen lassen können. Teilen Sie und in Ihrer Mail bitte mit, welchen Browser, welches Betriebssystem (Win98, Win2000, WinXP, Linux, ...) Sie verwenden, und mit welchen Fehlermeldungen der Installationsvorgang fehlgeschlagen ist.<BR><BR><BR></FONT></TD></TR>
+										<TR><TD ALIGN="center"><A HREF="#" onClick="ChangeLanguage('en');"><IMG ID="flag_en" SRC="images/flag_gbr.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('fr');"><IMG ID="flag_fr" SRC="images/flag_fra.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('es');"><IMG ID="flag_es" SRC="images/flag_esp.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('it');"><IMG ID="flag_it" SRC="images/flag_ita.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('cz');"><IMG ID="flag_cz" SRC="images/flag_cze.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A></TD></TR>
+									</TABLE></TD></TR></TABLE>
+								</DIV>
+								<DIV ID="message_it" STYLE="display:none;">
+									<TABLE WIDTH=640 HEIGHT=480 BACKGROUND="images/alert_background.jpg"><TR><TD ALIGN="center"><TABLE WIDTH="500">
+										<TR><TD><FONT CLASS="fv12b">L’applicazione richiede Internet Explorer ed il Shockwave Plugin.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Per ottimizzare la visualizzazione del Casinò Online di Play4Win è necessario utilizzare Internet Explorer ed il Plug-In di Macromedia Shockwave.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Se non sapete con certezza quale browser state utilizzando (<A HREF="http://www.microsoft.com/downloads/" TARGET="_blank"><FONT COLOR="#DC0000">Microsoft Internet Explorer</FONT></A> o Netscape) potete cliccare sul punto di domanda posto in alto (“Aiuto”) nel vostro schermo e selezionare la voce “Informazioni”.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">In questo modo avrete la descrizione corretta del browser e del numero di versione del browser da voi utilizzato.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Cliccare qui per il download di <A HREF="http://sdc.shockwave.com/shockwave/download/download.cgi" TARGET="_blank"><FONT COLOR="#DC0000">Shockwave Plug-In</FONT></A> !</FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Selezionate “Apri” e cliccate su “OK”. Il processo di installazione richiede all’incirca 5 minuti.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Una volta completato il download ha automaticamente inizio l’installazione. Terminata l’installazione dovete chiudere la finestra del vostro browser, riaprirne una nuova e digitare l’indirizzo <A HREF="http://www.play4win.com"><FONT COLOR="#DC0000">www.play4win.com</FONT></A>.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Dovrete eseguire l’installazione una sola volta.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Se non riuscite ad installare Shockwave vi preghiamo di cliccare qui per poter ricevere il <A HREF="mailto:office@play4win.com"><FONT COLOR="#DC0000">supporto</FONT></A> adeguato. Non dimenticate di specificare nella vostra email il browser da voi utilizzato, il vostro sistema operativo (Windows98, Win2000, WindowsXP, Linux…) e quale comunicazione d’errore si presenta durante il processo d’installazione.<BR><BR><BR></FONT></TD></TR>
+										<TR><TD ALIGN="center"><A HREF="#" onClick="ChangeLanguage('en');"><IMG ID="flag_en" SRC="images/flag_gbr.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('de');"><IMG ID="flag_de" SRC="images/flag_ger.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('fr');"><IMG ID="flag_fr" SRC="images/flag_fra.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('es');"><IMG ID="flag_es" SRC="images/flag_esp.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('cz');"><IMG ID="flag_cz" SRC="images/flag_cze.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A></TD></TR>
+									</TABLE></TD></TR></TABLE>
+								</DIV>
+								<DIV ID="message_fr" STYLE="display:none;">
+									<TABLE WIDTH=640 HEIGHT=480 BACKGROUND="images/alert_background.jpg"><TR><TD ALIGN="center"><TABLE WIDTH="500">
+										<TR><TD><FONT CLASS="fv12b">This application requires Internet Explorer and Macromedia Shockwave Plugin.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">If you are not sure if you use <A HREF="http://www.microsoft.com/downloads/" TARGET="_blank"><FONT COLOR="#DC0000">Microsoft Internet Explorer</FONT></A> or Netscape, then please go all the way at the top of your screen where it says HELP and click, choose ABOUT. It should say if you are using Microsoft Internet Explorer.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Click here to download the <A HREF="http://sdc.shockwave.com/shockwave/download/download.cgi" TARGET="_blank"><FONT COLOR="#DC0000">Shockwave Plugin</FONT></A>. Choose OPEN IT and press OK. Shockwave Installer will begin to download. This takes about 5 minutes. When it finishes downloading, it will automatically begin to Install. Once installed, please close the page and reopen from <A HREF="http://www.play4win.com"><FONT COLOR="#DC0000">www.play4win.com</FONT></A> link again.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">You will not have to do this again, it is a one-time only procedure.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">If for any reason you cannot install shockwave, then please <A HREF="mailto:office@play4win.com"><FONT COLOR="#DC0000">click here</FONT></A> to contact us for additional help. Please tell us in your e-mail what browser and operating system you are using and what went wrong.<BR><BR><BR></FONT></TD></TR>
+										<TR><TD ALIGN="center"><A HREF="#" onClick="ChangeLanguage('de');"><IMG ID="flag_de" SRC="images/flag_ger.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('fr');"><IMG ID="flag_fr" SRC="images/flag_fra.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('es');"><IMG ID="flag_es" SRC="images/flag_esp.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('it');"><IMG ID="flag_it" SRC="images/flag_ita.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('cz');"><IMG ID="flag_cz" SRC="images/flag_cze.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A></TD></TR>
+									</TABLE></TD></TR></TABLE>
+								</DIV>
+								<DIV ID="message_es" STYLE="display:none;">
+									<TABLE WIDTH=640 HEIGHT=480 BACKGROUND="images/alert_background.jpg"><TR><TD ALIGN="center"><TABLE WIDTH="500">
+										<TR><TD><FONT CLASS="fv12b">This application requires Internet Explorer and Macromedia Shockwave Plugin.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">If you are not sure if you use <A HREF="http://www.microsoft.com/downloads/" TARGET="_blank"><FONT COLOR="#DC0000">Microsoft Internet Explorer</FONT></A> or Netscape, then please go all the way at the top of your screen where it says HELP and click, choose ABOUT. It should say if you are using Microsoft Internet Explorer.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Click here to download the <A HREF="http://sdc.shockwave.com/shockwave/download/download.cgi" TARGET="_blank"><FONT COLOR="#DC0000">Shockwave Plugin</FONT></A>. Choose OPEN IT and press OK. Shockwave Installer will begin to download. This takes about 5 minutes. When it finishes downloading, it will automatically begin to Install. Once installed, please close the page and reopen from <A HREF="http://www.play4win.com"><FONT COLOR="#DC0000">www.play4win.com</FONT></A> link again.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">You will not have to do this again, it is a one-time only procedure.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">If for any reason you cannot install shockwave, then please <A HREF="mailto:office@play4win.com"><FONT COLOR="#DC0000">click here</FONT></A> to contact us for additional help. Please tell us in your e-mail what browser and operating system you are using and what went wrong.<BR><BR><BR></FONT></TD></TR>
+										<TR><TD ALIGN="center"><A HREF="#" onClick="ChangeLanguage('de');"><IMG ID="flag_de" SRC="images/flag_ger.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('fr');"><IMG ID="flag_fr" SRC="images/flag_fra.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('es');"><IMG ID="flag_es" SRC="images/flag_esp.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('it');"><IMG ID="flag_it" SRC="images/flag_ita.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('cz');"><IMG ID="flag_cz" SRC="images/flag_cze.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A></TD></TR>
+									</TABLE></TD></TR></TABLE>
+								</DIV>
+								<DIV ID="message_cz" STYLE="display:none;">
+									<TABLE WIDTH=640 HEIGHT=480 BACKGROUND="images/alert_background.jpg"><TR><TD ALIGN="center"><TABLE WIDTH="500">
+										<TR><TD><FONT CLASS="fv12b">Pro aplikaci je nutný Internet Explorer a Macromedia Shockwave Plugin.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">K bezchybnýmu použití Play4Win online kasino potřebujete Internet Explorer a Macromedia Shockwave Plug-In.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Když si nejste jist jaký  máte  druh Browsera (<A HREF="http://www.microsoft.com/downloads/" TARGET="_blank"><FONT COLOR="#DC0000">Microsoft Internet Explorer</FONT></A> anebo Netscape), pak klikněte prosím na horním konci obrazovky na tlačítko „Pomoc“ a pak zvolte prosím „Info“. Tam se nachází správný browser-popis a potřebné číslo verze.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Tady klikněte pro stáhnutí <A HREF="http://sdc.shockwave.com/shockwave/download/download.cgi" TARGET="_blank"><FONT COLOR="#DC0000">Shockwave a Plug-In</FONT></A> !<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Zvolte „Otevřít“ a stiskněte „OK“. Instalace potrvá přibližně 5 minut.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Když se ukončí stahování, začne se automaticky proces instalace. Skončí instalace, zavřete prosím aktuální okno browsera a nastartujte <A HREF="http://www.play4win.com"><FONT COLOR="#DC0000">www.play4win.com</FONT></A> ještě jednou.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Tento proces musíte provést jenom jedenkrát.<BR><BR></FONT></TD></TR>
+										<TR><TD><FONT CLASS="fv10">Z nejakého důvodu se Vám nepodaří nainstalovat Shockwave, klikněte prosím <A HREF="mailto:office@play4win.com"><FONT COLOR="#DC0000">tady</FONT></A>, aby sme Vám mohli zaslát další pomoc. Sdělte nám prosím ve Vašem mailu jaký máte Browser, operační systém (Win98, Win2000, WinXP, Linux...) a jakou chybovou zprávu Vám ohlásil instalační proces.<BR><BR><BR></FONT></TD></TR>
+										<TR><TD ALIGN="center"><A HREF="#" onClick="ChangeLanguage('en');"><IMG ID="flag_en" SRC="images/flag_gbr.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('de');"><IMG ID="flag_de" SRC="images/flag_ger.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('fr');"><IMG ID="flag_fr" SRC="images/flag_fra.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('es');"><IMG ID="flag_es" SRC="images/flag_esp.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A><A HREF="#" onClick="ChangeLanguage('it');"><IMG ID="flag_it" SRC="images/flag_ita.jpg" WIDTH=24 HEIGHT=12 HSPACE=4 BORDER=1 ALT=""></A></TD></TR>
+									</TABLE></TD></TR></TABLE>
+								</DIV>
+							</TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+	</BODY>
+</HTML>

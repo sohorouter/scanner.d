@@ -1,0 +1,54 @@
+HTTP/1.0 200 OK
+Connection: Close
+Server: LANCOM 1821+ Wireless ADSL (Ann.B) 7.80.0081 / 06.01.2010
+Cache-Control: no-cache
+Expires: Thu, 31 Dec 1999 00:00:00 GMT
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" >
+<html>
+<head>
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<title>BLANKEAUSTRIA - Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script type="text/javascript">
+function replaceParam(){
+  var newParam = "Enabled";
+  document.loginform.action = document.loginform.action.replace(/Disabled$/,newParam);
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="/css/login.css">
+    </head><body  ><div class="header">
+<a href="http://www.lancom-systems.de"><img class="headerimg" src="/images/productnew.jpeg" alt="LANCOM Systems Homepage"></a><p class="headerp">LANCOM 1821+ Wireless ADSL (Ann.B)</p>
+</div>
+<div class="logincontent">
+<div class="login">
+ <h1> BLANKEAUSTRIA </h1>
+<div id="leftDiv">
+<img style="border:0" src="/images/prodimg.jpeg" alt=" LANCOM 1821+ Wireless ADSL (Ann.B)">
+</div>
+<div id="rightDiv">
+ <form method="POST" action="/?JavaScriptDisabled" name="loginform" onsubmit="replaceParam()">
+   <table border="0" cellpadding="3" cellspacing="0" class="centeredTable">
+     <tr>
+       <td align="left"> Password</td>
+       <td>  <input name="passwort" type="password" class="Feld" size="30" maxlength="15"> </td>
+     </tr>
+     <tr>
+       <td></td><td><button TYPE="submit"class="Button" accesskey="o" ><span style="text-decoration:underline">O</span>k</button>
+       </td>
+     </tr>
+   </table>
+ </form>
+<script type="text/javascript">
+  document.forms[0].elements[0].focus();
+</script>
+<p style="color:red">Caution! Your are using an unencrypted connection. The password will be transmitted as plain text.</p>
+<a href="https://80.122.86.146">Encrypted connection.</a>
+</div>
+<div style="clear:both"></div></div>
+    </div>
+  </body>
+</HTML>

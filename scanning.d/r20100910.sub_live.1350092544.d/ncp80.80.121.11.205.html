@@ -1,0 +1,91 @@
+HTTP/1.0 200 OK
+Date: Sun, 30 Mar 2003 01:47:02 GMT
+Server: WYM/1.0
+Connection: close
+Content-Type: text/html
+Content-Length: 1832
+Last-Modified: Sun, 30 Mar 2003 01:47:02 GMT
+
+<HTML>
+<HEAD>
+<TITLE>IP Camera</TITLE>
+<META NAME="Author" CONTENT="ChenXiaohui">
+
+<SCRIPT>
+function BrowserCheck()
+{
+	if (navigator.appName.toUpperCase() == 'MICROSOFT INTERNET EXPLORER' && navigator.appVersion.indexOf("MSIE") > 0)
+	{
+		if (parseFloat(navigator.appVersion.substr(navigator.appVersion.indexOf("MSIE")+4)) >= 5.0)
+			return true;
+	}
+	return false;
+}
+
+var owMain = false;
+var owControl = false;
+var owAdd = false;
+var owConfig = false;
+var sErr = null;
+var iBool = false;
+
+function TestInit()
+{
+	if (sErr) location = "about:" + sErr;
+
+	if (owMain && owControl && owAdd && owConfig)
+		ReallyInit();
+	else setTimeout("TestInit();", 100);
+}
+
+function ReallyInit()
+{
+	window.frames.rtop.InitBackCall();
+}
+
+var bVisitLog = true;
+function BackToCamera()
+{
+	bVisitLog = true;
+	window.rightframeset.rows = '*, 100, 0';
+	window.leftframeset.rows = '*, 0';
+	setTimeout('window.left.document.all.oLogHref.innerText = "View Log";', 0);
+}
+
+function GetLogo()
+{
+	return '<font face="Arial Black" style="font-size:10pt;"><i><nobr>IP Video V2.39-A</nobr><br></i></font>';
+}
+</SCRIPT>
+
+</HEAD>
+
+<script>
+if (BrowserCheck())
+{
+	var s='<frameset cols="220, *" id=totalframeset>'
+			+ '<frameset id=leftframeset rows="*, 0">'
+			+ '<frame name="left" src="Control.htm' + location.search + '">'
+			+ '<frame name="configdir" src="Config.htm">'
+			+ '</frameset>'
+			+ '<frameset id=rightframeset rows="*,100, 0" framespacing=2 border=2>'
+			+ '<frame name="rtop" src="Main.htm">'
+			+ '<frame name="rbottom" scrolling="no" src="Add.htm">'
+			+ '<frame name="rinfo" src="about:blank">'
+			+ '</frameset>'
+			+ '</frameset>';
+	document.write(s);
+	setTimeout("TestInit();", 0);
+}
+else
+{
+	document.write('<META HTTP-EQUIV="Refresh" CONTENT="0;URL=/Simple/index.htm">');
+}
+</script>
+
+</HTML>
+
+
+<!--0 Copyright AVIOSYS-->
+<!--2o-->
+<!--3sAA-->

@@ -1,0 +1,54 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 15:28:03 GMT
+Server: Apache/2.2.3 (Red Hat)
+Last-Modified: Wed, 25 Aug 2010 09:48:30 GMT
+ETag: "3800480-8d0-c8b51780"
+Accept-Ranges: bytes
+Content-Length: 2256
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="doInit()">
+<script type="text/javascript">
+function isIphone() {
+	if((navigator.userAgent.match(/iPhone/i))||(navigator.userAgent.match(/iPod/i))) {
+		return true;
+	}
+	return false;
+}
+function doInit() {
+	if (isIphone()) {
+		if (confirm("Hello iPhone")) {
+			alert("click OK");
+		}
+		else {
+			alert("cancel");
+		}
+	}
+}
+</script>
+<img src="DEMO.gif" usemap="#DEMO" style="border-style:none">
+
+<div>
+<select name="TEST">
+	<option value="A">aaaa</otion>
+	<option value="B">bbbb</otion>
+	<option value="C">cccc</otion>
+	<option value="D">dddd</otion>
+</select>
+<map id="DEMO" name="DEMO">
+<area shape="rect" alt="Starten DER Weingarten DEMO-Applikation" coords="328,24,443,124" href="http://www.daskellerbuch.com:8080/Weingarten/Weingarten?Prozess=P01-EnterUserAndPassword&UserId=Demo&Password=Demo&SysSettings=1&screenWidth=1280&screenHeight=800%22" title="Starten DER Weingarten DEMO-Applikation" target="_blank" />
+<area shape="rect" alt="Starten DIE Traubenannahme DEMO-Applikation" coords="330,166,441,265" href="http://www.daskellerbuch.com:8080/Traubenannahme/Traubenannahme?Prozess=P01-EnterUserAndPassword&UserId=Demo&Password=Demo&SysSettings=1&screenWidth=1280&screenHeight=800%22" title="Starten DER Weingarten DEMO-Applikation" target="_blank" />
+<area shape="rect" alt="Starten DAS Kellerbuch DEMO-Applikation" coords="329,308,443,406" href="http://www.daskellerbuch.com:8080/Kellerbuch/Kellerbuch?Prozess=P01-EnterUserAndPassword&UserId=Demo&Password=Demo&SysSettings=1&screenWidth=1280&screenHeight=800%22" title="Starten DER Weingarten DEMO-Applikation" target="_blank"  />
+<area shape="rect" alt="Starten DIE Warenwirtschaft DEMO-Applikation" coords="327,448,442,548" href="http://www.daskellerbuch.com:8080/Warenwirtschaft/Warenwirtschaft?Prozess=P01-EnterUserAndPassword&UserId=Demo&Password=Demo&SysSettings=1&screenWidth=1280&screenHeight=800%22" title="Starten DER Weingarten DEMO-Applikation" target="_blank"  />
+<area shape="default" nohref="nohref" alt="" />
+</map>
+</div>
+</body>
+</html>

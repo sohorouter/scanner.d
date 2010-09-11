@@ -1,0 +1,995 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 15:42:29 GMT
+Server: Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny4 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ruby/1.2.6 Ruby/1.8.7(2008-08-11) mod_ssl/2.2.9 OpenSSL/0.9.8g
+X-Powered-By: PHP/5.2.6-1+lenny4
+Set-Cookie: PHPSESSID=599792ed74356a29561696e99b952b17; path=/
+Cache-Control: no-cache, must-revalidate
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Set-Cookie: c_request=deleted; expires=Thu, 10-Sep-2009 15:42:28 GMT
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html >
+<head>
+    <base href = "http:///">
+    <meta http-equiv = "Content-Language" content = "de">
+    <meta http-equiv = "keywords"         content = "education">
+    <meta http-equiv = "description"      content = "Collaborative Elearning Platform">
+    <meta http-equiv = "Content-Type"     content = "text/html; charset = utf-8">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel = "stylesheet" type = "text/css" href = "css/css_global.php?build=4718">
+    
+        
+    <title>eFront | Refreshing eLearning</title>
+    <script type = "text/javascript" >var globalImageExtension = 'png';</script>
+
+        <script type = "text/javascript" src = "js/scriptaculous/prototype.php"> </script>
+        <script type = "text/javascript" src = "js/scriptaculous/effects.php"> </script>
+        <script type = "text/javascript" src = "js/EfrontScripts.php"> </script>
+    
+        
+    <script type = "text/javascript">
+        var ajaxObjects    = new Array();
+        top.document.title = "eFront | Refreshing eLearning";
+        if (window.name == 'POPUP_FRAME') var popup=1;
+    </script>
+</head>
+
+<body>
+
+
+
+   
+
+
+
+		
+
+	
+
+
+
+
+
+	
+
+
+<table class = "layout index ">
+	<tr><td class = "header" colspan = "3">			
+			<div id="logo">
+			<a href="index.php"><img src="images/logo/maus.gif" border="0" alt="eFront" title="eFront" /></a>
+			</div>
+			<div id="info">
+			<div id="siteName">
+			<br />
+			</div>
+			</div>
+			<br />
+			<img src="content/admin/cl_logo.jpg" border="0" alt=" " align="middle" /><br />
+			<div id="path">
+			<div id="path_title">
+			<a href = '/index.php'>Startseite</a>
+			</div>
+			<div id="path_language">
+												<select onchange = "var new_location = location.toString().replace(/(\?|&)bypass_language=.*/, '');location = new_location+(new_location.toString().match(/\?/) ? '&' : '?')+'bypass_language='+this.options[this.selectedIndex].value">
+					 
+						<option value = "english" >English</option>
+					 
+						<option value = "german" selected>Deutsch</option>
+									</select>
+		
+			</div>
+			</div>
+			
+	</td></tr>	<tr><td class = "left">                                    	        		        				
+    <div class = "block" style = ";" id = "Anmeldung" >
+        <div class = "blockContents">
+        		<span class = "handles"><img class = "open" src = "images/16x16/navigate_up.png" onclick = "toggleBlock(this, '05d316097eb9d1289765b00d23b6aba8')"  id = "Anmeldung_image"></span>
+        		<span class = "title">Anmeldung</span>
+        		<span class = "subtitle"></span>
+        		
+        		<div class = "content" style = "" id = "Anmeldung_content">    
+<script type="text/javascript">
+//<![CDATA[
+function validate_login_form(frm) {
+  var value = '';
+  var errFlag = new Array();
+  var _qfGroups = {};
+  _qfMsg = '';
+
+  value = frm.elements['login'].value;
+  if (value == '' && !errFlag['login']) {
+    errFlag['login'] = true;
+    _qfMsg = _qfMsg + '\n - Das Feld \"Anmeldename\" obligatorisch';
+  }
+
+  value = frm.elements['password'].value;
+  if (value == '' && !errFlag['password']) {
+    errFlag['password'] = true;
+    _qfMsg = _qfMsg + '\n - Das Feld \"Passwort\" obligatorisch';
+  }
+
+  if (_qfMsg != '') {
+    _qfMsg = 'Die folgenden Fehler sind aufgetreten:' + _qfMsg;
+    _qfMsg = _qfMsg + '\nBitte korrigieren Sie die obigen Fehler';
+    alert(_qfMsg);
+    return false;
+  }
+  return true;
+}
+//]]>
+</script>
+    <form  action="index.php?index_efront" method="post" id="login_form" onsubmit="try { var myValidator = validate_login_form; } catch(e) { return true; } return myValidator(this);">
+    	<input name="_qf__login_form" type="hidden" value="" />
+
+		<div class = "formRow">
+    		<div class = "formLabel">			
+                <div class = "header">Anmeldename</div>
+                        	</div>
+    		<div class = "formElement">
+            	<div class = "field"><input class="inputText" name="login" type="text" /></div>
+        		    	    </div>
+    	</div>
+		<div class = "formRow">
+    		<div class = "formLabel">			
+                <div class = "header">Passwort</div>
+                        	</div>
+    		<div class = "formElement">
+            	<div class = "field"><input class="inputText" tabindex="0" name="password" type="password" /></div>
+        		    	    </div>
+    	</div>
+		<div class = "formRow">	    
+        	<div class = "formLabel">			
+                <div class = "header">&nbsp;</div>
+                <div class = "explanation"></div>
+        	</div>
+    		<div class = "formElement">
+            	<div class = "field"><input class="flatButton" name="submit_login" value="Anmeldung" type="submit" /></div>
+            	<div class = "small note"><a href = "/index.php?ctg=signup">Ich habe kein Konto</a></div>            	<div class = "small note"><a href = "/index.php?ctg=reset_pwd">Ich habe mein Passwort vergessen</a></div>
+            	<div class = "small note"><a href = "/index.php?ctg=contact">Kontaktieren Sie uns</a></div>
+            	<div class = "small note"><a href = "/index.php?ctg=lessons">Arbeitspaket-Liste</a></div>            	
+    	    </div>      		
+    	</div>		
+     </form>
+
+</div>
+        		<span style = "display:none">&nbsp;</span>	
+        </div>
+    </div>	
+	<script>
+		$("Anmeldung").ancestors().each(function (s) {
+			if (s.readAttribute('collapsed')) {				
+				$("Anmeldung_content").hide();
+				$("Anmeldung_image").removeClassName("open");
+				$("Anmeldung_image").addClassName("close");
+				$("Anmeldung_image").src = "images/16x16/navigate_down.png";
+			}
+		});
+	</script>
+        				
+                        	        		        				
+    <div class = "block" style = ";" id = "Benutzer+online" >
+        <div class = "blockContents">
+        		<span class = "handles"><img class = "open" src = "images/16x16/navigate_up.png" onclick = "toggleBlock(this, '259fdd5016f9bb3d23e16f5f6ec2d979')"  id = "Benutzer+online_image"></span>
+        		<span class = "title">Benutzer online</span>
+        		<span class = "subtitle"></span>
+        		
+        		<div class = "content" style = "" id = "Benutzer+online_content">	    	<span class = "small">Niemand ist derzeit angemeldet</span>
+	</div>
+        		<span style = "display:none">&nbsp;</span>	
+        </div>
+    </div>	
+	<script>
+		$("Benutzer+online").ancestors().each(function (s) {
+			if (s.readAttribute('collapsed')) {				
+				$("Benutzer+online_content").hide();
+				$("Benutzer+online_image").removeClassName("open");
+				$("Benutzer+online_image").addClassName("close");
+				$("Benutzer+online_image").src = "images/16x16/navigate_down.png";
+			}
+		});
+	</script>
+        				
+            	
+            
+    </td>
+		<td class = "center">            	                        	        		        				
+    <div class = "block" style = ";" id = "Arbeitspakete" >
+        <div class = "blockContents">
+        		<span class = "handles"><img class = "open" src = "images/16x16/navigate_up.png" onclick = "toggleBlock(this, 'b3cdd45647a25c38ff6dd7611e5e348d')"  id = "Arbeitspakete_image"></span>
+        		<span class = "title">Arbeitspakete</span>
+        		<span class = "subtitle"></span>
+        		
+        		<div class = "content" style = "" id = "Arbeitspakete_content">		            			
+        				<div style = "padding-top:8px;padding-bottom:8px">
+        					<span style = "float:right;"><span style = "vertical-align:middle">Suche: <input type = "text" style = "vertical-align:middle" onKeyPress = "if (event.keyCode == 13) {filterTree(this)}"></span></span>
+        					<a href = "javascript:void(0)" onclick = "showAll()" >Alle anzeigen</a> / <a href = "javascript:void(0)" onclick = "hideAll()">Alle verbergen</a>
+        				</div>            			
+        				<div id = "directions_tree">
+                        <table class = "lessonsTable" id = "direction_1" >
+                            <tr onclick = "showHideDirections(Element.extend(this).down().next().down(), '', '1', (this.down().next().down().getAttribute('src')).match(/plus/) ? 'show' : 'hide')">
+                            	<td style = "padding-left:0px;"></td>
+                            	<td class = "lessonsList" width = "1%" >
+                                    <img name = "default_visible_image" id = "subtree_img1" src = "images/others/minus.png" style = "vertical-align:middle" align = "center" >
+                                    <span style = "display:none" id = "subtree_children_1"></span>
+                                </td>
+                                <td class = "lessonsList" style = "width:100%">
+                                    <table>
+                                        <tr><td><img src = "images/24x24/directions.png" alt= "Categories" title="Categories" /></td>
+                                            <td class = "lessonsList_title">Clusterland</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr id = "subtree1" name = "default_visible" >
+                            	<td></td>
+                                <td class = "lessonsList_nocolor">&nbsp;</td>
+                                <td>
+                                    <table width = "100%">
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(11, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=11" class = "info " onmouseover = "updateInformation(this, 11, 'lesson')" onclick = "Element.extend(this).update('1. Projekt Kick-off');">
+                            						1. Projekt Kick-off
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(10, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=10" class = "info " onmouseover = "updateInformation(this, 10, 'lesson')" onclick = "Element.extend(this).update('2. Analyse Ausgangslage');">
+                            						2. Analyse Ausgangslage
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(9, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=9" class = "info " onmouseover = "updateInformation(this, 9, 'lesson')" onclick = "Element.extend(this).update('3. Virtuelle Akademie - Lernplattform');">
+                            						3. Virtuelle Akademie - Lernplattform
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(8, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=8" class = "info " onmouseover = "updateInformation(this, 8, 'lesson')" onclick = "Element.extend(this).update('4. Prozessbegleitung');">
+                            						4. Prozessbegleitung
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(7, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=7" class = "info " onmouseover = "updateInformation(this, 7, 'lesson')" onclick = "Element.extend(this).update('5. Konzeption und Entwicklung von Lerninhalten');">
+                            						5. Konzeption und Entwicklung von Lerninhalten
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(6, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=6" class = "info " onmouseover = "updateInformation(this, 6, 'lesson')" onclick = "Element.extend(this).update('6. Konzeption und Aufbau der Blended Learning Schulung');">
+                            						6. Konzeption und Aufbau der Blended Learning Schulung
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(5, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=5" class = "info " onmouseover = "updateInformation(this, 5, 'lesson')" onclick = "Element.extend(this).update('7. Projektabschluss');">
+                            						7. Projektabschluss
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(13, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=13" class = "info " onmouseover = "updateInformation(this, 13, 'lesson')" onclick = "Element.extend(this).update('Virtueller ERFAHRUNGSAUSTAUSCH');">
+                            						Virtueller ERFAHRUNGSAUSTAUSCH
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    	<tr class = "directionEntry">
+                                        <td class = "lessonsList_lessons">                    
+                                        	<img style = "float:right;vertical-align:middle;cursor:pointer" src = "images/16x16/shoppingbasket_add.png" alt = "" title = "" onclick = "ajaxPost(12, this, 0)">
+                                        	<span style = "float:right;vertical-align:middle"></span>&nbsp;&nbsp;
+                            					<a href = "index.php?ctg=lesson_info&lessons_ID=12" class = "info " onmouseover = "updateInformation(this, 12, 'lesson')" onclick = "Element.extend(this).update('Wissenswertes');">
+                            						Wissenswertes
+                            						<img class = "tooltip" border = "0" src = "images/others/tooltip_arrow.gif"/>
+                            						<span class = "tooltipSpan"></span>
+                            					</a>
+                                        
+	                                        
+                                        </td>
+                                	</tr>
+                                    </table>
+                                </td></tr>
+                        </table>
+        			</div>
+                        <script>
+                        	function showAll() {
+                        		$$('tr').each(function (tr) 	  {tr.id.match(/subtree/) ? tr.show() : null;});
+                           		$$('table').each(function (table) {table.id.match(/direction_/) ? table.show() : null;});
+                           		$$('img').each(function (img) {img.src.match(/plus/) ? img.setAttribute('src', 'images/others/minus.png') : null;});
+                        	}
+                        	function hideAll() {
+                        		$$('tr').each(function (tr) 	  {tr.id.match(/subtree/) ? tr.hide() : null;});
+                           		//$$('table').each(function (table) {table.id.match(/direction_/) ? table.hide() : null;});
+                           		$$('img').each(function (img) {img.src.match(/minus/) ? img.setAttribute('src', 'images/others/plus.png') : null;});
+                        	}
+                        	
+                            function showHideDirections(el, ids, id, mode) {                            	
+                            	Element.extend(el);		//IE intialization
+                                if (mode == 'show') {
+                            		el.up().up().nextSiblings().each(function(s) {s.show()});
+                                    if (ids) {
+                                        ids.split(',').each(function (s) { showHideDirections($('subtree_img'+id), $('subtree_children_'+s) ? $('subtree_children_'+s).innerHTML : '', s, 'show') });
+                                        ids.split(',').each(function (s) { obj = $('direction_'+s); obj ? obj.show() : '';});
+    								}
+    								$('subtree_img'+id) ? $('subtree_img'+id).setAttribute('src', 'images/others/minus.png') : '';
+    							} else {
+                            		el.up().up().nextSiblings().each(function(s) {s.hide()});
+                                    if (ids) {
+                                        ids.split(',').each(function (s) { showHideDirections($('subtree_img'+id), $('subtree_children_'+s) ? $('subtree_children_'+s).innerHTML : '', s, 'hide') });
+                                        ids.split(',').each(function (s) { obj = $('direction_'+s); obj ? obj.hide() : ''});
+    								}
+                            		$('subtree_img'+id) ? $('subtree_img'+id).setAttribute('src', 'images/others/plus.png') : '';
+    							}
+    						}
+    						function updateInformation(el, id, type) {
+    							Element.extend(el);
+    							type == 'lesson' ? url = 'ask_information.php?lessons_ID='+id : url = 'ask_information.php?courses_ID='+id;
+    							el.select('span').each(function (s) {    								
+    								if (s.hasClassName('tooltipSpan') && s.empty()) {
+    									s.insert(new Element('img').writeAttribute({src:'images/others/progress1.gif'}).addClassName('progress')).setStyle({height:'50px'});
+    									new Ajax.Request(url, {
+                                            method:'get',
+                                            asynchronous:true,
+                                            onSuccess: function (transport) {
+                                            	//alert(transport.responseText);
+                                            	s.setStyle({height:'auto'}).update(transport.responseText);
+    										}
+    									});
+    								}
+   								});
+    						}
+    						function filterTree(el) {
+    							Element.extend(el);
+    							//$$('tr.directionEntry').each(function (s) {if(s.innerHTML.stripTags().toLowerCase().match(el.value.toLowerCase())) {s.show()} else {s.hide()}});
+    							var url = '/index.php';
+    							url.match(/\?/) ? url = url+'&' : url = url + '?';
+    							el.addClassName('loadingImg');
+    							new Ajax.Request(url+'filter='+el.value, {
+                                    method:'get',
+                                    asynchronous:true,
+                                    onSuccess: function (transport) {
+                                    	$('directions_tree').innerHTML = transport.responseText;
+                                    	el.removeClassName('loadingImg');
+									}
+								});
+    						}
+                            </script>
+	</div>
+        		<span style = "display:none">&nbsp;</span>	
+        </div>
+    </div>	
+	<script>
+		$("Arbeitspakete").ancestors().each(function (s) {
+			if (s.readAttribute('collapsed')) {				
+				$("Arbeitspakete_content").hide();
+				$("Arbeitspakete_image").removeClassName("open");
+				$("Arbeitspakete_image").addClassName("close");
+				$("Arbeitspakete_image").src = "images/16x16/navigate_down.png";
+			}
+		});
+	</script>
+        				
+            	
+            </td>
+		<td class = "right">                                    	        		        				
+    <div class = "block" style = ";" id = "Herzlich+Willkommen" >
+        <div class = "blockContents">
+        		<span class = "handles"><img class = "open" src = "images/16x16/navigate_up.png" onclick = "toggleBlock(this, '64970f8eed080e445a9585dfb9503100')"  id = "Herzlich+Willkommen_image"></span>
+        		<span class = "title">Herzlich Willkommen</span>
+        		<span class = "subtitle"></span>
+        		
+        		<div class = "content" style = "" id = "Herzlich+Willkommen_content"><img src="content/admin/steine4.jpg" border="0" alt=" " width="300" height="300" align="absmiddle" />
+</div>
+        		<span style = "display:none">&nbsp;</span>	
+        </div>
+    </div>	
+	<script>
+		$("Herzlich+Willkommen").ancestors().each(function (s) {
+			if (s.readAttribute('collapsed')) {				
+				$("Herzlich+Willkommen_content").hide();
+				$("Herzlich+Willkommen_image").removeClassName("open");
+				$("Herzlich+Willkommen_image").addClassName("close");
+				$("Herzlich+Willkommen_image").src = "images/16x16/navigate_down.png";
+			}
+		});
+	</script>
+        				
+            	
+            
+    </td></tr>
+	<tr><td class = "footer" colspan = "3">				
+			<a href = "http://www.efrontlearning.net">eFront</a> (version 3.5.5) &bull; Community Edition &bull; <a href = "index.php?ctg=contact">Kontaktieren Sie uns</a>
+				</td></tr>	
+</table>
+
+
+<script>var point5 = new Date().getTime();</script>
+
+<script language = "JavaScript" type = "text/javascript" >
+
+ 	var __isIE =  navigator.appVersion.match(/MSIE/);  
+    var __userAgent = navigator.userAgent;  
+    var __isFireFox = __userAgent.match(/firefox/i);  
+    var __isFireFoxOld = __isFireFox && (__userAgent.match(/firefox\/2./i) || __userAgent.match(/firefox\/1./i));  
+    var __isFireFoxNew = __isFireFox && !__isFireFoxOld;  
+
+function getWindowSize() {
+  var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+
+  return [myWidth, myHeight];
+  //window.alert( 'Width = ' + myWidth );
+  //window.alert( 'Height = ' + myHeight );
+}
+      
+    function __parseBorderWidth(width) {  
+        var res = 0;  
+       if (typeof(width) == "string" && width != null && width != "" ) {  
+          var p = width.indexOf("px");  
+           if (p >= 0) {  
+               res = parseInt(width.substring(0, p));  
+         }  
+           else {  
+               //do not know how to calculate other values (such as 0.5em or 0.1cm) correctly now  
+               //so just set the width to 1 pixel  
+               res = 1;   
+           }  
+       }  
+       return res;  
+   }  
+     
+     
+   //returns border width for some element  
+   function __getBorderWidth(element) {  
+       var res = new Object();  
+       res.left = 0; res.top = 0; res.right = 0; res.bottom = 0;  
+       if (window.getComputedStyle) {  
+           //for Firefox  
+           var elStyle = window.getComputedStyle(element, null);  
+           res.left = parseInt(elStyle.borderLeftWidth.slice(0, -2));    
+           res.top = parseInt(elStyle.borderTopWidth.slice(0, -2));    
+           res.right = parseInt(elStyle.borderRightWidth.slice(0, -2));    
+           res.bottom = parseInt(elStyle.borderBottomWidth.slice(0, -2));    
+       }  
+       else {  
+           //for other browsers  
+           res.left = __parseBorderWidth(element.style.borderLeftWidth);  
+           res.top = __parseBorderWidth(element.style.borderTopWidth);  
+           res.right = __parseBorderWidth(element.style.borderRightWidth);  
+           res.bottom = __parseBorderWidth(element.style.borderBottomWidth);  
+       }  
+        
+       return res;  
+   }  
+     
+   //returns absolute position of some element within document  
+   function getAbsolutePos(element) {  
+       var res = new Object();  
+       res.x = 0; res.y = 0;  
+       if (element !== null) {  
+           res.x = element.offsetLeft;  
+           res.y = element.offsetTop;  
+             
+           var offsetParent = element.offsetParent;  
+           var parentNode = element.parentNode;  
+           var borderWidth = null;  
+     
+           while (offsetParent != null) {  
+               res.x += offsetParent.offsetLeft;  
+               res.y += offsetParent.offsetTop;  
+                 
+               var parentTagName = offsetParent.tagName.toLowerCase();   
+     
+               if ((__isIE && parentTagName != "table") || (__isFireFoxNew && parentTagName == "td")) {              
+                   borderWidth = __getBorderWidth(offsetParent);  
+                   res.x += borderWidth.left;  
+                   res.y += borderWidth.top;  
+               }  
+                 
+              if (offsetParent != document.body && offsetParent != document.documentElement) {  
+                   res.x -= offsetParent.scrollLeft;  
+                   res.y -= offsetParent.scrollTop;  
+               }  
+     
+               //next lines are necessary to support FireFox problem with offsetParent  
+               if (!__isIE) {  
+                   while (offsetParent != parentNode && parentNode !== null) {  
+                       res.x -= parentNode.scrollLeft;  
+                      res.y -= parentNode.scrollTop;  
+                         
+                       if (__isFireFoxOld) {  
+                           borderWidth = kGetBorderWidth(parentNode);  
+                           res.x += borderWidth.left;  
+                           res.y += borderWidth.top;  
+                       }  
+                       parentNode = parentNode.parentNode;  
+                   }      
+               }  
+     
+               parentNode = offsetParent.parentNode;  
+               offsetParent = offsetParent.offsetParent;  
+           }  
+       }  
+       return res;  
+   }  
+	
+	
+	function setPopupPosition(trigger, info) {
+
+		var windowWidth = 0, windowHeight = 0;
+		if( typeof( window.innerWidth ) == 'number' ) {
+		    //Non-IE
+		    windowWidth = window.innerWidth;
+		    windowHeight = window.innerHeight;
+		} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		    //IE 6+ in 'standards compliant mode'
+		    windowWidth = document.documentElement.clientWidth;
+		    windowHeight = document.documentElement.clientHeight;
+		} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		    //IE 4 compatible
+		    windowWidth = document.body.clientWidth;
+		    windowHeight = document.body.clientHeight;
+		}
+		
+		info.setStyle({width: (windowWidth/3) + "px"});
+		info.style.width  = info.getStyle("width");
+		infoWidth  = parseInt(info.style.width);
+		info.style.height = info.getStyle("height");
+		infoHeight = parseInt(info.style.height);
+		
+		triggerHeight = parseInt(trigger.getStyle("height"));
+		triggerWidth  = parseInt(trigger.getStyle("width"));
+		triggerPosition = getAbsolutePos(trigger);
+		
+				
+		// Scrolled down distance
+		scrolledDown = parseInt(document.documentElement.scrollTop);
+		distanceFromVisibleTop = triggerPosition.y - scrolledDown;
+		
+		// Check if upper left corner of trigger item is showing. If not, put entire popup below the trigger
+		if (distanceFromVisibleTop > 0) {
+		
+			if (windowHeight - distanceFromVisibleTop - triggerHeight > 0) {	
+				// can be set next to the trigger element
+				downCondition = windowHeight - distanceFromVisibleTop;
+				
+				// the entire info div will go below the trigger element
+				strictDownCondition = downCondition - triggerHeight;
+				
+				strictUpCondition = distanceFromVisibleTop;				
+				upCondition = distanceFromVisibleTop + triggerHeight;
+			} else {
+				strictUpCondition = distanceFromVisibleTop;
+				//alert(strictUpCondition);
+				downCondition = 0;
+				upCondition = 0;
+				strictDownCondition = 0;
+			}
+		} else {
+			strictDownCondition = windowHeight - distanceFromVisibleTop - triggerHeight;
+			downCondition = 0;
+			upCondition = 0;
+			strictUpCondition = 0;
+		}
+		
+		//alert(downCondition + " " + strictDownCondition +  " " + upCondition + "  " + strictUpCondition + " and " + infoHeight);
+		
+		if (downCondition > infoHeight) {			
+			// Down on the same level
+			info.setStyle({top: 0+'px'});
+		} else if (strictDownCondition > infoHeight) {
+			// Down
+			info.setStyle({top: triggerHeight+'px'});
+		} else if (upCondition > infoHeight) {
+			// Up on the same level
+			info.setStyle({top: (-infoHeight+triggerHeight)+'px'});
+		} else if (strictUpCondition > infoHeight) {
+			// Up
+			info.setStyle({top: (-infoHeight)+'px'});
+		}
+		/*
+		if (downCondition > infoHeight) {			
+			// Down on the same level
+			info.setStyle({top: 0+'px'});
+		} else if (strictDownCondition > infoHeight) {
+			// Down
+			info.setStyle({top: triggerHeight+'px'});
+		} else if (upCondition > infoHeight) {
+			// Up on the same level
+			info.setStyle({top: (-infoHeight+triggerHeight)+'px'});
+		} else if (strictUpCondition > infoHeight) {
+			// Up
+			alert('up');
+			info.setStyle({top: (-infoHeight)+'px'});
+		}*/		
+   
+		// Scrolled right distance
+		scrolledRight = parseInt(document.documentElement.scrollLeft);
+		distanceFromVisibleLeft = triggerPosition.x - scrolledRight;
+		
+		// Check if leftper left corner of trigger item is showing. If not, put entire popleft below the trigger
+		if (distanceFromVisibleLeft > 0) {
+		
+			if (windowWidth - distanceFromVisibleLeft - triggerWidth > 0) {	
+				// can be set next to the trigger element
+				rightCondition = windowWidth - distanceFromVisibleLeft;
+				
+				// the entire info div will go below the trigger element
+				strictRightCondition = rightCondition - triggerWidth;
+				
+				strictLeftCondition = distanceFromVisibleLeft;				
+				leftCondition = distanceFromVisibleLeft + triggerWidth;
+			} else {
+				strictLeftCondition = distanceFromVisibleLeft;
+				//alert(strictLeftCondition);
+				rightCondition = 0;
+				leftCondition = 0;
+				strictRightCondition = 0;
+			}
+		} else {
+			strictRightCondition = windowWidth - distanceFromVisibleLeft - triggerWidth;
+			rightCondition = 0;
+			leftCondition = 0;
+			strictLeftCondition = 0;
+		}
+
+
+		if (strictRightCondition > infoWidth) {
+			// Right
+			//alert('strict rigjt');
+			//alert(trigger.getStyle("left"));
+			info.setStyle({left: triggerWidth+'px'});
+			
+		} else if (rightCondition > infoWidth) {
+			//alert('rigjt');			
+			// Right on the same level
+			//alert(trigger.getStyle("left"));
+			info.setStyle({left: 0+'px'});
+			
+		} else if (strictLeftCondition > infoWidth) {
+			// Left
+			//alert('strict left');
+			//alert(trigger.getStyle("left"));
+			info.setStyle({left: (-infoWidth)+'px'});
+		} else if (leftCondition > infoWidth) {
+			//alert('left');
+			// Left on the same level
+			//alert(trigger.getStyle("left"));
+			info.setStyle({left: (-infoWidth+triggerWidth)+'px'});
+		}      
+		//alert(infoWidth + " " + infoWidth + ") (" + triggerPosition.x + " " + triggerPosition.y + ") (" + parseInt(document.documentElement.scrollWidth) + " " + parseInt(document.documentElement.scrollLeft) + ") (" + windowWidth + " " + windowWidth);
+				
+	}
+	
+	
+	
+	var bubbleTriggers = new Array();
+	var bubbleInfos = new Array();
+	
+    $$('.bubbleInfo').each(function(s){
+    //alert('bubbleInfo ' + s.id);
+    
+         var distance = 10;
+         var time = 125;
+         var hideDelay = 500;
+
+         var hideDelayTimer = null;
+
+		 // status: 0-hidden, 1-beingShown, 2-shown
+		 //var status = 0;
+         var beingShown = false;
+         var shown = false;
+         
+         children = s.childElements();
+ 		 s.setAttribute("status", 0);
+ 		 
+ 		 var ajaxUrl = false;
+ 		 var loaded = false;
+ 		 
+ 		 for (i=0; i<children.length; i++) {
+			if (children[i].className == "trigger") { 
+		 		trigger = children[i];	
+		 		//alert(trigger.id);	
+		 		//break;
+			} else if (children[i].className == "bubblePopup") {
+				info = children[i];
+				temp = info.getAttribute("ajax");
+				if (temp) {
+					ajaxUrl = info.getAttribute("ajax");
+				}
+				info.style.display = 'none';
+		
+			}
+		 }
+		 
+		 bubbleTriggers[s.id] = trigger;
+		 bubbleInfos[s.id] = info;
+		 
+		/*
+		 children = trigger.childElements();
+		 for (i=0; i<children.length; i++) {
+			if (children[i].className == "bubblePopup") {
+				info = children[i];
+				temp = info.getAttribute("ajax");
+				if (temp) {
+					ajaxUrl = info.getAttribute("ajax");
+				}
+				info.style.display = 'none';
+		
+			}
+		 }	 
+         */
+         if (trigger && info) {
+         	trigger.onmouseover = function () {
+         	
+		 		trigger = bubbleTriggers[s.id];
+		 		info = bubbleInfos[s.id];
+		          
+		        //alert("*trigger*"+s.id);
+         		
+		    	if (hideDelayTimer) {
+		    		clearTimeout(hideDelayTimer);
+		    	}
+                
+                status = s.getAttribute("status");
+                if (status != "0") { 
+                    // don't trigger the animation again
+                    return;
+                } else {
+               
+                    // reset position of info box
+                    s.setAttribute("status", 1);
+                    
+                    //info.style.display = 'none';
+                    
+                    if (ajaxUrl && !loaded) {
+                    
+                    	info.innerHTML = "loading...";
+                    //	alert(ajaxUrl);
+                    } 
+                    Effect.Appear(info.id);
+
+					if (ajaxUrl && !loaded) {
+					    new Ajax.Request(ajaxUrl, {
+				            method:'get',
+				            asynchronous:true,
+				            onSuccess: function (transport) {
+				            	info.setStyle({width: "50%"});
+				            	
+								info.innerHTML = transport.responseText;
+								setPopupPosition(trigger, info);
+							}
+				        });
+			
+						loaded = true;			
+					
+					} else {
+					    info.setStyle({width: "50%"});
+					  // alert(info.id);
+						setPopupPosition(trigger, info);
+					
+					}
+					window.setTimeout('document.getElementById("'+s.id+'").setAttribute("status", 2);', time+10);                    
+                    
+                }
+
+                return false;
+	        };
+         	info.onmouseover = function () {
+		 		trigger = bubbleTriggers[s.id];
+		 		info = bubbleInfos[s.id];         	
+         		//	alert("*info*"+status);
+			    
+			    if (hideDelayTimer) {
+		    		clearTimeout(hideDelayTimer);
+		    	}
+                
+                status = s.getAttribute("status");
+                if (status != "0") { 
+                    // don't trigger the animation again
+                    return;
+                } else {
+               
+                    // reset position of info box
+                    s.setAttribute("status", 1);
+                    if (ajaxUrl && !loaded) {
+                    
+                    	info.innerHTML = "loading...";
+                    //	alert(ajaxUrl);
+                    } 
+                    Effect.Appear(info.id);
+
+					if (ajaxUrl && !loaded) {
+					    new Ajax.Request(ajaxUrl, {
+				            method:'get',
+				            asynchronous:true,
+				            onSuccess: function (transport) {
+				            	info.setStyle({width: "50%"});
+				            	
+								info.innerHTML = transport.responseText;
+														setPopupPosition(trigger, info);
+								
+				            }
+				        });
+			
+						loaded = true;			
+					
+					} else {
+					    	info.setStyle({width: "50%"});
+						setPopupPosition(trigger, info);
+					
+					}
+
+
+					window.setTimeout('document.getElementById("'+s.id+'").setAttribute("status", 2);', time+10);                    
+                }
+
+                return false;
+	        };
+		    
+
+		    info.onmouseout = function () {
+		 		trigger = bubbleTriggers[s.id];
+		 		info = bubbleInfos[s.id];
+               	// alert(beingShown+"*triggout*"+shown);
+          	    if (hideDelayTimer) { 
+          	        clearTimeout(hideDelayTimer);
+          	    }
+                
+                hideDelayTimer = setTimeout('hideDelayTimer = null;Effect.Fade("'+ info.id + '");document.getElementById("'+s.id+'").setAttribute("status", 0);' , hideDelay);
+                
+                return false;
+	       
+        	};
+       	    trigger.onmouseout = function () {
+		 		trigger = bubbleTriggers[s.id];
+		 		info = bubbleInfos[s.id];
+                // alert(beingShown+"*triggout*"+shown);
+          	    if (hideDelayTimer) { 
+          	        clearTimeout(hideDelayTimer);
+          	    }
+                
+                hideDelayTimer = setTimeout('hideDelayTimer = null;Effect.Fade("'+ info.id + '");window.setTimeout(\'document.getElementById("'+s.id+'").setAttribute("status", 0);\', '+time+');' , hideDelay);
+                
+                return false;
+	       
+        	};	
+        		
+          	/*     	    
+		    s.onmouseout = function () {
+               // alert(beingShown+"*triggout*"+shown);
+          	      if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                
+                hideDelayTimer = setTimeout('hideDelayTimer = null;Effect.Fade("'+ info.id + '");window.setTimeout(\'document.getElementById("'+s.id+'").setAttribute("status", 0);\', '+time+');' , hideDelay);
+		   // alert('hiot3');
+
+                return false;
+	       
+        	};
+ 
+		    s.onmouseout = function () {
+               // alert(beingShown+"*infout*"+shown);
+                if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                
+                hideDelayTimer = setTimeout('hideDelayTimer = null;Effect.Fade("'+ info.id + '");shown=false;beingShown=false;' , hideDelay);
+
+		    //alert('hiot2');
+                return false;
+	       
+        	};
+        	*/        	
+        }
+    	    			
+    });
+	
+
+</script>	
+	
+	
+            
+
+<div id = "user_table" style = "display:none">
+    <table width = "100%">
+        <tr><td align = "left" id = "user_box" style = "padding:3px 3px 4px 5px;"></td></tr>
+    </table>
+</div>
+
+<table id = "popup_table" class = "divPopup" style = "display:none;">
+    <tr class = "defaultRowHeight">
+        <td class = "topTitle" id = "popup_title"></td>
+        <td class = "topTitle" style = "width:1%;text-align:right;"><img src = "images/16x16/error.png" alt = "Schließen" name = "" id = "popup_close" title = "Schließen" onclick = "if (document.getElementById('reloadHidden') && document.getElementById('reloadHidden').value == '1')  {parent.frames[1].location = parent.frames[1].location};eF_js_showDivPopup('', '', this.name);"/>
+    </td></tr>
+    <tr><td colspan = "2" id = "popup_data" style = "vertical-align:top;width:100%;height:100%"></td></tr>
+
+    <tr><td colspan = "2" id = "frame_data" style = "width:100%;height:100%">
+        <iframe name = "POPUP_FRAME" id = "popup_frame" src = "about:blank" style = "border-width:0px;width:100%;height:100%;padding:0px 0px 0px 0px">Sorry, but your browser needs to support iframes to see this</iframe>
+    </td></tr>
+</table>
+<div id = "error_details" style = "display:none"><pre></pre></div>
+<script>if (parent.frames[0].document.getElementById('dimmer')) parent.frames[0].document.getElementById('dimmer').style.display = 'none'</script>
+<div id="dimmer" class = "dimmerDiv" style="display:none;" ></div>
+<div id = 'showMessageDiv' style = "display:none"></div>
+
+<script>
+</script>
+
+
+
+<script>
+
+if (top.sideframe && top.sideframe.document && top.sideframe.document.getElementById('loading_sidebar')) {
+	top.sideframe.document.getElementById('loading_sidebar').style.display = 'none';		//no prototype here please
+}
+
+</script>
+<script language="JavaScript" type="text/javascript" src="js/wz_tooltip.php"></script>

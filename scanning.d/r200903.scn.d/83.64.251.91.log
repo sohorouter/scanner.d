@@ -1,0 +1,17 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:23 CEST
+Interesting ports on 83-64-251-91.sh-wien.inode.at (83.64.251.91):
+PORT     STATE  SERVICE
+22/tcp   closed ssh
+23/tcp   closed telnet
+80/tcp   closed http
+443/tcp  closed https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: SGI IRIX64 6.5 (96%), Intel Express 510T switch (90%), Barracuda Spam Firewall model 400 (89%), Brother HL-2070N printer (89%), DEC Digital UNIX OSF1 v4.0 1229 (89%), EtherWerX PT-1000 PPPoE terminator (89%), FreeBSD 5.4-RELEASE (89%), HP Photosmart 8400 printer (89%), NetBSD 4.99.49 (x86) (89%), Netgear CG814WG v2 wireless cable modem (89%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 10 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.71 seconds

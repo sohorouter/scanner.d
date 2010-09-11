@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><!-- InstanceBegin template="/Templates/Master_No_Nav.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" rev="stylesheet" href="../style.css" type="text/css" />
+		
+	
+	
+	
+	<link rel="stylesheet" rev="stylesheet" href="/substyle_DIR-635.css" type="text/css" />
+	
+	
+	
+
+
+	<!-- InstanceBeginEditable name="Page Title" -->
+	<title>D-LINK SYSTEMS, INC. | WIRELESS ROUTER  :
+		 Anmeldung
+	</title>
+	<!-- InstanceEndEditable -->
+
+	<!-- InstanceBeginEditable name="Local Styles" -->
+	<style type="text/css">
+	/*
+	 * Styles used only on this page.
+	 */
+	fieldset label.duple {
+		width: 300px;
+	}
+	</style>
+	<!-- InstanceEndEditable -->
+
+	
+		
+	
+
+	<script type="text/javascript" src="../ubicom.js"></script>
+	<script type="text/javascript" src="../xml_data.js"></script>
+
+	<script type="text/javascript">
+	//<![CDATA[
+		/*
+		 * no_reboot_alt_location is for wizards, which want to return
+		 * to the "launch page", instead of the same page.
+		 */
+		var no_reboot_alt_location = "";
+
+		function do_reboot()
+		{
+			top.location = "/reboot.cgi?reset=false"
+		}
+
+		function no_reboot()
+		{
+			if (no_reboot_alt_location) {
+				top.location = no_reboot_alt_location;
+				return;
+			}
+			document.getElementById("maincontent_1col").style.display = "block";
+			document.getElementById("rebootcontent_1col").style.display = "none";
+		}
+
+		// 
+		/*
+		 * I18N language selection
+		 */
+		var lang_form;
+
+		var i18n_xslt_processor;
+		var i18n_xml_data_fetcher;
+		var i18n_is_data_ready = false;
+		var i18n_is_xslt_ready = false;
+		var i18n_xml_data; // This will be an XMLDocument
+
+		function i18n_xslt_is_ready(xmlDoc)
+		{
+			i18n_is_xslt_ready = true;
+			i18n_refresh_list();
+		}
+
+		function i18n_data_is_ready(xmlDoc)
+		{
+			i18n_xml_data = xmlDoc.getDocument();
+			i18n_is_data_ready = true;
+			i18n_refresh_list();
+		}
+
+		function i18n_refresh_list()
+		{
+			if (!(i18n_is_xslt_ready && i18n_is_data_ready)) {
+				return;
+			}
+
+			var parent = document.getElementById("i18n_language_selection");
+			parent.innerHTML = "";
+			i18n_xslt_processor.transform(i18n_xml_data, window.document, parent);
+			i18n_language_selector(lang_form.i18n_language.value);
+		}
+
+		function i18n_language_selector(lang)
+		{
+			//lang_form.i18n_language_select.options[lang].selected = true;
+			var langs = lang_form.i18n_language_select;
+			langs.value = lang;
+		}
+
+		function i18n_change_language(lang)
+		{
+			lang_form.i18n_language.value = lang;
+			lang_form.submit();
+		}
+		// 
+
+		function template_load()
+		{
+			// 
+			lang_form = document.forms.lang_form;
+			if ("" === "") {
+				i18n_xslt_processor = new xsltProcessingObject(i18n_xslt_is_ready, null, null, "/i18n_language_codes.xsl");
+				i18n_xml_data_fetcher = new xmlDataObject(i18n_data_is_ready, null, null, "/languages.xml");
+				i18n_xslt_processor.retrieveData();
+				i18n_xml_data_fetcher.retrieveData();
+			}
+			// 
+
+			/*
+			 * Prepend "0" to Firmware minor version if it is less than 10
+			 */
+			global_fw_minor_version = "20";
+			if (global_fw_minor_version < 10) {
+				global_fw_minor_version = "0" + global_fw_minor_version;
+				//document.getElementById("fw_minor_head").innerHTML = global_fw_minor_version;
+			}
+
+			//
+			var fw_extend_ver = "EU";			
+			//
+
+			var fw_minor;
+
+			fw_minor = global_fw_minor_version + fw_extend_ver;
+			document.getElementById("fw_minor_head").innerHTML = fw_minor;
+			global_fw_minor_version = fw_minor; // save to for device info use
+
+			page_load();
+
+			document.getElementById("loader_container").style.display = "none";
+		}
+	//]]>
+	</script>
+
+	<!-- InstanceBeginEditable name="Scripts" -->
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+	function page_load()
+	{
+		/* Detect browsers that cannot handle XML methods. */
+		if (!document.getElementsByTagName || !((document.implementation && document.implementation.createDocument) || window.ActiveXObject)) {
+			alert ("Ihr Webbrowser ist nicht aktuell genug, um diese Website zu verwenden. Aktualisieren Sie Ihren Browser.");
+			return;
+		}
+
+		/* For debugging on a local client. */
+		if ("" != "") {
+			hide_all_ssi_tr();
+		}
+		document.forms.myform.password.focus();
+	}
+
+	function data_ready(xml)
+	{
+		var status = xml.getElementData("login");
+		if (status) {
+			if (status == "timeout") {
+				alert("Sitzungszeitüberschreitung, bitte versuchen Sie es erneut.");
+				location.replace ('/');
+			} else if (status == "error") {
+				alert("Kennwort ungültig, bitte versuchen Sie es erneut.");
+				location.replace ('/');
+			} else {
+				location.replace ('/' + status);
+			}
+		}
+	}
+
+	function data_timeout()
+	{
+		/* We did not get a reply from the server, the connection is likely down. */
+		alert ("Die Netzwerkverbindung ist offenbar ausgefallen. Klicken Sie auf 'Ok' und versuchen Sie es erneut.");
+		location.reload(true);
+	}
+
+	function send_login()
+	{
+		/* Salt in hex, 8 chars long. */
+		var salt = "6d70cabc";
+
+		var password = document.forms.myform.password.value.substr(0,16);
+		document.forms.myform.password.value = "";		// Make sure password never gets sent as clear text
+
+		/* Pad the password to 16 chars. */
+		for (var i = password.length; i < 16; i++) {
+			password += String.fromCharCode(1);
+		}
+
+		/* Append the password to the salt and pad the result to 63 bytes. */
+		var input = salt + password;
+		for (var i = input.length; i < 63; i++) {
+			input += String.fromCharCode(1);
+		}
+
+		/* Append a 'U' for user login, or a '\x01' for admin login. */
+		input += (document.forms["myform"].username.value == 'user') ? 'U' : String.fromCharCode(1);
+
+		/* MD5 hash of the salt. */
+		var hash = hex_md5(input);
+
+		/* Append the MD5 hash to the salt. */
+		var login_hash = salt.concat(hash);
+
+		/* Send the login hash to the server. */
+		var xmlobj = new xmlDataObject(data_ready, data_timeout, 6000, "/post_login.xml?hash=" + login_hash);
+		if (!xmlobj) {
+			/* Browser does not support XML DOM. */
+			alert ("Ihr Webbrowser ist nicht aktuell genug, um diese Website zu verwenden. Aktualisieren Sie Ihren Browser.");
+			return;
+		}
+		xmlobj.retrieveData();
+	}
+
+	//]]>
+	</script>
+	<!-- InstanceEndEditable -->
+</head>
+<body onload="template_load();">
+	<div id="loader_container" onclick="return false;">&nbsp;</div>
+	<div id="outside_1col">
+		<table id="table_shell" cellspacing="0" summary=""><col span="1"/>
+			<tbody>
+			<tr>
+				<td>
+					<div id="header_container">
+						<div id="info_bar">
+							<div class="fwv">Firmwareversion:
+							2.<span id="fw_minor_head">20</span>
+							</div>
+							<div class="hwv">Hardware-Version:
+							B1
+							</div>
+							<div class="pp">Produktseite: <a href="http://support.dlink.com.tw/"  onclick="return jump_if();">DIR-635</a></div>
+						</div>
+					</div>
+					<table id="masthead_container" border="0" cellspacing="0" summary="">
+						<tr>
+							<td><div id="masthead_image"></div></td>
+						</tr>
+					</table>
+					<table id="content_container" border="0" cellspacing="0" summary="">
+						<tr>
+							<td id="sidenav_container">&nbsp;</td>
+							<td id="maincontent_container">
+								<div id="rebootcontent_1col" style="display: none">
+									<div class="section">
+										<div class="section_head">
+											<h2>Neustart notwendig</h2>
+											<p>
+												Ihre Änderungen wurden gespeichert. Der Router muss neu gestartet werden, damit die Änderungen wirksam werden. Sie können entweder jetzt neu starten oder weitere Änderungen durchführen und später neu starten.
+											</p>
+											<input class="button_submit" type="button" value="Jetzt neu starten" onclick="do_reboot()" />
+											<input class="button_submit" type="button" value="Später neu starten" onclick="no_reboot()" />
+										</div>
+									</div> <!-- reboot_warning -->
+								</div>
+								<div id="maincontent_1col" style="display: block">
+
+									<!-- InstanceBeginEditable name="Main_Content" -->
+			<div class="section">
+				<div class="section_head"> 
+					<h2>Anmeldung</h2>
+					<noscript> 
+						<p class="warning">WARNUNG: JavaScript steht für diesen Browser nicht zur Verfügung!</p>
+					</noscript> 
+					<p>Am Router anmelden:</p>
+					<form id="myform" action="/dummy" onsubmit="send_login(); return false;">
+							<fieldset>
+								<p>
+									<label class="duple" for="username">Benutzername&nbsp;:</label>
+									<select id="username" name="username">
+										<option value="admin">Administrator</option>
+										<option value="user">Benutzer</option>
+									</select>
+								</p>
+								<p> 
+									<label class="duple" for="password">Kennwort&nbsp;:</label>
+									<input type="password" id="password" maxlength="15" name="password" value="" tabindex="100" />
+									<input class="button_submit_padleft" type="button" name="Login" value="Anmelden" onclick="send_login();" />
+								</p>
+							</fieldset>
+					</form>
+				</div>
+			</div> <!-- section -->
+									<!-- InstanceEndEditable -->
+
+								</div>
+								
+								<!-- language selection functions -->
+								<form id="lang_form" action="#" onsubmit="doSave(); return false;">
+									<div id="lang_container">
+										<span id="i18n_language_selection">
+											<select>
+												<option value="DE">Deutsch</option>
+												<option value="EN" selected="selected">English</option>
+												<option value="ES">Espa&#241;ol</option>
+												<option value="FR">Fran&#231;ais</option>
+												<option value="IT">Italiano</option>
+												<option value="JA">&#26085;&#26412;&#35486;</option>
+												<option value="KO">&#54620;&#44397;&#47568;</option>
+												<option value="PT">Portugu&#234;s</option>
+												<option value="ZH">&#20013;&#25991;</option>
+											</select>
+										</span>
+										<input type="hidden" id="i18n_language" name="config.i18n_language" value="DE" />
+									</div>
+								</form>
+								
+
+							</td>
+							<td id="sidehelp_container">&nbsp;</td>
+						</tr>
+					</table>
+					<table id="footer_container" border="0" cellspacing="0" summary="">
+						<tr>
+							<td>
+								<img src="../Images/img_wireless_bottom.gif" width="114" height="35" alt="" />
+							</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<div id="copyright">Copyright &copy; 2004-2007 D-Link Systems, Inc.</div>
+	</div>
+</body>
+<!-- InstanceEnd --></html>

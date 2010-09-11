@@ -1,0 +1,18 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:24 CEST
+Interesting ports on mail.testrange.at (83.64.251.154):
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+23/tcp   closed telnet
+80/tcp   open   http
+443/tcp  closed https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Device type: general purpose|broadband router|WAP|firewall|router
+Running (JUST GUESSING) : Linux 2.6.X|2.4.X (97%), Linksys embedded (91%), Siemens embedded (91%), SonicWALL embedded (91%), FON Linux 2.4.X (90%), MikroTik RouterOS 2.X (89%)
+Aggressive OS guesses: Linux 2.6.17 - 2.6.25 (97%), Linux 2.6.22 - 2.6.23 (94%), Linux 2.6.9 - 2.6.20 (94%), Linux 2.6.18 (93%), Linux 2.6.18-em64t (x86-64) (92%), Linux 2.6.13 - 2.6.10 (92%), Linux 2.6.17 - 2.6.23 (92%), Linux 2.6.22 (92%), Linux 2.6.21 (92%), Linux 2.6.18 (Debian, x86) (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 7 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 4.96 seconds

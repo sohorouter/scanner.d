@@ -6,7 +6,7 @@ class SampleTool
     self.proj_d ||= SampleTool.proj_d_default
   end
   def self.proj_d_default
-    File.expand_path('../')
+    File.expand_path('./')
   end
 
   property :a

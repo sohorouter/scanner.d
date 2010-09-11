@@ -1,0 +1,331 @@
+HTTP/1.1 200 OK
+Connection: close
+Date: Fri, 10 Sep 2010 09:01:24 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 7345
+Content-Type: text/html
+Set-Cookie: ASPSESSIONIDSCSABDCD=LPKBPJPAHOEKGIBMHHEDKNMM; path=/
+Cache-control: private
+
+
+
+
+<HTML XMLNS:IE>
+<HEAD><META HTTP-EQUIV="expires" CONTENT="0">
+<link rel="SHORTCUT ICON" href="client/icons/eye.ico">
+<link rel="ICON" href="client/icons/eye.ico" type="image/x-icon">
+<STYLE>
+@media all {
+   IE\:clientCaps {behavior:url(#default#clientCaps)}
+}   
+</STYLE>
+<title></title>
+
+<SCRIPT language="javascript" src="Client/Config/GlobalHelperLib.js">
+</SCRIPT>
+
+</HEAD>
+
+<BODY ondragstart="return false;" oncontextmenu="WebClientInstall.ShowContextMenu();return false;" background="Client/icons/bgcolor.gif" leftmargin=0 topmargin=0 rightmargin=0 bottommargin=0 scroll="auto" onload="Init();">
+<IE:clientCaps ID="oClientCaps" />
+
+<iframe id=langdep style="DISPLAY: none; HEIGHT: 10px; WIDTH: 10px" src="lang_Dep/langdep.htm" NORESIZE></iframe>
+ 
+
+<SCRIPT language="JAVASCRIPT">function ResObj(ResSize, HostName,Width,Height) { 	this.ResolutionSize = ResSize; 	this.HostName = HostName; 	this.ScreenWidth = Width;	this.ScreenHeight = Height;}var ResolutionSizeObject = new Array();ResolutionSizeObject[0] = new ResObj('LARGE', 'null', 2048, 2560);ResolutionSizeObject[1] = new ResObj('LARGE', 'null', 2560, 2048);ResolutionSizeObject[2] = new ResObj('LARGE', 'null', 4096, 2560);ResolutionSizeObject[3] = new ResObj('LARGE', 'null', 5120, 2048);ResolutionSizeObject[4] = new ResObj('MEDIUM', 'null', 1536, 2048);ResolutionSizeObject[5] = new ResObj('MEDIUM', 'null', 2048, 1536);ResolutionSizeObject[6] = new ResObj('MEDIUM', 'null', 3072, 2048);ResolutionSizeObject[7] = new ResObj('MEDIUM', 'null', 4096, 1536);</SCRIPT>
+<SCRIPT language="javascript">
+
+var gs_Bg = "";
+var gs_Target = "";
+var gs_strOEMQuery = "";
+var gs_iwa = ""; 
+var gs_strClientType = "";
+var gs_strGSM = "";
+var g_WebServerCertificate; 
+var gs_strUseSSL = "";
+var gs_strRes = "";
+var g_ResolutionSize = "";
+
+function Init()
+{
+	if( gs_strRes == "" )
+	{
+		var tmp_HorizScreenResSize = 0;
+		var tmp_VertScreenResSize = 0;
+		var tmp_strHostName = "";
+
+		try 
+		{
+			tmp_HorizScreenResSize = WebClientInstall.GetHorizScreenResolution();
+		}
+		catch (e)
+		{
+			tmp_HorizScreenResSize = 0;
+		}
+
+		try 
+		{
+			tmp_VertScreenResSize =  WebClientInstall.GetVertScreenResolution();
+		}
+		catch(e)
+		{
+			tmp_VertScreenResSize = 0;
+		}
+
+		try 
+		{
+			tmp_strHostName = WebClientInstall.GetHostName();
+		}
+		catch(e)
+		{
+			tmp_strHostName = ""; 
+		}
+
+		for (var i=0; i< ResolutionSizeObject.length; i++ )
+		{
+			var tmp_HostName = ResolutionSizeObject[i].HostName;
+			if( tmp_strHostName == tmp_HostName )
+			{
+				g_ResolutionSize = ResolutionSizeObject[i].ResolutionSize; 
+				break;
+			}
+		}
+		
+		if( g_ResolutionSize == "" )
+		{
+			for (var j=0; j< ResolutionSizeObject.length; j++ )
+			{
+				var tmp_HostName = ResolutionSizeObject[j].HostName;
+				var tmp_ScreenWidth = ResolutionSizeObject[j].ScreenWidth;
+				var tmp_ScreenHeight = ResolutionSizeObject[j].ScreenHeight;
+				
+				if((tmp_HostName == "") || (tmp_HostName =="null") )
+				{
+					 if( (tmp_ScreenWidth == tmp_HorizScreenResSize) &&  (tmp_ScreenHeight == tmp_VertScreenResSize))
+					 {
+						  g_ResolutionSize = ResolutionSizeObject[j].ResolutionSize; 
+						  break;
+					 }
+				}
+			}
+		}
+		
+		if( g_ResolutionSize == "" )
+		{
+			g_ResolutionSize = "SMALL";
+		}
+	}
+	
+	if( gs_strUseSSL == "" )
+	{
+		CalcResFinished();
+	}
+	else
+	{
+		InsertTrustedSite();  
+	}
+}
+
+function CalcResFinished()
+{
+	var tmp_strSSL = "";
+	tmp_strSSL = CheckSSLConnect();
+	
+	if( tmp_strSSL  )
+	{
+		document.all.txtInfo.innerHTML = tmp_strSSL;  
+	}
+	else
+	{
+		gs_strUseSSL = 1;
+		if ( document.URL.indexOf("https:") > -1 )
+		{
+			InsertTrustedSite();
+		}
+		else
+		{
+			var tmp_str = UrlParams("default.asp"); 
+			document.URL = tmp_str;
+		}
+		
+	}
+}
+
+
+
+function CheckSSLConnect()
+{
+	var tmp_URL = document.URL;
+	var iPos = tmp_URL.lastIndexOf('/'); 
+	var tmp_binURL;
+	var tmp_LangInstallURL;
+	tmp_binURL = tmp_URL.substr(0, iPos+1);
+	tmp_binURL += "cabs/init.dw";
+	tmp_LangInstallURL = tmp_URL.substr(0, iPos+1);
+    tmp_LangInstallURL += "lang_Dep/langInstall.txt";
+	
+	var tmp_strSSL = "";
+	try
+	{
+		tmp_strSSL = WebClientInstall.CheckSSLConnection( tmp_LangInstallURL, tmp_binURL);
+	}
+	catch(e)
+	{
+		
+	}
+	return tmp_strSSL;
+}
+
+function UrlParams(argPage)
+{
+	var regExp  = "?";  
+	var IEnumber = argPage.indexOf(regExp);	
+	var bgSwitch;
+	
+	if( gs_strRes )
+	{
+		g_ResolutionSize = gs_strRes
+	}
+
+	if( IEnumber != -1 )
+	{
+		bgSwitch =  "&res=" + g_ResolutionSize;
+	}
+	else
+	{
+		bgSwitch =  "?res=" + g_ResolutionSize;
+
+	}
+	
+    if( gs_strOEMQuery )
+	{
+		bgSwitch += "&oem="+escape(gs_strOEMQuery);
+	}
+	
+	if(gs_Bg == "no")
+	{
+	   bgSwitch +=  "&bg=no"; 
+	}
+	
+	if(gs_iwa != "" )
+	{
+		bgSwitch +=  "&iwa=" + gs_iwa; 
+	}
+    	
+    if(gs_Target != "")
+	{
+	   bgSwitch +=  "&target=" + gs_Target; 
+	}
+	
+    if(gs_strClientType != "")
+	{
+	   bgSwitch +=  "&ct=" + gs_strClientType; 
+	}
+
+	if(gs_strGSM != "")
+	{
+	   bgSwitch +=  "&gsm=" + gs_strGSM; 
+	}
+	if( gs_strUseSSL != "" )
+	{
+		bgSwitch +=  "&ssl=" + gs_strUseSSL; 
+	}
+
+	return  argPage + bgSwitch; 
+}
+
+function InsertTrustedSite()
+{  
+	g_WebServerCertificate = unescape('');
+	
+    if( g_WebServerCertificate != "")
+	{
+		var regExp = /CN/i;
+		var IEnumber = g_WebServerCertificate.search(regExp);	
+		var WebServerName = g_WebServerCertificate.substr(IEnumber+3,g_WebServerCertificate.length-1)	
+		
+		var tmp_str = "";
+		tmp_str = WebServerName.substr(0,1);
+		
+		if( !(isNaN(tmp_str)) )
+		{
+			try
+			{	
+				WebClientInstall.TrustedSiteIPAddress = WebServerName;
+				var tmp_Ret = WebClientInstall.AddTrustedSite();
+			}
+			catch(e)
+			{
+				
+			}
+		}
+		else  
+		{
+	    	var tmp_strToken = WebServerName.split(".");
+			var tmp_WebServerToken = WebServerName;
+
+			if( tmp_strToken.length > 2 )
+			{
+				tmp_WebServerToken = tmp_strToken[tmp_strToken.length-2];
+				tmp_WebServerToken += ".";
+				tmp_WebServerToken += tmp_strToken[tmp_strToken.length-1];
+				tmp_WebServerToken += "\\";
+
+				for (var i=0; i<(tmp_strToken.length-3); i++)
+				{
+					tmp_WebServerToken += tmp_strToken[i];
+					tmp_WebServerToken += ".";
+				}
+				tmp_WebServerToken += tmp_strToken[tmp_strToken.length-3];
+			}
+			
+			try
+			{
+				WebClientInstall.TrustedSiteCommonName = tmp_WebServerToken;
+				var tmp_Ret = WebClientInstall.AddTrustedSite();
+			}
+			catch(e)
+			{
+				
+			}
+			
+		}
+		setTimeout("CallLoginPage();",200); 
+	}
+}
+function CallLoginPage()
+{
+	document.location.href =  UrlParams("login.asp");
+}
+
+//-->
+</SCRIPT>
+
+<table cellpadding=0 cellpadding=0 border=0 width=100% height=100%>
+<tr>
+	 <td width=100% height=100% valign="middle" align="center" >
+			<TABLE style="VISIBILITY: visible;">
+			<tr>
+				<td>
+					<font color="white" face="Arial,sans-serif" STYLE="font-size:16">
+					<div id=txtInfo>
+					</div>
+					</font>
+				</td>
+				</tr>
+			</tr>
+          </div>
+	 </td>
+</tr>
+</table>
+
+<DIV ID="divWebClientInstall">
+    <SCRIPT LANGUAGE="javascript">
+	     CreateWebClientInstall(divWebClientInstall, "WebClientInstall", "100%", "100%", ".wcInstall", "WebClientInstall", "cabs/WebClientInstall.cab#Version=42,0,0,4");
+    </SCRIPT>
+</DIV> 
+ 
+</BODY>
+</HTML>
+

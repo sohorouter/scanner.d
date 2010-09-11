@@ -1,0 +1,574 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 10:29:31 GMT
+Server: Apache
+Last-Modified: Tue, 10 Feb 2009 18:10:49 GMT
+ETag: "cc329-3d9b-68285c40"
+Accept-Ranges: bytes
+Content-Length: 15771
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<html>
+
+
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+<title>Blumen und Str‰uﬂe; Zustellung in Wien, ganz ÷sterreich und International!</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8559-1">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="language" content="Deutsch">
+<meta name="keywords" content="blumen, flowers, zustellung, delivery, str‰uﬂe, versand, ˆsterreich, austria, weltweit, worldwide, wien, vienna,  kr‰nze,  trauer, geburtstag, birthday, geschenke, gift, fr¸hling, spring, ostern, muttertag, mothersday, tulpen, blumendienst, express, flowers, lieferung, ¸bersee, blumen online, blumenversand, blumengeschenke, blumenstrauss, blumen wien, blumengr¸ﬂe, blumenstrauﬂ, blumenstraussversand, blumenstrauﬂversand, pflanzen, blumengr¸sse, blumen naderer, blumenshop, brautstr‰uﬂe, brautstraeuﬂe, brautstr‰usse, brautstraeusse, taufe, geburtstag, taufgeschenk, blumen, blumen schenken, blumendienst, Blumen, flowers, rosen, fleurs, fiori, flores, Blumenversand, flowers , flowers.at, blumenstrau, blumenladen, versand, rose, ÷sterreich, Wien, Schwiz, Switzerland, Schweiz, Austria, Autriche, Vienne, Vienna, Germany, Deutschland, online, Blumenservice">
+
+
+<meta name="description" content="Blumen, Zustellung, Str‰uﬂe, Versand, ÷sterreich, weltweit, Wien, Kr‰nze,  Trauer, Geburtstag, Geschenke, Fr¸hling, Ostern, Muttertag, Tulpen, Blumendienst, Express, Flowers, Lieferung, ‹bersee, blumen online, blumenversand, blumengeschenke, blumenstrauss, blumen wien, blumengr¸ﬂe, blumenstrauﬂ, blumenstraussversand, blumenstrauﬂversand, pflanzen, blumengr¸sse, blumen naderer, blumenshop, brautstr‰uﬂe, brautstraeuﬂe, brautstr‰usse, brautstraeusse, taufe, geburtstag, taufgeschenk, blumen, blumen schenken, blumendienst"">
+<meta name="distribution" content="global">
+<meta name="robots" content="all">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+</script>
+<div id="dot0" style="position: absolute; visibility: hidden; height: 11; width: 11;"><img src="bullet.gif" height=25 width=25></div>
+<div id="dot1" style="position: absolute; height: 25; width: 25;">
+  <img src="herz.gif" width="30" height="30" ></div>
+<div id="dot2" style="position: absolute; height: 25; width: 25;">
+  <img src="herz.gif" width="30" height="30" ></div>
+<div id="dot3" style="position: absolute; height: 25; width: 25;">
+  <img src="herz.gif" width="30" height="30" ></div>
+<div id="dot4" style="position: absolute; height: 25; width: 25;">
+  <img src="herz.gif" width="30" height="30" ></div>
+<div id="dot5" style="position: absolute; height: 25; width: 25;">
+  <img src="herz.gif" width="30" height="30" ></div>
+<div id="dot6" style="position: absolute; height: 25; width: 25;">
+  <img src="herz.gif" width="30" height="30" ></div>
+
+<script LANGUAGE="JavaScript">
+<!-- hide code
+
+/*
+Elastic Trail script (By Philip Winston @ pwinston@yahoo.com, URL:http://members.xoom.com/ebullets)
+Script featured on mausverfolger.here.de
+For this and 100's more DHTML scripts, visit http://www.mausverfolger.here.de
+*/
+
+
+// Thanks to -Mauscodes- <MCHerne@web.de>
+// for fix which makes it work when the page is scrolled
+
+var nDots = 7;
+if (document.all&&window.print)
+document.body.style.cssText="overflow-x:hidden;overflow-y:scroll"
+var Xpos = 0;
+var Ypos = 0;
+
+  // fixed time step, no relation to real time
+var DELTAT = .01;
+  // size of one spring in pixels
+var SEGLEN = 10;
+  // spring constant, stiffness of springs
+var SPRINGK = 10;
+  // all the physics is bogus, just picked stuff to
+  // make it look okay
+var MASS = 1;
+var GRAVITY = 50;
+var RESISTANCE = 10;
+  // stopping criterea to prevent endless jittering
+  // doesn't work when sitting on bottom since floor
+  // doesn't push back so acceleration always as big
+  // as gravity
+var STOPVEL = 0.1;
+var STOPACC = 0.1;
+var DOTSIZE = 11;
+  // BOUNCE is percent of velocity retained when
+  // bouncing off a wall
+var BOUNCE = 0.75;
+
+var isNetscape = navigator.appName=="Netscape";
+
+  // always on for now, could be played with to
+  // let dots fall to botton, get thrown, etc.
+var followmouse = true;
+
+var dots = new Array();
+init();
+
+function init()
+{
+    var i = 0;
+    for (i = 0; i < nDots; i++) {
+        dots[i] = new dot(i);
+    }
+
+    if (!isNetscape) {
+        // I only know how to read the locations of the
+        // <LI> items in IE
+        //skip this for now
+        // setInitPositions(dots)
+    }
+
+    // set their positions
+    for (i = 0; i < nDots; i++) {
+        dots[i].obj.left = dots[i].X;
+        dots[i].obj.top = dots[i].Y;
+    }
+
+
+    if (isNetscape) {
+        // start right away since they are positioned
+        // at 0, 0
+        startanimate();
+    } else {
+        // let dots sit there for a few seconds
+        // since they're hiding on the real bullets
+        setTimeout("startanimate()", 2000);
+    }
+}
+
+
+
+function dot(i)
+{
+    this.X = Xpos;
+    this.Y = Ypos;
+    this.dx = 0;
+    this.dy = 0;
+    if (isNetscape) {
+        this.obj = eval("document.dot" + i);
+    } else {
+        this.obj = eval("dot" + i + ".style");
+    }
+}
+
+
+function startanimate() {
+    setInterval("animate()", 20);
+}
+
+
+// This is to line up the bullets with actual LI tags on the page
+// Had to add -DOTSIZE to X and 2*DOTSIZE to Y for IE 5, not sure why
+// Still doesn't work great
+function setInitPositions(dots)
+{
+    // initialize dot positions to be on top
+    // of the bullets in the <ul>
+    var startloc = document.all.tags("LI");
+    var i = 0;
+    for (i = 0; i < startloc.length && i < (nDots - 1); i++) {
+        dots[i+1].X = startloc[i].offsetLeft
+            startloc[i].offsetParent.offsetLeft - DOTSIZE;
+        dots[i+1].Y = startloc[i].offsetTop +
+            startloc[i].offsetParent.offsetTop + 2*DOTSIZE;
+    }
+    // put 0th dot above 1st (it is hidden)
+    dots[0].X = dots[1].X;
+    dots[0].Y = dots[1].Y - SEGLEN;
+}
+
+// just save mouse position for animate() to use
+function MoveHandler(e)
+{
+    Xpos = e.pageX;
+    Ypos = e.pageY;
+    return true;
+}
+
+// just save mouse position for animate() to use
+function MoveHandlerIE() {
+    Xpos = window.event.x + document.body.scrollLeft;
+    Ypos = window.event.y + document.body.scrollTop;
+}
+
+if (isNetscape) {
+    document.captureEvents(Event.MOUSEMOVE);
+    document.onMouseMove = MoveHandler;
+} else {
+    document.onmousemove = MoveHandlerIE;
+}
+
+
+function vec(X, Y)
+{
+    this.X = X;
+    this.Y = Y;
+}
+
+// adds force in X and Y to spring for dot[i] on dot[j]
+function springForce(i, j, spring)
+{
+    var dx = (dots[i].X - dots[j].X);
+    var dy = (dots[i].Y - dots[j].Y);
+    var len = Math.sqrt(dx*dx + dy*dy);
+    if (len > SEGLEN) {
+        var springF = SPRINGK * (len - SEGLEN);
+        spring.X += (dx / len) * springF;
+        spring.Y += (dy / len) * springF;
+    }
+}
+
+
+function animate() {
+    // dots[0] follows the mouse,
+    // though no dot is drawn there
+    var start = 0;
+    if (followmouse) {
+        dots[0].X = Xpos;
+        dots[0].Y = Ypos;
+        start = 1;
+    }
+
+    for (i = start ; i < nDots; i++ ) {
+
+        var spring = new vec(0, 0);
+        if (i > 0) {
+            springForce(i-1, i, spring);
+        }
+        if (i < (nDots - 1)) {
+            springForce(i+1, i, spring);
+        }
+
+        // air resisitance/friction
+        var resist = new vec(-dots[i].dx * RESISTANCE,
+            -dots[i].dy * RESISTANCE);
+
+        // compute new accel, including gravity
+        var accel = new vec((spring.X + resist.X)/ MASS,
+            (spring.Y + resist.Y)/ MASS + GRAVITY);
+
+        // compute new velocity
+        dots[i].dx += (DELTAT * accel.X);
+        dots[i].dy += (DELTAT * accel.Y);
+
+        // stop dead so it doesn't jitter when nearly still
+        if (Math.abs(dots[i].dx) < STOPVEL &&
+            Math.abs(dots[i].dy) < STOPVEL &&
+            Math.abs(accel.X) < STOPACC &&
+            Math.abs(accel.Y) < STOPACC) {
+            dots[i].dx = 0;
+            dots[i].dy = 0;
+        }
+
+        // move to new position
+        dots[i].X += dots[i].dx;
+        dots[i].Y += dots[i].dy;
+
+        // get size of window
+        var height, width;
+        if (isNetscape) {
+            height = window.innerHeight + document.scrollTop;
+            width = window.innerWidth + document.scrollLeft;
+        } else {
+            height = document.body.clientHeight + document.body.scrollTop;
+            width = document.body.clientWidth + document.body.scrollLeft;
+        }
+
+        // bounce of 3 walls (leave ceiling open)
+        if (dots[i].Y >=  height - DOTSIZE - 1) {
+            if (dots[i].dy > 0) {
+                dots[i].dy = BOUNCE * -dots[i].dy;
+            }
+            dots[i].Y = height - DOTSIZE - 1;
+        }
+        if (dots[i].X >= width - DOTSIZE) {
+            if (dots[i].dx > 0) {
+                dots[i].dx = BOUNCE * -dots[i].dx;
+            }
+            dots[i].X = width - DOTSIZE - 1;
+        }
+        if (dots[i].X < 0) {
+            if (dots[i].dx < 0) {
+                dots[i].dx = BOUNCE * -dots[i].dx;
+            }
+            dots[i].X = 0;
+        }
+
+        // move img to new position
+        dots[i].obj.left = dots[i].X;
+        dots[i].obj.top =  dots[i].Y;
+    }
+}
+
+// end code hiding -->
+</script>
+
+
+
+
+
+
+
+
+
+
+<body onLoad="bewegen()"bewegen();>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+<span style="position: absolute; left: 49; top: -7; z-index: -3">
+
+<img src="flowersstart.jpg" width="772" height="550"></span>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div style='position:absolute; top:340px; left:330px; font-family:verdana, sans-serif; text-align:center;'>
+
+         Fleur - Blumensalon Naderer <br>
+         Kirchengasse 21 A-1070 Wien (Vienna, Austria) <br>
+         Tel.: 0043 1 523 83 89 <br>
+         Fax:  0043 1 523 83 89 11 <br>
+         E-Mail: <a href="mailto:naderer@flowers.at";>naderer@flowers.at</a>
+
+</div>
+
+
+<table  border="0" width="97%" height="20%">
+  <tr>
+
+
+ <td width="20%" height="100" align="right"><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="103" HEIGHT="50" id="banner2" ALIGN="">
+ <PARAM NAME=movie VALUE="banner2.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#1C6EC0> <EMBED src="banner2.swf" quality=high bgcolor=#1C6EC0  WIDTH="103" HEIGHT="50" NAME="banner2" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
+</OBJECT>
+
+</td>
+
+     <td width="850 px" height="100" align="center" >
+
+<p class="schrift1">
+
+<!--
+     © 2006 Fleur - Blumensalon Naderer <br>
+         Kirchengasse 21 A-1070 Wien (Vienna, Austria) <br>
+         Tel.: 0043 1 523 83 89 <br>
+         Fax:  0043 1 523 83 89 11 <br>
+         E-Mail: <a href="mailto:naderer@flowers.at";>naderer@flowers.at</a>
+
+-->
+  <br> <br>     <br><br>
+         <img src="card/logo_amex.gif">&nbsp&nbsp&nbsp<img src="card/logo_diners.gif">&nbsp&nbsp&nbsp <img src="card/logo_jcb.gif">&nbsp&nbsp&nbsp<img src="card/logo_mastercard.gif">&nbsp&nbsp&nbsp<img src="card/logo_pbx2.jpg" widht="32%" height=32%">&nbsp&nbsp&nbsp<img src="card/bank.jpg" widht="20%" height=20%">
+         </td>
+
+
+
+<td width="30%" height="100" align="left">
+
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="103" HEIGHT="50" id="banner2" ALIGN="">
+ <PARAM NAME=movie VALUE="banner2.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#1C6EC0> <EMBED src="banner2.swf" quality=high bgcolor=#1C6EC0  WIDTH="103" HEIGHT="50" NAME="banner2" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
+</OBJECT>
+</td>
+
+
+
+  </tr>
+</table>
+
+</p>
+
+
+<! Hier fangen die Layer an, die beim Dr¸berfahren bei Deutsch und Englisch
+angezeigt werden >
+
+
+<SCRIPT language="javascript">
+<!--  auskommentieren
+      if (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion.substring(0,1)) >=3))
+      || ((navigator.appName == "Microsoft Internet  Explorer")&&(parseInt(navigator.appVersion.substring(0,1)) >=4)))
+      {var version=true}
+/* Browserabfrage: Layer-Object bekannt? */
+if (document.layers)
+      {ns = 1; ie = 0;}
+else  {ns = 0; ie = 1;}
+/* Funktion Dokument initialisieren */ /* Besser: Macromedia Script */
+function initm() {if (ns) layer = document.MENU;
+                 if (ie) layer = MENU.style;
+				 }
+/* Funktion Schicht anzeigen */
+function show(name) {if (ns)
+                    {document.layers['' + name].visibility = "show";}
+					else
+					{document.all['' + name].style.visibility = "visible";}
+                    }
+
+function hide(name) {if (ns)
+
+                    {document.layers['' + name].visibility = "hide";}
+
+					else
+
+					{document.all['' + name].style.visibility = "hidden";}
+
+					}
+
+
+
+/* Menu-Ebene verschieben rechts */
+
+function movel() {if(ns)
+
+                 {document.MENU.left=-50;}
+
+				 else
+
+				 {MENU.style.left=-50;}
+
+				 }
+
+
+
+/* Menu-Ebene verschieben links */
+
+function mover(){if(ns)
+
+                {document.MENU.left=-210;}
+
+ 				else
+
+				{MENU.style.left=-210;}
+
+				}
+
+//-->
+
+</SCRIPT>
+
+</p>
+
+
+
+
+
+        <span style="position: absolute; left: 347; top: 466">
+		<A HREF="https://www.flowers.at/page/start.mv?FRAMES+0+1" target="_top" onMouseOver="show('Layer1')" onMouseOut="hide('Layer1')"><FONT FACE=arial COLOR="#B0E2FF" SIZE=1><img src="deutsch2.gif" border="0" width="123" height="42" title="Hauptbereich betreten"></FONT></A><BR>
+        </span>
+        <br>
+
+
+        <span style="position: absolute; left: 600; top: 462">
+		<A HREF="https://www.flowers.at/page/start.mv?FRAMES+0+2" target="_top" onMouseOver="show('Layer2')" onMouseOut="hide('Layer2')"><FONT FACE=arial COLOR="#FEFFED" SIZE=1><img src="englisch2.gif" border="0" width="123" height="42" title="Enter Mainsector"></FONT></A><BR>
+        </span>
+
+        <br>
+
+         </div>
+
+
+         <DIV ID="Layer1" style="position:absolute; width:145; height:150; z-index:5; top: 480; left: 480; visibility:hide; visibility:hidden;">
+
+<TABLE WIDTH=110 HEIGHT=50 BGCOLOR="#B0E2FF" BORDER=0 CELLPADDING=5><TR><TD ALIGN=left VALIGN=top>
+
+<FONT FACE=arial Size=1 COLOR=blue>Deutsch<BR>&nbsp;<BR>
+
+<FONT COLOR="#3B3B3B">W‰hlen sie eine Sprache
+
+</FONT></FONT>
+
+</TD></TR></TABLE>
+
+</DIV>
+
+<DIV ID="Layer2" style="position:absolute; width:145; height:150; z-index:5; top: 480; left: 480; visibility:hide; visibility:hidden;">
+
+<TABLE WIDTH=110 HEIGHT=50 BGCOLOR="#B0E2FF" BORDER=0 CELLPADDING=5><TR><TD ALIGN=left VALIGN=top>
+
+<FONT FACE=arial Size=1 COLOR=blue>English<BR>&nbsp;<BR>
+
+<FONT COLOR="#3B3B3B">
+
+Select a language
+</FONT></FONT>
+
+</TD></TR></TABLE>
+
+
+
+<script type="text/javascript">
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+ var pageTracker = _gat._getTracker("UA-6030129-1");
+ pageTracker._trackPageview();
+</script>
+
+
+
+</body>
+</html>
+

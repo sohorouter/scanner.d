@@ -1,0 +1,90 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 14:58:26 GMT
+Server: Apache
+X-Powered-By: PHP/4.3.11
+Set-Cookie: ZARAFA_WEBACCESS=73cfaad5a537a40f5df52b5a6913e4c7; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 2627
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Zarafa WebAccess</title>
+		<link rel="stylesheet" type="text/css" href="client/layout/css/login.css">
+		<link rel="icon" href="client/layout/img/favicon.ico"  type="image/x-icon">
+		<link rel="shortcut icon" href="client/layout/img/favicon.ico" type="image/x-icon">	
+		<script type="text/javascript">
+			window.onload = function(){
+				document.getElementById("username").focus();
+			}
+		</script>
+	</head>
+	<body class="login">
+		<table id="layout">
+			<tr><td>
+				<div id="login_main">
+					<form action="index.php?logon" method="post">
+					<!-- Store action attributes to hidden variable to pass it to index page -->
+													<!-- or else in the URL -->
+								<input type="hidden" name="action_url" value=""></input>
+										
+						<div id="login_data">
+							<p>Please logon.</p>
+							<p class="error">&nbsp;</p>
+							<table id="form_fields">
+								<tr>
+									<th><label for="username">Name:</label></th>
+									<td><input type="text" name="username" id="username" class="inputelement"></td>
+								</tr>
+								<tr>
+									<th><label for="password">Password:</label></th>
+									<td><input type="password" name="password" id="password" class="inputelement"></td>
+								</tr>
+								<tr>
+									<th><label for="language">Language:</label></th>
+									<td>
+										<select name="language" id="language" class="inputelement">
+											<option value="last">Last used language</option>
+											<option value="ca_ES.utf-8">Català
+</option>
+											<option value="da_DK.utf-8">Dansk
+</option>
+											<option value="de_DE.utf-8">Deutsch
+</option>
+											<option value="en_EN">English</option>
+											<option value="en_US.utf-8">English (US)
+</option>
+											<option value="es_ES.utf-8">Español
+</option>
+											<option value="fr_FR.utf-8">Français
+</option>
+											<option value="it_IT.utf-8">Italiano
+</option>
+											<option value="nl_NL.utf-8">Nederlands
+</option>
+											<option value="pt_PT.utf-8">Português
+</option>
+											<option value="fi_FI.utf-8">Suomi
+</option>
+											<option value="sv_SE.utf-8">Svenska
+</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td><input id="submitbutton" type="submit" value=Logon></td>
+								</tr>
+							</table>
+						</div>
+					</form>
+					<span id="version">6.20.11-17604</span>
+				</div>
+			</td></tr>
+		</table>
+	</body>
+</html>

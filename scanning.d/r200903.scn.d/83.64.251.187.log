@@ -1,0 +1,18 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:24 CEST
+Interesting ports on www.linuxnetwork.at (83.64.251.187):
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+23/tcp   closed telnet
+80/tcp   open   http
+443/tcp  open   https
+3389/tcp closed ms-term-serv
+8080/tcp open   http-proxy
+Device type: general purpose|broadband router|specialized|WAP
+Running (JUST GUESSING) : Linux 2.6.X|2.4.X (97%), Linksys embedded (91%), Infoblox NIOS 4.X (90%), FON Linux 2.4.X (90%)
+Aggressive OS guesses: Linux 2.6.9 - 2.6.20 (97%), Linux 2.6.9 - 2.6.15 (95%), Linux 2.6.9 - 2.6.15 (x86) (95%), Linux 2.6.13 - 2.6.10 (93%), Linux 2.6.20-1 (Fedora Core 5) (92%), Linux 2.6.5 - 2.6.9 (92%), Linux 2.6.13 - 2.6.20 (92%), Linux 2.6.9 (92%), Linux 2.6.9 (Red Hat Enterprise Linux) (92%), Linux 2.6.9 - 2.6.26 (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 9 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 3.93 seconds

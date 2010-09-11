@@ -1,0 +1,429 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Sep 2010 15:01:41 GMT
+Server: Apache/2.2.8 (Ubuntu) PHP/5.2.4-2ubuntu5.10 with Suhosin-Patch mod_ssl/2.2.8 OpenSSL/0.9.8g
+Last-Modified: Sat, 14 Aug 2010 21:35:54 GMT
+ETag: "6c0750-4d26-48dcf62500280"
+Accept-Ranges: bytes
+Content-Length: 19750
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html
+
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="BST Brandschutztechnik GmbH, Allgemeine Informationen">
+	<meta name="keywords" content="Brandschutz, Brandschutztechnik, Wandhydranten, Steigleitungen, Feuerlöscher, Abschottungen">
+	<title>BST Brandschutztechnik</title>
+	<link href="favicon.ico" rel="SHORTCUT ICON">
+	<link rel="stylesheet" type="text/css" href="dojo/dijit/themes/tundra/tundra.css">
+	<link rel="stylesheet" type="text/css" href="bst.css">
+	<script type="text/javascript" src="dojo/dojo/dojo.js" djconfig="parseOnLoad: true"></script>
+	<script type="text/javascript">/* <![CDATA[ */
+
+		/* Back Button */
+		dojo.require("dojo.hash");
+		document.oldTitle = document.title;
+		dojo.addOnLoad(function() {
+			// Tab Vorwahl vom Fragmentbezeichner lesen, sanitized
+			if (dojo.hash() === "") dojo.hash("Index#", true);
+			else setFolderTab(decodeURI(dojo.hash()).replace(/[^a-zA-Z0-9äöüßÄÖÜ-]/g, ""));
+			// Tab Auswahl in (Pseudo-)Historie speichern
+			dojo.subscribe("folder-selectChild", function(child) {
+				dojo.hash(child.id + "#");
+				if (child.id === "Index") document.title = document.oldTitle;
+				else document.title = "BST Brandschutztechnik / " + child.id;
+			});
+			// (Pseudo-)Historie Tab wählen lassen
+			dojo.subscribe("/dojo/hashchange", this, function(hash) {
+				setFolderTab(decodeURI(hash).replace(/[^a-zA-Z0-9äöüßÄÖÜ-]/g, ""));
+			});
+		});
+
+		/* Tab Container */
+		dojo.require("dijit.layout.TabContainer");
+		dojo.require("dijit.layout.ContentPane");
+		function setFolderTab(id) {
+			var tab = dijit.byId(id);
+			if (!tab || tab.selected) return;
+			dijit.byId("folder").selectChild(tab);
+		}
+		function gotoFolderTab(id) {
+			dojo.hash(id + "#");
+			return false;
+		}
+
+		/* kein indexOf von Array in MSIE */
+		if (!Array.prototype.indexOf) {
+			Array.prototype.indexOf = function(elt /*, from*/) {
+				var len = this.length >>> 0;
+				var from = Number(arguments[1]) || 0;
+				from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+				if (from < 0) from += len;
+				for (; from < len; from++) {
+				  if (from in this && this[from] === elt)
+					return from;
+				}
+				return -1;
+			};
+		}
+
+		/* Video, Übersichtsblatt Popup Overlay */
+		dojo.require("dijit.Dialog");
+
+		/* „Expertensystem“ */
+		dojo.require("dojo.data.ItemFileReadStore");
+		dojo.require("dijit.tree.TreeStoreModel");
+
+		/*  Bestellformular einrichten */
+		function initOrder() {
+
+			// Variablen für Zustand
+			var qStack = []; // Fragen
+			var rStack = []; // Antworten lesbar
+			var cStack = []; // Antworten code
+			var pItem = {}; // Ergebnis
+			var first = "O"; // Erste Frage der Expertin
+
+			// Daten Store
+			var pStore = new dojo.data.ItemFileReadStore({
+				url: "expert/schraenke.json"
+			});
+
+			// Daten Modell
+			var pModel = new dijit.tree.TreeStoreModel({
+				store: pStore,
+				query: { "id": first }
+			});
+
+			// Datenblatttabelle
+			var pTable = new dojo.data.ItemFileReadStore({
+				url: "expert/tabelle.json"
+			});
+
+			// Formular erstellen / leeren
+			function resetCascade(e) {
+				dijit.byId("orderSubmit").setAttribute('disabled', true);
+				dojo.byId("orderStatus").style.visibility = "hidden";
+				dojo.byId("orderStatus").innerHTML = "";
+				dojo.query("tr", dojo.byId("kaskade")).forEach(dojo.destroy);
+				// Zustand annullieren
+				qStack.length = rStack.length = cStack.length = 0;
+				pItem = { id: "", name: "", path: "" };
+				// Wurzel pflanzen
+				pModel.getRoot(
+					function(item) { addChoice(dojo.byId("kaskade"), item); },
+					function(err) { console.error(this, ": error loading root: ", err); }
+				)
+			}
+
+			// eine Frage stellen
+			function addChoice(node, item) {
+				qStack.push(item);
+				var row = dojo.create("tr", {}, node);
+				dojo.create("th", { innerHTML: item.name[0] }, row);
+				var data = dojo.create("td", {}, row);
+				var choice = dojo.create("select", { "onchange": getChoice }, data);
+				dojo.create("option", { innerHTML: "Bitte wählen…", "value": "---" }, choice);
+				dojo.forEach(item.children, function(child) {
+					// Konflikte vermeiden, einer genügt zum Abbruch
+					if (child.conflicts && dojo.some(child.conflicts, function(id) {
+						//console.log(child.id[0], "C", id, "?", cStack.join("."), cStack.indexOf(id) >= 0);
+						return cStack.indexOf(id) >= 0; // wahr bei Konflikt
+					})) return;
+					// Voraussetzungen prüfen, eine genügt zum Fortgang
+					if (child.requires && dojo.every(child.requires, function(id) {
+						//console.log(child.id[0], "R", id, "?", cStack.join("."), cStack.indexOf(id) < 0);
+						return cStack.indexOf(id) < 0; // falsch wenn erfüllt
+					})) return;
+					dojo.create("option", { innerHTML: child.name[0], "value": child.id[0] }, choice);
+				});
+				// Hilfetext
+				if (item.help) dojo.byId("hilfetext").innerHTML = item.help[0];
+			}
+
+			// eine Antwort lesen
+			function getChoice(e) {
+				e.target.disabled = true;
+				cStack.push(e.target.value);
+				rStack.push(e.target.options[e.target.selectedIndex].text);
+				var item = qStack[qStack.length-1];
+				if (!item.children || !item.children[e.target.selectedIndex - 1].children) {
+					lastChoice();
+					return;
+				}
+				addChoice(dojo.byId("kaskade"), item.children[e.target.selectedIndex - 1].children[0]);
+			}
+
+			// keine weiteren Fragen
+			function lastChoice() {
+				dijit.byId("orderSubmit").setAttribute('disabled', false);
+				var row = dojo.create("tr", { style: "line-height: 300%" }, dojo.byId("kaskade"));
+				dojo.create("th", {innerHTML: "Produktdatenblatt", style: "font-weight: bold" }, row);
+				var code = cStack.join(".");
+				var pdb = dojo.create("td", {innerHTML: "<span class='small'>nicht verfügbar</span>" }, row);
+				// Datenblattinfo holen, mindestens acht code-Zeichen müssen passen
+				var getPdb = function (id) {
+					if (pItem.name.length) return; // gefunden
+					if (id.length < 8) return; // nicht gefunden
+					pTable.fetch({ // nachschlagen
+						query: { id: id },
+						onComplete: function(items, request) {
+							if (items.length === 0) return getPdb(id.substr(0, id.lastIndexOf(".")));
+							pItem.name = items[0].name[0];
+							pItem.path = items[0].path[0];
+							dojo.place(dojo.create("a", { target: "_blank", href: pItem.path + "?expert", innerHTML: pItem.name }), pdb, "replace");
+						},
+						onError: function(error, request) {
+							dojo.byId("hilfetext").innerHTML = "Fehler: „" + error + "“";
+						}
+					});
+				};
+				pItem.id = code;
+				getPdb(code);
+				dojo.byId("hilfetext").innerHTML = "<p>Sie können die Auswahl nun durch Klick auf „Weiter“ in das Kontakt&shy;formular übernehmen.</p><p>Bitte beachten Sie: im Produkt&shy;datenblatt sind meistens eine Schlauchhaspel, ein Standard Feuermelderfach und die Wasser&shy;anschlusseite immer rechts eingezeichnet.</p>";
+				// TODO DEBUG
+				dojo.byId("hilfetext").innerHTML += '<p class="small">[ ' + code + " ]</p>";
+			}
+
+			// Ergebnis drucken
+			function submitOrder(e) {
+				e.preventDefault();
+				dojo.byId("orderStatus").style.visibility = "visible";
+				if (dojo.byId("Anfrage").value.length) {
+					dojo.byId("orderStatus").innerHTML = "Übernahme nicht möglich: Bitte zuerst das Kontaktformular leeren.";
+					return;
+				}
+				dojo.byId("orderStatus").innerHTML = "Auswahl wurde übernommen.";
+				if (!pItem.name.length) pItem.name = "Sonderausführung";
+				else pItem.name = "ähnlich " + pItem.name;
+				var text = "\n\n\n> Schrankmerkmale: " + pItem.name;
+				// fehlende Angaben herausholen
+				var missing = [];
+				for (var i = 0; i < qStack.length; i++) {
+					if (rStack[i] === "nach Angabe") missing.push(qStack[i].hint[0] + ": ");
+					text += "\n> " + qStack[i].name[0] + ": " + rStack[i];
+				}
+				if (missing.length) text = "\n\n\nBitte ergänzen:\n" + missing.join("\n") + text;
+				dojo.byId("Expertin").value = pItem.id;
+				dojo.byId("Betreff").value = "Angebot";
+				dojo.byId("Anfrage").value = text;
+				gotoFolderTab("E-Mail");
+			}
+
+			// Do It
+			resetCascade();
+			dojo.connect(dijit.byId("orderForm"), "onSubmit", submitOrder);
+			dojo.connect(dijit.byId("orderForm"), "onReset", resetCascade);
+		}
+		// Bestellformular onLoad initialisieren
+		//dojo.addOnLoad(initOrder);
+
+		/* Mail Formular */
+		dojo.require("dijit.form.Form");
+		dojo.require("dijit.form.ValidationTextBox");
+		dojo.require("dijit.form.SimpleTextarea");
+		dojo.require("dijit.form.Button");
+		dojo.require("dojox.validate.regexp");
+
+		// eigenes Textfeld mit Prüfung ob leer
+		dojo.provide("ValidationTextarea");
+		dojo.declare(
+			"ValidationTextarea",
+			[ dijit.form.ValidationTextBox, dijit.form.SimpleTextarea ],
+			{
+				invalidMessage: "Pflichtfeld!",
+				postCreate: function() {
+					this.inherited(arguments);
+				},
+				validate: function() {
+					if (arguments.length === 0)
+						return this.validate(false);
+					return this.inherited(arguments);
+				},
+				onFocus: function() {
+					if (!this.isValid())
+						this.displayMessage(this.getErrorMessage());
+				},
+				onBlur: function() {
+					this.validate(false);
+				}
+			}
+		);
+
+		// Formularprüfung einrichten
+		function initForm() {
+			var mailFormReset = function(e) {
+				dijit.byId("mailSubmit").setAttribute('disabled', false);
+				dijit.byId("mailSubmit").setLabel("Senden");
+				dojo.byId("mailAntwort").style.visibility = "hidden";
+				dojo.byId("mailAntwort").innerHTML = "";
+			};
+
+			var mailFormSubmit = function(e) {
+				e.preventDefault();
+				dojo.byId("mailAntwort").style.visibility = "visible";
+				if (this.validate()) {
+					var request = {
+						handleAs: "text",
+						load: function(response) {
+							dojo.byId("mailAntwort").innerHTML = response;
+							dijit.byId("mailSubmit").setLabel("Gesendet");
+						},
+						error: function(data){
+							dojo.byId("mailAntwort").innerHTML = data.responseText;
+							dijit.byId("mailSubmit").setAttribute('disabled', false);
+						},
+						timeout: 5000,
+						form: "mailForm"
+					};
+					dijit.byId("mailSubmit").setAttribute('disabled', true);
+					dojo.byId("mailAntwort").innerHTML = "Sende…";
+					dojo.xhrPost(request);
+				} else {
+					dojo.byId("mailAntwort").innerHTML = "Formular ist nicht vollständig. Bitte korrigieren Sie die markierten Felder.";
+					dijit.byId("mailSubmit").setAttribute('disabled', false);
+				}
+			};
+			// onSumbit prüfen
+			dojo.connect(dijit.byId("mailForm"), "onSubmit", mailFormSubmit);
+			dojo.connect(dijit.byId("mailForm"), "onReset", mailFormReset);
+		}
+		// Prüfung onLoad initialisieren
+		dojo.addOnLoad(initForm);
+
+	/* ]]> */</script>
+</head>
+
+<body class="tundra">
+	<h1 id="title">
+		BST Brandschutztechnik
+		<img id="logo" src="bst.jpg" alt="">
+	</h1>
+
+	<div id="folder" class="folder" dojotype="dijit.layout.TabContainer">
+
+		<div id="Index" title="BST" class="page" dojotype="dijit.layout.ContentPane">
+			<h2>BST Wandhydranten und Löschwassertechnik</h2>
+			<p>
+				<a class="tablink" href="architekten.html"><img src="icon/fotos.jpg" alt="Fotos" title="Zu den Zeichnungen und Fotos"></a>
+				<a class="tablink" onclick="return gotoFolderTab('Service')" href="#Service"><img src="icon/pdb.jpg" alt="Service" title="Zum Servicebereich"></a>
+				Sie finden unseren Betrieb im <a href="http://www.brandschutz-center.at">Brandschutz Center Tirol</a> gemeinsam mit <a href="http://www.wagner-garderoben.at">Feuerwehrgarderoben von Wagner</a> und <a href="http://www.feuerkogler.at">Kogler Feuerwehrbedarf</a>.
+			</p>
+			<p>
+				Eigentümergeführt, fleißige Arbeiter und moderne Maschinen.
+				⇗ <a href="video.html" onClick="dijit.byId('Heroldvideo').show(); return false;">Sehen Sie selbst.</a>
+			</p>
+			<h2>Ihr Partner für vorbeugenden Brandschutz</h2>
+			<h3>⇒ <a onclick="return gotoFolderTab('Service')" href="#Service">Zum Servicebereich</a></h3>
+			<p>
+				Anfahrt aus Ostöstereich, Deutschland via Kufstein, Autobahnausfahrt Wattens, von der Schweiz und Italien via Innsbruck, Autobahnausfahrt Hall Mitte.
+				Zur <a href="http://maps.google.com/maps?q=http://www.bst.at/BST.kml">Karte auf Google Maps</a>.<!-- GPS-Koordinaten: 11:32:40E, 47:17:01N.-->
+			</p>
+		</div>
+
+		<div id="Service" title="Service" class="page" dojotype="dijit.layout.ContentPane">
+			<h2>Servicebereiche</h2>
+			<p>
+				<a class="tablink" href="architekten.html"><img src="icon/fotos.jpg" alt="Fotos"></a>
+				BST Brandschutztechnik gibt Menschen und Anlagen verlässlich Sicherheit und hilft Ihnen die Auflagen der Behörden zu erfüllen. Hier finden Sie Datenblätter zu unseren Produkten im PDF-Format mit Maßzeichnung und Anbietertext zur einfachen Übernahme in Ihre Ausschreibung.
+			</p>
+			<ul>
+				<li><h3><a href="architekten.html">Fotos und Zeichnungen für Planer und Architekten</a></h3></li>
+				<li><h3>Produktdatenblätter Download</h3></li>
+				<li class="listspacer"><ul>
+					<li><a href="wandhydranten.html">Wandhydranten</a> - Steigleitung „Nass“ und „Nass-Trocken“</li>
+					<li><a href="loeschwassertechnik.html">Löschwasseranlagentechnik</a> - Füll- Entleerstation, Druckerhöhungsanlage</li>
+					<li><a href="schraenke.html">Geräteschränke, Schutzschränke</a></li>
+					<li><a href="feuerloescher.html">GLORIA® Feuerlöscher</a></li>
+					<li><a href="steigleitung_trocken.html">Steigleitung „Trocken“</a></li>
+				</ul></li>
+				<li><h3><a href="loeschwasseranlagen-at.html" onClick="dijit.byId('Löschwasseranlagen').show(); return false;">Übersichtsblatt Löschwasseranlagen Österreich</a></h3></li>
+			</ul>
+		</div>
+
+		<div id="Bestellung" title="Bestellung" class="page" dojotype="dijit.layout.ContentPane">
+			<h2>Angebotsanfrage</h2>
+			<noscript><div>ACHTUNG: Javascript Voraussetzung!</div></noscript>
+			<p>
+				<img class="floatright" src="icon/angebot.jpg" alt="">
+				Finden Sie aus den gängigen Typen den für Ihre Löschwasseranlage geeigneten Schrank durch Festlegen einiger Merkmale (rechts kurz erklärt). Sie können Ihre Auswahl anschließend ins <a onclick="return gotoFolderTab('E-Mail')" href="#E-Mail">Kontaktformular</a> übernehmen.
+			</p>
+			<form dojoType="dijit.form.Form" id="orderForm" jsId="orderForm" encType="multipart/form-data" action="#" method="post" accept-charset="utf-8">
+				<div id="bestellhilfe" class="floatright">
+					Anmerkungen
+					<div id="hilfetext"><p>Die „Expertin“ wird Sie bei der Wahl Ihres Schrankes unterstützen und in wenigen Schritten zum geeigneten Modell führen.</p></div>
+				</div>
+				<div id="schrankwahl">
+					<table id="kaskade">
+						<caption>Auswahlformular</caption>
+						<colgroup><col width="200"><col width="300"></colgroup>
+						<tr><td colspan="2">
+							<button type="button" dojoType="dijit.form.Button" onClick="initOrder();">Expertin holen</button>
+						</td></tr>
+					</table>
+				</div>
+				<div>
+					<button type="submit" value="Weiter" name="Weiter" id="orderSubmit" disabled="disabled" dojoType="dijit.form.Button">Weiter</button>
+					<button type="reset" value="Zurücksetzen" name="Zurücksetzen" id="orderReset" dojoType="dijit.form.Button" >Zurücksetzen</button>
+					<span id="orderStatus" class="Achtung"></span>
+				</div>
+			</form>
+		</div>
+
+		<div id="E-Mail" title="E-Mail" class="page" dojotype="dijit.layout.ContentPane">
+			<h2>Kontaktformular</h2>
+			<p>
+				<img class="floatright" src="icon/post.jpg" alt="">
+				<small>mit * markierte Felder sind Pflicht</small>
+			</p>
+			<form dojoType="dijit.form.Form" id="mailForm" jsId="mailForm" encType="multipart/form-data" action="kontakt.php" method="post" accept-charset="utf-8">
+				<p>
+					<label for="Name"   ><code>    Name* </code></label><input type="text" size="50" name="Name"    id="Name"    dojoType="dijit.form.ValidationTextBox" required="required" missingMessage="Name fehlt."    invalidMessage="Kein Name."    regExp="[\wäöüÄÖÜß\-\. ]+"><br>
+					<label for="Tel"    ><code>     Tel  </code></label><input type="text" size="50" name="Tel"     id="Tel"     dojoType="dijit.form.ValidationTextBox"                                                 invalidMessage="Keine Nummer." regExp="[\d\+\-\/ ]+"><br>
+					<label for="EMail"  ><code>  E-Mail* </code></label><input type="text" size="50" name="EMail"   id="EMail"   dojoType="dijit.form.ValidationTextBox" required="required" missingMessage="E-Mail fehlt."  invalidMessage="Keine E-Mail." regExpGen="dojox.validate.regexp.emailAddress"><br>
+					<label for="Betreff"><code> Betreff* </code></label><input type="text" size="50" name="Betreff" id="Betreff" dojoType="dijit.form.ValidationTextBox" required="required" missingMessage="Betreff fehlt." invalidMessage="Kein Betreff." regExp="[\wäöüÄÖÜß\-\. ]+"><br><br>
+					<label for="Anfrage"><code>Ihre Anfrage*</code></label><br>
+					<textarea name="Anfrage" id="Anfrage" rows="8" cols="58" dojoType="ValidationTextarea" required="required" missingMessage="Anfrage fehlt." invalidMessage="Bitte hier Ihre Anfrage eintragen." regExp="(.|\s)*"></textarea><br><br>
+					<input type="hidden" name="Expertin" id="Expertin" value="">
+					<button type="submit" value="Senden" name="Senden" id="mailSubmit" dojoType="dijit.form.Button" busyLabel="Sende…" timeout="5000">Senden</button>
+					<button type="reset" value="Zurücksetzen" name="Zurücksetzen" id="mailReset" dojoType="dijit.form.Button" >Zurücksetzen</button>
+					<span id="mailAntwort" class="Achtung"></span>
+				</p>
+			</form>
+		</div>
+
+		<div id="Impressum" title="Impressum" class="page" dojotype="dijit.layout.ContentPane">
+			<h2>Impressum</h2>
+			<p>
+				<img class="floatright" src="icon/flamme-soft.png" alt="Wo brennts?">
+				Medieninhaber und für den Inhalt verantwortlich
+			</p>
+			<table id="stammdaten">
+				<caption>Firmenstammdaten BST Brandschutztechnik</caption>
+				<tr class="ungerade"><th>Firmenwortlaut</th><td>BST-Brandschutztechnik Ges.m.b.H.</td></tr>
+				<tr><th>Firmensitz</th><td>Gewerbepark 32, 6068 Mils, Austria</td></tr>
+				<tr class="ungerade"><th>Geschäftsführer</th><td>Andreas Chiochetti</td></tr>
+				<tr><th>Telefon</th><td>+43-5223-41 411</td></tr>
+				<tr class="ungerade"><th>Fax</th><td>+43-5223-46 411</td></tr>
+				<tr><th>Mobil GSM</th><td>+43-676-52 23 290</td></tr>
+				<tr class="ungerade"><th>Internet</th><td>http://www.bst.at</td></tr>
+				<tr><th>E-Mail</th><td><span onclick="return gotoFolderTab('E-Mail')" style="cursor: pointer; unicode-bidi: bidi-override; direction: rtl;">ta.tsb@ofni</span></td></tr>
+				<tr class="ungerade"><th>Firmenbuchnummer</th><td>Landesgericht 6010 Innsbruck FN 42231f</td></tr>
+				<tr><th>Steuernummer</th><td>Finanzamt 81 6010 Innsbruck 281 / 7237</td></tr>
+				<tr class="ungerade"><th>Umsatzsteueridentifikationsnummer</th><td>ATU 30990906</td></tr>
+				<tr><th>EORI-Nummer</th><td>ATEOS100006418</td></tr>
+				<tr class="ungerade"><th>Datenverarbeitungsregisternummer</th><td>0720518</td></tr>
+				<tr><th>ARA Lizenznummer</th><td>10874</td></tr>
+				<tr class="ungerade"><th>Bankverbindung</th><td>Bank für Tirol und Vorarlberg, BLZ 16000, Kontonummer 115-130889, Iban Nr. AT821600000115130889</td></tr>
+			</table>
+		</div>
+
+	</div><!-- /folder -->
+	<p><small>©2002/2010, BST Brandschutztechnik GmbH, Gewerbepark 32, 6068 Mils, Austria, <a onclick="return gotoFolderTab('Impressum')" href="#Impressum">Impressum</a>.</small></p>
+	<!-- Popups -->
+	<div id="Heroldvideo" dojoType="dijit.Dialog" title="BST Brandschutztechnik im Video &lt;small&gt;(mit Genehmigung von HEROLD Business Data GmbH)&lt;/small&gt;" href="video.html" style="display: none; width: 976px; height: 650px;"></div>
+	<div id="Löschwasseranlagen" dojoType="dijit.Dialog" title="Übersichtsblatt Löschwasseranlagen" href="loeschwasseranlagen-at.html" style="display: none; width: 976px; height: 650px;"></div>
+</body>
+</html>

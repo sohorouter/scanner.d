@@ -1,0 +1,20 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-30 03:51 CEST
+Insufficient responses for TCP sequencing (1), OS detection may be less accurate
+Insufficient responses for TCP sequencing (1), OS detection may be less accurate
+Interesting ports on 83-64-132-10.oberwart.xdsl-line.inode.at (83.64.132.10):
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+23/tcp   filtered telnet
+80/tcp   filtered http
+443/tcp  open     https
+3389/tcp filtered ms-term-serv
+8080/tcp filtered http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: firewall
+Running (JUST GUESSING) : ZyXEL ZyNOS 3.X (95%)
+Aggressive OS guesses: ZyXEL ZyWALL 2 or Prestige 660HW-61 ADSL router (ZyNOS 3.62) (95%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 5.90 seconds

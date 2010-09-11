@@ -1,0 +1,18 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:22 CEST
+Interesting ports on test.118899.com (83.64.251.28):
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+23/tcp   filtered telnet
+80/tcp   open     http
+443/tcp  filtered https
+3389/tcp open     ms-term-serv
+8080/tcp filtered http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING) : Microsoft Windows 2003|XP|2000 (98%)
+Aggressive OS guesses: Microsoft Windows Server 2003 SP1 or SP2 (98%), Microsoft Windows Server 2003 SP2 (98%), Microsoft Windows XP SP2 (90%), Microsoft Windows XP SP2 or SP3 (89%), Microsoft Windows 2000 SP4 or Windows XP SP2 (88%), Microsoft Windows 2003 Small Business Server (88%), Microsoft Windows XP Professional SP2 (88%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 5.60 seconds

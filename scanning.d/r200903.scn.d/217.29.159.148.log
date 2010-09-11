@@ -1,0 +1,17 @@
+
+Starting Nmap 4.85BETA5 ( http://nmap.org ) at 2009-04-03 09:41 CEST
+Interesting ports on 217-29-159-148.ifo.net (217.29.159.148):
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+23/tcp   filtered telnet
+80/tcp   open     http
+443/tcp  filtered https
+3389/tcp filtered ms-term-serv
+8080/tcp filtered http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X
+OS details: Linux 2.6.15 - 2.6.26
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 4.90 seconds

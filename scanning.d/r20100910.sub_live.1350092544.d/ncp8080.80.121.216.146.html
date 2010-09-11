@@ -1,0 +1,227 @@
+HTTP/1.0 200 Ok
+Server: httpd
+Date: Fri, 10 Sep 2010 16:18:22 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: 0
+Content-Type: text/html
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+   <head>
+      <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+      <title>WRT54GS-DE - Info</title>
+      <link type="text/css" rel="stylesheet" href="style.css" /><script type="text/JavaScript" src="common.js">{}</script><script language="JavaScript">
+function replace_list(list,target,replacement) {
+	var result = list.search(target);
+	while(result != -1) {
+		list = list.replace(target,replacement);
+		result = list.search(target);
+	}
+
+	return list;
+}
+		</script></head>
+   <body class="gui">
+      <div id="wrapper">
+         <div id="content">
+            <div id="header">
+               <div id="logo">
+                  <h1>DD-WRT Control Panel</h1>
+               </div>
+               <div id="menu">
+                  <div id="menuMain">
+                     <ul id="menuMainList">
+                        <li><a href="index.asp">Konfiguration</a></li>
+                        <li><a href="Wireless_Basic.asp">Wireless</a></li>
+			<!--
+			<li><a href="Sipath.asp">SIPatH</a></li>
+                        -->
+                        <li><a href="Firewall.asp">Sicherheit</a></li>
+                        <li><a href='Filters.asp'>Zugriffsrechte</a></li>
+                        <li><a href="Forward.asp">Anwendungen&nbsp;&amp;&nbsp;Gaming</a></li>
+                        <li><a href="Management.asp">Administration</a></li>
+                        <li><a href="Status_Router.asp">Status</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div id="main">
+               <div id="contents">
+                  <h2>System Info</h2>
+                  <fieldset>
+                     <legend>WRT Info</legend>
+                     <div class="setting">
+                        <div class="label">Router Name</div>WRT54GS-DE
+                     </div>
+                     <div class="setting">
+                        <div class="label">LAN MAC</div>00:13:10:4A:43:7B
+                     </div>
+                     <div class="setting">
+                        <div class="label">WAN MAC</div>00:13:8F:27:21:4B
+                     </div>
+                     <div class="setting">
+                        <div class="label">Wireless MAC</div>00:13:10:4A:43:7D
+                     </div>
+                  </fieldset><br /><fieldset>
+                     <legend>Wireless Info</legend>
+                     <div class="setting">
+                        <div class="label">SSID</div>wlan
+                     </div>
+                     <div class="setting">
+                        <div class="label">Modus</div>
+			AP
+                     </div>
+                     <div class="setting">
+                        <div class="label">Xmit</div>140 mW
+                     </div>
+                     <div class="setting">
+                        <div class="label">Netzwerk</div>Disabled
+                     </div>
+                     <div class="setting">
+                        <div class="label">DHCP Server</div>Enabled
+                     </div>
+                     <div class="setting">
+                        <div class="label">Kanal</div>6
+                     </div>
+                     <div class="setting">
+                        <div class="label">Rate (Mbps)</div>54
+                     </div>
+                  </fieldset><br /><fieldset>
+                     <legend>IP Info</legend>
+                     <div class="setting">
+                        <div class="label">WAN IP</div>80.121.216.146
+                     </div>
+                     <div class="setting">
+                        <div class="label">LAN IP</div>192.168.0.100
+                     </div>
+                     <div class="setting">
+                        <div class="label">WRT-Radius</div>
+                        					
+                        					Disabled                        
+                        					
+                        					
+                     </div>
+                     <div class="setting">
+                        <div class="label">WRT-rflow</div>Disabled 
+                     </div>
+                     <div class="setting">
+                        <div class="label">MAC-udp</div>Disabled 
+                     </div>
+                     <div class="setting">
+                        <div class="label">Samba Mount</div>Disabled
+                     </div>
+                  </fieldset><br /><form name="Eingabe"><input type="hidden" name="Feld" value='' />
+		  <input type="hidden" name="FeldMEM" value='SWRXgoodPacket=0;SWRXerrorPacket=0;SWTXgoodPacket=0;SWTXerrorPacket=0;' />
+		  <h3>
+		  
+		  
+		  
+		  Wireless Clients
+                     </h3>
+                     <table class="table">
+                        <tbody>
+                           <tr>
+                              <th colspan="5">MAC-Address</th>
+                              <th>Pegel</th>
+                              <th colspan="5">&nbsp;</th>
+                           </tr><script language="JavaScript">
+							var clients = this.document.Eingabe.Feld.value;
+							clients=replace_list(clients,'Clients:','');
+							clients=replace_list(clients,'WDS Signal:','');
+							clients=replace_list(clients,'width=156 bgColor=#e7e7e7','width=0');
+							clients=replace_list(clients,'width=8 background=image/UI_04.gif','width=0');
+							clients=replace_list(clients,'colSpan=3','');
+							clients=replace_list(clients,'width=13','width=0');
+							clients=replace_list(clients,'width=15 background=image/UI_05.gif','width=0');
+							clients=replace_list(clients,'height=25','');
+							clients=replace_list(clients,'rssi ','</td><td></b><i>rssi</i>&nbsp;&nbsp;&nbsp;&nbsp;<b>');
+		
+							this.document.write(clients);
+						</script></tbody>
+                     </table>
+                  </form>
+                  <div class="setting">
+                     <h3>DHCP Client Liste</h3>
+                     <table class="table">
+                        <tr>
+                           <th>PC</th>
+                           <th>IP</th>
+                           <th>MAC</th>
+                           <th>Dauer</th>
+                        </tr><script language="JavaScript">
+						var table = new Array(  'MERCEDES','192.168.0.1','00:24:8C:41:B0:88','never','1'
+,'Audi','192.168.0.2','00:04:23:16:AF:B3','never','2'
+,'BMW','192.168.0.3','00:13:8F:24:AA:2C','never','3'
+,'Porsche','192.168.0.5','00:15:F2:71:67:31','never','5'
+,'Server','192.168.0.4','00:13:8F:27:21:4B','never','4'
+,'Drucker','192.168.0.50','00:1B:8B:1D:5B:D6','never','50'
+,'User-PC','192.168.0.6','E0:CB:4E:B9:D0:C0','08:17:35','6'
+ );
+						var i = 0;
+						var count = 0;
+						for(;;) {
+							if(!table[i]) {
+								if(i == 0){
+									document.write("<tr>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>&nbsp;</td></tr>");
+								}
+								break;
+							}
+							document.write("<tr>");
+							document.write("<td>"+table[i]+"</td>");
+							document.write("<td>"+table[i+1]+"</td>");
+							document.write("<td>"+table[i+2]+"</td>");
+							document.write("<td>"+table[i+3]+"</td>");
+							document.write("<td>&nbsp;</td></tr>");
+							count ++;
+							i = i + 5;
+						}
+					</script></table>
+                  </div>
+                  <div class="setting">
+                     <div class="label">Packet Info</div><script language="JavaScript">
+					var clients = this.document.Eingabe.FeldMEM.value;
+					clients=replace_list(clients,';',' ');
+					clients=replace_list(clients,'SWRXgoodPacket=',' RXg=');
+					clients=replace_list(clients,'SWRXerrorPacket=','RXe=');
+					clients=replace_list(clients,'SWTXgoodPacket=',' TXg=');
+					clients=replace_list(clients,'SWTXerrorPacket=','TXe=');
+					
+					this.document.write(clients);
+				</script></div>
+                  <div class="setting">
+                     <div class="label">Mem Info</div>              total         used         free       shared      buffers
+  Mem:        30448        11688        18760            0         1312
+ Swap:            0            0            0
+Total:        30448        11688        18760
+
+                  </div>
+		<a href="http://www.dd-wrt.com/">DD-WRT</a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="sebastian.gottschall@advis.de"><input type="hidden" name="item_name" value="DD-WRT Development Support"><input type="hidden" name="no_note" value="1"><input type="hidden" name="currency_code" value="EUR"><input type="hidden" name="tax" value="0"><input type="image" src="images/paypal.gif" border="0" name="submit" width="62" height="31"></form>
+               </div>
+            </div>
+	    <div id="statusInfo">
+               <div class="info">Firmware: DD-WRT v23 (11/15/05)</div>
+               <div class="info">Uptime:  16:18:23 up  9:33, load average: 0.00, 0.00, 0.00
+</div>
+               <div class="info">WAN IP: 80.121.216.146</div>
+            </div>
+            <div id="helpContainer">
+               <div id="help">
+                  <div id="logo">
+                     <h2>Help</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

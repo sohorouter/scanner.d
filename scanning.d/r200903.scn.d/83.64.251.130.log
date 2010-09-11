@@ -1,0 +1,16 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:24 CEST
+Interesting ports on sunshine.tubthumping.at (83.64.251.130):
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+23/tcp   closed telnet
+80/tcp   open   http
+443/tcp  open   https
+3389/tcp closed ms-term-serv
+8080/tcp closed http-proxy
+Aggressive OS guesses: Linux 2.6.16.21 (openSUSE 10.2, x86_64) (95%), Linux 2.6.13 - 2.6.10 (93%), Linux 2.6.5 - 2.6.9 (93%), Linux 2.6.13 - 2.6.20 (92%), Linux 2.6.17 (x86) (91%), Linux 2.6.22 - 2.6.23 (91%), Siemens Gigaset SE515dsl wireless broadband router (90%), Linux 2.6.9 - 2.6.20 (90%), Linux 2.6.17 - 2.6.25 (89%), Linux 2.6.18 (89%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 7 hops
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 4.23 seconds

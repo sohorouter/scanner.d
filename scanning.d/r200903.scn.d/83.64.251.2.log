@@ -1,0 +1,18 @@
+
+Starting Nmap 4.76 ( http://nmap.org ) at 2009-03-29 04:21 CEST
+Interesting ports on 83-64-251-2.sh-wien.inode.at (83.64.251.2):
+PORT     STATE    SERVICE
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+80/tcp   open     http
+443/tcp  open     https
+3389/tcp filtered ms-term-serv
+8080/tcp filtered http-proxy
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|broadband router|switch|remote management|WAP
+Running (JUST GUESSING) : Linux 2.6.X (92%), Linksys embedded (91%), HP embedded (90%), AVM embedded (85%), Netgear embedded (85%)
+Aggressive OS guesses: Linux 2.6.15 - 2.6.20 (92%), Linux 2.6.9 (92%), Linux 2.6.9 - 2.6.24 (92%), Linux 2.6.20-gentoo-r8 (Gentoo, x86, SMP) (92%), Linksys WRV200 wireless broadband router (91%), Linux 2.6.15 - 2.6.25 (91%), HP Brocade 4Gb SAN switch (90%), Linux 2.6.22 (Debian 4.0) (89%), HP Onboard Administrator management console (89%), Linux 2.6.20 (Ubuntu 7.04 server, x86) (89%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 5.74 seconds

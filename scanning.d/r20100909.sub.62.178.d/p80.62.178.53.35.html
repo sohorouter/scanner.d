@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="ECSHOP v2.7.2" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="SCHIEGL LILY" />
+<meta name="Description" content="SCHIEGL LILY" />
+<title>SCHIEGL LILY</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="themes/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|SCHIEGL LILY" href="feed.php" />
+<script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></head>
+<body>
+<script type="text/javascript">
+var process_request = "Bitte warten...";
+</script>
+<div class="block clearfix">
+ <div class="f_l"><a href="index.php" name="top"><img src="themes/default/images/logo.gif" /></a></div>
+ <div class="f_r log">
+   <ul>
+   <li class="userInfo">
+   <script type="text/javascript" src="js/transport.js"></script><script type="text/javascript" src="js/utils.js"></script>   <font id="ECS_MEMBERZONE"><div id="append_parent"></div>
+ Willkommen&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="user.php"><img src="themes/default/images/bnt_log.gif" /></a>
+ <a href="user.php?act=register"><img src="themes/default/images/bnt_reg.gif" /></a>
+ </font>
+   </li>
+      <li id="topNav" class="clearfix">
+                <a href="message.php" >Nachricht Board</a>
+                    <div class="topNavR"></div>
+   </li>
+      </ul>
+ </div>
+</div>
+<div  class="blank"></div>
+<div id="mainNav" class="clearfix">
+  <a href="index.php" class="cur">Startseite<span></span></a>
+    <a href="category.php?id=3"  >Edelstein<span></span></a>
+   <a href="category.php?id=1"  >Mineralien<span></span></a>
+   <a href="category.php?id=2"  >Schmuck<span></span></a>
+   <a href="category.php?id=4"  >Kunst<span></span></a>
+   <a href="article_cat.php?id=2"  >Über Uns<span></span></a>
+ </div>
+<div id="search"  class="clearfix">
+  <div class="keys f_l">
+   <script type="text/javascript">
+    
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("Geben Sie ein Stichwort!");
+            return false;
+        }
+    }
+    -->
+    
+    </script>
+      </div>
+  <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="f_r"  style="_position:relative; top:5px;">
+   <select name="category" id="category" class="B_input">
+      <option value="0">Alle Kategorien</option>
+      <option value="3" >Edelstein</option><option value="1" >Mineralien</option><option value="2" >Schmuck</option><option value="4" >Kunst</option>    </select>
+   <input name="keywords" type="text" id="keyword" value="" class="B_input" style="width:110px;"/>
+   <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
+   <a href="search.php?act=advanced_search">Fortgeschritten</a>
+   </form>
+</div>
+<div class="blank"></div>
+<div class="block clearfix">
+  
+  <div class="AreaL">
+    
+    <div class="box">
+     <div class="box_1">
+      <h3><span>Hinweis Shop</span></h3>
+      <div class="boxCenterList RelaArticle">
+        <div style="text-align: center;">Wir können es besser machen!</div> 
+      </div>
+     </div>
+    </div>
+    <div class="blank5"></div>
+    
+  
+<div class="cart" id="ECS_CARTINFO">
+ <a href="flow.php" title="Wagen">0 Produkte im Warenkorb insgesamt Geld €0.00.</a></div>
+<div class="blank5"></div>
+<div class="box">
+ <div class="box_1">
+  <div id="category_tree">
+         <dl>
+     <dt><a href="category.php?id=3">Edelstein</a></dt>
+            
+       </dl>
+         <dl>
+     <dt><a href="category.php?id=1">Mineralien</a></dt>
+            
+       </dl>
+         <dl>
+     <dt><a href="category.php?id=2">Schmuck</a></dt>
+            
+       </dl>
+         <dl>
+     <dt><a href="category.php?id=4">Kunst</a></dt>
+            
+       </dl>
+     
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>
+<div class="box">
+ <div class="box_2">
+  <div class="top10Tit"></div>
+  <div class="top10List clearfix">
+    </div>
+ </div>
+</div>
+<div class="blank5"></div>
+<script>var invalid_order_sn = "Ungültige Bestellung SN"</script>
+<div class="box">
+ <div class="box_1">
+  <h3><span>Bestellen Abfrage</span></h3>
+  <div class="boxCenterList">
+    <form name="ecsOrderQuery">
+    <input type="text" name="order_sn" class="inputBg" /><br />
+    <div class="blank5"></div>
+    <input type="button" value="Abfrage Bestellen" class="bnt_blue_2" onclick="orderQuery()" />
+    </form>
+    <div id="ECS_ORDER_QUERY" style="margin-top:8px;">
+          </div>
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>
+  </div>
+  
+  
+  <div class="AreaR">
+   
+    <div class="box clearfix">
+     <div class="box_1 clearfix">
+       <div class="f_l" id="focus">
+         <script type="text/javascript">
+  var swf_width=731;
+  var swf_height=350;
+  </script>
+  <script type="text/javascript" src="data/flashdata/redfocus/cycle_image.js"></script>
+       </div>
+     </div>
+    </div>
+    <div class="blank5"></div>
+ 
+    <div class="blank5"></div>
+   
+<div class="box">
+<div class="box_2 centerPadd">
+  <div class="itemTit" id="itemBest">
+            <h2><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 0);">Alle Produkte</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 1)">Mineralien</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 2)">Schmuck</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 3)">Edelstein</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 4)">Kunst</a></h2>
+              </div>
+  <div id="show_best_area" class="clearfix goodsBox">
+      <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=6"><img src="images/201006/thumb_img/6_thumb_G_1276713574256.jpg" alt="SY-001" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=6" title="SY-001">SY-001</a></p>
+           <font class="f1">
+                     €8                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=7"><img src="images/201006/thumb_img/7_thumb_G_1276715379109.jpg" alt="SY-002" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=7" title="SY-002">SY-002</a></p>
+           <font class="f1">
+                     €8                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=8"><img src="images/201006/thumb_img/8_thumb_G_1276715394965.jpg" alt="SY-003" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=8" title="SY-003">SY-003</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=9"><img src="images/201006/thumb_img/9_thumb_G_1276715410635.jpg" alt="SY-004" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=9" title="SY-004">SY-004</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=10"><img src="images/201006/thumb_img/10_thumb_G_1276715457361.jpg" alt="SY-005" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=10" title="SY-005">SY-005</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=11"><img src="images/201006/thumb_img/11_thumb_G_1276715518031.jpg" alt="SY-006" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=11" title="SY-006">SY-006</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=12"><img src="images/201006/thumb_img/12_thumb_G_1276715570190.jpg" alt="SY-007" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=12" title="SY-007">SY-007</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=13"><img src="images/201006/thumb_img/13_thumb_G_1276715634264.jpg" alt="SY-008" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=13" title="SY-008">SY-008</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=14"><img src="images/201006/thumb_img/14_thumb_G_1276715787911.jpg" alt="SY-009" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=14" title="SY-009">SY-009</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="best"></span>
+           <a href="goods.php?id=15"><img src="images/201006/thumb_img/15_thumb_G_1276715856367.jpg" alt="SY-010" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=15" title="SY-010">SY-010</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="more"><a href="search.php?intro=best"><img src="themes/default/images/more.gif" /></a></div>
+    </div>
+</div>
+</div>
+<div class="blank5"></div>
+  <div class="box">
+<div class="box_2 centerPadd">
+  <div class="itemTit New" id="itemNew">
+            <h2><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, 0);">Alle Produkte</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, 1)">Mineralien</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, 2)">Schmuck</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, 3)">Edelstein</a></h2>
+            <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, 4)">Kunst</a></h2>
+              </div>
+  <div id="show_new_area" class="clearfix goodsBox">
+      <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=6"><img src="images/201006/thumb_img/6_thumb_G_1276713574256.jpg" alt="SY-001" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=6" title="SY-001">SY-001</a></p>
+           <font class="f1">
+                     €8                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=7"><img src="images/201006/thumb_img/7_thumb_G_1276715379109.jpg" alt="SY-002" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=7" title="SY-002">SY-002</a></p>
+           <font class="f1">
+                     €8                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=8"><img src="images/201006/thumb_img/8_thumb_G_1276715394965.jpg" alt="SY-003" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=8" title="SY-003">SY-003</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=9"><img src="images/201006/thumb_img/9_thumb_G_1276715410635.jpg" alt="SY-004" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=9" title="SY-004">SY-004</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=10"><img src="images/201006/thumb_img/10_thumb_G_1276715457361.jpg" alt="SY-005" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=10" title="SY-005">SY-005</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=11"><img src="images/201006/thumb_img/11_thumb_G_1276715518031.jpg" alt="SY-006" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=11" title="SY-006">SY-006</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=12"><img src="images/201006/thumb_img/12_thumb_G_1276715570190.jpg" alt="SY-007" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=12" title="SY-007">SY-007</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=13"><img src="images/201006/thumb_img/13_thumb_G_1276715634264.jpg" alt="SY-008" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=13" title="SY-008">SY-008</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=14"><img src="images/201006/thumb_img/14_thumb_G_1276715787911.jpg" alt="SY-009" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=14" title="SY-009">SY-009</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="goodsItem">
+         <span class="news"></span>
+           <a href="goods.php?id=15"><img src="images/201006/thumb_img/15_thumb_G_1276715856367.jpg" alt="SY-010" class="goodsimg" /></a><br />
+           <p><a href="goods.php?id=15" title="SY-010">SY-010</a></p>
+           <font class="f1">
+                     €5                     </font>
+        </div>
+    <div class="more"><a href="search.php?intro=new"><img src="themes/default/images/more.gif" /></a></div>
+    </div>
+</div>
+</div>
+<div class="blank5"></div>
+  
+  </div>
+  
+</div>
+<div class="blank5"></div>
+<div class="block">
+  <div class="box">
+   <div class="helpTitBg clearfix">
+       </div>
+  </div>
+</div>
+<div class="blank"></div>
+<div id="bottomNav" class="box">
+ <div class="box_1">
+  <div class="links clearfix">
+        <a href="http://www.schiegl-lily.com" target="_blank" title="Jidi Studio"><img src="data/afficheimg/1276082540332570317.gif" alt="Jidi Studio" border="0" /></a>
+          </div>
+ </div>
+</div>
+<div class="blank"></div>
+<div id="bottomNav" class="box">
+ <div class="box_1">
+  <div class="bNavList clearfix">
+   <div class="f_l">
+      </div>
+   <div class="f_r">
+   <a href="#top"><img src="themes/default/images/bnt_top.gif" /></a> <a href="index.php"><img src="themes/default/images/bnt_home.gif" /></a>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="blank"></div>
+<div id="footer">
+ <div class="text">
+ &copy; 2005-2010 by SCHIEGL LILY Copyright, All Rights Reserved.<br />
+ Bruenner Strasse 25,1210,Wien,Austria;        Tel: 0043－1－9227611;        E-mail: iam.jidi@hotmail.com<br />
+                                                                    <img src="themes/default/images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact=iam.jidi@hotmail.com">iam.jidi@hotmail.com</a>
+                          <br />
+  
+</body>
+</html>
