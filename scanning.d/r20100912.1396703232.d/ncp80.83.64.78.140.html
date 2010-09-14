@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:45:22 GMT
+Server: Apache/2.2.4 (Linux/SUSE)
+Last-Modified: Fri, 23 Nov 2007 08:43:23 GMT
+ETag: "10923a-1ad-9b79c0c0"
+Accept-Ranges: bytes
+Content-Length: 429
+Connection: close
+Content-Type: text/html
+
+<html>
+<head>
+<script type="text/javascript">
+
+function new_window(adress) {
+	timeMGM = window.open(adress,"Zeiterfassung","resizable=1,width=1020,height=700,left=100,top=100");
+	timeMGM.focus();
+}
+
+new_window('start.php');
+
+</script>
+</head>
+<body>
+<br><br><br><br><br><br><br>
+<div align="center"><a href="start.php" onClick="new_window(this.href); return false">Programm starten!</a></div>
+
+</body>
+</html>

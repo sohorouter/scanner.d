@@ -1,0 +1,126 @@
+HTTP/1.1 403 Access Forbidden
+Server: Microsoft-IIS/5.0
+Date: Sun, 12 Sep 2010 01:03:56 GMT
+Content-Length: 3758
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html dir=ltr>
+
+<head>
+<style> a:link			{font:8pt/11pt verdana; color:FF0000} a:visited		{font:8pt/11pt verdana; color:#4e4e4e}
+</style>
+
+<META NAME="ROBOTS" CONTENT="NOINDEX">
+
+<title>Die Seite muss über einen sicheren Channel angezeigt werden</title>
+
+<META HTTP-EQUIV="Content-Type" Content="text-html; charset=iso-8859-1">
+</head>
+
+<script>
+function Homepage(){
+<!--
+// in real bits, urls get returned to our script like this:
+// res://shdocvw.dll/http_404.htm#http://www.DocURL.com/bar.htm
+
+	//For testing use DocURL = "res://shdocvw.dll/http_404.htm#https://www.microsoft.com/bar.htm"
+	DocURL=document.URL;
+
+	//this is where the http or https will be, as found by searching for :// but skipping the res://
+	protocolIndex=DocURL.indexOf("://",4);
+
+	//this finds the ending slash for the domain server
+	serverIndex=DocURL.indexOf("/",protocolIndex + 3);
+
+	//for the href, we need a valid URL to the domain. We search for the # symbol to find the begining
+	//of the true URL, and add 1 to skip it - this is the BeginURL value. We use serverIndex as the end marker.
+	//urlresult=DocURL.substring(protocolIndex - 4,serverIndex);
+	BeginURL=DocURL.indexOf("#",1) + 1;
+	urlresult=DocURL.substring(BeginURL,serverIndex);
+
+	//for display, we need to skip after http://, and go to the next slash
+	displayresult=DocURL.substring(protocolIndex + 3 ,serverIndex);
+	InsertElementAnchor(urlresult, displayresult);
+}
+
+function HtmlEncode(text)
+{
+    return text.replace(/&/g, '&amp').replace(/'/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function TagAttrib(name, value)
+{
+    return ' '+name+'="'+HtmlEncode(value)+'"';
+}
+
+function PrintTag(tagName, needCloseTag, attrib, inner){
+    document.write( '<' + tagName + attrib + '>' + HtmlEncode(inner) );
+    if (needCloseTag) document.write( '</' + tagName +'>' );
+}
+
+function URI(href)
+{
+    IEVer = window.navigator.appVersion;
+    IEVer = IEVer.substr( IEVer.indexOf('MSIE') + 5, 3 );
+
+    return (IEVer.charAt(1)=='.' && IEVer >= '5.5') ?
+        encodeURI(href) :
+        escape(href).replace(/%3A/g, ':').replace(/%3B/g, ';');
+}
+
+function InsertElementAnchor(href, text)
+{
+    PrintTag('A', true, TagAttrib('HREF', URI(href)), text);
+}
+
+//-->
+</script>
+
+<body bgcolor="FFFFFF">
+
+<table width="410" cellpadding="3" cellspacing="5">
+
+  <tr>
+    <td align="left" valign="middle">
+	<h1 style="COLOR:000000; FONT: 13pt/15pt verdana"><!--Problem-->Die Seite muss über einen sicheren Channel angezeigt werden</h1>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="400" colspan="2"> <font style="COLOR:000000; FONT: 8pt/11pt verdana">Zur Anzeige der von Ihnen gewünschten Seite ist die Verwendung von "https" in der Adresse erforderlich.</td>
+  </tr>
+
+  <tr>
+    <td width="400" colspan="2"> <font style="COLOR:000000; FONT: 8pt/11pt verdana">
+
+	<hr color="#C0C0C0" noshade>
+
+    <p>Versuchen Sie Folgendes:</p>
+
+	<ul>
+      <li>Versuchen Sie es durch Eingabe von <strong>https://</strong> am Anfang der Adresse, die Sie zu erreichen versuchen, erneut.</li>
+    </ul>
+
+    <h2 style="font:8pt/11pt verdana; color:000000">HTTP 403.4 - Verboten: SSL erforderlich<br> Internet-Informationsdienste</h2>
+
+	<hr color="#C0C0C0" noshade>
+
+	<p>Technische Informationen (für den Support)</p>
+
+<ul>
+<p>
+<li>Ursache:<br> Dieser Fehler weist darauf hin, dass die Seite, auf die Sie zuzugreifen versuchen, durch SSL (Secure Sockets Layer) abgesichert ist.</p>
+
+<p>
+<li>Weitere Informationen:<br> <a href="http://www.microsoft.com/germany/support/" target="_blank">Microsoft Support</a>
+</li></p>
+
+</ul>
+
+	</font></td>
+  </tr>
+
+</table>
+</body>
+</html>

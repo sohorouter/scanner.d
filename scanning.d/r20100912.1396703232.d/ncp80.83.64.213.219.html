@@ -1,0 +1,63 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:46:06 GMT
+Server: Apache/2.2.0 (Linux/SUSE)
+X-Powered-By: PHP/5.1.2
+Set-Cookie: PHPR81441=m5iqon9gkqvvolabjvce9m0863; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+'Content-Type: text/html; charset=ISO-8859-1'
+Content-Length: 3019
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>PHProjekt: Login</title>
+<link type="text/css" rel="stylesheet" media="screen" href="./layout/default/default.css" />
+<link type="text/css" rel="stylesheet" media="print" href="./layout/default/default_print.css" />
+<!--[if gte IE 5]><link type="text/css" rel="stylesheet" media="screen" href="./layout/default/default_ie.css" /><![endif]-->
+<script type="text/javascript" >var SID = "PHPR81441=m5iqon9gkqvvolabjvce9m0863";</script>
+<script type="text/javascript" src="/lib/javascript/phprojekt.js"></script>
+<link type="text/css" rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body dir='ltr'>
+<div id='alternative_view'></div><div id="global-main">
+<a style="display:none" href="#content" title="go to content">go to content</a>
+<br /><br />
+<div title="PHProjekt Login" style="background-color:#DC6417;height:41px;width:100%;">
+<img src="/layout/default/img/logo.png" alt="PHProjekt Logo" /></div>
+
+<br />
+
+<div style="text-align:center;">
+    <div id="logo" style="text-align:center;""></div>
+    <form action="./index.php" method="post" name="frm">
+        <input type="hidden" name="loginform" value="1" />
+        <input type="hidden" size="100" name="return_path" value="%2F%2F" />
+        <fieldset style="width: 35em;height: 10em;padding:0em;margin:auto;">
+            <legend>Log in, please</legend>
+            <label for="loginstring" style="clear:both;float: left;text-align: right;width: 6.3em;margin: 0.4em;"> Login</label>
+            <input style=" font-size:1em;float: left;text-align: left;margin: 0.2em;" type="text" tabindex="1" name="loginstring" id="loginstring" size="33" title="Please enter your user name here." /><br />
+            <label for="user_pw" style="clear:both;float: left;text-align: right;width: 6.3em;margin: 0.4em;">Password</label>
+            <input style=" font-size:1em;float: left;text-align: left;margin: 0.2em;" type="password" tabindex="2" name="user_pw" id="user_pw" size="33" title="Please enter your password here." /><br style="clear:both"/>
+            <span style=" font-size:1em;float: left;text-align: left;margin: 0.2em;margin-left: 6.9em;"><input  type="checkbox" tabindex="2" name="remember_me" id="remember_me" title="Remember me on this computer." /> Remember me on this computer</span><br style="clear:both"/>
+            <input class="button" style="float: left;text-align: left;margin: 0.2em;margin-left: 6.9em;" type="submit" value="go" title="Click here to login." />
+        </fieldset>
+    </form>
+    </div>
+
+<script type="text/javascript">
+<!--
+if (document.frm.loginstring.value == "") {
+    document.frm.loginstring.focus();
+}
+//-->
+</script>
+
+</div>
+</body>
+</html>

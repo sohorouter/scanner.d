@@ -1,0 +1,2060 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:42:55 GMT
+Server: Apache/2.0.49 (Linux/SuSE)
+X-Powered-By: PHP/4.4.0
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<html>
+<head>
+<title>aNTG - another Network Traffic Grapher @ PLUTO</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<div align="center">
+
+<h3>
+eth0 - 
+	September
+2010
+</h3>
+
+<table border="0" cellspacing="0" cellpadding="0" width="80%">
+		<tr>
+		<td>
+			<table cellpadding="3" cellspacing="0" border="0"  width="100%">
+				<tr>
+				
+					<!-- year tab -->
+					<td 
+													bgcolor="#f5f5f5" 
+						 
+						width="16%" colspan="0" rowspan="0"  background="images/tab.gif">
+						<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;view=year">
+							<b>Year</b>
+						</a>
+					</td>
+					
+					<!-- month tab -->
+					<td 
+													bgcolor= "#e0e0e0"
+												width="16%" colspan="0" rowspan="0" background="images/tab.gif">
+						<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;view=month">
+							<b>Month</b>
+						</a>
+					</td>
+					
+					<!-- day tab -->
+					<td 
+													bgcolor="#f5f5f5" 
+												width="16%" colspan="0" rowspan="0" background="images/tab.gif" >
+						<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=12&amp;view=day">
+							<b>Day</b>
+						</a>
+					</td>
+					
+					<!-- spacer tab -->
+					<td bgcolor="#ffffff" width="20%"  align="left"  colspan="0" rowspan="0">
+						&nbsp;
+					</td>
+					
+					<!-- previous tab -->
+					<td bgcolor="#f5f5f5" width="16%"  align="left"  colspan="0" rowspan="0" background="images/tab.gif">
+						<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=8&amp;view=month" ><b>&larr;&nbsp;previous</b></a>
+					</td>
+					
+					<!-- next tab -->
+					<td bgcolor="#f5f5f5" width="16%"  align="left"  colspan="0" rowspan="0" background="images/tab.gif">
+						<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=10&amp;view=month" ><b>next&nbsp;&rarr;</b></a>
+					</td>
+					
+				</tr>
+
+				<!-- interface, day/month/year form row -->
+				<form action="index.php" method="POST">
+				<input type="hidden" name="view" value="month">
+				
+				<tr>
+					<th colspan="6" rowspan="0" class="thead">
+						<p><br>
+							<div align="left">
+								interface: 
+									<select name="sel_if" size="1">
+										<option label="*" value="%">*</option>
+<option label="eth0" value="eth0" selected="selected">eth0</option>
+<option label="eth1" value="eth1">eth1</option>
+
+									</select>
+																									month:
+									<select name="sel_month" size="1">
+										<option label="current" value="0">current</option>
+<option label="Jan" value="1">Jan</option>
+<option label="Feb" value="2">Feb</option>
+<option label="Mar" value="3">Mar</option>
+<option label="Apr" value="4">Apr</option>
+<option label="May" value="5">May</option>
+<option label="Jun" value="6">Jun</option>
+<option label="Jul" value="7">Jul</option>
+<option label="Aug" value="8">Aug</option>
+<option label="Sep" value="9" selected="selected">Sep</option>
+<option label="Oct" value="10">Oct</option>
+<option label="Nov" value="11">Nov</option>
+<option label="Dec" value="12">Dec</option>
+
+									</select>
+																year: 
+									<select name="sel_year" size="1">
+										<option label="current" value="current">current</option>
+<option label="2005" value="2005">2005</option>
+<option label="2006" value="2006">2006</option>
+<option label="2007" value="2007">2007</option>
+<option label="2008" value="2008">2008</option>
+<option label="2009" value="2009">2009</option>
+<option label="2010" value="2010" selected="selected">2010</option>
+
+									</select>&nbsp;
+								<input name="submit" value="Graph" type="submit"><br><br>
+							</div>
+						</p>
+					</th>
+				</tr>
+				
+				</form>
+				
+			</table>
+		</td>
+	</tr>
+</table>
+
+<p></p>
+
+<!-- Total throughput Table  -->
+<table border="1" style="border: 1px solid black" cellspacing="0" cellpadding="0" width="80%">
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="3" border="0" style="border: 0px solid black" width="100%">
+				<tr>
+					<th 
+						 
+							colspan="31"
+											 	rowspan="0" class="dnum">
+						<div align="center">
+							Throughput for 'eth0'
+												  			in September 2010:
+												  		42624.7 Megabytes
+						</div>
+					</th>
+				</tr>
+
+                <!-- Draw the vertical bars -->
+                    <tr>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="56.5361449834">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>3100</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="79.1828348906">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>4342</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="89.3646740469">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>4900</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="36.5451593721">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>2004</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="42.4085750379">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>2326</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="98.6888741042">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>5412</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="100">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>5484</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="90.349059959">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>4954</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="69.9673050853">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>3837</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="75.7274927613">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>4153</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="36.5740848751">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>2006</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="1.95620296805">
+                                    <tr align="center">
+                                                                                    <td valign="bottom" height="100%" bgcolor="#ffcc33"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                        <b>107</b>
+                                                                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#ffffff" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#ffffff"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                                
+                            <td height="100" bgcolor="#f0f0f0" valign="bottom">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" height="0">
+                                    <tr align="center">
+                                                                                    <td height="100%" bgcolor="#f0f0f0"></td>
+                                                                            </tr>
+                                    <tr align="center">
+                                        <td style="font-size: 9px;">
+                                                                                                                                </td>
+                                    </tr>
+                                </table>
+                            </td>
+                                            </tr>
+
+				<tr align="center">
+			        											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								01
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								02
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								03
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								<b>04<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								<b>05<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								06
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								07
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								08
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								09
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								10
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								<b>11<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								<b>12<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								13
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								14
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								15
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								16
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								17
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								<b>18<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								<b>19<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								20
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								21
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								22
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								23
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								24
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								<b>25<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								<b>26<b>
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								27
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								28
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#ffffff" style="font-size: 9px;">
+								29
+								
+								</td>
+											
+							 
+								<td width="3.33333333333%" colspan="0" rowspan="0" bgcolor="#f0f0f0" style="font-size: 9px;">
+								30
+								
+								</td>
+									</tr>
+								<tr>
+					<th 
+						 
+							colspan="31"
+												rowspan="0" class="dnum">
+						<div align="center"><font size="-1"><strong>values in Megabytes</strong></font></div>
+					</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<p></p>
+
+<table border=1 style="border: 1px solid black" cellspacing="0" cellpadding="0" width="80%">
+	<tr>
+		<td>
+			<table border=0  cellspacing="3" cellpadding="0" width="100%">
+				<tr>
+					<th class="dnum" colspan="5" rowspan="0">
+						<div align="center">Input versus Output</div>
+					</th>
+				<tr>
+					<th width="20%" class="dnum">
+						<div align="center">
+							 
+								Days
+									
+						</div>
+					</th>
+					<td width="10%" colspan="0" rowspan="0" align="right" bgcolor="#ffcc33">
+						<strong>Total (MB)</strong>
+					</td>
+					<td width="10%" align="right" bgcolor="#cc99cc">
+					  <strong>In (MB)</strong>
+					</td>
+					<td width="10%" align="right" bgcolor="#99cccc">
+					  <strong>Out (MB)</strong>
+					</td>
+					<th class="dnum">&nbsp;</th>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=1&amp;view=day">Wed&nbsp;&nbsp;01</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							3100.3
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							903.7
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							2196.6
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="21.6835820956%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="52.708516095%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=2&amp;view=day">Thu&nbsp;&nbsp;02</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							4342.1
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							1189.4
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							3152.8
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="28.5391169604%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="75.6522323068%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=3&amp;view=day">Fri&nbsp;&nbsp;03</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							4900.5
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							1238.1
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							3662.3
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="29.7095462131%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="87.8793981413%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=4&amp;view=day"><b>Sat&nbsp;&nbsp;04</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							2004.0
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							531.0
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							1473.0
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="12.7422662378%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="35.3450429552%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=5&amp;view=day"><b>Sun&nbsp;&nbsp;05</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							2325.5
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							633.9
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							1691.7
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="15.210157389%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="40.5924248222%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=6&amp;view=day">Mon&nbsp;&nbsp;06</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							5411.8
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							1347.3
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							4064.5
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="32.328068479%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="97.5299615446%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=7&amp;view=day">Tue&nbsp;&nbsp;07</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							5483.7
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							1316.2
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							4167.5
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="31.5832521167%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="100%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=8&amp;view=day">Wed&nbsp;&nbsp;08</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							4954.5
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							1143.5
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							3811.0
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="27.4383412107%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="91.4458901403%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=9&amp;view=day">Thu&nbsp;&nbsp;09</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							3836.8
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							1039.3
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							2797.4
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="24.9392534042%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="67.1260020455%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=10&amp;view=day">Fri&nbsp;&nbsp;10</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							4152.7
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							883.1
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							3269.6
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="21.189194922%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="78.4555027997%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=11&amp;view=day"><b>Sat&nbsp;&nbsp;11</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							2005.6
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							512.1
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							1493.5
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="12.2883012666%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="35.8370690439%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=12&amp;view=day"><b>Sun&nbsp;&nbsp;12</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							107.3
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							 30.0
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							 77.3
+						</td>	
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0.719315011685%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="1.85472047168%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=13&amp;view=day">Mon&nbsp;&nbsp;13</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=14&amp;view=day">Tue&nbsp;&nbsp;14</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=15&amp;view=day">Wed&nbsp;&nbsp;15</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=16&amp;view=day">Thu&nbsp;&nbsp;16</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=17&amp;view=day">Fri&nbsp;&nbsp;17</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=18&amp;view=day"><b>Sat&nbsp;&nbsp;18</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=19&amp;view=day"><b>Sun&nbsp;&nbsp;19</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=20&amp;view=day">Mon&nbsp;&nbsp;20</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=21&amp;view=day">Tue&nbsp;&nbsp;21</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=22&amp;view=day">Wed&nbsp;&nbsp;22</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=23&amp;view=day">Thu&nbsp;&nbsp;23</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=24&amp;view=day">Fri&nbsp;&nbsp;24</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=25&amp;view=day"><b>Sat&nbsp;&nbsp;25</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=26&amp;view=day"><b>Sun&nbsp;&nbsp;26</b></a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=27&amp;view=day">Mon&nbsp;&nbsp;27</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=28&amp;view=day">Tue&nbsp;&nbsp;28</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#ffffff">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=29&amp;view=day">Wed&nbsp;&nbsp;29</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#ffffff">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  					
+				<tr>
+					<td align="right" bgcolor="#f0f0f0">
+						 
+							<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=30&amp;view=day">Thu&nbsp;&nbsp;30</a>
+											</th>
+											<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						<td valign="top" class="dnum" bgcolor="#f0f0f0">
+							na
+						</td>
+						
+						
+					<td valign="middle">
+						<table border=0 cellspacing=0 cellpadding=0 width="100%">
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#cc99cc"  height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr align=left>
+								<td valign="middle">
+									<table border="0" cellspacing="0" cellpadding="0" width="0%">
+										<tr>
+											<td style="font-size: 5px" valign="top" bgcolor="#99cccc" height="2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			  				<tr>
+					<th><div align="center">Totals</div></th>
+					<th class="dnum">
+													42624.7
+											</th>
+					<th class="dnum">
+													10767.5
+											</th>
+					<th class="dnum">
+													31857.2
+											</th>
+					<th class="dnum">&nbsp;</th>
+				</tr>
+			</table>
+		</tr>
+	</td>
+</table>
+
+
+<p></p>
+
+<table border="1" style="border: 1px solid black" cellspacing="0" cellpadding="0" width="80%">
+	<tr>
+		<td>
+			<table border="0" cellspacing="3" cellpadding="0" width="100%">
+			
+				<tr>
+					<th colspan="5" class="thead">
+						Statistical Facts
+					</th>
+				</tr>
+				<tr>
+					<th class="dnum">&nbsp;</th>
+					<td align="right" bgcolor="#cc99cc">
+						<b>In (MB)</b>
+					</td>
+					<td align="right" bgcolor="#99cccc">
+						<b>Out (MB)</b>
+					</td>
+				</tr>
+								<tr bgcolor="#ffffff">
+					<th class="dnum">Mean &plusmn; sdev</td>
+					<td align="right">
+													(897.29 &plusmn; 383.47) MB
+												</td>
+					<td align="right">
+													(2654.76 &plusmn; 1217.92) MB
+											</th>
+				</tr>
+                				<tr bgcolor="#f0f0f0">
+					<th class="dnum">Median</th>
+					<td align="right">
+						                            971.49 MB
+											</td>
+					<td align="right">
+						                            2975.11 MB
+											</td>
+				</tr>
+
+
+								<tr bgcolor="#ffffff">
+					<th class="dnum">Min</th>
+					<td align="right">
+													<b>
+							29.98MB
+															<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=12&amp;view=day">
+									on the 12th
+								</a>
+														</b>
+											</td>
+					<td align="right">
+													<b>
+							77.29MB
+															<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=12&amp;view=day">
+									on the 12th
+								</a>
+														</b>
+											</td>
+				</tr>
+
+								<tr bgcolor="#ffffff">
+					<th class="dnum">Max</th>
+					<td align="right">
+													<b>
+							1347.26MB
+															<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=6&amp;view=day">
+									on the 6th
+								</a>
+														</b>
+											</td>
+					<td align="right">
+													<b>
+							4167.46MB
+															<a href="index.php?sel_if=eth0&amp;sel_year=2010&amp;sel_month=9&amp;sel_day=7&amp;view=day">
+									on the 7th
+								</a>
+														</b>
+											</td>
+				</tr>
+
+			</table>
+		</tr>
+	</td>
+</table>
+
+<br>Generated on 2010-09-12 at 02:09:56 CEST by <a href="http://www.thebobo.com/code/antg">aNTG</a> version 2.2
+
+</div>
+</body>
+</html>

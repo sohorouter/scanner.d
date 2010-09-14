@@ -1,0 +1,53 @@
+HTTP/1.0 200 OK
+Connection: Close
+Server: SwyxConnect 1722 (Annex B) 7.80.0081 / 06.01.2010
+Cache-Control: no-cache
+Expires: Thu, 31 Dec 1999 00:00:00 GMT
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" >
+<html>
+<head>
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<title>TNT_Sattled - Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script type="text/javascript">
+function replaceParam(){
+  var newParam = "Enabled";
+  document.loginform.action = document.loginform.action.replace(/Disabled$/,newParam);
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="/css/login.css">
+    </head><body  ><div class="header">
+<p class="headerp">SwyxConnect 1722 (Annex B)</p>
+</div>
+<div class="logincontent">
+<div class="login">
+ <h1> TNT_Sattled </h1>
+<div id="leftDiv">
+</div>
+<div id="rightDiv">
+ <form method="POST" action="/?JavaScriptDisabled" name="loginform" onsubmit="replaceParam()">
+   <table border="0" cellpadding="3" cellspacing="0" class="centeredTable">
+     <tr>
+       <td align="left"> Password</td>
+       <td>  <input name="passwort" type="password" class="Feld" size="30" maxlength="15"> </td>
+     </tr>
+     <tr>
+       <td></td><td><button TYPE="submit"class="Button" accesskey="o" ><span style="text-decoration:underline">O</span>k</button>
+       </td>
+     </tr>
+   </table>
+ </form>
+<script type="text/javascript">
+  document.forms[0].elements[0].focus();
+</script>
+<p style="color:red">Caution! Your are using an unencrypted connection. The password will be transmitted as plain text.</p>
+<a href="https://83.65.15.211">Encrypted connection.</a>
+</div>
+<div style="clear:both"></div></div>
+    </div>
+  </body>
+</HTML>

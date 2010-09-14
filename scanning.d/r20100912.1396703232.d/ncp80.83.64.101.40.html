@@ -1,0 +1,92 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:51:25 GMT
+Server: Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 PHP/5.2.6-1+lenny8 with Suhosin-Patch
+X-Powered-By: PHP/5.2.6-1+lenny8
+Set-Cookie: PHPSESSID=8114dbfc3d70da6f4d2ae6e36530ed9d; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Length: 2939
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>intern::svschwechat.at::login</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<link rel="shortcut icon" href="/img/favicon.ico" />
+
+<meta name="author" content="" />
+<meta name="publisher" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="page-topic" content="" />
+<meta name="page-type" content="" />
+<meta name="audience" content="Alle" />
+<meta http-equiv="content-language" content="de" />
+<meta name="robots" content="index, follow" />
+<meta name="DC.Creator" content="" />
+<meta name="DC.Publisher" content="" />
+<meta name="DC.Rights" content="" />
+<meta name="DC.Description" content="" />
+<meta name="DC.Language" content="de" />
+
+<style type="text/css">
+<!--
+    @import "/library/dojoroot/dijit/themes/tundra/tundra.css";
+-->
+</style>
+
+<script type="text/javascript" src="/library/dojoroot/dojo/dojo.js"></script>
+
+<script type="text/javascript">
+//<!--
+dojo.require("dijit.form.TextBox");
+    dojo.require("dijit.form.ValidationTextBox");
+    dojo.require("dijit.form.Button");
+    dojo.require("dijit.form.Form");
+    dojo.require("dojo.parser");
+dojo.addOnLoad(function() {
+    dojo.forEach(zendDijits, function(info) {
+        var n = dojo.byId(info.id);
+        if (null != n) {
+            dojo.attr(n, dojo.mixin({ id: info.id }, info.params));
+        }
+    });
+    dojo.parser.parse();
+});
+var zendDijits = [{"id":"username","params":{"trim":"true","required":"true","dojoType":"dijit.form.TextBox"}},{"id":"password","params":{"trim":"true","required":"true","dojoType":"dijit.form.ValidationTextBox"}},{"id":"submit","params":{"label":"Log In","dojoType":"dijit.form.Button"}},{"id":"login_form","params":{"dojoType":"dijit.form.Form"}}];
+//-->
+
+</script>
+<link rel="home" href="http://intern.svschwechat.at" />
+
+<link href="/styles/login.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="tundra">
+<div id="backlink">
+	<a href="http://www.svschwechat.at">&laquo; zurück zu svschwechat.at</a>
+</div>
+<div id="site">
+	<div id="login">
+		<h1><span>intern::svschwechat.at</span></h1>
+		<form id="login_form" action="/index/login/" method="post"><dl class="zend_form_dojo">
+<dt><label for="username" class="required">Benutzername</label></dt>
+<dd>
+<input id="username" name="username" value="" type="text"></dd>
+<dt><label for="password" class="required">Passwort</label></dt>
+<dd>
+<input id="password" name="password" value="" type="password"></dd>
+<dt>&nbsp;</dt><dd>
+<input id="submit" name="submit" value="Log In" type="submit"></dd></dl></form>		<a href="#">Haben Sie Ihr Passwort vergessen?</a>
+	</div>
+</div>
+</body>
+</html>

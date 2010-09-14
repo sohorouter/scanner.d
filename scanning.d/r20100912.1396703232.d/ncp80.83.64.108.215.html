@@ -1,0 +1,68 @@
+HTTP/1.1 500 Die Anweisung wurde geschlossen.
+Set-Cookie: JSESSIONID=1btpvxo012eg4;Path=/
+Content-Type: text/html;charset=ISO-8859-1
+Cache-Control: must-revalidate,no-cache,no-store
+Content-Length: 3885
+Server: Jetty(7.0.0.v20091005)
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Error 500 Die Anweisung wurde geschlossen.</title>
+</head>
+<body><h2>HTTP ERROR 500</h2>
+<p>Problem accessing /. Reason:
+<pre>    Die Anweisung wurde geschlossen.</pre></p><h3>Caused by:</h3><pre>org.postgresql.util.PSQLException: Die Anweisung wurde geschlossen.
+	at org.postgresql.ds.jdbc23.AbstractJdbc23PooledConnection$StatementHandler.invoke(AbstractJdbc23PooledConnection.java:444)
+	at $Proxy25.setString(Unknown Source)
+	at org.tranql.connector.jdbc.PreparedStatementHandle.setString(PreparedStatementHandle.java:319)
+	at net.hexdust.shop.multitenant.URLFilter.readData(URLFilter.scala:118)
+	at net.hexdust.shop.multitenant.URLFilter.doFilter(URLFilter.scala:41)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1182)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:424)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:118)
+	at org.eclipse.jetty.server.session.SessionHandler.handle(SessionHandler.java:179)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:930)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:361)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:864)
+	at org.apache.geronimo.jetty7.handler.GeronimoWebAppContext.doScope(GeronimoWebAppContext.java:107)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:116)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:243)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:112)
+	at org.eclipse.jetty.server.Server.handle(Server.java:333)
+	at org.eclipse.jetty.server.HttpConnection.handleRequest(HttpConnection.java:552)
+	at org.eclipse.jetty.server.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:979)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:533)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:203)
+	at org.eclipse.jetty.server.HttpConnection.handle(HttpConnection.java:399)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:437)
+	at org.apache.geronimo.pool.ThreadPool$1.run(ThreadPool.java:214)
+	at org.apache.geronimo.pool.ThreadPool$ContextClassLoaderRunnable.run(ThreadPool.java:344)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+</pre>
+<hr /><i><small>Powered by Jetty://</small></i><br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+<br/>                                                
+
+</body>
+</html>

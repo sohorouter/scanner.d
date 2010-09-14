@@ -1,0 +1,24 @@
+HTTP/1.0 200 OK
+Date: Sun, 12 Sep 2010 23:14:04 GMT
+Server: Boa/0.94.13
+Connection: close
+Content-Length: 452
+Last-Modified: Mon, 04 Feb 2008 10:53:14 GMT
+Content-Type: text/html
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Please Insert Your Account</title>
+</head>
+<body  bgcolor="#000000" style="text-align: right;">
+<script language="JavaScript">
+  var Dx = screen.availWidth;
+  var Dy = screen.availHeight;
+  var Url="";
+  if(Dx < 800 && Dy < 600)
+    Url = "/cgi-bin/xweb500.cgi?res=0";
+  else
+    Url = "/cgi-bin/xweb500.cgi?res=1";
+  window.location=Url;
+</script>
+</body></html>

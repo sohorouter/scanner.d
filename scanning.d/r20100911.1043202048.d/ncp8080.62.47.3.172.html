@@ -1,0 +1,97 @@
+HTTP/1.0 200 OK
+Server: Apache/0.6.5
+Pragma: no-cache
+Date: Sun, 01 Jan 2001 00:00:00 GMT
+Expires: Sun, 01 Jan 2001 00:00:00 GMT
+Cache-Control: max-age=0, must-revalidate
+Connection: close
+Content-type: text/html
+
+<html>
+<head>
+<title>Log In</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script Language="JavaScript">
+function getQueryString(key) {
+	var s = document.URL.split("?");
+	if (s.length == 2) {
+		var ss = s[1].split("&");
+		for (i=0; i<ss.length; i++) {
+			var sss = ss[i].split("=");
+			if (sss.length == 2 && sss[0] == key) {
+				//title = sss[1].replace("+", " ");
+				//title = title.replace("%20", " ");
+				return decodeURIComponent(sss[1]);
+			}
+		}
+	}
+	return "";
+}
+
+var login_fail = parseInt(getQueryString("fail"));
+function DoLogin() {
+	document.theForm.submit();
+}
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+<form action="/cgi-bin/login.exe" method="post" name="theForm"> <!-- login.exe is bypassed -->
+<table width=761 border=0 cellpadding=0 cellspacing=0 align=center>
+ <tr><td width=761 height=64 colspan=2 nowrap></td></tr>
+ <tr>
+  <td width=761 align=center valign=top>
+    <table border=0 cellpadding=0 cellspacing=1 width=590 bgcolor="#838383">
+     <tr>
+      <td>
+       <table border=0 cellpadding=20 cellspacing=0 width=589 bgcolor="#FFFFFF">
+        <tr>
+         <td align=center valign=top>
+          <table cellspacing=1 border=0 cellpadding=4 align=center id="uiViewBodyTable" bgcolor="#757575" width=300>
+           <tr><td colspan=4 align=center class="header" bgcolor="#FFFFFF">Log In</td></tr>
+           <tr><td colspan=4 bgcolor="#FFFFFF" align=left><font size=2>Please log in to continue.</font></td></tr>
+           <tr><td height=5 nowrap colspan=4 bgcolor="#FFFFFF"></td></tr>
+           <tr>
+            <td width=15 nowrap bgcolor=#6666CC></td>
+            <td nowrap align=right bgcolor="#FFFFFF"><font size=2><b>Username: </b></font></td>
+            <td align=left bgcolor="#FFFFFF"><INPUT type="text" name="username" maxLength=32 size=20></td>
+            <td width=15 nowrap bgcolor=#6666CC></td>
+           </tr>
+           <tr>
+            <td width=15 nowrap bgcolor=#6666CC></td>
+            <td nowrap align=right bgcolor="#FFFFFF"><font size=2><b>Password: </b></font></td>
+            <td align=left bgcolor="#FFFFFF"><input type="password" name="password" value="" maxlength=32 size="20"></td>	
+            <td width=15 nowrap bgcolor=#6666CC></td>
+           </tr>
+           <tr>
+            <td colspan=4 align=left bgcolor="#FFFFFF" height=26>
+				<p align="center">
+				<input type="image" src="/images/login.gif" alt="Login" border=0 onclick="DoLogin()" width="82" height="30">
+            </td>
+           </tr>
+          </table>
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>	
+  </td>
+ </tr>
+</table>
+<input type=hidden name=exec_cgis value="login_CGI">
+</form>
+<script language=javascript>
+	if(login_fail == 1) {
+		alert("Login fail!");
+		document.write("<p align='center'><font color='#FF0000'>Login fail!</font>");
+	}
+</script>
+</body>
+<script language="JavaScript">
+document.theForm.username.focus();
+</script>
+</p>
+
+</html>

@@ -1,0 +1,111 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 01:06:58 GMT
+Server: Apache/2.2.6 (Win32) DAV/2 mod_ssl/2.2.6 OpenSSL/0.9.8e mod_autoindex_color PHP/5.2.4
+X-Powered-By: PHP/5.2.4
+Content-Length: 3409
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html
+	 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>WebFTP Interface</title>
+        	<link rel="stylesheet" href="styles/simple.css" type="text/css"/>
+    		
+	<style type="text/css" media="all">@import url("http://www.fugroaustria.at/templates/fugro/css/joomla.css");</style>
+  <style type="text/css" media="all">@import url("http://www.fugroaustria.at/templates/fugro/css/template_css.css");</style>
+
+</head>
+<body>
+  <div id="header_outer" >
+  <a href="http://www.fugroaustria.at/index.php?option=com_frontpage&amp;Itemid=1" class="mainlevel_footer" >
+   <div id="header" >
+    <div class="right">
+    </div>  <!-- right -->
+   </div>  <!-- Header -->
+   </a>
+  </div>  <!-- header_outer -->
+  <div id="outer" >  <!--  zentriert den gesamten main-block  -->
+  
+<div class="title" onclick="window.location='./';">&nbsp;WebFTP Interface </div><br>&nbsp;
+
+<form action="ftp.php" method="post">
+<table>
+    <tr><td class="loginName">
+        Host    </td><td class="loginValue">
+	Fugro Austria GmbH FTP Server
+	<input type="hidden" name="address" value="localhost" />
+	<!--
+        			<select name="address">
+									<option value="localhost">localhost</option>
+								</select>
+				-->
+    </td><td class="loginExample">
+            </td></tr>
+
+        
+    <tr><td class="loginName">
+        Benutzername    </td><td class="loginValue">
+        <input type="text" name="user" maxlength="50" size="20"/>
+    </td><td class="loginExample">
+            </td></tr>
+
+    <tr><td class="loginName">
+        Passwort    </td><td class="loginValue">
+        <input type="password" name="pass" maxlength="50" size="20"/>
+    </td><td class="loginExample">
+    </td></tr>
+
+	<tr><td class="loginName">
+		Sprache	</td><td class="loginValue">
+		<select name="language">
+								<option value="de">Deutsch</option>
+										<option value="en">English</option>
+							</select>
+	</td><td class="loginExample">
+	</td></tr>
+	
+	<!-- by HR -->
+	<tr><td>&nbsp;</td><td><input type="hidden" name="style" value="simple" /></td></tr>
+	
+	<!-- by HR
+	<tr>
+		<td class="loginName">
+			&nbsp; 		</td>
+		<td class="loginValue">
+			<select name="style">
+				<option value="simple selected="selected">Simple</option>
+							</select>
+		</td>
+		<td class="loginExample">
+		</td>
+	</tr>
+	-->
+	</table>
+
+<br />
+<input type="submit" value="Anmelden" />
+</form>
+<div class="footer">
+	<br><br>&nbsp;
+</div>
+
+   </div>  <!-- outer -->
+   <div class="clr"></div>   <!-- close inner and outer -->
+   <div id="footer" >
+    		<div class="moduletable_footer">
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tr><td nowrap="nowrap">		
+		<a href="http://wonko.com/notftp/">NotFTP</a> is <a href="http://www.opensource.org/">OSI Certified</a> open source software distributed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.<br/>Copyright &copy; 2002, 2003 by Ryan Grove. All rights reserved.		</td></tr>
+		</table>
+		</div>		
+		   </div>  <!-- footer -->
+ 
+  </div>  <!--  wrapper -->
+ 
+		<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1;"></div>
+</body>
+</html>

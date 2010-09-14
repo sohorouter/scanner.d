@@ -1,0 +1,304 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Last-Modified: Tue, 10 Aug 2010 14:08:27 GMT
+Accept-Ranges: bytes
+ETag: "40413f819538cb1:0"
+Server: Microsoft-IIS/7.0
+X-Powered-By: ASP.NET
+Date: Sun, 12 Sep 2010 00:47:05 GMT
+Connection: close
+Content-Length: 11606
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+            <meta http-equiv="content-type" content="text/html" charset="UTF-8"  />
+            <title>Tour Operator Gateway</title>
+            
+        <style type="text/css">
+             html, body {
+                margin: 0;
+                padding: 0;
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10pt;
+                color: white;
+            }
+            .main-back {
+                background: repeat-x url(images/shorex_back.png) 0 0;                 
+                background-color: #7FD4F6;
+            }
+            #login-logo {
+                position: relative;
+                float: left;
+                left: 30px;
+                top: 50px;        
+                background: no-repeat url(images/CC_logo.png) 0 0;
+                width: 292px;
+                height: 109px;               
+            }
+            #login-balloon {
+                position: relative;
+                float: right;
+                right: 70px;
+                top: 0px;        
+                background: no-repeat url(images/login_balloon.png) 0 0;
+                width: 347px;
+                height: 107px;
+            }
+            #login-box {
+                position: relative;
+                float: left;
+                left: 70px;
+                top: 115px;        
+                background: no-repeat url(images/login_box.png) 0 0;
+                width: 292px;
+                height: 164px;
+                clear: left;
+            }    
+            #login-image {
+                position: relative;
+                float: right;
+                right: 70px;
+                top: 20px;        
+                background: no-repeat url(images/login_image.png) 0 0;
+                width: 523px;
+                height: 401px;
+                clear: right;
+            }
+            #login-text {
+                position: relative;
+                float: left;
+                left: 110px;
+                top: 215px;        
+                background: no-repeat url(images/login_text.png) 0 0;
+                width: 470px;
+                height: 84px;
+                clear: left;
+            }       
+            #login-companies {
+                position: relative;
+                float: left;
+                left: 128px;
+                top: 75px;        
+                background: no-repeat url(images/login_companies.png) 0 0;
+                width: 749px;
+                height: 140px;
+            }
+            #login-footer {
+                position: relative;
+                float: left;
+                top: 90px;
+                width: 100%;
+                text-align: center;                
+                font-size: 8pt; 
+            }   
+            #login-box-header {
+                font-size: 9pt;
+                padding: 12px 0 0 12px;                
+            }
+            #login-box-user {
+                height:25px;
+                padding-top:18px;                
+            }
+            #login-box-pwd {
+                height:25px;
+            }
+            #login-box-sub {
+                height:32px;
+            }
+            .login-box-label {
+                display:inline-block;
+                zoom:1; /*IE7*/
+                *display:inline; /*IE7*/
+                padding-right:10px;
+                text-align:right;
+                width:100px;
+            }
+            .login-box-edit {
+                display:inline-block;
+                zoom:1; /*IE7*/
+                *display:inline; /*IE7*/
+            }
+            .login-box-edit-text {
+                width: 159px;
+                border-width: 1px;
+            }
+            #login-box-errormsg {
+                font-size: 8pt;
+                color: #D60505;
+                display:inline-block;
+                float:left;
+                height:14px;
+                margin-left:10px;
+                width:210px;
+                font-weight: bold;
+            }
+            #login-box-forgot {
+                height:15px;
+                font-size: 7pt;
+                margin:0px 10px 0px;
+                display:inline-block;                
+                cursor: pointer;
+                float:left;
+            }     
+            #login-box-forgot:hover {
+                text-decoration: underline;    
+            }
+            #login-box-go {
+               cursor: pointer;
+               float:right;
+               margin-right:20px;
+            }     
+            #login-box-new {
+               margin-left: 22px;
+               margin-top: 4px;
+               cursor: pointer;               
+            }    
+            /* BUTTONS */                  
+            .btn-l {
+                height: 30px;
+                line-height: 30px;
+                display:inline-block;
+                zoom:1; /*IE7*/
+                *display:inline; /*IE7*/                
+                padding-left:15px;
+                font-weight: bold;
+            }
+            .btn-r {
+                width: 15px;
+                height: 30px;
+                line-height: 30px;
+                display:inline-block;
+                zoom:1; /*IE7*/
+                *display:inline; /*IE7*/                
+            }
+            .btn-l.bl-l {
+                background: no-repeat url(images/btn_blue.png) 0 0;
+            }
+            .btn-r.bl-r {
+                background: no-repeat url(images/btn_blue.png) -243px 0;
+            }
+            .btn-l.or-l {
+                background: no-repeat url(images/btn_orange.png) 0 0;
+            }
+            .btn-r.or-r {
+                background: no-repeat url(images/btn_orange.png) -243px 0;
+            }       
+            /* BUTTONS - END */
+           
+            #centerpanel {
+               background: no-repeat url(images/shorex-back-sq.png) 0 10px;
+               height: 500px; 
+            }
+        </style>        
+          
+        <!--[if lt IE 7]>
+        <link rel="stylesheet" type="text/css" href="index_ie6.css" />
+        <![endif]-->
+        <script type="text/javascript" src="ext/ext-core-debug.js"></script>
+
+        <script><!--
+            function getEl(id) {
+                if (document.getElementById) {
+                    return document.getElementById(id);
+                } else if (window[id]) {
+                    return window[id];
+                }
+                return null;
+            };
+
+            function updateErrorMsg(errorMsg) {
+                var el = getEl("login-box-errormsg");
+                if (!el) {
+                    return;
+                }
+                if (errorMsg)
+                    el.innerHTML = errorMsg;
+                else
+                    el.innerHTML = "Wrong user name or password";
+            };
+
+            // validateLogin method: validates a login request
+            function validateLogin()
+            {
+                updateErrorMsg("&nbsp;");
+                // get form form elements 'username' and 'password'
+                username = getEl('login-user').value;
+                password = getEl('login-pass').value;
+
+                // error if either is empty
+                if (username != '' && password  != '') {
+                    Ext.Ajax.request({
+                        url: 'MW/Users/Users',
+                        method: 'GET',
+                        params: {
+                            username: getEl('login-user').value,
+                            password: getEl('login-pass').value,
+                            firstRow: true             
+                        },
+                        success: function(response, opts) {
+                            //Ext.fly('login-pass').setValue("");   // clear the inserted login pin
+                            var obj = Ext.decode(response.responseText);                    
+                            if (obj.total == 1 && obj.success && obj.data) {                               
+                                SetCookie("SHOREX_USER", Ext.encode(obj.data));
+                                SetCookie("SHOREX_SID", obj.data.SessionID);
+                                window.location='app.html';
+                            }
+                            else {
+                                updateErrorMsg();                                
+                            }
+                        },
+                        failure: function(response, opts) {
+                            updateErrorMsg("Connection Error: " + response.status);
+                        }
+                    });
+                }
+                else
+                if (username == '') {
+                    alert("Mandatory attribute User Name is not specified");
+                }
+                else
+                if (password == '') {
+                    alert("Mandatory attribute Password is not specified");
+                }
+            };
+            function SetCookie(name, value) {
+                document.cookie = name + "=" + value + ";path=/";
+            };
+            function onLoginForgot() {
+                //alert('Redirect to password reset...');
+                window.location='app.html#forgotPassword';
+                return true;
+            };     
+            function onLoginNew(){
+				window.location = 'app.html#newUser';
+                return true;
+			}
+    --></script>
+
+    </head>
+    
+    <body class="main-back">
+            <div id="centerpanel" style="width:1020px; margin: auto;">
+               <div id="login-logo"></div>              
+               <div id="login-balloon"></div>
+               <div id="login-box">
+                   <div id="login-box-header"><b>Already have a user name?</b> Sign in now:</div>
+                   <div id="login-box-user"><div class="login-box-label">User Name:</div><div class="login-box-edit"><input type="text" name="user" id="login-user" class="login-box-edit-text" value="" class="" /></div></div>
+                   <div id="login-box-pwd"><div class="login-box-label">Password:</div><div class="login-box-edit"><input type="password" name="pass" id="login-pass" class="login-box-edit-text" value="" class="" onkeypress="{if (event.keyCode==13)(validateLogin())}"/></div></div>
+                   <div id="login-box-sub">
+                       <div id="login-box-go" onclick="validateLogin();"> <div class="btn-l bl-l">GO</div><div class="btn-r bl-r">&nbsp;</div> </div>
+                       <div id="login-box-errormsg">&nbsp;</div>
+                       <div id="login-box-forgot" onclick="onLoginForgot();">Forgot Password?</div>
+                   </div>
+                   <div id="login-box-new" onclick="onLoginNew();"><div class="btn-l or-l">NEW USER</div><div class="btn-r or-r">&nbsp;</div></div>                   
+               </div>
+               <div id="login-image"></div>
+               <div id="login-text"></div>
+               <div id="login-companies"></div>
+               <div id="login-footer">If your company is not currently a tour operator for one of the 10 cruise lines of Carnival Corporation, please click on the New User button to register.</div>
+               &nbsp;  
+            </div>
+    </body>
+
+</html>

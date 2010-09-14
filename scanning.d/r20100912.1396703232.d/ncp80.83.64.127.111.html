@@ -1,0 +1,467 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:54:25 GMT
+Server: Apache/2.2.6 (Fedora)
+X-Powered-By: PHP/5.3.3
+Last-Modified: Sun, 12 Sep 2010 00:54:25 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META http-equiv="content-language" content="en">
+<META NAME="description" CONTENT="This site is powered by CF TecServer  in PHP.">
+<META name="keywords" content="rescue recovery, cf motoring services, breakdown, green flag">
+<title>Rescue Recovery :: Welcome</title>
+<link rel="stylesheet" type="text/css" href="themes/handshakes_plain/gfx/style.css">
+<script src="http://www.rescuerecovery.net/jscript/zxml.js" type="text/javascript"></script>
+<script language="JavaScript">
+//<![CDATA[
+var tempTimeout = 0;
+var closeTimeout = null;
+function HS_VChatRequest( type, param )
+{
+   var oXHR = zXmlHttp.createRequest();
+   oXHR.open("post", MainURL+"modules/vchat.php", true);
+   oXHR.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+   oXHR.onreadystatechange = function() {
+       if (oXHR.readyState == 4) {
+           HS_ShowVChatWindow( oXHR.responseText );
+       }
+   }
+
+   var post = null;
+
+   switch(type){
+       case 'invite':
+           post = "action=invite&per_id="+param;
+           break;
+       case 'cancel':
+           HS_CloseVChatWindow();
+           post = "action=cancel&session_id="+param;
+           break;
+       case 'accept':
+           HS_CloseVChatWindow();
+           post = "action=accept&session_id="+param;
+           break;
+       case 'decline':
+           HS_CloseVChatWindow();
+           post = "action=decline&session_id="+param;
+           break;
+       case 'ignore':
+           HS_CloseVChatWindow();
+           post = "action=ignore&session_id="+param;
+           break;
+       case 'invited':
+           post = "action=invited&session_id="+param;
+           break;
+       case 'unavailable':
+           post = "action=unavailable&session_id="+param;
+           break;
+       case 'open_invited':
+           post = "action=open_invited&session_id="+param;
+           break;
+       case 'open_invitee':
+           post = "action=open_invitee&session_id="+param;
+           break;
+       case 'declined':
+           post = "action=declined&session_id="+param;
+           break;
+       case 'close':
+           HS_CloseVChatWindow();
+           break;
+   }
+
+   oXHR.send( post );
+}
+
+function HS_HandleVChatSignal( code )
+{
+   var details = code.split(".");
+   HS_VChatRequest( details[0], details[1] );
+}
+
+function HS_AlignVChatWindow()
+{
+   var ns = (document.layers)?1:0;
+   var Position = new Array;
+   if(ns){
+       Position['Left'] = window.innerWidth + window.pageXOffset - 5;
+       Position['Top']  = window.innerHeight + window.pageYOffset - 5;
+   }//if
+   else{
+       Position['Left'] = document.body.clientWidth + document.body.scrollLeft - 5;
+       Position['Top']  = document.body.clientHeight + document.body.scrollTop - 5;
+   }//else
+   var VChatWindow = document.getElementById("vchat_window");
+   VChatWindow.style.top = (Position['Top']/2) - (VChatWindow.offsetHeight/2);
+   VChatWindow.style.left = (Position['Left']/2) - (VChatWindow.offsetWidth/2);
+   if(tempTimeout)
+       setTimeout( "HS_AlignVChatWindow()", 500 );
+}
+function HS_ShowVChatWindow( content )
+{
+   if(content){
+       var element = document.getElementById( "vchat_window" );
+       element.innerHTML = content;
+       tempTimeout = 1;
+       HS_AlignVChatWindow();
+       element.style.visibility = "visible";
+   }
+}
+
+function HS_CloseVChatWindow()
+{
+   tempTimeout = 0;
+   var element = document.getElementById( "vchat_window" );
+   element.innerHTML = "";
+   element.style.visibility = "hidden";
+}
+
+function HS_LaunchVChat( session_id )
+{
+   HS_CloseVChatWindow();
+   url = MainURL+"modules/vchat.php?action=launch&session_id="+session_id;
+   var newwin = window.open(url, "vchat", "width=550,height=330,scrollbars=no,menubar=no,resizable=no,location=no");
+   newwin.focus();
+}
+
+//]]>
+</script>
+<style type="text/css">
+<!--
+   #BLIND {
+       position: absolute;
+       visibility: hidden;
+       top: 0;
+       left: 0;
+       width: 180px;
+       height: 115px;
+       z-index: 1;
+       opacity: 0;
+       -moz-opacity: 0;
+       -khtml-opacity: 0;
+       filter: alpha(opacity=0);
+   }
+   #blinds_panel {
+       position: absolute;
+       top: 0;
+       left: 0;
+       z-index: 1;
+   }
+   #body{
+       z-index: 2;
+   }
+   .blind{
+       width: 180;
+       height: 115;
+       opacity: 0;
+       -moz-opacity: 0;
+       -khtml-opacity: 0;
+       filter: alpha(opacity=0);
+   }
+//-->
+</style>
+<script language="JavaScript">
+<!--
+   var NotiTimer = new Array;
+   var BlindIDCount = 0;
+   function MM_preloadImages() { //v3.0
+       var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+       var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+       if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+   }//MM_preloadImages
+   function HS_LaunchIM(){
+       url = MainURL+"modules/instant_messenger.php?action=launch";
+       imwin = window.open(url, "HSIM_CONSOLE", "width=250,height=350,scrollbars=no,menubar=no,resizable=no,location=no");
+       imwin.focus();
+   }//HS_LaunchIM
+   function HS_LaunchChat(per_id){
+       url = MainURL+"modules/instant_messenger.php?action=chat&per_id="+per_id;
+       var newwin = window.open(url, per_id, "width=500,height=350,scrollbars=no,menubar=no,resizable=no,location=no");
+       newwin.focus();
+   }//HS_LaunchChat
+   function HS_BuildBlind(){
+       BlindIDCount++;
+       var BlindID = "BLIND_"+BlindIDCount;
+       var BlindTemplate = document.getElementById("BLIND").innerHTML;
+       var Temp = new Array;
+       Temp = BlindTemplate.split("BLIND");
+       BlindTemplate = Temp.join(BlindID);
+       var BlindContent = "<div class='blind' id='"+BlindID+"'>"+BlindTemplate+"</div>";
+       var BlindsHandler = document.getElementById("blinds_panel");
+       if(BlindsHandler.offsetHeight >= 117){
+           BlindsHandler.style.top = parseInt(BlindsHandler.style.top) - 117;
+       }//if
+       else{
+           BlindsHandler.style.top = parseInt(BlindsHandler.style.top) - 117 + BlindsHandler.offsetHeight;
+       }//else
+       BlindsHandler.innerHTML+= BlindContent;
+       return BlindID;
+   }//HS_BuildBlind
+   function HS_BuildNotification(NotiType,NotiMessage){
+       BlindID = HS_BuildBlind();
+       switch(NotiType){
+           case 'im':
+               var Link = "<a href=\"javascript:HS_LaunchIM();\">"+NotiMessage+"</a>";
+               break;
+           case 'calendar':
+               var Link = "<a href=\"http://www.rescuerecovery.net/index.php?page=calendar\" target=\"_blank\">"+NotiMessage+"</a>";
+               break;
+           case 'mailbox':
+               var Link = "<a href=\"http://www.rescuerecovery.net/index.php?page=mailbox&section=inbox\" target=\"_blank\">"+NotiMessage+"</a>";
+               break;
+           case 'view':
+               var Link = "<a href=\"http://www.rescuerecovery.net/index.php?page=views\" target=\"_blank\">"+NotiMessage+"</a>";
+               break;
+       }//switch
+       var MessageHandler = document.getElementById("notification_message_"+BlindID);
+       MessageHandler.innerHTML = Link;
+       HS_FadeBlind(BlindID,"in");
+       NotiTimer[BlindID] = setTimeout("HS_FadeBlind('"+BlindID+"','out')",10000);
+   }//HS_BuildNotification
+   function HS_FadeBlind(BlindID,Direction){
+       var Timer = 0;
+       var Speed = 50;
+       if(Direction == "in"){
+           HS_ChangeAlign('blinds_panel',3);
+           for(var i=10;i<=100;i=i+10){
+               setTimeout("HS_ChangeOpacity(" + i + ",'" + BlindID + "')",(Timer * Speed));
+               Timer++;
+           }//for
+       }//if
+       else if(Direction == "out"){
+           for(var i=90;i>=0;i=i-10){
+               setTimeout("HS_ChangeOpacity(" + i + ",'" + BlindID + "')",(Timer * Speed));
+               Timer++;
+           }//for
+           setTimeout("HS_ChangeAlign('blinds_panel',1)",Timer * Speed);
+           setTimeout("HS_RemoveBlind('"+BlindID+"')",Timer * Speed);
+       }//else if
+   }//HS_FadeBlind
+   function HS_ChangeOpacity(OpacityValue,BlindID){
+       var BlindObjStyle = document.getElementById(BlindID).style;
+       BlindObjStyle.opacity = (OpacityValue / 100);
+       BlindObjStyle.MozOpacity = (OpacityValue / 100);
+       BlindObjStyle.KhtmlOpacity = (OpacityValue / 100);
+       BlindObjStyle.filter = "alpha(opacity=" + OpacityValue + ")";
+   }//HS_ChangeOpacity
+   function HS_PosBlinds(){
+       var ns = (document.layers)?1:0;
+       var Position = new Array;
+       if(ns){
+           Position['Left'] = window.innerWidth + window.pageXOffset - 5;
+           Position['Top']  = window.innerHeight + window.pageYOffset - 5;
+       }//if
+       else{
+           Position['Left'] = document.body.clientWidth + document.body.scrollLeft - 5;
+           Position['Top']  = document.body.clientHeight + document.body.scrollTop - 5;
+       }//else
+       var BlindsPanel = document.getElementById("blinds_panel");
+       if(BlindsPanel) {
+       	BlindsPanel.style.top = Position['Top'] - BlindsPanel.offsetHeight;
+       	BlindsPanel.style.left = Position['Left'] - 180;
+       	setTimeout("HS_PosBlinds()",500);
+       }
+   }//HS_PosBlinds
+   function HS_ChangeAlign(BlindID,Pos){
+       var BlindObjStyle = document.getElementById(BlindID).style;
+       BlindObjStyle.zIndex = Pos;
+   }//HS_ChangeAlign
+   function HS_RemoveBlind(BlindID){
+       var BlindObj = document.getElementById(BlindID);
+       BlindObj.innerHTML = "";
+   }//HS_RemoveBlind
+   function HS_CloseNotification(BlindID){
+       clearTimeout(NotiTimer[BlindID]);
+       HS_FadeBlind(BlindID,'out');
+   }//HS_CloseNotification
+//-->
+</script>
+<script src="http://www.rescuerecovery.net/jscript/AC_RunActiveContent.js" type="text/javascript"></script>
+<script src="http://www.rescuerecovery.net/jscript/AC_ActiveX.js" type="text/javascript"></script>
+<script src="http://www.rescuerecovery.net/jscript/CH_ThumbsPreview.js" type="text/javascript"></script>
+<script src="http://www.rescuerecovery.net/jscript/zxml.js" type="text/javascript"></script>
+
+<script language="JavaScript">
+<!--
+	var MainURL = "./";
+//-->
+</script>
+</head>
+<body onload="HS_PosBlinds();;">
+<script type="text/javascript" src="./jscript/sblib.js"></script>
+<script type="text/javascript" src="./jscript/wz_tooltip.js"></script>
+<div id="BLIND">
+<div class="noti"><table cellpadding="0" cellspacing="0" border="0" width="180" height="115">
+	<tr height="20"><td height="20" align="center" class="noti-header">Notification [<a href="javascript:HS_CloseNotification('BLIND')">x</a>]</td></tr>
+	<tr><td align="center" style="padding:5px;" class="noti-body"><div id="notification_message_BLIND"></div></td></tr>
+</table></div>
+<div id="notification_message_BLIND"></div>
+</div>
+<div id="blinds_panel"></div>
+<iframe name="notifications_js" id="notifications_js" src="./modules/my_handshakes.php?action=notifications_js" width="0" height="0" scrolling="no" frameborder="0" border="0" style="border: none"></iframe><div id="vchat_window"></div>
+<div class="handler">
+	<div class="page">
+	<div class="top">
+	<div style="height:87px">
+		<div class="logo"><a href="./"><img src="themes/handshakes_plain/gfx/logo.gif" alt="" width="200" height="81" border="0" /></a></div>
+		<div style="text-align:right">
+			<div class="topmenu"><a href="javascript:void(0)" onClick="sbDropDown( this )" onMouseOut="sbHide()" onMouseOver="sbStopTimer()">Bookmark</a> | <a target="" href="./index.php?page=mailbox&section=inbox">Mailbox</a>
+ | <a target="" href="./index.php?page=calendar">Calendar</a>
+ | <a target="" href="./index.php?page=bookmarks&section=profiles">Bookmarks</a>
+ | <a target="" href="./index.php?page=history">History</a>
+ | <a target="" href="./">My Profile</a>
+ | <a target="" href="javascript:HS_LaunchIM()">IM Manager</a>
+</div>
+					</div>
+		<div style="clear:both"></div>
+	</div>
+	</div>
+
+	<div class="menubar">
+
+	<a target="" href="./index.php?page=my_handshakes">My Profile</a>
+ | <a target="" href="./index.php?page=blogs">Blogs</a>
+ | <a target="" href="./index.php?page=classifieds">Classifieds</a>
+ | <a target="" href="./index.php?page=events">Events</a>
+ | <a target="" href="./index.php?page=clubs">Clubs</a>
+ | <a target="" href="./index.php?page=ecards">eCards</a>
+ | <a target="" href="./index.php?page=chat">Chat</a>
+ | <a target="" href="./index.php?page=hotornot">Rate</a>
+ | <a target="" href="./index.php?page=search&section=members">Search</a>
+ | <a target="" href="./index.php?page=music">Music</a>
+ | <a target="" href="./index.php?page=videos">Videos</a>
+ | <a target="" href="./index.php?page=forum">Forum</a>
+ | <a target="" href="./index.php?page=polls">Polls</a>
+
+	</div>
+
+	
+	
+	<div class="padded">
+
+<div class="columnWide">
+  <p align="center"><div class="brown-header">Welcome</div>
+<div class="brown-body"> <b>RescueRecovery.net</b> is a very powerfull networking site. It will help you 
+    to find like minded people from all over the world.    </p>
+  <p align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="400" height="173"><param name="movie" value="http://www.rescuerecovery.net/logo1rescue.swf" /><param name="quality" value="high" /><param name="menu" value="false" /><param name="wmode" value="" /><embed src="http://www.rescuerecovery.net/logo1rescue.swf" wmode="" quality="high" menu="false" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="173"></embed></object>&nbsp;</p>
+  <p>With <b>RescueRecovery.net</b> you can: </p>
+  <ul>
+	<li>build your own network of contacts who share your interests</li>
+	<li>use built-in communication services</li>
+	<li>create classified ads and get responses</li>			
+	<li>create your own event or attend to other members' events</li>			
+	<li>create clubs and invite people, who share your ineterests</li>
+</ul>
+Not a member yet? Please <a href="index.php?page=join">click here</a> to join <b>RescueRecovery.net</b>
+or push the button "Join now" below to apply and start networking with thousands of members !<br>
+<div style="text-align:center;padding:10px;"><input class="button" type="button" value="Join" onClick="window.location='index.php?page=join'"></div>
+<div style="clear:both;"></div>
+</div>
+<div class="dividerH"><img src="themes/handshakes_plain/gfx/spacer.gif" alt="" width="5" height="5" border="0" /></div>
+<div class="blue-header">Recent Members</div>
+<div class="blue-body"><div align="center" style="text-align:center;margin:0 auto;">
+			<div style="margin:3px;float:left;"><div class="member">
+	<div class="member-offline-photo"><a href="http://www.rescuerecovery.net/profiles/100004"><img src="./photos/awaiting_small.gif" alt="" width="62" height="53" border="0" /></a></div>
+	<div class="member-offline-name"><a href="http://www.rescuerecovery.net/profiles/100004">drawxx</a></div>
+	<div class="member-offline-indicator" align="center">OFFLINE</div>
+</div></div>
+					<div style="margin:3px;float:left;"><div class="member">
+	<div class="member-offline-photo"><a href="http://www.rescuerecovery.net/profiles/100003"><img src="./photos/awaiting_small.gif" alt="" width="62" height="53" border="0" /></a></div>
+	<div class="member-offline-name"><a href="http://www.rescuerecovery.net/profiles/100003">carina</a></div>
+	<div class="member-offline-indicator" align="center">OFFLINE</div>
+</div></div>
+					<div style="margin:3px;float:left;"><div class="member">
+	<div class="member-offline-photo"><a href="http://www.rescuerecovery.net/profiles/100002"><img src="./photos/awaiting_small.gif" alt="" width="62" height="53" border="0" /></a></div>
+	<div class="member-offline-name"><a href="http://www.rescuerecovery.net/profiles/100002">John-Paul Denton</a></div>
+	<div class="member-offline-indicator" align="center">OFFLINE</div>
+</div></div>
+					<div style="margin:3px;float:left;"><div class="member">
+	<div class="member-offline-photo"><a href="http://www.rescuerecovery.net/profiles/100001"><img src="./photos/awaiting_small.gif" alt="" width="62" height="53" border="0" /></a></div>
+	<div class="member-offline-name"><a href="http://www.rescuerecovery.net/profiles/100001">itsbloodycold</a></div>
+	<div class="member-offline-indicator" align="center">OFFLINE</div>
+</div></div>
+			<div style="clear:both"></div>
+</div>
+<div style="clear:both;"></div>
+</div>
+
+</div>
+
+<div class="dividerV"><img src="themes/handshakes_plain/gfx/spacer.gif" alt="" width="5" height="5" border="0" /></div>
+<div class="columnSmall">
+<div class="grey-header">Members Login</div>
+<div class="grey-body"><div class="form" style="width:198px;">
+<form action="index.php" method="post" name="login">
+<input type="hidden" name="handler" value="login">
+<input type="hidden" name="action" value="do_login">
+		
+			
+		
+		
+			<div class="formlabel">Username</div>
+			<div class="formelement" ><div class="formset"><input class="textfield" type="text" size="15" name="username" value=""></div></div>
+						
+			<div style="clear:both"></div>
+		
+			
+		
+		
+			<div class="formlabel">Password</div>
+			<div class="formelement" ><div class="formset"><input class="textfield" type="password" size="15" name="password"></div></div>
+						
+			<div style="clear:both"></div>
+		
+			
+		
+		
+			<div class="formlabel">Remember me</div>
+			<div class="formelement" ><input class="checkbox" type="checkbox" name="remember" value="1" ></div>
+						
+			<div style="clear:both"></div>
+		
+			
+		
+	<div style="clear:both"></div>
+	
+	<div class="formbutton">
+		<div style="margin:2px;display:inline;"><input name="login_0" id="login_0" class="button" type="submit" value="Login" onclick=""></div>	</div>
+	
+</form>
+</div><div style="padding-top:5px;padding-bottom:5px;"><div class="dotted"><img src="themes/handshakes_plain/gfx/spacer.gif" alt="" width="1" height="1" border="0" /></div></div>
+<div style="text-align:center"><a href="index.php?page=forgot">Forgot your password?</a></div>
+<div style="clear:both;"></div>
+</div>
+	<div class="banner-side"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="198" height="270"><param name="movie" value="http://www.rescuerecovery.net/adsrescue.swf" /><param name="quality" value="high" /><param name="menu" value="false" /><param name="wmode" value="" /><embed src="http://www.rescuerecovery.net/adsrescue.swf" wmode="" quality="high" menu="false" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="198" height="270"></embed></object></div>
+
+</div>
+
+</div><div style="clear:both;height:5px;"><img src="themes/handshakes_plain/gfx/spacer.gif" alt="" width="1" height="1" border="0" /></div>
+<div class="footer" style="line-height: 20px">
+<a href="index.php?page=contact">Contact Us</a> | 
+<a href="index.php?page=terms">Terms and Conditions</a> | 
+<a href="index.php?page=privacy">Privacy Policy</a><br />
+Powered by <a target="_blank" href="http://www.cftecserver.co.uk/">CF Tec Server</a>
+</div>
+</div>
+</div>
+<div id="sbdropdown" onMouseover="sbStopTimer()" onMouseout="sbHide()">
+<div class="sbitem" onClick="window.external.AddFavorite('http:///','Rescue Recovery Welcome')" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/star.png" alt="" style="vertical-align:middle;" /> Favorites</div>
+<div class="sbitem" onClick="sbBookmark('http://del.icio.us/post?url=http%3A%2F%2F%2F;title=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/delicious.png" alt="" style="vertical-align:middle;" /> Del.icio.us</div>
+<div class="sbitem" onClick="sbBookmark('http://digg.com/submit?phase=2&url=http%3A%2F%2F%2F&title=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/digg.png" alt="" style="vertical-align:middle;" /> Digg</div>
+<div class="sbitem" onClick="sbBookmark('http://www.furl.net/storeIt.jsp?u=http%3A%2F%2F%2F&t=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/furl.gif" alt="" style="vertical-align:middle;" /> Furl</div>
+<div class="sbitem" onClick="sbBookmark('http://ma.gnolia.com/bookmarklet/add?url=http%3A%2F%2F%2F&title=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/magnolia.png" alt="" style="vertical-align:middle;" /> Magnolia</div>
+<div class="sbitem" onClick="sbBookmark('http://www.stumbleupon.com/submit?url=http%3A%2F%2F%2F&title=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/stumbleupon.png" alt="" style="vertical-align:middle;" /> StumbleUpon</div>
+<div class="sbitem" onClick="sbBookmark('http://www.google.com/bookmarks/mark?op=edit&bkmk=http%3A%2F%2F%2F&title=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/google.gif" alt="" style="vertical-align:middle;" /> Google</div>
+<div class="sbitem" onClick="sbBookmark('http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Rescue+Recovery+Welcome&u=http%3A%2F%2F%2F',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/yahoo.png" alt="" style="vertical-align:middle;" /> Yahoo</div>
+<div class="sbitem" onClick="sbBookmark('http://technorati.com/faves?add=http%3A%2F%2F%2F',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/technorati.gif" alt="" style="vertical-align:middle;" /> Technorati</div>
+<div class="sbitem" onClick="sbBookmark('http://www.blinklist.com/index.php?Action=Blink/addblink.php&Url=http%3A%2F%2F%2F&Title=Rescue+Recovery+Welcome',1)" onMouseOver="this.className='sbitemhighlight'" onMouseOut="this.className='sbitem'"><img src="http://www.rescuerecovery.net/includes/sbicons/blinklist.png" alt="" style="vertical-align:middle;" /> BlinkList</div>
+</div></body>
+</html>

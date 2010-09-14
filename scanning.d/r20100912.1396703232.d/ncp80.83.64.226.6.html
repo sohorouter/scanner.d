@@ -1,0 +1,703 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:44:23 GMT
+Server: Apache/2.2.0 (Fedora)
+X-Powered-By: PHP/5.2.4
+Content-Length: 17333
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+
+<title>sehrsehrnet(t)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link href="sehrsehrnet.css" rel="stylesheet" type="text/css">
+
+<script language="JavaScript" type="text/JavaScript">
+
+<!--
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+
+}
+
+MM_reloadPage(true);
+
+
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_showHideLayers() { //v6.0
+
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+
+    obj.visibility=v; }
+
+}
+
+//-->
+
+</script>
+
+
+
+<script>
+
+<!--
+
+/*
+
+Random-Order content script
+
+By JavaScript Kit (http://www.javascriptkit.com)
+
+This notice must stay intact for use
+
+*/
+
+
+
+//1) Specify content(s) to display and rotate
+
+//   You can specify multiple "sets", each displayed in diff. areas of your page
+
+
+
+/*var content=new Array() //sample set 1
+
+content[0]='<a href="http://www.dynamicdrive.com"><img src="http://www.javascriptkit.com/dynamic.gif" border=0></a>'
+
+content[1]='<a href="http://cooltext.com"><img src="http://www.cooltext.com/images/ctb4.gif" border=0></a>'
+
+content[2]='<a href="http://thefreesite.com"><img src="http://www.thefreesite.com/free88.gif" border=0></a>'
+
+
+
+var diffcontent=new Array() //sample set 2
+
+diffcontent[0]='<a href="http://www.google.com">Google Search Engine</a>'
+
+diffcontent[1]='<a href="http://news.bbc.co.uk">BBC News</a>'
+
+diffcontent[2]='<a href="http://www.msnbc.com">MSNBC News</a>'
+
+*/
+
+
+
+var content=new Array() //sample set 1
+
+content[0]='<img src="babes/babe_01.jpg" alt="Babe 01" class="picturebox">'
+
+content[1]='<img src="babes/babe_02.jpg" alt="Babe 02" class="picturebox">'
+
+content[2]='<img src="babes/babe_03.jpg" alt="Babe 03" class="picturebox">'
+
+content[3]='<img src="babes/babe_04.jpg" alt="Babe 04" class="picturebox">'
+
+content[4]='<img src="babes/babe_05.jpg" alt="Babe 05" class="picturebox">'
+
+content[5]='<img src="babes/babe_06.jpg" alt="Babe 06" class="picturebox">'
+
+content[6]='<img src="babes/babe_07.jpg" alt="Babe 07" class="picturebox">'
+
+content[7]='<img src="babes/babe_08.jpg" alt="Babe 08" class="picturebox">'
+
+content[8]='<img src="babes/babe_09.jpg" alt="Babe 09" class="picturebox">'
+
+//content[9]='<img src="babes/babe_10.jpg" alt="Babe 10" class="picturebox">'
+
+//content[10]='<img src="babes/babe_11.jpg" alt="Babe 11" class="picturebox">'
+
+//content[11]='<img src="babes/babe_12.jpg" alt="Babe 12" class="picturebox">'
+
+
+
+function randomorder(targetarray, spacing){
+
+
+
+var randomorder=new Array()
+
+var the_one
+
+//var z=11
+
+var z=8
+
+for (i=0;i<targetarray.length;i++)
+
+randomorder[i]=i
+
+
+
+while (z<targetarray.length){
+
+the_one=Math.floor(Math.random()*targetarray.length)
+
+if (targetarray[the_one]!="_selected!"){
+
+document.write(targetarray[the_one]+spacing)
+
+targetarray[the_one]="_selected!"
+
+z++
+
+}
+
+}
+
+}
+
+
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+
+
+function MM_swapImgRestore() { //v3.0
+
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+
+}
+
+
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_swapImage() { //v3.0
+
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+
+}
+
+//-->
+
+</script>
+
+
+
+</head>
+
+
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<div id="Layer1" style="position:absolute; left:288px; top:205px; width:400; height:300; z-index:1; background-image: url(Bilder/birthday.jpg); layer-background-image: url(Bilder/birthday.jpg); border: 1px none #000000; overflow: hidden; visibility: hidden;"> 
+
+  <table width="400" height="300" border="0" cellpadding="20" cellspacing="0">
+
+    <tr>
+
+      <td height="150">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td height="150" class="birthday"><strong>sehrsehr.net</strong> ist nun 
+
+        2 Jahre alt geworden. Dieses Ereigniss habe ich zum Anlass genommen und 
+
+        ein Neu-Design der Seite online gestellt.<br>
+
+        Auf das noch weiter viele Jahre folgen...<br>
+
+        <a href="#" onClick="MM_showHideLayers('Layer1','','hide')">[Fenster schliessen]</a></td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+<table width="100%" height="100" border="0" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+        <tr> 
+
+          <td width="154"><img src="Bilder/hauptt01.gif" width="154" height="60"></td>
+
+          <td width="154"><img src="Bilder/hauptt02.gif" width="154" height="60"></td>
+
+          <td width="154"><img src="Bilder/hauptt03.gif" width="154" height="60"></td>
+
+          <td width="154"><img src="Bilder/hauptt04.gif" width="154" height="60"></td>
+
+          <td><img src="Bilder/hauptt00.gif" width="100%" height="60"></td>
+
+        </tr>
+
+      </table></td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+
+      <table height="200" border="0" cellpadding="0" cellspacing="20">
+
+        <tr> 
+
+          <td width="205" valign="top"> 
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr>
+
+                <td> 
+
+                  <p> 
+
+                    <script>
+
+					//2) Call function randomorder(arrayname, space_between_content)
+
+					randomorder(content, '<br>')
+
+					//randomorder(diffcontent, '<br>')
+
+					</script>
+
+                  </p>
+
+                  </td>
+
+              </tr>
+
+            </table>
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td height="20" class="copy">&nbsp;</td>
+
+              </tr>
+
+              <tr>
+
+                <td><img src="Bilder/news01.gif" width="205" height="30"></td>
+
+              </tr>
+
+            </table>
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td height="20" class="newssub">
+
+                  <p class="timestamp">06. Juli 2005</p>
+
+                </td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="20" class="newssub">sehrsehr.net wird zwei...&nbsp;</td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="10" class="copy">
+
+                  <table width="100%" border="0" cellpadding="5" cellspacing="0">
+
+                    <tr> 
+
+                      <td class="newscopy">...der genaue Geburtstag von sehrsehr.net 
+
+                        ist zwar schon vorbei aber f&uuml;r mich geh&ouml;rt es 
+
+                        auf jeden Fall gefeiert. Und darum habe ich der Seite 
+
+                        ein Redesign spendiert. Es wird wohl noch ein wenig dauern 
+
+                        bis sich das neue Design durch alle Seiten zieht aber 
+
+                        das wird hoffentlich bald.<br>
+
+                        An dieser Stelle ein herzliches Dankesch&ouml;n an Franzi 
+
+                        der professionell wie immer den von mir erdachten schlichten 
+
+                        Stil der Seite beim Redesign beibehalten hat. Thx alot!!!</td>
+
+                    </tr>
+
+                    <tr> 
+
+                      <td class="abstand2">&nbsp;</td>
+
+                    </tr>
+
+                  </table>
+
+                </td>
+
+              </tr>
+
+            </table>
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td height="20" class="newssub"><p class="timestamp">24. Juni 
+
+                    2003</p></td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="20" class="newssub">G&auml;stebuch Online...&nbsp;</td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="10" class="copy"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+
+                    <tr> 
+
+                      <td class="newscopy">...am 24.06.2003 fr&uuml;h morgens 
+
+                        habe ich ein G&auml;stebuch installiert damit sich hier 
+
+                        mal was tut. Ich hoffe IHR schreibt alle brav !<br>
+
+                        <a href="book/">[mehr...]</a></td>
+
+                    </tr>
+
+                    <tr> 
+
+                      <td class="abstand2">&nbsp;</td>
+
+                    </tr>
+
+                  </table></td>
+
+              </tr>
+
+            </table>
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td height="20" class="newssub"><p class="timestamp">16. Juli 
+
+                    2003</p></td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="20" class="newssub">Mailserver Online...&nbsp;</td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="10" class="copy"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+
+                    <tr> 
+
+                      <td class="newscopy">Habe es geschafft den Mailserver anzuwerfen. 
+
+                        Die wichtigsten Adressen wie webmaster@sehrsehr.net und 
+
+                        flop@sehrsehr.net sind eingerichtet und funktionieren.</td>
+
+                    </tr>
+
+                    <tr> 
+
+                      <td class="abstand2">
+
+					  <p align="center">
+
+			           
+
+					  </p>
+
+                      </td>
+
+                    </tr>
+
+                  </table></td>
+
+              </tr>
+
+            </table></td>
+
+          <td width="474" valign="top"> 
+
+            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="sehrsehrnet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><img src="Bilder/titel01.gif" width="275" height="30"></td>
+  </tr>
+  <tr> 
+    <td class="copy">SEHRSEHR.NET ist aus der Idee entstanden, einen originellen 
+      Namen f&uuml;r eine Website zu finden und nat&uuml;rlich die daraus resultierenden 
+      Mailadressen zu erm&ouml;glichen. Selbst Mitmenschen, die nicht ganz hell 
+      auf der Platte sind, finden nach kurzer Zeit heraus, dass z.B. flop@sehrsehr.net 
+      witzig ist und auch einen Sinn ergibt.</td>
+  </tr>
+  <tr> 
+    <td height="20" class="copy">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><img src="Bilder/titel02.gif" width="275" height="52"></td>
+  </tr>
+  <tr> 
+    <td class="copy">Nat&uuml;rlich. Jedoch bin ich nicht der Erste, der auf diese 
+      Idee gekommen ist. Favoriten wie priv.at oder voll.org waren nat&uuml;rlich 
+      schon vergriffen. Auch voll.net, super.net und sehr.net sind schon vergeben. 
+      Ich habe nat&uuml;rlich jede Menge Leute nach einem originellen Namen gefragt, 
+      und einer hat mit besonders gefallen.<br> <br>
+      iwoartaufataxiobaeskummt.net [Zitat: Erich]<br> <br>
+      Nicht schlecht dachte ich, doch f&uuml;r eine Mailadresse doch die Spur 
+      zu lang ;)</td>
+  </tr>
+  <tr> 
+    <td height="20" class="copy">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><img src="Bilder/titel03.gif" width="275" height="30"></td>
+  </tr>
+  <tr> 
+    <td class="copy">Nun ja, ausser den netten Mailadressen m&ouml;chte ich noch 
+      anderes mit der Domain anstellen. Ich habe da an ein Fotoportal gedacht. 
+      Digicams sind mittlerweile verbreitet wie nie zuvor, doch die Fotos sind 
+      immer zerstreut in alle Himmelsrichtungen. Ich m&ouml;chte hier gerne alte 
+      und neue Fotos, die mich und meinen Freundeskreis betreffen, wieder ver&ouml;ffentlichen.<br>
+      Leider geh&ouml;rt die Dame links nicht zu meinem Freundeskreis, aber auf 
+      der Startseite darf man ja wohl ein bisschen schummeln.</td>
+  </tr>
+  <tr> 
+    <td height="20" class="copy">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><img src="Bilder/titel04.gif" width="275" height="52"></td>
+  </tr>
+  <tr> 
+    <td class="copy">Prinzipiell ja. Diese Option m&ouml;chte ich aber nur meinen 
+      engsten Freunden und -innen zur Verf&uuml;gung stellen. Bist du einer bzw. 
+      eine davon dann sprich mich darauf an.</td>
+  </tr>
+  <tr> 
+    <td height="20" class="copy">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><img src="Bilder/titel05.gif" width="275" height="30"></td>
+  </tr>
+  <tr> 
+    <td class="copy">Ich bin nicht wirklich ein Selbstdarsteller oder wie man 
+      heutzutage sagt ein Poser, aber es geh&ouml;rt zum guten Ton, sich vorzustellen. 
+      Das bin ich von meiner besten Site <a href="ich/">[mehr...]</a></td>
+  </tr>
+  <tr> 
+    <td height="20" class="copy">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+
+          </td>
+
+          <td width="225" valign="top"> 
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td><img src="Bilder/news02.gif" width="205" height="30"></td>
+
+              </tr>
+
+            </table>
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td height="20" class="newssub"> 
+
+                  <p class="timestamp">07. September 2009 - 22:08 Uhr</p>
+
+                </td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="20" class="newssub">Na endlich...&nbsp;</td>
+
+              </tr>
+
+              <tr> 
+
+                <td height="10" class="copy"> 
+
+                  <table width="100%" border="0" cellpadding="5" cellspacing="0">
+
+                    <tr> 
+
+                      <td class="newscopy" height="149"> <p>...hat der Bub sich aufgerafft
+			und die Fotos der Polterer von Evi und Bernhard online gestellt.
+			Die Gallerie ist allerdings wegen des sehr pers&ouml;chen Inhalts
+			Passwort gesch&uuml;tzt - Sorry!
+                        <br>
+			Die Fotos der Hochzeit folgen noch... 
+                          <br>
+                          <br>
+                          <a href="gallery2/">[zur neuen Gallerie...]</a></p>
+                        </td>
+
+                    </tr>
+
+                    <tr> 
+
+                      <td class="abstand2" height="26"><img src="Bilder/news03.gif" width="205" height="30" usemap="#Map" border="0"></td>
+
+                    </tr>
+
+                    <tr>
+
+                      <td class="newscopy"><a href="?id=archiv.php&year=04">2004</a></td>
+
+                    </tr>
+
+                    <tr> 
+
+                      <td class="newscopy"><a href="?id=archiv.php&year=05">2005</a></td>
+
+                    </tr>
+
+                    <tr> 
+
+                      <td class="newscopy"><a href="?id=archiv.php&year=06">2006</a></td>
+
+                    </tr>
+
+                  </table>
+
+                </td>
+
+              </tr>
+
+            </table>
+
+            <table width="205" border="0" cellpadding="0" cellspacing="0">
+
+              <tr> 
+
+                <td>&nbsp;</td>
+
+              </tr>
+
+            </table>
+
+            
+
+          </td>
+
+        </tr>
+
+      </table></td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>
+

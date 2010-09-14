@@ -1,0 +1,203 @@
+HTTP/1.1 200 OK
+Date: Wed, 08 Sep 2010 15:01:15 GMT
+Server: Apache/2.2.3 (Win32)
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Call Tracking System-Hauptseite</title>
+
+
+<link rel="Top" href="http://support.andromeda-software.at/">
+
+    
+
+    <script type="text/javascript">
+  <!--
+  
+  function initHelp() {}
+  // -->
+  </script>
+
+    <link href="skins/standard/global.css" rel="stylesheet" type="text/css">
+    <link href="skins/custom/global.css" rel="stylesheet" type="text/css">
+
+
+        <link href="skins/standard/index.css" rel="stylesheet" type="text/css">
+          <link href="skins/custom/index.css" rel="stylesheet" type="text/css">
+
+    
+
+  </head>
+
+
+
+  <body onload="document.forms['f'].quicksearch.focus();"
+        class="support-andromeda-software-at">
+
+
+<div id="banner">
+    <div class="intro"></div>
+      <p id="banner-name">
+        <span></span>
+      </p>
+      <p id="banner-version">
+        <a href="http://www.andromeda-software.at/"><span>Andromeda-software.at</span></a>
+        <span>Version
+  2.22.1-1</span>
+      </p>
+    <div class="outro"></div>
+    </div>
+
+<div id="header">
+    <h1>Call Tracking System-Hauptseite</h1>
+
+
+</div>
+
+
+<script type="text/javascript">
+<!--
+function addSidebar() {
+  if ((typeof window.sidebar == "object") && (typeof window.sidebar.addPanel == "function"))
+  {
+    var sidebarname=window.location.host;
+    if (!/bug/i.test(sidebarname))
+      sidebarname="Call Tracking System "+sidebarname;
+    window.sidebar.addPanel (sidebarname, "http://support.andromeda-software.at/sidebar.cgi", "");
+  }
+  else
+  {
+    var rv = window.confirm ("Ihr Browser unterstützt die Seitenleisten-Erweiterung nicht.  " + "Möchten Sie Ihren Browser jetzt aktualisieren?");
+    if (rv)
+      document.location.href = "http://www.mozilla.org/";
+  }
+}
+//-->
+</script>
+
+
+<div id="page-index">
+  <div class="intro"></div>
+  <p>Diese Stelle ist dazu vorgesehen, Call Tracking System ganz genau zu beschreiben.</p>
+
+  <p>Aber letztlich läuft es auf diese Auswahl hinaus:</p>
+  <ul>
+    <li id="query"><a href="query.cgi">Bestehende Callberichte suchen</a></li>
+    <li id="enter-bug"><a href="enter_bug.cgi">Einen neuen Callbericht anlegen</a></li>
+    <li id="report"><a href="report.cgi">Zusammenfassende Berichte und Grafiken</a></li><form name="login" action="http://support.andromeda-software.at/" method="POST">
+  <table>
+    <tr>
+      <td align="right"><b>Benutzerkonto (E-Mail-Adresse):</b></td>
+      <td><input size="20" name="Bugzilla_login"></td>
+    </tr>
+    <tr>
+      <td align="right"><b>Passwort:</b></td>
+      <td><input type="password" size="20" name="Bugzilla_password"></td>
+    </tr>
+
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <input type="checkbox" name="Bugzilla_remember" value="on">
+          Dauerhaft anmelden
+        </td>
+      </tr>
+
+
+    <tr>
+      <td><input type="submit" name="GoAheadAndLogIn" value="Login"></td>
+
+      
+
+        <td>[ <a href="index.cgi?GoAheadAndLogIn=1#forgot">Ich habe mein Passwort vergessen</a> ]</td>
+    </tr>
+  </table>
+
+</form>
+    <li id="sidebar"><a href="javascript:addSidebar()">Zur Seitenleiste hinzufügen</a> (setzt einen Mozilla-Browser wie beispielsweise Firefox voraus)</li>
+
+    
+
+  </ul>
+
+  <form id="show-bug" name="f" action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Bitte geben Sie zunächst einen oder mehrere Suchbegriffe ein.');
+                    return false; } return true;">
+  <div>
+    <p>
+      Hier können Sie eine Callnummer oder Suchbegriffe eingeben
+      und danach suchen lassen:
+    </p>
+    <input id="quicksearch" type="text" name="quicksearch">
+    <input id="find" type="submit" value="Suchen">
+    <a href="page.cgi?id=quicksearch.html">[Hilfe]</a>
+  </div>
+  </form>
+
+  <div class="outro"></div>
+</div>
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+﻿
+
+
+
+
+
+<div id="useful-links">
+  <div id="links-actions">
+    <div class="label">Aktionen:</div>
+    <div class="links">
+        <a href="./">Hauptseite</a> |
+        <a href="enter_bug.cgi">Neu</a> |
+        <a href="query.cgi">Suche</a> |
+
+        <form action="buglist.cgi" method="get"
+              onsubmit="if (this.quicksearch.value == '')
+                        { alert('Bitte geben Sie erst mindestens einen Suchbegriff ein.');
+                          return false; } return true;">
+            <input class="txt" type="text" name="quicksearch">
+            <input class="btn" type="submit" value="Finden">
+        </form> |
+
+        <a href="report.cgi">Berichte</a>
+
+          | <a href="request.cgi">Anfragen</a>
+
+
+            | <a href="index.cgi?GoAheadAndLogIn=1">Anmelden</a>
+    </div>
+  </div>
+
+
+
+    
+
+  <div id="links-saved">
+    <div class="label">
+    </div>
+    <div class="links">
+
+    </div>
+  </div>
+
+  
+
+
+  
+</div>
+
+  <div class="outro"></div>
+</div>
+
+</body>
+</html>

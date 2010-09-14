@@ -1,0 +1,113 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:55:39 GMT
+Server: Apache/2.2.6 (Fedora)
+X-Powered-By: PHP/5.1.6
+Set-Cookie: PHPSESSID=t3trr326eb3skm3j7sdomjple7; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 2032
+Connection: close
+Content-Type: text/html
+
+
+	<html>
+	<head>
+	<style>
+		* {
+		font-family:"Helvetica Neue", Helvetica, arial, sans-serif;
+		font-size:13px;
+		color:#4b4b4b;
+		}
+		.container {
+		width:100%;
+		text-align:center;
+		margin:auto;
+		position:relative;
+		}
+		input {
+		width:330px;
+		height:42px;
+		background-image:url('input_field.png');
+		border:0;
+		font-size:20px;
+		padding: 6px 0 0 6px;
+		margin:8px 0 0 0;
+		}
+		body{
+		background-image:url('login_bg.gif');
+		background-color:#000;
+		}
+		.login {
+		background-image:url('login_panel.png');
+		width:506px;
+		height:512px;
+		position:relative;
+		margin:auto;
+		text-align:left;
+		}
+		.focusField {
+		background-position: 0px -42px;
+		}
+		.idleField {
+		background-position: 0px 0px;
+		}
+		.username{
+		top:230px;
+		left:90px;
+		position:relative;
+		}
+		#submit {
+		width:94px;
+		height:39px;
+		border: 0px solid #FFFFFF;
+		background-image:url('btn_login.gif');
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		overflow:hidden;
+		text-indent: -1000em;
+		font-size: 0;
+ 		display:block;
+ 		line-height: 0;
+ 		}
+		#submit:hover {
+		background-position: 0px -39px;
+		}
+
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+    <script>
+$(document).ready(function() {  
+	$('input').addClass("idleField");  
+	$('input').focus(function() {  
+		$(this).removeClass("idleField").addClass("focusField");  
+		if (this.value == this.defaultValue){  
+			this.value = '';  
+		}  
+		if(this.value != this.defaultValue){  
+			this.select();  
+		}
+	});
+	$('input').blur(function() {  
+		$(this).removeClass("focusField").addClass("idleField");  
+		if ($.trim(this.value == '')){  
+			this.value = (this.defaultValue ? this.defaultValue : '');  
+		}  
+	});  
+}); 
+ </script>
+ </head>
+ <body>
+	<div class=container>
+	<div class=login>
+		<form method=post>
+		<div class=username>Username<br>
+			<input name=username><br><br>
+			Password<br>
+			<input type=password name=password><br><br>
+			<input type=submit id=submit>
+		</form>
+		</div>
+	</div>
+	</div>
+	</body>

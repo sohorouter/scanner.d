@@ -1,0 +1,130 @@
+HTTP/1.1 200 OK
+Date: Sat, 11 Sep 2010 23:02:39 GMT
+Server: Apache/2.2.13 (Unix) mod_ssl/2.2.13 OpenSSL/0.9.8k PHP/5.2.10
+Last-Modified: Tue, 16 Feb 2010 19:54:49 GMT
+ETag: "5be002-e0e-47fbd1b375440"
+Accept-Ranges: bytes
+Content-Length: 3598
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body  {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+td  {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+}
+.title {
+	font-size: 14pt;
+	font-weight: bold;        
+}
+.header1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+.header2 {
+	font-size: 10pt;
+	font-weight: bold;        
+}
+ul {
+	margin-left: -5px;
+}
+.button {
+	font-style: italic;
+	font-weight: bold;
+}
+.note_head {
+	font-size: 13px;
+	font-weight: bold;
+	color: #FF0000;
+}
+.note_content {
+	color: #FF0000;         
+}
+.bold_general {
+	font-weight: bold;
+}
+.letterSpace5 {
+	letter-spacing: 5px;
+	color: #FF0000;
+}
+</style>
+<link href="../../css/help.css" rel="stylesheet" type="text/css" />
+
+<title>Hallo! Herzlich Willkommen bei Synology Web Station!</title>
+
+<script language="JavaScript" type="text/javascript">
+function UpdateURL()
+{
+	var link = 'http://' + document.location.hostname + ':5000/webman/help/ger/notice.html';
+
+	if (document.anchors['notice_url'] == null) {
+		// IE        
+		document.anchors("notice_url").href= link;
+	} else {
+		// FireFox
+		document.anchors["notice_url"].href= link;
+
+	}
+}
+</script>
+</head>
+<body onLoad="UpdateURL();">
+
+<p class="title">Hallo! Herzlich Willkommen bei Synology Web Station!</p>
+
+<p>Der Web Station Service ist aktiviert. Sie k&ouml;nnen jetzt Ihre eigene Website auf Disk Station erstellen. Folgen Sie diesen Schritten, um Ihre Website Online aufzubauen und zu ver&ouml;ffentlichen.</p>
+
+<ol>
+
+  <li>Melden Sie sich im Web Manager an und gehen Sie zur Seite &quot;Rechte &gt; freigegebene Ordner&quot;. Weisen Sie Benutzerrechte f&uuml;r den Zugriff auf den freigegebenen Webordner zu.</li>
+
+  <li>(Erstellen Sie Webseiten und) Laden Sie Ihre Seiten auf den freigegebenen Webordner hoch.</li>
+
+  <li>Stellen Sie sicher, dass die Startseite Ihrer Website mit &quot;index.php&quot;, &quot;index.htm&quot;, oder &quot;index.html&quot; benannt ist.</li>
+
+  <li>Geben Sie http://servername/  in das Adressenfeld des Browsers ein, um Ihre Website anzusehen.</li>
+  
+</ol>
+
+<p class="header1">Wie ver&ouml;ffentliche ich meine Website?</p>
+
+<p>Um Ihre Website zu ver&ouml;ffentlichen und Menschen &uuml;ber das Internet zur Verf&uuml;gung zu stellen, m&uuml;ssen Sie Ihre Disk Station so einstellen, dass sie externe IPs benutzen.</p>
+
+  <ol>    
+  
+   <li>Um sich auf dem System Management-UI anzumelden, geben Sie in Ihren Browser bitte http://servername:5000/ ein.</li>
+   
+   <li>Melden sie sich im Web Manager Ihres Disk Station an.</li>
+
+   <li>Um Disk Station im Internet zu verankern, k&ouml;nnen Sie wie folgt vorgehen:</li>
+
+	<ul>
+
+		<li>Eine externe IP. Gehen Sie zur Seite &quot;System &gt; Netzwerk&quot;, um die Netzwerkeinstellungen des Servers zu bearbeiten, wenn Sie von Ihrem Netzwerk-Serviceanbieter eine spezielle externe IP Adresse erhalten.</li>
+		<li>Die  PPPoE Einstellungen. Gehen Sie zur Seite &quot;System &gt; PPPoE&quot;, um die PPPoE-Verbindung zu aktivieren.</li>
+	
+	</ul>
+
+    <li>Wenn Sie ein registriertes DDNS Konto nutzen m&ouml;chten, gehen Sie zur Seite &quot;Netzwerk-Services &gt; DDNS&quot;, um den DDNS Service zu aktivieren.</li>
+
+    <li>Fertig!</li>
+   
+</ol>
+
+<p>Jetzt k&ouml;nnen Menschen im Internet Ihre Website durchsuchen, indem sie in ihren Browser <em>http://serverIP/</em> oder <em>http://DDNS_hostname/</em> eingeben. F&uuml;r weitere Details zum Zugriff auf Disk Station &uuml;ber das Internet klicken Sie bitte <a name="notice_url">hier</a>.</p>
+
+</body>
+
+</html>

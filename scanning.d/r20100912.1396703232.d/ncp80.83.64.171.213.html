@@ -1,0 +1,44 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:51:29 GMT
+Server: Apache/2.0.59 (NETWARE) mod_jk/1.2.21
+Last-Modified: Fri, 03 Sep 2004 07:58:40 GMT
+ETag: "161ab-2ef-e62d6c00"
+Accept-Ranges: bytes
+Content-Length: 751
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<script language="JavaScript">
+<!--
+
+			var sThisURL = unescape('/nps/iManager.html');
+			function doRedirect()
+			{
+			   actualRedirect();
+			}
+			function actualRedirect()
+			{
+			   setTimeout("top.location.href = sThisURL", 500 );
+			}
+		
+// -->
+</script>
+		<script language="JavaScript1.1">
+<!--
+
+			function actualRedirect()
+			{
+			   top.location.replace(sThisURL);
+			}
+			if ("MSIE" == navigator.appName )
+			doRedirect();
+		
+// -->
+</script>
+	</head>
+	<meta target="top" content="1;url=/nps/iManager.html" http-equiv="refresh">
+	<body marginwidth="0" leftmargin="0" bgcolor="#efeee9" topmargin="0" marginheight="0" onLoad="doRedirect()"></body>
+</html>

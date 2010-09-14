@@ -1,0 +1,378 @@
+HTTP/1.1 200 OK
+Connection: close
+Date: Sun, 12 Sep 2010 00:53:22 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 18187
+Content-Type: text/html
+Set-Cookie: ASPSESSIONIDCQQRASBS=MDPPNBBCAHAOFOANIBLAHELF; path=/
+Cache-control: private
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="description" content="Die Oesterreichische Firmenauskunft: Telefonnummern, Adressen, E-Mail, Webadressen, Routenplaner, Standorte."/> 
+<meta name="keywords" content="118899, Auskunft, Telefonauskunft, Telefonnummer, Company, Österreich, Austria, 
+yellow pages, searchengine, Telefonbuch, Firmenbuch, Suche, Wetter, Notruf, Hotline, Fahrpläne, Branchen, business directory,
+telephone directory, marketing adresses, telephone book, Hotels, Wellness, Tickets, Ärzte, Arzt, Zahnarzt, Apotheke,
+Bank, Magistrat, Restaurant, Gasthaus, Friseure, Autohandel, Kfz, Buchhandel, Routenplanung,
+Standort, maps, geocoding, Wien, Vienna, Graz, Linz, Innsbruck, Klagenfurt"/>
+<meta name="author" content="118899 Alles Auskunft"/>
+<meta name="publisher" content="118899 Alles Auskunft"/>
+<meta name="Content-Language" content="de"/>
+<meta name="language" CONTENT="de"/>
+<meta name="robots" content="index, follow"/>
+<meta name="revisit-after" content="2 days"/>
+
+<title>118899 Alles Auskunft</title>
+<link rel = "SHORTCUT ICON" href="http://www.118899.com/favicon.ico">
+<link href="style_bob.css" type="text/css" rel="stylesheet">
+<base target="frm_main">
+<script language="JavaScript" type="text/JavaScript">
+/*--------------Date/Time--------------*/
+var ZeitString, DatumsString = "";
+
+function setFrameMain() {parent.document.getElementById("frm_main").height = 1500;}
+	
+function ZeitDatum() {
+	Jetzt = new Date();
+	//Date
+	Tag = Jetzt.getDate();
+	Monat = Jetzt.getMonth()+1;
+	Jahr = Jetzt.getFullYear();
+	DatumsString = Tag;
+	DatumsString += ((Monat<10) ? ".0" : ".") + Monat;
+	DatumsString += "." + Jahr;
+	document.getElementById("td_date").innerHTML = DatumsString;
+	//Time
+	Stunden = Jetzt.getHours();
+	Minuten = Jetzt.getMinutes();
+	/*Sekunden = Jetzt.getSeconds()*/
+	ZeitString = Stunden;
+	ZeitString += ((Minuten < 10) ? ":0" : ":") + Minuten;
+	/*ZeitString += ((Sekunden < 10) ? ":0" : ":") + Sekunden;*/
+	document.getElementById("td_time").innerHTML = ZeitString;
+	setTimeout("ZeitDatum()", 10000);
+	}
+	
+// initialise croosbrowser variables
+var DHTML = 0
+var DOM   = 0
+var MS    = 0
+var NS    = 0
+var OP    = 0
+
+function DHTML_init() {  
+	if (window.opera) 								{OP = 1;}
+	if (document.getElementById) 						{DHTML = 1; DOM = 1;}
+	if (document.all && !OP) 						{DHTML = 1; MS = 1;}
+	if (window.netscape && window.screen && !DOM && !OP)	{DHTML = 1; NS = 1;}
+}
+
+DHTML_init(); 
+
+// returns the top postiion of the visible page area
+function get_top_postion() {
+	if(DOM) {
+		if(MS) {return document.body.scrollTop;}
+		else   {return window.pageYOffset;}
+	}
+	if(DOM || MS) {
+		if (!DOM) {return document.body.scrollTop;}
+		if (OP)   {return 42;} // style.pixelTop
+	}
+	else if(NS) {
+		return window.pageYOffset;
+	}
+} 
+
+function SetSMSFrameHeight()
+{
+	var form = document.getElementById("frm_main");
+	if (form)
+		form.height = "505px";
+}
+</script>
+</head>
+<body background="images/bg_dark_green.gif" style="overflow:visible; overflow-y:scroll;">
+<form name="frm_div_displayed" action="" method="post">
+<!-- speichert den namen des zuletzt geöffneten div fensters welche dynamisch 
+	eingeblendet werden wenn der user einen kostenpflichtigen report anfordert -->
+<input type="hidden" id="hdn_div_displayed_last" name="hdn_div_displayed_last" value="">
+<!-- der inhalt des vorigen feldes wird kopiert uns sofort nach dem auslesen wieder
+	geschlossen. damit wird verhindert das öffnen beim neuaufruf der seite verhinderrt -->
+<input type="hidden" id="hdn_div_displayed_temp" name="hdn_div_displayed_temp" value="">
+</form>
+<div align="center"> 
+	<table cellspacing="0" cellpadding="0" style="width:805px; border:solid 3px white; border-bottom:none;">
+		<tr>
+			<td colspan="3"  background="images/bg_menue_top.jpg"> 
+				<table cellspacing="0" cellpadding="0">
+					<tr align="center">
+						<td width="252" height="58" rowspan="3" align="left"><img src="images/118899_logo.gif" border="0"></td>
+						<td colspan="2" style="text-align:right; padding-top:0px;"> 
+							<table cellspacing="0" cellpadding="0" class="tbl_menu_top td_white_links" style="padding-top:0px;">
+								<tr>
+									<td width="20%">&nbsp; </td>
+									<td width="10%"><a title="Schnelle Suche" href="home.asp" hidefocus="hidefocus">HOME</a></td>
+									<td><a title="Schnelle Suche" href="home_design.asp" hidefocus="hidefocus">|</a></td>
+									<td width="10%"><a title="Online Shop und ShopCart" href="shop.asp" hidefocus="hidefocus">SHOP</a></td>
+									<td>|</td>
+									<td width="10%"><a title="ShopCart" href="shopcart.asp" hidefocus="hidefocus">SHOPCART</a></td>
+									<td>|</td>
+									<td width="10%"><a title="ShopCart" href="hilfe/preise.htm" hidefocus="hidefocus">PREISE</a></td>
+									<td>|</td>
+									<td width="10%"><a title="Unsere Online Preise" href="hilfe/hilfe_eingabe.htm" hidefocus="hidefocus">HILFE</a></td>
+									<!--td>|</td>
+									<td width="7%" nowrap><a title="Kontaktieren Sie uns!" href="kontakt_gmbh.asp" hidefocus="hidefocus">118899 GmbH</a></td-->
+									<td>|</td>
+									<td width="8%" nowrap><a title="Kontaktieren Sie uns!" href="hilfe/kontakt.htm" hidefocus="hidefocus">IMPRESSUM | KONTAKT | AGB's</a></td>
+									<!-- 
+									<td>|</td>
+									<td width="10%"><a title="118899 Multimediazeitung" href="http://118899.mytoday.at" target="_blank" hidefocus="hidefocus">118899 Today</a>&nbsp;&nbsp;</td>
+									-->
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" height="10" align="right">&nbsp;</td>
+					</tr>
+					<tr align="center" >
+						<td width="98"  height="18px" style="vertical-align:bottom; padding-bottom:2px;"> 
+							<table cellspacing="0" cellpadding="0" style="font-size:10px; font-weight:bold; color:white;">
+								<tr>
+									<td id="td_date"></td>
+									<td>|</td>
+									<td id="td_time"></td>
+								</tr>
+							</table>
+						</td>
+						<td width="450" rowspan="2" valign="bottom"> 
+							<table cellpadding="0" cellspacing="0" height="24px">
+								<tr>
+									<td width="51" align="left" valign="bottom"><img src="images/bogen_login.gif"></td>
+									<td align="right" style="background-color:#DE0063; height:24px;"> 
+										<iframe id="frm_login" name="frm_login" src="login.asp" width="450" height="20" 
+										marginheight="1" marginwidth="0" style="border:none; overflow:none;"></iframe>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr align="center">
+						<td colspan="2" style="background-color:DE0063; height:7px;"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr align="center">
+			 <td colspan="3" background="images/bg_light_green.gif" style="height:70px; padding:0px; text-align:center;">
+				<!--table border="0" cellpadding="10" cellspacing="0" align="center">
+					<tr>
+						<td align="center">
+							<a href="http://www.mytoday.at" target="_blank" hidefocus="hidefocus">
+								<img alt="Today - Daily Magazine" src="images/netpapers/logo-today.gif" 
+								height="37" width="130" border="0">
+							</a>
+						</td>
+						<td align="center">
+							<a href="http://www.bluebulltoday.com" target="_blank" hidefocus="hidefocus">
+								<img alt="BLUeBULL today" src="images/netpapers/logo-bbtoday.gif" 
+								height="37" width="130" border="0">
+							</a>
+						</td>
+						<td align="center">
+							<a href="http://allesfonds.mytoday.at" target="_blank" hidefocus="hidefocus">
+								<img alt="AllesFonds" src="images/netpapers/logo-allesfonds.gif" 
+								height="37" width="130" border="0">
+							</a>
+						</td>
+						<td align="center">
+							<a href="http://www.bluebull.com/servlets/servlet/newspaper.showNewspaper?action=start&kdnid=45" 
+							target="_blank" hidefocus="hidefocus">
+								<img alt="118899 AllesMusik" src="images/netpapers/logo-allesmusik.gif" 
+								height="37" width="130" border="0">
+							</a>
+						</td>
+						<td align="center">
+							<a href="http://www.newskick.at" target="_blank" hidefocus="hidefocus">
+								<img alt="weekly newskick" src="images/netpapers/logo-newskick.gif" 
+								height="37" width="130" border="0">
+							</a>
+						</td>
+					</tr>
+				</table-->
+
+				<!-- Fullsize-Banner Begin -->
+				<iframe id="ifr_banner" name="ifr_banner" src="banner.asp" width="800px" height="70px;" 
+				marginheight="5" marginwidth="5" style="border:none; overflow:none;">
+				</iframe>
+				<!-- Fullsize-Banner End>
+
+				<!--include file="include/head.asp"-->
+
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" height="2px" bgcolor="#FFFFFF"></td>
+		</tr>
+		<tr>
+			<td width="100" valign="top" bgcolor="#FFFFFF"> 
+				<table cellspacing="0" cellpadding="0" class="tbl_menu_side td_red_links">
+					<tr>
+						<th class="td_menu_middle_active" style="width:98px;">NEWS & FUN</th>
+						<th  class="td_menu_middle_active" style="width:7px;"><img src="images/men_act_end.gif"></th>
+					</tr>
+					<tr>
+						<td colspan="2"><a name="news" title="Aktuelle Informationen zu 118899.com Alles Auskunft" href="118899_aktuell.asp" hidefocus="hidefocus">118899 Aktuell </a></td>
+					</tr>
+					<tr><td colspan="2"><a name="notruf" title="Die wichtigsten Notrufnummern auf einen Blick" href="notruf.asp" hidefocus="hidefocus">Notruf</a></td></tr>
+					<tr><td colspan="2"><a name="weltweit" class="txt_small" title="Gelbe Seiten International" href="weltweit/kontinent.asp" hidefocus="hidefocus">Gelbe Seiten Int.</a></td></tr>
+					<tr><td colspan="2"> <a name="fahrplaene" title="118899.com Fahrpläne" href="fahrplan/zug2.asp" hidefocus="hidefocus">Fahrpl&auml;ne</a></td></tr>
+					<tr><td colspan="2"> <a name="news" title="News" href="orf_news_xml.asp" hidefocus="hidefocus">News</a></td></tr>
+					<!-- <tr><td colspan="2"><a name="wetter" title="Aktuelle Wetterauskunft für Österreich" href="wetter.asp" hidefocus="hidefocus">Wetter</a></td></tr> -->
+					<tr><td colspan="2"><a name="news" title="Sport News" href="orf_sport_xml.asp" hidefocus="hidefocus">Sport</a></td></tr>
+					<!-- WL 27.9.2006 -->
+					<!--<tr><td colspan="2"><a name="Gratis SMS" title="Gratis SMS" href="http://wsm.mobileservices.at/wsm/frontend/instances/auskunftsms/index.jsp?cmd=login&params=mobileservices:118899:auskunftsms:auskunft" hidefocus="hidefocus" onclick="SetSMSFrameHeight();">Gratis SMS</a></td></tr> -->
+					<!-- rep/mf 23.3.2005 heraus <tr><td colspan="2"><a name="financial"  title="Financial News" href="bluebull_xml.asp" onClick="setFrameMain();" hidefocus="hidefocus">Financial News</a></td></tr>-->
+					<!-- WL 22.3.2007 Gutschein-->
+					<tr><td colspan="2"><a name="Gutschein" class="txt_small" title="Gutscheine" href="Gutscheine.asp" hidefocus="hidefocus">Gutscheine</a></td></tr>
+					<tr><td colspan="2" style="border-bottom:none"><a name="ecards" title="Verschicken Sie 118899.com E-Cards" href="ecards/ecards.asp" hidefocus="hidefocus">E-Cards</a></td></tr>
+					<!--<tr><td colspan="2" style="border-bottom:none"><a name="www.247shop.at" title="für Elektronikshopper und Schnäppchenjäger" href="247shop.asp" hidefocus="hidefocus">247shop</a></td></tr-->
+				</table>
+
+				<!-- 11.10.2007 Weihnachtsbutton 
+				<br>
+				<a href=sonderaktion.asp  hidefocus="hidefocus" onclick="SetSMSFrameHeight();"> 
+					<img alt="Tiger SMS" src="images/netpapers/animation-01.gif" 
+					height="60" width="105" border="0" style="margin-bottom:16px;">
+				
+				-->
+				<!-- advertising  Button tausch 08:48 14.03.2008 -->
+				<!--<br>
+				<a href="http://wsm.mobileservices.at/wsm/frontend/instances/auskunftsms/index.jsp?cmd=login&params=mobileservices:118899:auskunftsms:auskunft "  hidefocus="hidefocus" onclick="SetSMSFrameHeight();"> 
+					<img alt="Tiger SMS" src="images/netpapers/tiger118899.gif" 
+					height="161" width="105" border="0" style="margin-bottom:16px;"> 
+
+				-->
+				<!--Fantasie Button 08:48 7.1.2008-->
+				
+				<a href="http://www.fantasie.tv" target="_blank" hidefocus="hidefocus"><img src="images/netpapers/fantasie-button.gif" width="105" border="0" with/></a>
+
+				<!--GEC Bild-->
+				<a href="http://www.elektro-gec.at" target="_blank" hidefocus="hidefocus"><img src="images/netpapers/GEC-button-animiert.gif" width="105" border="0" with/></a>
+				
+				<!--Napoleonhof Button 08:48 18.12.2007-->
+
+				<a href="http://www.napoleonhof.at" target="_blank" hidefocus="hidefocus"><img src="images/netpapers/napoleonhof-button.gif" width="105" border="0" with/></a>
+
+				</a> 
+				<!-- rep/mf 23.3.2005 herausnehmen
+    				   
+				<a href="http://allesfonds.mytoday.at" target="_blank" hidefocus="hidefocus">
+					<img alt="AllesFonds" src="images/netpapers/logo-allesfonds-small.gif" 
+					height="30" width="105" border="0">
+				</a>
+				-->
+				<!-- advertising netpaper end -->
+			</td>
+			<td width="600" valign="top"  bgcolor="#FFFFFF"> 
+				<div style="position:relative;"> 
+					<iframe id="frm_main" name="frm_main"  FRAMEBORDER="0" 
+					src='home.asp'
+					width="605" height="600" marginheight="0" marginwidth="15" style="border:none; overflow:none; position:relative;"></iframe>
+				</div>
+			</td>
+			<td width="105" valign="top" bgcolor="#FFFFFF"> 
+				<table cellspacing="0" cellpadding="0" class="tbl_menu_side td_red_links">
+					<tr>
+						<th class="td_menu_middle_active" style="width:7px; padding-left:0px;"><img src="images/men_act_begin.gif"></th>
+						<th class="td_menu_middle_active" style="width:98px;">BUSINESS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+					</tr>
+					<tr><td colspan="2"><a name="firmenprofil" title="Firmenprofile downloaden" href="firmenprofile_suche.asp" hidefocus="hidefocus">Firmenprofile</a></td></tr>
+					<tr><td colspan="2"><a name="marketingdaten" title="Marketingdaten downloaden" href="marketingdaten_suche.asp" hidefocus="hidefocus">Marketingdaten</a></td></tr>
+					<!-- rep/mf 23.3.2005 heraus <tr><td colspan="2" style="font-size:9px;"><a name="118899 Weltweit" title="118899 Weltweit" href="dub_toolkit/Search.asp" hidefocus="hidefocus">118899 Weltweit</a></td></tr>-->
+					
+					<tr><td colspan="2" style="border-bottom:none"><a title="118899 Telefonbuch" href="AspNet/WhitePagesSearch.aspx" hidefocus="hidefocus">Telefonbuch</a></td></tr>
+					
+
+				</table>
+				<br> 
+				<table cellspacing="0" cellpadding="0" class="tbl_menu_side td_red_links">
+					<tr>
+						<th class="td_menu_middle_active" style="width:7px; padding-left:0px;"><img src="images/men_act_begin.gif"></th>
+						<th class="td_menu_middle_active" style="width:98px;">SPECIALS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</th>
+					</tr>
+					
+					<tr><td colspan="2"><a name="Registrieren" title="Kostenloses registriern" href="register.asp" hidefocus="hidefocus">Registrieren</a></td></tr>
+					<tr><td colspan="2"><a name="ecards" title="Verschicken Sie 118899.com E-Cards" href="passwort_vergessen.asp" hidefocus="hidefocus">Passwort?</a></td></tr>
+
+					<!-- rep/WL 11.7.2006 Jobnew -->
+					<tr><td colspan="2"><a name="Jobangebote" title="Jobangebote" href="hilfe/jobnew.htm" hidefocus="hidefocus">Jobangebote</a></td></tr>
+					<tr><td colspan="2"><a name="Registrieren" title="118899 Support" href="mailto:support@118899.com" hidefocus="hidefocus">Support</a></td></tr>
+					<tr><td colspan="2" style="font-size:9px; border-bottom:none;"><a href="javascript:window.external.AddFavorite('http://www.118899.com/','118899 - Alles Auskunft')" hidefocus="hidefocus">Bookmark 118899</a></td></tr>
+
+					<!--tr><td colspan="2" style="border-bottom:none"> <img src="images/neu_n2u.gif" vspace="3"></td></tr-->
+				</table>
+				<br> 
+
+				<!--Fantasie Button 08:48 14.03.2008 -->
+				
+				<!--<a href="http://www.fantasie.tv" target="_blank" hidefocus="hidefocus"><img src="images/netpapers/fantasie-button.gif" width="105" border="0" with/></a> -->
+
+				<!--GEC Bild-->
+				<!--<a href="http://www.elektro-gec.at" target="_blank" hidefocus="hidefocus"><img src="images/netpapers/GEC-button-animiert.gif" width="105" border="0" with/></a>-->
+				
+				<!--Napoleonhof Button 08:48 18.12.2007-->
+
+				<!--<a href="http://www.napoleonhof.at" target="_blank" hidefocus="hidefocus"><img src="images/netpapers/napoleonhof-button.gif" width="105" border="0" with/></a>-->
+
+				
+				
+
+				
+
+				<div id="div_buttons" style="position:relative;"> 
+					<!-- iframe id="frm_buttons" name="frm_buttons" src="dummy.htm" width="106" height="355" 
+					marginheight="0" marginwidth="0" style="border:none; overflow:none; position:relative; display:none"></iframe-->
+				</div>
+			</td>
+		</tr>
+		<tr align="center">
+			<td colspan="3" background="images/bg_light_green.gif" style="padding:5px; padding-bottom:2px;"> </td>
+		</tr>
+	</table>
+	<table cellspacing="0" cellpadding="0" style="font-size:10px; color:white; width:821px;">
+		<tr>
+			<td width="420" rowspan="2" style="background-color:DE0063; border-left:solid 3px white; 
+			border-bottom:solid 3px white; height:23px;"><a href="home.asp"><font color="#FFFFFF">&nbsp; 
+				&copy; 2003 - 2010 by 118899 Alles Auskunft | Alle Rechte vorbehalten</font></a>
+			</td>
+			<td width="50" rowspan="2"><img src="images/bogen_footer.gif" width="50" height="23"></td>
+			<td style="background-color:DE0063;  border-right:solid 3px white; border-bottom:solid 3px white; height:7px;"></td>
+		</tr>
+		<tr>
+			<td style="height:16px;"> 
+				<div style="position:relative"> 
+					<iframe id="frm_write_csv" name="frm_write_csv" src="" width="0" height="0" marginheight="0" marginwidth="15" 
+					style="border:none; overflow:none; position:relative;"></iframe>
+				</div>
+				&nbsp; 
+			</td>
+		</tr>
+	</table>
+</div>
+<script language="JavaScript" type="text/JavaScript">
+	setTimeout("ZeitDatum()", 500);
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-188346-1";
+urchinTracker();
+</script>
+
+</body>
+</html>

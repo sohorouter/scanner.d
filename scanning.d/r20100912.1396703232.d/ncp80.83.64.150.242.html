@@ -1,0 +1,19 @@
+HTTP/1.1 403 Forbidden
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Sun, 12 Sep 2010 00:42:02 GMT
+Connection: close
+Content-Length: 319
+
+<!-- beginning of HttpRedirect.htm file -->
+<script type="text/javascript">
+function redirectToHttps()
+{
+var httpURL = window.location.hostname + window.location.pathname;
+var httpsURL = "https://" + httpURL ;
+window.location = httpsURL ;
+}
+redirectToHttps();
+</script>
+<!-- end of HttpRedirect.htm file -->

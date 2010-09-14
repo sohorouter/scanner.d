@@ -1,0 +1,140 @@
+HTTP/1.0 401 Unauthorized
+Server: thttpd/2.19-MX Oct 20 2003
+Content-type: text/html
+Date: Sat, 11 Sep 2010 22:54:06 GMT
+Last-modified: Sat, 11 Sep 2010 22:54:06 GMT
+Accept-Ranges: bytes
+Connection: close
+WWW-Authenticate: Basic realm="./cgi-bin"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script language="JavaScript">
+
+	var hostname;
+	var url_regexpr= /(\w+):\/\/([^\/]+)\/(\S*)/;
+	var result = document.URL.match(url_regexpr);
+	if (result != null)
+		hostname = result[2];
+	else
+		hostname = "";
+	document.write('<TITLE>' + hostname + " Error 401: Unauthorized Access <\/TITLE>");
+</script>
+<noscript>
+<title>Error 401: Unauthorized Access</title>
+</noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="publisher" content="MOBOTIX AG, Germany">
+<meta name="copyright" content="MOBOTIX AG, Germany">
+<meta name="author" content="Gerald Eberhard, MOBOTIX AG, Germany">
+<link rel="owner" href="mailto:info@mobotix.com">
+<link rel="copyright" href="/about.html" title="Copyright">
+<style type="text/css">
+td,th{font-family:Helvetica,Arial,sans-serif;}
+pre,textarea{font-family:monospace;}
+.headtablesmall{font-family:Helvetica,Arial,sans-serif;font-size:100%;}
+.standard {font-size:80%}
+.inherit {font-size:100%}
+.smallcomment{font-size:95%}
+.smallercomment{font-size:80%}
+form{margin-bottom:0px;margin-top:0px;}
+.kleinerknopf{font-size:80%};
+</style>
+
+<script type="text/javascript">
+	var filesystem__version="V1.9.4.7";
+	var homepage__language="default                                                                ";
+	var windowname_home="mxHome";
+	var windowname_ext ="mxExtern";
+	var windowname_help="mxHelp";
+	var windowname_info="mxInfo";
+	function openExtNoDeko(path,winname) {
+		if ( path.search(/^!/) >= 0 ) {
+			path=path.replace(/^!/,"");
+			path=path+"?cachedummy="+Math.floor(Math.random()*1000000);
+		}
+		return window.open(path,winname,"scrollbars=yes,resizable=yes,width=722");
+	}
+
+	function goUserlevel()
+	{
+		if (self.name == windowname_ext)
+		{
+			if (window.opener==null || window.opener.closed)
+			// Kein Opener oder bereits geschlossen
+		  	window.open("/control/userimage.html",windowname_home);
+			else
+				window.opener.focus();
+	   	self.window.close();
+			return;
+		}
+		location.href="/control/userimage.html";
+	}
+	function getTextFensterX(breite) {
+		var wString=",width="+breite;
+		if (window.screenLeft)
+			wString+=",left="+parseInt(screenLeft+document.body.offsetWidth/2-breite/2);
+		else if (window.screenX)
+			wString+=",screenX="+parseInt(screenX+outerWidth/2-breite/2);
+		return wString;
+	}
+	function getTextFensterY(hoehe) {
+		var wString=",height="+hoehe;
+		if (window.screenTop)
+			wString+=",top="+parseInt(screenTop+document.body.offsetHeight/2-hoehe/2);
+		else if (window.screenY)
+			wString+=",screenY="+parseInt(screenY+innerHeight/2-hoehe/2);
+		return wString;
+	}
+
+	function open_camerainfo(prefix) {
+		if (typeof prefix == "undefined")
+			var prefix="";
+		var wdh=window.open(prefix+"/control/camerainfo?rand="+Math.random(), windowname_info,
+			"width=370,height=320,scrollbars=yes,resizable=yes");
+		if (wdh) wdh.focus();
+	}
+function debugmsg(k) {};
+
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" background="/decor/Cam_Kachel_grau.gif"> 
+<!-- begin main table -->
+<table width="100%" border=2 cellspacing=0 cellpadding=0 bordercolor="#000088">
+<tr>
+<td bgcolor="#000088">
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="4" bgcolor="#000088">
+	<TR>
+	<TD class=headtablesmall width="1%"><nobr><!-- gfxbutton Open camera homepage!--><a href="javascript:goUserlevel();" onmousedown="TheImageButton0.src='/decor/nav_home_pressed.gif';" onmouseover="TheImageButton0.src='/decor/nav_home.gif';"	onmouseup="TheImageButton0.src='/decor/nav_home.gif';"	onmouseout="TheImageButton0.src='/decor/nav_home_sw.gif';"><img height=23 width=23 name="TheImageButton0" src="/decor/nav_home_sw.gif" border=0 title="Open camera homepage!" alt="Open camera homepage!"></a
+><!-- gfxbutton end --></nobr></TD>
+			<TD class=headtablesmall valign="middle"> 		<font face="Helvetica,Arial" color="#CCCCCC">
+		 		<b>MOBOTIX M1</b>   Error 401: Unauthorized Access
+			</font>
+		</TD><TD class=headtablesmall align=right><nobr>
+		<a href="/help/help" onclick="openExtNoDeko('/help/help','mxHelp');return false;"><img alt="Open Help!" title="Open Help!" border=0 src="/decor/help.gif" height=12 width=12></a>
+		<a target="mxExtern" href="/control/camerainfo" onclick="open_camerainfo();return false;"
+		><img alt="Show Camera info!" title="Show Camera info!" border=0 src="/decor/info.gif" width=12 height=12></a>
+		</nobr></TD>	</TR></TABLE><img border=0 src="/decor/dummy.gif" width=680 height=1></td></tr><tr>
+<td
+><!-- begin content -->
+
+<table width="680" height="300" cellpadding="10" cellspacing="0" border="0" bgcolor="">
+<tr>
+<td align="center">
+<font face="Helvetica,Arial" size="+2" color="red">
+You do not have rights to enter these pages.<p>
+Check your login and your password.
+</font>
+</td>
+</tr>
+</table>
+<!-- end content --></td>
+</tr>
+</table>
+<!-- end maintable -->
+<script type='text/javascript' language='JavaScript'>self.focus();</script></body>
+</html>

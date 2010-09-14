@@ -1,0 +1,229 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 23:22:48 GMT
+Server: Apache/2.2.10 (Linux/SUSE)
+X-Powered-By: PHP/5.2.9
+Set-Cookie: PHPSESSID=sudic7m7khcaf0p36s6pp36i1iaj1pjc; path=/; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 7915
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta name="author" content="entrance web studio">
+		<meta name="publisher" content="entrance web studio">
+		<meta name="designer" content="entrance web studio" >
+		<meta name="robots" content="nofollow" >
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/default.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/workplace.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/ui/jquery/ui-core.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/ui/jquery/ui-alerts.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/ui/ui-form.css">
+		
+		<script type="text/javascript" src="/js/lib/prototype.js"></script>
+		<script type="text/javascript" src="/js/lib/jquery.js"></script>
+		<script type="text/javascript" src="/js/common.js"></script>
+		<script type="text/javascript" src="/js/CPruefbuch.js"></script>
+		<script type="text/javascript" src="/js/workplace/CPruefbuchShell.js"></script>
+		<script type="text/javascript" src="/js/workplace/CWorkplaceShell.js"></script>
+		<script type="text/javascript" src="/js/ui/ui.alerts.js" mode="core"></script>
+				
+		<script type="text/javascript">
+			// <![CDATA[
+			
+			jQuery.noConflict();
+			
+			// workplace management
+			var workplace = new CWorkplaceShell ();
+			
+			// special workplace treatment for the pruefbuch
+			var pruefbuchShell = new CPruefbuchShell ();
+			pruefbuchShell.workplace = workplace;
+			
+			function main () {
+				// register content pane with workplace shell
+				workplace.pane = $ ( "contentPane" );
+				
+				CPruefbuch.initialize ();
+			}
+			
+			// events
+			window.onload = main;
+		
+			// ]]>
+		</script>
+		
+	</head>
+	
+	<body oncontextmenu="return false;" onselectstart="return false;" onselect="return false;">
+		
+		<div id="outer" style="width: 870px; margin: 0 auto;">
+			
+			<div id="head" >
+				
+				<div id="headTop">
+					
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-header-tl1.jpg) no-repeat; width: 17px;"></div>
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-header-tl2.jpg) no-repeat; width: 13px;"></div>
+					<div class="box left border" style="background: transparent url(/img/workplace/b-header-t.jpg); height: 23px; width: 800px;"></div>
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-header-tr-inner.jpg) no-repeat; width: 13px;"></div>
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-header-tr-outer.jpg)no-repeat; width: 17px;"></div>
+					
+					<div class="clear"></div>
+				</div>
+				
+				<div id="headContent">
+					
+					<div class="box left" style="background: transparent url(/img/workplace/b-header-l.jpg); width: 17px; height: 100px;"></div>
+					<div class="box content left" style="height: 100px; width: 826px;">
+						<img style="float: left; padding-left: 10px;" src="/img/logo.jpg" >
+					</div>
+					<div class="box left" style="background: transparent url(/img/workplace/b-header-r.jpg); width: 17px; height: 100px;"></div>
+					
+					<div class="clear"></div>
+				</div>
+				
+			</div>
+			
+			<div id="body">
+				
+				<div id="bodyTop">
+					
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-body-l-outer.menu.jpg) no-repeat; width: 17px; height: 33px;"></div>
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-body-l-inner.menu.jpg) no-repeat; width: 13px; height: 33px;"></div>
+					<div class="box left border" style="background: transparent url(/img/workplace/b-body-t.menu.jpg); height: 33px; width: 800px;"></div>
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-body-r-inner.menu.jpg) no-repeat; width: 13px; height: 33px;"></div>
+					<div class="box left corner" style="background: transparent url(/img/workplace/c-body-r-outer.menu.jpg) no-repeat; width: 17px; height: 33px;"></div>
+					
+					<div class="clear"></div>
+					
+				</div>
+				
+				<div id="navigationContent">
+					
+					<div class="box left" style="background: transparent url(/img/workplace/b-navigation-l.jpg); width: 17px; height: 25px;"></div>
+					<div class="box navigation left" style="width: 826px; height: 25px; background: url(/img/ui/bg.menubar.jpg)"></div>
+					<div class="box left" style="background: transparent url(/img/workplace/b-navigation-r.jpg); width: 17px; height: 25px;"></div>
+					
+					<div class="clear"></div>		
+				</div>
+	
+				<div id="bodyContent">
+					
+					<div class="box left" style="background: transparent url(/img/workplace/b-body-l.jpg); width: 17px; height: 300px;"></div>
+					<div class="box content left" style="width: 826px; height: 300px; overflow: auto;">
+						
+						<div id="contentPane">
+							<script type="text/javascript">
+	// <![CDATA[
+	
+	/**
+	 * Init
+	 *
+	 * @return void
+	 */
+	function initialize () {
+		needUpdate ();
+		
+		$ ( "username" ).focus ();
+	}
+	
+	
+	/**
+	 * Checks if the browser is incompatible.
+	 *
+	 * @return void
+	 */
+	function needUpdate () {
+		var version = jQuery.browser.version;
+		
+		if ( jQuery.browser.msie === true ) {
+			version = parseInt ( version.substr ( 0 , 1 ) );
+			
+			if ( version < 8 )
+				document.location.href = '/software/requirement';
+		}
+		
+		if ( jQuery.browser.mozilla === true ) {
+			parts = version.split ( "." );
+			
+			if ( parseInt ( parts [ 0 ] ) == 1 && parseInt ( parts [ 1 ] ) < 9 )
+				document.location.href = '/software/requirement';
+		}	
+	}
+	
+	CPruefbuch.addInit ( initialize );
+	
+	// ]]>
+</script>
+
+
+<div style="float: left; margin-right: 20px; margin-left: 100px; margin-top: 60px;">
+	<img src="/img/login/admin.gif" alt="Login" title="Login">
+</div>
+
+<div style="float: left; margin-top: 30px;">
+	<h1>
+		Prüfbuch Login
+	</h1>
+	
+	<p>
+		Bitte verifizieren Sie sich mit Ihrem Benutzernamen und Passwort.
+	</p>
+	
+		
+	<form action="/auth/login/verify" method="post">
+	
+		<div>
+			<label for="username" style="width: 120px;">Benutzername:</label>
+			<input type="text" id="username" name="username" required="true">
+		</div>
+		
+		<div>
+			<label for="password" style="width: 120px;">Passwort:</label>
+			<input type="password" name="password" required="true">
+		</div>
+										
+		<button type="submit">
+			Login
+		</button>
+									
+	</form>
+</div>						</div>
+						
+					</div>
+					<div class="box left" style="background: transparent url(/img/workplace/b-body-r.jpg); width: 17px; height: 300px;"></div>
+						
+				</div>
+				
+			</div>
+			
+			<div class="clear"></div>
+				
+			<div id="footer">
+					
+				<div class="box left corner" style="background: transparent url(/img/workplace/c-footer-l-outer.jpg) no-repeat; width: 17px; height: 49px;"></div>
+				<div class="box left corner" style="background: transparent url(/img/workplace/c-footer-l-inner.jpg) no-repeat; width: 13px; height: 49px;"></div>
+				<div class="box left border" style="background: transparent url(/img/workplace/b-footer-b.jpg); width: 800px; height: 49px;"></div>
+				<div class="box left corner" style="background: transparent url(/img/workplace/c-footer-r-inner.jpg) no-repeat; width: 13px; height: 49px;"></div>
+				<div class="box left corner" style="background: transparent url(/img/workplace/c-footer-r-outer.jpg) no-repeat; width: 17px; height: 49px;"></div>
+				
+				<div class="clear"></div>
+			</div>
+					
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,55 @@
+HTTP/1.0 200 OK
+Pragma: nocache
+Expires: Sat, 1 Jan 2000 00:00:00 GMT
+Content-Type: text/html
+Content-Length: 1074
+Server: SWILL/0.1
+Connection: close
+
+<HTML>
+	<HEAD>
+	    <SCRIPT language='JavaScript'>
+            function GetCookie(name) {
+
+                var prefix = name + '=';
+                var start  = document.cookie.indexOf(prefix);
+
+                if (start < 0)
+                    return -1;
+
+                var aend = document.cookie.indexOf(';', start + 1);
+                if (aend < 0)
+                  aend = document.cookie.length;
+
+                var value = document.cookie.substring(start+prefix.length, aend);
+                return unescape(value);
+            }
+
+
+
+            function redirection() {
+
+                var r=GetCookie('r');
+                var s=GetCookie('s');
+                var bg=GetCookie('bg');
+                var bt=GetCookie('bt');
+                var tx=GetCookie('tx');
+                var url;
+
+                if(s!=6)
+                    url='MainMenu.htm';<!-- s=6; inline frame is default -->
+				else {					
+					url='sj'+s+'.htm';
+				}
+				window.location=url;
+			}
+
+	  </SCRIPT>
+      </HEAD>
+
+      <BODY onload='redirection();'>
+      </BODY>
+</HTML>
+
+
+

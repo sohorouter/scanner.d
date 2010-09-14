@@ -1,0 +1,173 @@
+HTTP/1.1 200 OK
+Date: Sat, 11 Sep 2010 23:02:32 GMT
+Server: Apache
+X-Powered-By: PHP/5.1.6-pl6-gentoo
+Set-Cookie: Gamma=e73c20afe5ce06322f0aa046e65c30c5; path=/horde; domain=joggl.homelinux.net
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: imp_key=e73c20afe5ce06322f0aa046e65c30c5; path=/horde; domain=joggl.homelinux.net
+Set-Cookie: auth_key=e73c20afe5ce06322f0aa046e65c30c5; path=/horde; domain=joggl.homelinux.net
+Vary: Accept-Language
+Content-Length: 7224
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- IMP: Copyright 2001-2006, The Horde Project. IMP is under the GPL. -->
+<!--   Horde Project: http://horde.org/ | IMP: http://horde.org/imp/    -->
+<!--      GNU Public License: http://www.fsf.org/copyleft/gpl.html      -->
+<html lang="en-US"><head>
+<script type="text/javascript" src="/horde/js/horde.js"></script>
+<script type="text/javascript" src="/horde/js/enter_key_trap.js"></script>
+<title>Mail :: Welcome to Horde</title>
+<link href="/horde/imp/themes/graphics/favicon.ico" rel="SHORTCUT ICON" />
+<link href="/horde/imp/mailbox.php?mailbox=INBOX" rel="Top" />
+<link href="/horde/imp/search.php" rel="search" />
+<link href="/horde/themes/screen.css" rel="stylesheet" type="text/css" />
+<link href="/horde/themes/bluewhite/screen.css" rel="stylesheet" type="text/css" />
+<link href="/horde/imp/themes/screen.css" rel="stylesheet" type="text/css" />
+<link href="/horde/imp/themes/bluewhite/screen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<script type="text/javascript">
+<!--
+
+function setFocus()
+{
+    if (document.imp_login.imapuser.value == "") {
+        document.imp_login.imapuser.focus();
+    } else {
+        document.imp_login.pass.focus();
+    }
+}
+
+
+function submit_login(e)
+{
+    if (typeof e != 'undefined' && !enter_key_trap(e)) {
+        return;
+    }
+
+    if (document.imp_login.imapuser.value == "") {
+        alert('Please provide your username.');
+        document.imp_login.imapuser.focus();
+        return false;
+    } else if (document.imp_login.pass.value == "") {
+        alert('Please provide your password.');
+        document.imp_login.pass.focus();
+        return false;
+    } else {
+        document.imp_login.loginButton.disabled = true;
+        document.imp_login.submit();
+        return true;
+    }
+}
+//-->
+</script>
+
+<form name="imp_login" action="http://joggl.homelinux.net/horde/imp/redirect.php" method="post" target="_parent">
+<input type="hidden" name="Gamma" value="e73c20afe5ce06322f0aa046e65c30c5" />
+<input type="hidden" name="actionID" value="" />
+<input type="hidden" name="url" value="" />
+<input type="hidden" name="mailbox" value="INBOX" />
+<input type="hidden" name="load_frameset" value="1" />
+<input type="hidden" name="autologin" value="0" />
+<input type="hidden" name="server_key" value="imap" />
+
+<div id="menu">
+ <h1 align="center">Welcome to Horde</h1>
+</div>
+
+<table width="100%">
+ <tr>
+  <td align="center">
+   <table align="center">
+
+
+
+    <tr>
+     <td align="right" class="light"><strong>Username</strong></td>
+     <td align="left" class="light" nowrap="nowrap">
+      <input type="text" tabindex="1" name="imapuser" value="" style="direction:ltr" />
+     </td>
+    </tr>
+
+    <tr>
+     <td align="right" class="light"><strong>Password</strong></td>
+     <td align="left">
+      <input type="password" tabindex="2" name="pass" style="direction:ltr" />
+     </td>
+    </tr>
+
+
+    <tr>
+     <td align="right" class="light"><strong>Language</strong></td>
+     <td align="left" class="light">
+      <select tabindex="3" name="new_lang" onchange="selectLang()" style="direction:ltr"><option value="ar_OM">Arabic (Oman) (&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064a;&#x0629;)</option><option value="ar_SY">Arabic (Syria) (&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064a;&#x0629;)</option><option value="id_ID">Bahasa Indonesia</option><option value="bs_BA">Bosanski</option><option value="bg_BG">Bulgarian (&#x0411;&#x044a;&#x043b;&#x0433;&#x0430;&#x0440;&#x0441;&#x043a;&#x0438;)</option><option value="ca_ES">Catal&agrave;</option><option value="zh_CN">Chinese (Simplified) (&#x7b80;&#x4f53;&#x4e2d;&#x6587;)</option><option value="zh_TW">Chinese (Traditional) (&#x6b63;&#x9ad4;&#x4e2d;&#x6587;)</option><option value="cs_CZ">Czech (&#x010c;esky)</option><option value="da_DK">Dansk</option><option value="de_DE">Deutsch</option><option value="en_US" selected="selected">English (American)</option><option value="en_GB">English (British)</option><option value="en_CA">English (Canadian)</option><option value="es_ES">Espa&ntilde;ol</option><option value="et_EE">Eesti</option><option value="fr_FR">Fran&ccedil;ais</option><option value="gl_ES">Galego</option><option value="el_GR">Greek (&#x0395;&#x03bb;&#x03bb;&#x03b7;&#x03bd;&#x03b9;&#x03ba;&#x03ac;)</option><option value="is_IS">&Iacute;slenska</option><option value="it_IT">Italiano</option><option value="ja_JP">Japanese (&#x65e5;&#x672c;&#x8a9e;)</option><option value="ko_KR">Korean (&#xd55c;&#xad6d;&#xc5b4;)</option><option value="lv_LV">Latvie&#x0161;u</option><option value="lt_LT">Lietuvi&#x0173;</option><option value="mk_MK">Macedonian (&#x041c;&#x0430;&#x043a;&#x0435;&#x0434;&#x043e;&#x043d;&#x0441;&#x043a;&#x0438;)</option><option value="hu_HU">Magyar</option><option value="nl_NL">Nederlands</option><option value="nb_NO">Norsk bokm&aring;l</option><option value="nn_NO">Norsk nynorsk</option><option value="fa_IR">Persian (&#1601;&#1575;&#1585;&#1587;&#1609;)</option><option value="pl_PL">Polski</option><option value="pt_PT">Portugu&ecirc;s</option><option value="pt_BR">Portugu&ecirc;s Brasileiro</option><option value="ro_RO">Rom&acirc;n&auml;</option><option value="ru_RU">Russian (&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;)</option><option value="sk_SK">Slovak (Sloven&#x010d;ina)</option><option value="sl_SI">Slovenian (Sloven&#x0161;&#x010d;ina)</option><option value="fi_FI">Suomi</option><option value="sv_SE">Svenska</option><option value="th_TH">Thai (&#x0e44;&#x0e17;&#x0e22;)</option><option value="tr_TR">T&uuml;rk&ccedil;e</option><option value="uk_UA">Ukrainian (&#x0423;&#x043a;&#x0440;&#x0430;&#x0457;&#x043d;&#x0441;&#x044c;&#x043a;&#x0430;)</option></select> </td>
+    </tr>
+
+    <tr>
+     <td>&nbsp;</td>
+     <td align="left" class="light">
+      <input type="submit" class="button" name="loginButton" tabindex="4" value="Log in" onclick="return submit_login();" />
+     </td>
+    </tr>
+
+
+   </table>
+  </td>
+ </tr>
+</table>
+</form>
+
+<script type="text/javascript">
+<!--
+
+
+
+function selectLang()
+{
+    // We need to reload the login page here, but only if the user hasn't
+    // already entered a username and password.
+    if (document.imp_login.imapuser.value == '' &&
+        document.imp_login.pass.value == '') {
+        var lang_page = 'login.php?new_lang=' + document.imp_login.new_lang[document.imp_login.new_lang.selectedIndex].value;
+        self.location = lang_page;
+    }
+}
+
+if (parent.frames.horde_main) {
+    document.imp_login.target = '_parent';
+}
+
+// Set up the enter keytrap code.
+if (typeof document.captureEvents != 'undefined') {
+    document.captureEvents(Event.KEYPRESS);
+    document.onkeypress = submit_login;
+}
+//-->
+</script>
+<script language="JavaScript1.5" type="text/javascript">
+<!--
+var _setHordeTitle = 1;
+try {
+    if (document.title && parent.frames.horde_main) parent.document.title = document.title;
+} catch (e) {
+}
+// -->
+</script>
+<script type="text/javascript">
+<!--
+if (typeof(_setHordeTitle) == 'undefined' && document.title && parent.frames.horde_main) parent.document.title = document.title;
+// -->
+</script>
+<script type="text/javascript">
+<!--
+setFocus()
+//-->
+</script>
+</body>
+</html>

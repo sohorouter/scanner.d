@@ -1,0 +1,69 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:52:35 GMT
+Server: Apache/2.0.52 (Win32) mod_ssl/2.0.52 OpenSSL/0.9.7e mod_aspdotnet/2.0
+Last-Modified: Thu, 25 Jun 2009 12:12:53 GMT
+ETag: "a5a6-6bb-24aee5c3"
+Accept-Ranges: bytes
+Content-Length: 1723
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Loose//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<title>DigiMAINT&trade; - AAA</title>
+
+<link href="/dm/css/asistd.css" rel="stylesheet" type="text/css">
+<link REL="shortcut icon" href="/dm/jimages/favicon.ico">
+
+</head>
+
+<body class="asiBckGnd">
+<table width="600" height="100%" border="0" cellspacing="1"  class="asiTableHdc" summary="">
+<tr>
+<td class="asiflabelc">
+<h1>Loading DigiMAINT&trade; AAA ...</h1><br>
+<h2>If you are having trouble opening DigiMAINT&trade;,<br>please turn off all POP-UP Blockers or click 
+<a href="http://digimaint.aaa.int/dm/aaaindex.html">here</a></h2>
+<br>
+<img src="digimaint_new.png" style="width:300;border:0" title="DigiMAINT&trade;" alt="DigiMAINT&trade;">
+</td>
+</tr>
+</table>
+<script type="text/JavaScript" language="JavaScript">
+<!--
+var objChild;                           // Window
+var reWork = new RegExp('object','gi');	// Regular expression
+
+try {
+	objChild = window.open('','child','width=50,height=50,status=no,resizable=yes');
+
+	objChild.close();
+}
+catch(e) { }
+
+if(!reWork.test(String(objChild))){
+  alert('Warning: A pop-up blocker is enabled for this site!');
+}else{
+  var myName    = new String();
+  var d   = new Date();
+  var myName  = d.getTime();
+  var screenH = screen.height - 75 * screen.height / 768
+  var screenW = screen.width - 10 * screen.width / 1024
+  window.open("http://digimaint.aaa.int/dm/aaaindex.html", myName,"toolbar=0,status=1,resizable=1,location=0,menubar=0,scrollbars=1,left=0,top=0," + "height=" + screenH + ",width=" + screenW);
+  window.open('','_parent','');
+  window.close();
+}
+
+// -->
+
+</script>
+
+</body>
+
+</html>
+

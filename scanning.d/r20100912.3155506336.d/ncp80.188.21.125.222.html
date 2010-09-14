@@ -1,0 +1,177 @@
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.1
+Date: Mon, 13 Sep 2010 00:15:50 GMT
+X-Powered-By: ASP.NET
+Connection: Keep-Alive
+Content-Length: 6903
+Content-Type: text/html
+Expires: Mon, 13 Sep 2010 00:15:50 GMT
+Set-Cookie: ASPSESSIONIDSAQCDDQD=FGMPFPIBJCLAABKKHCHOMDJA; path=/
+Cache-control: private
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE> Home </TITLE>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+javascript:window.history.forward(1); // esta instrucción es para deshabilitar el botón back del navegador
+
+function mClk(src) { 
+	if(event.srcElement.tagName=='TD'){
+	 	src.children.tags('A')[0].click();
+	}
+	window.status='Cinebank Online';
+	return true
+}
+
+function change(id,klasse) {
+	document.getElementById(id).className = klasse;
+	document.getElementById(id).style.cursor = 'hand';
+	if(document.getElementById(id).children.tags('A')[0].className=="textosUp"){
+		document.getElementById(id).children.tags('A')[0].className="textosOver";
+	}else if(document.getElementById(id).children.tags('A')[0].className=="textosOver"){
+		document.getElementById(id).children.tags('A')[0].className="textosUp";
+	}else if (document.getElementById(id).children.tags('A')[0].className=="antsigUp"){
+		document.getElementById(id).children.tags('A')[0].className="antsigOver";
+	}else if (document.getElementById(id).children.tags('A')[0].className=="antsigOver"){
+		document.getElementById(id).children.tags('A')[0].className="antsigUp";
+
+	}
+}
+
+	function SetFocus()
+	{
+                if (document.form_login.tarjeta.value=='') 
+                        document.form_login.tarjeta.focus();
+		else
+		
+		
+                        document.form_login.codigo.focus();
+		
+	}
+	
+function entsub(myform) {
+  if (window.event && window.event.keyCode == 13)
+    myform.submit();
+  else
+    return true;}
+//-->
+</script>
+<!-- change to url of homepage or local -->
+<link href="http://www.cinebank.at/fol/estilos.css" rel="stylesheet" type="text/css">
+<!-- end change to url of homepage or local -->
+<style type="text/css">
+<!--
+.Stil2 {
+	color: #c30017;
+	font-weight: bold;
+}
+-->
+</style>
+</HEAD>
+<BODY background="http://www.cinebank.at/fol/bilder/motivo.gif" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+	<CENTER>
+	<FORM name="form_login" action="validacion.asp" method="post">
+	<TABLE width="950" height="115" cellpadding="0" cellspacing="0" border="0">
+		<TR>
+			<TD width="950" height="71" background="imagenes/cabcinebank.jpg" align="left"><img src="http://www.cinebank.at/fol/bilder/punto_transp.gif" width="10">
+
+			</TD>
+		</TR>
+		<TR>
+			<TD width="950" height="29" background="http://www.cinebank.at/fol/bilder/barraMenuLisa.gif"></TD>
+		</TR>
+		 <TR> 
+		  <TD width="950" height="15"></TD>
+		</TR>
+	</TABLE>
+	<TABLE width="950" height="40"  background="http://www.cinebank.at/fol/bilder/LoginCab.gif" cellpadding="0" cellspacing="0" border="0">
+		<TR> 
+		  <TD width="30" height="40"></TD>
+		  <TD width ="920" height="40" align="left" class="cabLogin">Reservieren Sie Ihren Wunschfilm direkt hier.</TD>
+		</TR>
+	</TABLE>
+	<TABLE width="950" height="402"  background="imagenes/LoginFondo.gif" cellpadding="0" cellspacing="0" border="0">
+		<TR> 
+		  <TD width="30" rowspan="13" colspan="2"></TD>
+		  <TD  width="920" align="left" valign="middle" height="25" class="texComunGran" colspan="2">Geben Sie Ihre Kartennummer und Ihre persönliche Geheimzahl ein, um Ihre Wunschtitel online zu reservieren.</TD>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="25" colspan="2"></TD>
+		</TR>
+		<TR> 
+			<TD  width="920" height="20"  align="left" valign="middle" class="subTit" colspan="2">Kartennummer:</TD>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="22" align="left" valign="middle" colspan="2"><input name="tarjeta" type="text" size="15" maxlength="15">
+	      <img src="imagenes/space.gif" width="480" height="10"><a href="DVD4YOU.pdf" target="_blank"><img src="imagenes/space.gif" width="190" height="15" border="0"></a></TD>
+		</TR>
+		<TR> 
+			<TD  width="920" height="20" class="texComunGran" align="left" valign="top" colspan="2">Die Kartennummer steht auf der  Rückseite ihrer DVD4YOU-Kundenkarte.</TD>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="15" colspan="2"><img src="imagenes/space.gif" width="590" height="10"><a href="Preisliste.pdf" target="_blank"><img src="imagenes/space.gif" width="260" height="15" border="0"></a></TD>
+		</TR>
+		<TR> 
+			<TD  width="920" height="20" class="subTit" align="left" valign="middle" colspan="2">Pin:</TD>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="20" align="left" valign="middle" colspan="2"><input type="password" onKeyPress="return entsub(this.form)" name="codigo" size="15" maxlength="15">
+	      <img src="imagenes/space.gif" width="480" height="10"><a href="Anmeldeformular_AGB.pdf" target="_blank"><img src="imagenes/space.gif" width="240" height="15" border="0"></a></TD>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="35" colspan="2" valign="bottom"><img src="imagenes/space.gif" width="590" height="10"><a href="bringafriend.pdf" target="_blank"><img src="imagenes/space.gif" width="240" height="15" border="0"></a></TD>
+		</TR>
+		<TR> 
+			<TD  width="100" height="20"><input onKeyPress="return entsub(this.form)" name="senden" type="submit", value="Login"></TD>
+			<td width="820"></td>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="40" colspan="2" align="left" valign="middle" class="texComunGran">* Um die gewünschten Titel am Automaten abholen zu können, darf Ihre Karte<br>
+		    &nbsp;&nbsp;&nbsp;nicht abgelaufen sein und muss genügend Guthaben aufweisen. </TD>
+		</TR>
+		<TR> 
+		  <TD  width="920" height="105" colspan="2" class="texComunGran"><table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="texComunGran Stil2">TOP Neuheiten ab sofort auf Blu Ray </td>
+                
+              </tr>
+            </table>
+		    <span class="Stil2"><br>
+	        </span><strong>Kundenanmeldung und Information</strong>:<br>
+	      t&auml;glich 17.00 bis 20.00 Uhr - au&szlig;er So und Feiertag<br>
+Wünsche, Beschwerden & Anregungen nehmen wir gerne unter <span class="texComunGran Stil2"><a href="mailto:office@dvd4you.at">office@dvd4you.at</a></span> entgegen.</TD>
+ 
+	  </TR>
+		<TR> 
+			<TD  width="920" height="30" align="left" valign="middle" colspan="2">
+				<TABLE width="920" height="30" cellpadding="0" cellspacing="0" border="0">
+					<tr><td width="500" class="texComun" valign="middle" align="left">Optimiert für Internet Explorer 5.5 und höher. Auflösung 1024x768 und höher.</td>
+						
+              <TD width="400" align="right" valign="middle">&nbsp;</TD>
+						<td width="20"></td>
+					</tr>
+			
+				</TABLE>
+			</TD>
+		</TR>
+	</TABLE>
+        
+        
+	</FORM>
+        
+	
+	</CENTER>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+        document.form_login.tarjeta.value=
+-->
+</script>
+
+</BODY>
+</HTML>

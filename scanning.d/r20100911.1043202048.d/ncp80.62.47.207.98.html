@@ -1,0 +1,34 @@
+HTTP/1.1 200 OK
+Date: Sat, 11 Sep 2010 23:02:39 GMT
+Server: Apache/2.2.3 (Win32) DAV/2 mod_ssl/2.2.3 OpenSSL/0.9.8d mod_autoindex_color PHP/5.1.6
+X-Powered-By: PHP/5.1.6
+Content-Length: 909
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+   <title>Mayr's Homepage</title>
+   <meta name="keywords" content="Solar, Solarsteuerung, Navis, Matrei">
+</head>
+<script type="text/javascript">
+      HSS = window.open("Anda/start.php","WAS_Window01","resizable=yes,menubar=no,toolbar=no,width=1014,height=710,left=0,top=0");
+
+   function AndasHomepage() {
+      HSS = window.open("Anda/start.php","WAS_Window01","resizable=yes,menubar=no,toolbar=no,outerwidth=1024,outerheight=768,left=0,top=0");
+      window.opener=top;
+      window.close( );
+      }
+
+   function FensterSchliesen ( ) {
+      window.opener=top;
+      window.close( );
+      }
+</script>
+<!--body onload="FensterSchliesen( )"-->
+<body>
+<font size="+1">Dieses Fenster bitte schlieﬂen....</font><br><br>hier gehts zu <a href="javascript:AndasHomepage()">Anda's Hompage</a>
+</body>
+</html>

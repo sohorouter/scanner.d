@@ -1,0 +1,153 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=5500F924FD0C96BA8F36F1A1D9B65D77; Path=/
+Content-Type: text/html
+Content-Length: 3015
+Date: Sun, 12 Sep 2010 00:39:21 GMT
+Connection: close
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>SM4ALL</title>
+
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/stile.css"/>
+<link rel="stylesheet" type="text/css" href="css/selected_room.css"/> 
+<link rel="stylesheet" type="text/css" href="css/room.css"/> 
+<link rel="stylesheet" type="text/css" href="css/act.css"/>
+
+
+
+ 
+ 
+
+<script language="javascript" type="text/javascript"  src="js/jquery-1.4.2.min.js"></script> 
+<script language="javascript" type="text/javascript" src="js/funzioni.js"></script>
+<script language="javascript" type="text/javascript" src="js/submit.js"></script>
+<script language="javascript" type="text/javascript" src="js/loading.js"></script>
+
+<script>
+
+
+$(document).ready(function() {
+
+	carica("load_normal.jsp");
+	
+		
+	aggiorna();  // aggiorna la pagina automaticamente
+	
+	
+	
+	//lampeggia();
+  
+  	document.getElementById('mm').style.fontSize=dim(); 
+	function dim() {
+	var width = screen.width;
+	var x = width/109;
+	return x +'px';
+}
+   
+});
+
+
+
+
+
+</script>
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="mm"  onload="" >
+
+
+
+
+
+	<div id="esterno" >
+     	
+        <div id="top"> <img src="img/solologonuovo.jpg" /> </div>
+        
+        <div id="left" >  <br/>   </div>
+    	
+    	<div  id="interno">
+        
+                <div id="navigation">
+                        <ul id="activelink" id="barra_navigazione">
+                        <li class="activelink" id="load_normal.jsp"><a href="javascript:carica('load_normal.jsp');"> <div class="testo">Normal Interface </div> </a> </li>
+                        <li class="" id="load_bci.jsp"><a href="javascript:carica('load_bci.jsp');"> <div class="testo">BCI </div></a></li>
+                        <li class="" id="load_rooms.jsp"><a href="javascript:carica('load_rooms.jsp');"> <div class="testo">Room </div></a></li>
+                        <li class="" id="load_location.jsp"><a href="javascript:carica('load_location.jsp');"> <div class="testo">Location </div></a></li>
+                        <li class="" id="load_message.jsp"><a href="javascript:carica('load_message.jsp');"> <div class="testo">Message </div></a></li>
+
+                        
+                        </ul> 
+                 </div>	
+                 
+                     
+        
+        
+        
+      <div id="content"> 
+      
+       
+       	
+      	
+        
+        		
+        
+        
+        
+        </div>
+        
+        
+        
+       
+
+
+	 	
+    	
+    
+     	</div> <!--interno -->
+    
+   </div> <!--esterno-->
+    
+    
+ 	<div id="lampeggia";> </div>
+  
+  	<div id="nascosto"> </div>
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+
+</body>
+</html>
+
+ 
+
+
+
+

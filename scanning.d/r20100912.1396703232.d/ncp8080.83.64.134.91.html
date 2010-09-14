@@ -1,0 +1,76 @@
+HTTP/1.0 200 OK
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Ethernet Network Attached Storage  Utility</title>
+<meta HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+<LINK REL="stylesheet" TYPE="text/css" HREF="std.css">
+<script language="JavaScript" type="text/javascript" src="stdlib.js"></script>
+<script language="JavaScript" type="text/javascript" src="message.js"></script>
+</head>
+<body bgcolor="white" onLoad="showMsg()" marginheight="0" marginwidth="0" leftmargin="0" topmargin="0">
+<FORM name="disk" method="get" action="">
+<br>
+<div align="center">
+
+<table border="0" cellspacing="0" cellpadding="0" width="750">
+<tr>
+	<td nowrap colspan="3"><img src="Admin_top.JPG" width="750" height="52" alt="" border="0" hspace="0" vspace="0"></td>
+</tr>
+
+<tr>
+<td width="194" height="52" background="logo_bg.jpg"><img src="logo.jpg" width="194" height="52" alt="" border="0" hspace="0" vspace="0"></td>
+<td bgcolor="white" valign="top" colspan="2"><img src="home_tabs.jpg" width="556" height="30" alt="" border="0" hspace="0" vspace="0" usemap="#Map"><BR>&nbsp; <a href="login.cgi" class="menubar">User Log in (Private Data)</a> &nbsp;<b class="heavy">|</b> &nbsp;<a href="/DISK%201" class="menubar">DISK 1(Public Data)</a><b class="heavy">|</b> &nbsp;<a href="/DISK 2" class="menubar">DISK 2(Public Data)</a> </td>
+</tr>
+
+<tr>
+ <td background="home_rtbg.jpg" valign="top"><img src="home_left.jpg" width="194" height="386" alt="" border="0" hspace="0" vspace="0"></td>
+ <td background="home_rtbg.jpg" valign="top"><img src="home_center.jpg" width="244" height="386" alt="" border="0" hspace="0" vspace="0"></td>
+ <td nowrap valign="top" background="home_rtbg.jpg" height="264" width="312">
+ <img src="home_welcome.jpg" width="312" height="290" alt="" border="0" hspace="0" vspace="0">
+
+	<table border="0" cellspacing="0" cellpadding="1">
+	<tr>
+	 <td nowrap class="hst">&nbsp; &nbsp;Server Name:</td>
+	          <td nowrap class="hst">EWBADEN</td>
+	</tr>
+	<tr>
+	 <td nowrap class="hst">&nbsp; &nbsp;Version:</td>
+	          <td nowrap class="hst">V2.5R31</td>
+	</tr>	
+	<tr>
+	 <td nowrap class="hst">&nbsp; &nbsp;IP Address:</td>
+	          <td nowrap class="hst">192.168.1.77</td>
+	</tr>
+	
+	 <tr>
+	 <td nowrap class="hst">&nbsp; &nbsp;Disk 1:</td>
+	          <td nowrap class="hst">Ready, 114171MB (3% Free)</td>
+	 </tr>
+	 <tr>
+	 <td nowrap class="hst">&nbsp; &nbsp;Disk 2:</td>
+	 	          <td nowrap class="hst">Ready, 238113MB (54% Free)</td>
+	 </tr>
+	 </table>
+  </td>
+ </tr>
+<tr>
+ <td colspan="3"><img src="ButtomBar.JPG" width="750" height="40" alt="" border="0"></td>
+</tr>
+
+</table>
+
+
+</div>
+
+<input type="hidden" name="message" value="">
+</form>
+
+<map name="Map"> 
+  <area shape="rect" coords="73,1,147,27" href="user_pass.cgi" target="_self">
+  <area shape="rect" coords="146,1,219,24" href="Management/setup.cgi?next_file=lan.htm" target="_self">
+  <area shape="rect" coords="219,2,293,25" href="userman_fs.htm" target="_self">
+  <area shape="rect" coords="293,3,368,26" href="http://www.linksys.com" target="new_win">
+</map>
+</body>
+</html>

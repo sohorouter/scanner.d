@@ -1,0 +1,119 @@
+HTTP/1.1 200 OK
+Date: Mon, 13 Sep 2010 00:09:02 GMT
+Server: Apache/2.2.11 (Unix) mod_ssl/2.2.11 OpenSSL/0.9.8k DAV/2 PHP/5.2.9
+Last-Modified: Mon, 20 Apr 2009 18:20:51 GMT
+ETag: "2a-2440-46800971706c0"
+Accept-Ranges: bytes
+Content-Length: 9280
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Unbenanntes Dokument</title>
+<style type="text/css"> 
+    <!-- 
+    body  {
+    	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    	background: #666666;
+    	margin: 0; /* Es empfiehlt sich, margin (Rand) und padding (Auffüllung) des Body-Elements auf 0 einzustellen, um unterschiedlichen Browser-Standardeinstellungen Rechnung zu tragen. */
+    	padding: 0;
+    	text-align: center; /* Hierdurch wird der Container in IE 5*-Browsern zentriert. Dem Text wird dann im #container-Selektor die Standardausrichtung left (links) zugewiesen. */
+    	color: #000000;
+    }
+    
+    /* Tipps für elastische Layouts:
+    1. Da die Gesamtgröße elastischer Layouts von der Standardschriftgröße des Benutzers abhängt, sind diese Layouts weniger berechenbar. Bei korrekter Verwendung haben sie außerdem für Personen, die größere Schriften benötigen, einen höheren Nutzwert, weil die Zeilenlänge proportional bleibt.
+    2. Die Größe der divs in diesem Layout basiert auf der Originalschriftgröße (100%) im Body-Element. Wenn Sie die Textgröße durch eine Einstellung wie font-size: 80% im Body-Element oder im #container global verringern, wird das gesamte Layout proportional verkleinert. Sie sollten die Breiten der verschiedenen divs vergrößern, um hierfür einen Ausgleich zu schaffen.
+    3. Wenn Sie in den einzelnen divs unterschiedliche Werte für die Schriftgröße angegeben, anstatt die Schriftgröße im Design global zu ändern (z. B. wenn #sidebar1 die Schriftgröße 70% zugewiesen wird und #mainContent die Größe 85%), so wird die Gesamtgröße der einzelnen divs proportional geändert. Sie sollten diese divs anhand der endgültig gewählten Schriftgröße entsprechend anpassen.
+    */
+    .twoColElsLt #container { 
+    	width: 46em;  /* Mit dieser Breite wird ein Container erstellt, der in ein 800 Pixel breites Browserfenster passt, sofern für den Text die Standardschriftgröße des Browsers übernommen wird. */
+    	background: #FFFFFF;
+    	margin: 0 auto; /* Durch automatische Ränder (in Verbindung mit einer Breite) wird die Seite zentriert. */
+    	border: 1px solid #000000;
+    	text-align: left; /* Hierdurch wird die Einstellung text-align: center im Body-Element überschrieben. */
+    } 
+    
+    /* Tipps für sidebar1:
+    1. Wenn Sie für dieses div eine Schriftgröße festlegen, wird die Gesamtbreite des div entsprechend angepasst.
+    2. Da wir mit Gevierten (ems) arbeiten, ist es empfehlenswert, für die Randleiste selbst keine Auffüllung zu verwenden. Sie wird bei standardgerechten Browsern der Breite hinzugefügt, und dies wiederum führt zu einer unbekannten tatsächlichen Breite. 
+    3. Zwischen der Kante des div und den darin liegenden Elementen kann ein Abstand eingefügt werden, indem Sie diesen Elementen wie in ".twoColElsLt #sidebar1 p" demonstriert einen linken und rechten Rand zuweisen.
+    */
+    .twoColElsLt #sidebar1 {
+    	float: left; 
+    	width: 12em; /* Da es sich hier um ein floatendes Element handelt, muss eine Breite angegeben werden. */
+    	background: #EBEBEB; /* Die Hintergrundfarbe wird nur für die Länge des Spalteninhalts angezeigt. */
+    	padding: 15px 0; /* Durch die Auffüllung oben und unten entsteht in diesem div ein visueller Leerraum. */
+    }
+    .twoColElsLt #sidebar1 h3, .twoColElsLt #sidebar1 p {
+    	margin-left: 10px; /* Für jedes Element, das in den seitlichen Spalten platziert wird, sollten ein linker und ein rechter Rand angegeben werden. */
+    	margin-right: 10px;
+    }
+    
+    /* Tipps für mainContent:
+    1. Wenn Sie diesem #mainContent-div nicht denselben Schriftgrößenwert wie dem #sidebar1-div zuweisen, basieren die Ränder des #mainContent div auf der Schriftgröße des #mainContent-div, und die Breite des #sidebar1-div basiert auf der Schriftgröße des #sidebar1-div. Sie sollten die Werte dieser divs anpassen.
+    2. Der Abstand zwischen mainContent und sidebar1 entsteht durch den linken Rand des mainContent-div. Der Spaltenbereich bleibt unabhängig von der Inhaltsmenge des sidebar1-div immer gleich. Sie können diesen linken Rand entfernen, falls der Text des #mainContent-div den Bereich von #sidebar1 füllen soll, wenn der Inhalt in #sidebar1 endet.
+    3. Zur Vermeidung von Float-Drops müssen Sie gegebenenfalls die ungefähre maximale Bild-/Elementgröße anhand eines Tests ermitteln, weil dieses Layout auf der vom Benutzer angegebenen Schriftgröße und den von Ihnen festgelegten Werten basiert. Wenn der Benutzer die Browser-Schriftgröße aber auf einen Wert eingestellt hat, der unter dem Normalwert liegt, steht im #mainContent-div weniger Platz zur Verfügung als beim Test erkennbar.
+    4. Im unten stehenden bedingten Kommentar für Internet Explorer wird die Zoom-Eigenschaft verwendet, um mainContent die Eigenschaft hasLayout zuzuweisen. Dadurch wird das potenzielle Auftreten verschiedener IE-spezifischer Fehler verhindert.
+    */
+    .twoColElsLt #mainContent {
+     	margin: 0 1.5em 0 13em; /* Der rechte Rand kann in Gevierten (ems) oder Pixel angegeben werden. Durch ihn entsteht der Abstand am rechten Seitenrand. */
+    } 
+    
+    /* Verschiedene wieder verwertbare Klassen */
+    .fltrt { /* Mit dieser Klasse können Sie ein Element auf der Seite nach rechts fließen lassen. Das floatende Element muss vor dem Element stehen, neben dem es auf der Seite erscheinen soll. */
+    	float: right;
+    	margin-left: 8px;
+    }
+    .fltlft { /* Mit dieser Klasse können Sie ein Element auf der Seite nach links fließen lassen. */
+    	float: left;
+    	margin-right: 8px;
+    }
+    .clearfloat { /* Diese Klasse sollte in einem div- oder break-Element platziert werden und das letzte Element vor dem Schließen eines Containers sein, der wiederum einen vollständigen Float enthalten sollte. */
+    	clear:both;
+        height:0;
+        font-size: 1px;
+        line-height: 0px;
+    }
+.Stil1 {
+	font-size: x-small
+}
+    --> 
+    </style><!--[if IE]>
+    <style type="text/css"> 
+    /* Fügen Sie CSS-Korrekturen für alle IE-Versionen in diesen bedingten Kommentar ein. */
+    .twoColElsLt #sidebar1 { padding-top: 30px; }
+    .twoColElsLt #mainContent { zoom: 1; padding-top: 15px; }
+    /* Mit der obigen proprietären Zoom-Eigenschaft wird IE die Eigenschaft hasLayout zugewiesen, die zur Verhinderung verschiedener Fehler erforderlich ist. */
+    </style>
+    <![endif]--></head>
+
+<body class="twoColElsLt">
+
+    <div id="container">
+      <div id="sidebar1">
+        <h3>contents</h3>
+        <p>Die Hintergrundfarbe für dieses div wird nur für die Länge des Inhalts angezeigt. Sollten Sie eine Trennlinie bevorzugen, fügen Sie der CSS-Regel des entsprechenden Divs (#sidebar oder #mainContent) eine Rahmen-Eigenschaft hinzu. </p>
+        <p>Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque  eget, cursus et, fermentum ut, sapien. </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="Stil1">powered by<a href="sysinfo/info.php"><img src="unslung-baby-266mhz.png" alt="" width="135" height="80" border="0" longdesc="unslung-baby-266mhz.png" /></a></p>
+        <p>&nbsp;</p>
+      <!-- end #sidebar1 --></div>
+      <div id="mainContent">
+        <h1> Hauptinhalt (Maxx)</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam,  justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam  ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo  porttitor, felis. Nam blandit quam ut lacus. </p>
+        <p>Quisque ornare risus quis  ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean  sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at,  odio. Donec et ipsum et sapien vehicula nonummy. Suspendisse potenti. Fusce  varius urna id quam. Sed neque mi, varius eget, tincidunt nec, suscipit id,  libero. In eget purus. Vestibulum ut nisl. Donec eu mi sed turpis feugiat  feugiat. Integer turpis arcu, pellentesque eget, cursus et, fermentum ut,  sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh.  Donec nec libero.</p>
+        <h2>H2-Überschrift </h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam,  justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam  ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo  porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis  ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean  sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at, odio.</p>
+    	<!-- end #mainContent --></div>
+    	<!-- Dieses clear-Element sollte direkt auf das #mainContent-div folgen, um das #container-div anzuweisen, alle untergeordneten Floats aufzunehmen. --><br class="clearfloat" />
+    <!-- end #container --></div>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:47:59 GMT
+Server: Apache/2.2.8 (Linux/SUSE)
+Last-Modified: Sat, 06 Mar 2010 10:08:05 GMT
+ETag: "3e003-ad7-4811f0209ab40"
+Accept-Ranges: bytes
+Content-Length: 2775
+Connection: close
+Content-Type: text/html
+X-Pad: avoid browser bug
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>www.accMF.com</title>
+<style type="text/css" media="screen, projection">
+@import "css/reset.css";
+@import "css/typography.css";
+@import "css/style_dark.css";
+
+#parallax div div
+  {font-family: Palatino, Georgia, Trebuchet MS, serif; font-size: 20em; line-height: 0.6em;}
+
+</style>
+
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.jparallax.js"></script>
+<script type="text/javascript" src="js/jquery.corner.js"></script>
+<script type="text/javascript">
+<!--
+jQuery(document).ready(function(){
+  jQuery('h1').html('<img src="images/accmf.png" />');
+jQuery('#parallax').jparallax({triggerExposesEdges: true}).corner('20px');
+jQuery('a.goto').click(function(){
+    var ref=jQuery(this).attr("href");
+    // console.log(ref);
+    jQuery('#parallax').trigger("jparallax", [ref]);
+    return false;
+	});
+});
+//-->
+</script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="js/jquery.ifixpng.js"></script>
+<script type="text/javascript">jQuery(document).ready(function(){ jQuery('img[@src$=.png]').ifixpng(); });</script>
+<![endif]-->
+</head>
+
+<body>
+
+<div id="header">
+	<a href="index.html"><h1>www.accMF.com</h1></a>
+</div>
+
+<div id="content">
+
+<div id="parallax" style="width: 720px; height: 320px; margin:20px auto;">
+	<div style="width:740px; height:440px;">
+		<div style="position:absolute; top:80px; left:20px; color:#000066">
+			<a name="a"></a>a
+		</div>
+	</div>
+
+	<div style="width:780px; height:420px;">
+		<div style="position:absolute; top:100px; left:140px; color:#3300ff">
+			<a name="c"></a>c
+		</div>
+	</div>
+
+	<div style="width:800px; height:260px;">
+		<div style="position:absolute; top:60px; left:250px; color:#3300cc">
+			<a name="c1"></a>c
+		</div>
+	</div>
+  
+	<div style="width:680px; height:380px;">
+		<div style="position:absolute; top:80px; left:350px; color:#000099;">
+			<a name="M"></a>M
+		</div>
+	</div>
+  
+	<div style="width:700px; height:240px;">
+		<div style="position:absolute; top:50px; left:520px; color:#0000ff;">
+		<a name="F"></a>F
+		</div>
+	</div>
+</div>
+
+<div style="float: right"><a href="#a" class="goto"> a </a>.<a href="#c" class="goto"> c </a>.<a href="#c1" class="goto"> c </a>.<a href="#M" class="goto"> M </a>.<a href="#F" class="goto"> F </a>&nbsp; &nbsp;</div>
+
+</div>
+
+<div id="agb">
+	<a href="mfxAGBen0110.pdf">conditions of use</a>
+	<a href="mailto:office@accmf.com">contact</a>
+</div>
+
+</body>
+</html>

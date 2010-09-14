@@ -1,0 +1,44 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:47:11 GMT
+Server: Apache/2.0.59 (NETWARE) PHP/5.2.5 mod_jk/1.2.21
+Last-Modified: Mon, 02 May 2005 13:43:54 GMT
+ETag: "af3362-2f5-d0955a80"
+Accept-Ranges: bytes
+Content-Length: 757
+Connection: close
+Content-Type: text/html; charset=ISO-8859-1
+
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<script language="JavaScript">
+<!--
+
+			var sThisURL = unescape('/vo');
+			function doRedirect()
+			{
+			   actualRedirect();
+			}
+			function actualRedirect()
+			{
+			   setTimeout("top.location.href = sThisURL", 500 );
+			}
+		
+// -->
+</script>
+		<script language="JavaScript1.1">
+<!--
+
+			function actualRedirect()
+			{
+			   top.location.replace(sThisURL);
+			}
+			if ("MSIE" == navigator.appName )
+			doRedirect();
+		
+// -->
+</script>
+	</head>
+	<meta target="top" content="1;url=/nps" http-equiv="refresh">
+	<body marginwidth="0" leftmargin="0" bgcolor="#efeee9" topmargin="0" marginheight="0" onLoad="doRedirect()"></body>
+</html>

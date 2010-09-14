@@ -1,0 +1,271 @@
+HTTP/1.0 200 OK
+Date: Mon, 13 Sep 2010 01:12:18 GMT
+Server: Boa/0.94.14rc21
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 12265
+Last-Modified: Mon, 27 Apr 2009 07:15:44 GMT
+Content-Type: text/html
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="homepage.css" media="all" />
+  <script type="text/javascript" src="/include/common.js"></script><!-- Load common JavaScript -->
+  <script type="text/javascript" src="/cgi-bin/viewer/getparam_cache.cgi?system_hostname&videoin_c0&network&status_videoactualmodulation&system_info_language&camctrl_enableptztunnel&uart_enablehttptunnel&custom"></script>
+  <script type="text/javascript" src="/cgi-bin/privilege.cgi"></script>
+  <script type="text/javascript" src="include/index.js"></script>
+  <script type="text/javascript" src="include/plugindef.js"></script><!-- Load the plugin define -->
+  <script type="text/javascript"> 
+		ShowBGImage();
+  </script>
+</head>
+<body onload="loadCurrentSetting()">
+<!-- banner -->
+<div id="display_banner">
+	<script type="text/javascript">
+		//ShowLogo();
+		document.write("<img alt=\"banner\" src=\"pic/banner1.jpg\" />");
+	</script>
+</div>
+<!-- hostname -->
+<div id="page_title">
+</div>
+<!-- display image here -->
+<div id="display_image">
+	<script type="text/javascript">
+		showimage("0");
+	</script>
+	<p></p>
+        <div id="customcmd" style="display:none;">
+	<script type="text/javascript">
+		ShowCustomCmd();
+	</script>
+        </div>
+</div>
+
+<div id="icon" style="visibility:hidden">
+	<!--
+    <div id="topnav">
+        <a href="/clientset.html" class='nounderline'><span class='topnav' onmouseover="className='topnav_bold'" onmouseout="className='topnav'">Local Settings</span></a>
+    <span class='topnav'>|</span>
+    <a href="/setup/system.html" class='nounderline'><span class='topnav' onmouseover="className='topnav_bold'" onmouseout="className='topnav'">System Setup</span></a>
+	</div>
+	
+	<script type="text/javascript">
+        ShowCtrlPanel_Snapshot();
+    </script>
+    -->
+         
+    <div class="icon_text">
+    	<a href="javascript:clientsidesnapshot(&quot;/cgi-bin/viewer/video.jpg&quot;)"><span title="symbol">snapshot</span></a><br><br>
+    	<a href="/setup/system.html"><span>System Setup</span></a><br><br>   
+    	<a href="/clientset.html"><span>Local Settings</span></a><br><br>  
+    	<span id="digital_output" title="symbol">digital_output</span>
+    </div>
+    
+    	<div id="dox2"><table style="margin-top: 10px;">
+    	<tr>
+            <td><span class="dio_button">Output 1</span></td>
+    		<td><input name="do" title="symbol" type="button" class="dio_button"  style="width:35px" value="on" onclick="parent.retframe.location.href='/cgi-bin/dido/setdo.cgi?do0=1'" ></td>
+    		<td><input name="do" title="symbol" type="button" class="dio_button"  style="width:35px" value="off" onclick="parent.retframe.location.href='/cgi-bin/dido/setdo.cgi?do0=0'"></td>
+    	</tr>
+    	<tr>
+            <td><span class="dio_button">Output 2</span></td>
+    		<td><input name="do" title="symbol" type="button" class="dio_button"  style="width:35px" value="on" onclick="parent.retframe.location.href='/cgi-bin/dido/setdo.cgi?do1=1'" ></td>
+    		<td><input name="do" title="symbol" type="button" class="dio_button"  style="width:35px" value="off" onclick="parent.retframe.location.href='/cgi-bin/dido/setdo.cgi?do1=0'"></td>
+    	</tr></table>
+    	</div>
+    	<div id="dox1"><table style="margin-top: 10px;">
+    	<tr>
+    		<td><input name="do" title="symbol" type="button" class="dio_button"  style="width:35px" value="on" onclick="parent.retframe.location.href='/cgi-bin/dido/setdo.cgi?do0=1'" ></td>
+    		<td><input name="do" title="symbol" type="button" class="dio_button"  style="width:35px" value="off" onclick="parent.retframe.location.href='/cgi-bin/dido/setdo.cgi?do0=0'"></td>
+    	</tr></table>
+    	</div>
+    
+    <div class="nav_icon" id="ctrl_panel" style="display:none;">	
+        <table id="table0" border="0" cellspacing="0" cellpadding="0" style="margin-top: 30px; margin-bottom: 30px">
+		    <tr>
+			    <td>
+                    <table id="table1" border="0" cellspacing="0" cellpadding="0" style="margin-left: 5px;margin-right: 8px">
+          <tr align=center>
+              <td>&nbsp;</td>   
+	<td align=center><input name="moveup" title="symbol" type="button" class="ctrl_button" style="width:35px" value="up" onClick="CamControl('move', 'up')" ></td>
+	        <td>&nbsp;</td>
+          </tr>
+          <tr align=center height=25>
+            <td align=center><input title="symbol" type="button" class="ctrl_button" style="width:35px" value="left" onclick="CamControl('move', 'left')" ></td>
+            <td align=center>
+            <input title="symbol" type="button" class="ctrl_button" style="width:35px" value="_home" onclick="CamControl('move', 'home')" >
+            </td>
+	    <td align=center><input title="symbol" type="button" class="ctrl_button" style="width:35px" value="right" onclick="CamControl('move', 'right')" ></td>
+          </tr>
+          <tr align=center>
+	        <td>&nbsp;</td>
+            <td align=center><input title="symbol" type="button" class="ctrl_button"  style="width:35px" value="down" onclick="CamControl('move', 'down')" ></td>
+	          <td>&nbsp;</td>
+          </tr>
+  </table> <!-- end of table1 -->
+  </td>
+  <td>
+      <table id="table3" cellSpacing=0 cellPadding=0 width=73 border=0 style="margin-right: 15px; margin-left: 30px">
+              <TR height=18>
+                <TD width=18><IMG src="pic/sideleft1.gif" 
+                  border=0 STYLE="margin:0px"></TD>
+                <TD width=37 style="cursor:hand"><A 
+                  onmouseover="MM_swapImage('ctrlup','','pic/ctrlup_g.gif',1)" 
+                  onmouseout=MM_swapImgRestore() onClick=CamControl('move','up')><IMG src="pic/ctrlup.gif" 
+                  border=0 name=ctrlup STYLE="margin:0px"></A></TD>
+                <TD width=18><IMG src="pic/sideright1.gif" 
+                  border=0 STYLE="margin:0px"></TD>
+                </TR>
+              <TR height=34>
+                <TD style="cursor:hand"><A 
+                  onmouseover="MM_swapImage('ctrlleft','','pic/ctrlleft_g.gif',1)" 
+                  onmouseout=MM_swapImgRestore() onclick="CamControl('move', 'left')"><IMG src="pic/ctrlleft.gif" 
+                  border=0 name=ctrlleft STYLE="margin:0px"></A></TD>
+                <TD style="cursor:hand"><A 
+                  onmouseover="MM_swapImage('ctrlhome','','pic/ctrlhome_g.gif',1)" 
+                  onmouseout=MM_swapImgRestore() onclick="CamControl('move', 'home')"><IMG src="pic/ctrlhome.gif" 
+                  border=0 name=ctrlhome STYLE="margin:0px"></A></TD>
+                <TD style="cursor:hand"><A 
+                  onmouseover="MM_swapImage('ctrlright','','pic/ctrlright_g.gif',1)" 
+                  onmouseout=MM_swapImgRestore() onclick="CamControl('move', 'right')"><IMG src="pic/ctrlright.gif" 
+                  border=0 name=ctrlright STYLE="margin:0px"></A></TD>
+                </TR>
+              <TR height=17>
+                <TD><IMG src="pic/sideleft2.gif" border=0 STYLE="margin:0px"></TD>
+                <TD style="cursor:hand"><A 
+                  onmouseover="MM_swapImage('ctrldown','','pic/ctrldown_g.gif',1)" 
+                  onmouseout=MM_swapImgRestore() onclick="CamControl('move', 'down')"><IMG src="pic/ctrldown.gif" 
+                  border=0 name=ctrldown STYLE="margin:0px"></A></TD>
+                <TD><IMG src="pic/sideright2.gif" border=0 STYLE="margin:0px"></TD>
+		</TR>
+	    </table>
+  </td>
+  <td>
+      <table id="table5" border=0>
+		<tr id="panspeed">
+            <td><span class="spdTypeFont">PAN</span></td>
+            <td>
+				<select title="param" name="camctrl_c0_panspeed" class="spdOptFont" onChange="SubmitPanspeed(this)">
+					<option value=-5>-5</option>
+					<option value=-4>-4</option>
+					<option value=-3>-3</option>
+					<option value=-2>-2</option>
+					<option value=-1>-1</option>
+					<option selected value=0>0</option>
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+			</select>
+			</td>
+		</tr>
+		<tr id="tiltspeed">
+            <td><span class="spdTypeFont">TILT</span></td>
+			<td>
+				<select title="param" name="camctrl_c0_tiltspeed" class="spdOptFont" onChange="SubmitTiltspeed(this)">
+					<option  value=-5>-5</option>
+					<option  value=-4>-4</option>
+					<option  value=-3>-3</option>
+					<option  value=-2>-2</option>
+					<option  value=-1>-1</option>
+					<option  selected value=0>0</option>
+					<option  value=1>1</option>
+					<option  value=2>2</option>
+					<option  value=3>3</option>
+					<option  value=4>4</option>
+					<option  value=5>5</option>
+				</select>
+			</td>
+		</tr>
+		<tr id="zoomspeed">
+			<td><span class="spdTypeFont">ZOOM</span></td>
+			<td>
+				<select title="param" name="camctrl_c0_zoomspeed" class="spdOptFont" onChange="SubmitZoomspeed(this)">
+					<option  value=-5>-5</option>
+					<option  value=-4>-4</option>
+					<option  value=-3>-3</option>
+					<option  value=-2>-2</option>
+					<option  value=-1>-1</option>
+					<option  selected value=0>0</option>
+					<option  value=1>1</option>
+					<option  value=2>2</option>
+					<option  value=3>3</option>
+					<option  value=4>4</option>
+					<option  value=5>5</option>
+				</select>
+			</td>
+		</tr>
+	</table> <!-- end of table5 -->
+  </td>
+  </tr>
+  </table> <!-- end of table0 -->
+  <table id="table2" border="0" cellspacing="10" style="margin-left: 18px;">
+  	<tr>
+		<td align=center><input type="button" class="text_ctrl_button" style="width:40px" value=" &#45; " onclick="CamControl('zoom', 'wide')" ></td>
+		<td align=center><span class="text_ctrl_button">ZOOM</span></td>
+		<td align=center><input type="button" class="text_ctrl_button" style="width:40px" value=" &#43; " onclick="CamControl('zoom', 'tele')" ></td>
+	</tr>
+	<tr>
+		<td align=center><input type="button" class="text_ctrl_button" style="width:40px" value=" &#45; " onclick="CamControl('focus', 'near')" ></td>
+		<td align=center><input type="button" class="text_ctrl_button" style="width:55px" value="FOCUS" onclick="CamControl('focus', 'auto')" ></td>
+		<td align=center><input type="button" class="text_ctrl_button" style="width:40px" value=" &#43; " onclick="CamControl('focus', 'far')" ></td>
+	</tr>
+</table> <!-- end of table2 -->
+<table id="table4" width="100" STYLE="margin-left:20px;" border="0">
+	    <tr align=center height=28>
+	    	<td>
+	    		<table  background="pic/zfi2.gif">
+	    			<tr>
+						<td align=center width=20 onclick="CamControl('zoom', 'wide')" style="cursor:hand">&nbsp;</td>
+						<td align=center width=50><span class="button2">ZOOM</span></td>
+						<td align=center width=20 onclick="CamControl('zoom', 'tele')" style="cursor:hand">&nbsp;</td>
+					<tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+		</tr>
+		<tr align=center height=28>
+			<td>
+				<table background="pic/zfi2.gif">
+					<tr>
+						<td align=center width=20 onclick="CamControl('focus', 'near')" style="cursor:hand">&nbsp;</td>
+						<td align=center width=50 onclick="CamControl('focus', 'auto')">
+							<table cellspacing="0" cellpadding="0" border="0">
+								<tr>
+									<td align=center>
+										<span style="font-size:7px; color: white;">AUTO</span><br><span class="button2" style="cursor:hand">FOCUS</span>
+									</td>
+								</tr>
+							</table>
+						</td>	
+						<td align=center width=20 onclick="CamControl('focus', 'far')" style="cursor:hand">&nbsp;</td>
+					</tr>
+				</table>
+			<td>
+		</tr>
+	</table> <!-- end of table4 -->
+    <table id="table6" style="margin-left: 3px;">
+	    <tr id="GoTo">
+		    <td><span id="goto_text">GO</span>
+	</td>
+	<td>
+		<form name="xx" action="/cgi-bin/viewer/recall.cgi" method="get" target="retframe">
+		<input name="channel" id="channel" type="hidden" value="0"/>
+		<select name="recall" class="button" id="presetname" onChange="SubmitPreset(this)" STYLE="margin-top:17px">
+			<option title="symbol" value="-1" selected>select_one</option>
+		</select>
+  		</form>
+  	</td>
+  </tr>
+    </table> <!-- end of table6 -->
+	</div>
+</div>
+<iframe name="retframe" frameborder="0" style="display:none;"></iframe>
+</body>
+</html>

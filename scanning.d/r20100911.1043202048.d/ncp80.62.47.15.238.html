@@ -1,0 +1,86 @@
+HTTP/1.1 200 OK
+Connection: close
+Date: Sat, 11 Sep 2010 23:01:15 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3241
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><meta content="text/html; charset=UTF-8" /><title>
+	Windows Home Server
+</title>
+    <script language="javascript">
+		function myLoaded()
+		{
+			window.onresize = myResize;
+			myResize();
+		}
+
+		function myResize()
+		{
+			var oContents = document.getElementById("oContents");
+			var height = document.body.clientHeight;
+			height = height - 4;
+		//	alert(height);
+			if ( height > 614 )
+				oContents.style.height = height;
+			//oContents.style.width = document.body.clientWidth - 36;
+			// For IE, .style.height include border
+			// For Firefox, .style.height exclude border
+
+		}
+		</script>
+		<style type="text/css">
+		BODY {
+			margin: 10px; border: 0; padding: 0;
+			COLOR: #000000; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Sans-Serif;
+		}
+		</style>
+</head>
+
+	<body style="background-color:Black; margin:0; text-align:center" onload="myLoaded();" >
+<form name="form1" method="post" action="Suite.aspx" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTcyMDkyMDMxNQ9kFgICAw9kFgICBQ8WAh4JaW5uZXJodG1sBRpMZW5vdm8gVGVjaG5pc2NoZXIgU3VwcG9ydGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFBUltYWcxyXj2M8GIfy1jEpkO+P0f+a3Ivw4=" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgL80O3EBgKz2a6HAxtAxA4e2CCkCDj3PKvFbmw8gaUM" />
+    <table style="border-style: none; width:1034px; height:614">
+			<tr><td id="oContents" align=center valign=middle style=" overflow:hidden">
+    
+    <table id="table1" style="border-style: none; font-family: Tahoma; position:relative; top:0px; left: 0px">
+            <tr style="border-style: none; ">
+                <td id="titlebar" style="background-image: url('Image/background.png'); border-style: none;  background-repeat: no-repeat;
+                    height: 612px; width: 1024px; background-position: center center"> 
+                    <img id="HomeImage" style="position: absolute; left: 445px; top: 160px; cursor:hand" src="Image/homeicon.png"
+            onclick="GoHomePage()"/>
+            <input type="image" name="Imag1" id="Imag1" src="Image/support.png" border="0" style="position: absolute; left: 445px; top: 377px; cursor:hand" /> 
+       <label id="aehs" style="font-family: Arial; font-size: 22px; font-style: normal; font-weight: bold;
+            position: absolute; top: 245px; left: 631px; width:auto; text-align:left; color: white; ">
+            Lenovo Home Server</label> 
+            <label id="Label1" style="font-family: Arial; font-size: 22px; font-style: normal; font-weight: bold;
+            position: absolute; top: 462px; left: 631px; width: auto; text-align:left; color: white;">Lenovo Technischer Support</label>
+                </td>
+               
+            </tr>
+      </table>
+      </td></tr>
+		</table>
+    </form>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+
+        function GoHomePage()
+        {
+            location.href="https://"+location.host+"/Remote/logon.aspx";
+        }
+//        function GoDownloadPage()
+//        {
+//            location.href="http://support.lenovo.com.cn/homeserver/";
+//        }
+</script>

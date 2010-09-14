@@ -1,0 +1,210 @@
+HTTP/1.1 200 OK
+Date: Sun, 12 Sep 2010 00:42:12 GMT
+Server: Apache/2.2.9
+Cache-Control: public
+Content-Length: 6092
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Login to SPRIT.ORG</title>
+	<link rel="stylesheet" type="text/css" href="html/login.css">
+	
+	<script type="text/javascript">
+	var type = "standalone";
+	var Expand;
+	
+	// Reload to the master frame if we are inside a frameset
+	if (parent.frames[1]) top.window.location=self.location;
+
+	// Switch Local/External
+	function switchtype()	{
+
+		if(document.getElementById('mailserver').style.display == 'none')	{
+		document.getElementById('mailserver').style.display = "";
+		document.getElementById('externalinfo').style.display = "none";
+		document.getElementById('localinfo').style.display = "";
+
+		if(Expand == 1) {
+		document.getElementById('protocol').style.display = "";
+		}
+
+		
+		} else	{
+		document.getElementById('mailserver').style.display = "none";
+		document.getElementById('externalinfo').style.display = "";
+		document.getElementById('localinfo').style.display = "none";
+		document.getElementById('protocol').style.display = "none";
+		}
+		
+
+	}
+
+	// Expand More Options
+	function ExpandOptions()	{
+		Expand = 1;
+		document.getElementById('LanguageDisplay').style.display='';
+		document.getElementById('RememberMeDisplay').style.display='';
+		document.getElementById('MoreOptions').style.display='none';
+
+		if(document.getElementById('mailserver').style.display == '')	{
+			document.getElementById('protocol').style.display = "";
+		}
+
+	}
+
+	function BasicLogin()	{
+		// If a user logged off, don't show the cookie of the users details if set
+		browsercheck();
+		document.loginPage.username.focus();
+		check_default();
+		//check_newwindow();
+		return;
+	}
+	
+	function check_default()        {
+
+	// Check if Webadmin set to use a default interface
+
+	var i;
+	for(i=document.loginPage.LoginType.length-1;i>=0;i--)
+	{
+	if(document.loginPage.LoginType[i].value == 'simple')
+	document.loginPage.LoginType[i].selected = true;
+	}
+
+	}
+	
+	function help(file)	{
+		helpwin(file);
+	}
+	
+	function login()	{
+		document.body.style.cursor = 'wait';
+		document.loginPage.submit();
+	}
+	</script>
+
+	<script language="Javascript" src="html/english/javascript/xp.js"></script>
+	<script type="text/javascript" src="javascript/browsercheck.js"></script>
+	<script type="text/javascript" src="javascript/rememberme.js"></script>
+</head>
+
+
+<body onload="RememberMe();">
+
+<div id="center">
+<div id="content">
+
+	<div id="logo"></div>
+
+<div id="contain">
+
+	<div id="hold">
+
+		<div id="left">
+			
+
+			<h1 class="login">Login Details</h1>
+
+			<h2 class="login-text">Please provide login and password information</h2>
+
+			
+			<!-- Begin Form -->
+            <form class="login-form" action="atmail.php" name='loginPage' method="post">
+
+              <table border="0">
+              <tr>
+              <td width="90" height="40">Username:</td>
+              <td ><input id="username" class="input" type="text" name="username" value=""></td>
+              <td>&nbsp;</td>
+              <td><input id="pop3host" class="domain" type="hidden" name="pop3host" value="mail.sprit.org" onFocus="if(this.value=='mail.sprit.org')this.value=''"></td>
+              </tr>
+              <tr>
+              <td height="40">Password:</td>
+              <td><input id="password"  class="input" type="password" name="password" value=""></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              </tr>
+
+			
+
+              <tr>
+              <td height="40">Interface:</td>
+              <td>
+              <select class="interface" name="LoginType">
+              <option value="simple" selected>Basic (Any browser)</option>
+              <option value="ajax">Simple (Ajax browser)</option>
+              <option value="xp">Advanced (IE/FF)</option>
+              </select>
+              </td>
+              </tr>
+
+              <tr id="MoreOptions">
+              <td class="moptions">More Options:</td>
+              <td class="more"><a href="javascript:ExpandOptions()"><img src="imgs/login-more.gif" alt="more" border="none"></a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              </tr>
+
+              <tr id="LanguageDisplay" style="display:none">
+              <td height="40">Language:</td>
+              <td><select class="language" name="Language">
+			  <option value="" selected>Default</option> <option value='arabic'>Arabic</option>
+<option value='catalan'>Catalan</option>
+<option value='danish'>Danish</option>
+<option value='dutch'>Dutch</option>
+<option value='english'>English</option>
+<option value='espanol'>Espanol</option>
+<option value='finnish'>Finnish</option>
+<option value='french'>French</option>
+<option value='german'>German</option>
+<option value='greek'>Greek</option>
+<option value='hungarian'>Hungarian</option>
+<option value='italiano'>Italiano</option>
+<option value='japanese'>Japanese</option>
+<option value='norwegian'>Norwegian</option>
+<option value='polish'>Polish</option>
+<option value='portuguese'>Portuguese</option>
+<option value='russian'>Russian</option>
+<option value='swedish'>Swedish</option>
+<option value='thai'>Thai</option>
+
+			  </select></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              </tr>
+
+              <tr id="protocol" style="display:none">
+              <td height="40">Protocol:</td>
+              <td><select name='MailType' class='protocol'><option value='imap'>IMAP</option><option value='imaps'>IMAP Secure</option></select></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              </tr>
+
+              </table>
+
+              <div id="button" onclick='login()'>
+              <div class="login-btn">Login</div>
+              <input class="formbutton" type="image" name="login" alt="Login" src="imgs/login-btn-login.jpg">
+              <input type='hidden' name='send' value='1'/>
+              </div>
+
+              <div id="RememberMeDisplay" style="display:none">Remember Me <input class="check" type='checkbox' name='RememberMe' value='1'></div>
+
+            </form>
+			
+		</div></div>
+
+
+	<div id="footer"></div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
