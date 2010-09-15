@@ -48,7 +48,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   end
   def scanner_d
     self.proj_d ||= SampleTool.proj_d_default
-    dir=File.join(self.proj_d,'scanning.d',rdir+'.'+self.c.to_s+'.d').to_s
+    dir=File.join(self.proj_d,'data.d',rdir+'.'+self.c.to_s+'.d').to_s
     self.data_d = dir
     db.save(self)
     dir
@@ -72,7 +72,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   end
   def copy_scanning_bins_to_scanner_d
     self.proj_d ||= SampleTool.proj_d_default
-    bin_d=File.join(self.proj_d,'scanning.d','bin').to_s
+    bin_d=File.join(self.proj_d,'bintools.d').to_s
     Dir.entries(bin_d).each{|e|
       if(e[0]!='.');cp(File.join(bin_d,e).to_s,scanner_d)
       end

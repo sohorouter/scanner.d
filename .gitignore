@@ -1,7 +1,8 @@
 .*.swp
 .swp
 .bundle
+.lst
 db/*.sqlite3
 log/*.log
 tmp/**/*
-data.d/r20*
+data.d/r*

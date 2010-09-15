@@ -10,7 +10,8 @@ class Sample #< ActiveResource::Base #< CouchFoo::Base
   view :all, :key => :ip_start
 
 
-  def self.r_first
+  # quick check couchdb availability
+  def self.r_special_first
     self.db.view(Sample.all).first
   end
 
