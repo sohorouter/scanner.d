@@ -1,6 +1,0 @@
-development:
-  adapter: mysql
-  host: 192.168.0.195
-  database: geoip
-  username: rogera
-  password: 1boris
