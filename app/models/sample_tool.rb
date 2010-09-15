@@ -15,6 +15,7 @@ class SampleTool
   property :d
   property :e
   property :proj_d
+  property :data_d
 
   view :all, :key => :c
   view :show_my_range, :map => "function(doc) { if(doc.b){ c=doc.b.countryip; emit(c.id, {range:[c.start_long,c.end_long]});} }", :include_docs => true, :type => :custom
@@ -48,6 +49,9 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   def scanner_d
     self.proj_d ||= SampleTool.proj_d_default
     dir=File.join(self.proj_d,'scanning.d',rdir+'.'+self.c.to_s+'.d').to_s
+    self.data_d = dir
+    db.save(self)
+    dir
   end
 
   def produce_hostips_from_a
