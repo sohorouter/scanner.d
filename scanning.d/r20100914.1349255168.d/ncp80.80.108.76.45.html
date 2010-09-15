@@ -1,0 +1,140 @@
+HTTP/1.1 404 Object Not Found
+Server: Microsoft-IIS/5.0
+Date: Tue, 14 Sep 2010 10:27:34 GMT
+Content-Length: 4035
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html dir=ltr>
+
+<head>
+<style> a:link			{font:8pt/11pt verdana; color:FF0000} a:visited		{font:8pt/11pt verdana; color:#4e4e4e}
+</style>
+
+<META NAME="ROBOTS" CONTENT="NOINDEX">
+
+<title>Die Seite wurde nicht gefunden</title>
+
+<META HTTP-EQUIV="Content-Type" Content="text-html; charset=iso-8859-1">
+</head>
+
+<script>
+function Homepage(){
+<!--
+// in real bits, urls get returned to our script like this:
+// res://shdocvw.dll/http_404.htm#http://www.DocURL.com/bar.htm
+
+	//For testing use DocURL = "res://shdocvw.dll/http_404.htm#https://www.microsoft.com/bar.htm"
+	DocURL = document.URL;
+
+	//this is where the http or https will be, as found by searching for :// but skipping the res://
+	protocolIndex=DocURL.indexOf("://",4);
+
+	//this finds the ending slash for the domain server
+	serverIndex=DocURL.indexOf("/",protocolIndex + 3);
+
+		//for the href, we need a valid URL to the domain. We search for the # symbol to find the begining
+	//of the true URL, and add 1 to skip it - this is the BeginURL value. We use serverIndex as the end marker.
+	//urlresult=DocURL.substring(protocolIndex - 4,serverIndex);
+	BeginURL=DocURL.indexOf("#",1) + 1;
+
+	urlresult=DocURL.substring(BeginURL,serverIndex);
+
+	//for display, we need to skip after http://, and go to the next slash
+	displayresult=DocURL.substring(protocolIndex + 3 ,serverIndex);
+
+	InsertElementAnchor(urlresult, displayresult);
+}
+
+function HtmlEncode(text)
+{
+    return text.replace(/&/g, '&amp').replace(/'/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function TagAttrib(name, value)
+{
+    return ' '+name+'="'+HtmlEncode(value)+'"';
+}
+
+function PrintTag(tagName, needCloseTag, attrib, inner){
+    document.write( '<' + tagName + attrib + '>' + HtmlEncode(inner) );
+    if (needCloseTag) document.write( '</' + tagName +'>' );
+}
+
+function URI(href)
+{
+    IEVer = window.navigator.appVersion;
+    IEVer = IEVer.substr( IEVer.indexOf('MSIE') + 5, 3 );
+
+    return (IEVer.charAt(1)=='.' && IEVer >= '5.5') ?
+        encodeURI(href) :
+        escape(href).replace(/%3A/g, ':').replace(/%3B/g, ';');
+}
+
+function InsertElementAnchor(href, text)
+{
+    PrintTag('A', true, TagAttrib('HREF', URI(href)), text);
+}
+
+//-->
+</script>
+
+<body bgcolor="FFFFFF">
+
+<table width="410" cellpadding="3" cellspacing="5">
+
+  <tr>
+    <td align="left" valign="middle" width="360">
+	<h1 style="COLOR:000000; FONT: 13pt/15pt verdana"><!--Problem-->Die Seite wurde nicht gefunden</h1>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="400" colspan="2"> <font style="COLOR:000000; FONT: 8pt/11pt verdana">Die von Ihnen gesuchte Seite wurde eventuell gelöscht, der Name wurde geändert oder die Seite ist derzeit nicht verfügbar.</font></td>
+  </tr>
+
+  <tr>
+    <td width="400" colspan="2"> <font style="COLOR:000000; FONT: 8pt/11pt verdana">
+
+	<hr color="#C0C0C0" noshade>
+
+    <p>Versuchen Sie Folgendes:</p>
+
+	<ul>
+      <li>Wenn Sie die Adresse der Seite in der Adresszeile eingegeben haben, stellen Sie sicher, dass die Schreibweise richtig ist.<br>
+      </li>
+
+      <li>Öffnen Sie die Homepage
+
+	  
+<script>
+	  <!--
+	  if (!((window.navigator.userAgent.indexOf("MSIE") > 0) && (window.navigator.appVersion.charAt(0) == "2")))
+	  {
+	  	Homepage();
+	  }
+	  //-->
+	   </script>
+
+	   , und suchen Sie nach Verknüpfungen zu den gewünschten Informationen.</li>
+
+      <li>Klicken Sie auf die Schaltfläche <a href="javascript:history.back(1)">Zurück</a>, und versuchen Sie eine andere Verknüpfung.</li>
+    </ul>
+
+    <h2 style="font:8pt/11pt verdana; color:000000">HTTP 404 - Datei nicht gefunden<br> Internet-Informationsdienste<BR></h2>
+
+	<hr color="#C0C0C0" noshade>
+
+	<p>Technische Informationen (für den Support)</p>
+
+<ul>
+<li>Weitere Informationen:<br> <a href="http://www.microsoft.com/germany/support/" target="_blank">Microsoft Support</a>
+</li>
+</ul>
+
+    </font></td>
+  </tr>
+
+</table>
+</body>
+</html>

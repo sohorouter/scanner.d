@@ -1,0 +1,235 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Cache-Control: must-revalidate, no-store
+Connection: close
+
+<html>
+<style>
+
+.ltd {
+  FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal;
+  FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal;
+}
+.ltd1 {
+  BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-WEIGHT: normal;
+  FONT-SIZE: 1pt; BORDER-LEFT: medium none; COLOR: black; BORDER-BOTTOM: medium none;
+  FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+TABLE.stat TH {
+  BORDER-LEFT: 0px;  BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px;
+  FONT-SIZE: 11px; COLOR: blue; FONT-FAMILY: Arial;
+}
+TABLE.stat TD {
+  BORDER-LEFT: 0px;  BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px;
+  FONT-SIZE: 8pt; FONT-FAMILY: Arial;
+}
+.inputw {
+	FONT-SIZE: 9pt
+}
+.inputc {
+	FONT-SIZE: 9pt
+}
+.swalft {
+	FONT-SIZE: 9pt; COLOR: white; FONT-FAMILY: Arial
+}
+.swdlft {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: white; FONT-FAMILY: Arial
+}
+.labelft {
+	FONT-WEIGHT: bold; COLOR:white; FONT-SIZE: 9pt; FONT-FAMILY: Arial
+}
+.cpft {
+	FONT-SIZE: 9px; COLOR: black; FONT-FAMILY: Arial
+}
+.navbar .tab {
+  BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px;
+  PADDING-LEFT: 6px; PADDING-TOP: 10px; PADDING-RIGHT: 10px; PADDING-BOTTOM: 10px;
+  DISPLAY: inline; Z-INDEX: 1; BACKGROUND: none transparent scroll repeat 0% 0%;
+  FLOAT: left; POSITION: relative; MARGIN: 0px 0px 0px;
+  FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Arial; 
+}
+.navbar .selected {
+    BACKGROUND: #6666cc;
+	BORDER-TOP: 0px; PADDING-BOTTOM: 10px; MARGIN: -10px 0px 0px; PADDING-TOP: 20px
+}
+.navbar .tab A {
+	CURSOR: hand; COLOR: rgb(255,255,255); FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.navbar .hover A {
+	COLOR: rgb(0,150,150)
+}
+.tab-page {
+  CLEAR: both; BORDER-RIGHT: 0px;
+  PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px;
+  Z-INDEX: 2; BACKGROUND: white; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px;
+  WIDTH: 100%; COLOR: blue; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; 
+  FONT-SIZE: 11px; FONT-FAMILY: Arial; POSITION: relative; TOP: 0px
+}
+.navbar {
+	Z-INDEX: 1; BACKGROUND: #000000; BORDER-LEFT: 0px; WIDTH: 100%;
+    WHITE-SPACE: nowrap; HEIGHT: 30px
+}
+</STYLE>
+
+<script type="text/javascript">
+var check = false; 
+var currentPage = null;
+var ns4 = false;
+var ie4 = false;
+var dom = false;
+var hideStr = "";
+var showStr = "";
+
+function init() 
+{
+  styleStr=".style.display";
+  hideStr="='none'";
+  showStr="='block'";
+  check = true; 
+  if (document.getElementById){
+    dom = true;
+  }
+  else if (document.all){
+    ie4 = true;
+  }
+  else if (document.layers) {  
+    ns4 = true;
+    styleStr=".visibility";  
+    hideStr="='hide'";
+    showStr="='show'";
+  }
+  else check=false;
+}
+
+function getAllTags(tags)
+{
+  if (check){
+    if (document.getElementsByTagName)
+      return document.getElementsByTagName(tags);
+    if (document.document.all)
+      return document.all.tags(tags);
+    if (document.layers)
+      return document.lalyers;
+    if (document.divs)
+      return document.divs;
+  }
+  return null;
+}
+
+function getElement(tabName)
+{
+  if (check){
+    if (dom)
+      return document.getElementById(tabName);
+    if (ie4)
+      return document.all[tabName];  
+    if (ns4)
+      return document.layers[tabName];
+  }
+  return null; 
+}
+
+
+function onMouseOver(tabName)
+{
+  var el;
+
+  el = getElement("nav"+tabName);
+  if (el==null)
+    return;
+
+  el.className = el.className + " hover";
+}
+
+function onMouseOut(tabName)
+{
+  var el;
+
+  el = getElement("nav"+tabName);
+  if (el==null)
+    return;
+  
+  el.className = el.className.replace(/ hover/g, "");
+}
+
+function showTab(tabName)
+{
+  var el;
+
+  el = getElement(tabName);
+  if (el==null)
+    return;
+	
+  eval("el"+styleStr+showStr);
+
+  el = getElement("nav"+tabName);
+  if (el==null)
+    return;
+
+  el.className = el.className.replace(/tab/g, "tab selected");
+}
+function hideTab(tabName) 
+{
+  var el;
+
+  el = getElement(tabName);
+  if (el==null)
+    return;
+	
+  eval("el"+styleStr+hideStr);
+
+  el = getElement("nav"+tabName);
+  if (el==null)
+    return;
+
+  el.className = el.className.replace(/ selected/g, "");
+}
+function switchPage(newpage) 
+{
+  if (currentPage!=null)
+	hideTab(currentPage);
+  currentPage=newpage;
+  showTab(newpage);
+}
+function hideOthers()
+{
+  var all; 
+  var i;
+  var first=1;
+
+  all = getAllTags("div");
+  if (all==null)
+    return;
+  for (i=0; i<all.length; i++){
+    if (all[i].className=="tab-page"){
+      if (first==1){
+	    first=0;
+        switchPage(all[i].id);
+      }
+	  else eval("all[i]"+styleStr+hideStr);
+    }
+  }
+}
+
+function ict_change(dobj)
+{
+  var si_obj;
+  
+  si_obj = getElement("si_obj");
+  if (si_obj==null)
+    return;
+  if (dobj.value=='0'){
+    eval("si_obj"+styleStr+showStr);
+  }
+  else
+    eval("si_obj"+styleStr+hideStr);   	
+}
+
+
+function onLoad()
+{
+  init();
+  hideOthers();
+  ict_change(getElement("30383"));
+}
+</script>

@@ -1,0 +1,155 @@
+HTTP/1.0 200 OK
+Content-type: text/html
+Date: Tue, 14 Sep 2010 20:11:26 GMT
+Connection: close
+Last-Modified: Sat, 28 Feb 2009 14:48:28 GMT
+Content-length: 5464
+
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--//hide script
+	if ( (navigator.appName == "Nokia")||((navigator.appName == "Microsoft Internet Explorer")&&(navigator.platform == "Linux")) )
+		document.write('<meta http-equiv="refresh" content="0;URL=pda.html">');
+//end hide -->
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=320;">
+<title>NDVR</title>
+<style>
+<!--
+A {text-decoration:none}
+.style1 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #FFFFFF;}
+.style2 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #666666;}
+.style3 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #161618;}
+-->
+</style>
+</head>
+<!-- 
+I hope you enjoy reading my source code. Alexander Bograd
+-->
+
+<BODY link="#FFFFFF" alink="#FFFFFF" vlink="#FFFFFF">
+<script type="text/javascript">
+//<![CDATA[
+var interval = "";
+var i = 10;
+var redirect_path = "index.php3";
+function startInterval()
+{
+     interval = window.setInterval("tTimer()",1000);
+}
+function stopInterval()
+{
+     window.clearInterval (interval);
+     interval="";
+}
+function tTimer()
+ {
+     document.getElementById("Timer").innerHTML = "<span class='style2'>redirect in:</span> "+(i--)+" sec.";
+     if (i == -1)
+     {
+        stopInterval();
+		window.location.href = redirect_path;
+		// window.open(location.href);
+		// setTimeout("location.reload(true);", 0);
+     }
+}
+function timeOut() {
+document.getElementById("Timer").innerHTML = "<span class='style2'>redirect in:</span> 10 sec.";
+startInterval();
+}
+
+if ((navigator.appName == "Microsoft Internet Explorer")&&(navigator.platform == "Win32"))
+	window.location.href = redirect_path;
+
+if ((navigator.appName == "Microsoft Internet Explorer")&&(navigator.platform == "Linux"))
+	redirect_path = "pda.html";
+	
+if ( navigator.platform == "iPhone" )
+	redirect_path = "iphone.html";
+	
+//]]>
+</script>
+<center>
+<table width="100%" height="100%">
+<tr>
+<td align=center valign="center" bgcolor="#404040">
+	<table align="center" width="300" border="0" cellpadding="0" cellspacing="0">
+                    <td align="center" class="style2" bgcolor="#404040" height="30">&nbsp;</td>
+	</table>
+	<table align="center" width="260" border="0" cellpadding="5" cellspacing="0">
+	<td align="center" bgcolor="#161618" height="320">
+		<table  width="210" border="0" cellpadding="5" cellspacing="0" height="260">
+		<tr>
+	  		<td height="10" colspan="2" align="right" class="style3"><img src="img/spacer.gif" width="10" height="10">&nbsp;</td>
+		<tr>
+	    <td colspan="2" align="left" class="style1"><a href="index.php3"><img src="img/icon_ie.gif" alt="Internet Explorer" width="43" height="46" border="0" align="right">
+			<strong><u>NDVR main page</u>&nbsp;&raquo;</strong></a><br>
+			<span class="style2">full support: IE6+<br>
+			limited support:<br>
+			Netscape/Mozilla, Opera<br>
+			&nbsp;<br></span>
+			<div id="Timer"></div>
+			<script type="text/javascript">
+  			//<![CDATA[
+				timeOut();
+			//]]>
+			</script></td>
+		</tr>
+		<tr>
+	  		<td height="10" colspan="2" align="right" class="style3"><img src="img/spacer.gif" width="10" height="10">&nbsp;</td>
+		<tr>
+	    <td height="40" colspan="2" align="left" class="style1">
+			<script type="text/javascript">
+  			//<![CDATA[
+			document.write("<span class='style2'>Your browser:</span><br>");
+			document.write(navigator.appName);
+			//document.write("<br><span class='style2'>version:</span><br>");
+			//document.write(navigator.appVersion);
+			document.write("<br><span class='style2'>system:</span><br>");
+			document.write(navigator.platform);
+			//]]>
+			</script>
+			      <noscript>
+			        Your browser do not<br>
+			        support javascripts!
+			        </noscript></td>
+		<tr>
+	  		<td align="right" class="style3" height="10"><img src="img/spacer.gif" width="10" height="10">&nbsp;</td>
+		    <td width="35" rowspan="2" align="right" class="style3">
+			<script type="text/javascript">
+  			//<![CDATA[
+			if ( navigator.platform == "iPhone" )
+				document.write('<a href="iphone.html"><img src="img/icon_iphone_smile.gif" width="35" height="66" border="0"></a>');
+			else
+				document.write('<a href="pda.html"><img src="img/icon_mobile.gif" width="35" height="43" border="0"></a>');
+			//]]>
+			</script>
+			<noscript>
+			        <a href="pda.html"><img src="img/icon_mobile.gif" width="35" height="43" border="0"></a></noscript>
+			</td>
+		<tr>
+	    <td align="left" class="style1">
+		<script type="text/javascript">
+  		//<![CDATA[
+		if ( navigator.platform == "iPhone" )
+			document.write('<a href="iphone.html"><strong><u>iPhone page</u>&nbsp;&raquo;</strong></a><br><span class="style2">Apple&acute;s iPhone ready</span>');
+		else
+			document.write('<a href="pda.html"><strong><u>NDVR mobile page</u>&nbsp;&raquo;</strong></a><br><span class="style2">PDAs, Opera Mini/Mobile</span>');
+		//]]>
+		</script>
+		<noscript>
+		<a href="pda.html"><strong><u>NDVR mobile page</u>&nbsp;&raquo;</strong></a><br><span class="style2">PDAs, Opera Mini/Mobile</span></noscript>
+		</td>
+		<tr>
+	  		<td height="10" colspan="2" align="right" class="style3"><img src="img/spacer.gif" width="10" height="10">&nbsp;</td>
+		</table>
+	</td>
+	</table>
+	<table align="center" width="300" border="0" cellpadding="0" cellspacing="0">
+                    <td align="center" class="style2" bgcolor="#404040" height="40">&nbsp;</td>
+	</table>
+</td></tr></table>
+</body>
+</html>

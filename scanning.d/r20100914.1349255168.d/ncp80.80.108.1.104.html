@@ -1,0 +1,46 @@
+HTTP/1.0 200 OK
+Content-type: text/html
+Server: uClinux-httpd 0.2.2
+Expires: 0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+
+<!-- Free version -->
+<!-- saved from url=(0014)about:internet -->
+<head>
+<title>Bollisweb</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="Keywords" content="photo,album,gallery,Bollisweb" />
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+function preventDefault(e) {
+	if (document.addEventListener) e.preventDefault();
+	else e.returnValue=false;
+	return false;
+}
+function keypress(e) {
+	if(typeof _jaWidgetFocus != 'undefined' && _jaWidgetFocus) return true;
+	if(!e) var e = window.event;
+	if(e.keyCode) keyCode = e.keyCode; 
+	else if(e.which) keyCode = e.which;
+	switch(keyCode) {
+		case 8: window.location="../"; return false; break;
+		
+		
+		case 63273: case 36: window.location="index.html"; return preventDefault(e); break;
+		case 63275: case 35: window.location="index.html"; return preventDefault(e); break;
+		
+	}
+	return true;
+}
+function setuplisteners() {
+	if (document.addEventListener) document.addEventListener('keypress',keypress,false);
+	else if (document.attachEvent) document.attachEvent('onkeydown',keypress);
+}
+up0 = new Image(31,31); up0.src = "res/up.gif";
+up1 = new Image(31,31); up1.sr

@@ -1,0 +1,56 @@
+HTTP/1.0 400 Bad Request
+Server: squid/2.6.STABLE13
+Date: Tue, 14 Sep 2010 19:53:03 GMT
+Content-Type: text/html
+Content-Length: 1355
+Expires: Tue, 14 Sep 2010 19:53:03 GMT
+X-Squid-Error: ERR_INVALID_REQ 0
+X-Cache: MISS from SERVER2003.HFP.local
+X-Cache-Lookup: NONE from SERVER2003.HFP.local:8080
+Via: 1.0 SERVER2003.HFP.local:8080 (squid/2.6.STABLE13)
+Proxy-Connection: close
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML><HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>FEHLER: Der angeforderte URL konnte nicht geholt werden</TITLE>
+<STYLE type="text/css"><!--BODY{background-color:#ffffff;font-family:verdana,sans-serif}PRE{font-family:sans-serif}--></STYLE>
+</HEAD><BODY>
+<H1>FEHLER</H1>
+<H2>Der angeforderte URL konnte nicht geholt werden</H2>
+<HR noshade size="1px">
+<P>
+W&auml;hrend des Versuches, die Anfrage
+<PRE>
+GET / HTTP/1.0
+
+
+
+</PRE>
+zu verarbeiten, trat der folgende Fehler auf:
+<UL>
+<LI>
+<STRONG>Ung&uuml;ltige Anfrage</STRONG>
+</UL>
+
+<P>
+Ein Teil der HTTP-Anfrage ist ung&uuml;ltig. M&ouml;gliche Gr&uuml;nde:
+<UL>
+<LI>Fehlende oder unbekannte Anfrage-Methode (GET, POST)
+<LI>Fehlender URL
+<LI>Fehlender HTTP Identifier (HTTP/1.0)
+<LI>Anfrage ist zu gro&szlig;
+<LI>Content-Length fehlt f&uuml;r POST- oder PUT-Anfragen
+<LI>Ung&uuml;ltige Zeichen im Hostnamen - z.B. Unterstriche ('_'),
+     Umlaute und Kommata sind nicht erlaubt.
+</UL>
+</P>
+
+<P>
+Ihr Cache Administrator ist <A HREF="mailto:webmaster">webmaster</A>.
+
+<BR clear="all">
+<HR noshade size="1px">
+<ADDRESS>
+Generated Tue, 14 Sep 2010 19:53:03 GMT by SERVER2003.HFP.local (squid/2.6.STABLE13)
+</ADDRESS>
+</BODY></HTML>

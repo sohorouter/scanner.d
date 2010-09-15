@@ -1,0 +1,138 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:22:30 GMT
+Server: Apache
+Set-Cookie: MYSESSID=804e76797e337553874f2b9b0530f623; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 3505
+Connection: close
+Content-Type: text/html;charset=utf-8
+
+<html>
+<head>
+	<title>Thecus N5200</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="refresh" content="480">
+	<link rel="stylesheet" href="/pub/css.css" type="text/css">
+</head>
+<body bgcolor="#686868" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="245" border="0" cellspacing="0" cellpadding="0" class="outerpage" align="center">
+	<!--<tr>
+		<td height="2"> 
+			<table width="37%" border="0" cellspacing="0" cellpadding="0" class="menubutton">
+				<tr>
+					<td height="25">
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>-->
+	<tr> 
+		<td height="9" align="right">
+				  <div style="background-image:url(/pub/img/key_image.png);width: 719px;height: 59px;">
+				<table border="0" height="100%">
+		  <tr><td valign="bottom">
+		    <font style="font-family:'Arial', 'Helvetica', 'sans-serif';font-size: 11px; font-weight: bold;color:#D8D8D8;">N5200PRO V2.00.16</font>
+		  </td></tr>
+		</table>
+	  	</div>
+		</td>
+	</tr>
+	<tr> 
+		<td height="15">
+			<table width="245" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td>
+						<img src="/pub/img/help_bk.png" width="658" height="17">
+					</td>
+					<td>
+						<img src="/pub/img/help_b_n.png" width="61" height="17">
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr> 
+		<td height="2"><img src="/pub/img/s.png" width="719" height="20"></td>
+	</tr>
+	<tr>
+		<td valign="top">
+				  <img src="/pub/img/login.jpg" width="512" height="384">
+				</td>
+	</tr>
+	<tr>
+		<td>
+			Login&nbsp;<font color='#0000ff' style='text-decoration:underline'>N5200</font>		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<form method="POST" action="/usr/usrgetform.html?name=index" name="login" onSubmit="return check()">
+				<input type="hidden" name="lang" id="lang" value="">
+			<table>
+				<tr>
+					<th>Username</th>
+					<td> : <input type="text" name="username" maxlength="32" style="width:200px"></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td> : <input type="password" name="pwd" maxlength="16" style="width:200px"></td>
+				</tr>
+				<tr align="middle">
+					<td colspan="2"><input type="submit" value="Login" name="login_btn" id="login_btn"></td>
+				</tr>
+			</table>
+			</form>
+		</td>
+	</tr>
+	<tr> 
+		<td height="54"> 
+			<div align="right"><img src="/pub/img/slo.png" width="491" height="54"></div>
+		</td>
+	</tr>
+	<tr> 
+		<td height="30"> 
+			<table width="245" border="0" cellspacing="0" cellpadding="0" height="30" class="www">
+				<tr> 
+					<td>
+						&nbsp;
+					</td>
+					<td>
+												<a href="http://www.thecus.com/" target="_blank">
+							<img src="/pub/img/www.png" width="165" height="30" border=0>
+						</a>
+											</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="javascript" src="/pub/isSingleByteChar.js"></script>
+<script language="javascript" src="/pub/isAccount.js"></script>
+<script language="javascript">
+<!--
+var username = document.getElementsByName('username');
+username[0].focus();
+//Leon 2005/03/17
+function check(){
+	var pwd = document.getElementsByName('pwd')[0].value;
+	var username = document.getElementsByName('username')[0].value;
+	if(username.replace(/ /,'') == ''){
+		alert("Username does not allow empty or space string");
+		return false;
+	}
+	if(!isAccount(username)){
+		alert("Username is invalid");
+		return false;
+	}
+	if(!isSingleByteChar(pwd)){
+		alert("Password does not allow multi-bytes characters");
+		return false;
+	}
+	return true;
+}
+//-->
+</script>
+</body>
+</html>

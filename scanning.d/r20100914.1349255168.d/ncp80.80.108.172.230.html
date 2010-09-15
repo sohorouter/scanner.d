@@ -1,0 +1,85 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 10:28:12 GMT
+Server: Apache/2.2.6 (Win32) PHP/5.2.5
+Last-Modified: Sun, 09 Aug 2009 12:40:14 GMT
+ETag: "561e-57d-c555c780"
+Accept-Ranges: bytes
+Content-Length: 1405
+Connection: close
+Content-Type: text/html
+X-Pad: avoid browser bug
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ 
+<title> Callshop Administration </title>
+<base target="_self">
+
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+if (document.layers){
+window.captureEvents(Event.MOUSEDOWN | Event.MOUSEUP)
+window.onmousedown=rightclick;
+window.onmouseup=rightclick;
+function rightclick(e) {
+if (e.which == 3) {
+// Put right mouse code here
+alert(' ');
+return false; 
+}
+else {
+return true; 
+}
+}
+}
+if (document.all){
+function click() {
+if (event.button==2) {
+alert('   ')
+}
+if (event.button==3) {
+alert(' ')}
+}
+document.onmousedown=click
+}
+// -->
+</script> 
+
+
+</head>
+
+
+<body topmargin="0" leftmargin="0">
+
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+
+<tr><td>
+<iframe width=100% height=60 frameborder=0 src=logo.html></iframe>
+</td></tr>
+
+<tr><td>
+  	 <form method="POST" action="clogin.php">
+      <p align="center">
+	  Username:  
+	  <input type="text" name="username" size="20" maxlength="10"><br>
+	  Password: <input type="password" name="webpw" size="20"><br> 
+	  <input type="submit" value="Login" name="ok">
+	  </form>  
+ <br>
+<br>
+<br>
+ 
+  	 <form method="POST" action="clogout.php">
+      <p align="center">
+	   
+	  <input type="submit" value="Logout" name="ok">
+	  </form>  
+</td>
+</tr>
+</table>
+     
+</body>     
+     
+</html>

@@ -1,0 +1,86 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 19:48:11 GMT
+Server: Apache/2.2.11
+X-Powered-By: PHP/5.2.10
+Set-Cookie: NOCCSESSID=8etifr9s0gfq2l3emhcpqdqn97; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 4867
+Connection: close
+Content-Type: text/html; Charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+        <title>NOCC - Webmail</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="themes/factor4/style.css" rel="stylesheet" type="text/css" />
+        <link href="themes/factor4/print.css" rel="stylesheet" media="print" type="text/css" />
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <script src="js/nocc.js" type="text/javascript"></script>
+    </head>
+    <body dir="ltr">
+        <div id="header">
+            <h1>NOCC</h1>
+        </div>
+        <div id="main">
+<!-- end of $Id: header.php,v 1.78 2008/12/09 23:36:41 gerundt Exp $ -->
+            <form action="action.php" method="post" id="nocc_webmail_login">
+            <div id="loginBox">
+              <h2>Willkommen bei webmail.factor4.at v1.7</h2>
+              <input type="hidden" name="folder" value="INBOX" />
+              <input type="hidden" name="action" value="login" />
+              <table>
+                <tr>
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+<!-- abcdefghijklmnopqrstuvwxyz 01234567890 -->
+                  <th><label for="user">Login</label></th>
+                  <td>
+                    <input class="button" type="text" name="user" id="user" size="15" value=""/>
+                    <input type="hidden" name="domainnum" value="0" id="domainnum" />@factor4.at
+                  </td>
+                </tr>
+                <tr> 
+                  <th><label for="passwd">Passwort</label></th>
+                  <td> 
+                    <input class="button" type="password" name="passwd" id="passwd" size="15" />
+                  </td>
+                </tr>
+                                <tr>
+                  <th><label for="lang">Sprache</label></th>
+                  <td>
+                  <select class="button" name="lang" id="lang" onchange="updateLoginPage()">
+                  <option value="ar">العربية</option><option value="bg">Български</option><option value="ca">Català</option><option value="cs">Česky</option><option value="cy">Cymraeg</option><option value="da">Dansk</option><option value="de" selected="selected">Deutsch</option><option value="en">English</option><option value="el">Ελληνικά</option><option value="es">Español</option><option value="farsi">فارسی</option><option value="fr">Français</option><option value="he">עברית</option><option value="hr">Hrvatski</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="lv">Latviesu</option><option value="hu">Magyar</option><option value="nl">Nederlands</option><option value="no">Norsk bokmål</option><option value="nn">Norsk nynorsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="pt-br">Português Brasileiro</option><option value="ro">Română</option><option value="ru">Русский</option><option value="sk">Slovenčina</option><option value="sl">Slovenščina</option><option value="sr">Srpski</option><option value="fi">Suomi</option><option value="sv">Svenska</option><option value="th">ไทย</option><option value="tr">Türkçe</option><option value="ja">日本語</option><option value="kr">한국어</option><option value="zh-gb">中文</option><option value="zh-tw">古文 / 文言文</option></select>
+                  </td>
+                </tr>
+                              </table>
+              <p><input name="enter" class="button" type="submit" value="Ok" /></p>
+            </div>
+            </form>
+            <script type="text/javascript">
+            <!--
+                document.getElementById("nocc_webmail_login").user.focus();
+                document.getElementById("nocc_webmail_login").passwd.value='';
+            // -->
+            </script>
+<!-- start of $Id: footer.php,v 1.22 2008/12/09 23:54:05 gerundt Exp $ -->
+    </div>
+        <div id="footer">
+            <a href="http://nocc.sourceforge.net" target="_blank">
+                <img src="themes/factor4/img/button.png" id="footerLogo" alt="Powered by NOCC" />
+            </a>
+        </div>
+    </body>
+</html>
+<!-- end of $Id: footer.php,v 1.22 2008/12/09 23:54:05 gerundt Exp $ -->

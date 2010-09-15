@@ -1,0 +1,94 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:12:34 GMT
+Server: Apache/2.2.11 (FreeBSD) PHP/5.2.10 with Suhosin-Patch mod_perl/2.0.4 Perl/v5.8.9
+X-Powered-By: PHP/5.2.10
+Set-Cookie: PHPSESSID=8a1db0ce5bee3fb28bf94dca33886dd3; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 3142
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+    <head>
+	<title>SpamTitan</title>
+	<link rel="stylesheet" type="text/css" href="styles/spamtitan.css" title="SpamTitanCSS2">
+	<!--[if IE]>
+		<style type="text/css">
+			@import url(styles/ie.css);
+		</style>
+	<![endif]-->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<link rel="shortcut icon" href="/imgs/favicon.ico">
+
+	<script language="JavaScript" type="text/javascript">
+
+		function setfocus() {
+			if (document.forms[0] && document.forms[0].address )
+				if (document.forms[0].address.disabled == false)
+					document.forms[0].address.focus();		}
+
+		function sform(myaction, myvalue, submitit, myForm) {
+			if (document.getElementById('alert'))
+				document.getElementById('alert').style.display = "";
+			if (myForm == null)
+				document.forms[0].jaction.value = myaction + " " + myvalue;
+			else
+				myForm.jaction.value = myaction + " " + myvalue;
+			if (submitit != false) {
+				if (myForm == null)
+					document.forms[0].submit();
+				else
+					myForm.submit();
+			}
+		}
+
+		</script>
+  
+	</head>
+
+<body class="login" onload="javascript:setfocus();">
+<div id="content">
+<div id="header">
+<table class="lhead"><tr><td class="img"><img src="/imgs/logo.gif" alt="SpamTitan Logo"></td></tr></table></div>	<div id="login">
+<div id="heading">
+<h1><span class="title">Login</span></h1><div id=help><a href="javascript:void(0)">
+				<img alt="Help" title="Help"
+					onclick="javascript:window.open('?action=help','help','toolbar=0,location=0,resizable,directories=0,scrollbars,status=0,menubar=0,width=420,height=380');" src="imgs/help.gif"></a></div></div><div id="headbody">
+	<form method="post" action="/index.php" name="login">
+	<input type="hidden" name="jaction" value="none">
+	<table class="login">
+	<tr><td></td></tr>
+	<tr><td colspan=2>
+		<table align="center" class="box">
+<tr>
+<td class="label">Language:</td>
+<td width="300">
+<select  name="language" id="language" style="width:200px" onchange="sform('language', document.getElementById('language').value);">
+<option value="cs_CZ" >Czech (Czech)</option>
+<option value="de_DE" >German (German)</option>
+<option value="en_US" selected>English (English)</option>
+<option value="ja_JP" >Japanese (Japanese)</option>
+<option value="it_IT" >Italian (Italian)</option>
+<option value="pt_BR" >Portuguese (Portuguese Brazil)</option>
+<option value="es_ES" >Spanish (Spanish)</option>
+</select></td>
+</tr>		<tr><td class="label">Email Address:</td><td class="input"><input type="text" size="30" name="address"></td></tr>
+		<tr><td class="label">Password:</td><td class="input"><input type="password" name="passwd" size="30"></td></tr>
+		<tr><td colspan="2"></td></tr>
+		<tr><td></td><td><input id="button" type="submit" name="loginbutton" value="Login"></td></tr>
+		</table>
+	</td></tr>
+	<tr><td colspan=2 align="center">
+		<a href="forgotpasswd.php" class="replink">Forgot your Password?</a> 	</td></tr>
+	</table></form>
+<div><h2>&nbsp;</h2></div>
+</div>
+</div>
+</div>
+<div id="footer"><h3>&copy;2006-2009 Copperfasten Technologies</h3></div>
+</body></html>

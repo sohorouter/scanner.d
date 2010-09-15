@@ -1,0 +1,215 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 10:52:37 GMT
+Server: Apache/2.2.8 (Ubuntu) mod_fastcgi/2.4.6 PHP/5.2.4-2ubuntu5 with Suhosin-Patch
+Set-Cookie: _immokrone_session=BAh7CDoMY3NyZl9pZCIlZGUxYzg3YTc0ZDE5NjUwMWI2NDQ2YmJlOTJlMTcw%250AMDgiD2FzOmFkdmVydHN7BjoJbGlzdHsAIgpmbGFzaElDOidBY3Rpb25Db250%250Acm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--610ff15445e68949debbe7e14f550f94c7c35b2e; path=/
+X-Runtime: 0.34193
+ETag: "c45576269931c0ea17e0a5b4eadadb0d"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 8559
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Immokrone - adverts: index</title>
+  <link href="/stylesheets/scaffold.css?1212757565" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/screenstyle.css?1212757565" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/lightbox.css?1212757565" media="screen" rel="stylesheet" type="text/css" />
+  
+  <script src="/javascripts/prototype.js?1212757565" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1212757565" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1212757565" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1212757565" type="text/javascript"></script>
+<script src="/javascripts/lightbox.js?1212757565" type="text/javascript"></script>
+<script src="/javascripts/application.js?1212757565" type="text/javascript"></script>
+  <script src="/javascripts/scriptaculous.js?1212757565" type="text/javascript"></script>
+  <script src="/javascripts/JavaScriptFlashGateway.js?1212757565" type="text/javascript"></script>
+  <script src="/javascripts/public_smo_scripts.js?1212757565" type="text/javascript"></script>
+  
+  <script src="/javascripts/active_scaffold/default/rico_corner.js?1212757565" type="text/javascript"></script><script src="/javascripts/active_scaffold/default/dhtml_history.js?1212757565" type="text/javascript"></script><script src="/javascripts/active_scaffold/default/active_scaffold.js?1212757565" type="text/javascript"></script><script src="/javascripts/active_scaffold/default/form_enhancements.js?1212757565" type="text/javascript"></script>
+<link href="/stylesheets/active_scaffold/default/stylesheet.css?1212757565" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]><link href="/stylesheets/active_scaffold/default/stylesheet-ie.css?1212757565" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  
+
+<script type="text/javascript">
+  function insertFlashComponent(flash_file, width, height) {                
+      var tag = new FlashTag('../../../' + flash_file, width, height); // last two arguments are height and width
+      tag.write(document);
+  }
+  function checkAll(checkbox, theCommonNodeName) {
+	 theCommonNodeName = theCommonNodeName.toLowerCase();
+	 var theCommonNode = checkbox.parentNode;
+	 while(theCommonNode.nodeName.toLowerCase() != theCommonNodeName && theCommonNode != document) {
+	 	theCommonNode = theCommonNode.parentNode;
+	 }
+	 
+	 if(theCommonNode.nodeName.toLowerCase() != theCommonNodeName) {
+	 	alert("Common parent node could not be found");
+		return;
+	 }
+	 
+	 var inputs = theCommonNode.getElementsByTagName("input");
+	 for(var i=0; inputs[i]; i++) {
+	 	if(inputs[i].type == "checkbox") {
+			inputs[i].checked = checkbox.checked;
+		}
+	 }
+  }
+</script>
+
+</head>
+<body>
+<div class="container" id="container">
+
+<div class="titleblock" >
+  <div style="float: left; padding: 0.2em 0 0 1em;">
+  <img alt="Immokrone" height="92" src="/images/immo2.jpg?1212757565" width="268" />
+  </div>
+  <div style="float: right; text-align: right; padding: 4px 3px 2px 0;">
+    <script type="text/javascript">
+      insertFlashComponent("lg_teli-monitor_710x90.swf", 710, 90);
+    </script>    
+  </div>
+</div>
+
+<div style="display: block"><ul class="navbar">
+		 <li><a href="/" class="nav">Home</a></li>
+		 <li><a href="/company/price" class="nav">Preise</a></li>
+		 <li><a href="/company/about_us" class="nav"><span>&Uuml;ber Uns</span></a></li>
+		 <li><a href="/company/contact" class="nav">Kontakt</a></li>
+     		 <li><a href="/user/signup" class="nav">Registrierung</a></li>
+     </ul></div>
+<br/>
+<div id="flash" style="display: block">
+                                      </div>
+
+<div class="rightcontainer">
+
+	<div class="rightbox">
+          <form action="/user/login" class="login_form" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="ac8ad96430ccaf49e5dee750c276347d9962a426" /></div>
+  <div style="text-align: left; margin: 0 3px 0 3px; padding: 0">
+      <label>E-mail:</label>
+      <input id="user_login" name="user[login]" size="30" style="width: 10em" type="text" /><br/>
+      <label>Kennwort:</label>
+      <input id="user_password" name="user[password]" size="30" style="width: 10em" type="password" /><br/>
+      <div style="text-align: right; padding-top: 3px">
+    <input name="user_login" type="submit" class="login" value="Anmelden" />
+      </div>
+  </div>
+    <div><a href="/user/forgot_password">Kennwort vergessen</a></div>
+</form>
+      </div>
+
+        
+    
+  <div class="rightcontainer" style="border: 0">
+    <script type="text/javascript">
+      insertFlashComponent("120x300_i7zoom.swf", 120, 300);
+    </script>
+  </div>
+</div>
+
+<div class="content">
+  <table style="float: left; text-align: left;" >
+    <tr>
+                    <td valign="top" style="text-align: center; width: 148px">
+        <div class="latest_adverts">
+    <h2>Topimmobilien</h2>
+    <div style="display: block">
+      <div class="advert" >
+  <div style="margin-top: 3px;">
+                     <a href="/adverts/showdetails/5"><img src="/photos/thumb/2676" alt="Abendstimmung.JPG" /></a>
+  </div>
+  <div style="border-bottom: dotted 1px silver;">
+     <b><i>2751 Matzendorf</i></b>
+  </div>
+  <div>
+    <b>Preis:</b> €299.000,00
+  </div>
+</div>
+
+    </div>
+</div>
+
+      </td>
+            <td valign="top" >
+        <table style="text-align: left; width: 715px;">
+          <tr>
+            <td style="border: 1px solid #888;">
+              <div>
+  <div style="float: left; margin: 2px 0 2px -2px">
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height="300">
+    <param name="movie" value="transparent.swf">
+    <param name="quality" value="high">
+    <param name="wmode" value="transparent">
+    <embed src="transparent.swf" quality="high" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300"></embed>
+    </object>
+  </div>
+  <div style="clear: right; text-indent: 1em; margin: 1em; padding-top: 1em;">
+  <p><b>Willkommen bei immokrone</b></p>
+
+<p>Falls Sie Objekte einstellen wollen, bitte zuerst registrieren</p>
+
+<p>                 *ACHTUNG GRATISPAKET*
+<br />für gewerbliche Anbieter bis  Ende Juni 2008!
+<br />(näheres im Menüpunkt Registrierung)</p>
+
+<p>*
+<br />    *
+<br />        *
+<br />            *
+<br />                *
+<br />                   *</p>
+
+<p>Wenn Sie Objekte suchen treffen Sie zuerst die Länderauswahl
+</p>
+  </div>
+  <div style="float: right; padding: 2px 2px 1em 0">
+  <form action="/adverts/searchadverts" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="ac8ad96430ccaf49e5dee750c276347d9962a426" /></div>
+    <select id="search_country" name="search[country]"><option value="11">Bosnien &amp; Herzegowina</option>
+<option value="15">Bulgarien</option>
+<option value="6">Deutschland</option>
+<option value="9">Italien</option>
+<option value="4">Kroatien</option>
+<option value="14">Montenegro</option>
+<option value="2" selected="selected">Österreich</option>
+<option value="16">Rumänien</option>
+<option value="10">Schweiz</option>
+<option value="3">Serbien</option>
+<option value="7">Slowakei</option>
+<option value="8">Slowenien</option>
+<option value="13">Spanien</option>
+<option value="12">Tschechien</option>
+<option value="5">Ungarn</option></select>
+    <input name="commit" type="submit" value="Weiter" />
+  </form>
+  </div>
+  <div style="clear: both; display: block; margin: 0 auto 0.5em auto; text-align: center">
+    <i>We recommend you use Firefox 2.0</i><br />
+    <a href="http://www.mozilla.com/firefox/" target="_blank"><img src="/images/get_firefox_logo.gif" alt="Firefox" title="Get Firefox" style="border: 0" /></a>	
+  </div>
+</div>
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="footer">
+  <div class="right">
+    <p>&copy; 2008 <a href="http://www.gss-team.com">GSS-Team</a></p>
+<!--    <p><a href="http://validator.w3.org/check/referer">Validate XHTML 1.0 Strict</a></p> -->
+  </div>
+    <p>E-mail <a href="mailto:webmaster@immokrone.at">Webmaster</a></p>
+</div>
+
+</div>
+</body>
+</html>

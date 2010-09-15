@@ -1,0 +1,484 @@
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Content-Location: http://192.168.1.10/Default.htm
+Date: Tue, 14 Sep 2010 19:57:56 GMT
+Content-Type: text/html
+Accept-Ranges: bytes
+Last-Modified: Sat, 10 Aug 2002 04:40:02 GMT
+ETag: "0fd74fd2740c21:a42"
+Content-Length: 22983
+
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>Remotedesktop-Webverbindung</title>
+<style type="text/css" media="screen">
+p { color:"#000000"; font-family: "Verdana, Arial, Helvetica"; font-size:"65%"}
+h1 { font-size: 100%; font-family: verdana, arial, helvetica; font-weight: bold;
+		margin-top: 0em;}
+p.indent { margin-left: 3em; margin-top: .5em; line-height: 1.25em; margin-bottom: .2em; margin-right: 1em;}
+.button {
+	FONT-FAMILY: Verdana, Helvetica, Arial, San-Serif;
+	font-weight:normal;
+	font-size:70%;
+	color:#000000;
+	background-color:#ffffff;
+	border-color:#6699ff;
+	margin-top:6pt;
+	margin-left: .5em;
+
+}
+.topspace {margin-top: .08em; }
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+<script language="vbscript">
+<!--
+const L_FullScreenWarn1_Text = "Die aktuellen Sicherheitseinstellungen erlauben nicht das automatische Wechseln in den Vollbildmodus."
+const L_FullScreenWarn2_Text = "Drücken Sie Strg+Alt+Pause, um den Vollbildmodus für die Remotedesktopsitzung zu verwenden."
+const L_FullScreenTitle_Text = "Remotedesktop-Webverbindung"
+const L_ErrMsg_Text         = "Fehler beim Herstellen der Verbindung mit dem Remotecomputer: "
+const L_PlatformCheck_ErrorMessage = "Das ActiveX-Steuerelement für die Remotedesktop-Webverbindung kann nur unter einer 32-Bit-Version von Internet Explorer ausgeführt werden."
+
+' error messages
+const L_DisconnectedCaption_ErrorMessage =  "Remotedesktop getrennt"
+const L_ErrConnectCallFailed_ErrorMessage =  "Fehler bei der Herstellung einer Verbindung zwischen dem Client und dem Remotecomputer. Überprüfen Sie den Systemspeicher, und versuchen Sie, die Verbindung wiederherzustellen."
+const L_DisconnectRemoteByServer_ErrorMessage = "Die Verbindung wurde vom Remotecomputer getrennt."
+const L_LowMemory_ErrorMessage = "Nicht genügend Arbeitsspeicher auf dem lokalen Computer. Schließen Sie andere Programme, und versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_SecurityErr_ErrorMessage = "Der Client konnte keine Verbindung mit dem Remotecomputer herstellen, da ein Sicherheitsfehler aufgetreten ist. Stellen Sie sicher, dass Sie auf dem Netzwerk angemeldet sind, und wiederholen Sie den Vorgang."
+const L_BadServerName_ErrorMessage = "Der angegebene Remotecomputer wurde nicht gefunden. Stellen Sie sicher, dass Sie den richtigen Computernamen bzw. die richtige IP-Adresse eingegeben haben, und wiederholen Sie den Vorgang."
+const L_ConnectFailedProtocol_ErrorMessage = "Der Client konnte wegen eines Protokollfehlers nicht mit dem Remotecomputer verbunden werden. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen. Wenden Sie sich an den Netzwerkadministrator, wenn sich die Verbindung weiterhin nicht herstellen lässt."
+const L_CannotLoopBackConnect_ErrorMessage = "Der Client konnte keine Verbindung herstellen. Es kann von der Konsolensitzung eines Computer keine Verbindung mit der Konsole des gleichen Computers hergestellt werden."
+const L_NetworkErr_ErrorMessage = "Die Verbindung wurde wegen eines Netzwerkfehlers getrennt. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_InternalErr_ErrorMessage = "Ein interner Fehler ist aufgetreten."
+const L_NotResponding_ErrorMessage = "Der Client konnte keine Verbindung mit dem Remotecomputer herstellen. Möglicherweise sind Remoteverbindungen nicht aktiviert oder der Computer ist überlastet und kann keine neuen Verbindungen annehmen. Netzwerkprobleme können auch dazu führen, dass die Verbindung nicht hergestellt werden kann. Stellen Sie die Verbindung zu einem späteren Zeitpunkt erneut her. Sollte das Problem weiterhin bestehen, wenden Sie sich an den Administrator."
+const L_VersionMismatch_ErrorMessage = "Die Client- und Serverversionen stimmen nicht überein. Aktualisieren Sie die Clientsoftware und wiederholen Sie den Vorgang."
+const L_EncryptionError_ErrorMessage = "Diese Sitzung wird wegen eines Fehlers in der Datenverschlüsselung beendet. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_ProtocolErr_ErrorMessage = "Die Sitzung wurde aufgrund eines Protokollfehlers getrennt. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_IllegalServerName_ErrorMessage = "Der angegebene computername enthält ungültige Zeichen. Überprüfen Sie den Namen und wiederholen Sie den Vorgang."
+const L_ConnectionTimeout_ErrorMessage = "Das Zeitlimit der Remoteverbindung wurde erreicht. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_DisconnectIdleTimeout_ErrorMessage = "Die Remotesitzung wurde beendet, da das Leerlaufzeitlimit erreicht wurde. Dieses Limit wird vom Serveradministrator oder von Netzwerkrichtlinien festgelegt."
+const L_DisconnectLogonTimeout_ErrorMessage ="Die Remotesitzung wurde beendet, da das Anmeldezeitlimit erreicht wurde. Dieses Limit wird vom Serveradministrator oder von den Netzwerkrichtlinien festgelegt."
+const L_ProtocolErrWITHCODE_ErrorMessage  = "Der Client hat die Verbindung wegen eines internen Protokollfehlers getrennt: "
+const L_LicensingTimeout_ErrorMessage = "Während des Versuchs, eine Verbindung herzustellen, ist ein Lizenzierungsfehler aufgetretent (Lizenzzeitlimit erreicht). Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_LicensingNegotFailed_ErrorMessage = "Die Sitzung wurde wegen eines Lizenzprotokollfehlers abgebrochen. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen, oder wenden Sie sich an den Serveradministrator."
+const L_DisconnectRemoteByServerTool_ErrorMessage = "Die Remotesitzung auf dem Remotecomputer wurde durch ein Verwaltungsprogramm beendet. Der Administrator hat die Verbindung möglicherweise beendet."
+const L_LogoffRemoteByServer_ErrorMessage = "Die Verbindung der Remotesitzung wurde getrennt, da die Sitzung vom Remotecomputer abgemeldet war. Der Administrator oder ein anderer Benutzer hat die Verbindung möglicherweise getrennt."
+const L_DisconnectByOtherConnection_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da ein anderer Benutzer eine Verbindung mit der Sitzung hergestellt hat."
+const L_ConnectionBroken_ErrorMessage  = "Die Verbindung mit dem Remotecomputer wurde getrennt. Dies kann an einem Netzwerkfehler liegen. Versuchen Sie die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_ServerOutOfMemory_ErrorMessage = "Die Verbindung wurde wegen unzureichenden Speichers auf dem Remotecomputer getrennt."
+const L_LicenseInternal_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde wegen eines internen Fehlers im Computerlizenzprotokoll getrennt."
+const L_NoLicenseServer_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da keine Lizenzserver für den Terminalserver vorhanden sind. Wenden Sie sich an den Serveradministrator."
+const L_NoLicense_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da keine Terminalserver-Clientzugriffslizenzen für diesen Computer vorhanden sind. Wenden Sie sich an den Serveradministrator."
+const L_LicenseBadClientMsg_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da der Remotecomputer eine Meldung über die ungültige Lizenzierung von diesem Computer erhalten hat."
+const L_LicenseHwidDoesntMatch_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da die auf diesem Computer gespeicherte Terminalserver-Clientzugriffslizenz geändert wurde."
+const L_BadClientLicense_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da die auf diesem Computer gespeicherte Terminalserver-Clientzugriffslizenz ein ungültiges Format hat."
+const L_LicenseCantFinishProtocol_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da Netzwerkprobleme während der Lizenzierungsprotokollierung aufgetreten sind. Versuchen Sie, die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_LicenseClientEndedProtocol_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da die Lizenzierungsprotokollierung frühzeitig beendet wurde."
+const L_LicenseBadClientEncryption_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da eine Lizenzierungsmeldung nicht richtig verschlüsselt wurde."
+const L_CantUpgradeLicense_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da die Clientzugriffslizenz des lokalen Computers nicht aktualisiert oder erneuert werden konnte. Wenden Sie sich an den Serveradministrator."
+const L_LicenseNoRemoteConnections_ErrorMessage = "Die Verbindung mit der Remotesitzung wurde getrennt, da der Remotecomputer nicht zum Zulassen von Remoteverbindungen lizenziert ist. Wenden Sie sich an den Serveradministrator."
+const L_DecompressionFailed_ErrorMessage = "Die Remotesitzung wurde wegen eines Dekomprimierungsfehlers auf dem Client getrennt. Versuchen Sie die Verbindung mit dem Remotecomputer wiederherzustellen."
+const L_ServerDeniedConnection_ErrorMessage ="Der Client konnte keine Verbindung mit dem Remotecomputer herstellen. Mögliche Ursachen für diesen Fehler:1) Remoteverbindungen sind auf dem Remotecomputer nicht aktiviert. 2) Die maximale Anzahl der Verbindungen wurde auf dem Remotecomputer überschritten. 3) Bei der Verbindungsherstellung ist ein Netzwerkfehler aufgetreten."
+
+sub window_onload()
+   if not LCase(Navigator.CpuClass) = "x86" then
+      msgbox L_PlatformCheck_ErrorMessage
+   end if
+   if not autoConnect() then
+       Document.all.editServer.Focus
+   end if
+end sub
+
+function autoConnect()
+	Dim sServer
+	Dim iFS, iAutoConnect
+
+
+	sServer = getQS ("Server")
+	iAutoConnect = getQS ("AutoConnect")
+	iFS = getQS ("FS")
+
+	if NOT IsNumeric ( iFS ) then
+		iFS = 0
+	else
+		iFS = CInt ( iFS )
+	end if
+
+	if iAutoConnect <> 1 then
+		autoConnect = false
+		exit function
+	else
+		if iFS < 0 or iFS >= Document.all.comboResolution.options.length then
+			iFS = 0
+		end if
+
+		if IsNull ( sServer ) or sServer = "" then
+			sServer = window.location.hostname
+		end if
+
+		Document.all.comboResolution.selectedIndex	= iFS
+		Document.all.Server.value = sServer
+
+		btnConnect ()
+
+		autoConnect = true
+	end if
+
+end function
+
+function getQS ( sKey )
+	Dim iKeyPos, iDelimPos, iEndPos
+	Dim sURL, sRetVal
+	iKeyPos = iDelimPos = iEndPos = 0
+	sURL = window.location.href
+
+	if sKey = "" Or Len(sKey) < 1 then
+		getQS = ""
+		exit function
+	end if
+
+	iKeyPos = InStr ( 1, sURL, sKey )
+
+	if iKeyPos = 0 then
+		sRetVal = ""
+		exit function
+	end if
+
+	iDelimPos = InStr ( iKeyPos, sURL, "=" )
+	iEndPos = InStr ( iDelimPos, sURL, "&" )
+
+	if iEndPos = 0 then
+		sRetVal = Mid ( sURL, iDelimPos + 1 )
+	else
+		sRetVal = Mid ( sURL, iDelimPos + 1, iEndPos - iDelimPos - 1 )
+	end if
+
+	getQS = sRetVal
+end function
+
+sub checkClick
+      if Document.all.Check1.Checked then
+         Document.all.tableLogonInfo.style.display = ""
+         Document.all.editUserName.Disabled = false
+         Document.all.editDomain.Disabled = false
+      else
+         Document.all.tableLogonInfo.style.display = "none"
+         Document.all.editUserName.Disabled = true
+         Document.all.editDomain.Disabled = true
+      end if
+end sub
+
+sub OnControlLoad
+   set Control = Document.getElementById("MsRdpClient")
+   if Not Control is Nothing then
+      if Control.readyState = 4 then
+         Document.all.connectButton.disabled = FALSE
+      end if
+   end if
+end sub
+
+
+sub BtnConnect
+   Dim serverName
+   'server
+   if not Document.all.Server.value = "" then
+      serverName = Document.all.Server.value
+   else
+      serverName = Document.location.hostname
+   end if
+   
+   serverName = trim(serverName)
+   
+   MsRdpClient.server = serverName
+   
+   'serverName name text
+   Document.all.srvNameField.innerHtml = serverName
+   
+   'Username/Domain
+   if Document.all.CheckBoxAutoLogon.checked then
+      MsRdpClient.UserName = Document.all.UserName.Value
+      MsRdpClient.Domain = Document.all.Domain.Value
+   end if
+   
+   'Resolution
+   MsRdpClient.FullScreen = FALSE
+   select case document.all.comboResolution.value
+   case "1"
+      MsRdpClient.FullScreen = TRUE
+      resWidth  = screen.width
+      resHeight = screen.height
+   case "2"
+      resWidth  = "640"
+      resHeight = "480"
+   case "3"
+      resWidth  = "800"
+      resHeight = "600"
+   case "4"
+      resWidth  = "1024"
+      resHeight = "768"
+   case "5"
+      resWidth  = "1280"
+      resHeight = "1024"
+   case "6"
+      resWidth  = "1600"
+      resHeight = "1200"
+   end select
+   MsRdpClient.DesktopWidth = resWidth
+   MsRdpClient.DesktopHeight = resHeight
+   
+   
+   MsRdpClient.Width = resWidth
+   MsRdpClient.Height = resHeight
+   
+   'Device redirection options
+   MsRdpClient.AdvancedSettings2.RedirectDrives     = FALSE
+   MsRdpClient.AdvancedSettings2.RedirectPrinters   = TRUE
+   MsRdpClient.AdvancedSettings2.RedirectPorts      = FALSE
+   MsRdpClient.AdvancedSettings2.RedirectSmartCards = FALSE
+   
+   'FullScreen title
+   MsRdpClient.FullScreenTitle = L_FullScreenTitle_Text & "(" & serverName & ")"
+   
+   'Display connect region
+   Document.all.loginArea.style.display = "none"
+   Document.all.connectArea.style.display = "block"
+   
+   'Connect
+   MsRdpClient.Connect
+end sub
+
+-->
+
+</script>
+
+<!--   
+-->
+
+<!-- =========================LOGIN AREA   ==========================
+-->
+<div id=loginArea>
+<font size="4">
+
+
+
+
+
+<img border="0" src="win2000l.gif" id=leftalign align="left" width="124" height="123" hspace="10"></font></font><font id=Tahoma1 face="Tahoma" size="1"><br>
+</font><font size="6" id=Tahoma2 face="Tahoma">
+<img border="0" src="win2000r.gif" hspace="0" vspace="7" width="145" height="45"></font><font id=Tahoma3 face="Tahoma" size="4"><br>
+</font><b>
+<font id=Tahoma4 face="Tahoma" size="4"><ID id=bigtitle>Remotedesktop-Webverbindung</ID></font></b><p>&nbsp;</p>
+
+<table border="0" width="640" cellspacing="0" cellpadding=0 style="margin-top: -1em;">
+<!-- Graphic bar row  -->
+<tr>
+<td width="50%"></td>
+<td colspan=3 align="left" valign="middle">
+<img src="bluebarh.gif" alt="blue bar graphic" width="325" height="8"></td>
+</tr> 
+<!-- Row 1 -->
+    <tr>
+<!-- Column 1 spans 4 rows -->
+    <td valign="top" width="50% "rowspan=4>
+          <p class=indent><ID id=remotecomputername>Geben Sie den Namen des zu verwendenden Remotecomputers ein, wählen Sie die Bildschirmgröße und klicken Sie auf <b>Verbindung herstellen</b>.</ID></p>
+          <p class=indent><ID id=helpfultip1>Nachdem die Verbindungsseite geöffnet wurde, können Sie diese zu Ihren Favoriten hinzufügen, um schnellen Zugriff auf den gleichen Computer zu gewährleisten.</ID></p>
+    </td>
+<!-- Column 2 spans 4 rows-->
+	<td rowspan=4 valign="top" align="left">
+    <img src="bluebarv.gif" alt="blue bar graphic" border=0 width="8" height="330">
+	</td>
+	
+<!-- Column 3 -->		
+    <td id="ServerNameKeyWidth" style="width:10%;" valign="middle">     
+         <label id=ServerNameKey accessKey="S" for="editServer">
+         <br><p align="right">&nbsp;<ID id=ServerName><u>S</u>erver:</ID></label></p>
+         </td>
+		  
+<!-- Column 4 -->		  
+	<td id="ServerKeyWidth" width="40%" valign="bottom">
+	<br>&nbsp;&nbsp;<input type="text" name="Server" size="41" id="editServer">
+	
+	</td>
+	</tr>
+<!-- Row 2 -->
+<tr>
+<!-- Column 3 -->
+<td valign="middle">
+<p align="right"><label id=sizeKey accessKey="G" for="comboRes" class="sizespace"><ID id=size><u>G</u>röße:</ID></p></td>
+<!-- Column 4 -->
+<td valign="bottom">&nbsp;&nbsp;<select size="1" name="comboResolution" id=comboRes class="topspace">
+              <option selected value="1"><ID id=option1>Vollbild</ID></option>
+              <option value="2"><ID id=option2>640 x 480</ID></option>
+              <option value="3"><ID id=option3>800 x 600</ID></option>
+              <option value="4"><ID id=option4>1024 x 768</ID></option>
+              <option value="5"><ID id=option5>1280 x 1024</ID></option>
+              <option value="6"><ID id=option6>1600 x 1200</ID></option>
+            </select> </label>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr>
+<!-- Column 3 -->
+<td></td>
+<!-- Column 4 -->
+<td align="bottom">			
+	 <p class=topspace>&nbsp;<input type="checkbox" name="CheckBoxAutoLogon" ID=Check1 value="OFF" onclick = "checkClick"><label for="Check1" ID=SendLogonKey accesskey="A"><ID id=logoninfo><u>A</u>nmeldedeinformationen angeben&nbsp;</ID></label><br>
+	  
+<span ID="tableLogonInfo" style="display: none">
+
+            <p align="right" class=topspace>
+			<br> 
+			<ID id=usernamelabel><u>B</u>enutzer&nbsp;name:</ID>
+                <label id=UserNameKey accessKey="B" for="editUserName"><input type="text" name="UserName" id=editUserName size="25"></label><br>
+			<ID id=domainlabel><u>D</u>omäne:</ID>
+          <label id=editDomainKey accessKey="D" for="editDomain">
+          <input type="text" name="Domain" id=editDomain size="25"></label></p></span>	
+          <input type="submit" id=connectbutton value="Verbindung herstellen" disabled="TRUE" name="ButtonLogin" OnClick=BtnConnect class="button">
+</td>
+</tr>
+<!-- Row 4 -->
+<tr>
+<!-- Column 3 -->
+<td  height="215">&nbsp;</td>
+<!-- Column 4 -->
+<td>&nbsp;</td>
+</tr>
+
+ 
+     
+</table>
+</div>
+<!-- ================================= LOGIN FORM =================
+-->
+
+<!-- ================================= CONNECT ====================
+-->
+<div id=connectArea style="display: none">
+<center>
+        <table>
+        <tr>
+        <OBJECT language="vbscript" ID="MsRdpClient"
+        onreadystatechange="OnControlLoad"
+        CLASSID="CLSID:9059f30f-4eb1-4bd2-9fdc-36f43a218f4a"
+        CODEBASE="msrdp.cab#version=5,1,2600,1095"
+        WIDTH=<% resWidth = Request.QueryString("rW")
+            if  resWidth < 200 or resWidth > 1600 then
+               resWidth = 800
+            end if
+            Response.Write resWidth %>
+        HEIGHT=<% resHeight = Request.QueryString("rH")
+            if  resHeight < 200 or resHeight > 1200 then
+               resHeight = 600
+            end if
+            Response.Write resHeight %>>
+        </OBJECT>
+        </tr>
+        <tr>
+        <br>
+        <font size="1" color="#000000" id="srvfontname" face="Verdana, Arial, Helvetica">
+        <div id=connectDisplay style="display:none">
+        <ID id=loggedinsrv>Verbunden mit </ID><i><span id="srvNameField"></span></i></font><br></div>
+        </tr>
+        
+<script language="VBScript">
+<!--
+sub ReturnToConnectPage()
+   Window.Navigate("Default.htm")
+end sub
+
+sub MsRdpClient_OnConnected()
+   Document.All.connectDisplay.style.display = "block"
+end sub
+
+sub MsRdpClient_OnDisconnected(disconnectCode)
+   extendedDiscReason = MsRdpClient.ExtendedDisconnectReason
+   majorDiscReason = disconnectCode And &hFF
+
+   if (disconnectCode = &hB08 or majorDiscReason = 2 or majorDiscReason = 1) and not (extendedDiscReason = 5) then
+      'Switch back to login area
+      ReturnToConnectPage
+      exit sub
+   end if
+   
+   errMsgText = L_DisconnectRemoteByServer_ErrorMessage
+   if not extendedDiscReason = 0 then
+      'Use the extended disconnect code
+      select case extendedDiscReason
+      case 0   errMsgText  = ""
+      case 1   errMsgText  = L_DisconnectRemoteByServerTool_ErrorMessage
+      case 2   errMsgText  = L_LogoffRemoteByServer_ErrorMessage
+      case 3   errMsgText  = L_DisconnectIdleTimeout_ErrorMessage
+      case 4   errMsgText  = L_DisconnectLogonTimeout_ErrorMessage
+      case 5   errMsgText  = L_DisconnectByOtherConnection_ErrorMessage
+      case 6   errMsgText  = L_ServerOutOfMemory_ErrorMessage
+      case 7   errMsgText  = L_ServerDeniedConnection_ErrorMessage
+      case 256 errMsgText  = L_LicenseInternal_ErrorMessage
+      case 257 errMsgText  = L_NoLicenseServer_ErrorMessage
+      case 258 errMsgText  = L_NoLicense_ErrorMessage
+      case 259 errMsgText  = L_LicenseBadClientMsg_ErrorMessage
+      case 260 errMsgText  = L_LicenseHwidDoesntMatch_ErrorMessage
+      case 261 errMsgText  = L_BadClientLicense_ErrorMessage
+      case 262 errMsgText  = L_LicenseCantFinishProtocol_ErrorMessage
+      case 263 errMsgText  = L_LicenseClientEndedProtocol_ErrorMessage
+      case 264 errMsgText  = L_LicenseBadClientEncryption_ErrorMessage
+      case 265 errMsgText  = L_CantUpgradeLicense_ErrorMessage
+      case 266 errMsgText  = L_LicenseNoRemoteConnections_ErrorMessage
+      case else errMsgText = L_ErrMsg_Text
+      end select
+      if extendedDiscReason > 4096 then
+         errMsgText = L_ProtocolErrWITHCODE_ErrorMessage  & errMsgText
+      end if
+   else
+      ' no extended error information, use the disconnect code
+      select case disconnectCode
+      case 0   errMsgText  = L_ErrMsg_Text
+      case 1   errMsgText  = L_ErrMsg_Text
+      case 2   errMsgText  = L_ErrMsg_Text
+      case 260 errMsgText  = L_BadServerName_ErrorMessage
+      case 262 errMsgText  = L_LowMemory_ErrorMessage
+      case 264 errMsgText  = L_ConnectionTimeout_ErrorMessage
+      case 516 errMsgText  = L_NotResponding_ErrorMessage
+      case 518 errMsgText  = L_LowMemory_ErrorMessage
+      case 520 errMsgText  = L_BadServerName_ErrorMessage
+      case 772 errMsgText  = L_NetworkErr_ErrorMessage
+      case 774 errMsgText  = L_LowMemory_ErrorMessage
+      case 776 errMsgText  = L_BadServerName_ErrorMessage
+      case 1028 errMsgText = L_NetworkErr_ErrorMessage
+      case 1030 errMsgText = L_SecurityErr_ErrorMessage
+      case 1032 errMsgText = L_IllegalServerName_ErrorMessage
+      case 1286 errMsgText = L_EncryptionError_ErrorMessage
+      case 1288 errMsgText = L_BadServerName_ErrorMessage
+      case 1540 errMsgText = L_BadServerName_ErrorMessage
+      case 1542 errMsgText = L_SecurityErr_ErrorMessage
+      case 1544 errMsgText = L_LowMemory_ErrorMessage
+      case 1796 errMsgText = L_NotResponding_ErrorMessage
+      case 1798 errMsgText = L_SecurityErr_ErrorMessage
+      case 1800 errMsgText = L_CannotLoopBackConnect_ErrorMessage
+      case 2052 errMsgText = L_BadServerName_ErrorMessage
+      case 2056 errMsgText = L_LicensingNegotFailed_ErrorMessage
+      case 2310 errMsgText = L_SecurityErr_ErrorMessage
+      case 2566 errMsgText = L_SecurityErr_ErrorMessage
+      case 2822 errMsgText = L_EncryptionError_ErrorMessage
+      case 3078 errMsgText = L_EncryptionError_ErrorMessage
+      case 3080 errMsgText = L_DecompressionFailed_ErrorMessage
+      case 3334 errMsgText = L_ProtocolErr_ErrorMessage
+      case 10500 errMsgText = L_ProtocolErr_ErrorMessage
+      case else errMsgText = L_InternalErr_ErrorMessage
+      end select
+   end if
+   
+   msgbox errMsgText,0,L_DisconnectedCaption_ErrorMessage
+   ReturnToConnectPage
+   
+end sub
+-->
+        </script>
+</table>
+</center>
+</div>
+
+
+</body>
+</html>

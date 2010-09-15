@@ -1,0 +1,85 @@
+HTTP/1.0 200 OK
+Connection: close
+Content-Length: 1515
+Content-Type: text/html
+Date: Tue, 14 Sep 2010 19:46:22 GMT
+Expires: 0
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/dude/style.css" />
+</head>
+<body class="side">
+
+<form	name="loginForm" onSubmit="doLogin(); return false"
+	action="/dude/main.html" method="post"> 
+
+<input type="hidden" name="process" value="login">
+<input type="hidden" name="page" value="start">
+
+<table width="100%" height="90%">
+
+<tr>
+<td align="center" valign="middle">
+
+<table width="240" height="175" 
+       style="border: 1px solid #808080; padding: 0px;" 
+       cellpadding="0" cellspacing="0">
+
+<tr><td align="center">
+<table>
+<tr><td align="center"><img src="/dude/toplogo.jpg"/></td></tr>
+<tr><td align="center"><b>the Dude</b></td></tr>
+</table>
+</td></tr>
+
+<tr>
+<td align="center" valign="bottom" height="65" colspan="2">
+    <table width="100">
+        <tr><td align="right">	<span style="white-space : nowrap;">
+				User Name
+				</span></td>
+	    <td><input type="text" name="user" value=""></td>		
+	</tr>
+	<tr><td align="right">Password</td>
+	    <td><input type="password" name="password"></td>	
+	</tr>
+	<tr>
+	    <td>&nbsp;</td>
+	    <td align="right"><input type="submit" name="" value="Connect">
+	    </td>
+	</tr>
+    </table>
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+<script language="JavaScript">
+    document.loginForm.user.focus();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

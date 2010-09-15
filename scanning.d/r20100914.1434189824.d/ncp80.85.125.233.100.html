@@ -1,0 +1,137 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:24:15 GMT
+Server: Apache/1.3.34 (Debian) PHP/4.4.9 mod_perl/1.29 mod_jk/1.2.18
+X-Powered-By: PHP/4.4.9
+Set-Cookie: PHPSESSID=35e0fa42abc6cc93af80f0101662802c; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Connection: close
+Content-Type: text/html
+
+<html>
+  <head>
+    <title>Account- and Domain Management System</title>
+    <link rel="stylesheet" href="email_account/default.css" type="text/css">
+  </head>
+
+  <body style="margin: 0px;">
+   <div style="padding-left: 10px; padding-right: 10px;">
+    
+    <table border="0" cellpadding="3" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" width="30">
+	  <img src="images/logo.jpg">
+	</td>
+	<td style="font-size: 1.4em;">
+	  Markus Oswald Systeml&ouml;sungen<br>
+	  Breitenweg 1<br>
+	  8042 Graz<br>
+	</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="border: 0px; border-bottom: 1px; border-style: solid; border-color: #CCCCCC;">
+	  &nbsp;
+	</td>
+      </tr>
+    </table>
+    
+    <br>
+    
+    <h1>Account- und Domainverwaltung</h1>
+    
+    <h2>Login</h2>
+    
+    <table border="0" cellpadding="0" cellspacing="0">
+      
+      <tr valign="top">
+        <td>
+	  <form method="post" action="edit_main.php?action=login"><input type="hidden" name="PHPSESSID" value="35e0fa42abc6cc93af80f0101662802c" />
+	   <table>
+	    <tr>
+	     <td><b>Domain/Account</b></td>
+	     <td colspan="2"><input type="text" name="username"></td>
+	    </tr>
+	    <tr>
+	     <td><b>Password</b></td>
+	     <td><input type="password" name="password"></td>
+	    </tr>
+	    <tr>
+	     <td>
+	       &nbsp;
+	     </td>
+	     <td>
+	       <input value="Login" type=submit>
+	     </td>
+	    </tr>
+	   </table>
+	  </form>
+	  
+	  <b>Beispiel 1:</b><br>
+	  <i>Domain</i> = IhreDomain.at<br>
+	  <i>Password</i> = IhrPassword<br>
+	  <br>
+	  
+	 <b>Beispiel2:</b><br>
+	 <i>Account</i> = IhrAccountName@IhreDomain.at<br>
+	 <i>Passwort</i> = IhrAccountPasswort
+	</td>
+
+	<td style="padding-left: 40px;" width="300">
+	  <div style="border-color: black; border-style: solid; border-width: 1px; padding: 10px; background-color: #d8d8ff'">
+	  Sie k&ouml;nnen sich hier f&uuml;r den Administrationsbereich Ihrer
+	  Domain bzw. einen Ihrer Email-Accounts einloggen.<br>
+	  <br>
+	  <i>Domain-Administratoren</i> m&uuml;ssen im Feld "Domain/Account" den
+	  Namen der zu verwaltenden Domain und im Feld "Passwort" das Domain-Passwort
+	  angeben.<br>
+	  <br>
+	  Zur Verwaltung von <i>Emailkonten</i> geben Sie im Feld "Domain/Account" bitte
+	  Ihre vollst&auml;ndige Emailadresse und als Passwort Ihr Email-Passwort an.<br>
+	  </div>
+	  
+	  <!-- <h2>Login zur Accountverwaltung</h2>
+	  
+	  <form method="post" action="edit_main.php?action=login"><input type="hidden" name="PHPSESSID" value="35e0fa42abc6cc93af80f0101662802c" />
+	   <table>
+	    <tr>
+	     <td><b>Account</b></td>
+	     <td colspan="2"><input type="text" name="username"></td>
+	    </tr>
+	    <tr>
+	     <td><b>Passwort</b></td>
+	     <td><input type="password" name="password"></td>
+	    </tr>
+	    <tr>
+	     <td>
+	       &nbsp;
+	     </td>
+	     <td>
+	      <input value="Login" type="submit">
+	     </td>
+	    </tr>
+	   </table>
+	  </form>
+	 </div>
+	 
+	 <b>Beispiel:</b><br>
+	 Account=IhrAccountName@IhreDomain.at<br>
+	 Passwort=IhrAccountPasswort
+	  
+	  <br><br> -->
+	</td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    </div>
+    
+    <table border="0" width="100%" cellpadding="3" cellspacing="0">
+      <tr style="background-color: #183C8D;">
+        <td align="right" style="color: #FFFFFF">
+	  &copy; Markus Oswald Systeml&ouml;sungen 2004
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

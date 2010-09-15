@@ -1,0 +1,240 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:14:53 GMT
+Server: Apache/2.2.14 (Win32) mod_ssl/2.2.14 OpenSSL/0.9.8k PHP/5.3.1
+X-Powered-By: PHP/5.3.1
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<script>top.location.replace('index.php?tempSessId=1488121682');</script>
+<HTML><HEAD>
+<TITLE></TITLE>
+ <link rel="stylesheet" type="text/css" href="art.css">
+</HEAD><BODY bgcolor="#FEFFE5">
+<script>
+mleise1= new Image();
+mleise2= new Image();
+mleise3= new Image();
+mleise4= new Image();
+mleise5= new Image();
+mleise6= new Image();
+mleise7= new Image();
+mleise8= new Image();
+mleise9= new Image();
+mleise1.src="s1.gif";
+mleise2.src="s2.gif";
+mleise3.src="s1_b.gif";
+mleise4.src="s2_b.gif";
+mleise5.src="s2_down.gif";
+mleise6.src="s1_down.gif";
+mleise7.src="einkauf.gif";
+mleise8.src="einkauf_b.gif";
+mleise9.src="einkauf_down.gif";
+function wechsel(id,name){
+if (document.getElementById(id).src.search(/down/)==-1){
+document.getElementById(id).src=eval(name + ".src"); 
+
+}
+}
+
+
+function fclick(id,name,link,seite){
+document.getElementById('s1').src=mleise1.src
+document.getElementById('s2').src=mleise2.src
+document.getElementById('s3').src=mleise1.src
+document.getElementById('s4').src=mleise2.src
+document.getElementById('s5').src=mleise1.src
+document.getElementById('artwk').src=mleise7.src
+document.getElementById(id).src=eval(name + ".src");
+window.open(link + '?tempSessId=1488121682' + '&id='+ seite,'artmenue');
+}
+function ueberschrift(wert){
+document.getElementById('menueueberschrift').innerHTML=wert;
+
+}
+function warenkorb(id,wert){
+parent.document.getElementById(id).innerHTML=wert;
+}
+
+</script>
+
+
+<DIV style="width : 380px;height : 135px;top : 70px;left : 500px;
+  position : absolute;
+  z-index : 1;
+  visibility : visible;
+
+
+" id="vorschau2">
+<center><FONT style="font-size:20px;"><B>Therapeutische Bilder</B><BR><BR>Harmonie für Körper, Geist und Seele</FONT></center></DIV>
+
+
+
+<DIV style="width : 180px;height : 135px;top : 40px;right : 100px;
+  position : absolute;
+  z-index : 1;
+  visibility : visible;
+
+
+" id="vorschau">
+<IMG src="P1010099.gif" id="bildmouse" width="180" height="135" border="0" style="visibility:hidden;  border-style:solid;  border-color:black;border-width : 2px;" onmouseout="document.getElementById('geheimvorschau').style.visibility='hidden';" onmouseover="document.getElementById('geheimvorschau').style.visibility='visible';"></DIV>
+
+<DIV style="width : 600px;height : 450px;top : 200px;right : 200px;
+  position : absolute;
+  z-index : 99;
+  visibility : hidden;
+
+
+" id="geheimvorschau">
+<IMG src="P1010099_big.jpg" width="600" height="450" border="0" style="  border-style:solid;  border-color:black;border-width : 2px;" ></DIV>
+
+<TABLE border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD background="ART.gif" height="245" width="373"></TD>
+      <TD>
+      <TABLE border="0" width="100%" height="245" cellpadding="0" cellspacing="0">
+        <TBODY>
+          <TR>
+            <TD height="10"></TD>
+          </TR>
+          <TR>
+            <TD height="150">
+            <TABLE border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+              <TBODY>
+                <TR>
+                  <TD background="links_balken.gif" height="187" width="75"></TD>
+                  <TD background="mitte_balken.gif" valign="top">
+                  <TABLE id="twarenkorb" style="visibility:hidden">
+                    <TBODY>
+                      <TR>
+                        <TD height="15"></TD>
+                        <TD></TD>
+                      </TR>
+                      <TR>
+                        <TD width="110" align="left" height="100"><IMG style="cursor:pointer" onclick="fclick('artwk','mleise9','warenkorb.php');" id="artwk" onmouseout="wechsel('artwk','mleise7');" onmouseover="wechsel('artwk','mleise8');" align="middle" src="einkauf.gif"></TD>
+                        <TD width="280" align="center">
+                        <TABLE >
+                          <TBODY>
+                            <TR>
+                              <TD width="160"><FONT>Artikel in Warenkorb:</FONT></TD>
+                              <TD><FONT id="awk">0</FONT></TD>
+                            </TR>
+                            <TR>
+                              <TD><FONT>Gesamtpreis:</FONT></TD>
+                              <TD><FONT id="gwk">0 Euro</FONT></TD>
+                            </TR>
+                          </TBODY>
+                        </TABLE>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE>
+                  </TD>
+                  <TD background="rechts_balken.gif" width="86"></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+            </TD>
+          </TR>
+          <TR>
+            <TD ><TABLE><TBODY><TR><TD width="20"></TD><TD ><FONT style="font-size:20px;" id="menueueberschrift"></FONT></TD></TR></TBODY></TABLE></TD>
+          </TR>
+                 <TR>
+            <TD height="2" background="strich.gif"></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      </TD>
+    </TR>
+    <TR>
+      <TD valign="top">
+<TABLE ><TBODY><TR><TD ></TD></TR></TBODY></TABLE>
+
+<DIV style="top : 270px;left : 55px;  position : absolute;  z-index : 2;  visibility : visible;"><IMG style="cursor:pointer" src="s2_down.gif" id="s1" onclick="fclick('s1','mleise5','dbtext.php','2')" onmouseout="wechsel('s1','mleise1');" onmouseover="wechsel('s1','mleise3');"></DIV>
+<DIV style="top : 380px;left : 40px;  position : absolute;  z-index : 2;  visibility : visible;"><IMG  src="s2.gif" id="s2"  onmouseout="wechsel('s2','mleise2');document.getElementById('divbild').style.visibility='hidden';" onmouseover="wechsel('s2','mleise4');document.getElementById('divbild').style.visibility='visible';"></DIV>
+<DIV style="top : 490px;left : 55px;  position : absolute;  z-index : 2;  visibility : visible;"><IMG style="cursor:pointer" src="s1.gif" id="s3" onclick="fclick('s3','mleise5','dbtext.php','3')" onmouseout="wechsel('s3','mleise1');" onmouseover="wechsel('s3','mleise3');"></DIV>
+<DIV style="top : 600px;left : 40px;  position : absolute;  z-index : 2;  visibility : visible;"><IMG style="cursor:pointer" src="s2.gif" id="s4" onclick="fclick('s4','mleise6','dbtext.php','4')" onmouseout="wechsel('s4','mleise2');" onmouseover="wechsel('s4','mleise4');"></DIV>
+<DIV style="top : 710px;left : 55px;  position : absolute;  z-index : 2;  visibility : visible;"><IMG style="cursor:pointer" src="s1.gif" id="s5" onclick="fclick('s5','mleise5','dbtext.php','1')" onmouseout="wechsel('s5','mleise1');" onmouseover="wechsel('s5','mleise3');"></DIV>
+
+<DIV id="divbild" style="top:400px;left : 200px;position:absolute;z-index:3;visibility:hidden;" >
+<TABLE background="background2.gif" width="150" height="30" class="rahmen1" onmouseout="wechsel('s2','mleise2');document.getElementById('divbild').style.visibility='hidden';" onmouseover="wechsel('s2','mleise4');document.getElementById('divbild').style.visibility='visible';"><TBODY>
+<TR><TD>
+<FONT onclick="fclick('s2','mleise6','farbbilder.php','0');document.getElementById('divbild').style.visibility='hidden';"" style="cursor:pointer" id='ffarbb' onmouseout="document.getElementById('ffarbb').style.color='black'" onmouseover="document.getElementById('ffarbb').style.color='darkred'">Farbbilder</FONT>
+</TD></TR>
+
+</TBODY></TABLE>
+
+</DIV>
+
+<DIV id="div1" style="top : 310px;left : 35px;width:200px;  position : absolute;  z-index : 2;  visibility : visible;text-align:center;"><FONT style="cursor:pointer" onclick="fclick('s1','mleise5','dbtext.php','2')" onmouseout="wechsel('s1','mleise1');" onmouseover="wechsel('s1','mleise3');">Startseite</FONT></DIV>
+<DIV id="div1" style="top : 420px;left : 35px;width:200px;  position : absolute;  z-index : 2;  visibility : visible;text-align:center;"><FONT style="cursor:default"                                          onmouseout="wechsel('s2','mleise2');" onmouseover="wechsel('s2','mleise4');document.getElementById('divbild').style.visibility='visible';">Galerie</FONT></DIV>
+<DIV id="div1" style="top : 532px;left : 35px;width:200px;  position : absolute;  z-index : 2;  visibility : visible;text-align:center;"><FONT style="cursor:pointer" onclick="fclick('s3','mleise5','dbtext.php','3')" onmouseout="wechsel('s3','mleise1');" onmouseover="wechsel('s3','mleise3');">K&uuml;nstler</FONT></DIV>
+<DIV id="div1" style="top : 640px;left : 35px;width:200px;  position : absolute;  z-index : 2;  visibility : visible;text-align:center;"><FONT style="cursor:pointer" onclick="fclick('s4','mleise6','dbtext.php','4')" onmouseout="wechsel('s4','mleise2');" onmouseover="wechsel('s4','mleise4');">Kontakt</FONT></DIV>
+<DIV id="div1" style="top : 740px;left : 35px;width:200px;  position : absolute;  z-index : 2;  visibility : visible;text-align:center;"><FONT style="cursor:pointer" onclick="fclick('s5','mleise5','dbtext.php','1')" onmouseout="wechsel('s5','mleise1');" onmouseover="wechsel('s5','mleise3');">Wirkung<BR>von Farben</FONT></DIV>
+
+
+
+
+
+
+
+
+       </TD>
+      <TD>
+      <TABLE border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" id="tabelle1">
+        <TBODY>
+          <TR>
+
+            <TD><IFRAME frameborder="no" width="100%" height="100%" src="dbtext.php?id=2" name="artmenue" id="artmenue"></IFRAME></TD>
+
+          </TR>
+
+        </TBODY>
+      </TABLE>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+
+  
+<script type="text/javascript">
+function vergroessern(wert){
+ document.getElementById('tabelle1').height=wert;
+ document.getElementById('artmenue').height=wert;
+ 
+}
+function visorNvis(){
+if (document.body.offsetWidth > 1170)
+ {
+ 
+ document.getElementById('bildmouse').style.visibility='visible';
+
+ } else{
+ document.getElementById('bildmouse').style.visibility='hidden';
+ }
+setTimeout("visorNvis();",500);
+ }
+
+visorNvis();
+
+
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16954438-1']);
+  _gaq.push(['_setDomainName', '.dukeoferus.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</BODY></HTML>

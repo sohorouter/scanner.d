@@ -1,0 +1,199 @@
+HTTP/1.0 200 Ok
+Server: httpd
+Date: Tue, 14 Sep 2010 12:28:40 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: 0
+Content-Type: text/html
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+   <head>
+      <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+      <title>Venus - Info</title>
+      <link type="text/css" rel="stylesheet" href="style.css" /><script type="text/JavaScript" src="common.js">{}</script><script language="JavaScript">
+function replace_list(list,target,replacement) {
+	var result = list.search(target);
+	while(result != -1) {
+		list = list.replace(target,replacement);
+		result = list.search(target);
+	}
+
+	return list;
+}
+		</script></head>
+   <body class="gui">
+      <div id="wrapper">
+         <div id="content">
+            <div id="header">
+               <div id="logo">
+                  <h1>DD-WRT Control Panel</h1>
+               </div>
+               <div id="menu">
+                  <div id="menuMain">
+                     <ul id="menuMainList">
+                        <li><a href="index.asp">Konfiguration</a></li>
+                        <li><a href="Wireless_Basic.asp">Wireless</a></li>
+			<!--
+			<li><a href="Sipath.asp">SIPatH</a></li>
+                        -->
+                        <li><a href="Firewall.asp">Sicherheit</a></li>
+                        <li><a href='Filters.asp'>Zugriffsrechte</a></li>
+                        <li><a href="Forward.asp">Anwendungen&nbsp;&amp;&nbsp;Gaming</a></li>
+                        <li><a href="Management.asp">Administration</a></li>
+                        <li><a href="Status_Router.asp">Status</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div id="main">
+               <div id="contents">
+                  <h2>System Info</h2>
+                  <fieldset>
+                     <legend>WRT Info</legend>
+                     <div class="setting">
+                        <div class="label">Router Name</div>Venus
+                     </div>
+                     <div class="setting">
+                        <div class="label">LAN MAC</div>00:13:10:30:02:B9
+                     </div>
+                     <div class="setting">
+                        <div class="label">WAN MAC</div>00:50:8D:49:E7:16
+                     </div>
+                     <div class="setting">
+                        <div class="label">Wireless MAC</div>00:50:8D:49:E7:16
+                     </div>
+                  </fieldset><br /><fieldset>
+                     <legend>Wireless Info</legend>
+                     <div class="setting">
+                        <div class="label">SSID</div>Venus
+                     </div>
+                     <div class="setting">
+                        <div class="label">Modus</div>
+			AP
+                     </div>
+                     <div class="setting">
+                        <div class="label">Xmit</div>28 mW
+                     </div>
+                     <div class="setting">
+                        <div class="label">Netzwerk</div>Mixed
+                     </div>
+                     <div class="setting">
+                        <div class="label">DHCP Server</div>Enabled
+                     </div>
+                     <div class="setting">
+                        <div class="label">Kanal</div>6
+                     </div>
+                     <div class="setting">
+                        <div class="label">Rate (Mbps)</div>36
+                     </div>
+                  </fieldset><br /><fieldset>
+                     <legend>IP Info</legend>
+                     <div class="setting">
+                        <div class="label">WAN IP</div>80.109.48.20
+                     </div>
+                     <div class="setting">
+                        <div class="label">LAN IP</div>192.168.1.1
+                     </div>
+                     <div class="setting">
+                        <div class="label">WRT-Radius</div>
+                        					
+                        					Disabled                        
+                        					
+                        					
+                     </div>
+                     <div class="setting">
+                        <div class="label">WRT-rflow</div>Disabled 
+                     </div>
+                     <div class="setting">
+                        <div class="label">MAC-udp</div>Disabled 
+                     </div>
+                     <div class="setting">
+                        <div class="label">Samba Mount</div>Disabled
+                     </div>
+                  </fieldset><br />
+		  <fieldset>
+		  
+		  
+		  </fieldset><br />
+		  <form name="Eingabe">
+		  <input type="hidden" name="FeldMEM" value='SWRXgoodPacket=19826;SWRXerrorPacket=0;SWTXgoodPacket=38625;SWTXerrorPacket=15;' />
+		
+                  <div class="setting">
+                     <h3>DHCP Client Liste</h3>
+                     <table class="table">
+                        <tr>
+                           <th>PC</th>
+                           <th>IP</th>
+                           <th>MAC</th>
+                           <th>Dauer</th>
+                        </tr><script language="JavaScript">
+						var table = new Array(  );
+						var i = 0;
+						var count = 0;
+						for(;;) {
+							if(!table[i]) {
+								if(i == 0){
+									document.write("<tr>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>Nichts</td>");
+									document.write("<td>&nbsp;</td></tr>");
+								}
+								break;
+							}
+							document.write("<tr>");
+							document.write("<td>"+table[i]+"</td>");
+							document.write("<td>"+table[i+1]+"</td>");
+							document.write("<td>"+table[i+2]+"</td>");
+							document.write("<td>"+table[i+3]+"</td>");
+							document.write("<td>&nbsp;</td></tr>");
+							count ++;
+							i = i + 5;
+						}
+					</script></table>
+                  </div>
+                  <div class="setting">
+                     <div class="label">Packet Info</div><script language="JavaScript">
+					var clients = this.document.Eingabe.FeldMEM.value;
+					clients=replace_list(clients,';',' ');
+					clients=replace_list(clients,'SWRXgoodPacket=',' RXg=');
+					clients=replace_list(clients,'SWRXerrorPacket=','RXe=');
+					clients=replace_list(clients,'SWTXgoodPacket=',' TXg=');
+					clients=replace_list(clients,'SWTXerrorPacket=','TXe=');
+					
+					this.document.write(clients);
+				</script>
+		  </div>
+		  </form>
+                  <div class="setting">
+                     <div class="label">Mem Info</div>  Mem:        30220        10592        19628            0         1400
+ Swap:            0            0            0
+Total:        30220        10592        19628
+
+                  </div>
+		<a href="http://www.dd-wrt.com/">DD-WRT</a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="business" value="sebastian.gottschall@advis.de"><input type="hidden" name="item_name" value="DD-WRT Development Support"><input type="hidden" name="no_note" value="1"><input type="hidden" name="currency_code" value="EUR"><input type="hidden" name="tax" value="0"><input type="image" src="images/paypal.gif" border="0" name="submit" width="62" height="31"></form>
+               </div>
+            </div>
+	    <div id="statusInfo">
+               <div class="info">Firmware: DD-WRT v23 (12/25/05)</div>
+               <div class="info">Time:  12:28:41 up  8:28, load average: 0.00, 0.00, 0.00
+</div>
+               <div class="info">WAN IP: 80.109.48.20</div>
+            </div>
+            <div id="helpContainer">
+               <div id="help">
+                  <div id="logo">
+                     <h2>Help</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,149 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 19:47:29 GMT
+Server: Apache/2.2.9
+Last-Modified: Fri, 16 Oct 2009 11:54:08 GMT
+ETag: "ee8fb-ccf-4760c0dad7800"
+Accept-Ranges: bytes
+Content-Length: 3279
+Connection: close
+Content-Type: text/html
+
+<html>
+<head>
+<title>Welcome | stefant.org</title>
+<meta name="author" content="Stefan Hepp"/>
+<meta name="keywords" content="Stefan Hepp, Duckrazor, stefant.org"/> 
+<style type="text/css">
+body {
+    font-family: "Courier New", "Lucida Console", monospace;
+}
+a {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+    font-size: 120%;
+    text-decoration: none;
+}
+.cmd {
+    vertical-align: middle;
+    line-height: 150%;
+}
+.cmd * a:hover {
+    font-size: 100%;
+    border-bottom: 1px dotted;
+}
+.console, input {
+    border-width: 1px;
+    border-color: #AAAAAA;
+    border-style: solid;
+    background-color: white;
+    font-family: "Courier New", "Lucida Console", monospace;
+}
+.console {
+    padding: 50px 20px;
+}
+.intro {
+    font-size: 50px;
+}
+.main {
+    font-size: 20px;
+}
+.sec {
+    font-size: 17px;
+}
+
+</style>
+<script language="javascript">
+<!--
+
+var text = "Hello World!\n\n>_Welcome to stefant.org!\n\n>_";
+var out = "";
+var i = 0;
+var d;
+var b;
+
+function setup() {
+
+    var e = document.getElementById("console");
+    
+    d = document.createTextNode("> ");
+    e.appendChild(d);
+
+    b = document.createElement("blink");
+    b.appendChild(document.createTextNode("_"));
+    e.appendChild(b);
+
+    printTxt();
+}
+
+function printTxt() {
+
+    var t = 80;
+
+    var c = text.charAt(i);
+    i++;
+    
+    if ( c == "_" ) {
+	t = 1500;
+    } else if ( c == "\n" ) {
+	b.parentNode.insertBefore(document.createElement("br"),b);
+    } else if ( c == ">" ) {
+	d = document.createTextNode("> ");
+	b.parentNode.insertBefore(d,b);
+    } else {
+	d.appendData(c);
+    }
+
+    if ( i >= text.length ) {
+	t = 0;
+    }
+
+    if ( t > 0 ) {
+        setTimeout( "printTxt()", t );
+    }
+}
+
+-->
+</script>
+</head>
+<body onload="setup()">
+
+<table width="780" border=0 align="center" style="table-layout:fixed">
+<tr>
+    <td width=190 height=50>&nbsp;</td>
+    <td width=200>&nbsp;</td>
+    <td width=200>&nbsp;</td>
+    <td width=190>&nbsp;</td>
+</tr>
+<tr onclick="document.location.href='/web/'" style="cursor:pointer">
+    <td colspan=4 height=420 align="left" valign="bottom" class="console">
+    <div id="console" class="intro"></div>
+    <noscript class="intro">&gt; Hello World<blink>_</blink></noscript>
+    </td>
+</tr>
+<tr>
+    <td colspan=4 height=30 align="center" style="padding-top:15px">Continue to</td>
+</tr>
+<tr valign="bottom">
+    <td align="center" class="sec" height=40><a href="http://www.stefant.org/web/site/scm.html">&gt; SCM server</a></td>
+    <td align="center" class="main"><a href="http://www.stefant.org/web/"><b>&gt; Stefant.org</b></a></td>
+    <td align="center" class="main"><a href="http://www.stefant.org/duckrazor/"><b>&gt; Duckrazor</b></a></td>
+    <td align="center" class="sec"><a href="http://www.stefant.org/web/site/jabber.html">&gt; Jabber server</a></td>
+</tr>
+<tr>
+    <td colspan=4 valign="top" align="center" class="cmd">
+	<p>&nbsp;</p>
+	<form name="cmdform" action="/tools/cmd/" method="get">
+	<a href="/tools/cmd/">stefant.org&gt;</a> <input type="text" size=65 name="cmd"> 
+	<input type="submit" value="Exec" style="margin-right: 20px">
+	<br>
+	<a href="/tools/cmd/?cmd=help">What's this?</a>
+	</form>
+	<script type="text/javascript">document.cmdform.cmd.focus();</script>
+    </td>
+</tr>
+</table>
+</body>
+</html>

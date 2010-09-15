@@ -1,0 +1,65 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:19:34 GMT
+Server: Apache/2.0.54 (Linux/SUSE)
+Last-Modified: Mon, 08 Sep 2008 22:24:33 GMT
+ETag: "409b3-481-e22d0a40"
+Accept-Ranges: bytes
+Content-Length: 1153
+Connection: close
+Content-Type: text/html
+
+ <script language="javascript">
+<!--
+ var remote = null;
+ function remoteStart() {
+ remote = window.open('', 'chatRemote1', 'width=400,height=400,resizable=yes');
+ if (remote != null) {
+  if (remote.opener == null)
+   remote.opener = self;
+   remote.location.href = 'lansuite/';
+  }
+ }
+
+ var cwin = null;
+ function openWin(theUrl, name, width, height, tools) {
+  cwin = window.open('', name,
+  tools+'width=' + width + ',height='+height);
+  if (cwin != null) {
+   if (cwin.opener == null)
+    cwin.opener = self;
+   cwin.location.href= theUrl;
+   if (navigator.appName == "Netscape" && navigator.appVersion.substring(0,1) != 2)
+    cwin.focus();
+  }
+ }
+ function closeWin(theWin) {
+  theWin.close();
+ }
+
+ function buhbye(url) {
+  parent.ichatdisplay.document.location.href="lansuite/";
+  parent.location.href=url;
+  return true;
+ }
+// -->
+
+</script>
+<script language="javascript">
+function clear(field) {
+  field.value="";
+  field.focus();
+}
+// -->
+</script>
+
+
+
+<title>.:. GODMODE - LANparty .:.</title>
+
+<frameset rows=0 frameborder=NO border=0 framespacing=0>
+
+
+<frame src="lansuite/" frameborder=NO scrolling=AUTO name=down>
+
+
+</frameset></frameset>

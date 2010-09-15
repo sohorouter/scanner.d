@@ -1,0 +1,123 @@
+HTTP/1.0 200 Ok
+Content-Type: text/html
+Server: httpd
+Date: Tue, 14 Sep 2010 21:46:19 GMT
+Connection: close
+Cache-Control: no-store, no-cache, must-revalidate
+Cache-Control: post-check=0, pre-check=0
+Pragma: no-cache
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: 0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+		<script type="text/javascript" src="common.js"></script>
+		<script type="text/javascript" src="lang_pack/english.js"></script>
+		<link type="text/css" rel="stylesheet" href="style/elegant/style.css" />
+		<!--[if IE]><link type="text/css" rel="stylesheet" href="style/elegant/style_ie.css" /><![endif]-->
+		<title>DD-WRT (build 13064) - Info</title>
+
+<script type="text/javascript">
+//<![CDATA[
+function setWirelessTable() {
+var table = document.getElementById("wireless_table");
+var val = arguments;
+cleanTable(table);
+if(!val.length) {
+var cell = table.insertRow(-1).insertCell(-1);
+cell.colSpan = 10;
+cell.align = "center";
+cell.innerHTML = "- " + share.none + " -";
+return;
+}
+for(var i = 0; i < val.length; i = i + 9) {
+var row = table.insertRow(-1);
+
+var mac = val[i];
+if ("1" != "1") {
+var cellmac = row.insertCell(-1);
+cellmac.title = share.oui;
+cellmac.style.cursor = "pointer";
+cellmac.style.textDecoration = "underline";
+eval("addEvent(cellmac, 'click', function() { getOUIFromMAC('" + mac + "') })");
+cellmac.innerHTML = mac;
+} else {
+row.insertCell(-1).innerHTML = mac;		
+}
+var ifn = val[i + 1];
+var iface = row.insertCell(-1);
+iface.title = status_band.titl;
+iface.style.cursor = "pointer";
+iface.style.textDecoration = "none";
+eval("addEvent(iface, 'click', function() { openBW('" + ifn + "') })");
+iface.innerHTML = ifn;
+
+row.insertCell(-1).innerHTML = val[i + 2];
+row.insertCell(-1).innerHTML = val[i + 3];
+row.insertCell(-1).innerHTML = val[i + 4];		
+row.insertCell(-1).innerHTML = val[i + 5];		
+row.insertCell(-1).innerHTML = val[i + 6];		
+row.insertCell(-1).innerHTML = val[i + 7];		
+setMeterBar(row.insertCell(-1), (val[i + 8] == "0" ? 0 : parseInt(val[i + 8]) * 0.1), "");
+}
+}
+function setWDSTable() {
+var table = document.getElementById("wds_table");
+var val = arguments;
+cleanTable(table);
+if(!val.length) {
+setElementVisible("wds", false);
+return;
+}
+for(var i = 0; i < val.length; i = i + 6) {
+var row = table.insertRow(-1);
+
+var mac = val[i];
+if ("1" != "1") {
+var cellmac = row.insertCell(-1);
+cellmac.title = share.oui;
+cellmac.style.cursor = "pointer";
+cellmac.style.textDecoration = "underline";
+eval("addEvent(cellmac, 'click', function() { getOUIFromMAC('" + mac + "') })");
+cellmac.innerHTML = mac;
+} else {
+row.insertCell(-1).innerHTML = mac;		
+}
+var ifn = val[i + 1];
+var iface = row.insertCell(-1);
+iface.title = status_band.titl;
+iface.style.cursor = "pointer";
+iface.style.textDecoration = "none";
+eval("addEvent(iface, 'click', function() { openBW('" + ifn + "') })");
+iface.innerHTML = ifn;
+
+row.insertCell(-1).innerHTML = val[i + 2];
+row.insertCell(-1).innerHTML = val[i + 3];
+row.insertCell(-1).innerHTML = val[i + 4];
+row.insertCell(-1).innerHTML = val[i + 5];
+setMeterBar(row.insertCell(-1), (val[i + 3] == "0" ? 0 : parseInt(val[i + 3]) * 1.24 + 116), "");
+}
+setElementVisible("wds", true);
+}
+function setDHCPTable() {
+var table = document.getElementById("dhcp_leases_table");
+var val = arguments;
+cleanTable(table);
+if(!val.length) {
+var cell = table.insertRow(-1).insertCell(-1);
+cell.colSpan = 4;
+cell.align = "center";
+cell.innerHTML = "- " + share.none + " -";
+return;
+}
+for(var i = 0; i < val.length; i = i + 5) {
+
+var row = table.insertRow(-1);
+row.insertCell(-1).innerHTML = val[i];
+row.insertCell(-1).innerHTML = val[i + 1];
+
+var mac = val[i + 2];
+if ("1

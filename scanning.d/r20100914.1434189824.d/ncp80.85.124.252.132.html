@@ -1,0 +1,84 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:11:40 GMT
+Server: Apache/2.2.3 (CentOS)
+X-Powered-By: PHP/5.2.10
+Set-Cookie: roundcube_sessid=vom6mqd08plma2dsdq0dheua16; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MMS Webmail :: Willkommen bei MMS Webmail</title>
+<meta name="Robots" content="noindex,nofollow" />
+<link rel="index" href="./?_task=login" />
+<link rel="shortcut icon" href="skins/default/images/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="skins/default/common.css?s=1271842828" />
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="program/js/jquery-1.4.min.js?s=1266747840"></script>
+<script type="text/javascript" src="program/js/common.js?s=1272011524"></script>
+<script type="text/javascript" src="program/js/app.js?s=1272011522"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","request_token":"8a69ddb1d8a48430c7829c5ffe1979a7","keep_alive":60,"action":"","comm_path":".\/?_task=login"});
+rcmail.add_label("loading","Lade...");
+rcmail.add_label("servererror","Serverfehler!");
+rcmail.gui_object('message', 'message');
+rcmail.gui_object('loginform', 'form');
+/* ]]> */
+</script>
+</head>
+<body>
+
+<img src="skins/default/images/roundcube_logo.png" border="0" alt="MMS Webmail" style="margin:0 11px" />
+
+<div id="message"></div>
+
+<div id="login-form">
+<div class="boxtitle">Willkommen bei MMS Webmail</div>
+<div class="boxcontent">
+
+<form name="form" action="./" method="post">
+<input type="hidden" name="_token" value="8a69ddb1d8a48430c7829c5ffe1979a7" />
+<input type="hidden" name="_action" value="login" /><input type="hidden" name="_timezone" id="rcmlogintz" value="_default_" /><input type="hidden" name="_url" id="rcmloginurl" value="" /><table summary="" border="0"><tbody><tr><td class="title"><label for="rcmloginuser">Benutzername</label>
+</td>
+<td><input name="_user" id="rcmloginuser" autocomplete="off" type="text" /></td>
+</tr>
+<tr><td class="title"><label for="rcmloginpwd">Passwort</label>
+</td>
+<td><input name="_pass" id="rcmloginpwd" autocomplete="off" type="password" /></td>
+</tr>
+</tbody>
+</table>
+
+
+<p style="text-align:center;"><input type="submit" class="button mainaction" value="Anmelden" /></p>
+
+</form>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+$(document).ready(function(){ rcmail.init(); });
+$(document).ready(function(){
+            var images = ["skins\/default\/images\/icons\/folders.png","skins\/default\/images\/mail_footer.png","skins\/default\/images\/taskicons.gif","skins\/default\/images\/display\/loading.gif","skins\/default\/images\/pagenav.gif","skins\/default\/images\/mail_toolbar.png","skins\/default\/images\/searchfield.gif","skins\/default\/images\/icons\/glass_roll.png","skins\/default\/images\/icons\/reset.gif","skins\/default\/images\/icons\/attachment.png","skins\/default\/images\/icons\/dot.png","skins\/default\/images\/icons\/unread.png","skins\/default\/images\/abook_toolbar.png","skins\/default\/images\/icons\/glass.png","skins\/default\/images\/icons\/groupactions.png","skins\/default\/images\/watermark.gif"];
+            for (var i=0; i<images.length; i++) {
+                img = new Image();
+                img.src = images[i];
+            }});
+/* ]]> */
+</script>
+</body>
+</html>

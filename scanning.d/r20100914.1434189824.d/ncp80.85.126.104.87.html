@@ -1,0 +1,394 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 19:56:06 GMT
+Server: Apache/2
+Content-Type: text/html; charset=iso-8859-1
+Set-Cookie: mediafiler=lasturi&%2Fmediafiler%2Fstart; path=/
+Via: 1.0 bilddb.dioezese-linz.at
+Vary: Accept-Encoding
+Connection: close
+X-Pad: avoid browser bug
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MediaFiler mediafiler Home page - mediafiler image bank</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="MediaFiler Media-CMS">
+<meta name="subject" content="Home">
+<meta name="description" content="MediaFiler Image Archive">
+
+<script type="text/javascript">
+	var styleuribase = "/mediafiler/start/index";
+	var styleneedqm = '?';
+	var fullbaseuri = '/mediafiler/start/index';
+	var lasttab1 = 1;
+	var lasttab2 = 1;
+	var iconpath = '/mediafiler/public/themes/default';
+function swapmenu(){}
+</script>
+<script type="text/javascript" src="/mediafiler/public/js/bundle1.js?312"></script><script type="text/javascript" src="/mediafiler/public/js/sha1.js?312"></script>
+<script type="text/javascript">var dToday = new Date();
+var cansha1 = '1';
+
+function dosubmit(){
+	x= document.authform;
+	if (x.user.alt && x.user.value == x.user.alt) x.user.value = '';
+	if (!x.user.value){
+ 		alert('Bitte geben Sie Ihren Benutzernamen ein. !');
+		return false;
+	} else if (!x.passwd.value){
+		alert ('Bitte geben Sie Ihr Passwort ein. !');
+		return false;
+ 	}
+ 	
+ 	if (document.sha1_hex && cansha1) makesha1crypt();
+}
+
+function listartup(){
+	if (top.location != self.location) {
+		top.location = self.location
+	}
+	document.authform.user.focus();
+	if (document.sha1_hex && cansha1){
+		document.getElementById('secnotif').innerHTML = 'Geschützt durch SHA1 <img src="/mediafiler/public/icons/secure.gif">';
+	}
+	
+}
+
+function docancel(){
+	document.location.href="/mediafiler/start"
+}
+
+function passwdClearOnFocus(){
+	document.authform.passwd.value = '';
+}
+
+function makesha1crypt(){
+	var x = document.authform;
+	var payload = x.user.value;
+	var gotsha1 = x.passwd.value.match('^[a-f0-9]{40}$');
+	if (!gotsha1 ){
+		x.passwd.value = hex_sha1(x.user.value.toLowerCase()+'/'+x.passwd.value+'/'+payload);
+	}
+}
+
+	  lasttab1 = 1;
+		lasttab2 = 1;
+		var baseuri = "";
+		var relbaseuri = "";
+		var fullbaseuri = "/mediafiler/start/index";
+		editmode = '';
+		var fmode = "?fbrowse";
+		selecthook = '';
+		shophook = '1_2_1';
+
+	  lasttab1 = 1;
+		lasttab2 = 1;
+		var baseuri = "";
+		var relbaseuri = "";
+		var fullbaseuri = "/mediafiler/start/index";
+		editmode = '';
+</script>
+
+<link href="/mediafiler/public/css/fbrowse.css?312" rel="stylesheet" type="text/css">
+<link href="/mediafiler/public/css/default.css?312" rel="stylesheet" type="text/css">
+
+
+</head>
+<body onload="initInitCookies();">
+<div id="globalTeatimer" style="display:none"></div>
+<div id="outer" >
+
+<div class="freetopbar" style="position:relative">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="topbar">
+    <tr>
+      <td rowspan="2" id="logotd"><img src="/mediafiler/img/logo.gif" alt="logo"></td>
+      <td rowspan="2" style="width:15px" >&nbsp;</td>
+      <td rowspan="2" nowrap id="toolbar2"><script type="text/javascript">
+function _doSearch(){
+	var sref = document.search1;
+	if (sref.query.value == sref.query.alt) sref.query.value = '';
+	sref.action = "/mediafiler/start/" + document.getElementById('targetpage').value;
+	return true;
+}
+function setsearch(){
+	var sref = document.search1;
+	sref.action = "/mediafiler/start/" + document.getElementById('targetpage').value;
+}
+</script>
+	<form id="search1" name="search1" method="get" action="" enctype="application/x-www-form-urlencoded" onsubmit="_doSearch()">
+	
+
+	<input type="hidden" name="fbrowse" value="browse">
+	<table width="100%" cellpadding="0" cellspacing="0">
+  	<tr>
+			<td nowrap>
+			<input tabindex="0" onfocus="inputtext_f(this);noteInputFocused()" onblur="inputtext_b(this)" alt="                - Suche -" id="squery" class="smallfont" name="query" type="text" size="35" style="width:198px" maxlength="45" value="">
+			in
+		 <select style="width:200px" id="targetpage" class="smallfont" size="1" onchange="setsearch()">
+		 <option value="combinedarchive">All Archives</option>
+
+		 </select>
+		&nbsp;
+		<input class="smallbutton" type="submit" value="Suche">
+		</td>
+	</tr>
+	</table>
+</form>
+<script type="text/javascript">
+	var ip_mystate = document.getElementById('squery');if (ip_mystate)
+	if ( !ip_mystate.value || ip_mystate.value==ip_mystate.alt){ ip_mystate.style.color="#999";ip_mystate.value=ip_mystate.alt}
+</script>
+</td>
+      <td height="15" align="right" valign="top" nowrap id="hmenu2out"><div id="hmenutop"><span  style="display:none" id="page_pshop"><a
+ href="/mediafiler/start/shoppingcart">Shopping cart<span class="plnumbers">(<span id="nr_pshop">0</span>)</span></a></span><span id="seper_pshop" style="display:none">|</span><span  style="display:none" id="page_pselect"><a
+ href="/mediafiler/start/quickalbum">My Selection<span class="plnumbers">(<span id="nr_pselect">0</span>)</span></a></span><span id="seper_pselect" style="display:none">|</span><span id="hpage_8"><a
+ href="/mediafiler/start/keywords">Keywords</a></span>|<span  id="page_login"><a
+ href="/mediafiler/start/login?return=index">Login</a></span></div></td>
+		</tr>
+		<tr>
+			<td height="20" align="right" nowrap valign="bottom"><div style="padding:0 5px 5px 0"></div></td>
+		</tr>
+	</table>
+	<div id="toolexpand" style="display:none"></div>
+
+ <div class="navbar">
+	<div id="toolbar1" style="padding:4px 8px 0px;float:right;white-space:nowrap"></div>
+	<div id="hmenu"><span id="hpage_1"><a class="hmenuactive" href="/mediafiler/start/index" title="Home Page">Home</a></span>|<span id="hpage_34"><a
+ href="/mediafiler/start/shop">Shop</a></span>|<span id="hpage_21"><a
+ href="/mediafiler/start/combinedarchive">All Archives</a></span></div>
+ </div>
+</div>
+
+
+<div id="navstring-low">
+	MediaFiler Image Archive
+</div>
+
+<!-- body menu met macro panels -->
+<table id="bodytable" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<!-- macro1 -->
+		<td valign="top" width="2%" id="wrap_left"><table cellpadding=0 cellspacing=0 style="margin-top:10px;width:210px" id="macro1out"><tr><td>
+<div id="mlabel1_1" class="labelmacro1" ><div>Inloggen</div></div><div id="macro1_1" class="macro1" >
+  <div style="width:210px"><form action="/mediafiler/login" method="post" name="authform">
+<input name="uri" type="hidden" value="/mediafiler/start/index">
+<input name="args" type="hidden" value="">
+<input name="stayhere" type="hidden" value="1">
+
+<div align="center" style="padding:2px">
+	
+
+<table border="0" cellspacing="0" cellpadding="3">
+
+  <tr>
+  	<td align="right" class="smallfont">Name:</td>
+    <td><input class="smallfont" name="user" type="text" size="18" style="width:106px"></td>
+  </tr>
+  <tr>
+    <td align="right" class="smallfont" >Passwort:</td>
+    <td><input class="smallfont" name="passwd" type="password" size="18" style="width:106px"></td>
+  </tr>
+</table>
+<div style="padding:3px 0px 3px 0px;white-space:nowrap" class="smallfont2" align="center">
+Anmeldung an diesem Computer merken  <input class="checkmiddle" style="vertical-align:middle" name="rememberme" type="checkbox" value="1" title="Diese Funktion merkt sich automatisch die Benutzeranmeldung für den nächsten Zugriff auf diese Website.">
+</div>
+
+	
+	<div align="center" style="padding:4px">
+    <input style="padding-left:6px;padding-right:6px" class="smallfont" type="Submit" name="Submit" value="Login" onClick="return dosubmit()">
+	</div>
+
+	<div id="secnotif" class="secmessage"></div>
+	<div align="left">
+  <a href="/mediafiler/start/recoverpasswd">Passwort vergessen?</a>
+</div>
+
+</div>
+</form>
+
+</div>
+</div><div id="mlabel1_2" class="labelmacro1" style=";display:none"><div>Selection</div></div><div id="macro1_2" class="macro1" style=";display:none">
+  <table width="210" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td nowrap>
+  <div><div style="float:right"><a style="text-decoration:underline" href="javascript:clearshop('Sind Sie sicher, dass Sie den geasmten Warenkorb löschen möchten ? ')" title="Warenkorb leeren">
+   <img src="/mediafiler/public/themes/default/trash.gif" alt="Clear Shopping cart"></a></div>
+   <div><a class="macrolinks" href="/mediafiler/start/shoppingcart?returi=%2Fmediafiler%2Fstart%2Findex%3Ffbrowse%3Dbrowse&amp;rettoon=Home">Zeige Warenkorb</a></div>
+   </div>
+   <hr>
+  </td>
+ </tr>
+ <tr>
+  <td nowrap>
+ <div id="mcontent1_2" style="padding:0px 5px 6px 4px">Der Warenkorb ist leer</div>
+ 
+  </td>
+ </tr>   
+</table>
+
+</div>
+</td></tr></table></td>
+
+    <td width="98%" valign="top"  id="wrap_center">
+		 <!-- content tabel -->
+      <table width="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td width="100%" valign="top" class="bodytext" align="left">
+          <!-- item Titel optioneel -->
+          
+	
+		<div id=ajaxtext style="visibility:hidden;display:none"></div>
+    <div id=bodytext>
+<p class="paragraph">
+Choose one of the archives below or use the search field obove to start searching immediately 
+</p><!-- noindex -->	<div class="newsdiv description2">
+	 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td valign="bottom" width="1%" height="1%" style="padding-bottom:3px;padding-right:8px"> <img src="/mediafiler/public/themes/default/arrow.gif" width="6" height="11"></td>
+			<td valign="bottom" height="1%"> <a href="/mediafiler/start/combinedarchive" class="listtitle">Show images from all archives</a></td>
+			<td align="left" width="1%" rowspan="2"></td>
+		</tr>
+		<tr>
+		 <td></td>
+		 <td width="98%" valign="top">
+  		 <div class="newsdate">Zuletzt geändert: 8 September 2010</div>
+  		 <div>Use this page to search in multiple archives.</div>
+		 </td>
+		</tr>
+		</table>
+	</div>
+<!-- index -->     </div>
+			</td></tr>
+				</table>
+				<!--</div>-->
+					<!-- einde content tabel -->
+		</td>
+
+			<!-- echter macro panel -->
+			<td valign="top" align="left" style="padding-top:10px" id="wrap_right">
+<div id="mlabel2_1" class="labelmacro2" ><div>Recently added</div></div><div id="macro2_1" class="macro2" >
+  <div style="width:190px"><!-- noindex -->
+<script type="text/javascript">
+	if ( typeof nav == 'undefined' ) nav = [];
+	nav['bsr2_1'] = '0';
+	nav['view2_1'] = '';
+	nav['order2_1'] = '';
+	nav['bsize2_1'] = '5';
+</script>
+<div id="mcontent2_1" class="macrogriddiv">
+	<div align="center" style="padding:5px 4px" id="mnav2_1">
+		<span class="disabled"><img src="/mediafiler/public/themes/default/disback.gif" border="0" alt="prev">Zurück</span> &nbsp; &nbsp;<a class="navposition" href="javascript:mnavigeer('5','2_1','')">Weiter</a><a href="javascript:mnavigeer('5','2_1','')"><img src="/mediafiler/public/themes/default/next.gif" border="0"></a>
+	</div>
+
+		<!-- Cell repeated for each column -->
+	<div class="macrogrid-row1" id="mfile2_11" onMouseOver="this.savcl=this.className;this.className='macrogrid-over'" onMouseOut="this.className=this.savcl">
+		<table cellspacing="5" cellpadding="0" border="0" width="100%">
+		<!-- Row/Cell containing the thumbnail image -->
+		<tr>
+	   <td valign="middle" align="center" style="height:99px">
+<a style="display: block;" href="javascript:remotepreview('kbuero1/Pfarrkirche%20Sch%E4rding%5Fau%DF%5F5.jpg','1','2_1')"><img style="border:none" src="/mediafiler/tcache/10000/0d/rkirche%20Schaerding_auss_5_da552.jpg"></a>			</td>
+		</tr>
+		<tr>
+			<!-- Row/Cell containing the action buttons -->
+		 <td valign="bottom">
+			 <div class="macrofiles" align="center"><span class="macrofiles">Schaerding Pfarrkirche</span></div>
+			</td>
+		</tr>
+	</table>
+	</div>
+		<!-- Cell repeated for each column -->
+	<div class="macrogrid-row2" id="mfile2_12" onMouseOver="this.savcl=this.className;this.className='macrogrid-over'" onMouseOut="this.className=this.savcl">
+		<table cellspacing="5" cellpadding="0" border="0" width="100%">
+		<!-- Row/Cell containing the thumbnail image -->
+		<tr>
+	   <td valign="middle" align="center" style="height:145px">
+<a style="display: block;" href="javascript:remotepreview('kbuero1/Pfarrkirche%20Sch%E4rding%5Fau%DF%5F4.jpg','2','2_1')"><img style="border:none" src="/mediafiler/tcache/10000/de/rkirche%20Schaerding_auss_4_e1c8f.jpg"></a>			</td>
+		</tr>
+		<tr>
+			<!-- Row/Cell containing the action buttons -->
+		 <td valign="bottom">
+			 <div class="macrofiles" align="center"><span class="macrofiles">Schaerding Pfarrkirche</span></div>
+			</td>
+		</tr>
+	</table>
+	</div>
+		<!-- Cell repeated for each column -->
+	<div class="macrogrid-row1" id="mfile2_13" onMouseOver="this.savcl=this.className;this.className='macrogrid-over'" onMouseOut="this.className=this.savcl">
+		<table cellspacing="5" cellpadding="0" border="0" width="100%">
+		<!-- Row/Cell containing the thumbnail image -->
+		<tr>
+	   <td valign="middle" align="center" style="height:99px">
+<a style="display: block;" href="javascript:remotepreview('kbuero1/Pfarrkirche%20Sch%E4rding%5Fau%DF%5F3.jpg','3','2_1')"><img style="border:none" src="/mediafiler/tcache/10000/d9/rkirche%20Schaerding_auss_3_9de97.jpg"></a>			</td>
+		</tr>
+		<tr>
+			<!-- Row/Cell containing the action buttons -->
+		 <td valign="bottom">
+			 <div class="macrofiles" align="center"><span class="macrofiles">Schaerding Pfarrkirche</span></div>
+			</td>
+		</tr>
+	</table>
+	</div>
+		<!-- Cell repeated for each column -->
+	<div class="macrogrid-row2" id="mfile2_14" onMouseOver="this.savcl=this.className;this.className='macrogrid-over'" onMouseOut="this.className=this.savcl">
+		<table cellspacing="5" cellpadding="0" border="0" width="100%">
+		<!-- Row/Cell containing the thumbnail image -->
+		<tr>
+	   <td valign="middle" align="center" style="height:99px">
+<a style="display: block;" href="javascript:remotepreview('kbuero1/Pfarrkirche%20Sch%E4rding%5Fau%DF%5F2.jpg','4','2_1')"><img style="border:none" src="/mediafiler/tcache/10000/f1/rkirche%20Schaerding_auss_2_13902.jpg"></a>			</td>
+		</tr>
+		<tr>
+			<!-- Row/Cell containing the action buttons -->
+		 <td valign="bottom">
+			 <div class="macrofiles" align="center"><span class="macrofiles">Schaerding Pfarrkirche</span></div>
+			</td>
+		</tr>
+	</table>
+	</div>
+		<!-- Cell repeated for each column -->
+	<div class="macrogrid-row1" id="mfile2_15" onMouseOver="this.savcl=this.className;this.className='macrogrid-over'" onMouseOut="this.className=this.savcl">
+		<table cellspacing="5" cellpadding="0" border="0" width="100%">
+		<!-- Row/Cell containing the thumbnail image -->
+		<tr>
+	   <td valign="middle" align="center" style="height:145px">
+<a style="display: block;" href="javascript:remotepreview('kbuero1/Pfarrkirche%20Sch%E4rding%5Fau%DFen.jpg','5','2_1')"><img style="border:none" src="/mediafiler/tcache/10000/e7/rkirche%20Schaerding_aussen_75151.jpg"></a>			</td>
+		</tr>
+		<tr>
+			<!-- Row/Cell containing the action buttons -->
+		 <td valign="bottom">
+			 <div class="macrofiles" align="center"><span class="macrofiles">Schaerding Pfarrkirche</span></div>
+			</td>
+		</tr>
+	</table>
+	</div>
+ </div> <!-- end fotoGrid --></div>
+</div>
+</td>
+
+
+		</tr>
+	</table>
+<div id="clearfooter"></div>
+</div>
+<div id="footer" >
+  <table width="100%" cellpadding="0" cellspacing="0" >
+		<tr>
+		<td width="5%">&nbsp;</td>
+    <td class="footercell" width="35%" height="20" align="left" style="padding-left:8px">Zuletzt geändert: <em>8 September 2010</em></td>
+    <td class="footercell" width="20%" align="center" nowrap><div id="hmenubottom">[ <span id="hpage_22"><a
+ href="/mediafiler/start/termsofuse">Terms of use</a></span>|<span id="hpage_12"><a
+ href="/mediafiler/start/sitemap">Sitemap</a></span> ]</div></td>
+    <td class="footercell" width="35%" align="right" style="padding-right:8px">Powered by <a href="http://www.mediafiler.nl" title="Image archive solutions from MediaFiler" target="_blank">MediaFiler</a></td>
+	  <td width="5%">&nbsp;</td>
+	  </tr>
+	</table>
+	
+	<script type="text/javascript">
+		mpreviewbase = "/mediafiler/start/fotoarchiv?fbrowse=browse&order=moddate&query=";
+
+</script>
+
+</div>
+
+</body></html>

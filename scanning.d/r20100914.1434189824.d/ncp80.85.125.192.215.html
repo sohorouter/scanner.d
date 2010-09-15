@@ -1,0 +1,76 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:22:10 GMT
+Server: Apache
+Connection: close
+Content-Type: text/html;charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /</title>
+ </head>
+ <body>
+<html>
+  <head>
+    <title>Collax Server WEB ACCESS</title>
+    <link rel="stylesheet" href="/icons/dirindex.css" type="text/css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+        function fix_ahref_links() {
+		var language = "en";
+		var backToDocuments = 1;
+
+		var locationUrl = location.href;
+		locationUrl = locationUrl.replace(/.*\?(.*?)/,"$1");
+		var params = locationUrl.split ("&");
+		for (var p = 0; p < params.length; p++) {
+			var param = params[p].split("=");
+			var key   = param[0];
+			var value = param[1];
+			
+			if ( key == "language" ) {
+				language = value;
+			}
+			if ( key == "backToDocuments" && value == 0 ) {
+				backToDocuments = 0;
+			}
+		}	
+
+		var links = document.getElementsByTagName('a');
+		for (var i = 0; i < links.length; i++) {
+			var url = links[i].getAttribute('href');
+			var document_root = false;
+
+			if ( url == "/" ) {
+				document_root = true;
+			}
+
+			if ( braindeadBrowser ) {
+				var v = new RegExp();
+				v.compile("^[A-Za-z]+://[A-Za-z0-9-_.]+/$");
+				document_root = v.test(url);
+			}
+
+			if ( document_root ) {
+				if ( backToDocuments == 1 ) {
+					links[i].href = "/ak/documents.cgi?language=" + language;
+				} else {
+					links[i].href = "./?language=" + language + "&backToDocuments=" + backToDocuments;
+				}
+			} else {
+				links[i].href = links[i].href + "?language=" + language + "&backToDocuments=" + backToDocuments;
+			}
+		}
+	}
+	var braindeadBrowser = false;
+	if (navigator.appName == "Microsoft Internet Explorer") { braindeadBrowser = true; }
+    </script>
+  </head>
+  <body onLoad="fix_ahref_links();">
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th></tr><tr><th colspan="4"><hr></th></tr>
+<tr><td valign="top"><a href="http/"><img src="/icons/CrystalClear/22/places/folder.png" alt="[DIR]"></a></td><td><a href="http/">http/</a></td><td align="right">15-May-2008 11:23  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><th colspan="4"><hr></th></tr>
+</table>
+  </body>
+</html>
+</body></html>

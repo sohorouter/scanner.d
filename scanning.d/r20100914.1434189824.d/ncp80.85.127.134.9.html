@@ -1,0 +1,45 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:10:41 GMT
+Server: Apache/2.2.9 (Debian) mod_fastcgi/2.4.2 PHP/5.2.6-5ex1 with Suhosin-Patch mod_ssl/2.2.9 OpenSSL/0.9.8c
+Last-Modified: Wed, 07 Apr 2010 11:47:00 GMT
+ETag: "fec002-39f-483a41eb69500"
+Accept-Ranges: bytes
+Content-Length: 927
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html>
+<!-- This is only a redirect web page, which redirects to the admin interface -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>BUBBA|2</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- 
+	If you want to create your own homepage, remove the meta tag below,
+	This wont affect the usabillity of the admin interface, only that it wont redirect 
+	automatically there
+	 -->
+	<meta http-equiv="Refresh" content="0; url=/admin">
+	<link rel="stylesheet" type="text/css" href="/admin/views/default/_css/admin.css" />
+
+<style>
+p {
+	font-weight : bold;
+	font-size : 12px;
+	text-align : center;
+	margin-top : 10px;
+}
+a {
+	text-decoration : none;
+}
+</style>
+	
+</head>
+<body>
+	<!-- This body is only shown for browsers which doesn't adhere the meta refresh tag -->
+	<div id="bg-right"></div>
+	<p><a href="/admin">Redirecting ...</a></p>
+</body>
+</html>

@@ -1,0 +1,127 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:04:20 GMT
+Server: Apache/1.3.27 (Unix)
+Last-Modified: Mon, 15 May 2006 17:43:36 GMT
+ETag: "ccfcec-101e-4468bdc8"
+Accept-Ranges: bytes
+Content-Length: 4126
+Connection: close
+Content-Type: text/html
+
+<HTML>
+
+<HEAD>
+
+    <META http-equiv="content-type" content="text/html; charset=utf-8">
+    <META http-equiv="cache-control" content="must-revalidate">
+    <META http-equiv="cache-control" content="no-cache">
+    <META http-equiv="expires" content="0">	
+  
+    <TITLE>
+        Kieback&Peter - GLT-Homepage
+    </TITLE>
+    <script src="text_html.js"></script>
+
+</HEAD>
+
+  <SCRIPT language="javascript">
+  var result, result2;
+  document.title = index_v1;
+  result = navigator.appVersion;
+  var isCE;
+  isCE = result.indexOf("Windows CE");
+  result2 = "";
+  if (screen)
+  {
+    if ((screen.width) && (screen.width > 0) && (screen.width < 300))
+    isCE = 1;
+  }
+
+  var ipaq;
+
+  if (isCE != -1)
+  {
+      ipaq = "Ipaq";
+  }
+  else
+  {
+      ipaq = "";
+  }
+  if(document.cookie)
+  {
+    var search = "uid=";
+    offset = document.cookie.indexOf(search);
+    if(offset != -1)
+    {
+      offset += search.length;
+      end	   = document.cookie.indexOf(";",offset);
+      if(end == -1)
+      {
+        end = document.cookie.length;
+      }
+      result2 = document.cookie.substring(offset,end);
+    }	
+  }
+  </SCRIPT>
+
+<BODY BGCOLOR="#D8D8D8" TEXT="#000000" LINK="#0000FF" VLINK="#0000FF" ALINK="#FF0000" >
+
+<SCRIPT language="javascript">
+if (isCE != -1)
+{
+  document.writeln("<TABLE ALIGN=left><TR><TD><TABLE BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" ALIGN=center>");
+  document.writeln("<TR><TD><IMG SRC=\"images/phweb.gif\"></TD></TR></TABLE></TD></TR>");
+  document.writeln("<TR><TD><TABLE ALIGN=center>");
+  document.writeln("</TD></TR><TR><TD>");
+  document.writeln("<FORM METHOD=\"POST\" ACTION=\"/cgi-bin/loginIpaq.pl\">");
+  document.writeln("<TABLE BORDER=0 BGCOLOR=#C0C0C0 ALIGN=left>");
+  document.writeln("<TR>");
+  document.writeln("<TD> <B>" + index_v2 + "</B> </TD>");
+  document.writeln("<TD> <INPUT TABINDEX=1 TYPE=\"text\" NAME=\"username\" SIZE=\"8\"> </INPUT> </TD>");
+  document.writeln("<TD> <INPUT TABINDEX=3 TYPE=\"submit\" NAME=\"login\" VALUE=" + index_v4 + "> </INPUT> </TD>");
+  document.writeln("</TR>");
+  document.writeln("<TR> ");
+  document.writeln(" <TD> <B>" + index_v3 + "</B> </TD>");
+  document.writeln("<TD> <INPUT TABINDEX=2 TYPE=\"password\" NAME=\"password\" SIZE=\"8\"> </INPUT> </TD>");
+  document.writeln("<TD> <INPUT TABINDEX=4 TYPE=\"submit\" NAME=\"logoff\" VALUE=" + index_v5 + "> </INPUT> </TD>");
+  document.writeln("</TR>");
+  document.writeln("</TABLE>");
+  document.writeln("</FORM>");
+  document.writeln("</TD></TR></TABLE>");
+}
+else
+{
+  document.writeln("<TABLE BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" ALIGN=center>");
+  document.writeln("<TR>");
+  document.writeln("<TD> <IMG SRC=\"images/kpmain.jpg\"></TD>");
+  document.writeln("<TD> <IMG SRC=\"images/right.jpg\"></TD>");
+  document.writeln("</TR>");
+  document.writeln("<TR BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" VALIGN=top>");
+  document.writeln("<TD BGCOLOR=\"#FFFFFF\">");
+  document.writeln("<FORM METHOD=\"POST\" ACTION=\"/cgi-bin/login.pl\">");
+  document.writeln("  <TABLE BORDER=2 BGCOLOR=#C0C0C0 ALIGN=center>");
+  document.writeln("  <TR>");
+  document.writeln("  <TD><B>" + index_v2 + "</B></TD>");
+  document.writeln("  <TD><INPUT TABINDEX=1 TYPE=\"text\" NAME=\"username\" SIZE=\"8\"></INPUT></TD>");
+  document.writeln("  <TD><INPUT TABINDEX=3 TYPE=\"submit\" NAME=\"login\" VALUE=" + index_v4 + "></INPUT></TD>");
+  document.writeln("  </TR>");
+  document.writeln("  <TR>");
+  document.writeln("  <TD><B>" + index_v3 + "</B></TD>");
+  document.writeln("  <TD><INPUT TABINDEX=2 TYPE=\"password\" NAME=\"password\" SIZE=\"8\"></INPUT></TD>");
+  document.writeln("  <TD><INPUT TABINDEX=4 TYPE=\"submit\" NAME=\"logoff\" VALUE=" + index_v5 + "></INPUT></TD>");
+  document.writeln("  </TR>");
+  document.writeln("  </TABLE>");
+  document.writeln("</FORM>");
+  document.writeln("</TD>");
+  document.writeln("<TD BGCOLOR=\"#FFFFFF\"> <IMG SRC=\"images/phweb.gif\"> </TD>");
+  document.writeln("</TR>");
+  document.writeln("</TABLE>");
+
+}
+</SCRIPT>
+
+</BODY>
+
+
+</HTML>
+

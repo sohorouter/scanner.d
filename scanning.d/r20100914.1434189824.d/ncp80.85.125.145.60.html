@@ -1,0 +1,24 @@
+HTTP/1.1 403 Forbidden
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Tue, 14 Sep 2010 20:16:35 GMT
+Connection: close
+Content-Length: 340
+
+<!-- beginning of HttpRedirect.htm file -->
+
+<script type="text/javascript">
+
+function redirectToHttps()
+
+{
+	var httpURL = window.location.hostname + window.location.pathname;
+
+	var httpsURL = "https://webmail.rball.com/owa";
+
+	window.location = httpsURL ;
+}
+redirectToHttps();
+</script>
+<!-- end of HttpRedirect.htm file -->

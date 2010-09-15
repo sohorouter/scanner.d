@@ -1,0 +1,70 @@
+HTTP/1.0 200 OK
+Content-Length: 2193
+Content-Type: text/html;charset=utf-8
+Date: Tue, 14 Sep 2010 19:48:59 GMT
+Last-Modified: Mon, 10 Aug 2009 13:54:18 GMT
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<title>FRITZ!Box</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="expires" content="0">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<script type="text/javascript">
+<!--
+var g_HelpWin = null;
+function getElem(id) {
+var elem = null;
+if (typeof document.getElementById != 'undefined') {
+elem = document.getElementById(id);
+}
+else if (typeof document.all != 'undefined') {
+elem = document.all[id];
+}
+else {
+elem = eval("window."+id);
+}
+return elem;
+}
+function SelectPage() {
+var Extra = "";
+var ThePage = "index_inhalt.html";
+if (window.name != "") {
+var Name = window.name;
+/*var Check = Name.slice(0,5);
+if (Check == "page_") */ {
+var Name2 = Name.slice(5);
+if (Name2 != "") {
+ThePage = "index_"+Name2+".html";
+window.name = Name2;
+}
+}
+}
+var TheFrame = getElem("frame_content");
+TheFrame["src"] = "/cgi-bin/webcm?getpage=../html/"+ThePage+Extra;
+}
+-->
+</script>
+</head>
+<frameset id="frame_set" rows="*" onload=SelectPage()>
+<!--<frame src="/cgi-bin/webcm?getpage=../html/index_inhalt.html" id="frame_content" scrolling="auto" frameborder="0" />
+-->
+<frame id="frame_content" scrolling="auto" frameborder="0" />
+</frameset>
+<noframes>
+<body>
+<p>Die FRITZ!Box Benutzeroberfläche basiert auf XHTML-Frames. Ihr Browser scheint diese Art der Darstellung nicht zu unterstützen.</p>
+<p>Sie können die Oberfläche trotzdem nutzen, wenn Sie <a href="/cgi-bin/webcm?getpage=../html/index_inhalt.html">direkt zur Startseite</a> gehen.</p>
+<p>Beachten Sie bitte, dass ihr Browser <strong>unbedingt</strong> Javascript unterstützen muss. Bei den meisten Text-basierten Browsern (lynx, links) ist das <strong>nicht</strong> der Fall. Bitte konfigurieren Sie FRITZ!Box an einem Rechner mit DOM-1-kompatiblem Browser und aktiviertem Javascript, zum Beispiel:</p>
+<ul>
+<li>Internet Explorer 5.5, 6 oder höher</li>
+<li>Mozilla basierte Browser (Netscape 6 oder höher, Mozilla, Firefox, Galeon, ...)</li>
+<li>Opera</li>
+<li>Konqueror (Linux KDE)</li>
+<li>Safari (MacOS)</li>
+</ul>
+</body>
+</noframes>
+</html>

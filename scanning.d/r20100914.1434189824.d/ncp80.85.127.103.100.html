@@ -1,0 +1,254 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 19:53:37 GMT
+Server: Apache/2.2.14 (Win32) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l mod_autoindex_color PHP/5.3.1 mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.10.1
+X-Powered-By: PHP/5.3.1
+Set-Cookie: PHPSESSID=5plgnc5u24hcave78ikbh2sm47; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>fort.xigmo.org</title>
+<script type="text/javascript">
+//<![CDATA[
+
+/** This is high-level function.
+ * It must react to delta being more/less than zero.
+ */
+var fs = 5.0;
+function handle(delta) {
+        if (delta < 0 && fs > 2.0)
+	{
+		fs -= 0.2;
+	}
+        else 
+	{
+		if(fs < 22.0)
+			fs += 0.2;
+	}
+	document.getElementById('sam').style.fontSize = fs + "pt";
+}
+
+/** Event handler for mouse wheel event.
+ */
+function wheel(event){
+        var delta = 0;
+        if (!event) /* For IE. */
+                event = window.event;
+        if (event.wheelDelta) { /* IE/Opera. */
+                delta = event.wheelDelta/120;
+                /** In Opera 9, delta differs in sign as compared to IE.
+                 */
+                if (window.opera)
+                        delta = -delta;
+        } else if (event.detail) { /** Mozilla case. */
+                /** In Mozilla, sign of delta is different than in IE.
+                 * Also, delta is multiple of 3.
+                 */
+                delta = -event.detail/3;
+        }
+        /** If delta is nonzero, handle it.
+         * Basically, delta is now positive if wheel was scrolled up,
+         * and negative, if wheel was scrolled down.
+         */
+        if (delta)
+                handle(delta);
+        /** Prevent default actions caused by mouse wheel.
+         * That might be ugly, but we handle scrolls somehow
+         * anyway, so don't bother here..
+         */
+        if (event.preventDefault)
+                event.preventDefault();
+	event.returnValue = false;
+}
+
+/** Initialization code. 
+ * If you use your own event management code, change it as required.
+ */
+if (window.addEventListener)
+        /** DOMMouseScroll is for mozilla. */
+        window.addEventListener('DOMMouseScroll', wheel, false);
+/** IE/Opera. */
+window.onmousewheel = document.onmousewheel = wheel;
+
+
+function icol(col)
+{
+	return Math.abs(col - 255);
+}
+
+window.setInterval(cc, 15);
+window.setInterval(bgcc, 75);
+
+var colours = Array();
+colours['r'] = Array(Math.floor(Math.random()*256), Math.floor(Math.random()*4));
+colours['g'] = Array(Math.floor(Math.random()*256), Math.floor(Math.random()*4));
+colours['b'] = Array(Math.floor(Math.random()*256), Math.floor(Math.random()*4));
+
+function cc()
+{
+	for(val in colours)
+	{
+		d = colours[val][1];
+		c = colours[val][0];
+		if((c >= 255 && d >= 1) || (c <= 0 && d <= -1))
+		{
+			colours[val][1] *= -1;
+		}
+		colours[val][0] += d;
+	}
+	document.getElementById('sam').style.color = "rgb(" + colours['r'][0] + "," + colours['g'][0] + "," + colours['b'][0] + ")";
+}
+
+var bgcolours = Array();
+bgcolours['r'] = Array(Math.floor(Math.random()*21), 1);
+bgcolours['g'] = Array(Math.floor(Math.random()*21), 1);
+bgcolours['b'] = Array(Math.floor(Math.random()*21), 1);
+
+function bgcc()
+{
+	for(val in colours)
+	{
+		d = bgcolours[val][1];
+		c = bgcolours[val][0];
+		if((c >= 255 && d >= 1) || (c <= 0 && d <= -1))
+		{
+			bgcolours[val][1] *= -1;
+		}
+		bgcolours[val][0] += d;
+	}
+	document.body.style.backgroundColor = "rgb(" + bgcolours['r'][0] + "," + bgcolours['g'][0] + "," + bgcolours['b'][0] + ")";
+	document.body.style.color = "rgb(" + icol(bgcolours['r'][0]) + "," + icol(bgcolours['g'][0]) + "," + icol(bgcolours['b'][0]) + ")";
+}
+//]]>
+</script>
+<style type="text/css">
+body
+{
+	font-family: Verdana, Helvetica, Arial;
+	font-size: 12px;
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+}
+pre
+{
+	font-family: monospace, Courier;
+	font-size: 5.0pt;
+	font-weight: normal;
+	text-decoration: none;
+	letter-spacing: normal;
+	line-height: 0.75;
+}
+a { color: inherit }
+</style>
+</head>
+<body>
+<h1>You</h1>
+<pre id="sam">                                                                    .. .........                                                                                
+                                                               ...:+~==:.......... ....,,.                                                                      
+                                                            .::=:=~:,:~:.  ...........,,,.,,.                                                                   
+                                                          ,=+++=~,,....... ...........,....,::.                                                                 
+                                                       .,~=I7+~,,,........  ..........,.....~.~                                                                 
+                                                     ..:+77??==~.......... ..............,.,,:,                                                                 
+                                                     ,=?7$$7$~~=:..........  .. .... ....:~,~~.                                                                 
+                                                     .~$$777?+?~...... .  .  .... .. ....:~~?:                                                                  
+                                                     .~?7$ZIII~==....... .. ... .........~:,~                                                                   
+                                                      .=7$ZZ777+~~:........  . ..... ..,:=,,~                                                                   
+                                                        ~7$ZZ7I+=~:. ... ..  ..........,:+~,                                                                    
+                                                         =ZZO?7??~:....................,=++,                                                                    
+                                                         .7ZZ7????~,....,,,,.. ,~:=+++::++I.                                                                    
+                                                          +ZOOI7II+==?7OOO$888888888888OZ8$:                                                                    
+                                                          :ZOOZ?ZOZZOOOO88. +8888DDDD888DNO$                                                                    
+                                                          ,OZNDNOOZO8OOO8Z.  ODZO8O8888DDND:                                                                    
+                                                          ,OMNN8OOZOO8OOO~.  .,=,~,,8887O~I?.                                                                   
+                                                          ,$NNNDDOZ8Z,....        $7O8OOZ,:?,                                                                   
+                                                          .77NDD8OOOOZ....       I?$ZZZZZD=.,           .                                                       
+                                                          ,?$7IO88OZOOOZ,.      .ZZZZOOOONN..:   .+~ :7,                                                        
+                                                          ,I$7OZ88$ZOOOZO.       ,OOOO8O8D8.D8 +?: .I$O,.                                                       
+                                                          ,I7?MN88$8OZZO,.,8OZ$?  .88OOOO88N$77~~IOOZ8=I                                                        
+                                                ,,., ..  ..Z$7MNN8ZOOOOO.=8Z$OOOOO+8DD$?77:.$OZ88OOZZ7I...                                                      
+                                               ,~ZI???7$$O77OI:7NND8D88+8D888DD?I:~=.:78DDNNNNDOOO888O$,?+,                                                     
+                                              . 7O8D8OZZOD8888I==~+?++=I+=~,,:~+Z8DNNMNNNDD8DNNOZ8D8??OIZ??.                                                    
+                                               :Z8O8D888888DDMNMNDDDDDDDNNNDNNNNMNDNNDNDOO88DNNND8$888O87I7,                                                    
+                                                ~I8ZO$O8DD8DDNMNNNNMNNNMMMMMMNNNN8Z$$7?=~=I$DDNN77,ZDZO8+~~                                                     
+                                                 =I8ZZOO88ZDNDDDDN8$OZ7I7Z777$$OI?=~~,==:7+D7$$O?+++.:?,.                                                       
+                                                   =8ZZZDDZNNDN88MO7I+~~::~:::.7Z.,:::=7ODDDDZ787+=~~,..                                                        
+                                                    .?ODD7DZZDNO88D=787Z87,:.~~.8IO8NMNNDNDNDI?O7~:,I?~                                                         
+                                                   =?77D7$Z7DD888NDD888NMNN88D8+ZDNDO~7=,$8ZO??$Z=:,$7:  =                                                      
+                                                   :,~I?I7I$$N8D8DDNN$DD.+O8DN7.:DN+7+~.:??I~+?OZ=~$ZI. +,                                                      
+                                                   .I?II7?IZD8DO78D$DOI++,IIO8+,.+D?IO?~~?+::+$Z+.,,..:+~                                                       
+                                                  .~?I$I7ZZ8DDN8Z$~~8?=~+:,:?87, ,7?~==++~,,~?Z$+ZND~=~.                                                        
+                                                  . ,=?+=Z77+$MNZ?I=~?7~:::,?7I: .?+,.,==:::=IO87NMMNZ.                                                         
+                                                   .~+:.:8D7=7OMZO7+?+~~~,,:~=8~.,=?=,,~~~~??ZZD~MMMMMMO                                                        
+                                                    ,,+~$$ZOZ+$ND8Z7II?+~:::=??=,.:77,::=+7$Z?78=MNMMMMM8                                                       
+                                                     :=+8ZZO8DONND88ZOII~~,:+$7I~ =OO?:=+II7?,ID$NMMMMMMMO                                                      
+                                                     :?8$I7:NDMMMDNO8Z7?::,,O8DD$=Z$7~,,==I?.,I7..DMMMMMMN.                                                     
+                                                     .~OZOONMDMMMMO$OIII==:,,~ZO88D?.,,:,=?..+O,  .:MMMMMMN?                                                    
+                                                     ..7888MMMMMMM87$I??+~:.,=I7$$+,,.,+~.+:.?+,  ZMMMMMMMMN8~., . ..                                           
+                                                  ~$DNMMMMMMMMMMMNM7O$+~~~+:~+?=~:,...??=.=,+8=: 7NMMMMMMMMMNNNN8ZOZ$?=:.  ..                                   
+                                              :ONMMMMMMMMMMMMMMMMZDNDOZ+,,7DOODO88$ ???:~ +,$O?=NZ NMMMMMMMMMNMMD888OOO8OOZ:.. .=:.                             
+                                         $8~.ONMMMMMMMMMMMMMMMMMM$?ONDZO,...I?7$7I7$8,::,.,=8$=MD$= NMMMMMMMMNMN8ZZZOOOOZZZOO7788OO?                            
+                                        ZMNNNMMNNNMMNNMMMMMMMMMMMZ7?ODZD+~~~:==7O8ZZ+Z:~::~?,,MMNDZ$$ZOMMMMMMMD8ZZ$7$ZZZOOOOOZZODD8O?                           
+                                       7MNNNNNMMMMMMMMMMMMMMMMMMMMMNN78D$I=I7I7$??I. ,~:=== :NN$$$$$$$8NMMMMMMMDZ$$$$$OOOOOOOZO8OO88$                           
+                                      ,DMNNDDDMMMNNMMMMMMMMMMMMMMMMD8OO$ODZ?$ZI$+:,.   ,+=.DN8DDO88$$$DMMMMMMMMMMZ$$$ZZOOO8OO8ZOZODDOZ?                         
+                                      ~MMNNND8MMMMDMMMMMMMMMMMMMMMMNZ,~==~~ODD7Z~,~    =7DDZDDDD88D$$$NMMMMMMMMMNMZ$$OOOOOOOZOOOZZO8NZ$                         
+                                      +MMMNN8N$MMMMMMMMMMMMMMMMMMMD7=7I~==++:8IZ+.    ,,I8D8Z$$7OZ$Z$$NMMMMMMMMMMNZ$$O8Z$OOOOOOZ$ZZ8NOZ:                        
+                                      .OMMMND8DNMMMMMNMMMMMMMMNMMMN+ZZDI$?7.O~~:+::?+:. IO8D8O$$$7$$$ONDNMMMMMMMMDZZZZDD8OZOOZZ:Z$ZDDNOO+                       
+                                      .NMMMMMMDONMMMMMMMMMNMMMMMMM=~Z8N77,7~O$8+$$Z7+,+I~D8OD88$$$$$7ND8NNNNMMMNDOOOO8DDD~ZZZZ,~77Z8NNZO88.                     
+                                      .NMMMMMMMMD8MMMMMMMMMMMMMMMD~~~7DI$?8:,:O~ZNNOII$.+,DD88DOZZZ$7NNDNODD8DMNDNNMZ$$ZOZNOZO$,77$8NNOO8DZ                     
+                                    .,INMMMMMMMMMMNMMMMMMMMMMMMMM?$~+I8NZ8O,,    ,,,OZO ..$$DNDDDZZ$$$$ND$888OZNMO8$O8O88ON8OZ7II7$DNNOZDND                     
+                                    .$MMMMMMMMMMMMMMMMMMMMMMMMMM~?ZI7$OD8M8OO$I?=+,?7$O,,.:+  :IODD?:,~DOZ8DD8OOOO88DDNND8OOOOZZ$$ONND,Z8DNI                    
+                                     $MMMMNMMMMMMMMMMMMMMMMMMMMN:::,,=?78Z$7$Z8O8$7Z$7I? I~:    ..... +DZ8NNNNDNDDNNNNNND8$OZDZZ$Z8NNO,$8DNO                    
+                                     :NMMDMMMMMMMMMMMMMMMMMMMMDNI?$,,,~~+??:.. ,~+=8DD== +.~.    .....IDOZNNNNDNDN8OO88NDOIOZD$8$ONMD$$O8NNZ                    
+                                     .8MMMNOMMMMMMMMMMMMMMMNMN$$$+O$$$I777$Z7:,:, =$?I ~ ? ~     ......DDOZO88OZZOOOZOONOZDOZOO$$8NMOI$O8NN=I                   
+                                     .,MMMMMDNMMMMMMMMMMMMMMNO8?Z$I8?,, :~ZOZZZZI$8O~.: . .      ..,,. ND8ZIZO8ZI$OZ$ZOOZZDOOZO$8NN87$ZDNND+8Z                  
+                                     ..OMMMMD88OOMMMMMMMMMMNII??O8OO=,,,,...,:~I8O$$.:I. ~ ,      ..,. MDD8I$OO8OZ8O8NMNODDOOODZDNNO$8DNMNZINO                  
+                                     ,DMMNZ$ZDO8NNNMDMMMMM8.??+?ZODOZZI:~++????+++O=..+~:~..,      ... ND887$ZZOO8OOZZOOZ8OZONDNMMOZ8DNNN7IOMO                  
+                                    ?MMMND8ZD8ODNNNNMMMNMN..8?+?7DZD$7ZOZO78Z$ZOOO?:.,,~:,..        .. ND88$ZOO8OOOOZ$$Z$8888MNNNO$ONNNN=IIMMZ                  
+                                    DMMMMMMNN888NNNNMMMD,., O+??7DD87O$=?IO8O$I$DNN..,:,= ,         .. M8DO?ZOO8OOOOOZI7$8ZODMMMOZONMMN,I7MMN                   
+                                    7MMMMMMMMMMNNMNNN$8:... D+?I$OOD88O8ZI?ONMMNMNO ..I++=:..       ..:MDDOO$OO8OO8O8OO$8OOONMMOO8NNMD7=IMMM=?+                 
+                                    .NMMMMMMMMMMNMNNOD7:~., 8=?I$OOODD8$78DMMNMMMM7. ~?$$I,~,..     ..8ND88OZZZOOO8OD8ZZ8ZZONMMZ8NNMD.,IMM8. I+                 
+                                   .,?NMMMMMMMMNMNOZ8D~+.., Z8+IZ$ZO8DDDINNNMMMNMN?.  ,O?I  :,.      .DNDD8OI$OO8O88O888OZZ8MMMONMMN.7OMMN. I??                 
+                                    :IDMMMMMMMDNN$8N8Z:  .,. Z?$Z7ZZO$I$OZNNMMNMMN?. .        ,.   , .DMD8D8I$O8OOOD8D8O$$ZNMMN8ZM8.:MMM8=  I?+                 
+                                   ,~MMMM8MMMNDNZN8MD+.  ,,.  ?7I?7$$=N=I+NMMMNNMN?.            .,~,,.NN88D87$ZZZZOD88OZ7$$MMMN8ZZ.NMMN7I.  +++                 
+                                  ~=8MMMNMNNDMN8Z$NM8,.  :~,, 7I?=7I~$I~~I:MMNDNND? ,      .:     ~~,.DNDDDD8OOZIZO88ON77$8MMMMD78ONDI7?.  I+?:                 
+                                 .$IMMMMMMMNNM877OMNO..  .~:,.,7?=?+IOI~~7~NMMNMMD= :       ,:,    :,.NNNDDD888ZIOO8D8M777ZMMMMD???I?++   ~+?I                  
+                                 .O$MMMMNMMNND87$NMMO:,  ,~~,:  O?=?$++==+=NMNNNND: ,.       .,,   :,,NNN8DDDO88$8DDDDMII7$MMMMM?++:+?   ,??7.                  
+                                  +ZMMMMMMM8D7$ZZNMMMI=.  :=~:+ ZD$,  ,++~DMMMNNM8:  ..        ,.,  .,NNN8O88O8ZZO8DOMN??77NMMMM8=~,:?  =II7~                   
+                                . .8MMMM$Z7877$8NMMMN$?=   ,=?+.8ZO  =$DDNMMMMNNND,   ..   ,.   . ...:DNMDDDD8D8888D8M???77?NMMMN=. .., ,II                     
+                                  .78NZ++$Z7$$$MMMMMMN?++.   +.=Z.  8$DDNMMMMMNNNN?   ,.  .     ....+.ONN88DDD888D88NM++?$7+IMMMN=      .                       
+                                  ,IDNO$OOZ$Z8NMMMMMMNI?++,..=.I=  7DDDNNMNMMMNNMM8=, ,  .      ...:: ZNN88D888888DDMN=?7Z~+OMMMD~.                             
+                                ..~8DDN88D8ONMMMMMMMMMM$+:?+,~++++78D8NMNMNMMMMNNMNI=?7  .      ..,.,.OMMDDD8DDDDDDNM7+IZI+?8MMM8~.                             
+                                  .ODMNMNMMDMMMMMMMMMMMMO,.~IZ??7$OO88NMMMMDMMMNNNMN=,77?.     ..?~?..OMMNDOO88DDDDMM??7$.??DO,+8~..                            
+                                ,..8NMMMMMMDMMMMMMMMMMMMMNMZ8D?I7~,ODNMMMMMDNMNNNNMMD..=++:    ..7.: .$MMM8Z8888DDDM87I77=?+77,,O~..                            
+                                ,..DMMMMMMMMMMMMMMMMMMMMMMMMN?I?+$NDOMMMMMMMNMMMMNNMNI   +~.    ..?, .7NMN8O8DDDDDMM$7$$.: =, .,=~,.                            
+                                ...$NMMMMMMMMMMMMMMMMMMMMMMMMMNI:,ONMMMMMMMMNNMMMNNMMZ    ,. ,.I~.,   $NNMDZ8D88D8M8$$$7       ..:..                            
+                               . .,:DMMMMNMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNMMNNMN.,  ..,,=:,+:  ,=DMMNZ88888MMZ$$$=                                        
+                               .,.,,7MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNNN,,,:..,~: ,~     $NNMOOO88DMNOOZ$                                         
+                                ..,,+NMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMNMNN .,..:~I+,:,  .  IDNMN8O8ONMIO.I$                                         
+                                ..,~+DMMMNMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNN  :,::~~:::   .  . NNN8O88NN :. .                                         
+                                 ..,ZOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMM   :,:+::,   ..   ?$NNNDO$DD                                              
+                                 ..,::DMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNMMNI   ,~~,.=  ..     NMNDIIDN:                                             
+                                  ..,:~8MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNMMMMMMD8O$$Z$=   .     ?8NNNZ=ZN?                                             
+                                  ...,==+777$ZOMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMNNMM87$8ZZ$7=.   ..      ZZZNN$$$7                                             
+                                   ...:=++I7$$$ZDNMMMMMMMMMMMMMMMNMNNNNMMMMNMMMMMNMMMO$O$I~      ..       IO7ZNI7I~   .     ..~ :+ .=:., :    .   ,  :,         
+                                    ..,~=+?I77$ZO$$Z88DDDDNMMNNNNMMMMMNMMMMMMMMMMNMMMO..     .  ..        ,~.~7Z+.,,:.   .  . .  .::,  .   .     ..?,??,        
+                                    ...,~++?I77$7++~===+7NDDNDMNNMMNMMNNNNMMMMMMMMMMMO=+~~::    .              ~.                                               
+                                     ...,:~?III?~,===+++7DDDDMNNNMMMNNNNNNNDMMMMMMONNO                                                                          
+                                      ....,~===~::~====?O8DDNMNDNNMNNNNNNNNNMMMNOOODNZ                                                                          
+                                       ......,,,:::~~~=IZD8NMNDODDO888ONN8MMMNNNN8$8N$                                                                          
+                                     ............,,,,,,,?$NNND,ID87??+IDO8MMMDNMNZOZNZ                                                                          
+                                                ....... .=8DO::~7I+=~~?77DMMMD8NNN77D8                                                                          
+                                                   .    .~~:.=:~=+=::~=?IZ8,$ZZZ8N$$Z8                                                                          
+                                                        .....=,::,...,+?+77,,,ZO$NDZI?.                                                                         
+                                                                     .~.+: ,, =..:7+                                                                            
+                                                                            .                                                                                   
+</pre>
+<h2>are not supposed to be here!</h2>
+</body>
+</html>

@@ -1,0 +1,73 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 19:54:24 GMT
+Server: Apache
+Last-Modified: Sun, 13 Sep 2009 22:47:32 GMT
+ETag: "877-55a7a900"
+Accept-Ranges: bytes
+Content-Length: 2167
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bösch+schrammel  - Architekten</title>
+<meta name="keywords" content="bösch+schrammel, Architektur, Architekten, Wien, Ziviltechniker, Claudia Schrammel, Günter Bösch" />
+<meta name="description" content="Bösch + Schrammel - Architekten" />
+<script type="text/javascript">
+<!--
+/*  Fader start */
+
+document.write("<style type='text/css'>#fader {visibility:hidden;}</style>");
+
+function initImage() {
+	imageId = 'fader';
+	image = document.getElementById(imageId);
+	setOpacity(image, 0);
+	image.style.visibility = "visible";
+	fadeIn(imageId,0);
+}
+function fadeIn(objId,opacity) {
+	if (document.getElementById) {
+		obj = document.getElementById(objId);
+		if (opacity <= 100) {
+			setOpacity(obj, opacity);
+			opacity += 1;
+			window.setTimeout("fadeIn('"+objId+"',"+opacity+")", 10);
+		}
+	}
+}
+function setOpacity(obj, opacity) {
+	opacity = (opacity == 100)?99.999:opacity;
+	// IE/Win
+	obj.style.filter = "alpha(opacity:"+opacity+")";
+	// Safari<1.2, Konqueror
+	obj.style.KHTMLOpacity = opacity/100;
+	// Older Mozilla and Firefox
+	obj.style.MozOpacity = opacity/100;
+	// Safari 1.2, newer Firefox and Mozilla, CSS3
+	obj.style.opacity = opacity/100;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<link href="rohbau.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="initImage();">
+<!-- Suchmaschinen-Text -->
+<div class="spider">bösch+schrammel - Bösch und Schrammel - Architekten Tendlergasse 13/19, A-1090 Wien</div>
+<!-- //-->
+
+
+<div class="start"><a href="gross/index.html"><img src="i/bs_startlogo.gif" alt="bösch+schrammel - architekten" name="fader" width="596" height="96" id="fader" /></a></div>
+
+
+
+</body>
+</html>

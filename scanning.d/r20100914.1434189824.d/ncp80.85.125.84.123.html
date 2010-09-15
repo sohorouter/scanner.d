@@ -1,0 +1,81 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=01950A2959582F173D319E9DCCE51BC6; Path=/
+Content-Type: text/html;charset=UTF-8
+Content-Language: de
+Content-Length: 2078
+Date: Tue, 14 Sep 2010 19:59:16 GMT
+Connection: close
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+
+
+<head>
+<link href="/theme/default/img/icons/starface.ico" rel="shortcut icon">
+<title>
+STARFACE VoIP Software</title>
+
+
+<script type="text/javascript" language="javascript1.2">
+
+var ajaxToken = "1284494356405"
+var starfacetopwindow = window;
+</script>
+
+<script type="text/javascript" src="/js/lib/jquery/jquery-latest.js?v=4.0.1.14" language="javascript1.2"></script>
+<script type="text/javascript" src="/js/standard.js?v=4.0.1.14" language="javascript1.2"></script>
+<script type="text/javascript" src="/js/init.js?v=4.0.1.14" language="javascript1.2">
+</script>
+
+<script type="text/javascript" language="javascript1.2">
+
+if(window.opener)
+{
+	jQuery(window.opener).bind("unload",opener.window.closeContent||starface.emptyFunction);
+}else if(false)
+{
+	window.location.href = "/logged.jsp";
+}
+var localTest = false;
+
+var resourceKeys = {};
+resourceKeys["popup.blocked"] = 'Sie müssen in ihrem Browser Popups für <span class="bolddark">'+window.location.hostname+'</span> zulassen um diese Funktion zu verwenden.';
+resourceKeys["jsp.error.choose.file"] = "Es wurde keine Datei ausgewählt!";
+var _starfaceError = null;
+function reportJSError(error)
+{
+	if(localTest)
+	{
+		if(_starfaceError==null)
+		{
+			get("main.frameset").rows = "*,0px,0px,300px";
+			_starfaceError = window.errorframe.error;
+		}
+		if(_starfaceError)
+		{
+			get("main.frameset").rows = "*,0px,0px,300px";
+			_starfaceError(error);
+		}else
+		{
+			window.errorframe.location.href = "/jsp/error/js-error.jsp?message="+error;
+		}
+	}
+}
+</script>
+
+
+</head>
+
+<frameset rows="*,0px,0px,0px" frameborder="no" framespacing="0" border="0" id="main.frameset">
+        <frame src="/start.jsp" name="mainframe" scrolling="auto" >
+        <frame src="/blank.html" name="callerframe" scrolling="no" >
+        <frame src="/blank.html" name="webphoneframe" scrolling="no" >
+        <frame src="/blank.html" name="errorframe" scrolling="no" >
+</frameset>
+</html>

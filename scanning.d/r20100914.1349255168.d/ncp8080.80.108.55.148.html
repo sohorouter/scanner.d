@@ -1,0 +1,149 @@
+HTTP/1.0 200 OK
+Server: http server 1.0
+Content-type: text/html; charset=UTF-8
+Date: Tue, 14 Sep 2010 10:19:39 GMT
+Last-modified: Wed, 28 Apr 2010 19:02:32 GMT
+Accept-Ranges: bytes
+Connection: close
+Content-length: 3729
+
+<html>
+<head>
+<title>NAS</title>
+<script language="JavaScript">
+
+function setCookie(name, value, expires)
+{
+document.cookie = name + "=" + escape(value) + "; path=/" + ((expires == null) ? "" : "; expires=" + expires.toGMTString());
+if (getCookie(name) == null)
+alert("You must enable the cookies to keep the language setting.");
+}
+
+function getCookie(name)
+{
+var cname = name + "=";
+var dc = document.cookie;
+
+if (dc.length > 0)
+{
+begin = dc.indexOf(cname);
+if (begin != -1)
+{
+begin += cname.length;
+end = dc.indexOf(";", begin);
+if (end == -1)
+end = dc.length;
+return unescape(dc.substring(begin, end));
+}
+}
+return null;
+}
+
+//Shone added for detecting default system language 2005,10,06
+function getSystemLANG()
+{
+//return clientInformation.systemLanguage; //for IE (these one is other method)
+if(document.all)
+return navigator.systemLanguage      //for IE
+else if(document.layers)
+return navigator.systemLanguage             //for N4
+else if(document.getElementById)
+{
+if(navigator && navigator.systemLanguage)
+return navigator.systemLanguage.substr(0,2) //for N6,Moz
+else
+{
+if(typeof clientInformation != 'undefined')//Shone modified 2006,01,13
+return clientInformation.systemLanguage;//for Mac Safari browser
+else
+return ;//For FireFox
+}
+}
+else
+{
+if(typeof clientInformation != 'undefined')//Shone modified 2006,01,13
+{
+if(clientInformation && clientInformation.systemLanguage)
+return clientInformation.systemLanguage;
+}
+}
+}
+
+var cookie_name = 'nas_lang';
+var exp = new Date();
+var default_lang = 'ENG';
+var result = getCookie(cookie_name);
+var diff1=exp.getTime();
+
+if (result == null)
+{
+exp.setTime(exp.getTime() + (24 * 60 * 60 * 1000 * 3650));
+system_lang=getSystemLANG();//Shone added for detecting default system language when no cookie has been set 2005,10,06
+if(system_lang == 'zh-cn')
+default_lang = 'SCH';
+else if(system_lang == 'zh-tw')
+default_lang = 'TCH';
+else if(system_lang == 'ja')
+default_lang = 'JPN';
+else if(system_lang == 'en-us')
+default_lang = 'ENG';
+else if(system_lang == 'ko')
+default_lang = 'KOR';
+else if(system_lang == 'de')
+default_lang = 'GER';
+else if(system_lang == 'fr')
+default_lang = 'FRE';
+else if(system_lang == 'it')
+default_lang = 'ITA';
+else if(system_lang == 'ru')  //add by KenChen 20060519
+default_lang = 'RUS';
+//	else if(system_lang == 'pt' || system_lang == 'pt-br')
+//		default_lang = 'POR';
+else if(system_lang == 'es')
+default_lang = 'SPA';//Shone added end
+
+setCookie(cookie_name, default_lang, exp);
+result = getCookie(cookie_name);
+}
+var exp2 = new Date("January 1,1970 00:00:00");
+var diff2=exp2.getTime();
+
+//window.location = '/indexnas.cgi?counter=' + Math.floor((diff1-diff2)/1000);
+window.location.replace('/indexnas.cgi?counter=' + Math.floor((diff1-diff2)/1000));
+/*
+if (result == 'ENG')
+window.location = '/indexeng.html';
+else if (result == 'TCH')
+window.location = '/indextch.html';
+else if (result == 'SCH')
+window.location = '/indexsch.html';
+else if (result == 'JPN')
+window.location = '/indexjpn.html';
+else if (result == 'FRE')
+window.location = '/indexfre.html';
+else if (result == 'GER')
+window.location = '/indexger.html';
+else if (result == 'KOR')
+window.location = '/indexkor.html';
+else if (result == 'SPA')
+window.location = '/indexspa.html';
+else if (result == 'ITA')
+window.location = '/indexita.html';
+else if (result == 'RUS')
+window.location = '/indexrus.html';
+else if (result == 'NOR')
+window.location = '/indexnor.html';
+else if (result == 'FIN')
+window.location = '/indexfin.html';
+else if (result == 'DAN')
+window.location = '/indexdan.html';
+else if (result == 'SWE')
+window.location = '/indexswe.html';
+else if (result == 'POL')
+window.location = '/indexpol.html';
+else
+window.location = '/indexeng.html';
+*/
+</script>
+</head>
+</html>

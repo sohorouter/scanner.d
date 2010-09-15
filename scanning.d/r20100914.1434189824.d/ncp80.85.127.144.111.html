@@ -1,0 +1,223 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Last-Modified: Sun, 25 Jul 2010 17:59:23 GMT
+Accept-Ranges: bytes
+ETag: "19d25a1d232ccb1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Tue, 14 Sep 2010 20:25:48 GMT
+Connection: close
+Content-Length: 11143
+
+<html><title>SOS</title>
+<link href="css/standard.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/standart.js"></script>
+<style type="text/css">
+<!--
+#Titel {
+	position:absolute;
+	width:306px;
+	height:32px;
+	z-index:4;
+	left: 40px;
+	top: 6px;
+}
+-->
+</style>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="images/bgrechts.gif">
+<table  width="100%" border="0" cellpadding="0" cellspacing="0" height="100%" bgcolor="#990099">
+  <tr> 
+    <td height="30" valign="middle" > 
+      <div id="Titel">CONTAXX-SOS</div>
+
+      <table width="100%" height="40" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td>&nbsp;</td>
+          <td width="3" background="images/buttontrenner.gif"><img src="images/leer.gif" width="2" height="10"></td>
+          <td width="3" valign="middle" background="images/buttontrenner.gif"><img src="images/leer.gif" width="2" height="10"></td>
+          <td width="120" valign="middle">&nbsp;</td>
+          <td width="3" valign="middle" background="images/buttontrenner.gif"><img src="images/leer.gif" width="2" height="10"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td height="1" valign="top" bgcolor="#000000"><img src="images/leer.gif" width="100" height="1"></td>
+  </tr>
+  <tr> 
+    <td valign="top" bgcolor="#FFFFFF" class="contentarea"><table width="100%" border="0" cellpadding="8">
+      <tr>
+        <td><div style=" width:850px;" > <br>
+              <table width="100%" border="0" cellpadding="0" cellspacing="4">
+                <form name="form1" method="post" action="SOSlogin.asp">
+                  <tr>
+                    <td height="12" colspan="2" align="left"><strong>Anmeldung</strong></td>
+                    <td height="12" align="left">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="1" colspan="3" align="right" bgcolor="#990099"><img src="images/leer.gif" width="100" height="1"></td>
+                  </tr>
+                  <tr>
+                    <td height="12" align="right">Username</td>
+                    <td height="12"><input name="username" type="text" id="username" style="text-align: left;">
+                    </td>
+                    <td height="12" align="left">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td width="15%" height="12" align="right">Passwort</td>
+                    <td width="20%" height="12"><label>
+                      <input name="passwort" type="password" id="passwort" style="text-align: left;">
+                      </label>
+                    </td>
+                    <td height="12" align="left"><label>
+                      <input type="submit" name="Submit" value="Senden">
+                      </label>
+                    </td>
+                  </tr>
+                </form>
+              </table>
+          <br>
+              <br>
+              <br>
+              <table border="0" cellspacing="4" cellpadding="0" width="100%">
+                <form action="SOSneureg.asp" method="post" name="form1" id="form1">
+                  <tbody>
+                    <tr>
+                      <td width="15%" height="12" align="left"><strong>Neu Registrieren </strong></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#990099" height="1" align="right"><img 
+            src="login-Dateien/leer.gif" alt="" width="100" height="1" /></td>
+                    </tr>
+                    <tr>
+                      <td ><div style=" float:left;">
+                        <table width="350" border="0" cellpadding="0" cellspacing="4">
+                            <tbody>
+                              <tr>
+                                <td height="12" align="right">Vorname</td>
+                                <td height="12"><input  id="vorname" 
+            name="vorname" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Nachname</td>
+                                <td height="12"><input  name="nachname" /></td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">&nbsp;</td>
+                                <td height="12">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Name der Gesellschaft</td>
+                                <td height="12"><input  name="gesellschaft" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Strasse</td>
+                                <td height="12"><input    name="strasse" />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Plz/Ort</td>
+                                <td height="12"><input   name="plz"  size="7" />
+                                    <input    name="ort"  size="20" /></td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Bundesland/Kanton</td>
+                                <td height="12"><input  name="bundesland" /></td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Land</td>
+                                <td height="12"><input   name="land" /></td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">&nbsp;</td>
+                                <td height="12">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Email</td>
+                                <td height="12"><input  name="email"  size="20" /></td>
+                              </tr>
+                              <tr>
+                                <td height="12" align="right">Telefonnummer</td>
+                                <td height="12"><input name="telefon"  size="20" /></td>
+                              </tr>
+                              <tr>
+                                <td height="12" width="15%" align="right">&nbsp;</td>
+                                <td height="12" width="30%"><input value="Registrieren" style=" text-align:center; width:200px;" type="submit" name="Submit2"  />
+                                    <br /></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                          <div style=" float:right;"> <strong>Kontakt 1</strong>
+                              <table border="0" cellpadding="0" cellspacing="4">
+                                <tr>
+                                  <td align="right"><strong> Name</strong></td>
+                                  <td><input name="kontaktname1" type="text" id="kontaktname1" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                                <tr>
+                                  <td align="right"><strong> Telefon</strong></td>
+                                  <td><input name="kontakttelefon1" type="text" id="kontakttelefon1" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                                <tr>
+                                  <td align="right"><strong> Email</strong></td>
+                                  <td><input name="kontaktemail1" type="text" id="kontaktemail1" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                              </table>
+                            <br>
+                              <strong>Kontakt 2</strong>
+                              <table border="0" cellpadding="0" cellspacing="4">
+                                <tr>
+                                  <td><strong>Name</strong></td>
+                                  <td><input name="kontaktname2" type="text" id="kontaktname2" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                                <tr>
+                                  <td><strong></strong><strong> Telefon</strong></td>
+                                  <td><input name="kontakttelefon2" type="text" id="kontakttelefon2" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                                <tr>
+                                  <td><strong></strong><strong> Email</strong></td>
+                                  <td><input name="kontaktemail2" type="text" id="kontaktemail2" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                              </table>
+                            <br>
+                              <strong>Kontakt 3</strong>
+                              <table border="0" cellpadding="0" cellspacing="4">
+                                <tr>
+                                  <td><strong>Name</strong></td>
+                                  <td><input name="kontaktname3" type="text" id="kontaktname3" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                                <tr>
+                                  <td><strong></strong><strong> Telefon</strong></td>
+                                  <td><input name="kontakttelefon3" type="text" id="kontakttelefon3" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                                <tr>
+                                  <td><strong></strong><strong> Email</strong></td>
+                                  <td><input name="kontaktemail3" type="text" id="kontaktemail3" style="width:380px; text-align:left" value="" /></td>
+                                </tr>
+                              </table>
+                          </div></td>
+                    </tr>
+                  </tbody>
+                </form>
+              </table>
+        </div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr> 
+    <td height="1" valign="top" bgcolor="#000000"><img src="images/leer.gif" width="100" height="1"></td>
+  </tr>
+  <tr> 
+    <td height="20" align="right" valign="middle" bgcolor="#990099" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" style="padding-left:40; color:#FFFFFF">&copy; 2010 contaxx &nbsp;</td>
+        <td align="right" valign="middle" style="padding-right:40">&nbsp;</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+</html>

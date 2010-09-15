@@ -1,0 +1,85 @@
+HTTP/1.0 200 OK
+Server: http server 1.0
+Content-type: text/html; charset=iso-8859-1
+Date: Tue, 14 Sep 2010 20:06:03 GMT
+Last-modified: Fri, 24 Oct 2003 08:42:58 GMT
+Accept-Ranges: bytes
+Connection: close
+Content-length: 1917
+
+<html>
+<head>
+<title>NAS</title>
+<script language="JavaScript">
+function setCookie(name, value, expires)
+{
+document.cookie = name + "=" + escape(value) + "; path=/" + ((expires == null) ? "" : "; expires=" + expires.toGMTString());
+if (getCookie(name) == null) {
+alert("You must enable the cookies to keep the language setting.");
+}
+}
+
+function getCookie(name)
+{
+var cname = name + "=";
+var dc = document.cookie;
+
+if (dc.length > 0) {
+begin = dc.indexOf(cname);
+if (begin != -1) {
+begin += cname.length;
+end = dc.indexOf(";", begin);
+if (end == -1)
+end = dc.length;
+return unescape(dc.substring(begin, end));
+}
+}
+return null;
+}
+
+var cookie_name = 'nas_lang';
+var exp = new Date();
+var default_lang = 'ENG';
+var result = getCookie(cookie_name);
+
+if (result == null)
+{
+exp.setTime(exp.getTime() + (24 * 60 * 60 * 1000 * 3650));
+setCookie(cookie_name, default_lang, exp);
+result = getCookie(cookie_name);
+}
+if (result == 'DAN')
+window.location = '/indexdan.html';
+else if (result == 'DUT')
+window.location = '/indexdut.html';
+else if (result == 'ENG')
+window.location = '/indexeng.html';
+else if (result == 'FIN')
+window.location = '/indexfin.html';
+else if (result == 'FRE')
+window.location = '/indexfre.html';
+else if (result == 'GER')
+window.location = '/indexger.html';
+else if (result == 'ITA')
+window.location = '/indexita.html';
+else if (result == 'JPN')
+window.location = '/indexjpn.html';
+else if (result == 'KOR')
+window.location = '/indexkor.html';
+else if (result == 'NOR')
+window.location = '/indexnor.html';
+else if (result == 'POR')
+window.location = '/indexpor.html';
+else if (result == 'RUS')
+window.location = '/indexrus.html';
+else if (result == 'SCH')
+window.location = '/indexsch.html';
+else if (result == 'SPA')
+window.location = '/indexspa.html';
+else if (result == 'SWE')
+window.location = '/indexswe.html';
+else if (result == 'TCH')
+window.location = '/indextch.html';
+</script>
+</head>
+</html>

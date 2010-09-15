@@ -1,0 +1,40 @@
+HTTP/1.0 200 OK
+Date: Tue, 14 Sep 2010 10:15:34 GMT
+Server: Boa/0.94.14rc20
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 726
+Last-Modified: Tue, 17 Feb 2009 09:15:51 GMT
+Content-Type: text/html
+
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>Sauter novaWeb</title>
+</head>
+
+<script language="Javascript">
+  <!--
+  if (screen.width <= 320) {
+    document.location = "noframes.html";
+  }
+  //-->
+</script>
+
+<frameset rows="10%,*">
+  <frame name="header" scrolling="no" target="content" src="/cgi-bin/wdc.cgi?WDC-FUN=19">
+  <frameset cols="15%,*">
+    <frame name="content" target="main" src="/cgi-bin/wdc.cgi?WDC-FUN=45" scrolling="auto">
+    <frame name="main" src="/cgi-bin/wdc.cgi?WDC-FUN=10">
+  </frameset>
+  <noframes>
+  <body>
+  <h2>Sauter novaWeb</h2>
+  <p>
+    <a href="/cgi-bin/wdc.cgi?WDC-FUN=45&NOF=yes">Menu</a>
+  </p>
+  </body>
+  </noframes>
+</frameset>
+</html>

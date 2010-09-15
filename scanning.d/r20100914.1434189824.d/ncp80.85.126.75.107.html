@@ -1,0 +1,88 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:22:08 GMT
+Server: Apache
+Last-Modified: Wed, 01 Jan 2003 18:16:33 GMT
+Accept-Ranges: bytes
+Content-Length: 2120
+Connection: close
+Content-Type: text/html
+
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <TITLE>  </TITLE>
+
+<script language="javascript">
+	function showApplet()
+	{
+		window.status = "Java Version is ok"
+		open("/cgi-bin/mgmt.cgi", "_self")
+	}
+
+	function showEnvi(text)
+	{
+		alert("Unsupported JRE Version.\n" + text)
+		window.status = text
+		open("help/java_help_f.htm", "_self")
+	}
+
+	function showJavaError()
+	{
+		alert("Unable to load.\n Please check the version of the JRE and Browser.\n Also check the connection.")
+		open("help/java_help_f.htm", "_self")
+		window.status = "Unable to load"
+	}
+
+if(navigator.javaEnabled())
+{
+	//alert("Java is enabled.")
+}
+else
+{
+	alert("Java is not enabled or installed")
+	open("help/java_help_f.htm", "_self")
+}
+window.status = "Checking Java Runtime Environment ....."
+</script>
+
+</HEAD>
+
+<!--<BODY bgColor="#5576A1" >-->
+<BODY onerrror="showJavaError()">
+
+<P>
+<!-- MS IE will use this outer object -->
+<OBJECT CLASSID="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+	onerrror="showJavaError()"
+        CODETYPE="application/java"
+        WIDTH=0 HEIGHT=0 TITLE="EnviCheck">
+    <PARAM NAME="code" value="applet/EnviCheck.class" />
+    <PARAM NAME="archive" VALUE=applet2.3.2.0-008R.jar />
+    <PARAM NAME="cache_archive" VALUE=applet2.3.2.0-008R.jar />
+    <PARAM NAME="cache_option" VALUE="No" />
+    <PARAM NAME="mayscript" VALUE="True" />
+    <!-- Netscape/Mozilla will use this inner object  -->
+    <!-- Do *not* change the [if !IE] and ![endif] comments, they are read by IE -->
+    <!--[if !IE]> -->
+    <OBJECT CLASSID="java:applet/EnviCheck.class"
+	    onerrror="showJavaError()"
+            ARCHIVE=applet2.3.2.0-008R.jar
+            CODETYPE="application/java"
+            WIDTH=0 HEIGHT=0 TITLE="EnviCheck">
+        <PARAM NAME="cache_archive" VALUE=applet2.3.2.0-008R.jar />
+        <PARAM NAME="cache_option" VALUE="No" />
+        <PARAM NAME="mayscript" VALUE="True" />
+    </OBJECT>
+    <!-- <![endif]-->
+</OBJECT>
+</P>
+
+<P>
+    <FONT SIZE="-1">
+        <A HREF="help/java_help_f.htm">Help Viewing Java</A>
+    </FONT>
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,308 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:18:45 GMT
+Server: Apache/2.2.3 (Linux/SUSE)
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>taxi4me</title>
+   <link rel="stylesheet" id="stylesheet2" href="/css/t4me.css" />
+
+
+
+
+
+
+
+
+
+
+
+   
+   <script type="text/javascript" src="/js/functions.js"></script>
+   <script type="text/javascript" src="/js/auftrag.js"></script>
+   <script type="text/javascript" src="/js/kalender.js"></script>
+   <script type="text/javascript" src="/js/scheck.js"></script>
+   <script type="text/javascript" src="/js/daten.js"></script>
+   <script type="text/javascript" src="/js/faktura.js"></script>
+   <script type="text/javascript" src="/js/liste.js"></script>
+   <script type="text/javascript" src="/js/kommunikation.js"></script><!-- -->
+</head>
+<body onload="OnPageLoad();Index_OnLoad()" onmousemove="DOCUMENT_ON_MOUSEMOVE(event)">
+<div id="header">
+   <table style="margin:0px;border-spacing:0px;" border="0">
+      <tr>
+         <td style="vertical-align:bottom;">
+         
+         </td>
+         <td style="width:2em;"></td>
+         <td style="white-space:nowrap;text-align:center;width:100%;vertical-align:bottom;padding-bottom:3px;">
+            <span style="font-size:2.5em;">Kundenportal</span><br/>
+         </td>
+         <td style="text-align:right;vertical-align:bottom;">
+            
+            <a href="/?ignorecookie=1"><img src="/images/logo_taxi4me_transparent.png" alt="" style="border:none;"/></a></td>
+            
+      </tr>
+   </table>
+</div>
+
+<div id="body">
+   <div id="menu">
+      <!-- FIX : Auftragsartliste -->
+      <!-- Der Rest vom Menue -->
+<!--      [ %- IF m.check && (SESSION.logininfo.${m.check} != 1) %][ % NEXT %][ % END %] -->
+      <!-- / :: / -->
+      <div   class="menuitem1_hover"><a 
+                  href="/?;ignorecookie=1" 
+                  id="leftmenu_1" 
+                  >Home</a>        
+      </div>
+<!--      [ %- IF m.check && (SESSION.logininfo.${m.check} != 1) %][ % NEXT %][ % END %] -->
+      <!-- /register1.html :: / -->
+      <div   
+                  class="menuitem1"  
+                  onmouseover="this.className='menuitem1_hover';" onmouseout="this.className='menuitem1';"  ><a 
+                  href="/register1.html?sessionid=05675bd135d4d03c2b838a97578c84a0;ignorecookie=1" 
+                  id="leftmenu_2" 
+                  >Neuer Kunde? Einfach und schnell registrieren.</a>        
+      </div>
+<!--      [ %- IF m.check && (SESSION.logininfo.${m.check} != 1) %][ % NEXT %][ % END %] -->
+      <!-- /vergessen1.html :: / -->
+      <div   
+                  class="menuitem1"  
+                  onmouseover="this.className='menuitem1_hover';" onmouseout="this.className='menuitem1';"  ><a 
+                  href="/vergessen1.html?sessionid=05675bd135d4d03c2b838a97578c84a0;ignorecookie=1" 
+                  id="leftmenu_3" 
+                  >Benutzername oder Passwort vergessen?</a>        
+      </div>
+<!--      [ %- IF m.check && (SESSION.logininfo.${m.check} != 1) %][ % NEXT %][ % END %] -->
+      <!-- /hilfe/index.html :: / -->
+      <div   
+                  class="menuitem1"  
+                  onmouseover="this.className='menuitem1_hover';" onmouseout="this.className='menuitem1';"  ><a 
+                  href="/hilfe/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0;" 
+                  id="leftmenu_4" 
+                  >Hilfe / AGB</a>        
+      </div>
+      <div style="text-align:center;padding:2em 0em 1em 0em;">
+         <a href="http://www.austrosoft.at" target="_blank">
+         <img src="/images/austrosoft_logo.gif" alt="http://www.austrosoft.at" style="border:none;"/>
+         <!--<img src="/images/logo_austrosoft.png" alt="http://www.austrosoft.at" style="border:none;" /> -->
+         </a>
+      </div>
+   </div>
+   <div id="content" >
+      <div id="contentheader">
+         <span class="large">&nbsp;</span>
+      </div>
+      
+   <div class="form_header" id="form_header">Anmeldung</div>
+<div class="form_content">
+<form name="login" action="login.html" method="post">
+   <input type="hidden" name="sessionid" value="05675bd135d4d03c2b838a97578c84a0" />
+   <input type="hidden" name="ignorecookie" value="1" />
+   <fieldset class="group">
+      <br/> 
+      <fieldset>
+         <p style="margin:0px;">
+         <label></label>
+         
+         <a href="/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0&sprache=de&ignorecookie=1" 
+            onmouseover="switchLangImage('de', true)" 
+            onmouseout="switchLangImage('de', false)"><img id="lang_de" src="/images/flag_de_d.gif" style="border: none;" alt="Deutsch"/></a>
+         
+         <a href="/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0&sprache=en&ignorecookie=1" 
+            onmouseover="switchLangImage('en', true)" 
+            onmouseout="switchLangImage('en', false)"><img id="lang_en" src="/images/flag_en_d.gif" style="border: none;" alt="Englisch"/></a>
+         
+         <a href="/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0&sprache=da&ignorecookie=1" 
+            onmouseover="switchLangImage('da', true)" 
+            onmouseout="switchLangImage('da', false)"><img id="lang_da" src="/images/flag_da_d.gif" style="border: none;" alt="Dänisch"/></a>
+         
+         <a href="/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0&sprache=nl&ignorecookie=1" 
+            onmouseover="switchLangImage('nl', true)" 
+            onmouseout="switchLangImage('nl', false)"><img id="lang_nl" src="/images/flag_nl_d.gif" style="border: none;" alt="Niederländisch"/></a>
+         
+         <a href="/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0&sprache=fr&ignorecookie=1" 
+            onmouseover="switchLangImage('fr', true)" 
+            onmouseout="switchLangImage('fr', false)"><img id="lang_fr" src="/images/flag_fr_d.gif" style="border: none;" alt="Französisch"/></a>
+         
+         <a href="/index.html?sessionid=05675bd135d4d03c2b838a97578c84a0&sprache=cs&ignorecookie=1" 
+            onmouseover="switchLangImage('cs', true)" 
+            onmouseout="switchLangImage('cs', false)"><img id="lang_cs" src="/images/flag_cs_d.gif" style="border: none;" alt="Tschechisch"/></a>
+         
+        </p>
+         <label>Loginname</label><input type="text" name="loginname" id="loginname" /><br/>
+         <label>Passwort</label><input type="password" name="losungswort" id="losungswort" /><br/>
+         <label>&nbsp;</label><div class="labeltext" style="white-space:nowrap;"><input type="checkbox" name="rememberlogin" value="1" class="cb" />Cookie für späteres Identifizieren setzen ?</div>
+         <label>&nbsp;</label><button type="submit">Anmelden</button>
+      </fieldset>
+   </fieldset>
+</form>
+</div>
+<!--
+<div class="href"><a href="register1.html?sessionid=05675bd135d4d03c2b838a97578c84a0">Neuer Kunde? Einfach und schnell registrieren.</a></div>
+<div class="href"><a href="vergessen1.html?sessionid=05675bd135d4d03c2b838a97578c84a0">Benutzername oder Passwort vergessen?</a></div>
+-->
+
+
+
+   </div>
+   <div style="float:left;margin-left:1em;">
+   </div>
+</div>
+
+<div id="footer">
+   <div id="infotext" >
+   
+   
+   </div>
+</div>
+
+<iframe id="IFRAME_POPUP"></iframe>
+<div id="DIV_POPUP" style="display:none;" onkeydown="Popup_OnKeyDown(event)">
+</div>
+
+<div id="DIV_HINWEIS" style="display:none;">
+   <div id="DIV_HINWEIS_HEADER" onmousedown="return HINWEIS_ON_MOUSEDOWN(event)" onmouseup="return HINWEIS_ON_MOUSEUP(event)" onmouseout="return HINWEIS_ON_MOUSEUP(event)"><div style="float:right;"><a href="#" id="A_HINWEIS_CLOSE" onclick="HidePopup(); return false;" >[x]</a></div>Hinweis</div>
+   <div id="DIV_HINWEIS_CONTENT"></div>
+   <div style="text-align:center;margin-bottom: 0.5em;"><button type="button" onclick="HidePopup(); return false;" style="width:5em;">OK</button></div>
+</div>
+<div style="display:none;">
+   <div id="DIV_HINWEIS_BITTEWARTEN">Bitte haben Sie etwas Geduld ...!</div>
+   <div id="DIV_HINWEIS_GESPEICHERT">Die Daten wurden gespeichert!</div>
+   <div id="DIV_ERR_INVALID_NUMBER">ERR_INVALID_NUMBER/de</div>
+   <div id="DIV_ERR_INVALID_INTEGER">Bitte geben Sie eine ganze Zahl ein.</div>
+   <div id="DIV_ERR_INVALID_DATE">Das eingegebene Datum ist ungültig.</div>
+   <div id="DIV_ERR_INVALID_TIME">Die eingegebene Uhrzeit ist ungültig</div>
+   <div id="DIV_ERR_WRONG_TIME">ERR_WRONG_TIME/de</div>
+   <div id="DIV_ERR_MIND3BUCHSTABEN">Bitte geben Sie mindestens drei Buchstaben ein</div>
+   <div id="DIV_ERR_MIND1BUCHSTABE">Bitte geben Sie mindestens einen Buchstaben ein</div>
+   <div id="DIV_ERR_KEINEINTRAGGEFUNDEN">Es wurde kein Eintrag gefunden!</div>
+   <div id="DIV_ERR_BESTELLUNGDERZEITNICHTMOEGLICH">ERR_BESTELLUNGDERZEITNICHTMOEGLICHE/de</div>
+   <div id="DIV_ERR_KEINEHALTESTELLEZEIT">Sie haben keine Haltestelle und keine Haltestellenzeit ausgewählt</div>
+   <div id="DIV_ERR_KEINEADRESSE">Sie haben keine Adresse eingegeben. Bitte geben Sie eine Strasse/HausNr./Ecke ein</div>
+   <div id="DIV_ERR_KEINKUNDEODERADRESSE">Sie haben keine Adresse eingegeben. Bitte geben Sie einen Kunden oder eine Strasse/HausNr./Ecke ein</div>
+   <div id="DIV_ERR_FMSIFEHLER"></div> 
+   <div id="DIV_ERR_AFKOSTENSTELLEPFLICHT">Beim Auftrag muss eine Kostenstelle eingegeben werden</div>
+   <div id="DIV_ERR_AFRECHNUNGSKUNDEPFLICHT">Beim Auftrag muss ein Rechnungskunde angegeben werden.</div>
+   <div id="DIV_ERR_KEINEABRECHNUNGSFIRMAGEWAEHLT">Sie haben keine Abrechnungsfirma ausgewählt!</div>
+   <div id="DIV_ERR_VORLAGENAMEANGEBEN">Bitte geben Sie einen Vorlagennamen ein</div>
+   <div id="DIV_ERR_ERSTEMUSSABFAHRTSEIN">Die erste Adresse muss eine Abfahrtsadresse sein.</div>
+   <div id="DIV_ERR_LETZTEMUSSZIELSEIN">Bei dieser Auftragsart muss die letzte Adresse eine Zieladresse sein.</div>
+   <div id="DIV_ERR_KEINEABFAHRTERFASST">Sie haben keine Abfahrtsadresse erfasst.</div>
+   <div id="DIV_ERR_KEINZIELERFASST">Um die Bestellung durchführen zu können müssen Sie eine Zieladresse erfassen.</div>
+   <div id="DIV_ERR_PFLICHTFELDERLEER">Die folgenden Pflichtfelder sind nicht ausgefüllt:</div>
+   <div id="DIV_ERR_MAXANZAHLFAHRZEUGEUEBERSCHRITTEN">Die Anzahl der Wagen darf maximal  betragen.</div>
+   <div id="DIV_ERR_KUNDENRNICHTLEER">Das Feld KundeNr darf nicht leer sein.</div>
+   <div id="DIV_ERR_KUNDENAMENICHTLEER">Das Feld Name darf nicht leer sein.</div>
+   <div id="DIV_ERR_SMSNRFALSCH">Die Mobilnummer muss mit einem "+" - Zeichen beginnen</div>
+</div>
+<iframe id="iframe_help" class="helptext_iframe" frameborder="0"></iframe>
+<div id="POPUPCONTAINER" >
+<!-- keine popups -->
+</div>
+<!-- KALENDER -->
+<iframe id="kalender_iframe"></iframe>
+<div id="kalender" onkeydown="Calendar_OnKeyDown(event, this)" >
+      <div class="header"><span style="float:right;">[<a href="#" onclick="return Calendar_Hide();">X</a>]</span>Bitte wählen Sie ein Datum ...</div>
+     <table class="kalender" id="kalender_table" >
+      <tr>
+         <td colspan="7" >
+            <table width="100%" class="navig">
+            <tr>
+               <td>[<a href="#" onclick="return Calendar_DecYear()">&lt;&lt;</a>]</td>
+               <td>[<a href="#" onclick="return Calendar_DecMonth()">&lt;</a>]</td>
+               <td id="cal_month" style="text-align:center;"></td>
+               <td id="cal_year" colspan="2" style="text-align:center;"></td>
+               <td style="text-align:right;">[<a href="#" onclick="return Calendar_IncMonth()">&gt;</a>]</td>
+               <td style="text-align:right;">[<a href="#" onclick="return Calendar_IncYear()">&gt;&gt;</a>]</td>
+            </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+               <td class="tag">Mo</td>
+               <td class="tag">Di</td>
+               <td class="tag">Mi</td>
+               <td class="tag">Do</td>
+               <td class="tag">Fr</td>
+               <td class="tag">Sa</td>
+               <td class="tag">So</td>
+      
+      </tr>
+            <tr>
+                     <td class="tag" id="tag0_0"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_0">&nbsp;</a></td>
+                     <td class="tag" id="tag0_1"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_1">&nbsp;</a></td>
+                     <td class="tag" id="tag0_2"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_2">&nbsp;</a></td>
+                     <td class="tag" id="tag0_3"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_3">&nbsp;</a></td>
+                     <td class="tag" id="tag0_4"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_4">&nbsp;</a></td>
+                     <td class="tag" id="tag0_5"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_5">&nbsp;</a></td>
+                     <td class="tag" id="tag0_6"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day0_6">&nbsp;</a></td>
+               </tr>
+            <tr>
+                     <td class="tag" id="tag1_0"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_0">&nbsp;</a></td>
+                     <td class="tag" id="tag1_1"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_1">&nbsp;</a></td>
+                     <td class="tag" id="tag1_2"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_2">&nbsp;</a></td>
+                     <td class="tag" id="tag1_3"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_3">&nbsp;</a></td>
+                     <td class="tag" id="tag1_4"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_4">&nbsp;</a></td>
+                     <td class="tag" id="tag1_5"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_5">&nbsp;</a></td>
+                     <td class="tag" id="tag1_6"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day1_6">&nbsp;</a></td>
+               </tr>
+            <tr>
+                     <td class="tag" id="tag2_0"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_0">&nbsp;</a></td>
+                     <td class="tag" id="tag2_1"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_1">&nbsp;</a></td>
+                     <td class="tag" id="tag2_2"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_2">&nbsp;</a></td>
+                     <td class="tag" id="tag2_3"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_3">&nbsp;</a></td>
+                     <td class="tag" id="tag2_4"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_4">&nbsp;</a></td>
+                     <td class="tag" id="tag2_5"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_5">&nbsp;</a></td>
+                     <td class="tag" id="tag2_6"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day2_6">&nbsp;</a></td>
+               </tr>
+            <tr>
+                     <td class="tag" id="tag3_0"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_0">&nbsp;</a></td>
+                     <td class="tag" id="tag3_1"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_1">&nbsp;</a></td>
+                     <td class="tag" id="tag3_2"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_2">&nbsp;</a></td>
+                     <td class="tag" id="tag3_3"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_3">&nbsp;</a></td>
+                     <td class="tag" id="tag3_4"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_4">&nbsp;</a></td>
+                     <td class="tag" id="tag3_5"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_5">&nbsp;</a></td>
+                     <td class="tag" id="tag3_6"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day3_6">&nbsp;</a></td>
+               </tr>
+            <tr>
+                     <td class="tag" id="tag4_0"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_0">&nbsp;</a></td>
+                     <td class="tag" id="tag4_1"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_1">&nbsp;</a></td>
+                     <td class="tag" id="tag4_2"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_2">&nbsp;</a></td>
+                     <td class="tag" id="tag4_3"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_3">&nbsp;</a></td>
+                     <td class="tag" id="tag4_4"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_4">&nbsp;</a></td>
+                     <td class="tag" id="tag4_5"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_5">&nbsp;</a></td>
+                     <td class="tag" id="tag4_6"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day4_6">&nbsp;</a></td>
+               </tr>
+            <tr>
+                     <td class="tag" id="tag5_0"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_0">&nbsp;</a></td>
+                     <td class="tag" id="tag5_1"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_1">&nbsp;</a></td>
+                     <td class="tag" id="tag5_2"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_2">&nbsp;</a></td>
+                     <td class="tag" id="tag5_3"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_3">&nbsp;</a></td>
+                     <td class="tag" id="tag5_4"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_4">&nbsp;</a></td>
+                     <td class="tag" id="tag5_5"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_5">&nbsp;</a></td>
+                     <td class="tag" id="tag5_6"><a href="#" onclick="return Calendar_OnDayClick(this)" id="day5_6">&nbsp;</a></td>
+               </tr>
+      
+      </table>
+</div>
+<!-- / KALENDER -->
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,426 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:14:20 GMT
+Server: Apache/2.2.3 (Unix) mod_ssl/2.2.3 OpenSSL/0.9.7j PHP/4.4.4 PHP/5.2.1
+Last-Modified: Tue, 14 Sep 2010 09:38:27 GMT
+ETag: "2fe825-4448-f9978ac0"
+Accept-Ranges: bytes
+Content-Length: 17480
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>.: watch2pay :.</title>
+	<link rel="stylesheet" type="text/css" href="lib/style.css" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!--[if lt IE 7]>
+		<style type="text/css">
+			* { behavior: url('iepngfix.htc'); }
+		</style>
+  <![endif]-->
+	<script type="text/javascript" src="lib/jquery.js"></script>	
+	<script type="text/javascript" src="lib/script.js"></script>
+	<script type="text/javascript" src="lib/preload.js"></script>
+	<script type="text/javascript" src="lib/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="lib/jquery.backgroundPosition.js"></script>	
+	<script type="text/javascript">
+		<!--		
+		var firstIdx, secIdx, actIdx, newIdx, linkIdx;
+		var oldWatch, newWatch, tempWatch;
+		var oldEmotion, newEmotion, tempWatch;
+		var oldStep, newStep, tempStep;
+		var oldName, newName, tempName, actName;
+		var slidedWatches = new Array();
+		var isSliding = false;
+		
+		Array.prototype.contains = function(element) {
+			for (var i = 0; i < this.length; ++i) {
+				if (this[i] == element)
+					return true;
+			}
+			return false;
+		}
+		
+		var generateNewIdx = function(exclIdx) {
+			while (true) {
+				newIdx = Math.round(1 + (7 * (Math.random())));
+				if ((newIdx != exclIdx) && !slidedWatches.contains(newIdx)) {
+					slidedWatches.push(newIdx);
+					if (slidedWatches.length == 8)
+						slidedWatches = new Array();
+					return newIdx;
+				}
+			}
+		}
+		
+		var showButtons = function(watchIdx) {
+			linkIdx = watchIdx;
+			
+			var nameLeft = new Array('0px','0px','405px','405px','275px','135px','275px','135px');
+			var nameTop = new Array('162px','173px','173px','162px','173px','173px','162px','162px');
+			
+			$('#forw_buttons').find('img').each(function(i) {
+				this.src = this.src.replace("_over.png",".png"); 
+			});
+			
+			$('#forw_buttons').css('display', 'none');
+			$('#forw_buttons').find('#name_small').attr('src','images/animation/watchname_' + watchIdx + '_small.png');			
+			$('#forw_buttons').css('top', nameTop[watchIdx - 1]);
+			$('#forw_buttons').css('left', nameLeft[watchIdx - 1]);
+			$('#forw_buttons').fadeIn(300, function() {});
+		}
+		
+		var slideWatches = function(time) {
+		
+			isSliding = true;
+			
+			if (!oldWatch) {
+				oldWatch = $('#slides_left_1');
+				newWatch = $('#slides_left_2');
+				oldEmotion = $('#slides_right_1');
+				newEmotion = $('#slides_right_2');
+				oldStep = $('#slides_nav_1');
+				newStep = $('#slides_nav_2');
+				oldName = $('#slides_name_1');
+				newName = $('#slides_name_2');
+			} else {
+				tempStep = oldStep;
+				oldStep = newStep;		
+				oldStep.find('img').attr('src','images/animation/step_' + actIdx + '.png');		
+				newStep = tempStep;
+				
+				tempName = oldName;
+				oldName = newName;				
+				oldName.find('img').attr('src','images/animation/watchname_' + actIdx + '.png');
+				newName = tempName;
+			}
+			
+			newStep.find('img').attr('src','images/animation/step_' + newIdx + '.png');
+			newName.find('img').attr('src','images/animation/watchname_' + newIdx + '.png');
+			
+			tempWatch = oldWatch;
+			oldWatch = newWatch;
+			
+			oldWatch.find('img').attr('src','images/animation/watch_' + actIdx + '.png');
+			oldWatch.css('z-index', '1');
+			oldWatch.css('height', '374px');
+			newWatch = tempWatch;	
+			newWatch.css('z-index', '2');		
+			newWatch.css('height', '0px');	
+			newWatch.find('img').attr('src','images/animation/watch_' + newIdx + '.png');
+			
+			tempEmotion = oldEmotion;
+			oldEmotion = newEmotion;
+			
+			oldEmotion.find('img').attr('src','images/animation/emotion_' + actIdx + '.png');
+			oldEmotion.css('z-index', '1');	
+			newEmotion.css('z-index', '2');
+			oldEmotion.css('top', '0px');	
+			newEmotion = tempEmotion;
+			newEmotion.find('img').attr('src','images/animation/emotion_' + newIdx + '.png');
+			newEmotion.css('top','374px');
+			
+			newWatch.animate({
+				height: '+=374px'
+			}, time, function() {});
+	
+			oldEmotion.animate({
+				top: '-374px'
+			}, time, function() {});
+	
+			newEmotion.animate({
+				top: '0px'
+			}, time - 20, function() {});
+	
+			oldStep.fadeOut(time, function() {});
+			newStep.fadeIn(time, function() {
+				actStep = newStep;
+			});
+			
+			oldName.fadeOut(time, function() {});
+			newName.fadeIn(time, function() {
+				actName = newName;
+				isSliding = false;
+			});
+			
+			if (!newIdx) {
+				newIdx = generateNewIdx(secIdx);
+			} else {
+				actIdx = newIdx;
+				newIdx = generateNewIdx(newIdx);
+			}
+		}
+		
+		$(function() {		
+			
+			var slideAnimation;
+			
+			actName = $('#slides_name_1');		
+			firstIdx = generateNewIdx(-1);		
+			actIdx = firstIdx;
+			secIdx = generateNewIdx(firstIdx);
+		
+			$('#slides_left_1').find('img').attr('src','images/animation/watch_' + firstIdx + '.png');
+			$('#slides_right_1').find('img').attr('src','images/animation/emotion_' + firstIdx + '.png');
+			$('#slides_nav_1').find('img').attr('src','images/animation/step_' + firstIdx + '.png');
+			$('#slides_name_1').find('img').attr('src','images/animation/watchname_' + firstIdx + '.png');
+		
+			$('#slides_left_2').find('img').attr('src','images/animation/watch_' + secIdx + '.png');
+			$('#slides_right_2').find('img').attr('src','images/animation/emotion_' + secIdx + '.png');
+			$('#slides_nav_2').find('img').attr('src','images/animation/step_' + secIdx + '.png');
+			$('#slides_name_2').find('img').attr('src','images/animation/watchname_' + secIdx + '.png');
+			
+			$('.watch_small').mouseover(function() {				
+				this.src = this.src.replace(".png","_over.png"); 	
+				showButtons(this.id.substr(this.id.length - 1));
+			});					
+			$('.watch_small').mouseout(function() {
+				this.src = this.src.replace("_over.png",".png"); 
+			});			
+			
+			$('.forw_button').mouseover(function() {				
+				this.src = this.src.replace(".png","_over.png"); 
+			});					
+			$('.forw_button').mouseout(function() {
+				this.src = this.src.replace("_over.png",".png"); 
+			});		
+					
+			$(window).load(function() {
+				slideAnimation = window.setInterval('slideWatches(1000)', 5000);
+	
+				$('.buttons').mouseover(function() {							
+					//actName.find('img').attr('src','images/animation/watchname_' + (this.id.substr(this.id.length - 1)) + '.png');
+					
+					var smallWatch = $('#name_' + (this.id.substr(this.id.length - 1)));					
+					smallWatch.attr('src',smallWatch.attr('src').replace(".png","_over.png"));
+					showButtons(this.id.substr(this.id.length - 1));
+				});					
+				$('.buttons').mouseout(function() {
+					//actName.find('img').attr('src','images/animation/watchname_' + actIdx + '.png');
+					
+					var smallWatch = $('#name_' + (this.id.substr(this.id.length - 1)));					
+					smallWatch.attr('src',smallWatch.attr('src').replace("_over.png",".png"));
+					showButtons(this.id.substr(this.id.length - 1));
+				});		
+		
+				$('.buttons').click(function() {
+					if (!isSliding) {
+						window.clearInterval(slideAnimation);
+						newIdx = this.id.substr(this.id.length - 1);
+						slideWatches(1000);
+					}
+					//slideAnimation = window.setInterval('slideWatches(1000)', 5000);
+				});			
+		
+				$('.watch_small').click(function() {
+					if (!isSliding) {
+						window.clearInterval(slideAnimation);
+						newIdx = this.id.substr(this.id.length - 1);
+						slideWatches(1000);
+					}
+					//slideAnimation = window.setInterval('slideWatches(1000)', 5000);
+				});	
+				
+				$('#promo').mouseenter(function() {	
+					window.clearInterval(slideAnimation);			
+					$('#collection').animate({
+						left: '402px'
+					}, 1000, function() {});
+				});		
+				/*
+				$('#collection').mouseleave(function() {					
+					window.clearInterval(slideAnimation);
+					slideAnimation = window.setInterval('slideWatches(1000)', 5000);		
+					$('#collection').animate({
+						left: '980px'
+					}, 1000, function() {});
+				});
+				*/
+				$('#promo').mouseleave(function() {			
+					window.clearInterval(slideAnimation);
+					slideAnimation = window.setInterval('slideWatches(1000)', 5000);	
+					$('#collection').animate({
+						left: '980px'
+					}, 1000, function() {});
+				});
+				
+				$('#promo').click(function() {	
+					if (parseInt($('#collection').css('left')) >= 980) {
+						window.clearInterval(slideAnimation);			
+						$('#collection').animate({
+							left: '402px'
+						}, 1000, function() {});
+					}
+				});
+				$('#slides_left_1').click(function() {	
+					window.clearInterval(slideAnimation);			
+					slideAnimation = window.setInterval('slideWatches(1000)', 5000);
+					$('#collection').animate({
+						left: '980px'
+					}, 1000, function() {});
+				});
+				$('#slides_left_2').click(function() {		
+					window.clearInterval(slideAnimation);
+					slideAnimation = window.setInterval('slideWatches(1000)', 5000);
+					$('#collection').animate({
+						left: '980px'
+					}, 1000, function() {});
+				});
+				
+				$('#button_details').click(function() {		
+					window.location.href = "product.htm?watchID=" + linkIdx;
+				});				
+				$('#button_order').click(function() {		
+					window.location.href = "order.htm#" + linkIdx;
+				});
+						
+			});
+		
+			$('input').click(function() {
+				text = $(this).get(0).value;		
+				changed = false;
+				$(this).keydown(function() {
+					changed = true;
+				});				
+				$(this).blur(function() {
+					if (!changed)
+						$(this).get(0).value = text;
+				});
+				$(this).get(0).value = "";
+			});
+		
+			$('.btn_email').mouseover(function() {
+				$(this).css('backgroundPosition', '0 -24px');
+			});
+			$('.btn_email').mouseout(function() {
+				$(this).css('backgroundPosition', '0 0');
+			});		
+			
+			$('#button_cart').mouseover(function() {
+				$(this).attr('src','images/menu/cart_over.png'); 
+			});			
+			$('#button_cart').mouseout(function() {
+				$(this).attr('src','images/menu/cart.png'); 
+			});		
+			
+		});		
+		-->
+	</script>
+</head>
+
+<body>	
+
+<div id="container">
+	<div id="header"> <a href="index.htm"><img src="images/watch2pay.png" width="296" height="109" border="0" alt="watch2pay" class="left" /></a><a href="http://www.mastercard.com" target="_blank"><img src="images/mastercard.png" width="150" height="109" border="0" alt="MasterCard" class="right" /></a> 
+    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_cart" />
+      <input type="hidden" name="lc" value="EN">
+      <input type="hidden" name="business" value="o&#102;fice&#064;l&#097;ks&#046;com" />
+      <input type="hidden" name="display" value="1" />
+      <img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1" /> 
+      <ul class="mainmenu">
+        <li><a href="index.htm" id="home" class="active" title="Home"><span>Home</span></a></li>
+        <li><a href="product.htm?watchID=1" id="product" title="Product"><span>Product</span></a></li>
+        <li><a href="order.htm" id="order" title="Order"><span>Order</span></a></li>
+        <li>
+          <input type="image" src="images/menu/cart.png" name="submit" class="submit" id="button_cart" />
+        </li>
+        <li><a href="support.htm" id="support" title="Support"><span>Support</span></a></li>
+        <li><a href="login.htm" id="login" title="Login"><span>Login</span></a></li>
+        <li><a href="languages.htm?active=uk&amp;target=index" id="lang_uk" title="Languages"><span>Languages</span></a></li>
+      </ul>
+    </form>
+  </div>
+	<div id="content">
+		<div id="promo"> 
+      <div id="slides_left_1"><img src="images/spacer.gif" width="402" height="374" alt="" /></div>
+      <div id="slides_left_2"><img src="images/spacer.gif" width="402" height="374" alt="" /></div>
+      <div id="slides_right_1"><img src="images/spacer.gif" width="274" height="374" alt="" /></div>
+      <div id="slides_right_2"><img src="images/spacer.gif" width="274" height="374" alt="" /></div>
+      <div id="slides_name_1"><img src="images/spacer.gif" width="150" height="50" alt="" /></div>
+      <div id="slides_name_2"><img src="images/spacer.gif" width="150" height="50" alt="" /></div>
+      <div id="slides_nav_1"><img src="images/spacer.gif" width="120" height="25" alt="" /></div>
+      <div id="slides_nav_2"><img src="images/spacer.gif" width="120" height="25" alt="" /></div>
+      <div id="slides_buttons"> <a href="#" id="button_1" class="buttons"></a> 
+        <a href="#" id="button_2" class="buttons"></a> <a href="#" id="button_3" class="buttons"></a> 
+        <a href="#" id="button_4" class="buttons"></a> <a href="#" id="button_5" class="buttons"></a> 
+        <a href="#" id="button_6" class="buttons"></a> <a href="#" id="button_7" class="buttons"></a> 
+        <a href="#" id="button_8" class="buttons"></a> </div>
+      <div id="collection"> 
+        <div id="forw_buttons"><img src="images/animation/watchname_1_small.png" width="150" height="15" alt="" id="name_small" /><br />
+          <img src="images/animation/button_order.png" id="button_order" class="forw_button" width="56" height="16" alt="" /><img src="images/animation/button_details.png" id="button_details" class="forw_button" width="64" height="16" alt="" /></div>
+        <img src="images/animation/watch_1_small.png" width="147" height="187" alt="" class="watch_small" id="name_1" /><img src="images/animation/watch_2_small.png" width="143" height="187" alt="" class="watch_small" id="name_8" /><img src="images/animation/watch_3_small.png" width="144" height="187" alt="" class="watch_small" id="name_7" /><img src="images/animation/watch_4_small.png" width="144" height="187" alt="" class="watch_small" id="name_4" /><img src="images/animation/watch_5_small.png" width="147" height="187" alt="" class="watch_small" id="name_2" /><img src="images/animation/watch_6_small.png" width="143" height="187" alt="" class="watch_small" id="name_6" /><img src="images/animation/watch_7_small.png" width="144" height="187" alt="" class="watch_small" id="name_5" /><img src="images/animation/watch_8_small.png" width="144" height="187" alt="" class="watch_small" id="name_3" /></div>
+    </div>		
+		<div id="info"> 
+			<div id="infoblock_1">
+				<h1>What is watch2pay?</h1>
+				<ul class="whatis">
+					<li class="first">MasterCard&reg; <em>PayPass</em>&trade; enabled watch for contactless payment</li>
+					<li class="second">MasterCard&reg; <em>PayPass</em>&trade; prepaid card &#150; reloadable</li>
+					<li>2 payment devices for one prepaid account</li>
+					<li>24 months validity included</li>
+					<li>No monthly fees</li>
+				</ul>
+			</div>
+			<div id="infoblock_2">
+				<h1>Learn more about<br />MasterCard&reg; <em>PayPass</em>&trade;</h1>
+				<a href="https://www.priceless.com/us/personal/en/cards/paypass/index.html#/home/" target="blank" class="arrow">Watch the Video</a>
+			</div>
+			<div class="clear"></div>
+    </div>
+		<div id="footer">
+			<ul class="bottommenu">
+				<li class="headline">About us</li>
+				<li><a href="about_laks.htm">LAKS</a></li>
+				<li><a href="imprint.htm">Imprint</a></li>
+			</ul>
+			<ul class="bottommenu">
+				<li class="headline">Terms &amp; Conditions</li>
+				<li><a href="card_fees.htm">Card Fees</a></li>
+				<li><a href="watch_warranty.htm">Watch Warranty</a></li>
+				<li><a href="disclaimer.htm">Disclaimer</a></li>
+			</ul>
+			<ul class="bottommenu">
+				<li class="headline">Contact</li>
+				<li><a href="contact.htm">Contact us</a></li>
+				<li><a href="support.htm">Support</a></li>
+			</ul>
+			<ul class="bottommenu">
+				<li class="headline">Press</li>
+				<li><a href="downloads.htm">Downloads</a></li>
+			</ul>
+			<div id="newsletter">
+				<h2>Newsletter</h2>
+				<form method="post" name="subscribeform" action="https://www.laks.com/_newsletter/?p=subscribe&amp;id=1&amp;id=&amp;id=3">			
+					<input type="text" name="email" value="Your E-Mail Address" id="input_email" />			
+					<input type="hidden" name="htmlemail" value="1" />			
+					<input type="hidden" name="list[17]" value="signup" />			
+					<input type="hidden" name="listname[17]" value="watch2pay Anmeldungen via HP" />	
+					<input class="btn_email" type="submit" name="subscribe" value="" />	
+				</form>
+      </div>
+			<div class="clear"></div>
+		</div>
+		<div id="bottomline"><a href="http://www.facebook.com/pages/laks/193419903626" target="_blank" id="facebook" title="Facebook"></a><a href="http://twitter.com/lakscom" target="_blank" id="twitter" title="Twitter"></a><a href="https://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http://www.watch2pay.com&amp;title=watch2pay" target="_blank" id="google" title="Google"></a><a href="http://www.paypal.com" target="_blank" id="paypal" title="PayPal"></a>&copy; LAKS 2010</div>
+		<div id="bottomline_small">MasterCard&reg; is a registered trademark, and <em>PayPass</em>&trade; is a trademark of MasterCard&reg; International Inc.<br />
+			watch2pay is a trademark of LAKS GmbH<br />
+			watch2pay MasterCard&reg; <em>PayPass</em>&trade; prepaid card issued by Bank Zachodni WBK S.A. pursuant to a licence by MasterCard&reg; International</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-873066-9");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

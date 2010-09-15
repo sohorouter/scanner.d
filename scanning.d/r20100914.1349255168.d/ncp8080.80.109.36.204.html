@@ -1,0 +1,186 @@
+HTTP/1.0 200 OK
+Server: UKSoftwareWeb1.1
+Date: Tue, 14 Sep 2010 10:20:56 GMT
+Content-Type: text/html
+Pragma: no-cache
+Cache-control: no-cache
+Expires: Mon, 01 Jan 1990 12:00:00 GMT
+Content-Length: 7074
+
+<html>
+<head>
+
+<meta http-equiv="refresh" content="60; url=http://80.109.36.204:8080/{startpage}">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Welcome to the control panel</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+function refreshIt() {
+ if (!document.images) {
+  setTimeout('refreshIt()',3000);
+  return;
+  }
+ document.images['myCam'].src = 'image.jpg?' + Math.random();
+ setTimeout('refreshIt()',10000);
+}
+function click() {
+ if (event.button==2) {
+  alert('Get your own FREE webcam just like this one from www.EasyFreeWebCam.com');
+  }
+}
+function alloff() {
+ document.control1.button1.disabled = true
+ document.control2.button2.disabled = true
+ document.control3.button3.disabled = true
+ document.control4.button4.disabled = true
+ document.control5.button5.disabled = true
+ document.scan1.scanon.disabled = true
+ document.scan2.scanoff.disabled = true
+}
+document.onmousedown=click;
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+function popupcontrols() {
+ text = '<htm';
+ text += 'l>\n<hea';
+ text += 'd>\n<title>Smile Cam controller</title>\n';
+ text += '</he';
+ text += 'ad>\n<bod';
+ text += 'y topmargin="0" leftmargin="0">\n<div align="left">\n';
+ text += '<form name=mover method="GET" action="{mover}">\n';
+ text += '<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse"\n';
+ text += 'bordercolor="#111111" width="150" id="AutoNumber1" bgcolor="#0066FF">\n';
+ text += '<tr>\n<td align="center" height="0"></td>\n<td align="center" height="0" bgcolor="#FFFFCC">\n';
+ text += '<input type="button" value="/\\" name=moveup ';
+ text += 'onClick="document.mover.event.value=';
+ text += "'moveup';form.submit();";
+ text += '"></td>\n';
+ text += '<td align="center" height="0"></td>\n</tr>\n<tr>\n<td align="center" height="0" bgcolor="#FFFFCC">\n';
+ text += '<input type="button" value="&lt;" name=moveleft ';
+ text += 'onClick="document.mover.event.value=';
+ text += "'moveleft';form.submit();";
+ text += '">\n';
+ text += '</td>\n<td align="center" height="0"></td>\n<td align="center" height="0" bgcolor="#FFFFCC">\n';
+ text += '<input type="button" value="&gt;" name=moveright ';
+ text += 'onClick="document.mover.event.value=';
+ text += "'moveright';form.submit();";
+ text += '">\n';
+ text += '</td>\n</tr>\n<tr>\n<td align="center" height="0"></td>\n';
+ text += '<td align="center" height="0" bgcolor="#FFFFCC">\n';
+ text += '<input type="button" value="\\/" name=movedown ';
+ text += 'onClick="document.mover.event.value=';
+ text += "'movedown';form.submit();";
+ text += '">\n';
+ text += '</td>\n<td align="center" height="0"></td>\n</tr>\n</table>\n';
+ text += '</div><div align="left">\n<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" ';
+ text += 'bordercolor="#111111" width="150" id="AutoNumber2" bgcolor="#0066FF">\n';
+ text += '<tr><td>\n  <hr color="#FF0000" width="90%" size="1">\n  <font color="#FFFFFF" face="Verdana" size="1">\n';
+ text += 'SmileCam(tm) control panel. Use these buttons to move the camera in the required direction.';
+ text += ' Note: these controls will only work if the camera is a SmileCam ';
+ text += '(<a target="_blank" href="http://www.smilecam.com">\n';
+ text += '<font color="#FFFF00">Click for more</font></a>)</font></td>\n</tr>\n</table>';
+ text += '<br>\n<br>\n<input type="text" name="event" size="20">\n</form>\n</div>\n</bo';
+ text += 'dy>\n</ht';
+ text += 'ml>\n';
+ controls = window.open('','controls','width=146,height=182');
+ controls.document.write(text);
+}
+</SCRIPT>
+
+</head>
+<body onLoad=" setTimeout('refreshIt()',3000)">
+<center>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="600" 
+id="AutoNumber1">
+<tr>
+<td bgcolor="#800000">
+<h2 align="center"><br>
+<font face="Arial" color="#FFFFFF">Control Panel</font></h2>
+<center>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="95%" d="AutoNumber2">
+<tr>
+<td width="100%" bgcolor="#3366FF" align="center">
+<font face="Arial" color="#FFFFFF"><b><a href="http://80.109.36.204:8080/{livefodder}">
+<font color="#FFFF00">Click here</font></a></b> to connect to the live video 
+feed<br>
+<b>
+<font color="#FFFF00">
+<a target="_self" href="http://80.109.36.204:8080/{control}">
+<font color="#FFFF00">Click here</font></a></font></b> to connect to the X10 control panel<br>
+</font>
+<font face="Arial" color="#FFFF00"><b>
+<a href="javascript:popupcontrols()"><font color="#FFFF00">Click 
+here</font></a></b></font><font face="Arial" color="#FFFFFF"> to open the 
+SmileCam(tm) camera control panel</font></td>
+</tr>
+<tr>
+<td width="100%" bgcolor="#3366FF" align="center">
+<font face="Arial" color="#FFFFFF">
+<B><BR>Camera scanner is not active<BR></B>
+Camera selection controls: Current camera is 1
+<table border="0" callpadding="1" cellspacing="3" style="border-collapse: collapse" id="AutoNumber2" cellpadding="3">
+ <tr>
+  <td align="center">
+   <form name=control1 method="GET" action="{cam1}">
+   <input type="submit" value="Cam 1" name=button1 onClick="alloff();form.submit();"></form>
+  </td>
+  <td align="center">
+   <form name=control2 method="GET" action="{cam2}">
+   <input type="submit" value="Cam 2" name=button2 onClick="alloff();form.submit();"></form>
+  </td>
+  <td align="center">
+   <form name=control3 method="GET" action="{cam3}">
+   <input type="submit" value="Cam 3" name=button3 onClick="alloff();form.submit();"></form>
+   </td>
+  <td align="center">
+   <form name=control4 method="GET" action="{cam4}">
+   <input type="submit" value="Cam 4" name=button4 onClick="alloff();form.submit();"></form>
+   </td>
+  <td align="center">
+   <form name=control5 method="GET" action="{cam5}">
+   <input type="submit" value="Cam 5" name=button5 onClick="alloff();form.submit();"></form>
+  </td>
+ </tr>
+</table>
+</font>
+<center>
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse" id="AutoNumber3">
+<tr>
+<td>
+<form name=scan1 method="GET" action="{scan1232on}">
+<input type="submit" value="Turn scanning on" name=scanon onClick="alloff();form.submit();"></form>
+</td>
+<td>
+<form name=scan2 method="GET" action="{scan983off}">
+<input type="submit" value="Turn scanning off" name=scanoff onClick="alloff();form.submit();"></form>
+</td>
+</tr>
+</table>
+</center>
+<SCRIPT LANGUAGE="JavaScript">
+document.control1.button1.disabled = true
+document.control2.button2.disabled = true
+document.control3.button3.disabled = true
+document.control4.button4.disabled = true
+document.control5.button5.disabled = true
+</SCRIPT>
+</td>
+</tr>
+</table>
+</center>
+<center>
+<BR>
+<img border="0" src="image.jpg?1660,008" name="myCam" alt="This is a snap shot of the current live view">
+<br>
+<font face="Arial" color="#FFFFFF">This image updates every 10 seconds</font>
+</center>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

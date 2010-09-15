@@ -1,0 +1,1493 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:07:21 GMT
+Server: Apache/2.2.8 (Ubuntu) PHP/5.2.4-2ubuntu5.10 with Suhosin-Patch mod_ssl/2.2.8 OpenSSL/0.9.8g
+X-Powered-By: PHP/5.2.4-2ubuntu5.10
+Set-Cookie: fe_typo_user=e63fea29038aabefc055417887509f10; path=/
+Connection: close
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- 
+        This site was designed and developed by Global Spanking Industries <http://www.global-spanking.com/>.
+        This site is maintained by ACTIVE SOLUTION <http://www.activesolution.at/>
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2008 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.com/ and http://typo3.org/
+-->
+
+	<link rel="shortcut icon" href="http://fileadmin/templates/at/favicon.ico" />
+	<link rel="icon" href="http://fileadmin/templates/at/favicon.ico" />
+	<style type="text/css">
+		/*<![CDATA[*/
+	<!--
+	/* default styles for extension "tx_chcforum_pi1" */
+
+
+
+/* BASIC STUFF */
+#tx_chcforum-pi1 {
+	font-family: verdana, sans-serif;
+	font-size: 11px;
+}
+
+#tx_chcforum-pi1 caption {
+	display: none;
+}
+
+#tx_chcforum-pi1 a {
+	text-decoration: underline;
+}
+
+#tx_chcforum-pi1 a:hover {
+	text-decoration: none !important;
+}
+
+/* only one form in the forum */
+#tx_chcforum-pi1 form {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.tx-chcforum-pi1-noWrap {
+	display: inline;
+	white-space: nowrap;
+}
+
+.tx-chcforum-pi1-preTableWrap {
+	border: 1px solid #999999;
+	margin-bottom: 2px;
+}
+
+.tx-chcforum-pi1-postTableWrap {
+	border: 1px solid #999999;
+	margin-bottom: 2px;
+}
+
+/* GENERIC TABLE BEGIN */
+.tx-chcforum-pi1-Table {
+	border: 1px solid #666666;
+	background: #FFFFFF;
+	margin-bottom: 2px;
+	width: 100%;
+}
+
+.tx-chcforum-pi1-Table thead tr th {
+	font-size: 14px;
+	font-weight: bold;
+	background: #A7B3CB;
+	padding: 5px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+/* category title row */
+.tx-chcforum-pi1-Table tbody tr th {
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background: #F3F5F8;
+	padding: 5px;
+	text-align: left;
+}
+
+/* category features row */
+.tx-chcforum-pi1-Table tbody tr td {
+	font-size: 12px;
+	background: #E3E7EF;
+	padding: 5px;
+}
+/* GENERIC TABLE END */
+
+
+/* CATEGORY TABLE BEGIN */
+/* cell 1 */
+.tx-chcforum-pi1-catConferenceCell {
+}
+
+.tx-chcforum-pi1-catConferenceCell dl {
+	margin: 0;
+}
+
+.tx-chcforum-pi1-catConferenceCell dt {
+}
+
+.tx-chcforum-pi1-catConferenceCell dd {
+	font-size: 10px;
+	margin-left: 5px;
+}
+
+.tx-chcforum-pi1-catConferenceCell dd.new {
+	color: #FF0000;
+}
+
+/* cell 2 */
+.tx-chcforum-pi1-catThreadCell {
+	text-align: center;
+}
+
+/* cell 3 */
+.tx-chcforum-pi1-catPostCell {
+	text-align: center;
+}
+
+/* cell 4 */
+.tx-chcforum-pi1-catLastCell {
+	font-size: 10px !important;
+	vertical-align: top;
+}
+/* CATEGORY TABLE END */
+
+
+/* CONFERENCE TABLE BEGIN */
+/* cell 1 */
+
+.tx-chcforum-pi1-confThreadImage {
+	text-align: center;
+}
+
+
+.tx-chcforum-pi1-confThreadSubjCell {
+
+}
+
+.tx-chcforum-pi1-confThreadNew {
+	color: #FF0000;
+	font-size: 10px;
+	padding-left: 5px;
+}
+
+.tx-chcforum-pi1-confThreadBtns img {
+	padding-top: 5px;
+}
+
+.tx-chcforum-pi1-confThreadBtns {
+	padding-left: 5px;
+}
+
+/* cell 2 */
+.tx-chcforum-pi1-confThreadRepliesCell {
+	text-align: center;
+}
+
+/* cell 3 */
+.tx-chcforum-pi1-confThreadAuthorCell {
+	text-align: center;
+}
+
+/* cell 4 */
+.tx-chcforum-pi1-confThreadLastCell {
+	font-size: 10px !important;
+}
+
+/* CONFERENCE TABLE END */
+
+/* NAVPATH BEGIN*/
+.tx-chcforum-pi1-navPath a {
+	color: #6F6E70;
+}
+
+.tx-chcforum-pi1-navPath {
+	line-height: 15px;
+	color: #6F6E70;
+	background: #E9E9E9;
+	border-bottom: 1px solid #DEDEDE;
+	margin-bottom: 1px;
+	padding: 3px;
+	font-size: 10px;
+}
+/* NAVPATH END*/
+
+/* PAGELINKS BEGIN */
+.tx-chcforum-pi1-pageLinksTop, .tx-chcforum-pi1-pageLinksBtm {
+	color: #6F6E70;
+	background: #E9E9E9;
+	border-bottom: 1px solid #DEDEDE;
+	font-size: 10px;
+	line-height: 15px;
+	padding: 3px;
+	text-align: right;
+	clear: both;
+	padding-right: 5px;
+}
+
+.tx-chcforum-pi1-pageLinksBtm {
+	margin-bottom: 1px;
+}
+/* PAGELINKS END */
+
+/* POST FORM BEGIN */
+.tx-chcforum-pi1-postForm {
+	border: 1px solid #999999;
+	background: #E3E7EF;
+	padding: 5px;
+	margin-bottom: 3px;
+}
+
+.tx-chcforum-pi1-postForm #formWhere {
+	font-size: 14px;
+	font-weight: bold;
+	background: #A7B3CB;
+	padding: 5px;
+	text-align: center;
+	white-space: nowrap;
+	margin-bottom: 7px;
+	border: 1px solid #999999;
+}
+
+.tx-chcforum-pi1-postForm fieldset label {
+	display: block;
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 3px;
+	width: 60px;
+	float: left;
+}
+
+.tx-chcforum-pi1-postForm fieldset {
+	background-color: #E9E9E9;
+}
+
+.tx-chcforum-pi1-postForm fieldset#formTop {
+	margin-bottom: 8px;
+}
+
+.tx-chcforum-pi1-postForm fieldset#formTop legend {
+	margin-bottom: 3px;
+	background-color: #E9E9E9;
+	border: 1px solid #999999;
+	padding: 2px;
+	font-weight: bold;
+}
+
+.tx-chcforum-pi1-postForm fieldset#formBottom legend {
+	background-color: #E9E9E9;
+	border: 1px solid #999999;
+	padding: 2px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+
+.tx-chcforum-pi1-postForm fieldset#formTop input {
+	display: block;
+	width: 150px;
+	float: left;
+	padding: 2px;
+	border: 1px solid #DEDEDE;
+	margin-bottom: 2px;
+}
+
+.tx-chcforum-pi1-postForm textarea {
+	border: 1px solid #DEDEDE;
+	margin: 3px 0;
+	width: 100%;
+	height: 150px;
+}
+
+.tx-chcforum-pi1-postForm fieldset#formTop br {
+	clear:left;
+}
+
+.tx-chcforum-pi1-formBtn {
+	text-align: center;
+}
+
+.tx-chcforum-pi1-formBtn input {
+	border: 1px solid #999999;
+	font-size:10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin:2px;
+	background-color: #FFF;
+
+}
+
+.tx-chcforum-pi1-formBtnHov {
+	border: 1px solid #666; 
+	font-size:10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin:2px;
+	background-color: #FFF;
+	color: #CC0000;
+}
+
+.tx-chcforum-pi1-formBtnStyle {
+	background-color: #FFF;
+	border: 1px solid #666666;
+	padding: 3px;
+	margin: 3px;
+}
+
+.tx-chcforum-pi1-formBtnStyleHov {
+	background-color: #FFF;
+	border: 1px solid #C00;
+	color: #CC0000;
+	padding: 3px;
+	margin: 3px;
+}
+/* POST FORM END */
+
+/* SINGLE POST BEGIN */
+.tx-chcforum-pi1-singlePost {
+	border: 1px solid #666666;
+	margin: 3px 0;
+}
+
+/* top */
+.tx-chcforum-pi1-singlePost .author {
+	background: #E3E7EF;
+	padding: 3px;
+	vertical-align: top;
+	height: 78px;
+}
+
+.tx-chcforum-pi1-formEmicoStyle {
+	margin: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .im {
+	vertical-align: middle;
+	margin-top: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .im a {
+	margin-right: 10px;
+}
+
+.tx-chcforum-pi1-singlePost .im img {
+	vertical-align: middle;
+	border: 0px;
+	padding-right: 2px;
+	margin-bottom: 2px;
+}
+
+.tx-chcforum-pi1-singlePost .userPic {
+	border: 1px solid #666666;
+	float: right;
+}
+/* deprecated */
+.tx-chcforum-pi1-singlePost #userPic {
+	border: 1px solid #666666;
+	float: right;
+}
+
+/* middle */
+.tx-chcforum-pi1-singlePost .text {
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	background: #E3E7EF;
+}
+
+.tx-chcforum-pi1-singlePost .scroller {
+	overflow: auto;
+	width: 95%;
+	background: #FFF;
+	min-height: 125px;
+	text-indent: 0px;
+	padding: 3px;
+}
+
+/* bottom */
+.tx-chcforum-pi1-singlePost .edit {
+	background: #F3F5F8;
+	padding: 3px;
+	height: 19px;
+	vertical-align: middle;
+	margin-top: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .edit a {
+	margin-right: 30px;
+}
+
+.tx-chcforum-pi1-singlePost .edit img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+.tx-chcforum-pi1-singlePost .attachment {
+	background: #DEE3E7;
+	padding: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .attachment div {
+	vertical-align: top;
+}
+
+.tx-chcforum-pi1-singlePost .attachment img {
+	float: left;
+	margin-right: 5px;
+}
+
+.tx-chcforum-pi1-singlePost .rate {
+	background: #DEE3E7;
+	border-top: 3px solid #FFFFFF ;
+	padding: 3px;
+}
+
+.tx-chcforum-pi1-singlePost .rate input {
+	background-color: #FFF;
+	border: 1px solid #666666;
+	font-size: 9px;
+}
+
+.tx-chcforum-pi1-singlePost .rate select {
+	border: 1px solid #666666;
+	font-size: 10px;
+}
+
+.tx-chcforum-pi1-singlePost .rate select option {
+	height: 1.5em;
+}
+
+.tx-chcforum-pi1-singlePost .rate form {
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+
+.tx-chcforum-pi1-singlePost .rate .rateStars {
+	float: left;
+	text-align: left;
+	height: 1.85em;
+}
+
+.tx-chcforum-pi1-singlePost .rate .rateMenu {
+	text-align: right;
+	width: 100%;
+	height: 1.85em;
+}
+
+.tx-chcforum-pi1-singlePost .offset {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.tx-chcforum-pi1-singlePost .codeCell {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	padding: 5px;
+	background-color: #FAFAFA; 
+	border: #D1D7DC; 
+	border-style: solid;
+	border-left-width: 1px; 
+	border-top-width: 1px; 
+	border-right-width: 1px; 
+	border-bottom-width: 1px
+}
+
+.tx-chcforum-pi1-singlePost .quoteCell {
+	background-color: #FAFAFA;
+	font-size: 10px;
+	padding: 5px;
+	border: #D1D7DC; 
+	border-style: solid;
+	border-left-width: 1px; 
+	border-top-width: 1px; 
+	border-right-width: 1px; 
+	border-bottom-width: 1px
+}
+
+.tx-chcforum-pi1-singlePost .quoteCellAuthor {
+	border: 0px;
+	font-weight: bold;
+	padding: 3px 0;
+}
+
+.tx-chcforum-pi1-singlePost .quoteTable {
+	border: 0px;
+	margin: 15px 0;
+}
+
+.tx-chcforum-pi1-singlePost .text img {
+	max-height: 350px;
+	max-width: 350px;
+}
+
+.tx-chcforum-pi1-singlePostQuoteText {
+	background-color: #FAFAFA;
+	border: 1px solid #666666;
+	font-size: 10px;
+	padding: 5px;
+}
+
+
+/* SINGLE POST END */
+
+
+/* FOOTER BOX BEGIN */
+.tx-chcforum-pi1-footerBox {
+	background: #A7B3CB;
+	padding: 3px;
+	border: 1px solid #999999;
+	font-size: 10px; 
+}
+
+/* used for user listing */
+.tx-chcforum-pi1-footerBox div { 
+	padding-top: 5px; 
+	padding-left: 5px;
+	font-size: 10px; 
+}
+/* FOOTER BOX END */
+
+/* HEADER BOX BEGIN */
+.header_center {	
+  text-align: center;
+	height: 34px;
+}
+.header_text {
+	font-size: 24px;
+	line-height: 34px; 
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.header_small {
+	margin-bottom: 3px;
+	border: solid #666666 1px;
+}
+/* HEADER BOX END */
+
+/* TOOL BAR  BEGIN */
+.tx_chcforum-pi1-toolBar {
+	background: #E3E7EF;
+	border: 1px solid #666666;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 2px;
+}
+
+.tx_chcforum-pi1-toolBar img {
+	vertical-align: middle;
+	margin-left: 16px;
+}
+
+.tx_chcforum-pi1-toolBar div {
+	line-height: 30px;
+	text-align: right;
+	font-size: 9px;
+	font-weight: bold;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+.tx_chcforum-pi1-subToolBar {
+	background: #DEE3E7;
+	margin-bottom: 1px;
+	padding-right: 5px;
+}
+
+.tx_chcforum-pi1-subToolBar img {
+	vertical-align: middle;
+	margin-left: 16px;
+}
+
+.tx_chcforum-pi1-subToolBar div {
+	margin: 0px;
+	line-height: 15px;
+	padding: 3px 0px 3px 0px;
+	text-align: right;
+	font-size: 9px;
+	font-weight: bold;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+
+/* TOOL BAR  END */
+
+/* PROFILE BEGIN */
+.tx-chcforum-pi1-profileBorder {
+	border: 1px solid #999999;
+	padding: 3px;
+}
+
+.tx-chcforum-pi1-profileBorder #userPic {
+	border: 1px solid #666666;
+	float: right;
+}
+
+.tx-chcforum-pi1-profileBorder hr {
+	clear: left;
+	display: block;
+	visibility: hidden;
+}
+
+.tx_chcforum-pi1-profileHdrBig {
+	background: #DEE3E7;
+	border: 1px solid #666666;
+	padding: 5px;
+	margin-bottom: 3px;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.tx_chcforum-pi1-profile_hdr {
+	font-size: 11px;
+  font-weight: bold;
+  background: #E3E7EF;
+  padding: 2px;
+	padding-left: 6px;
+}
+/* PROFILE END */
+
+/* MESSAGE BOX BEGIN */
+.tx-chcforum-pi1-errorBoxCell {
+	background: #E3E7EF;
+	font-weight: bold;
+	text-align: left;
+}
+
+.tx-chcforum-pi1-messageBoxErrorNoBorder {
+	background: #FFD6EF;
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 3px;
+	padding: 3px;
+	font-weight: bold;
+}
+
+.tx-chcforum-pi1-messageBox, .tx-chcforum-pi1-messageBoxError {
+	background: #FFCCCC;
+	margin-bottom: 3px;
+	padding: 3px;
+	padding-left: 5px;
+	font-weight: bold;
+	border: 1px solid #CF1127;
+	color: #CF1127;
+}
+/* MESSAGE BOX END */
+
+.tx-chcforum-pi1-forumTextBig {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tx-chcforum-pi1-helpBox {
+	background-color: #E9E9E9 !important;
+	border-style: none;
+}
+
+.tx-chcforum-pi1-linkUp {
+	background: #DEE3E7;
+	border-bottom: 1px solid #DEDEDE;
+	padding: 3px;
+	padding-right: 5px;
+	font-size: 10px;
+	line-height: 15px;
+	text-align: right;
+}
+
+.tx-chcforum-pi1-previewBoxCell {
+	background: #A7B3CB;
+	text-align: center;
+}
+
+/* CWT COMMUNITY STYLES */
+
+#tx_chcforum-pi1 .tx-cwtcommunity-pi1 .userlistLetters {
+	font-weight: bold;
+}
+#tx_chcforum-pi1 .tx-chcforum-pi1-Table .tx-cwtcommunity-pi1 form {
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, sans-serif;
+}
+#tx_chcforum-pi1 .tx-chcforum-pi1-Table .tx-cwtcommunity-pi1 td {
+	font-family: arial, sans-serif;
+	padding: 2px;
+}
+#tx_chcforum-pi1 .tx-chcforum-pi1-Table .tx-cwtcommunity-pi1 th {
+	background: #E3E7EF;
+	font-family: arial, sans-serif;
+	font-size: 11px;
+	padding: 2px;
+	text-align: left;
+	letter-spacing: 0px;
+}
+
+
+
+/* default styles for extension "tx_pbsurvey_pi1" */
+.tx-pbsurvey-pi1 {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;padding: 30px;border: 1px solid #000000;position: relative;text-align: left;}
+.tx-pbsurvey-pi1 div {margin-bottom: 10px;}
+.tx-pbsurvey-pi1 .pagenumbering {font-size: 10px; position: relative;height: 15px;}
+.tx-pbsurvey-pi1 .barcontainer {background-color: #FFFFFF;border: 1px solid #000000;width: 100px;height: 15px;position: absolute;z-index: 6;right: 0px;}
+.tx-pbsurvey-pi1 .bar {background-color: #CCCCFF;height: 15px;z-index: 4;position: absolute;left: 0px;}
+.tx-pbsurvey-pi1 .bartext {z-index: 5;te xt-align: center;position: absolute;left: 0px;width: 100px;height: 15px;}
+.tx-pbsurvey-pi1 .pageheader {font-size: 16px;font-weight: bolder;color: #003399;}
+.tx-pbsurvey-pi1 .pageIntroduction {font-size: 12px;}
+.tx-pbsurvey-pi1 .survey_item {margin-top: 20px;margin-bottom: 20px;}
+.tx-pbsurvey-pi1 .itemform {font-size: 12px;}
+.tx-pbsurvey-pi1 .question {position: relative;font-size: 12px;}
+.tx-pbsurvey-pi1 .questionNumber {left: -20px;position: absolute;}
+.tx-pbsurvey-pi1 .questionSubtext {font-size: 10px;}
+.tx-pbsurvey-pi1 .required {font-size: 9px;color: #FF0000;vertical-align: super;}
+.tx-pbsurvey-pi1 .additional_ver {margin-left: 20px;}
+.tx-pbsurvey-pi1 .matrix {width: 100%;}
+.tx-pbsurvey-pi1 .matrix .surveyrow_even {background-color: #CCCCFF;}
+.tx-pbsurvey-pi1 .matrix .columnFirst {font-size: 11px; font-weight: bold; text-align: left;}
+.tx-pbsurvey-pi1 .matrix .columnNext {font-size: 11px; text-align: center;}
+/* default styles for extension "tx_felogin_pi1" */
+	.tx-felogin-pi1 label {
+		display: block;
+	}
+	-->
+		/*]]>*/
+	</style>
+
+
+
+
+ 
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+
+<link href="fileadmin/templates/at/main/css/global_top.css" rel="stylesheet" type="text/css">
+
+<link href="fileadmin/templates/at/main/css/global_menu_2.css" rel="stylesheet" type="text/css">
+
+<link href="fileadmin/templates/at/main/css/global_content.css" rel="stylesheet" type="text/css">
+
+<link href="fileadmin/templates/at/main/css/global_home.css" rel="stylesheet" type="text/css"><link rel="contents" href="132.html">
+<link rel="help" href="support.html">
+<link rel="top" href="home.html?&no_cache=1" title="Greenpeace CEE">
+<link rel="search" href="search_at.html">
+	<title>Greenpeace CEE</title>
+	<meta name="generator" content="TYPO3 4.2 CMS" />
+	<script type="text/javascript">
+		/*<![CDATA[*/
+	<!--
+		var browserName = navigator.appName;
+		var browserVer = parseInt(navigator.appVersion);
+		var version = "";
+		var msie4 = (browserName == "Microsoft Internet Explorer" && browserVer >= 4);
+		if ((browserName == "Netscape" && browserVer >= 3) || msie4 || browserName=="Konqueror" || browserName=="Opera") {version = "n3";} else {version = "n2";}
+			// Blurring links:
+		function blurLink(theObject)	{	//
+			if (msie4)	{theObject.blur();}
+		}
+			function T3_onmousemoveWrapper(e)	{	GL_getMouse(e);   GLb11d47_getMouse(e);	}
+	function T3_onmouseupWrapper(e)	{	GL_mouseUp('b11d47',e);	}
+	function T3_onloadWrapper(e)	{	GL_initLayers();   GL_restoreMenu("b11d47");	}
+	document.onmousemove=T3_onmousemoveWrapper;
+	document.onmouseup=T3_onmouseupWrapper;
+	document.onload=T3_onloadWrapper;
+			// decrypt helper function
+		function decryptCharcode(n,start,end,offset)	{
+			n = n + offset;
+			if (offset > 0 && n > end)	{
+				n = start + (n - end - 1);
+			} else if (offset < 0 && n < start)	{
+				n = end - (start - n - 1);
+			}
+			return String.fromCharCode(n);
+		}
+			// decrypt string
+		function decryptString(enc,offset)	{
+			var dec = "";
+			var len = enc.length;
+			for(var i=0; i < len; i++)	{
+				var n = enc.charCodeAt(i);
+				if (n >= 0x2B && n <= 0x3A)	{
+					dec += decryptCharcode(n,0x2B,0x3A,offset);	// 0-9 . , - + / :
+				} else if (n >= 0x40 && n <= 0x5A)	{
+					dec += decryptCharcode(n,0x40,0x5A,offset);	// A-Z @
+				} else if (n >= 0x61 && n <= 0x7A)	{
+					dec += decryptCharcode(n,0x61,0x7A,offset);	// a-z
+				} else {
+					dec += enc.charAt(i);
+				}
+			}
+			return dec;
+		}
+			// decrypt spam-protected emails
+		function linkTo_UnCryptMailto(s)	{
+			location.href = decryptString(s,-1);
+		}
+		
+	// -->
+		/*]]>*/
+	</script>
+<script type="text/javascript" src="typo3/sysext/cms/tslib/media/scripts/jsfunc.layermenu.js"></script>
+
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+		// JS function for mouse-over
+	function over(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_h.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_h.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_h.src");}
+	}
+		// JS function for mouse-out
+	function out(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_n.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_n.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_n.src");}
+	}
+	function openPic(url,winName,winParams)	{	//
+		var theWindow = window.open(url,winName,winParams);
+		if (theWindow)	{theWindow.focus();}
+	}
+GLV_curLayerWidth["b11d47"]=0;
+GLV_curLayerHeight["b11d47"]=0;
+GLV_curLayerX["b11d47"]=0;
+GLV_curLayerY["b11d47"]=0;
+GLV_menuOn["b11d47"] = null;
+GLV_gap["b11d47"]=5;
+GLV_currentLayer["b11d47"] = null;
+GLV_currentROitem["b11d47"] = null;
+GLV_hasBeenOver["b11d47"]=0;
+GLV_doReset["b11d47"]=false;
+GLV_lastKey["b11d47"] = "Menub11d476";
+GLV_onlyOnLoad["b11d47"] = 0;
+GLV_dontHideOnMouseUp["b11d47"] = 0;
+GLV_dontFollowMouse["b11d47"] = 1;
+GLV_date = new Date();
+GLV_timeout["b11d47"] = GLV_date.getTime();
+GLV_timeoutRef["b11d47"] = 0;
+GLV_menuXY["b11d47"] = new Array();
+GLV_menuXY["b11d47"]["Menub11d470"] = new Array(0,0,"itemID1a32f0d23f","anchorID1a32f0d23f");
+GLV_menuXY["b11d47"]["Menub11d471"] = new Array(0,0,"itemIDf1388b6a1e","anchorIDf1388b6a1e");
+GLV_menuXY["b11d47"]["Menub11d472"] = new Array(0,0,"itemIDcf83591d16","anchorIDcf83591d16");
+GLV_menuXY["b11d47"]["Menub11d473"] = new Array(0,0,"itemID449a0460ea","anchorID449a0460ea");
+GLV_menuXY["b11d47"]["Menub11d474"] = new Array(0,0,"itemID131a7fd372","anchorID131a7fd372");
+GLV_menuXY["b11d47"]["Menub11d475"] = new Array(0,0,"itemID8a498cf998","anchorID8a498cf998");
+GLV_menuXY["b11d47"]["Menub11d476"] = new Array(0,0,"itemIDf93400727a","anchorIDf93400727a");
+GLV_menuXY["b11d47"]["Menub11d477"] = new Array(0,0,"itemIDbe929a4982","anchorIDbe929a4982");
+GLV_menuXY["b11d47"]["Menub11d478"] = new Array(0,0,"itemIDc52c94f02a","anchorIDc52c94f02a");
+
+function GLb11d47_getMouse(e) {
+	if (GLV_menuOn["b11d47"]!=null && !GLV_dontFollowMouse["b11d47"]){
+
+	}
+	GL_mouseMoveEvaluate("b11d47");
+}
+function GLb11d47_hideCode() {
+
+	GL_getObjCss("Menub11d470").visibility = "hidden";
+	GL_getObjCss("Menub11d472").visibility = "hidden";
+	GL_getObjCss("Menub11d473").visibility = "hidden";
+	GL_getObjCss("Menub11d474").visibility = "hidden";
+	GL_getObjCss("Menub11d475").visibility = "hidden";
+	GL_getObjCss("Menub11d476").visibility = "hidden";
+}
+function GLb11d47_doTop(WMid,id) {
+var parentObject = GL_getObj(GLV_menuXY[WMid][id][2]);
+		var TI_width = parentObject.width;
+		var TI_height = parentObject.height;
+		var anchorObj = GL_getObj(GLV_menuXY[WMid][id][3]);
+		var TI_x = anchorObj.x;
+		var TI_y = anchorObj.y;
+			
+GLV_menuOn["b11d47"].left = (TI_x+0)+"px";
+GLV_menuOn["b11d47"].top =  (TI_y+17)+"px";
+}
+function GLb11d47_restoreMenu() {
+
+}
+function GLb11d47_resetSubMenus() {
+	var resetSubMenu=1;
+
+	return resetSubMenu;
+}
+
+GLV_timeout_pointers[GLV_timeout_count] = "b11d47";
+GLV_timeout_count++;
+// -->
+	/*]]>*/
+</script>
+
+</head>
+<body onload="T3_onloadWrapper();">
+<div id="Menub11d470" style="z-index:9999; position:absolute;VISIBILITY:hidden;"><DIV><DIV class="drop_no"><a href="klimawandel.html" onfocus="blurLink(this);"  >Klimawandel</a></DIV><DIV class="drop_no"><a href="meere.html" onfocus="blurLink(this);"  >Meere + Wale</a></DIV><DIV class="drop_no"><a href="atom.html" onfocus="blurLink(this);"  >Atom</a></DIV><DIV class="drop_no"><a href="energie.html" onfocus="blurLink(this);"  >Energie</a></DIV><DIV class="drop_no"><a href="gentechnik.html" onfocus="blurLink(this);"  >Gentechnik</a></DIV><DIV class="drop_no"><a href="umweltgifte.html" onfocus="blurLink(this);"  >Umweltgifte</a></DIV><DIV class="drop_no"><a href="muell.html" onfocus="blurLink(this);"  >Müll</a></DIV><DIV class="drop_no"><a href="verkehr.html" onfocus="blurLink(this);"  >Verkehr</a></DIV><DIV class="drop_no"><a href="urwaelder.html" onfocus="blurLink(this);"  >Urwald</a></DIV><DIV class="drop_no"><a href="3381.html" onfocus="blurLink(this);"  >Konsum</a></DIV></DIV></div>
+<div id="Menub11d472" style="z-index:9998; position:absolute;VISIBILITY:hidden;"><DIV><DIV class="drop_no"><a href="newsletter.html" onfocus="blurLink(this);"  >Newsletter abonnieren</a></DIV><DIV class="drop_no"><a href="aktiv.html" onfocus="blurLink(this);"  >Werde Aktiv</a></DIV><DIV class="drop_no"><a href="946.html" onfocus="blurLink(this);"  >Mitarbeit</a></DIV><DIV class="drop_no"><a href="directdialog.html" onfocus="blurLink(this);"  >Sprich für Greenpeace</a></DIV><DIV class="drop_no"><a href="menschen_bei_gp.html" onfocus="blurLink(this);"  >Menschen bei uns</a></DIV><DIV class="drop_no"><a href="praktikum.html" onfocus="blurLink(this);"  >Praktikum</a></DIV><DIV class="drop_no"><a href="fun.html" onfocus="blurLink(this);"  >Fun</a></DIV><DIV class="drop_no"><a href="resistance_factory.html" onfocus="blurLink(this);"  >resistance fACTory</a></DIV></DIV></div>
+<div id="Menub11d473" style="z-index:9997; position:absolute;VISIBILITY:hidden;"><DIV><DIV class="drop_no"><a href="presseaussendungen.html?&amp;no_cache=1" onfocus="blurLink(this);"  >Presseaussendungen</a></DIV><DIV class="drop_no"><a href="act.html" onfocus="blurLink(this);"  >ACT - Das Magazin</a></DIV><DIV class="drop_no"><a href="publikationen.html" onfocus="blurLink(this);"  >Publikationen</a></DIV><DIV class="drop_no"><a href="46.html" onfocus="blurLink(this);"  >Fotos + Multimedia</a></DIV><DIV class="drop_no"><a href="meinungen.html" onfocus="blurLink(this);"  >Meinungen</a></DIV><DIV class="drop_no"><a href="mediateam.html" onfocus="blurLink(this);"  >Media-Team</a></DIV><DIV class="drop_no"><a href="43.html" onfocus="blurLink(this);"  >Links</a></DIV></DIV></div>
+<div id="Menub11d474" style="z-index:9996; position:absolute;VISIBILITY:hidden;"><DIV><DIV class="drop_no"><a href="geschichte-erfolge.html" onfocus="blurLink(this);"  >Geschichte + Erfolge</a></DIV><DIV class="drop_no"><a href="regional.html" onfocus="blurLink(this);"  >Greenpeace regional</a></DIV><DIV class="drop_no"><a href="weltweit.html" onfocus="blurLink(this);"  >Greenpeace weltweit</a></DIV><DIV class="drop_no"><a href="flotte.html" onfocus="blurLink(this);"  >Die Greenpeace-Schiffe</a></DIV><DIV class="drop_no"><a href="4490.html" onfocus="blurLink(this);"  >Wachstum ohne Grenzen?</a></DIV></DIV></div>
+<div id="Menub11d475" style="z-index:9995; position:absolute;VISIBILITY:hidden;"><DIV><DIV class="drop_no"><a href="ihre_spende.html" onfocus="blurLink(this);"  >Ihre Spende</a></DIV><DIV class="drop_no"><a href="frontline.html" onfocus="blurLink(this);"  >Der Frontlinebereich</a></DIV><DIV class="drop_no"><a href="erbschaftsspende.html" onfocus="blurLink(this);"  >Erbschaftsspende</a></DIV></DIV></div>
+<div id="Menub11d476" style="z-index:9994; position:absolute;VISIBILITY:hidden;"><DIV><DIV class="drop_no"><a href="mitarbeit-jobs.html" onfocus="blurLink(this);"  >Wir suchen Sie</a></DIV><DIV class="drop_no"><a href="ddfundraising.html" onfocus="blurLink(this);"  >DD Fundraising</a></DIV></DIV></div>
+
+
+
+
+
+<table width="980" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" align="center">
+
+  <tr>
+
+    <td align="left" valign="top">
+
+      <table width="980" height="95" border="0" cellpadding="0" cellspacing="0" background="fileadmin/templates/at/main/img/header.png">
+
+       <form action="76.html" method="get" name="search"> 
+
+          <tr>
+
+            <td align="left" valign="middle"><span ID="homeLink"><a href="home.html?&amp;no_cache=1" target="_self" ><img src="fileadmin/templates/at/main/img/logo.gif" width="245" height="51" border="0" alt="Home" alt="" title="" /></a></span></td>
+
+            <td align="right" valign="bottom"  id="logonav"><IMG src="fileadmin/templates/at/main/img/arrow.gif" width="3" height="5" vspace="1"> <span class="link"><a href="kontakt.html" >Kontakt</a></span>&nbsp;&nbsp; <IMG src="fileadmin/templates/at/main/img/arrow.gif" width="3" height="5" vspace="1"> <span class="link"><a href="support.html" >Service</a></span>&nbsp;&nbsp;
+
+                <input name="tx_indexedsearch[sword]" type="text" class="search" value="Suche" size="18" onFocus="this.value = '';">
+
+              <IMG src="fileadmin/templates/at/main/img/arrow.gif" width="3" height="5" vspace="1"> <span class="link"><A href="#" onClick="document.search.submit();">Go</a></SPAN>&nbsp;&nbsp;</td>
+
+          </tr>
+
+        </form>
+
+      </table>
+
+      <table width="980" border="0" cellpadding="0" cellspacing="0" class="topNav">
+
+        <tr id="menu_1"><td class="menu_1-level1_no"><div id="anchorID1a32f0d23f" style="position:absolute;visibility:hidden;"></div><div id="itemID1a32f0d23f" style="width:100%; height:100%;"><a href="kampagnen.html" onfocus="blurLink(this);" onmouseover="GL_doTop('b11d47', 'Menub11d470');" onmouseout="GL_stopMove('b11d47');"  >Themen</a></div></td><td class="menu_1-level1_no"><div id="anchorIDf1388b6a1e" style="position:absolute;visibility:hidden;"></div><div id="itemIDf1388b6a1e" style="width:100%; height:100%;"><a href="blog.html" onfocus="blurLink(this);" onmouseover="GL_hideAll(&quot;b11d47&quot;);" onmouseout="GL_resetAll(&quot;b11d47&quot;);"  >Blog</a></div></td><td class="menu_1-level1_no"><div id="anchorIDcf83591d16" style="position:absolute;visibility:hidden;"></div><div id="itemIDcf83591d16" style="width:100%; height:100%;"><a href="community.html?&amp;no_cache=1" onfocus="blurLink(this);" onmouseover="GL_doTop('b11d47', 'Menub11d472');" onmouseout="GL_stopMove('b11d47');"  >Community</a></div></td><td class="menu_1-level1_no"><div id="anchorID449a0460ea" style="position:absolute;visibility:hidden;"></div><div id="itemID449a0460ea" style="width:100%; height:100%;"><a href="media-center.html" onfocus="blurLink(this);" onmouseover="GL_doTop('b11d47', 'Menub11d473');" onmouseout="GL_stopMove('b11d47');"  >Media Center</a></div></td><td class="menu_1-level1_no"><div id="anchorID131a7fd372" style="position:absolute;visibility:hidden;"></div><div id="itemID131a7fd372" style="width:100%; height:100%;"><a href="ueber-greenpeace.html" onfocus="blurLink(this);" onmouseover="GL_doTop('b11d47', 'Menub11d474');" onmouseout="GL_stopMove('b11d47');"  >Über Greenpeace</a></div></td><td class="menu_1-level1_no"><div id="anchorID8a498cf998" style="position:absolute;visibility:hidden;"></div><div id="itemID8a498cf998" style="width:100%; height:100%;"><a href="spenden.html" onfocus="blurLink(this);" onmouseover="GL_doTop('b11d47', 'Menub11d475');" onmouseout="GL_stopMove('b11d47');"  >Spenden</a></div></td><td class="menu_1-level1_no"><div id="anchorIDf93400727a" style="position:absolute;visibility:hidden;"></div><div id="itemIDf93400727a" style="width:100%; height:100%;"><a href="jobs.html" onfocus="blurLink(this);" onmouseover="GL_doTop('b11d47', 'Menub11d476');" onmouseout="GL_stopMove('b11d47');"  >Jobs</a></div></td><td class="menu_1-level1_no"><div id="anchorIDbe929a4982" style="position:absolute;visibility:hidden;"></div><div id="itemIDbe929a4982" style="width:100%; height:100%;"><img src="clear.gif" width="80" height="1" alt=""></div></td><td class="oddcell"><div id="anchorIDc52c94f02a" style="position:absolute;visibility:hidden;"></div><div id="itemIDc52c94f02a" style="width:100%; height:100%;"><a href="80.html" onfocus="blurLink(this);" onmouseover="GL_hideAll(&quot;b11d47&quot;);" onmouseout="GL_resetAll(&quot;b11d47&quot;);"  >Login</a></div></td></tr>
+
+      </table>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<div id="contentsection">
+
+<table width="980" border="0" cellpadding="0" cellspacing="0" id="home" bgcolor="#FFFFFF" align="center">
+
+    <tr> 
+
+      <td colspan="5" valign="top">
+
+       <table border="0" cellpadding="0" cellspacing="0">
+
+        <tr id="colTop"><td><a name="27079"></a>	<script type="text/javascript" src="fileadmin/scripts/gp/js/jquery.js"></script>
+	<script type="text/javascript" src="fileadmin/scripts/gp/js/easySlider1.7.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true
+			});
+		});	
+	</script>
+	<link href="fileadmin/scripts/gp/css/screen_gp.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript">
+function MM_CheckFlashVersion(reqVerStr,msg){
+  with(navigator){
+    var isIE  = (appVersion.indexOf("MSIE") != -1 && userAgent.indexOf("Opera") == -1);
+    var isWin = (appVersion.toLowerCase().indexOf("win") != -1);
+    if (!isIE || !isWin){  
+      var flashVer = -1;
+      if (plugins && plugins.length > 0){
+        var desc = plugins["Shockwave Flash"] ? plugins["Shockwave Flash"].description : "";
+        desc = plugins["Shockwave Flash 2.0"] ? plugins["Shockwave Flash 2.0"].description : desc;
+        if (desc == "") flashVer = -1;
+        else{
+          var descArr = desc.split(" ");
+          var tempArrMajor = descArr[2].split(".");
+          var verMajor = tempArrMajor[0];
+          var tempArrMinor = (descArr[3] != "") ? descArr[3].split("r") : descArr[4].split("r");
+          var verMinor = (tempArrMinor[1] > 0) ? tempArrMinor[1] : 0;
+          flashVer =  parseFloat(verMajor + "." + verMinor);
+        }
+      }
+      // WebTV has Flash Player 4 or lower -- too low for video
+      else if (userAgent.toLowerCase().indexOf("webtv") != -1) flashVer = 4.0;
+
+      var verArr = reqVerStr.split(",");
+      var reqVer = parseFloat(verArr[0] + "." + verArr[2]);
+  
+      if (flashVer < reqVer){
+        if (confirm(msg))
+          window.location = "http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash";
+      }
+    }
+  } 
+}
+    </script>
+	<script src="../scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+	
+    
+    <div id="kasten">
+
+	<div id="inhalt">
+	
+  <div id="slider">
+			<ul>				
+
+
+				<!-- kitkat slide start -->
+
+				<li>
+					
+					<div style="background-image:url(fileadmin/scripts/gp/images/slider_nestle_kitkat_01.jpg);width:980px;height:360px">
+                       
+                    <div style="margin:12px 0 0 50px; float:left;">
+			           	<object type="application/x-shockwave-flash" style="width:510px; height:310px;" data="http://www.youtube.com/v/LCnpggVb8jI&hl=en_US&fs=1&">
+            			   	<param name="movie" value="http://www.youtube.com/v/LCnpggVb8jI&hl=en_US&fs=1&" />
+                   			<param name="wmode" value="transparent" />
+               			</object>
+					</div>
+                    
+                    <div style="margin-left:650px; width:300px;">  
+                 	
+               		<div class="sheader">Nestlé verwendet Palm&ouml;l aus Urwaldzerst&ouml;rung</div>
+                    <div class="scontent">Nestlé verwendet Palm&ouml;l aus indonesischer Urwaldzerst&ouml;rung. Produkte wie Kit Kat bringen die selten gewordenen Orang-Utans an den Rand der Ausrottung. Dies zeigt ein brandneuer Bericht von Greenpeace International.
+				    <br />
+				    <br />
+                    <a href="http://www.greenpeace.at/kitkat" target="_self">Zur
+                    Protest-Aktion...</a>
+                    </div>
+					</div>
+					</div>
+				</li>
+
+                <!-- kitkat slide end -->
+
+				<!-- RWIII slide start -->
+				
+                <li>
+					
+				  	<div style="background-image:url(fileadmin/scripts/gp/images/slider_rw_III.jpg);width:980px;height:360px">
+                    <div style="margin-left:650px; width:300px;">
+                    
+                    <div class="sheader">Rainbow Warrior III</div>
+                    <div class="scontent">Greenpeace baut zum ersten Mal in seiner Geschichte ein v&ouml;llig neues Schiff. Die Rainbow Warrior III soll dabei als "Gr&uuml;nes Schiff" zukunftsweisende Maßst&auml;be setzen.<br>
+                      <br>
+                    Mehr Infos finden Sie <a href="http://www.greenpeace.at/rainbow_warrior_3.html" target="_self">hier</a>.</div>
+                    </div>
+                    </div>
+				</li>
+				
+                <!-- RWIII slide end -->
+
+
+               
+                
+				<!-- CCS slide start -->
+				
+                <li>
+					
+				  	<div style="background-image:url(fileadmin/scripts/gp/images/slide_ccs.jpg);width:980px;height:360px">
+                    <div style="margin-left:650px; width:300px;">
+                    
+                    <div class="sheader">CO<sub>2</sub>-Endlager in Österreich</div>
+                    <div class="scontent">Böse Überraschung: in der von der
+                      Regierung präsentierten Energiestrategie ist das Thema
+                      CO<sub>2</sub>-Endlager nicht vom Tisch. Die Industriellenvereinigung
+                      begrüßte das schon vor der Veröffentlichung.<br />
+                      <br />
+                      Greenpeace
+                      lehnt die Errichtung von CO<sub>2</sub>-Lagern strikt ab:
+                      diese Technologie ist kurzsichtig und mit enormen Kosten
+                      verbunden!<br>
+                      <br>
+                    Mehr Infos finden Sie <a href="http://www.greenpeace.at/news_energie_100319.html" target="_self">hier</a>.</div>
+                    </div>
+                    </div>
+				</li>
+				
+                <!-- CCS slide end -->
+
+
+                <!-- 1MioTaten slide start -->
+				
+                <li>
+				  <div style="background-image:url(fileadmin/scripts/gp/images/slide_eisbaer.jpg);width:980px;height:360px">
+				  	<div style="margin-left:650px; width:300px;">
+                    <div class="sheader">Jetzt mitmachen!</div>
+                    <div class="scontent">Das Ergebnis der Weltklimakonferenz
+                      von Kopenhagen war ernüchternd. Es wurde nichts rechtlich
+                      Verbindliches beschlossen, und es wurde nicht einmal verbindlich
+                      beschlossen, im kommenden Jahr etwas zu beschließen.<br />
+                      <br />
+                      Die Weltpolitik hat in Kopenhagen versagt - daher sind Ihre Taten für den Klimaschutz jetzt wichtiger denn je!<br>
+				  	<br />
+				  	<a href="http://1000000taten.greenpeace.at/" target="_blank">Machen Sie jetzt mit!</a> </div>
+                    </div>
+                  </div>
+				</li>
+				
+                <!-- 1MioTaten slide end -->
+                
+                
+			</ul>
+	  </div>
+			
+	</div>
+
+</div></td></tr>
+
+
+
+	    </table>
+
+
+
+	  </td>
+
+
+
+    </tr> 
+
+
+
+
+
+
+
+    <tr> 
+
+
+
+      
+
+
+
+
+
+
+
+      <!-- LEFT -->
+
+
+
+      <td width="165" align="left" valign="top" style="padding-top:10px;">
+
+
+
+         <div  id="colBorderLeft"><div><a name="27064"></a><style type="text/css">
+<!--
+-->
+</style>
+<table width="165" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+    <td height="30" colspan="5" valign="middle">&nbsp;&nbsp;<strong><font color="#000000">Folgen
+          Sie uns auf...</font></strong></span> </td>
+  </tr>
+  <tr>
+    <td height="30" align="center" valign="middle"><a href="http://www.facebook.com/pages/Greenpeace-Austria/32984679070" target="_blank">
+    <img src="http://www.greenpeace.at/fileadmin/at/bildarchiv/Grafiken/Icons/FaceBook-24x24.png" alt="facebook" border="0" style="width: 24px; height: 24px; padding-left:5px" /></a>    </td>
+    <td height="30" align="center" valign="middle"><a href="http://twitter.com/GreenpeaceAT" target="_blank">
+    <img src="http://www.greenpeace.at/fileadmin/at/bildarchiv/Grafiken/Icons/Twitter-24x24.png" alt="twitter" border="0" style="width: 24px; height: 24px; padding-left:5px" /></a>    </td>
+    <td height="30" align="center" valign="middle"><a href="http://www.youtube.com/user/GreenpeaceAT" target="_blank">
+    <img src="http://www.greenpeace.at/fileadmin/at/bildarchiv/Grafiken/Icons/Youtube-24x24.png" alt="YouTube" border="0" style="width: 24px; height: 24px; padding-left:5px" /></a>    </td>
+    <td height="30" align="center" valign="middle"><a href="http://www.flickr.com/photos/29226883@N05/" target="_blank">
+    </a><a href="http://feeds.feedburner.com/GreenpeaceATNews" target="_blank">
+    <img src="http://www.greenpeace.at/fileadmin/at/bildarchiv/Grafiken/Icons/Feed-24x24.png" alt="Feedburner" border="0" style="width: 24px; height: 24px; padding-left:5px;" /></a>   </td>
+    <td height="30" align="center" valign="middle"><a href="http://www.flickr.com/photos/29226883@N05/" target="_blank">
+    <img src="http://www.greenpeace.at/fileadmin/at/bildarchiv/Grafiken/Icons/Flickr-24x24.png" alt="Flickr" border="0" style="width: 24px; height: 24px; padding-left:5px; padding-right:5px;" /></a></td>
+  </tr>
+</table>
+</div><div class="spacer"></div><div><a name="26764"></a><div style="text-align:center;"><table width="165" border="0" cellspacing="0" cellpadding="0" style="margin-left: auto; margin-right: auto" class="imgtext-table"><tr><td valign="top"><a href="slideshow.html" ><img src="uploads/pics/monthinpictures_april09.jpg" width="165" height="165" border="0" align="top" alt="" title="" /></a><br /></td></tr></table></div></div><div class="spacer"></div></div>
+
+
+
+      </td>
+
+
+
+
+
+
+
+      <td width="10"></td>
+
+
+
+
+
+
+
+      <!-- MIDDLE -->
+
+
+
+      <td align="left" valign="top" width="630">
+
+
+
+	    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+
+
+		  <tr>
+
+
+
+		    <td id="colNormal" align="left" valign="top"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="27076"></a><table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#f9f9f9;">
+  <tr>
+    <td><a href="http://www.greenpeace.at/newsletter.html" target="_self">Newsletter bestellen</a></td>
+    <td align="center"><a href="http://85.125.233.205/community.html?&no_cache=1" target="_self">Mitmachen!</a></td>
+    <td align="right"><a href="http://85.125.233.205/spenden.html" target="_self">Ihre Spende</a></td>
+  </tr>
+</table>
+</td></tr></table><div class="spacer"></div><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="27075"></a><!-- ++Begin Dynamic Feed Wizard Generated Code++ -->
+  <!--
+  // Created with a Google AJAX Search and Feed Wizard
+  // http://code.google.com/apis/ajaxsearch/wizards.html
+  -->
+
+  <!--
+  // The Following div element will end up holding the actual feed control.
+  // You can place this anywhere on your page.
+  -->
+  <div id="feed-control">
+    <span style="color:#676767;font-size:11px;margin:10px;padding:4px;">Loading...</span>
+  </div>
+
+  <!-- Google Ajax Api
+  -->
+  <script src="http://www.google.com/jsapi?key=notsupplied-wizard"
+    type="text/javascript"></script>
+
+  <!-- Dynamic Feed Control and Stylesheet -->
+  <script src="http://www.greenpeace.at/fileadmin/scripts/css/gfdynamicfeedcontrol.js"
+    type="text/javascript"></script>
+  <style type="text/css">
+    @import url("http://www.greenpeace.at/fileadmin/scripts/css/gfdynamicfeedcontrol.css");
+  </style>
+
+  <script type="text/javascript">
+    function LoadDynamicFeedControl() {
+      var feeds = [
+	{title: 'Blog',
+	 url: 'http://www.greenpeace.at/wordpress/?feed=rss2'
+	},
+	{title: 'Twitter',
+	 url: 'http://twitter.com/statuses/user_timeline/20777380.rss'
+	}];
+      var options = {
+        stacked : true,
+        horizontal : false,
+        title : "Aktuelle Feeds"
+      }
+
+      new GFdynamicFeedControl(feeds, 'feed-control', options);
+    }
+    // Load the feeds API and set the onload callback.
+    google.load('feeds', '1');
+    google.setOnLoadCallback(LoadDynamicFeedControl);
+  </script>
+<!-- ++End Dynamic Feed Control Wizard Generated Code++ -->
+</td></tr></table><div class="spacer"></div><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="27048"></a><div><span class="date">&gt;&nbsp;10.06.2009</span><br><div class="artHeader" style="padding-bottom:7px;"><a href="news_klima_090610.html" onfocus="blurLink(this);"  >Greenpeace bewertet EU-Kommission: Gerade noch GENÜGEND für Präsident Barroso</a></div><a href="news_klima_090610.html" ><img src="typo3temp/pics/f8cbea943b.jpg" width="80" height="75" border="0" style="float:left; margin: 5px 5px 3px 0px;" alt="" title="" /></a>Die zehn größten europäischen Umweltorganisationen haben die Arbeit der EU-Kommission in Bezug auf die brennendsten Umweltschutz-Fragen unter die Lupe genommen: Kein Ruhmesblatt für die Kommission! <div style="padding-top:5px;"><a href="news_klima_090610.html" >[Mehr...]</a></div></div><div class="spacer"></div></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="26949"></a><div><span class="date">&gt;&nbsp;04.06.2009</span><br><div class="artHeader" style="padding-bottom:7px;"><a href="news_wald_090604.html" onfocus="blurLink(this);"  >Greenpeace und ECA Watch fordern: Hände weg von Tasmanien!</a></div><a href="news_wald_090604.html" ><img src="typo3temp/pics/54be62be75.jpg" width="80" height="54" border="0" style="float:left; margin: 5px 5px 3px 0px;" alt="" title="" /></a>Mit einer spektakulären Aktion vor dem Firmengebäude der Andritz AG in Graz protestierten heute dreißig Aktivisten von Greenpeace und ECA Watch gegen die Beteiligung des Unternehmens an der "Bell Bay"-Papierfabrik, eines gigantischen Zellstoffwerkes in Tasmanien.<br />
+<br />
+<strong>Mit Video zur Aktion!</strong><br />
+<div style="padding-top:5px;"><a href="news_wald_090604.html" >[Mehr...]</a></div></div><div class="spacer"></div></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="26919"></a><div><span class="date">&gt;&nbsp;02.06.2009</span><br><div class="artHeader" style="padding-bottom:7px;"><a href="news_wald_090602.html" onfocus="blurLink(this);"  >Rinderzucht bedroht Amazonas-Regenwald</a></div><a href="news_wald_090602.html" ><img src="typo3temp/pics/6f00f80e24.jpg" width="80" height="54" border="0" style="float:left; margin: 5px 5px 3px 0px;" alt="" title="" /></a>Greenpeace hat einen neuen Report veröffentlicht. Er zeigt, dass die Rinderzucht in Brasilien den Amazonas-Regenwald bedroht. Davon profitieren europäischen Firmen, die das dabei produzierte Leder für ihre Produkte einsetzen.<div style="padding-top:5px;"><a href="news_wald_090602.html" >[Mehr...]</a></div></div><div class="spacer"></div></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="27065"></a><!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_favorites"></a>
+<a class="addthis_button_print"></a>
+<span class="addthis_separator">|</span>
+<a href="http://addthis.com/bookmark.php?v=250&amp;username=greenpeaceat" class="addthis_button_expanded">More</a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=greenpeaceat"></script>
+<!-- AddThis Button END -->
+</td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="article"><a name="24196"></a><p style="margin:0 0 0 0;"><a href="mehr_news.html" >[Mehr News...]</a></p></td></tr></table><div><a name="17789"></a><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2742893-1");
+pageTracker._trackPageview();
+} catch(err) {}</script></div><div class="spacer"></div><div><a name="24957"></a><script type="text/javascript" src="http://cetrk.com/pages/scripts/0010/0154.js"> </script></div><div class="spacer"></div></td>
+
+
+
+		  </tr>
+
+
+
+		  <tr>
+
+
+
+            <td align="left" valign="top">
+
+
+
+            <table border="0" cellpadding="0" cellspacing="0">
+
+
+
+		      <tr>
+
+
+
+    		    <td>
+
+
+
+				<table border="0" cellpadding="0" cellspacing="0" id="footer">
+
+
+
+				  <tr>
+
+
+
+				    <td id="tools"><span id="tellafriend"><img src="fileadmin/templates/at/ext_img/icon_email.gif" width="12" height="12" hspace="5" border="0" align="absmiddle"><a href="125.html?&amp;no_cache=1&amp;tipUrl=http%3A%2F%2F%2F" >Weitersagen</a></span><span><a href="#top">[nach oben]</a></span></td>
+
+
+
+				  </tr>
+
+
+
+				</table>
+
+
+
+			    </td>
+
+
+
+		      </tr>
+
+
+
+		      <tr>
+
+
+
+		        <td id="copy"><SPAN><span class="mediumfont">&copy</span>Greenpeace 2009</span><SPAN><a href="100.html" >[Impressum]</a></span></td>
+
+
+
+		      </tr>
+
+
+
+		    </table>
+
+
+
+		  </td>
+
+
+
+		  </tr>
+
+
+
+		</table>
+
+
+
+	  </td>
+
+
+
+
+
+
+
+      <td width="10"></td>
+
+
+
+
+
+
+
+	  <!-- RIGHT -->
+
+
+
+      <td width="250" align="left" valign="top" id="rightBorder" style="background-color: #f7f7f7">
+
+
+
+        <script type="text/javascript">
+<!--
+/*<![CDATA[*/
+if (version == "n3") {
+donate_image_n = new Image(); donate_image_n.src = "/fileadmin/at/bildarchiv/Spenden/sb_subseite4_aus.png";
+donate_image_h = new Image(); donate_image_h.src = "/fileadmin/at/bildarchiv/Spenden/sb_subseite4_ein.png";
+}
+/* ]]> */
+// -->
+</script>
+<div style="margin-bottom:10px">
+<a href="/spenden.html" onmouseover="over('donate_image');" onmouseout="out('donate_image');"><img src="fileadmin/at/bildarchiv/Spenden/sb_subseite4_aus.png" name="donate_image" alt="Jetzt spenden" border="0"></a>
+</div>
+
+
+
+			  <div id="colAction">
+<!-- InstanceBeginEditable name="content" -->
+<!-- ###TAKEAKTIONBOX### -->
+        <table width="165" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td align="left" valign="top" bgcolor="#FFFFFF" class="action"><img src="fileadmin/templates/at/main/img/takeaction.gif" alt="Take Action NOW!" width="64" height="54" align="absmiddle"><span class="header"><img src="fileadmin/templates/at/main/img/action_now.gif" alt="Take Action NOW!" width="59" height="27" hspace="10" border="0" align="absmiddle"></span> <br>
+              <br>
+			  <div id="actions"><b>Island: <a href="protest_island.html" >Jetzt den Walfang beenden!</a><br /></b><br />
+---------------------------&nbsp;<br />
+<b>Nein zu Gen-Reis!</b><br /><br /><a href="protest_bayer.html" >Protestieren Sie jetzt gegen Bayer!</a></div>
+			<div class="spacer"></div>
+			</td>
+          </tr>
+        </table>
+        <table width="165" border="0" cellspacing="0" cellpadding="0">
+        </table>
+<!-- ###TAKEAKTIONBOX### -->
+<!-- InstanceEndEditable -->
+</div>
+
+
+
+        <table width="165" cellpadding="0" cellspacing="0" border="0">
+
+
+
+         <tr height="10"><td></td></tr>
+
+
+
+         <tr>
+
+
+
+          <td width="165" align="left" valign="top" id="border"><div><a name="21698"></a><!-- Begin ShoutMix - http://www.shoutmix.com -->
+<iframe title="willi1010" src="http://www4.shoutmix.com/?willi1010" width="160" height="400" frameborder="0" scrolling="auto">
+<a href="http://www4.shoutmix.com/?willi1010">View shoutbox</a>
+</iframe>
+<!-- End ShoutMix --></div><div class="spacer"></div></td>
+
+
+
+		  </tr>
+
+
+
+		 </table>
+
+
+
+	  </td>
+
+
+
+    </tr>
+
+
+
+  </table>
+
+
+
+</div>
+
+
+</body>
+</html>
+<!-- Parsetime: 444 ms-->

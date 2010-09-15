@@ -1,0 +1,31 @@
+HTTP/1.0 200 OK
+Server: http server 1.0
+Content-type: text/html; charset=UTF-8
+Date: Tue, 14 Sep 2010 19:48:38 GMT
+Last-modified: Wed, 18 Aug 2010 20:48:48 GMT
+Accept-Ranges: bytes
+Connection: close
+Content-length: 553
+
+<html>
+<head>
+<meta http-equiv="expires" content="0">
+<script type='text/javascript'>
+pr=(document.location.protocol == 'https:') ? 'https' : 'http';
+pt=(location.port == '') ? '' : ':' + location.port;
+redirect_suffix = "/redirect.html?count="+Math.random();
+if(location.hostname.indexOf(':') == -1)
+{
+location.href=pr+"://"+location.hostname+pt+redirect_suffix;
+}
+else	//could be ipv6 addr
+{
+var url = "";
+url=pr+"://["+ location.hostname.replace(/[\[\]]/g, '') +"]"+pt+redirect_suffix;
+location.href = url;
+}
+</script>
+</head>
+<body>
+</body>
+</html>

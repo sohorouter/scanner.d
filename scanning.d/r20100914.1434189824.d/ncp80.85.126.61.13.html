@@ -1,0 +1,704 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:22:48 GMT
+Server: Apache
+X-Powered-By: PHP/5.2.0-8+etch16
+Set-Cookie: commpany[1]=1; expires=Tue, 14-Sep-2010 21:22:49 GMT
+Connection: close
+Content-Type: text/html
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>commpany dialog solutions gmbh</title>
+<meta name="description" content="Wir liefern Telefonanlagen. Egal ob klassische Telefonanlagen, Internet-Telefonanlagen oder eine Kombination davon ... " />
+<meta name="keywords" content="Telefonanlagen, Internettelefonie, Installation, Österreich, Voip, SIP, ISDN, GSM, GSM Gateway, A1overIP, Asterisk" />
+<meta name="language" content="de" />
+<meta name="Content-Language" content="de" />
+<meta name="robots" content="index,follow" /> 
+<base href="http://www.commpany.at/" />
+<link rel="SHORTCUT ICON" href="favicon.ico">
+<style type="text/css">
+<!--
+
+body {
+	margin-left: 0px;
+	margin-top: 10px;
+}
+.Stil12 {
+	font-size: 8pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #D66D00;
+}
+.Stil13 {
+	font-size: 8pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #67666B;
+}
+.Stil14 {
+	font-size: 12pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color: #D66D00;
+}
+.Stil15 {
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #67666B
+}
+.Stil16 {
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #D66D00;
+	font-weight:bold;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #67666B;
+}
+a:hover {
+	text-decoration: underline;
+	color: #67666B;
+}
+a:active {
+	text-decoration: none;
+	color: #67666B;
+}
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #67666B;
+}
+
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+
+/* Überprüfung Kontaktformular */
+
+function checkform(thisform) {
+
+	if (thisform.vorname.value==null || thisform.vorname.value=="") {
+		alert("Bitte füllen Sie das Feld \"Vorname\" aus!") ;
+		thisform.vorname.focus() ;
+		thisform.vorname.select() ;
+		return false ;
+	}
+
+	if (thisform.nachname.value==null || thisform.nachname.value=="") {
+		alert("Bitte füllen Sie das Feld \"Nachname\" aus!") ;
+		thisform.nachname.focus() ;
+		thisform.nachname.select() ;
+		return false ;
+	}
+
+	if (thisform.land.value==null || thisform.land.value=="") {
+		alert("Bitte füllen Sie das Feld \"Land\" aus!") ;
+		thisform.land.focus() ;
+		thisform.land.select() ;
+		return false ;
+	}
+	if (thisform.email.value==null || thisform.email.value=="") {
+		alert("Bitte füllen Sie das Feld \"E-Mail\" aus!") ;
+		thisform.email.focus() ;
+		thisform.email.select() ;
+		return false ;
+	}
+
+	var regex = /^((\"[^\"\f\n\r\t\v\b]+\")|([\w\!\#\$\%\&'\*\+\-\~\/\^\`\|\{\}]+(\.[\w\!\#\$\%\&'\*\+\-\~\/\^\`\|\{\}]+)*))@((\[(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))\])|(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))|((([A-Za-z0-9\-])+\.)+[A-Za-z\-]+))$/;
+        if (!regex.test(thisform.email.value)){
+	        alert("Bitte geben Sie eine gültige E-Mailadresse in das Feld \"E-Mail\" ein!");
+		thisform.email.focus();
+		thisform.email.select();
+		return false;
+        }
+	if (thisform.message.value==null || thisform.message.value=="") {
+		alert("Bitte füllen Sie das Feld \"Ihre Nachricht an uns\" aus!") ;
+		thisform.message.focus() ;
+		thisform.message.select() ;
+		return false ;
+	}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+<!-- Script, das das Flash-Intro nach Ablauf ausblendet -->
+<script language="JavaScript" type="text/JavaScript">
+
+	function hide(d) {
+		var obj = document.getElementById(d);
+		obj.style.visibility = "hidden";
+	}
+
+</script>
+
+<!--Script für neues Fenster Shortcut Downloads-->
+<script language="JavaScript" type="text/javascript">
+function go_downloads(){
+    if (document.downloads.select.options[document.downloads.select.selectedIndex].value != "none") {
+    goto = document.downloads.select.options[document.downloads.select.selectedIndex].value
+    window.open(goto, '_blank');
+    }                       
+}
+<!--Ende Script für neues Fenster Shortcut Downloads-->
+
+<!--Beginn Script für neues Fenster Shortcut Info/Beratung-->
+function go_beratung(){
+    if (document.beratung.select.options[document.beratung.select.selectedIndex].value != "none") {
+    goto = document.beratung.select.options[document.beratung.select.selectedIndex].value
+    window.open(goto,'_blank','width=493, height=320, left=252,top=278');
+    }                       
+}
+</script>
+<!--Ende Script für neues Fenster Shortcut Info/Beratung-->
+
+<!-- css für Glossar-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body onLoad="MM_preloadImages('pics/buttons/buttons_r2_c2_f3.gif','pics/buttons/buttons_r2_c2_f2.gif','pics/buttons/buttons_r2_c4_f3.gif','pics/buttons/buttons_r2_c4_f2.gif','pics/buttons/buttons_r2_c6_f3.gif','pics/buttons/buttons_r2_c6_f2.gif','pics/buttons/buttons_r2_c8_f3.gif','pics/buttons/buttons_r2_c8_f2.gif','pics/buttons/buttons_r2_c10_f3.gif','pics/buttons/buttons_r2_c10_f2.gif','pics/buttons/buttons_r2_c12_f3.gif','pics/buttons/buttons_r2_c12_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c1_f3.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c1_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c3_f3.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c3_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c5_f3.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c5_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c1.gif','pics/buttons_produkte/buttons_produkte_r1_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r1_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r1_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r3_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r3_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r3_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r5_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r5_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r5_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r7_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r7_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r7_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r9_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r9_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r9_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r11_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r11_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r11_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r13_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r13_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r13_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r15_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r15_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r15_c1_f4.gif','pics/buttons_produkte/buttons_produkte_r17_c1_f3.gif','pics/buttons_produkte/buttons_produkte_r17_c1_f2.gif','pics/buttons_produkte/buttons_produkte_r17_c1_f4.gif','pics/buttons_leistungen/buttons_leistungen_r1_c1_f3.gif','pics/buttons_leistungen/buttons_leistungen_r1_c1_f2.gif','pics/buttons_leistungen/buttons_leistungen_r1_c1_f4.gif','pics/buttons_leistungen/buttons_leistungen_r3_c1_f3.gif','pics/buttons_leistungen/buttons_leistungen_r3_c1_f2.gif','pics/buttons_leistungen/buttons_leistungen_r3_c1_f4.gif','pics/buttons_leistungen/buttons_leistungen_r5_c1_f3.gif','pics/buttons_leistungen/buttons_leistungen_r5_c1_f2.gif','pics/buttons_leistungen/buttons_leistungen_r5_c1_f4.gif','pics/buttons_leistungen/buttons_leistungen_r7_c1_f3.gif','pics/buttons_leistungen/buttons_leistungen_r7_c1_f2.gif','pics/buttons_leistungen/buttons_leistungen_r7_c1_f4.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c1_f3.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c1_f2.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c1_f4.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c3_f3.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c3_f2.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c3_f4.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c5_f3.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c5_f2.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c5_f4.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c7_f3.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c7_f2.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c7_f4.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c9_f3.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c9_f2.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c9_f4.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c11_f3.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c11_f2.gif','pics/buttons_produkte/buttons_voip_telefone/buttons_voip_telefone_r1_c11_f4.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c1_f3.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c1_f2.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c1_f4.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c3_f3.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c3_f2.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c3_f4.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c5_f3.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c5_f2.gif','pics/buttons_produkte/buttons_schnittstellenkarten/buttons_schnittstellenkarten_r1_c5_f4.gif','pics/schriftzug_lesen_sie_mehr_over.gif','pics/schriftzug_news_archiv_over.gif')">
+
+<!-- Glossar -->
+
+<script language="javascript" type="text/javascript" src="glossar.js">
+</script>
+<div id="tooltip"></div>
+
+<script type="text/javascript">
+    if (typeof(glossar_descriptions) != "undefined") {
+		glossar_descriptions["astelan"] = 'Telefonanlage auf der Basis von asterisk.';
+		glossar_descriptions["asterisk"] = 'Weit verbreitetes IP-Telefonkonzept auf Linux-Basis.';
+		glossar_descriptions["bri"] = 'Basic Rate Interface - bezeichnet einen herkömmlichen ISDN-Basisanschluss mit zwei B-Kanälen.';
+		glossar_descriptions["codec"] = 'Coder/Decoder-Software zur Umwandlung von Sprache in Daten und umgekehrt.';
+		glossar_descriptions["ilcor"] = 'Internet Least-Cost-Router - macht bestehende Telefonanlagen günstig internetfähig.';
+		glossar_descriptions["isdn"] = 'Integrated Services Digital Network: Digitales Telefonsystem - auch zur Datenübertragung geeignet.';
+		glossar_descriptions["pots"] = 'Plain Old Telephone Service: Klassischer Telefon-Analoganschluss.';
+		glossar_descriptions["pri"] = 'Primary Rate Interface - bezeichnet einen Primärmultiplexanschluss mit 30 B-Kanälen.';
+		glossar_descriptions["pstn"] = 'Public Switched Telephone Network: das öffentliche Telefon-Festnetz.';
+		glossar_descriptions["srtp"] = 'Secure Real Time Transport Protocol: Protokoll zur Übertragung von Daten in Echtzeit. Im Gegensatz zum "normalen" RTP-Protokoll werden die Gesprächsdaten hierbei verschlüsselt übertragen.';
+		glossar_descriptions["sccp"] = 'Proprietäres Vermittlungsprotokoll für Internet-Telefonie von Cisco.';
+		glossar_descriptions["sip"] = 'Session Initiation Protocol: Protokoll für den Aufbau von Multimedia-Verbindungen. Wird hauptsächlich für die Internet-Telefonie verwendet.';
+		glossar_descriptions["sips"] = 'Secure Session Initiation Protocol: Protokoll für den verschlüsselten Aufbau von Multimedia-Verbindungen (SIP over TLS).';
+		glossar_descriptions["sip_provider"] = 'Dienstleister, der Gespräche im Internet annimmt und gegen Gebühr an das Fest- und Mobilnetz weiterleitet sowie Internet-Telefonierer aus dem Fest- und Mobilnetz erreichbar macht.';
+		glossar_descriptions["tls"] = 'Transport Layer Security - ist die Weiterentwicklung von SSL. Es handelt sich um ein Verschlüsselungsprotokoll für Datenübertragungen im Internet.';
+		glossar_descriptions["voip"] = 'Voice over IP: Telefonie in Netzwerken. Meist handelt es sich um Sprachdaten, die über das Internet übertragen werden.';
+	    }
+    is = Array();
+    function return_glossar(r1, descrid, key, r2){
+    if (!is[key]) {//key+
+        document.write(r1+
+		'<span href="#" valign="bottom" onclick="return false;" onmouseout="nukeTip();" onmouseover="tip(this,\'x'+descrid+'\',\'x'+key+'\');">'
+		+ '<img src="pics/glossar_i.jpg" border="0" valign="bottom" height="12" width="12" alt="" /></span> '+r2);
+		} else {
+			        //document.write(key+' ');
+			      }
+			    }
+</script>
+
+<!--Beginn Head (Logo und Buttons)-->
+
+<table style="width:1368px; height:130px" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td style="width:250px" rowspan="2"><div align="center"><a href="index.php" target="_self"><img src="pics/logo_commpany.jpg" alt="Home" width="101" height="120" border="0"></a></div></td>
+		<td style="width:467px"><div align="right"><img src="pics/weltkarte_pixel.jpg" width="133" height="90"></div></td>
+		<td style="width:651px"></td>
+	</tr>
+	<tr>
+	  <td style="width:1118px" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" width="467">
+			<!-- fwtable fwsrc="buttons.png" fwbase="buttons.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+				<tr>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="15" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="42" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="15" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="73" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="15" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="85" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="15" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="72" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="15" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="41" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="15" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="64" height="1" border="0"></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="1" height="1" border="0"></td>
+				</tr>
+				<tr>
+					<td colspan="12"><img name="buttons_r1_c1" src="pics/buttons/buttons_r1_c1.gif" width="467" height="14" border="0" alt=""></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="1" height="11" border="0"></td>
+				</tr>
+
+				<!--Beginn Mainframe-Buttons-->
+
+				<tr>
+					<td rowspan="2"><img name="buttons_r2_c1" src="pics/buttons/buttons_r2_c1.gif" width="15" height="16" border="0" alt=""></td>
+					<td><a href="index.php?l1=1&r1=1" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_r2_c2','pics/buttons/buttons_r2_c2_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_r2_c2','pics/buttons/buttons_r2_c2_f2.gif','pics/buttons/buttons_r2_c2_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img src="pics/buttons/buttons_r2_c2_f3.gif" alt="" name="buttons_r2_c2" border="0"></a></td>
+					<td rowspan="2"><img name="buttons_r2_c3" src="pics/buttons/buttons_r2_c3.gif" width="15" height="16" border="0" alt=""></td>
+					<td><a href="index.php?l1=1&r1=2" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_r2_c4','pics/buttons/buttons_r2_c4_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_r2_c4','pics/buttons/buttons_r2_c4_f2.gif','pics/buttons/buttons_r2_c4_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_r2_c4" src="pics/buttons/buttons_r2_c4.gif" width="73" height="11" border="0" alt=""></a></td>
+					<td rowspan="2"><img name="buttons_r2_c5" src="pics/buttons/buttons_r2_c5.gif" width="15" height="16" border="0" alt=""></td>
+					<td><a href="index.php?l1=1&r1=3" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_r2_c6','pics/buttons/buttons_r2_c6_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_r2_c6','pics/buttons/buttons_r2_c6_f2.gif','pics/buttons/buttons_r2_c6_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_r2_c6" src="pics/buttons/buttons_r2_c6.gif" width="85" height="11" border="0" alt=""></a></td>
+					<td rowspan="2"><img name="buttons_r2_c7" src="pics/buttons/buttons_r2_c7.gif" width="15" height="16" border="0" alt=""></td>
+					<td><a href="index.php?l1=1&r1=4" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_r2_c8','pics/buttons/buttons_r2_c8_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_r2_c8','pics/buttons/buttons_r2_c8_f2.gif','pics/buttons/buttons_r2_c8_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_r2_c8" src="pics/buttons/buttons_r2_c8.gif" width="72" height="11" border="0" alt=""></a></td>
+					<td rowspan="2"><img name="buttons_r2_c9" src="pics/buttons/buttons_r2_c9.gif" width="15" height="16" border="0" alt=""></td>
+					<td><a href="index.php?l1=1&r1=5" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_r2_c10','pics/buttons/buttons_r2_c10_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_r2_c10','pics/buttons/buttons_r2_c10_f2.gif','pics/buttons/buttons_r2_c10_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_r2_c10" src="pics/buttons/buttons_r2_c10.gif" width="41" height="11" border="0" alt=""></a></td>
+					<td rowspan="2"><img name="buttons_r2_c11" src="pics/buttons/buttons_r2_c11.gif" width="15" height="16" border="0" alt=""></td>
+					<td><a href="index.php?l1=1&r1=6" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_r2_c12','pics/buttons/buttons_r2_c12_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_r2_c12','pics/buttons/buttons_r2_c12_f2.gif','pics/buttons/buttons_r2_c12_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_r2_c12" src="pics/buttons/buttons_r2_c12.gif" width="64" height="11" border="0" alt=""></a></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="1" height="11" border="0"></td>
+
+				</tr>
+				<tr>
+					<td><img name="buttons_r3_c2" src="pics/buttons/buttons_r3_c2.gif" width="42" height="5" border="0" alt=""></td>
+					<td><img name="buttons_r3_c4" src="pics/buttons/buttons_r3_c4.gif" width="73" height="5" border="0" alt=""></td>
+					<td><img name="buttons_r3_c6" src="pics/buttons/buttons_r3_c6.gif" width="85" height="5" border="0" alt=""></td>
+					<td><img name="buttons_r3_c8" src="pics/buttons/buttons_r3_c8.gif" width="72" height="5" border="0" alt=""></td>
+					<td><img name="buttons_r3_c10" src="pics/buttons/buttons_r3_c10.gif" width="41" height="5" border="0" alt=""></td>
+					<td><img name="buttons_r3_c12" src="pics/buttons/buttons_r3_c12.gif" width="64" height="5" border="0" alt=""></td>
+					<td><img src="pics/buttons/spacer.gif" alt="" name="undefined_2" width="1" height="10" border="0"></td>
+				</tr>
+
+				<!--Ende Mainframe-Buttons-->
+
+			</table>
+	  </td>
+	</tr>
+</table>
+
+<!--Ende Head (Logo und Buttons)-->
+
+<table style="width:1368px" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+
+			<table style="width:1368px" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td rowspan="2" bgcolor="#ED7900" style="width:6px"></td>
+					<td style="width:244px;height:21px">
+
+						<table border="0" cellpadding="0" cellspacing="0" width="244">
+						<!-- fwtable fwsrc="buttons_shortcuts.png" fwbase="buttons_shortcuts.gif" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+							<tr>
+							
+								<!--Beginn Shortcut-Buttons-->
+
+								<td><a href="index.php?l1=1&r1=1&l2=0&r2=0" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_shortcuts_r1_c1_3','pics/buttons_shortcuts/buttons_shortcuts_r1_c1_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_shortcuts_r1_c1_3','pics/buttons_shortcuts/buttons_shortcuts_r1_c1_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c1_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img src="pics/buttons_shortcuts/buttons_shortcuts_r1_c1_f3.gif" alt="" name="buttons_shortcuts_r1_c1_3" border="0"></a></td>
+								<td><img name="buttons_shortcuts_r1_c2_3" src="pics/buttons_shortcuts/buttons_shortcuts_r1_c2.gif" width="1" height="21" border="0" alt=""></td>
+								<td><a href="index.php?l1=2&r1=1&l2=0&r2=0" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_shortcuts_r1_c3_3','pics/buttons_shortcuts/buttons_shortcuts_r1_c3_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_shortcuts_r1_c3_3','pics/buttons_shortcuts/buttons_shortcuts_r1_c3_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c3_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_shortcuts_r1_c3_3" src="pics/buttons_shortcuts/buttons_shortcuts_r1_c3.gif" width="74" height="21" border="0" alt=""></a></td>
+								<td><img name="buttons_shortcuts_r1_c4_3" src="pics/buttons_shortcuts/buttons_shortcuts_r1_c4.gif" width="1" height="21" border="0" alt=""></td>
+								<td><a href="index.php?l1=3&r1=1&l2=0&r2=0" target="_top" onClick="MM_nbGroup('down','navbar1','buttons_shortcuts_r1_c5_3','pics/buttons_shortcuts/buttons_shortcuts_r1_c5_f3.gif',1);" onMouseOver="MM_nbGroup('over','buttons_shortcuts_r1_c5_3','pics/buttons_shortcuts/buttons_shortcuts_r1_c5_f2.gif','pics/buttons_shortcuts/buttons_shortcuts_r1_c5_f3.gif',1);" onMouseOut="MM_nbGroup('out');"><img name="buttons_shortcuts_r1_c5_3" src="pics/buttons_shortcuts/buttons_shortcuts_r1_c5.gif" width="72" height="21" border="0" alt=""></a></td>
+
+								<!--Ende Shortcut-Buttons-->
+
+							</tr>
+						</table>
+
+					</td>
+					<td style="width:1118px;vertical-align:top" rowspan="2">
+
+					
+						<!--Beginn MainFrame "Home*"-->
+
+						<table style="width:1118px" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<table style="width:1118px" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td style="width:3px"><img src="pics/banner_links.jpg" width="3" height="235"></td>
+											<td style="width:460px">
+												
+												 
+																			
+												<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="460" height="235">
+												<param name="movie" value="flash/home.swf">
+												<param name="quality" value="high">
+												<embed src="flash/home.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="460" height="235"></embed>
+												</object>
+												
+												</td>
+												
+											<td style="width:655px"><img src="pics/banner_rechts.jpg" width="655" height="235"></td>
+										</tr>
+									</table>
+
+								</td>
+							</tr>
+							<tr>
+							  <td>
+
+									<table style="width:1118px" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td style="height:74px; width:15px"></td>
+											<td colspan="2" style="width:459px"><img src="pics/schriftzug_home.jpg" width="103" height="26" align="middle"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"><img src="pics/pfeil_rechts.jpg" width="10" height="10"></td>
+											<td style="width:439px"><span class="Stil14">Wir liefern Telefonanlagen</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:10px; width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"><span class="Stil15">Egal ob klassische Telefonanlagen, Internet-Telefonanlagen oder eine Kombination davon ... <br>
+											<br>
+											... sie sind &auml;u&szlig;erst preiswert und senken Ihre Telefongeb&uuml;hren um bis zu 80 %</span> </td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:20px; width:15px"></td>
+											<td colspan="2" style="width:459px"><img src="pics/strich_home_horizontal.jpg" width="459" height="4"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"><img src="pics/pfeil_rechts.jpg" width="10" height="10"></td>
+											<td style="width:439px"><span class="Stil14">Wir bauen Ihnen eine Voice over IP Telefonanlage</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:10px; width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"><span class="Stil15">Asterisk-L&ouml;sungen, modular ausbaubar bis zum Call-Center</span></td>
+											<td style="width:644px"><span class="015332710-10042008"></span></td>
+										</tr>
+										<tr>
+											<td style="height:20px; width:15px"></td>
+											<td colspan="2" style="width:459px"><img src="pics/strich_home_horizontal.jpg" width="459" height="4"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"><img src="pics/pfeil_rechts.jpg" width="10" height="10"></td>
+											<td style="width:439px"><span class="Stil14">Wir sichern Ihr Computernetzwerk mit Firewalls</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:10px; width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"><span class="Stil15">Damit Ihre Daten drin und SPAM-Mails, Viren und Hacker drau&szlig;en bleiben</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:20px; width:15px"></td>
+											<td colspan="2" style="width:459px"><img src="pics/strich_home_horizontal.jpg" width="459" height="4"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"><img src="pics/pfeil_rechts.jpg" width="10" height="10"></td>
+											<td style="width:439px"><span class="Stil14">Wir arbeiten mit Linux</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:10px; width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"><span class="Stil15">Damit Ihnen die Lizenzkosten nicht davon laufen</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:20px; width:15px"></td>
+											<td colspan="2" style="width:459px"><img src="pics/strich_home_horizontal.jpg" width="459" height="4"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"><img src="pics/pfeil_rechts.jpg" width="10" height="10"></td>
+											<td style="width:439px"><span class="Stil14">Wir arbeiten mit Microsoft-Produkten</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:10px; width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"><span class="Stil15">So wie das fast alle tun</span></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:20px; width:15px"></td>
+											<td style="width:20px"></td>
+											<td style="width:439px"></td>
+											<td style="width:644px"></td>
+									  </tr>
+										<tr>
+											<td style="height:19px; width:15px"></td>
+											<td colspan="2" style="width:459px"><img src="pics/strich_home_horizontal_2.jpg" width="459" height="1"></td>
+											<td style="width:644px"></td>
+										</tr>
+										<tr>
+											<td style="height:20px; width:15px"></td>
+											<td colspan="2" style="width:459px"><div align="center"><a href="files/commpany_agb.pdf" target="_blank" onMouseOver="MM_swapImage('Image4','','pics/schriftzug_agbs_over.jpg',1)" onMouseOut="MM_swapImgRestore()"><img src="pics/schriftzug_agbs.jpg" name="Image4" width="28" height="10" border="0" id="Image4"></a><img src="pics/schriftzug_pipe.jpg" width="14" height="10"><a href="index.php?l1=1&r1=7" onMouseOver="MM_swapImage('Image5','','pics/schriftzug_impressum_over.jpg',1)" onMouseOut="MM_swapImgRestore()"><img src="pics/schriftzug_impressum.jpg" name="Image5" width="65" height="10" border="0" id="Image5"></a><img src="pics/schriftzug_pipe.jpg" width="14" height="10"><img src="pics/schriftzug_copyright.jpg" width="186" height="10"><img src="pics/schriftzug_pipe.jpg" width="14" height="10"><a href="http://www.eyedea.at" target="_blank" onMouseOver="MM_swapImage('Image6','','pics/schriftzug_eyedea_over.jpg',1)" onMouseOut="MM_swapImgRestore()"><img src="pics/schriftzug_eyedea.jpg" name="Image6" width="122" height="10" border="0" id="Image6"></a></div></td>
+											<td style="width:644px"></td>
+										</tr>
+									</table>
+
+							  </td>
+							</tr>
+						</table>
+						
+						<!--Ende MainFrame "Home*"-->
+
+						<!--Flash-Intro
+
+						<div id=flashDiv style="position:absolute; top:375px; left:250px">
+						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1113" height="484">
+						<param name="movie" value="flash/intro.swf">
+						<param name="quality" value="high">
+						<embed src="flash/intro.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1113" height="484"></embed>
+						</object></div>
+
+						-->
+
+
+					</td>
+				</tr>
+				<tr>
+					<td style="width:244px; vertical-align:top">
+
+						<!--Begin Shortcut "Info/Beratung"-->
+
+						<table style="width:244px" border="0" cellspacing="0" cellpadding="0">
+							<tr bgcolor="#D5D5D5">
+								<td colspan="3" style="height:65px"><div align="center">
+						                        <form name="beratung"> <select name="select" style="width:215px" onChange="go_beratung()">
+									<option value=none>Bitte wählen Sie einen Bereich!</option>
+									<option value=none>----------------------------------------------</option>
+									<option value="mitarbeiter.php?id=1">VoIP</option>
+									<option value="mitarbeiter.php?id=2">klassische TK-Anlagen</option>
+									<option value="mitarbeiter.php?id=3">Linux</option>
+									<option value="mitarbeiter.php?id=4">Windows</option>
+									<option value="mitarbeiter.php?id=5">Firewalls</option>
+									<option value="mitarbeiter.php?id=6">Netzwerke</option>
+									<option value="mitarbeiter.php?id=7">Software Development</option>
+									<option value="mitarbeiter.php?id=8">Sekretariat, Buchhaltung</option>
+									<option value="mitarbeiter.php?id=9">Einkauf</option>
+									<option value="mitarbeiter.php?id=10">Sonstiges</option>
+									</select></div>
+								</td>
+							</tr>
+						</table>
+
+						<!--Ende Shortcut "Info/Beratung"-->
+
+						<!--Beginn Shortcut "Aktuelles"-->
+
+						<table style="width:244px; background-image:url(pics/logo_shortcuts.jpg)" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td style="width:27px; height:60px"></td>
+								<td style="width:190px"><img src="pics/schriftzug_aktuelles.gif" width="99" height="14"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px"></td>
+								<td style="width:190px"><span class="Stil12">27.07.2009</span><span class="Stil13">&nbsp;Mobilfunkkosten senken</span></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:15px"></td>
+								<td style="width:190px"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:20px"></td>
+								<td style="width:190px"><div align="right"><a href="index.php?l1=1&r1=10&l2=5"><img src="pics/schriftzug_lesen_sie_mehr.gif" name="Image1" width="111" height="10" border="0" id="Image1" onMouseOver="MM_swapImage('Image1','','pics/schriftzug_lesen_sie_mehr_over.gif',1)" onMouseOut="MM_swapImgRestore()"></a></div></td>
+								<td style="width:27px"></td>
+							</tr>
+
+							<tr>
+								<td style="width:27px; height:30px"></td>
+								<td style="width:190px"><img src="pics/strich_shortcuts.gif" width="190" height="1"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px"></td>
+								<td style="width:190px"><span class="Stil12">12.05.2009</span><span class="Stil13">&nbsp;astelan und UMS</span></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:15px"></td>
+								<td style="width:190px"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:20px"></td>
+								<td style="width:190px"><div align="right"><a href="index.php?l1=1&r1=10&l2=4"><img src="pics/schriftzug_lesen_sie_mehr.gif" name="Image2" width="111" height="10" border="0" id="Image2" onMouseOver="MM_swapImage('Image2','','pics/schriftzug_lesen_sie_mehr_over.gif',1)" onMouseOut="MM_swapImgRestore()"></a></div></td>
+								<td style="width:27px"></td>
+							</tr>
+							
+							<tr>
+								<td style="width:27px; height:30px"></td>
+								<td style="width:190px"><img src="pics/strich_shortcuts.gif" width="190" height="1"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px"></td>
+								
+                <td style="width:190px"><span class="Stil12">09.02.2009</span><span class="Stil13">&nbsp;astelan-CC und ENUM am LKH Innsbruck</span></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:15px"></td>
+								<td style="width:190px"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:20px"></td>
+								<td style="width:190px"><div align="right"><a href="index.php?l1=1&r1=10&l2=3"><img src="pics/schriftzug_lesen_sie_mehr.gif" name="Image2" width="111" height="10" border="0" id="Image2" onMouseOver="MM_swapImage('Image2','','pics/schriftzug_lesen_sie_mehr_over.gif',1)" onMouseOut="MM_swapImgRestore()"></a></div></td>
+								<td style="width:27px"></td>
+							</tr>
+							
+							<tr>
+								<td style="width:27px; height:30px"></td>
+								<td style="width:190px"><img src="pics/strich_shortcuts.gif" width="190" height="1"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px"></td>
+								<td style="width:190px"><span class="Stil13">S&auml;mtliche Neuigkeiten stehen Ihnen jederzeit in unserem News-Archiv zur Verf&uuml;gung.</span></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:15px"></td>
+								<td style="width:190px"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:20px"></td>
+								<td style="width:190px"><div align="right"><a href="index.php?l1=1&r1=10&l2=9"><img src="pics/schriftzug_news_archiv.gif" name="Image3" width="91" height="10" border="0" id="Image3" onMouseOver="MM_swapImage('Image3','','pics/schriftzug_news_archiv_over.gif',1)" onMouseOut="MM_swapImgRestore()"></a></div></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+								<td style="width:27px; height:30px"></td>
+								<td style="width:190px"><img src="pics/strich_shortcuts.gif" width="190" height="1"></td>
+								<td style="width:27px"></td>
+							</tr>
+							<tr>
+		
+																
+								<td style="width:27px; height:223px"></td>
+
+																
+								<td style="width:190px"></td>
+								<td style="width:27px"></td>
+							</tr>
+						</table>
+
+
+					</td>
+				</tr>
+			</table>
+
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

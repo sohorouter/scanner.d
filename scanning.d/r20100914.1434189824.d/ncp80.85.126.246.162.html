@@ -1,0 +1,76 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:07:41 GMT
+Server: Apache/2.2.14 (Win32) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l mod_autoindex_color PHP/5.3.1 mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.10.1
+X-Powered-By: PHP/5.3.1
+Set-Cookie: roundcube_sessid=om4obng43o71c2hk9m7fk066b0; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>RoundCube Webmail :: Willkommen bei RoundCube Webmail</title>
+<meta name="Robots" content="noindex,nofollow" />
+<link rel="index" href="./?_task=mail" />
+<link rel="shortcut icon" href="skins/default/images/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="skins/default/common.css?s=1254826832" />
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="program/js/jquery-1.3.min.js?s=1240226130"></script>
+<script type="text/javascript" src="program/js/common.js?s=1256995296"></script>
+<script type="text/javascript" src="program/js/app.js?s=1256995294"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({task:'login',request_token:'a903afd646b757735ad77eceeb69f74d',keep_alive:60,action:'',comm_path:'./?_task=mail'});
+rcmail.add_label('loading','Lade...');
+rcmail.add_label('servererror','Serverfehler!');
+rcmail.gui_object('message', 'message');
+rcmail.gui_object('loginform', 'form');
+/* ]]> */
+</script>
+</head>
+<body>
+
+<img src="skins/default/images/roundcube_logo.png" border="0" alt="RoundCube Webmail" style="margin:0 11px" />
+
+<div id="message"></div>
+
+<div id="login-form">
+<div class="boxtitle">Willkommen bei RoundCube Webmail</div>
+<div class="boxcontent">
+
+<form name="form" action="./" method="post">
+<input type="hidden" name="_token" value="a903afd646b757735ad77eceeb69f74d" />
+<input type="hidden" name="_action" value="login" /><input type="hidden" name="_timezone" id="rcmlogintz" value="_default_" /><input type="hidden" name="_url" id="rcmloginurl" value="" /><table summary="" border="0"><tbody><tr><td class="title"><label for="rcmloginuser">Benutzername</label>
+</td>
+<td><input name="_user" id="rcmloginuser" autocomplete="off" type="text" /></td>
+</tr>
+<tr><td class="title"><label for="rcmloginpwd">Passwort</label>
+</td>
+<td><input name="_pass" id="rcmloginpwd" autocomplete="off" type="password" /></td>
+</tr>
+</tbody>
+</table>
+
+
+<p style="text-align:center;"><input type="submit" class="button mainaction" value="Anmelden" /></p>
+
+</form>
+</div>
+</div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+$(document).ready(function(){ rcmail.init(); });
+/* ]]> */
+</script>
+</body>
+</html>

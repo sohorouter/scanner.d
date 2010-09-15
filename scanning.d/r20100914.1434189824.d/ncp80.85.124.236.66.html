@@ -1,0 +1,112 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Sep 2010 20:18:30 GMT
+Server: Apache/2.2.13 (Linux/SUSE)
+Pragma: no-cache
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- Copyright (c) 1995-2007 by SCT Schiele GmbH, Ettlingen -->
+<html>
+<head>
+<title>Holz Marberger - Anmeldung</title>
+<style type="text/css">
+@media all { .sct_overflow { overflow:hidden; } }
+</style>
+<link rel="stylesheet" href="/shop/hopa/thumbs/11.css" type="text/css">
+<link rel="stylesheet" href="/shop/hopa/thumbs/37.css" type="text/css">
+<link rel="stylesheet" href="/shop/hopa/thumbs/4.css" type="text/css">
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+function loadParameters()
+{
+    var speichern = 1;
+    var pwdspeichern = 0;
+    if(speichern == 1)
+    {
+      var kundennr = getCookieSCT("KUNDENNR_5_0");
+      var benutzer = getCookieSCT("NAME_5_0");
+      document.getElementById("USER").value = benutzer;
+      document.getElementById("KDNR").value = kundennr;
+    }
+
+}
+
+function saveParameters()
+{
+    var speichern = 1;  
+    var pwdspeichern = 0;
+
+    if(speichern == 1)
+    {
+      var kundennr = document.getElementById("KDNR").value;
+      var benutzer = document.getElementById("USER").value;
+      if(kundennr)
+          setCookieSCT("KUNDENNR_5_0", kundennr);
+      if(benutzer)
+          setCookieSCT("NAME_5_0", benutzer);
+    } 
+//    document.getElementById("ANMELDUNG").submit();
+}
+
+function getCookieSCT(typ) {
+	var dc = document.cookie;
+	var prefix = "SCT_Anmeldung_" + typ + "=";
+	var begin = dc.indexOf("; " + prefix);
+	if (begin == -1) {
+		begin = dc.indexOf(prefix);
+		if (begin != 0) return "";
+	} else
+		begin += 2;
+	var end = document.cookie.indexOf(";", begin);
+	if (end == -1)
+		end = dc.length;
+	return unescape(dc.substring(begin + prefix.length, end));
+}
+
+function setCookieSCT(typ,n) {
+        var now = new Date ();
+// Gueltigkeit von Cookies auf 3 * 12 * 30 Tage setzen
+        var expiresDate = new Date (now.getTime () + 3 * 12 * 30 * 24 * 60 * 60 * 1000);
+        var curCookie = "SCT_Anmeldung_" + typ + "=" + escape(n) + "; path=/; expires=" + expiresDate.toGMTString();
+	document.cookie = curCookie;
+}
+
+
+</SCRIPT>
+
+
+
+
+
+</head>
+
+        <BODY id="oBody" onload="loadParameters();" onunload="saveParameters();"  TEXT="#000000" LINK="#0000FF" VLINK="#0000FF" ALINK="#0000FF">
+<style type="text/css">
+<!--
+body {
+margin:0;
+padding:0;
+height:100%;
+}
+-->
+</style>
+        
+        
+        
+        
+        
+        <basefont size=3>
+        
+        <FORM name=seite49  METHOD="POST"  accept-charset="iso-8859-1" 		action="/cgi-bin/hopa/SD02Lzxqqxd08wgB751f3Hp8r9EEsAsqBEGPSA4wrP903SRzL8U2E9TD6E1Lsa9BrT6pUH3AS3QwAw1UTSzStCAHrzaSbyxx3KH103dUx8GrGUUzew0"><div class="noprint"><input name=SubmitRecID type=hidden value="49"></div>
+        <div class="sct_4" id="divIdent1323" style="display:block;position:absolute;left:418px;top:224px;z-index:4;width:258px;max-width:258px;height:137px;max-height:137px;font-family:;font-weight:bold;"><table border=0 cellspacing=3 cellpadding=0 background="" > <tr> <td > Kundennummer: </font></td> <td > <input name="KundenNr" ID="KDNR"  size="10" maxlength="30" value=""> </font></td> </tr><tr> <td > Benutzerkennung: </font></td> <td > <input name="Name" ID="USER"  size="10" maxlength="30" value=""> </font></td> </tr><tr> <td > Passwort: </font></td> <td > <input id="PASSWD" type="password" name="PASSWORT"  size="10" maxlength="10"> </font></td> </tr><tr> <td colspan=2 height="10" > </font></td> </tr><tr> <td colspan=2 align=center > <input id="GHFSID_679" name="GHFSID_679" alt="OK" type=image border=0 src="/hopa/images/ok.gif"><input type=hidden name="GHFSID" value="679"><input type=hidden name="GHFSID_679_AKTION" value="http://85.124.236.66:80/cgi-bin/hopa/Anmeldung.sd/5/0"><input type=hidden name="GHFSID_679_VAR" value="GHFS_679"><input type=hidden NAME="SessionID" value="SD02E54KQTbG3Tq6aaa"><input type=hidden NAME="SpeichernVorhanden" value=""> </font></td> </tr> </table> </div><div class="sct_overflow" id="divIdent1327" style="display:block;position:absolute;left:342px;top:144px;z-index:2;width:362px;max-width:362px;height:336px;max-height:336px; background-color: #a9b177;font-size:14px;font-family:;font-weight:bold;"><img name="img1327" src="/shop/hopa/upload/object.6371.gif" alt="" width=100 height=100 border=0></div><div class="sct_4" id="divIdent1328" style="display:block;position:absolute;left:359px;top:184px;z-index:9;width:312px;max-width:312px;height:37px;max-height:37px;font-family:;font-weight:bold;"></div><div class="sct_overflow" id="divIdent1331" style="display:block;position:absolute;left:360px;top:155px;z-index:12;width:88px;max-width:88px;height:18px;max-height:18px;"><p style="margin:0px;padding:0px;"><font style="font-size:16px;" face="Arial,sans-serif" color="#008000"><em><strong>anmeldung</strong></em></font></p></div><div class="sct_overflow" id="divIdent1615" style="display:block;position:absolute;left:359px;top:365px;z-index:27;width:226px;max-width:226px;height:53px;max-height:53px;"><p style="margin:0px;padding:0px;" align="center"><font style="font-size:12px;"><font style="font-size:12px;" face="Arial" color="#e8e8e8"><strong>Falls Sie noch keine Zugangsdaten</strong></font></font></p><p style="margin:0px;padding:0px;" align="center"><font style="font-size:12px;" face="Arial" color="#e8e8e8"><strong>haben k&ouml;nnen Sie sich mit den</strong></font></p><p style="margin:0px;padding:0px;" align="center"><font style="font-size:12px;" face="Arial" color="#e8e8e8"><strong>Gastzugangsdaten einwenig umsehen!</strong></font></p></div><div class="sct_overflow" id="divIdent1616" style="display:block;position:absolute;left:420px;top:424px;z-index:28;width:103px;max-width:103px;height:45px;max-height:45px;"><p style="margin:0px;padding:0px;"><font style="font-size:12px;"><font style="font-size:12px;" face="Arial" color="#000000"><strong>Kundennummer:</strong></font></font></p><p style="margin:0px;padding:0px;"><font style="font-size:12px;" face="Arial" color="#000000"><strong>Benutzerkennung:</strong></font></p><p style="margin:0px;padding:0px;"><font style="font-size:12px;" face="Arial" color="#000000"><strong>Passwort:</strong></font></p></div><div class="sct_overflow" id="divIdent1617" style="display:block;position:absolute;left:563px;top:424px;z-index:29;width:42px;max-width:42px;height:64px;max-height:64px;"><p style="margin:0px;padding:0px;"><font style="font-size:12px;" face="Arial,sans-serif" color="#e8e8e8"><strong>201990</strong></font></p><p style="margin:0px;padding:0px;"><font style="font-size:12px;" face="Arial,sans-serif" color="#e8e8e8"><strong>gast</strong></font></p><p style="margin:0px;padding:0px;"><font style="font-size:12px;" face="Arial,sans-serif" color="#e8e8e8"><strong>gast&nbsp;</strong></font></p><font color="#e8e8e8">&nbsp;&nbsp;</font></div><div class="sct_overflow" id="divIdent1642" style="display:block;position:absolute;left:6px;top:8px;z-index:31;width:132px;max-width:132px;height:578px;max-height:578px;"><img name="img1642" src="/shop/hopa/upload/object.8750.jpg" alt="" width=132 height=578 border=0></div><div class="sct_overflow" id="divIdent1644" style="display:block;position:absolute;left:146px;top:8px;z-index:33;width:846px;max-width:846px;height:54px;max-height:54px;"><img name="img1644" src="/shop/hopa/upload/object.8749.gif" alt="" width=841 height=53 border=0></div><div class="sct_overflow" id="divIdent1720" style="display:block;position:absolute;left:592px;top:365px;z-index:43;width:100px;max-width:100px;height:21px;max-height:21px;"><a href="/cgi-bin/hopa/SD026C6e83rAr8KqK2wtUDg3A2Et9RgaB6bQ9Cpw06Hp47aGPpdRGECRgGcaP"><img name="fsimg2206" src="/hopa/images/pwd_vergessen.gif" border=0 alt=""></a></div>
+        </FORM>
+        
+                
+
+</body>
+</html>

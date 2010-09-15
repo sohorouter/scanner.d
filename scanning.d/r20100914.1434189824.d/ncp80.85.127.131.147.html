@@ -1,0 +1,91 @@
+HTTP/1.1 200 OK
+Connection: close
+Date: Tue, 14 Sep 2010 19:52:54 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 4083
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Aspire easyStore Home Server</title>
+</head>
+
+<body style="background-image: url('Image/BG.png'); margin: 0px 0px 0px 0px; border-width: 0px">
+    <div id="div1" style="position: absolute; top: -2px; left: -2px">
+        <table id="table1" style="border-style: none; font-family: Tahoma; width: 1024px;
+            position: absolute; top: 0px; left: 0px">
+            <tr>
+                <td id="titlebar" style="background-image: url('Image/TitleBar.png'); background-repeat: no-repeat;
+                    height: 28px; width: 1024px; background-position: center right">
+                </td>
+            </tr>
+        </table>
+        <table id="table11" style="height: 585px; background-image: url('Image/home.png');
+            background-repeat: no-repeat; width: 952px; position: absolute; left: 37px; top: 55px">
+            <tr style="height: 417px">
+                <td style="height: 417px">
+                </td>
+            </tr>
+        </table>
+        <img id="HomeImage" style="position: absolute; left: 164px; top: 369px" src="Image/HomeImageA.png"
+            onclick="GoHomePage()" onmouseover="ChangeHomeImage(this)" onmouseout="ChangeToHomeImage(this)" />
+        <img id="DownloadImage" style="position: absolute; left: 435px; top: 369px" src="Image/DownloadImageA.png"
+            onclick="GoDownloadPage()" onmouseover="ChangeHomeImage(this)" onmouseout="ChangeToHomeImage(this)">
+        <img id="AcerImage" style="position: absolute; left: 706px; top: 369px" src="Image/AcerImageA.png"
+            onclick="GoAcer()" onmouseover="ChangeHomeImage(this)" onmouseout="ChangeToHomeImage(this)" />
+        <label id="aehs" style="font-family: Arial; font-size: 16px; font-style: italic; font-weight: bold;
+            position: absolute; top: 526px; left: 129px; width: 236px; text-align:center">
+            Aspire easyStore Home Server</label>
+        <label id="sad" style="font-family: Arial; font-size: 16px; font-style: italic; font-weight: bold;
+            position: absolute; top: 526px; left: 425px; width: 177px; text-align:center">Support und Download</label>
+        <label id="wta" style="font-family: Arial; font-size: 16px; font-style: italic; font-weight: bold;
+            position: absolute; top: 526px; left: 714px; width: 137px; text-align:center">Willkommen bei Acer</label>
+        <!--<div style="font-family:Arial; font-size:12px; position:absolute; top:556px; left:133px; width:230px; line-height: 21px;">
+    <li>While clearly aimed at home user</li>
+    <li>The Aspire easyStore offers much</li>
+</div>
+<div style="font-family:Arial; font-size:12px; position:absolute; top:556px; left:410px; width:230px; line-height: 21px;">
+    <li>While clearly aimed at home user</li>
+    <li>The Aspire easyStore offers much</li>
+</div>
+<div style="font-family:Arial; font-size:12px; position:absolute; top:556px; left:682px; width:230px; line-height: 21px;">
+    <li>While clearly armed at home user</li>
+    <li>The Aspire easyStore offers much</li>
+</div>-->
+    </div>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+    <!--
+        function GoHomePage()
+        {
+            location.href="Home/default.aspx";
+        }
+        function GoDownloadPage()
+        {
+            location.href="http://global.acer.com/support/index.htm";
+        }
+        function GoAcer()
+        {
+            location.href="http://www.acer.com/public/home.jsp";
+        }
+        function ChangeHomeImage(object)
+        {
+            object.style.cursor="pointer";
+            var id=document.getElementById(object.id)
+            id.src="Image/"+object.id+"B.png";
+        }
+        function ChangeToHomeImage(object)
+        {
+            var id=document.getElementById(object.id)
+            id.src="Image/"+object.id+"A.png";
+        }
+     -->
+    </script> 
