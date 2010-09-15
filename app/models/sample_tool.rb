@@ -46,6 +46,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     self.d=[a_s,a_e,a_c]
     db.save(self)
   end
+
   def scanner_d
     self.proj_d ||= SampleTool.proj_d_default
     dir=File.join(self.proj_d,'data.d',rdir+'.'+self.c.to_s+'.d').to_s
@@ -60,16 +61,23 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     self.a=[]
     s.upto(e).each{|e|self.a<<IPAddr.new(e,Socket::AF_INET).to_s}
     self.a.shuffle!
+  end
+
+  def produce_hostips_from_a!
+    produce_hostips_from_a
     db.save(self)
   end
+
   def produce_hl_norm_lst(filename='hl.norm.lst')
     f=open(filename,'w')
     f.write(self.a.join("\n"))
     f.close
   end
+
   def produce_scanner_d
     Dir.mkdir(scanner_d) if !File.exist?(scanner_d)
   end
+
   def copy_scanning_bins_to_scanner_d
     self.proj_d ||= SampleTool.proj_d_default
     bin_d=File.join(self.proj_d,'bintools.d').to_s
@@ -89,6 +97,8 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
     produce_scanner_d
     copy_hl_norm_lst_to_scanner_d
     copy_scanning_bins_to_scanner_d
+    self.a='processed'
+    db.save(self)
   end
 
   private
