@@ -69,7 +69,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   end
 
   def produce_hl_norm_lst(filename='hl.norm.lst')
-    f=open(filename,'w')
+    f=open(File.join('./analytics.d',filename).to_s,'w')
     f.write(self.a.join("\n"))
     f.close
   end
@@ -88,7 +88,7 @@ function(doc) { if (doc.b) { c = doc.b.countryip; emit({ link: [c.id, doc.d] }, 
   end
   def copy_hl_norm_lst_to_scanner_d(filename='hl.norm.lst')
     self.proj_d ||= SampleTool.proj_d_default
-    cp(File.expand_path('.',filename),scanner_d)
+    cp(File.join('./analytics.d',filename).to_s,scanner_d)
   end
 
   def prepare_scanning_d
