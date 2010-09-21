@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-Eins::Application.initialize!
+Scanner::Application.initialize!
 
 
 CouchPotato::Config.database_name='http://192.168.0.195:5984/eins'

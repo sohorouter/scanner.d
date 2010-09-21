@@ -1,4 +1,4 @@
-Eins::Application.routes.draw do
+Scanner::Application.routes.draw do
   resources :countryips
 
   # The priority is based upon order of creation:
