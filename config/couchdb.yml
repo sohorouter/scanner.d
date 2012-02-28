@@ -1,1 +1,2 @@
 development: http://192.168.0.195:5984/eins
+test: http://rogera:1boris@192.168.0.182:5984/eins-test
